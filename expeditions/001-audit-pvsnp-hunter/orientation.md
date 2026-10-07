@@ -1,10 +1,14 @@
 # Expedition 001 — Audit p-vs-np-hunter finite-degree findings
 
-Status: **active / preliminary discrepancy found**
+Status: **completed — partially reproduced / definition mismatch**
 
 Source project:
 
 https://github.com/GISMO-1/p-vs-np-hunter
+
+Audited revision:
+
+`ee4a4b80f8df505def85304af882a8bbff7de194`
 
 Target public findings:
 
@@ -34,7 +38,11 @@ H2. The reported values are heuristic/proxy values but are consistently labeled 
 
 H3. Different function families are measured using different mathematical quantities under one common output label.
 
-Current preliminary evidence favors **H3**.
+Final result:
+
+- **H1 refuted** for non-graph functions, including exact tiny-instance counterexamples.
+- **H2 partially true** as an implementation description, but the shared public label is stronger than the code supports.
+- **H3 confirmed**: graph rows are exact multilinear algebraic degrees; non-graph rows are formulas/extrapolations.
 
 ## Success criteria
 
@@ -45,3 +53,5 @@ Current preliminary evidence favors **H3**.
 - independently check small cases where feasible
 - distinguish labeling problem from mathematical error
 - propose a minimal reproducible correction
+
+See `conclusion.md` for the final scoped verdict and `reproduction-results.json` for archived exact outputs.

@@ -1,0 +1,377 @@
+{
+  "audit_quantity": "For exact_small_n only: minimum degree among all multilinear GF(p) polynomials whose nonzero/zero classifier has uniform Boolean-cube misclassification rate <= 1/3. This mirrors the target helper's prediction/error semantics but removes its n+3 monomial truncation.",
+  "exact_small_n_comparison": {
+    "majority": {
+      "2": {
+        "GF2": {
+          "error": "1/4",
+          "exact_audit_degree": 0,
+          "hunter_reported": 1,
+          "matches": false,
+          "mistakes": 1,
+          "total": 4,
+          "witness": []
+        },
+        "GF3": {
+          "error": "1/4",
+          "exact_audit_degree": 0,
+          "hunter_reported": 1,
+          "matches": false,
+          "mistakes": 1,
+          "total": 4,
+          "witness": []
+        }
+      },
+      "3": {
+        "GF2": {
+          "error": "2/8",
+          "exact_audit_degree": 1,
+          "hunter_reported": 1,
+          "matches": true,
+          "mistakes": 2,
+          "total": 8,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                2
+              ]
+            }
+          ]
+        },
+        "GF3": {
+          "error": "2/8",
+          "exact_audit_degree": 1,
+          "hunter_reported": 2,
+          "matches": false,
+          "mistakes": 2,
+          "total": 8,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                2
+              ]
+            }
+          ]
+        }
+      },
+      "4": {
+        "GF2": {
+          "error": "5/16",
+          "exact_audit_degree": 0,
+          "hunter_reported": 2,
+          "matches": false,
+          "mistakes": 5,
+          "total": 16,
+          "witness": []
+        },
+        "GF3": {
+          "error": "5/16",
+          "exact_audit_degree": 0,
+          "hunter_reported": 2,
+          "matches": false,
+          "mistakes": 5,
+          "total": 16,
+          "witness": []
+        }
+      }
+    },
+    "parity": {
+      "2": {
+        "GF2": {
+          "error": "0/4",
+          "exact_audit_degree": 1,
+          "hunter_reported": 2,
+          "matches": false,
+          "mistakes": 0,
+          "total": 4,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            }
+          ]
+        },
+        "GF3": {
+          "error": "1/4",
+          "exact_audit_degree": 1,
+          "hunter_reported": 1,
+          "matches": true,
+          "mistakes": 1,
+          "total": 4,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "3": {
+        "GF2": {
+          "error": "0/8",
+          "exact_audit_degree": 1,
+          "hunter_reported": 3,
+          "matches": false,
+          "mistakes": 0,
+          "total": 8,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                2
+              ]
+            }
+          ]
+        },
+        "GF3": {
+          "error": "1/8",
+          "exact_audit_degree": 1,
+          "hunter_reported": 1,
+          "matches": true,
+          "mistakes": 1,
+          "total": 8,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            },
+            {
+              "coefficient": 2,
+              "monomial": [
+                2
+              ]
+            }
+          ]
+        }
+      },
+      "4": {
+        "GF2": {
+          "error": "0/16",
+          "exact_audit_degree": 1,
+          "hunter_reported": 4,
+          "matches": false,
+          "mistakes": 0,
+          "total": 16,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                3
+              ]
+            }
+          ]
+        },
+        "GF3": {
+          "error": "5/16",
+          "exact_audit_degree": 1,
+          "hunter_reported": 2,
+          "matches": false,
+          "mistakes": 5,
+          "total": 16,
+          "witness": [
+            {
+              "coefficient": 1,
+              "monomial": [
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "monomial": [
+                2
+              ]
+            },
+            {
+              "coefficient": 2,
+              "monomial": [
+                3
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "graph_exact_reproduction": {
+    "clique": {
+      "10": {
+        "GF2": 9,
+        "GF3": 10,
+        "vertices": 5
+      },
+      "15": {
+        "GF2": 15,
+        "GF3": 14,
+        "vertices": 6
+      },
+      "3": {
+        "GF2": 3,
+        "GF3": 3,
+        "vertices": 3
+      },
+      "6": {
+        "GF2": 6,
+        "GF3": 6,
+        "vertices": 4
+      }
+    },
+    "independent_set": {
+      "10": {
+        "GF2": 9,
+        "GF3": 10,
+        "vertices": 5
+      },
+      "15": {
+        "GF2": 15,
+        "GF3": 14,
+        "vertices": 6
+      },
+      "3": {
+        "GF2": 3,
+        "GF3": 3,
+        "vertices": 3
+      },
+      "6": {
+        "GF2": 6,
+        "GF3": 6,
+        "vertices": 4
+      }
+    }
+  },
+  "php_reconstruction": {
+    "GF2_power_fit": {
+      "alpha": 0.9533698286984779,
+      "coefficient": 0.6885267894731637,
+      "r2": 0.9079600838318349
+    },
+    "GF3_power_fit": {
+      "alpha": 1.2079016267666487,
+      "coefficient": 0.5158908915393066,
+      "r2": 0.9069235976081821
+    },
+    "table": {
+      "10": {
+        "GF2": 6,
+        "GF3": 9
+      },
+      "11": {
+        "GF2": 7,
+        "GF3": 11
+      },
+      "12": {
+        "GF2": 8,
+        "GF3": 12
+      },
+      "13": {
+        "GF2": 9,
+        "GF3": 13
+      },
+      "14": {
+        "GF2": 10,
+        "GF3": 14
+      },
+      "15": {
+        "GF2": 11,
+        "GF3": 15
+      },
+      "2": {
+        "GF2": 2,
+        "GF3": 2
+      },
+      "3": {
+        "GF2": 2,
+        "GF3": 2
+      },
+      "4": {
+        "GF2": 2,
+        "GF3": 2
+      },
+      "5": {
+        "GF2": 3,
+        "GF3": 3
+      },
+      "6": {
+        "GF2": 3,
+        "GF3": 3
+      },
+      "7": {
+        "GF2": 4,
+        "GF3": 5
+      },
+      "8": {
+        "GF2": 4,
+        "GF3": 5
+      },
+      "9": {
+        "GF2": 5,
+        "GF3": 7
+      }
+    }
+  },
+  "target": {
+    "commit": "ee4a4b80f8df505def85304af882a8bbff7de194",
+    "repository": "GISMO-1/p-vs-np-hunter"
+  }
+}
