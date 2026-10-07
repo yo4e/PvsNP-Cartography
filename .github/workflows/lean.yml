@@ -22,12 +22,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install pinned Lean toolchain
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+
+      - name: Resolve pinned dependencies
+        working-directory: formal
+        run: |
+          lake update
+          echo "----- lake-manifest.json -----"
+          cat lake-manifest.json
+
       - name: Build and audit axioms
         uses: leanprover/lean-action@v1
         with:
           lake-package-directory: formal
+          auto-config: false
           build: true
           build-args: "--wfail"
+          test: false
+          lint: false
           use-mathlib-cache: true
           axiom-audit: true
           axiom-audit-root: PvsNPCartography
