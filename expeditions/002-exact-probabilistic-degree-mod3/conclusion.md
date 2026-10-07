@@ -40,6 +40,8 @@ For n=7 the eight-orbit rational mixture is especially strong: every Hamming lay
 
 Therefore degree 2 is sufficient.
 
+The entire set of coefficients, layer counts, and orbit weights is now committed in [full exact certificate tables](certificates.md), independent of the still-uncommitted Python checker.
+
 ## Independent attack
 
 The upper symmetry argument was checked a second way by explicitly enumerating all variable permutations rather than relying only on layer formulas.
