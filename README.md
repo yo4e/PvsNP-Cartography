@@ -167,6 +167,15 @@ This repository therefore treats **self-criticism as part of the research object
 
 The most valuable file in a research session may be the one explaining why the idea failed.
 
+## Research documents
+
+- [AGENTS.md](AGENTS.md) — research operating contract for AI collaborators
+- [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md) — adversarial research loop and publication threshold
+- [docs/PRIOR_ART.md](docs/PRIOR_ART.md) — direct P vs NP AI projects and broader AI-mathematics systems
+- [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — working primary-source bibliography
+- [map/BARRIERS.md](map/BARRIERS.md) — relativization, Natural Proofs, and algebrization map
+- [Expedition 001](expeditions/001-audit-pvsnp-hunter/) — audit of p-vs-np-hunter finite-degree findings
+
 ## Status
 
 **Phase 0: map the terrain and prior expeditions.**
