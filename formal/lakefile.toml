@@ -1,0 +1,11 @@
+name = "pvsnp_cartography_formal"
+version = "0.1.0"
+defaultTargets = ["PvsNPCartography"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "9e6b3aac99b624d10c84653ab9c5357283b9b3b8"
+
+[[lean_lib]]
+name = "PvsNPCartography"

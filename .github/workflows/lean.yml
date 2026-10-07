@@ -1,0 +1,37 @@
+name: Lean formal audit
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "formal/**"
+      - ".github/workflows/lean.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "formal/**"
+      - ".github/workflows/lean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  formal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and audit axioms
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal
+          build: true
+          build-args: "--wfail"
+          use-mathlib-cache: true
+          axiom-audit: true
+          axiom-audit-root: PvsNPCartography
+
+      - name: Print target theorem axioms
+        working-directory: formal
+        run: ./scripts/axiom_report.sh

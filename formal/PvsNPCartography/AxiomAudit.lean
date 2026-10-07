@@ -1,0 +1,6 @@
+import PvsNPCartography.Sanity
+
+#print axioms PvsNPCartography.reducesVia_id
+#print axioms PvsNPCartography.reducesVia_comp
+#print axioms PvsNPCartography.disagreementCount_self
+#print axioms PvsNPCartography.disagreementCount_eq_zero_of_pointwise
