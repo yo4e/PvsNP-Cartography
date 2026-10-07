@@ -105,6 +105,8 @@ The upper certificate uses eight symmetrized quadratic representatives with exac
 
 Hence the exact value is 2.
 
+The full rational coefficient tables, including the previously missing eight n=7 orbit representatives, are preserved in the [full exact certificate tables](certificates.md). The Python checker is still pending direct GitHub upload. An independent Walsh-transform and explicit-permutation recheck of these numbers passed on 2026-10-08.
+
 ## Verification boundary
 
 The discovery process used numerical linear programming and random candidate search for some upper witnesses. Those tools are **not** part of the final proof.
