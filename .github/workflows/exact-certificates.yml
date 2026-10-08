@@ -1,0 +1,28 @@
+name: Expedition 002 exact certificates
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py"
+      - ".github/workflows/exact-certificates.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py"
+      - ".github/workflows/exact-certificates.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Display Python version
+        run: python3 --version
+      - name: Verify rational lower and upper certificates
+        run: python3 expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py --permutation-audit
