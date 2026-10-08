@@ -97,7 +97,7 @@ Any asymptotic conjecture must be separately stated, attacked, compared to known
 
 ## Residual risks
 
-1. The standard-library checker file is currently pending repository application because its GitHub `create_file` write was blocked by the execution safety layer after the orientation write succeeded.
+1. The original verifier write was blocked, but this reproducibility gap has since been repaired: [committed checker](../expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py) and [successful CI run](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37789085813).
 2. The exact values have not been proved novel. Targeted search found standard asymptotic theory, not an exact small-n table.
 3. A Lean reconstruction has not yet been attempted.
 

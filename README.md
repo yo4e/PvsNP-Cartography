@@ -175,6 +175,8 @@ The most valuable file in a research session may be the one explaining why the i
 - [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — working primary-source bibliography
 - [map/BARRIERS.md](map/BARRIERS.md) — relativization, Natural Proofs, and algebrization map
 - [Expedition 001](expeditions/001-audit-pvsnp-hunter/) — audit of p-vs-np-hunter finite-degree findings
+- [Expedition 002](expeditions/002-exact-probabilistic-degree-mod3/) — finite MOD3 probabilistic-degree certificates, [reproducible checker](expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py), and CI
+- [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md) — verified scaffold axioms, CI evidence, and the formalization boundary
 
 ## Status
 

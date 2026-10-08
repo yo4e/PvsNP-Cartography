@@ -3,9 +3,10 @@
 Date: 2026-10-08
 Status: **finite exact certificates; novelty unknown; Lean verification not claimed**
 
-This file makes the full witnesses recoverable **inside the repository** even when
-`verify_certificates.py` is not yet committed. The witnesses are independent
-of the numerical optimizer used during discovery.
+This file makes the full witnesses recoverable **inside the repository**. The witnesses
+are independent of the numerical optimizer used during discovery. The executable
+[standard-library checker](verify_certificates.py) was committed on 2026-10-08 and
+reproduced in [GitHub Actions](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37789085813).
 
 ## Definition and encoding
 
@@ -137,10 +138,15 @@ upper witness, as it should.
 This is an exact finite certificate, not a Lean-checked theorem, not
 novelty evidence, and not an asymptotic circuit lower bound.
 
-The scripts were executed in the research runtime but GitHub blocked
-the original verifier file write. Until a repository-resident executable
-checker is successfully committed and run in CI, the repository's
-**machine-reproduction requirement remains open**.
+An earlier verifier file write was blocked; that historical blocker is now resolved.
+The committed checker runs with `--permutation-audit` in CI, exhausts all affine
+polynomials, checks each rational quadratic witness and full permutation-orbit
+pointwise success, and rejects a corrupted constant-bit witness as a negative
+control. [Run 37789085813](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37789085813)
+completed successfully.
 
-Next: add a clean independent verifier and CI, reconcile Issue #3 Lean
-workflow status, and only then consider formalization or n=8.
+The separate Lean scaffold also passed its pinned build and assumption audit in
+[run 37789136586](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37789136586).
+**These MOD3 certificates have not been formalized in Lean.** Next: design a
+faithful formal statement for the bounded result or pursue n=8 without assuming
+that an observed finite pattern continues.

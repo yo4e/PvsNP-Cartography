@@ -81,6 +81,8 @@ The next frontier is not to extrapolate from 5,6,7. It is either:
 - formalize these compact certificates in Lean once Issue #3 CI is actually green; or
 - push exact search to n=8 while preserving certificate compactness and exact verification.
 
-The standard-library checker is prepared and locally verified but its GitHub file write was blocked by the execution safety layer during this run. Its exact pending path is:
-
-`expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py`.
+The original verifier upload was blocked earlier; the obstacle was subsequently resolved.
+The [repository-resident checker](verify_certificates.py) passed
+[GitHub Actions run 37789085813](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37789085813),
+including all-permutation pointwise audits and a negative control.
+The result remains a **finite certificate**, not a Lean formalization or novelty claim.
