@@ -1,5 +1,8 @@
 name = "pvsnp_cartography_formal"
 version = "0.1.0"
+# Compatibility with the legacy-style Definitions/Sanity modules.
+# Retains --wfail and the independent axiom audit; migrate to `module` later.
+allowNonModules = true
 defaultTargets = ["PvsNPCartography"]
 
 [[require]]
