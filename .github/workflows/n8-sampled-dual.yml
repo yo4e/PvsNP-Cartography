@@ -1,0 +1,33 @@
+name: Expedition 003 sampled dual attack
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/003-n8-sampled-dual/**"
+      - ".github/workflows/n8-sampled-dual.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/003-n8-sampled-dual/**"
+      - ".github/workflows/n8-sampled-dual.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-sample-and-refuter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify explicit rational certificates without dependencies
+        run: python3 expeditions/003-n8-sampled-dual/verify_n8_sampled_dual.py
+      - name: Install pinned discovery dependencies
+        run: python3 -m pip install numpy==2.3.5 scipy==1.17.0
+      - name: Regenerate sampled pool and check exact dual and LP result
+        run: python3 expeditions/003-n8-sampled-dual/verify_n8_sampled_dual.py --optimize

@@ -49,3 +49,14 @@ but they do not express the MOD3 result. Later work should faithfully
 formalize the finite certificate statement or study n=8 with explicit
 distinction between optimizer discovery, exhaustive verification, and
 general proof barriers.
+
+## Follow-through: Expedition 003 (same authorized session)
+
+After completing both existing issues, the next bounded target was n=8.
+A deterministic 10,016-polynomial sample has an exactly certified
+sample-restricted orbit-mixture optimum 569/902. An explicit polynomial
+outside the pool achieves 27376/41041 > 2/3 against the proposed dual
+q, refuting its generalization to all degree-2 polynomials. Saved:
+expeditions/003-n8-sampled-dual/, attacks/expedition-003-dual-universality.md,
+graveyard/002-n8-sampled-dual-extrapolation.md.
+No inference about the exact n=8 degree or P versus NP is made.

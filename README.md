@@ -176,6 +176,7 @@ The most valuable file in a research session may be the one explaining why the i
 - [map/BARRIERS.md](map/BARRIERS.md) — relativization, Natural Proofs, and algebrization map
 - [Expedition 001](expeditions/001-audit-pvsnp-hunter/) — audit of p-vs-np-hunter finite-degree findings
 - [Expedition 002](expeditions/002-exact-probabilistic-degree-mod3/) — finite MOD3 probabilistic-degree certificates, [reproducible checker](expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py), and CI
+- [Expedition 003](expeditions/003-n8-sampled-dual/) — exact *sample-restricted* n=8 dual and [adversarial counterexample](graveyard/002-n8-sampled-dual-extrapolation.md); n=8 value unresolved
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md) — verified scaffold axioms, CI evidence, and the formalization boundary
 
 ## Status
