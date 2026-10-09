@@ -1,13 +1,13 @@
 # Expedition 004: exact MOD3 probabilistic degree at n=8
 
 Date: 2026-10-09 (JST). Issue: #7.
-Status: locally checked finite certificate; remote CI pending at initial commit.
-Novelty: unknown. No Lean or asymptotic claim.
+Status: **exact finite certificate; local checks and remote CI passed**.
+Novelty: unknown. No Lean MOD3 or asymptotic claim.
 
 ## Target and prior state
 
 For f(x)=1 iff the Hamming weight of x is divisible by 3, over GF(2),
-prove that the least degree supporting a polynomial distribution with
+the least degree supporting a polynomial distribution with
 Pr[P(x)=f(x)] >= 2/3 for EVERY Boolean input x is exactly 2 at n=8.
 The definition matches Srinivasan, Tripathi and Venkitesh, FSTTCS 2019,
 Definition 1 (https://doi.org/10.4230/LIPIcs.FSTTCS.2019.28), and
@@ -15,8 +15,9 @@ Srinivasan, A Robust Version of Hegedus's Lemma, Definition 2.3
 (https://arxiv.org/abs/2202.04982).
 
 Expedition 003 only optimized a sampled family and refuted its dual's
-universal interpretation. That record stays intact. We now seek a
-positive witness, which needs no exhaustive search of quadratic polynomials.
+universal interpretation. That historical record stays intact. This
+expedition supplies a positive witness, which needs no exhaustive search
+of all quadratic polynomials.
 
 ## Certificate
 
@@ -34,9 +35,10 @@ polynomials and a separate hypergeometric formula agree.
 
 Upper certificate: the four symmetrized rows yield layer successes
 [2/3,17/24,125/168,2/3,2/3,115/168,17/24,2/3,2/3].
-Thus the bounded degree is exactly 2. The informal convexity and
-orbit arguments, attacks, search provenance and final CI evidence will
-be recorded in this expedition's conclusion and log.
+
+The full finite convexity and orbit argument is in [conclusion.md](conclusion.md).
+The generic weak-duality step is separately Lean-checked, but its MOD3
+instantiation and the upper witness are not yet formalized.
 
 ## Verification
 
@@ -46,3 +48,7 @@ This stdlib-only checker uses exact fractions, two polynomial evaluators,
 all 40320 permutations at all 256 inputs, full affine enumeration, and
 six negative controls. Validation remains active under python -O.
 Discovery optimizers are not part of certificate acceptance.
+
+[Run 37940070467](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940070467)
+on commit 7355f4e5b826a1b34e0f48d891c208495c821cca passed both the complete
+permutation audit and optimized-Python checks. Actual logs were retrieved.

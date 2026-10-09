@@ -1,0 +1,20 @@
+Observed GitHub Actions log excerpt (not the full job log)
+Repository: yo4e/PvsNP-Cartography
+Commit: 97c459e04204b35f970f58b8cbab959986daa98e
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940286899
+Job: 113852624241
+Lean: 4.35.0-rc4
+Mathlib: 9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+Build: --wfail; result success
+
+2026-10-09T13:57:36.6371331Z Built PvsNPCartography.FiniteDual (4.3s)
+2026-10-09T13:57:40.4491032Z Build completed successfully (9027 jobs).
+2026-10-09T13:58:21.8509759Z axiom-audit: audited 11 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-09T13:58:26.6613484Z 'PvsNPCartography.reducesVia_id' does not depend on any axioms
+2026-10-09T13:58:26.6614242Z 'PvsNPCartography.reducesVia_comp' does not depend on any axioms
+2026-10-09T13:58:26.6615110Z 'PvsNPCartography.disagreementCount_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-09T13:58:26.6616247Z 'PvsNPCartography.disagreementCount_eq_zero_of_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-09T13:58:26.6617396Z 'PvsNPCartography.finite_dual_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Boundary: finite_dual_obstruction is a generic finite-sum lemma.
+This excerpt does not assert formal verification of the MOD3 certificates.
