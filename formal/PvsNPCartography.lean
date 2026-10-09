@@ -1,2 +1,3 @@
 import PvsNPCartography.Definitions
 import PvsNPCartography.Sanity
+import PvsNPCartography.FiniteDual

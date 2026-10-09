@@ -1,6 +1,8 @@
 import PvsNPCartography.Sanity
+import PvsNPCartography.FiniteDual
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
 #print axioms PvsNPCartography.disagreementCount_self
 #print axioms PvsNPCartography.disagreementCount_eq_zero_of_pointwise
+#print axioms PvsNPCartography.finite_dual_obstruction
