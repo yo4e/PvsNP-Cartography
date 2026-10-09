@@ -1,0 +1,31 @@
+name: Expedition 004 exact n8 certificate
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/004-exact-mod3-n8/**"
+      - ".github/workflows/n8-exact.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/004-exact-mod3-n8/**"
+      - ".github/workflows/n8-exact.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-n8:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Full rational, affine, independent evaluator and permutation audit
+        run: python3 expeditions/004-exact-mod3-n8/verify.py --permutations
+      - name: Ensure checks survive optimized Python
+        run: python3 -O expeditions/004-exact-mod3-n8/verify.py
