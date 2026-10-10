@@ -1,0 +1,19 @@
+Attributed GitHub Actions stdout excerpt, not the full job log.
+Date: 2026-10-10 (JST)
+Repository: yo4e/PvsNP-Cartography
+Code commit: 0150b8642ed5708b8ce3109c6d85fc0d4f5e7872
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38055370864
+Job: 114222616310
+Conclusion: success
+Commands: python3 expeditions/005-formal-mod3-five/audit.py
+          python3 -O expeditions/005-formal-mod3-five/audit.py
+Both commands produced the same stdout below. The actual job log was fetched.
+
+PASS lower: 64 affine rows x 32 inputs; mass=180; maximum=110/180=11/18
+PASS upper: 30 distinct quadratics; pointwise minimum=21/30=7/10
+PASS orbit: 120 permutations; each compressed representative appears exactly 4 times
+PASS semantics: independent tuple and XOR evaluators agree on all 960 pairs
+REJECT flipped constants: minimum=0/30
+REJECT raw representative: wrong at x=(0, 0, 1, 0, 0)
+REJECT omitted normalization: singleton payoff=1, mu=1, q=0 gives false obstruction
+Scope: data/semantic audit only; no new-n, minimal-support, or novelty claim

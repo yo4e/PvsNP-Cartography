@@ -1,0 +1,35 @@
+Attributed excerpts from actual completed GitHub Actions output.
+This is a retained excerpt, not a locally simulated or full raw job log.
+Date: 2026-10-10 (JST)
+Code commit: 0150b8642ed5708b8ce3109c6d85fc0d4f5e7872
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38055370947
+Job: 114222616643
+Conclusion: success
+Lean: 4.35.0-rc4
+Mathlib: 9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+Build: lake build --wfail
+
+Build completed successfully (9030 jobs).
+axiom-audit: audited 64 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+
+'PvsNPCartography.reducesVia_id' does not depend on any axioms
+'PvsNPCartography.reducesVia_comp' does not depend on any axioms
+'PvsNPCartography.disagreementCount_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.disagreementCount_eq_zero_of_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.finite_dual_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.affine_integer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.affine_gf2_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.no_affine_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.upper_integer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.upper_field_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.upper_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.exists_quadratic_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.affine_field_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.no_affine_polynomial_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.zero_mass_is_not_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Scope: concrete n=5 certificate components. The degree-one normal-form bridge
+for arbitrary MvPolynomial objects and abstract probabilistic-degree equality
+are still pending. No n>=6 formal result or independent human review follows.

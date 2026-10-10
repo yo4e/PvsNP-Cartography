@@ -1,55 +1,63 @@
 # Finite dual obstruction: exact scope and assumption audit
 
-Date: 2026-10-09. Issue #8.
-Status: **generic lemma compiled and axiom-audited; MOD3 application pending**.
+Updated: 2026-10-10. Issue #8.
+Status: **generic lemma and concrete n=5 affine application compiled and
+audited; arbitrary degree-one normal-form interface pending**.
 
-`finite_dual_obstruction` proves a finite weighted-sum statement over REAL
-probabilities, not just rational ones. Given a real payoff matrix A(i,x),
-normalized nonnegative row probabilities mu and input probabilities q,
-if every deterministic row has q-average at most b<t, no mixture mu
-can have pointwise payoff at least t for every x.
+finite_dual_obstruction proves a finite weighted-sum statement over REAL
+probabilities. Given payoff A(i,x), normalized nonnegative row weights mu
+and input weights q, if every deterministic row has q-average at most b<t,
+no mu-mixture can have pointwise payoff at least t for every input.
 
-The proof expands and exchanges two finite sums. It assumes no existence
-of an optimal strategy, no minimax equality and no asymptotic theorem.
-It uses no `sorry`, `admit`, project-specific `axiom`, `native_decide` or
-external oracle. Its audited foundational axioms are explicitly listed below.
+The proof exchanges two finite sums. It assumes neither existence of an
+optimal strategy, minimax equality nor an asymptotic theorem. It contains
+no sorry, admit, project-specific axiom, native_decide or external oracle.
+Its foundational dependencies are propext, Classical.choice and Quot.sound.
 The deterministic-row bound is an explicit certificate premise, not an
 assumption that randomized polynomials are already impossible.
 
 ## Statement-fidelity attack
 
-- Row coverage: `forall i` is over the supplied finite type I. If I is a
-  sample, the theorem ONLY excludes that sample. It cannot repair the
-  sampled-dual failure in graveyard/002 by itself.
-- Error semantics: the negated goal quantifies over EVERY input x;
-  it is not a deterministic average-case approximation statement.
-- Probability domain: mu and q are real-valued, so no illicit exclusion
-  of irrational distributions is made.
-- Normalization and nonnegativity: both are explicit and used by the proof.
-- Degree and field: absent on purpose. This theorem neither defines
-  GF(2) polynomials nor proves their degree or coverage.
-- Formal application still missing: encode the complete affine class,
-  prove that its matrix entries are the actual MOD3 correctness bits,
-  discharge the deterministic bound, and separately formalize the upper
-  witness and symmetrization. Issue #8 must remain open.
+- `forall i` is over the supplied finite type I. A sampled type excludes
+  only that sample. The lemma cannot repair graveyard/002 by itself.
+- The negated conclusion quantifies over EVERY input x, not input-average
+  deterministic error.
+- mu and q are real, so irrational mixture probabilities are not excluded.
+- Both normalization and nonnegativity are explicit. Omitting q-normalization
+  is refuted by a singleton payoff-one, mu-one, q-zero countermodel.
+- The generic theorem does not itself define fields, degrees or polynomials.
 
-## Observed verification
+## Concrete application added on 2026-10-10
 
-[CI run 37940286899](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940286899)
-on commit `97c459e04204b35f970f58b8cbab959986daa98e` passed.
-The actual job logs show the module build, an 11-declaration namespace
-audit, and the target's `#print axioms` output:
-`[propext, Classical.choice, Quot.sound]`.
+Mod3Five.lean uses all 64 binary constant/linear coefficient choices and all
+32 inputs. It proves the input normalization and each deterministic bound
+before applying the generic theorem. Mod3FiveBridge.lean proves that the
+correctness bits are actual GF(2) polynomial evaluation agreements, and
+extends the obstruction to arbitrary finite real-weighted affine families.
 
-The remote source was re-fetched with blob SHA
-`c3f299b0c4a086042fd4228c93545a1993b2a589`. The statement and proof were
-reviewed for coverage and probability quantifiers. This semantic self-audit
-is not an independent human review; no alternative kernel checker was run.
+The degree-one normal-form map from arbitrary Mathlib MvPolynomial objects
+to this representation remains to be proved. The n=5 upper witness is now
+separately proved as actual degree-two polynomials with pointwise success,
+using direct finite checking rather than an assumed symmetry theorem.
+Issue #8 remains open for that general interface, larger n and semantic review.
 
-## Relation to the n=8 result
+[Final run 38055370947](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38055370947)
+on code commit 0150b8642ed5708b8ce3109c6d85fc0d4f5e7872 passed the pinned
+build, 64-declaration audit and explicit target reports. Read
+[ASSUMPTIONS.md](ASSUMPTIONS.md) and the retained report for exact dependencies.
 
-This is a reusable bridge for the lower-certificate logic. The n=8
-finite arithmetic is checked in Python with different evaluators and
-full permutations; it is NOT thereby a Lean-verified MOD3 result.
+## Historical generic verification
 
-This elementary weak-duality argument is standard. No novelty claim.
+[Run 37940286899](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940286899)
+on commit 97c459e04204b35f970f58b8cbab959986daa98e originally passed.
+Its actual logs showed 11 declarations and the target's dependency list
+[propext, Classical.choice, Quot.sound]. The generic source was re-fetched
+with blob SHA c3f299b0c4a086042fd4228c93545a1993b2a589.
+Semantic self-review is not independent human review, and no second kernel
+checker was run. This standard weak-duality argument is not claimed novel.
+
+## Relation to other finite results
+
+The n=6,7,8 certificate arithmetic remains Python-checked rather than
+Lean-instantiated. The n=5 progress must not silently promote those results,
+or a general P-versus-NP claim, to formal verification.

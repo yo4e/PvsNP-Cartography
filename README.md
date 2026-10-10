@@ -178,19 +178,25 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 002](expeditions/002-exact-probabilistic-degree-mod3/) — finite MOD3 probabilistic-degree certificates, [reproducible checker](expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py), and CI
 - [Expedition 003](expeditions/003-n8-sampled-dual/): historical exact sample-restricted n=8 dual and [adversarial counterexample](graveyard/002-n8-sampled-dual-extrapolation.md). Its sampled optimum did not decide the full n=8 problem.
 - [Expedition 004](expeditions/004-exact-mod3-n8/): exact n=8 degree-two [certificate](expeditions/004-exact-mod3-n8/certificate.json), [checker](expeditions/004-exact-mod3-n8/verify.py), [finite argument](expeditions/004-exact-mod3-n8/conclusion.md), and [successful CI](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940070467).
-- [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md) — verified scaffold axioms, CI evidence, and the formalization boundary
-- [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): Lean-checked generic real-mixture lemma, not yet a formal MOD3 instantiation.
+- [Expedition 005](expeditions/005-formal-mod3-five/): concrete n=5 Lean lower/upper certificate components, [exact scope](expeditions/005-formal-mod3-five/conclusion.md), and [independent data audit](expeditions/005-formal-mod3-five/audit.py).
+- [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
+- [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 
 ## Status
 
-**2026-10-09 checkpoint: exact finite MOD3 certificates through n=8 and a Lean-checked finite dual bridge.**
+**2026-10-10 checkpoint: exact finite MOD3 certificates through n=8, now with concrete n=5 components verified in Lean.**
 
-The standard pointwise probabilistic degree over GF(2), at error 1/3,
-is exactly 2 for n=5,6,7,8 in the recorded finite certificates. The n=8
-result and its verification are in Expedition 004. Novelty remains unknown.
-The generic finite-duality lemma has passed pinned Lean CI and axiom audit;
-the MOD3 certificates themselves are not yet Lean-verified. No general-n
-or P-vs-NP conclusion follows. See [the latest session log](logs/2026-10-09-night-n8-and-duality.md).
+The recorded finite certificates give standard pointwise probabilistic degree
+2 over GF(2), at error 1/3, for n=5,6,7,8. The underlying finite values
+and novelty status are unchanged. Expedition 005 now connects n=5's complete
+affine coefficient bound to real-mixture impossibility, and constructs a
+normalized distribution of actual degree-two polynomials with pointwise
+success. Its pinned Lean build and 64-declaration axiom audit passed.
+
+The general normal-form bridge from arbitrary degree-one MvPolynomial
+objects and the abstract probabilistic-degree equality are not yet integrated.
+n=6,7,8 are not Lean-formalized. No general-n or P-vs-NP conclusion follows.
+Issue #8 remains open. See [the latest session log](logs/2026-10-10-night-mod3-five-formal.md).
 
 The research environment must continue telling the difference between:
 
