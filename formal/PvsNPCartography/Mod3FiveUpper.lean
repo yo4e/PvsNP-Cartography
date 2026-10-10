@@ -52,7 +52,7 @@ noncomputable def upperPolynomial (r : Fin 30) : MvPolynomial (Fin 5) (ZMod 2) :
 theorem upper_polynomial_eval (r : Fin 30) (x : Cube) :
     MvPolynomial.eval (fun i => ((x i).val : ZMod 2)) (upperPolynomial r) =
       upperFieldValue r x := by
-  simp [upperPolynomial, upperFieldValue, MvPolynomial.eval_sum]
+  simp [upperPolynomial, upperFieldValue]
 
 /-- The witnesses are actual Mathlib multivariate polynomials of degree <=2. -/
 theorem upper_degree (r : Fin 30) : (upperPolynomial r).totalDegree ≤ 2 := by
