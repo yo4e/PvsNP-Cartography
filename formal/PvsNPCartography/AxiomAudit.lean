@@ -1,8 +1,13 @@
 import PvsNPCartography.Sanity
 import PvsNPCartography.FiniteDual
+import PvsNPCartography.Mod3Five
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
 #print axioms PvsNPCartography.disagreementCount_self
 #print axioms PvsNPCartography.disagreementCount_eq_zero_of_pointwise
 #print axioms PvsNPCartography.finite_dual_obstruction
+#print axioms PvsNPCartography.Mod3Five.mass_sum
+#print axioms PvsNPCartography.Mod3Five.affine_integer_bound
+#print axioms PvsNPCartography.Mod3Five.affine_gf2_semantics
+#print axioms PvsNPCartography.Mod3Five.no_affine_approximation
