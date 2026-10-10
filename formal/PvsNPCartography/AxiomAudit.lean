@@ -1,6 +1,7 @@
 import PvsNPCartography.Sanity
 import PvsNPCartography.FiniteDual
 import PvsNPCartography.Mod3Five
+import PvsNPCartography.Mod3FiveUpper
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
@@ -11,3 +12,7 @@ import PvsNPCartography.Mod3Five
 #print axioms PvsNPCartography.Mod3Five.affine_integer_bound
 #print axioms PvsNPCartography.Mod3Five.affine_gf2_semantics
 #print axioms PvsNPCartography.Mod3Five.no_affine_approximation
+#print axioms PvsNPCartography.Mod3Five.upper_integer_bound
+#print axioms PvsNPCartography.Mod3Five.upper_field_correct
+#print axioms PvsNPCartography.Mod3Five.upper_degree
+#print axioms PvsNPCartography.Mod3Five.exists_quadratic_approximation
