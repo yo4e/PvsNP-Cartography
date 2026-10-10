@@ -1,0 +1,30 @@
+name: Expedition 005 n5 semantic audit
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "formal/PvsNPCartography/Mod3Five*.lean"
+      - "expeditions/005-formal-mod3-five/**"
+      - ".github/workflows/mod3-five-audit.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "formal/PvsNPCartography/Mod3Five*.lean"
+      - "expeditions/005-formal-mod3-five/**"
+      - ".github/workflows/mod3-five-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact independent coefficient and probability audit
+        run: python3 expeditions/005-formal-mod3-five/audit.py
+      - name: All checks remain active with Python optimization
+        run: python3 -O expeditions/005-formal-mod3-five/audit.py

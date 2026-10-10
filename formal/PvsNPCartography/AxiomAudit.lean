@@ -2,6 +2,7 @@ import PvsNPCartography.Sanity
 import PvsNPCartography.FiniteDual
 import PvsNPCartography.Mod3Five
 import PvsNPCartography.Mod3FiveUpper
+import PvsNPCartography.Mod3FiveBridge
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
@@ -16,3 +17,6 @@ import PvsNPCartography.Mod3FiveUpper
 #print axioms PvsNPCartography.Mod3Five.upper_field_correct
 #print axioms PvsNPCartography.Mod3Five.upper_degree
 #print axioms PvsNPCartography.Mod3Five.exists_quadratic_approximation
+#print axioms PvsNPCartography.Mod3Five.affine_field_correct
+#print axioms PvsNPCartography.Mod3Five.no_affine_polynomial_family
+#print axioms PvsNPCartography.Mod3Five.zero_mass_is_not_probability
