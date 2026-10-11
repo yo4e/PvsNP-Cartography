@@ -1,0 +1,34 @@
+name: Expedition 006 degree interface controls
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/006-degree-interface/audit.py"
+      - "formal/PvsNPCartography/DegreeOneNormalForm.lean"
+      - "formal/PvsNPCartography/ProbabilisticDegree.lean"
+      - "formal/PvsNPCartography/Mod3FiveDegree.lean"
+      - ".github/workflows/degree-interface-audit.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/006-degree-interface/audit.py"
+      - "formal/PvsNPCartography/DegreeOneNormalForm.lean"
+      - "formal/PvsNPCartography/ProbabilisticDegree.lean"
+      - "formal/PvsNPCartography/Mod3FiveDegree.lean"
+      - ".github/workflows/degree-interface-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact finite reconstruction and countermodels
+        run: python3 expeditions/006-degree-interface/audit.py
+      - name: Check validation with optimized Python
+        run: python3 -O expeditions/006-degree-interface/audit.py
