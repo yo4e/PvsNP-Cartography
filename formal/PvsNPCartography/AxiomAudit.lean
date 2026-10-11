@@ -3,6 +3,7 @@ import PvsNPCartography.FiniteDual
 import PvsNPCartography.Mod3Five
 import PvsNPCartography.Mod3FiveUpper
 import PvsNPCartography.Mod3FiveBridge
+import PvsNPCartography.DegreeOneNormalForm
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
@@ -20,3 +21,7 @@ import PvsNPCartography.Mod3FiveBridge
 #print axioms PvsNPCartography.Mod3Five.affine_field_correct
 #print axioms PvsNPCartography.Mod3Five.no_affine_polynomial_family
 #print axioms PvsNPCartography.Mod3Five.zero_mass_is_not_probability
+#print axioms PvsNPCartography.exponent_sum_le_one
+#print axioms PvsNPCartography.degree_one_normal_form
+#print axioms PvsNPCartography.Mod3Five.degree_one_eq_affine
+#print axioms PvsNPCartography.Mod3Five.no_degree_one_family
