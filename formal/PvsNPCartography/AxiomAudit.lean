@@ -4,6 +4,8 @@ import PvsNPCartography.Mod3Five
 import PvsNPCartography.Mod3FiveUpper
 import PvsNPCartography.Mod3FiveBridge
 import PvsNPCartography.DegreeOneNormalForm
+import PvsNPCartography.ProbabilisticDegree
+import PvsNPCartography.Mod3FiveDegree
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
@@ -25,3 +27,10 @@ import PvsNPCartography.DegreeOneNormalForm
 #print axioms PvsNPCartography.degree_one_normal_form
 #print axioms PvsNPCartography.Mod3Five.degree_one_eq_affine
 #print axioms PvsNPCartography.Mod3Five.no_degree_one_family
+#print axioms PvsNPCartography.HasProbabilisticDegreeAtMost.mono
+#print axioms PvsNPCartography.input_dependent_constant
+#print axioms PvsNPCartography.Mod3Five.feasible_degree_iff
+#print axioms PvsNPCartography.Mod3Five.least_feasible_degree
+#print axioms PvsNPCartography.Mod3Five.probabilistic_degree_eq_two
+#print axioms PvsNPCartography.Mod3Five.pdeg_eq_two
+#print axioms PvsNPCartography.Mod3Five.swapped_quantifiers_are_strictly_weaker

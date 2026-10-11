@@ -10,7 +10,7 @@ theorem exponent_sum_le_one {σ : Type*} (s : σ →₀ ℕ)
     (h : s.sum (fun _ e => e) ≤ 1) :
     s = 0 ∨ ∃ i, s = Finsupp.single i 1 := by
   classical
-  have hc : s.toMultiset.card ≤ 1 := by simpa using h
+  have hc : s.toMultiset.card ≤ 1 := by simpa [Function.id_def] using h
   have cases : s.toMultiset.card = 0 ∨ s.toMultiset.card = 1 := by omega
   rcases cases with hzero | hone
   · left
@@ -18,8 +18,9 @@ theorem exponent_sum_le_one {σ : Type*} (s : σ →₀ ℕ)
     simpa using congrArg (fun m : Multiset σ => Multiset.toFinsupp m) hm
   · obtain ⟨i, hi⟩ := Multiset.card_eq_one.mp hone
     right
-    exact ⟨i, by simpa using
-      congrArg (fun m : Multiset σ => Multiset.toFinsupp m) hi⟩
+    refine ⟨i, ?_⟩
+    have hm := congrArg (fun m : Multiset σ => Multiset.toFinsupp m) hi
+    simpa using hm
 
 /-- Structural normal form for ANY degree-at-most-one multivariate polynomial.
 The coefficient semiring and finite variable type are arbitrary. No MOD3 bound
@@ -33,7 +34,7 @@ theorem degree_one_normal_form {σ R : Type*} [Fintype σ] [CommSemiring R]
   intro s
   by_cases hs0 : s = 0
   · subst s
-    simp [MvPolynomial.coeff_sum, MvPolynomial.coeff_X]
+    simp [MvPolynomial.coeff_X]
   · by_cases hs1 : ∃ i, s = Finsupp.single i 1
     · obtain ⟨i, rfl⟩ := hs1
       have hsingle : ∀ j : σ,
@@ -46,7 +47,7 @@ theorem degree_one_normal_form {σ R : Type*} [Fintype σ] [CommSemiring R]
         · intro heq
           subst j
           rfl
-      simp [MvPolynomial.coeff_sum, MvPolynomial.coeff_X, hsingle]
+      simp [MvPolynomial.coeff_X, hsingle, Ne.symm hs0]
     · have hcoeff : P.coeff s = 0 := by
         by_contra hne
         have hexp := exponent_sum_le_one s
@@ -55,7 +56,7 @@ theorem degree_one_normal_form {σ R : Type*} [Fintype σ] [CommSemiring R]
       have hsingle : ∀ i : σ, Finsupp.single i (1 : ℕ) ≠ s := by
         intro i hi
         exact hs1 ⟨i, hi.symm⟩
-      simp [MvPolynomial.coeff_sum, MvPolynomial.coeff_X, hs0, hsingle, hcoeff]
+      simp [MvPolynomial.coeff_X, Ne.symm hs0, hsingle, hcoeff]
 
 namespace Mod3Five
 
@@ -67,12 +68,11 @@ noncomputable def coefficientRow (P : MvPolynomial (Fin 5) (ZMod 2)) : Affine :=
 on sampled inputs. Every degree-one Mathlib object reaches the canonical class. -/
 theorem degree_one_eq_affine (P : MvPolynomial (Fin 5) (ZMod 2))
     (hP : P.totalDegree ≤ 1) : P = affinePolynomial (coefficientRow P) := by
-  calc
-    P = MvPolynomial.C (P.coeff 0) +
-        ∑ i, MvPolynomial.C (P.coeff (Finsupp.single i 1)) * MvPolynomial.X i :=
-      degree_one_normal_form P hP
-    _ = affinePolynomial (coefficientRow P) := by
-      simp [affinePolynomial, coefficientRow]
+  change P = MvPolynomial.C (((P.coeff 0).val : ℕ) : ZMod 2) +
+    ∑ i, MvPolynomial.C (((P.coeff (Finsupp.single i 1)).val : ℕ) : ZMod 2) *
+      MvPolynomial.X i
+  simp only [ZMod.natCast_zmod_val]
+  exact degree_one_normal_form P hP
 
 /-- No normalized REAL mixture of arbitrary degree-at-most-one polynomials
 approximates MOD3 on every five-bit input. Degree and coverage are discharged. -/
