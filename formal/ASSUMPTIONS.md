@@ -1,7 +1,7 @@
 # Formal assumption ledger
 
-Status: **verified n=5 certificate components, scaffold and finite duality;
-abstract degree-based interface and larger-n formalization pending**.
+Status: **complete degree-based n=5 equality, scaffold and finite duality verified;
+larger-n formalization and independent human semantic review pending**.
 
 ## Project-specific axioms
 
@@ -25,7 +25,60 @@ lake build --wfail
 The explicit target list is maintained in PvsNPCartography/AxiomAudit.lean.
 The report is produced by Lean's #print axioms, not source-text inspection.
 
-## Verification state: 2026-10-10
+## Verification state: 2026-10-12 JST (2026-10-11 approval night)
+
+Code commit: 512aaf2745d2d8aab4bab76c1ac43ff6130d7de2.
+[Formal run 38150083188](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38150083188),
+job 114501532196, completed successfully under pinned Lean 4.35.0-rc4 and
+Mathlib 9e6b3aac99b624d10c84653ab9c5357283b9b3b8. The actual completed logs
+show the --wfail build, all 86 namespace declarations inside the allowlist,
+and explicit target axiom reports. All newly printed targets depend only on
+propext, Classical.choice and Quot.sound.
+
+The completed chain now includes:
+
+- exponent_sum_le_one and degree_one_normal_form, a structural normal form
+  for arbitrary degree-at-most-one polynomials over a commutative semiring;
+- Mod3Five.degree_one_eq_affine and no_degree_one_family, covering actual
+  degree-one polynomial objects rather than only a canonical coefficient list;
+- HasProbabilisticDegreeAtMost, the finite-support real-probability predicate
+  with one family chosen before every input, and its degree monotonicity;
+- Mod3Five.feasible_degree_iff, classifying feasibility exactly by 2 <= d;
+- Mod3Five.least_feasible_degree and the closed Mod3Five.pdeg_eq_two;
+- input_dependent_constant and Mod3Five.swapped_quantifiers_are_strictly_weaker,
+  a deliberate countermodel to reversing the input/family quantifiers.
+
+The least-degree definition requires an existence proof. The closed n=5
+statement constructs it from the verified quadratic witness; it assumes
+neither the answer nor feasibility without proof. The normal form proves
+actual polynomial equality using monomial degree bounds, not sampling of
+input values. The earlier lower and upper certificate premises remain proved.
+
+See the [actual attributed axiom excerpt](reports/2026-10-12-n5-degree-axioms.txt)
+and [statement-fidelity self-audit](../expeditions/006-degree-interface/statement-audit.md).
+The three new formal source files and code commit were re-fetched after
+compilation and matched the inspected bytes. A distinct finite reconstruction
+algorithm and countermodels passed [semantic run 38150257051](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38150257051),
+job 114502054887, on test commit 215f89efc3800ecc7c6af97f28c968685406b6b3,
+in normal and optimized Python. This is supplementary data/semantic checking,
+not an independent human review or a second proof kernel.
+
+The first candidate 6178308d675737d4bcd8115786b5f9d2379734cb failed
+run 38149625181 on syntax/type/coercion details and unused simp arguments.
+The repaired 512aaf2 proof retained the theorem statements, --wfail, linters,
+axiom allowlist and certificate thresholds. No failed build was promoted.
+
+### Current formal boundary
+
+The degree-one coverage and complete n=5 degree-equality gaps are CLOSED.
+n=6,7,8 have finite certificates but no complete degree-based Lean theorem
+at this checkpoint. Issue #8 remains open for the larger cases, general
+symmetrization infrastructure and independent human semantic review.
+The n=5 upper proof directly checks every input, so an unproved generic
+symmetry lemma is not a premise. No new numerical value, novelty, general-n
+MOD3 theorem, proof-barrier escape or P-vs-NP result is claimed.
+
+## Historical component checkpoint: 2026-10-10
 
 Code commit: 0150b8642ed5708b8ce3109c6d85fc0d4f5e7872.
 [Formal run 38055370947](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38055370947),
@@ -34,7 +87,7 @@ Mathlib 9e6b3aac99b624d10c84653ab9c5357283b9b3b8. The --wfail build,
 compiled namespace audit and explicit target report all passed.
 The namespace audit covered 64 declarations, all within the allowlist.
 
-New concrete components in the Mod3Five namespace:
+New concrete components in the Mod3Five namespace at that checkpoint:
 
 - mass_sum, affine_integer_bound, affine_gf2_semantics;
 - no_affine_approximation for all normalized real coefficient mixtures;
@@ -55,19 +108,20 @@ This is data checking, not a replacement for Lean's proof checking.
 The code commit and source blobs were re-fetched and matched locally
 inspected files before recording verification.
 
-### Current formal boundary
+### Formal boundary at the 2026-10-10 checkpoint
 
-The lower class is the canonical binary affine representation, with its
+The lower class was the canonical binary affine representation, with its
 actual polynomial evaluation proved equivalent to the finite checker.
 A general normal-form theorem reducing any Mathlib MvPolynomial of
-`totalDegree <=1` to this representation is not yet integrated. The
-abstract probabilistic-degree equality theorem is not assembled.
+`totalDegree <=1` to this representation was not yet integrated. The
+abstract probabilistic-degree equality theorem was not assembled.
+Those two gaps are closed by the latest checkpoint above.
 
-The upper theorem DOES supply genuine degree-at-most-two polynomials
+The upper theorem supplied genuine degree-at-most-two polynomials
 with a normalized real finite-support distribution and the actual
-pointwise agreement property. It proves every input directly, without
-assuming an unproved symmetry lemma. n=6,7,8 have not been formalized.
-Issue #8 remains open. No new finite value, novelty or P-vs-NP result.
+pointwise agreement property. It proved every input directly, without
+assuming an unproved symmetry lemma. n=6,7,8 had not been formalized.
+Issue #8 remained open. No new finite value, novelty or P-vs-NP result.
 No extra proof kernel or independent human mathematical reviewer was used.
 
 ### Observed implementation failure and repair

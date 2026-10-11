@@ -179,24 +179,27 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 003](expeditions/003-n8-sampled-dual/): historical exact sample-restricted n=8 dual and [adversarial counterexample](graveyard/002-n8-sampled-dual-extrapolation.md). Its sampled optimum did not decide the full n=8 problem.
 - [Expedition 004](expeditions/004-exact-mod3-n8/): exact n=8 degree-two [certificate](expeditions/004-exact-mod3-n8/certificate.json), [checker](expeditions/004-exact-mod3-n8/verify.py), [finite argument](expeditions/004-exact-mod3-n8/conclusion.md), and [successful CI](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940070467).
 - [Expedition 005](expeditions/005-formal-mod3-five/): concrete n=5 Lean lower/upper certificate components, [exact scope](expeditions/005-formal-mod3-five/conclusion.md), and [independent data audit](expeditions/005-formal-mod3-five/audit.py).
+- [Expedition 006](expeditions/006-degree-interface/): complete n=5 degree-based [Lean equality](formal/PvsNPCartography/Mod3FiveDegree.lean), [statement audit](expeditions/006-degree-interface/statement-audit.md), [verified conclusion](expeditions/006-degree-interface/conclusion.md), and [quantifier countermodel](graveyard/005-input-dependent-polynomial.md).
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 
 ## Status
 
-**2026-10-10 checkpoint: exact finite MOD3 certificates through n=8, now with concrete n=5 components verified in Lean.**
+**2026-10-11 approval-night checkpoint, completed 2026-10-12 JST: the complete degree-based n=5 equality is verified in Lean.**
 
 The recorded finite certificates give standard pointwise probabilistic degree
-2 over GF(2), at error 1/3, for n=5,6,7,8. The underlying finite values
-and novelty status are unchanged. Expedition 005 now connects n=5's complete
-affine coefficient bound to real-mixture impossibility, and constructs a
-normalized distribution of actual degree-two polynomials with pointwise
-success. Its pinned Lean build and 64-declaration axiom audit passed.
+2 over GF(2), at error 1/3, for n=5,6,7,8. Those finite values and novelty
+status are unchanged. Expedition 006 closes the general normal-form bridge
+from arbitrary degree-one MvPolynomial objects to the canonical affine class,
+and proves feasibility iff d>=2 and the closed least-degree equality for n=5.
+Its pinned Lean --wfail build, 86-declaration axiom audit and explicit target
+reports passed. The definition retains finite-support REAL probabilities,
+normalization, actual polynomial degree, and one family before every input.
 
-The general normal-form bridge from arbitrary degree-one MvPolynomial
-objects and the abstract probabilistic-degree equality are not yet integrated.
-n=6,7,8 are not Lean-formalized. No general-n or P-vs-NP conclusion follows.
-Issue #8 remains open. See [the latest session log](logs/2026-10-10-night-mod3-five-formal.md).
+n=6,7,8 are not yet Lean-formalized. Independent human semantic review and
+generic symmetry infrastructure for scaling remain pending. No new numerical
+value, general-n MOD3 theorem, proof-barrier escape or P-vs-NP conclusion follows.
+Issue #8 remains open. See [the latest session log](logs/2026-10-11-night-degree-interface.md).
 
 The research environment must continue telling the difference between:
 

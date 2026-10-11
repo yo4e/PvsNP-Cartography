@@ -1,0 +1,12 @@
+Attributed stdout excerpt from actual GitHub Actions, not simulated output.
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38150257051
+Job: 114502054887
+Commit: 215f89efc3800ecc7c6af97f28c968685406b6b3
+Conclusion: success
+Both python3 audit.py and python3 -O audit.py produced the following:
+
+PASS: 64 affine coefficient rows; Mobius reconstruction and 2048 evaluations agree
+REJECT: omit degree bound; x0*x1 passes zero/basis tests but fails at input mask 3
+REJECT: swapped input/family quantifiers; input-dependent constants achieve 1
+PASS: fixed constant class has exact two-input dual maximum 1/2 < 2/3
+PASS: finite semantic controls; generic proof and degree equality require Lean CI

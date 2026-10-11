@@ -1,0 +1,37 @@
+Attributed excerpts from actual completed GitHub Actions logs.
+This is an excerpt, not the full raw log or locally simulated output.
+Approval night: 2026-10-11. Verification date: 2026-10-12 JST.
+Code commit: 512aaf2745d2d8aab4bab76c1ac43ff6130d7de2
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38150083188
+Job: 114501532196
+Conclusion: success
+Lean: 4.35.0-rc4
+Mathlib: 9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+Build: lake build --wfail
+
+Built PvsNPCartography.ProbabilisticDegree (4.7s)
+Built PvsNPCartography.DegreeOneNormalForm (5.4s)
+Built PvsNPCartography.Mod3FiveDegree (3.6s)
+Build completed successfully (9033 jobs).
+axiom-audit: audited 86 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+
+'PvsNPCartography.exponent_sum_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.degree_one_normal_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.degree_one_eq_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.no_degree_one_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.HasProbabilisticDegreeAtMost.mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.input_dependent_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.probabilistic_degree_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Five.swapped_quantifiers_are_strictly_weaker' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+The earlier audited targets also passed, with the same foundational dependencies
+recorded in previous reports. No project-specific axiom, sorryAx or native_decide
+oracle was accepted. No independent second kernel or human reviewer was used.
+Scope: complete n=5 degree-based equality under the displayed definition.
+No n>=6 formal degree result or P-vs-NP conclusion follows.
