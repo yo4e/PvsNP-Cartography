@@ -1,0 +1,32 @@
+name: Small-support MOD3 semantic audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/007-small-support-mod3/**'
+      - 'formal/PvsNPCartography/SmallSupportMod3.lean'
+      - '.github/workflows/small-support-audit.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/007-small-support-mod3/**'
+      - 'formal/PvsNPCartography/SmallSupportMod3.lean'
+      - '.github/workflows/small-support-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exact normal and optimized audits with exhaustive cyclic attack
+        run: |
+          set -euo pipefail
+          python expeditions/007-small-support-mod3/audit.py --cyclic-attack > /tmp/normal.json
+          python -O expeditions/007-small-support-mod3/audit.py --cyclic-attack > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          cat /tmp/normal.json
