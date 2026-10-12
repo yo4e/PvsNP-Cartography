@@ -180,26 +180,33 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 004](expeditions/004-exact-mod3-n8/): exact n=8 degree-two [certificate](expeditions/004-exact-mod3-n8/certificate.json), [checker](expeditions/004-exact-mod3-n8/verify.py), [finite argument](expeditions/004-exact-mod3-n8/conclusion.md), and [successful CI](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940070467).
 - [Expedition 005](expeditions/005-formal-mod3-five/): concrete n=5 Lean lower/upper certificate components, [exact scope](expeditions/005-formal-mod3-five/conclusion.md), and [independent data audit](expeditions/005-formal-mod3-five/audit.py).
 - [Expedition 006](expeditions/006-degree-interface/): complete n=5 degree-based [Lean equality](formal/PvsNPCartography/Mod3FiveDegree.lean), [statement audit](expeditions/006-degree-interface/statement-audit.md), [verified conclusion](expeditions/006-degree-interface/conclusion.md), and [quantifier countermodel](graveyard/005-input-dependent-polynomial.md).
+- [Expedition 007](expeditions/007-small-support-mod3/): complete n=6/n=7 [Lean equalities](formal/PvsNPCartography/SmallSupportMod3.lean), compact [18-polynomial certificates](expeditions/007-small-support-mod3/certificate.json), [exact audit](expeditions/007-small-support-mod3/audit.py), [verified conclusion](expeditions/007-small-support-mod3/conclusion.md), and [failed cyclic compression](graveyard/006-single-cyclic-orbit.md).
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 
 ## Status
 
-**2026-10-11 approval-night checkpoint, completed 2026-10-12 JST: the complete degree-based n=5 equality is verified in Lean.**
+**2026-10-13 JST: complete degree-based equalities for n=5,6,7 are verified in Lean.**
 
 The recorded finite certificates give standard pointwise probabilistic degree
 2 over GF(2), at error 1/3, for n=5,6,7,8. Those finite values and novelty
-status are unchanged. Expedition 006 closes the general normal-form bridge
-from arbitrary degree-one MvPolynomial objects to the canonical affine class,
-and proves feasibility iff d>=2 and the closed least-degree equality for n=5.
-Its pinned Lean --wfail build, 86-declaration axiom audit and explicit target
-reports passed. The definition retains finite-support REAL probabilities,
-normalization, actual polynomial degree, and one family before every input.
+status are unchanged. Expedition 006 completed the normal-form/interface work
+and n=5 equality. Expedition 007 now proves feasibility iff d>=2, IsLeast and
+the closed least-degree equality for n=6 and n=7 using actual polynomial degree,
+finite-support REAL probabilities, normalization and one family before every input.
 
-n=6,7,8 are not yet Lean-formalized. Independent human semantic review and
-generic symmetry infrastructure for scaling remain pending. No new numerical
-value, general-n MOD3 theorem, proof-barrier escape or P-vs-NP conclusion follows.
-Issue #8 remains open. See [the latest session log](logs/2026-10-11-night-degree-interface.md).
+The compact n=6/n=7 upper witnesses each use 18 distinct polynomials and 24
+tickets. Pinned Lean --wfail, the 145-declaration axiom audit and explicit target
+reports passed at code 8899e756; a separate normal/-O exact Python CI passed
+at the same commit. The old n=7 witness retains its stronger strict-success
+margin; the new witness favors small support, not improved error. A failed
+single-cyclic-orbit shortcut is preserved with all 360 cases and a counterexample.
+
+n=8 is not yet completely Lean-formalized. Issue #8 remains open for generic
+permutation/symmetrization infrastructure and independent human semantic review,
+not for repeating the completed n=6/n=7 stage. No new numerical value, support
+minimality, general-n MOD3 theorem, proof-barrier escape or P-vs-NP conclusion
+follows. See [the latest session log](logs/2026-10-13-small-support-mod3.md).
 
 The research environment must continue telling the difference between:
 

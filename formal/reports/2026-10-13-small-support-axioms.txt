@@ -1,0 +1,44 @@
+Actual attributed CI excerpt, retrieved 2026-10-13 JST
+Repository: yo4e/PvsNP-Cartography
+Code commit: 8899e75646a443415d5a2346d3c8f48d62c7bb79
+Formal run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38307092042
+Job: 115003654751
+Outcome: success, including build, namespace audit and explicit target report.
+
+The lines below are excerpts of the actual completed job output, with timestamps
+and terminal color escapes omitted. They are not a report inferred from source.
+
+Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+Lake version 5.0.0-src+c29b6dd (Lean version 4.35.0-rc4)
+Mathlib revision from the actual lake-manifest.json:
+9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+
+BUILD_ARGS: --wfail
+Built PvsNPCartography.SmallSupportMod3 (68s)
+Build completed successfully (9034 jobs).
+axiom-audit: audited 145 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+
+'PvsNPCartography.SmallSupportMod3.degree_one_eq_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.no_degree_one_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.polynomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.quadratic_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Six.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Six.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Six.upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Seven.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Seven.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.Seven.upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.SmallSupportMod3.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Source blob re-fetched and matched: 7f2e5ecdac08af19ba461d986c84711c13cd980a.
+Separate semantic run38307092049, job115003655051, passed normal and -O Python
+at the same code commit and source blob. It recomputed every input/affine score,
+rejected six altered claims and reproduced all360 failed cyclic candidates.
+That run used CPython3.13.16; the local reproduction used CPython3.13.5.
+
+Scope limits: no independent human semantic review and no second proof kernel.
+leanchecker, lean4checker and nanoda were not run. Project-specific extra axioms,
+sorryAx and native_decide dependencies are outside the allowlist. Novelty unknown.

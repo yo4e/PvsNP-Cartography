@@ -1,7 +1,8 @@
 # Formal assumption ledger
 
-Status: **complete degree-based n=5 equality, scaffold and finite duality verified;
-larger-n formalization and independent human semantic review pending**.
+Status: **complete degree-based n=5,6,7 equalities, scaffold and finite duality
+verified; n=8, generic symmetry infrastructure and independent human semantic
+review pending**. Historical sections below retain the state at their dates.
 
 ## Project-specific axioms
 
@@ -12,7 +13,7 @@ an explicit entry and must not be described as a proved theorem.
 
 The compiled namespace audit permits only propext, Classical.choice and
 Quot.sound. Anything else under theorem targets fails CI unless the policy
-is deliberately revised and documented. Closed finite checks in the n=5
+is deliberately revised and documented. Closed finite checks in the n=5,6,7
 modules use decide +kernel, not native_decide.
 
 Run from formal/:
@@ -25,7 +26,53 @@ lake build --wfail
 The explicit target list is maintained in PvsNPCartography/AxiomAudit.lean.
 The report is produced by Lean's #print axioms, not source-text inspection.
 
-## Verification state: 2026-10-12 JST (2026-10-11 approval night)
+## Verification state: 2026-10-13 JST
+
+Code commit: 8899e75646a443415d5a2346d3c8f48d62c7bb79.
+[Formal run38307092042](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38307092042),
+job115003654751, completed successfully under pinned Lean4.35.0-rc4 and
+Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. Actual completed output
+records --wfail success, all145 namespace declarations within the allowlist,
+and thirteen newly printed target reports, each using only propext,
+Classical.choice and Quot.sound.
+
+SmallSupportMod3.lean now supplies actual field-valued target/evaluation,
+structural coverage of arbitrary degree-one polynomial families, normalized
+real-mixture duality, actual quadratic polynomial degree/evaluation, and
+full-cube kernel arithmetic for n=6 and n=7. The combined feasible_degree_iff,
+least_feasible_degree and closed pdeg_eq_two do not assume feasibility or the
+answer. The new 18-polynomial upper witness has denominator24 and minimum16/24.
+The n=6 and n=7 affine dual bounds are respectively660/1080 and595/1050.
+
+[Actual attributed target report](reports/2026-10-13-small-support-axioms.txt),
+[statement audit](../expeditions/007-small-support-mod3/statement-audit.md),
+and [conclusion](../expeditions/007-small-support-mod3/conclusion.md) retain
+scope and verification details. Source blob7f2e5ecdac08af19ba461d986c84711c13cd980a,
+certificate data and code commit/tree were re-fetched and matched local bytes.
+[Semantic run38307092049](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38307092049),
+job115003655051, passed normal and optimized Python at the same code commit.
+Two evaluators, Mobius and Walsh reconstruction agree; all six altered claims
+are rejected. All360 attempted fixed-mass single-cyclic-orbit compressions fail,
+with the precise scope and a counterexample retained in graveyard/006.
+
+The initial formal candidate92df9d85e2d0a6de7fac21c8c1807758b6415ec8 failed
+run38306271041/job115000959315 on a constant-polynomial degree obligation.
+The repair explicitly applies totalDegree_C and changes no coefficients,
+thresholds, theorem statements, --wfail setting or axiom allowlist.
+No failed build was promoted and no native_decide dependency was introduced.
+
+### Current formal boundary
+
+The complete degree-based equality is verified for n=5,6,7. n=8 still has
+finite executable certificates but no complete degree-based Lean theorem.
+Issue8 stays open for generic full symmetrization infrastructure and independent
+human semantic review. The completed upper proofs check every input directly;
+an unproved generic symmetry lemma is not one of their premises.
+There is no second proof kernel or independent human reviewer in these checks.
+Support novelty and minimality are unknown. No new numerical value, general-n
+MOD3 theorem, barrier escape or P-vs-NP conclusion is claimed.
+
+## Historical degree-interface checkpoint: 2026-10-12 JST (2026-10-11 approval night)
 
 Code commit: 512aaf2745d2d8aab4bab76c1ac43ff6130d7de2.
 [Formal run 38150083188](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38150083188),
@@ -35,7 +82,7 @@ show the --wfail build, all 86 namespace declarations inside the allowlist,
 and explicit target axiom reports. All newly printed targets depend only on
 propext, Classical.choice and Quot.sound.
 
-The completed chain now includes:
+The completed chain at that checkpoint included:
 
 - exponent_sum_le_one and degree_one_normal_form, a structural normal form
   for arbitrary degree-at-most-one polynomials over a commutative semiring;
@@ -68,11 +115,11 @@ run 38149625181 on syntax/type/coercion details and unused simp arguments.
 The repaired 512aaf2 proof retained the theorem statements, --wfail, linters,
 axiom allowlist and certificate thresholds. No failed build was promoted.
 
-### Current formal boundary
+### Formal boundary at the 2026-10-12 checkpoint
 
-The degree-one coverage and complete n=5 degree-equality gaps are CLOSED.
-n=6,7,8 have finite certificates but no complete degree-based Lean theorem
-at this checkpoint. Issue #8 remains open for the larger cases, general
+The degree-one coverage and complete n=5 degree-equality gaps were CLOSED.
+n=6,7,8 had finite certificates but no complete degree-based Lean theorem
+at that checkpoint. Issue #8 remained open for the larger cases, general
 symmetrization infrastructure and independent human semantic review.
 The n=5 upper proof directly checks every input, so an unproved generic
 symmetry lemma is not a premise. No new numerical value, novelty, general-n
@@ -115,7 +162,7 @@ actual polynomial evaluation proved equivalent to the finite checker.
 A general normal-form theorem reducing any Mathlib MvPolynomial of
 `totalDegree <=1` to this representation was not yet integrated. The
 abstract probabilistic-degree equality theorem was not assembled.
-Those two gaps are closed by the latest checkpoint above.
+Those two gaps are closed by the later checkpoints above.
 
 The upper theorem supplied genuine degree-at-most-two polynomials
 with a normalized real finite-support distribution and the actual
