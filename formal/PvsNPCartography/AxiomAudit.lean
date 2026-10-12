@@ -6,6 +6,7 @@ import PvsNPCartography.Mod3FiveBridge
 import PvsNPCartography.DegreeOneNormalForm
 import PvsNPCartography.ProbabilisticDegree
 import PvsNPCartography.Mod3FiveDegree
+import PvsNPCartography.SmallSupportMod3
 
 #print axioms PvsNPCartography.reducesVia_id
 #print axioms PvsNPCartography.reducesVia_comp
@@ -34,3 +35,16 @@ import PvsNPCartography.Mod3FiveDegree
 #print axioms PvsNPCartography.Mod3Five.probabilistic_degree_eq_two
 #print axioms PvsNPCartography.Mod3Five.pdeg_eq_two
 #print axioms PvsNPCartography.Mod3Five.swapped_quantifiers_are_strictly_weaker
+#print axioms PvsNPCartography.SmallSupportMod3.degree_one_eq_affine
+#print axioms PvsNPCartography.SmallSupportMod3.no_degree_one_family
+#print axioms PvsNPCartography.SmallSupportMod3.polynomial_degree
+#print axioms PvsNPCartography.SmallSupportMod3.quadratic_feasible
+#print axioms PvsNPCartography.SmallSupportMod3.Six.mass_sum
+#print axioms PvsNPCartography.SmallSupportMod3.Six.affine_bound
+#print axioms PvsNPCartography.SmallSupportMod3.Six.upper_bound
+#print axioms PvsNPCartography.SmallSupportMod3.Seven.mass_sum
+#print axioms PvsNPCartography.SmallSupportMod3.Seven.affine_bound
+#print axioms PvsNPCartography.SmallSupportMod3.Seven.upper_bound
+#print axioms PvsNPCartography.SmallSupportMod3.feasible_degree_iff
+#print axioms PvsNPCartography.SmallSupportMod3.least_feasible_degree
+#print axioms PvsNPCartography.SmallSupportMod3.pdeg_eq_two

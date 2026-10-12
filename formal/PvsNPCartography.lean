@@ -7,3 +7,4 @@ import PvsNPCartography.Mod3FiveBridge
 import PvsNPCartography.DegreeOneNormalForm
 import PvsNPCartography.ProbabilisticDegree
 import PvsNPCartography.Mod3FiveDegree
+import PvsNPCartography.SmallSupportMod3
