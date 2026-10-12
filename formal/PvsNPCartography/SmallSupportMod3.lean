@@ -67,6 +67,7 @@ theorem no_degree_one_family {n : ℕ}
     have h : (∑ x, (mass x : ℝ) * (affineCorrect p x : ℝ)) ≤ B := by
       exact_mod_cast hbound p
     calc
+      _ = (∑ x, q x * (affineCorrect p x : ℝ)) := rfl
       _ = (∑ x, (mass x : ℝ) * (affineCorrect p x : ℝ)) / D := by
         simp only [q, div_mul_eq_mul_div, Finset.sum_div]
       _ ≤ (B : ℝ) / D := div_le_div_of_nonneg_right h (le_of_lt hDr)
@@ -127,7 +128,8 @@ theorem polynomial_degree {n k : ℕ} (pairs : Fin k → Fin n × Fin n) (r : Ro
   apply max_le
   · apply (MvPolynomial.totalDegree_add _ _).trans
     apply max_le
-    · simp
+    · rw [MvPolynomial.totalDegree_C]
+      exact Nat.zero_le 2
     · exact (MvPolynomial.totalDegree_finsetSum_le fun i _ => hlin _ i).trans (by decide)
   · exact MvPolynomial.totalDegree_finsetSum_le fun j _ => hquad _ _ _
 
