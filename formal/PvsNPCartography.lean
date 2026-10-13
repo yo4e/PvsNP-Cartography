@@ -8,3 +8,5 @@ import PvsNPCartography.DegreeOneNormalForm
 import PvsNPCartography.ProbabilisticDegree
 import PvsNPCartography.Mod3FiveDegree
 import PvsNPCartography.SmallSupportMod3
+import PvsNPCartography.PermutationTransport
+import PvsNPCartography.FiniteSymmetrization

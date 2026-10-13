@@ -1,0 +1,18 @@
+import PvsNPCartography.FiniteSymmetrization
+
+#print axioms PvsNPCartography.Symmetrization.permute_degree
+#print axioms PvsNPCartography.Symmetrization.permute_eval
+#print axioms PvsNPCartography.Symmetrization.permute_weight
+#print axioms PvsNPCartography.Symmetrization.correct_permute
+#print axioms PvsNPCartography.Symmetrization.feasible_of_fintype
+#print axioms PvsNPCartography.Symmetrization.permutation_card_pos
+#print axioms PvsNPCartography.Symmetrization.orbitAverage_invariant
+#print axioms PvsNPCartography.Symmetrization.orbitAverage_lower_bound
+#print axioms PvsNPCartography.Symmetrization.sym_degree
+#print axioms PvsNPCartography.Symmetrization.sym_nonneg
+#print axioms PvsNPCartography.Symmetrization.sym_normalized
+#print axioms PvsNPCartography.Symmetrization.sym_success_eq_average
+#print axioms PvsNPCartography.Symmetrization.sym_success_invariant
+#print axioms PvsNPCartography.Symmetrization.feasible_of_orbit_bounds
+#print axioms PvsNPCartography.Symmetrization.symmetrization_preserves
+#print axioms PvsNPCartography.Symmetrization.feasible_iff_orbit_average
