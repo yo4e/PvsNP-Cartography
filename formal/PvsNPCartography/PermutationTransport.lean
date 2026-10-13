@@ -30,7 +30,7 @@ theorem permute_eval {n : ℕ} (e : Perm n) (P : BinaryPolynomial n)
 
 theorem permute_weight {n : ℕ} (e : Perm n) (x : BooleanCube n) :
     (∑ i, (permuteInput e x i).val) = ∑ i, (x i).val :=
-  e.sum_comp (fun i => (x i).val)
+  Equiv.sum_comp e (fun i => (x i).val)
 
 /-- Symmetry is a hypothesis on the TARGET, not on individual polynomials. -/
 def IsSymmetric {n : ℕ} (f : BooleanCube n → ZMod 2) : Prop :=
@@ -63,10 +63,10 @@ theorem feasible_of_fintype {n : ℕ} {I : Type} [Fintype I]
   let e := (Fintype.equivFin I).symm
   refine ⟨Fintype.card I, (fun j => P (e j)), (fun j => mu (e j)),
     (fun j => hd (e j)), (fun j => hn (e j)), ?_, ?_⟩
-  · exact (e.sum_comp mu).trans hs
+  · exact (Equiv.sum_comp e mu).trans hs
   · intro x
     change 1 - epsilon ≤ ∑ j, mu (e j) * correct f (P (e j)) x
-    rw [e.sum_comp (fun i => mu i * correct f (P i) x)]
+    rw [Equiv.sum_comp e (fun i => mu i * correct f (P i) x)]
     exact hp x
 
 end

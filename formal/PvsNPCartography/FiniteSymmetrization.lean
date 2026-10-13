@@ -23,7 +23,7 @@ theorem orbitAverage_invariant {n : ℕ} (g : BooleanCube n → ℝ)
       invFun := fun e => e.trans t.symm
       left_inv := by intro e; ext i; simp
       right_inv := by intro e; ext i; simp }
-  have h := E.sum_comp (fun e => g (permuteInput e x))
+  have h := Equiv.sum_comp E (fun e => g (permuteInput e x))
   change (∑ e : Perm n, g (permuteInput e (permuteInput t x))) /
       Fintype.card (Perm n) = _
   exact congrArg (fun z : ℝ => z / Fintype.card (Perm n)) h
