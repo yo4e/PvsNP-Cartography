@@ -58,7 +58,9 @@ theorem whole_cube_average_is_insufficient :
 /-- Probability weights live in R, not the characteristic-two coefficient field. -/
 theorem field_average_is_not_probability_average :
     (2 : ZMod 2) = 0 ∧ (1 / 2 : ZMod 2) = 0 ∧ (0 : ℝ) < 1 / 2 := by
-  norm_num
+  have htwo : (2 : ZMod 2) = 0 := by decide +kernel
+  refine ⟨htwo, ?_, by norm_num⟩
+  rw [htwo, div_zero]
 
 end
 end PvsNPCartography.Symmetrization
