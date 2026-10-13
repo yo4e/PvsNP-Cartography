@@ -10,3 +10,4 @@ import PvsNPCartography.Mod3FiveDegree
 import PvsNPCartography.SmallSupportMod3
 import PvsNPCartography.PermutationTransport
 import PvsNPCartography.FiniteSymmetrization
+import PvsNPCartography.SymmetryApplications

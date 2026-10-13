@@ -1,4 +1,5 @@
 import PvsNPCartography.FiniteSymmetrization
+import PvsNPCartography.SymmetryApplications
 
 #print axioms PvsNPCartography.Symmetrization.permute_degree
 #print axioms PvsNPCartography.Symmetrization.permute_eval
@@ -16,3 +17,8 @@ import PvsNPCartography.FiniteSymmetrization
 #print axioms PvsNPCartography.Symmetrization.feasible_of_orbit_bounds
 #print axioms PvsNPCartography.Symmetrization.symmetrization_preserves
 #print axioms PvsNPCartography.Symmetrization.feasible_iff_orbit_average
+#print axioms PvsNPCartography.Symmetrization.mod3_symmetric
+#print axioms PvsNPCartography.Symmetrization.mod3_symmetric_witness
+#print axioms PvsNPCartography.Symmetrization.target_symmetry_is_needed
+#print axioms PvsNPCartography.Symmetrization.whole_cube_average_is_insufficient
+#print axioms PvsNPCartography.Symmetrization.field_average_is_not_probability_average
