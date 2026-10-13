@@ -1,0 +1,59 @@
+Actual attributed CI excerpt, retrieved 2026-10-13 JST
+Repository: yo4e/PvsNP-Cartography
+Code commit: ac61ba1b2888de029b8fc567187ff3a4dbb263c0
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38414011388
+Job: 115353465722
+Outcome: success, including build, namespace audit and explicit target reports.
+
+The following lines come from actual completed output. Timestamps and terminal
+escapes are omitted; wrapped axiom lists are joined without changing contents.
+This is not a report inferred from source inspection.
+
+Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+Lake version 5.0.0-src+c29b6dd (Lean version 4.35.0-rc4)
+Mathlib revision from the printed manifest:
+9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+
+BUILD_ARGS: --wfail
+Built PvsNPCartography.SymmetryApplications (5.6s)
+Build completed successfully (9037 jobs).
+axiom-audit: audited 205 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+
+'PvsNPCartography.Symmetrization.permute_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.permute_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.permute_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.correct_permute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.feasible_of_fintype' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.permutation_card_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.orbitAverage_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.orbitAverage_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sym_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sym_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sym_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sym_success_eq_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sym_success_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.feasible_of_orbit_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.symmetrization_preserves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.feasible_iff_orbit_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.mod3_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.mod3_symmetric_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.target_symmetry_is_needed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.whole_cube_average_is_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.field_average_is_not_probability_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Core-only historical checkpoint:
+c1ff9c8639e9aef0a83f9492f087934085fd5c83, run38412149245/job115346960273,
+188 declarations and 16 symmetry targets, success.
+
+Separate semantic execution:
+b2602bb5269bdbbda85cc1fc57610bd0208c2a72, run38412385402/job115347783200,
+CPython3.13.16, normal and -O output equality. Local CPython3.13.5 reproduction
+matched. Core source hashes in the actual JSON output are unchanged in ac61ba1b:
+PermutationTransport.lean 8bb3a9eddf18d81e382d956ea395b8592ca54bb2
+FiniteSymmetrization.lean 42685e01f5c65442164615ffc39d8f76230aad2c
+Final application source 69d079fcfbe128b400976d4facce8f5cfb5ae803 was also re-fetched.
+
+Scope: no independent human semantic review or second proof kernel.
+leanchecker, lean4checker and nanoda were not run. No new numerical MOD3 degree,
+all-n MOD3 degree bound, novelty or proof-barrier escape is asserted.

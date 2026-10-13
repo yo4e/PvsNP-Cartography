@@ -1,0 +1,67 @@
+{
+  "averaging": {
+    "all_boolean_score_tables_n0_through_n3": 278,
+    "empty_variable_case_included": true,
+    "signed_score_lower_bound_checks": 4
+  },
+  "countermodels": {
+    "cyclic_not_full": {
+      "cyclic_success": ["3/4", "1"],
+      "full_success": ["5/6", "5/6"],
+      "polynomial": "x0*x1",
+      "same_weight_inputs": [[1,1,0,0],[1,0,1,0]],
+      "target": "0"
+    },
+    "do_not_average_coefficients_in_GF2": {
+      "probability_one_half_in_R": "1/2",
+      "two_in_GF2": 0
+    },
+    "functional_degree_is_not_totalDegree": {
+      "actual_degree": 2,
+      "boolean_truth_table": [0,0],
+      "polynomial": "x0^2+x0"
+    },
+    "inverse_pullback": {
+      "correct_value": 1,
+      "input": [0,1,0],
+      "permutation": [1,2,0],
+      "wrong_inverse_value": 0
+    },
+    "nonbijective_degree": {"after": 0, "before": 1},
+    "nonsymmetric_target": {
+      "input": [1,0],
+      "original_success": "1",
+      "symmetrized_success": "1/2",
+      "target": "x0"
+    },
+    "whole_cube_average": {
+      "average": "3/4",
+      "bad_input": [1,1],
+      "bad_success": 0,
+      "polynomial": "0",
+      "target": "AND2"
+    }
+  },
+  "formal_source_git_blobs": {
+    "FiniteSymmetrization.lean": "42685e01f5c65442164615ffc39d8f76230aad2c",
+    "PermutationTransport.lean": "8bb3a9eddf18d81e382d956ea395b8592ca54bb2"
+  },
+  "mixtures": {"nonuniform_mixtures_with_zero_and_duplicate_rows": 30},
+  "mutations_rejected": ["signed_weights", "unnormalized_weights", "repeated_permutation", "missing_permutation"],
+  "n7": {
+    "all_inputs_checked": 128,
+    "distinct_renamed_polynomials": 2524,
+    "literal_polynomial_permutation_pairs": 90720,
+    "minimum_success": "2/3",
+    "normalizing_denominator": 120960,
+    "source_certificate_git_blob": "c34de5b562d89b0ba19c735d0ca37c0e709c4f8b",
+    "success_by_weight": ["2/3", "2/3", "2/3", "11/15", "2/3", "2/3", "2/3", "2/3"]
+  },
+  "scope": "finite semantic self-audit; arbitrary-n validity requires the separate Lean proof",
+  "transport": {
+    "all_squarefree_polynomials_n0_through_n3": 278,
+    "higher_exponent_evaluations": 42944,
+    "polynomial_permutation_pairs": 1574,
+    "squarefree_evaluations": 12426
+  }
+}
