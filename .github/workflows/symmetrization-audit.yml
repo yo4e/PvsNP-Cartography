@@ -1,0 +1,36 @@
+name: Full symmetrization semantic audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/008-full-symmetrization/**'
+      - 'expeditions/007-small-support-mod3/certificate.json'
+      - 'formal/PvsNPCartography/PermutationTransport.lean'
+      - 'formal/PvsNPCartography/FiniteSymmetrization.lean'
+      - '.github/workflows/symmetrization-audit.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/008-full-symmetrization/**'
+      - 'expeditions/007-small-support-mod3/certificate.json'
+      - 'formal/PvsNPCartography/PermutationTransport.lean'
+      - 'formal/PvsNPCartography/FiniteSymmetrization.lean'
+      - '.github/workflows/symmetrization-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exact normal and optimized semantic audits
+        run: |
+          set -euo pipefail
+          python expeditions/008-full-symmetrization/audit.py > /tmp/normal.json
+          python -O expeditions/008-full-symmetrization/audit.py > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          cat /tmp/normal.json
