@@ -116,7 +116,7 @@ Hamming layer, at arbitrary arity, including the empty variable set. -/
 theorem orbitAverage_eq_layerAverage {n : ℕ} (g : BooleanCube n → ℝ)
     (x : BooleanCube n) : orbitAverage g x = layerAverage g (hammingWeight x) := by
   classical
-  letI : Nonempty (Layer n (hammingWeight x)) := ⟨⟨x, rfl⟩⟩
+  let : Nonempty (Layer n (hammingWeight x)) := ⟨⟨x, rfl⟩⟩
   have hc : (Fintype.card (Layer n (hammingWeight x)) : ℝ) ≠ 0 := by
     exact_mod_cast (Fintype.card_ne_zero : Fintype.card (Layer n (hammingWeight x)) ≠ 0)
   have heq (y : Layer n (hammingWeight x)) : orbitAverage g y.1 = orbitAverage g x := by

@@ -1,0 +1,15 @@
+import PvsNPCartography.LayerCertificates
+
+#print axioms PvsNPCartography.Symmetrization.ones_card
+#print axioms PvsNPCartography.Symmetrization.bits_ones
+#print axioms PvsNPCartography.Symmetrization.ones_bits
+#print axioms PvsNPCartography.Symmetrization.layer_card
+#print axioms PvsNPCartography.Symmetrization.hammingWeight_le
+#print axioms PvsNPCartography.Symmetrization.exists_permutation_of_weight_eq
+#print axioms PvsNPCartography.Symmetrization.sum_orbitAverage_layer
+#print axioms PvsNPCartography.Symmetrization.orbitAverage_eq_layerAverage
+#print axioms PvsNPCartography.Symmetrization.permutation_mean_eq_layer_mean
+#print axioms PvsNPCartography.Symmetrization.sum_layer_eq_filter
+#print axioms PvsNPCartography.Symmetrization.permutation_fiber_card
+#print axioms PvsNPCartography.Symmetrization.feasible_of_layer_bounds
+#print axioms PvsNPCartography.Symmetrization.feasible_iff_layer_average
