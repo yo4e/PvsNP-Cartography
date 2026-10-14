@@ -27,7 +27,7 @@ theorem permutation_fiber_card {n : ℕ} (x y : BooleanCube n)
       if z.1 = y then (1 : ℝ) else 0) = 1 := by
     have he (z : Layer n (hammingWeight x)) :
         (z.1 = y) ↔ z = (⟨y, h.symm⟩ : Layer n (hammingWeight x)) :=
-      ⟨Subtype.ext, congrArg Subtype.val⟩
+      ⟨fun hz => Subtype.ext hz, fun hz => congrArg Subtype.val hz⟩
     simp_rw [he]
     simp
   have hn : (∑ e : Perm n, if permuteInput e x = y then (1 : ℝ) else 0) =
