@@ -153,10 +153,30 @@ def verify_n8(c: dict) -> dict:
     W = walsh([m * (-1 if t else 1) for m,t in zip(masses,truth)])
     require(scores == [(112 + (-1 if b else 1)*v)//2 for b in range(2) for v in W], "Walsh dual disagreement")
     require(max(scores) == 72 and Fraction(72,112) == Fraction(c["lower_maximum"]) < Fraction(2,3), "dual bound fails")
+    # Check the symmetry-reduced lower proof against all 512 exhaustive rows.
+    def binomial(a: int, b: int) -> int:
+        return comb(a, b) if 0 <= b <= a else 0
+    canonical_scores = [
+        [7*(8-k) + k*binomial(8-k,2) + binomial(k,3) for k in range(9)],
+        [7*k + binomial(8-k,3) + binomial(k,2)*(8-k) for k in range(9)],
+    ]
+    require(scores == [canonical_scores[b][a.bit_count()] for b in range(2) for a in range(256)],
+            "coefficient-weight reduction disagrees with exhaustive affine scores")
+    # A genuine 3-cycle detects confusing coefficient pullback with the input inverse.
+    cycle = (1,2,0,3,4,5,6,7)
+    inverse = tuple(cycle.index(i) for i in range(8))
+    for a in range(256):
+        transformed_a = pullback(a, cycle)
+        require(scores[a] == scores[transformed_a], "dual score permutation invariance failed")
+        for x in range(256):
+            require((transformed_a & x).bit_count() % 2 ==
+                    (a & pullback(x, inverse)).bit_count() % 2,
+                    "coefficient/input inverse transport failed")
     raw = [sum(a for a,table in zip(weights,tables) if table[x]==truth[x]) for x in range(256)]
     return {"inputs":256, "seed_evaluations":1024, "affine_rows":512,
             "affine_input_evaluations":131072, "dual_total":112, "dual_maximum":72,
-            "lower_fraction":"9/14", "upper_layer_success":list(map(str,layer_success)),
+            "lower_fraction":"9/14", "canonical_affine_scores":canonical_scores,
+            "coefficient_transport_checks":65536, "upper_layer_success":list(map(str,layer_success)),
             "upper_minimum":str(min(layer_success)),
             "direct_permutation_input_pairs":9*factorial(8),
             "raw_seed_mixture_counterexample":{"input":raw.index(min(raw)), "success":str(min(raw)),
