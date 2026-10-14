@@ -1,4 +1,5 @@
 import PvsNPCartography.LayerCertificates
+import PvsNPCartography.Mod3EightDegree
 
 #print axioms PvsNPCartography.Symmetrization.ones_card
 #print axioms PvsNPCartography.Symmetrization.bits_ones
@@ -13,3 +14,16 @@ import PvsNPCartography.LayerCertificates
 #print axioms PvsNPCartography.Symmetrization.permutation_fiber_card
 #print axioms PvsNPCartography.Symmetrization.feasible_of_layer_bounds
 #print axioms PvsNPCartography.Symmetrization.feasible_iff_layer_average
+#print axioms PvsNPCartography.Mod3Eight.weights_sum
+#print axioms PvsNPCartography.Mod3Eight.mass_sum
+#print axioms PvsNPCartography.Mod3Eight.affine_bound
+#print axioms PvsNPCartography.Mod3Eight.upper_layer_bound
+#print axioms PvsNPCartography.Mod3Eight.seed_correct
+#print axioms PvsNPCartography.Mod3Eight.seed_success
+#print axioms PvsNPCartography.Mod3Eight.seed_layer_bound
+#print axioms PvsNPCartography.Mod3Eight.degree_two_feasible
+#print axioms PvsNPCartography.Mod3Eight.degree_one_impossible
+#print axioms PvsNPCartography.Mod3Eight.feasible_degree_iff
+#print axioms PvsNPCartography.Mod3Eight.least_feasible_degree
+#print axioms PvsNPCartography.Mod3Eight.pdeg_eq_two
+#print axioms PvsNPCartography.Mod3Eight.raw_seed_mixture_is_not_pointwise

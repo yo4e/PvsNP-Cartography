@@ -13,3 +13,4 @@ import PvsNPCartography.FiniteSymmetrization
 import PvsNPCartography.SymmetryApplications
 import PvsNPCartography.HammingLayers
 import PvsNPCartography.LayerCertificates
+import PvsNPCartography.Mod3EightDegree
