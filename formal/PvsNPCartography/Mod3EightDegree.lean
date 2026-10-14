@@ -37,10 +37,80 @@ theorem weights_sum : (∑ r, weights r) = 12 := by decide +kernel
 
 theorem mass_sum : (∑ x, mass x) = 112 := by decide +kernel
 
-/-- Exhaust all 512 affine polynomials, on the complete Boolean cube. -/
+def affineScore (p : SmallSupportMod3.Affine 8) : ℕ :=
+  ∑ x, mass x * SmallSupportMod3.affineCorrect p x
+
+/-- A full-cube bijection; this is not a layer or a sampled input list. -/
+noncomputable def cubePermutation (e : Perm 8) : BooleanCube 8 ≃ BooleanCube 8 where
+  toFun := permuteInput e
+  invFun := permuteInput e.symm
+  left_inv x := by funext i; simp [permuteInput]
+  right_inv x := by funext i; simp [permuteInput]
+
+theorem mass_permute (e : Perm 8) (x : BooleanCube 8) :
+    mass (permuteInput e x) = mass x := by
+  unfold mass hammingWeight
+  rw [permute_weight]
+
+/-- Renaming the coefficient positions is dual to inverse input pullback. -/
+theorem affineValue_coefficients_permute (e : Perm 8)
+    (p : SmallSupportMod3.Affine 8) (x : BooleanCube 8) :
+    SmallSupportMod3.affineValue (p.1, permuteInput e p.2) x =
+      SmallSupportMod3.affineValue p (permuteInput e.symm x) := by
+  change (p.1.val : ZMod 2) +
+      (∑ i, ((p.2 (e i)).val : ZMod 2) * ((x i).val : ZMod 2)) =
+    (p.1.val : ZMod 2) +
+      ∑ i, ((p.2 i).val : ZMod 2) * ((x (e.symm i)).val : ZMod 2)
+  congr 1
+  simpa only [Equiv.symm_apply_apply] using
+    (Equiv.sum_comp e (fun i : Fin 8 =>
+      ((p.2 i).val : ZMod 2) * ((x (e.symm i)).val : ZMod 2)))
+
+theorem affineCorrect_coefficients_permute (e : Perm 8)
+    (p : SmallSupportMod3.Affine 8) (x : BooleanCube 8) :
+    SmallSupportMod3.affineCorrect (p.1, permuteInput e p.2) x =
+      SmallSupportMod3.affineCorrect p (permuteInput e.symm x) := by
+  unfold SmallSupportMod3.affineCorrect
+  rw [affineValue_coefficients_permute, mod3_symmetric 8 e.symm x]
+
+theorem affineScore_permute (e : Perm 8) (p : SmallSupportMod3.Affine 8) :
+    affineScore (p.1, permuteInput e p.2) = affineScore p := by
+  classical
+  unfold affineScore
+  simp_rw [affineCorrect_coefficients_permute]
+  calc
+    _ = ∑ x, mass (permuteInput e.symm x) *
+        SmallSupportMod3.affineCorrect p (permuteInput e.symm x) := by
+      apply Finset.sum_congr rfl
+      intro x _
+      rw [mass_permute]
+    _ = _ := Equiv.sum_comp (cubePermutation e.symm)
+      (fun x => mass x * SmallSupportMod3.affineCorrect p x)
+
+def canonicalCoefficients (w : Fin 9) : BooleanCube 8 :=
+  fun i => if i.val < w.val then 1 else 0
+
+theorem canonical_weight : ∀ w : Fin 9,
+    hammingWeight (canonicalCoefficients w) = w.val := by decide +kernel
+
+/-- Only eighteen cases are computed; the general row coverage is proved below. -/
+theorem canonical_affine_bound : ∀ (c : Fin 2) (w : Fin 9),
+    affineScore (c, canonicalCoefficients w) ≤ 72 := by decide +kernel
+
+/-- All 512 affine rows are covered by a proved permutation reduction, rather
+than placing their whole repeated computation in one large kernel term. -/
 theorem affine_bound : ∀ p : SmallSupportMod3.Affine 8,
     (∑ x, mass x * SmallSupportMod3.affineCorrect p x) ≤ 72 := by
-  decide +kernel
+  intro p
+  let w : Fin 9 := ⟨hammingWeight p.2, by have h := hammingWeight_le p.2; omega⟩
+  have hw : hammingWeight p.2 = hammingWeight (canonicalCoefficients w) :=
+    (canonical_weight w).symm
+  obtain ⟨e, he⟩ := exists_permutation_of_weight_eq p.2 (canonicalCoefficients w) hw
+  have hs := affineScore_permute e p
+  rw [he] at hs
+  change affineScore p ≤ 72
+  rw [← hs]
+  exact canonical_affine_bound p.1 w
 
 /-- All nine layer checks, with exact integer counts and binomial sizes.
 Only the four seeds are evaluated; the proved general bridge supplies symmetry. -/
