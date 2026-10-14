@@ -1,0 +1,38 @@
+name: Hamming-layer and n8 semantic audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/009-hamming-layer-bridge/**'
+      - 'expeditions/004-exact-mod3-n8/certificate.json'
+      - 'formal/PvsNPCartography/HammingLayers.lean'
+      - 'formal/PvsNPCartography/LayerCertificates.lean'
+      - 'formal/PvsNPCartography/Mod3EightDegree.lean'
+      - '.github/workflows/hamming-layer-audit.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/009-hamming-layer-bridge/**'
+      - 'expeditions/004-exact-mod3-n8/certificate.json'
+      - 'formal/PvsNPCartography/HammingLayers.lean'
+      - 'formal/PvsNPCartography/LayerCertificates.lean'
+      - 'formal/PvsNPCartography/Mod3EightDegree.lean'
+      - '.github/workflows/hamming-layer-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exact normal and optimized layer and certificate audits
+        run: |
+          set -euo pipefail
+          python expeditions/009-hamming-layer-bridge/audit.py > /tmp/normal.json
+          python -O expeditions/009-hamming-layer-bridge/audit.py > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          cat /tmp/normal.json
