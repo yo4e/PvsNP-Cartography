@@ -11,3 +11,4 @@ import PvsNPCartography.SmallSupportMod3
 import PvsNPCartography.PermutationTransport
 import PvsNPCartography.FiniteSymmetrization
 import PvsNPCartography.SymmetryApplications
+import PvsNPCartography.HammingLayers
