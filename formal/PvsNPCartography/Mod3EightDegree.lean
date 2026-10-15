@@ -130,7 +130,7 @@ theorem seed_correct (r : Fin 4) (x : BooleanCube 8) :
       (SmallSupportMod3.correct pairs (rows r) x : ℝ) := by
   unfold correct seedPolynomial SmallSupportMod3.correct
   rw [SmallSupportMod3.polynomial_eval]
-  split_ifs <;> rfl
+  split_ifs <;> norm_num
 
 theorem seed_success (x : BooleanCube 8) :
     success target seedPolynomial seedWeights x = (tickets x : ℝ) / 12 := by
