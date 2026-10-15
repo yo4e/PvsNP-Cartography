@@ -1,0 +1,66 @@
+name: N8 recovered and sparse certificate audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/010-n8-recovery/**'
+      - 'expeditions/004-exact-mod3-n8/certificate.json'
+      - '.github/workflows/n8-recovery.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/010-n8-recovery/**'
+      - 'expeditions/004-exact-mod3-n8/certificate.json'
+      - '.github/workflows/n8-recovery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Recover prior witness and compare seed provenance
+        working-directory: expeditions/010-n8-recovery
+        run: |
+          set -euo pipefail
+          python recover_939.py > /tmp/recovered-939.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from fractions import Fraction
+          from recover_939 import SEEDS, require
+          data = json.loads(Path('../004-exact-mod3-n8/certificate.json').read_text())
+          require([(r['c'],r['a'],r['b'],Fraction(r['weight'])) for r in data['upper']] ==
+                  [(c,a,b,Fraction(t,12)) for c,a,b,t in SEEDS], 'seed provenance differs')
+          PY
+      - name: Two exact validators with normal and optimized execution
+        working-directory: expeditions/010-n8-recovery
+        run: |
+          set -euo pipefail
+          for size in 939 159; do
+            certificate=/tmp/recovered-939.json
+            if [ "$size" = 159 ]; then certificate=certificate-159.json; fi
+            python verify_compact.py --certificate "$certificate" > "/tmp/tuple-$size.json"
+            python -O verify_compact.py --certificate "$certificate" > "/tmp/tuple-$size-O.json"
+            diff -u "/tmp/tuple-$size.json" "/tmp/tuple-$size-O.json"
+            python audit_anf.py "$certificate" > "/tmp/anf-$size.json"
+            python -O audit_anf.py "$certificate" > "/tmp/anf-$size-O.json"
+            diff -u "/tmp/anf-$size.json" "/tmp/anf-$size-O.json"
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for size in (939,159):
+              a=json.loads(Path(f'/tmp/tuple-{size}.json').read_text())
+              b=json.loads(Path(f'/tmp/anf-{size}.json').read_text())
+              if a['result']['pointwise_success_sha256'] != b['result']['pointwise_success_sha256']:
+                  raise ValueError('independent evaluators disagree')
+              if a['result']['distinct_polynomials'] != size:
+                  raise ValueError('wrong support')
+              print(json.dumps(a,sort_keys=True))
+              print(json.dumps(b,sort_keys=True))
+          PY
