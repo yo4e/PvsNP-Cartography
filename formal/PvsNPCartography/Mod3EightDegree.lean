@@ -57,14 +57,11 @@ theorem affineValue_coefficients_permute (e : Perm 8)
     (p : SmallSupportMod3.Affine 8) (x : BooleanCube 8) :
     SmallSupportMod3.affineValue (p.1, permuteInput e p.2) x =
       SmallSupportMod3.affineValue p (permuteInput e.symm x) := by
-  change (p.1.val : ZMod 2) +
-      (∑ i, ((p.2 (e i)).val : ZMod 2) * ((x i).val : ZMod 2)) =
-    (p.1.val : ZMod 2) +
-      ∑ i, ((p.2 i).val : ZMod 2) * ((x (e.symm i)).val : ZMod 2)
-  congr 1
-  simpa only [Equiv.symm_apply_apply] using
-    (Equiv.sum_comp e (fun i : Fin 8 =>
-      ((p.2 i).val : ZMod 2) * ((x (e.symm i)).val : ZMod 2)))
+  have h : (∑ i : Fin 8, (p.2 (e i)).val * (x i).val) =
+      ∑ i : Fin 8, (p.2 i).val * (x (e.symm i)).val := by
+    simpa only [Equiv.symm_apply_apply] using
+      (Equiv.sum_comp e (fun i : Fin 8 => (p.2 i).val * (x (e.symm i)).val))
+  exact congrArg (fun z : ℕ => (p.1.val : ZMod 2) + (z : ZMod 2)) h
 
 theorem affineCorrect_coefficients_permute (e : Perm 8)
     (p : SmallSupportMod3.Affine 8) (x : BooleanCube 8) :
@@ -131,7 +128,9 @@ noncomputable def seedWeights (r : Fin 4) : ℝ := (weights r : ℝ) / 12
 theorem seed_correct (r : Fin 4) (x : BooleanCube 8) :
     correct target (seedPolynomial r) x =
       (SmallSupportMod3.correct pairs (rows r) x : ℝ) := by
-  simp [correct, seedPolynomial, SmallSupportMod3.polynomial_eval, SmallSupportMod3.correct]
+  unfold correct seedPolynomial SmallSupportMod3.correct
+  rw [SmallSupportMod3.polynomial_eval]
+  split_ifs <;> rfl
 
 theorem seed_success (x : BooleanCube 8) :
     success target seedPolynomial seedWeights x = (tickets x : ℝ) / 12 := by
