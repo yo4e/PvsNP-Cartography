@@ -182,35 +182,42 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 006](expeditions/006-degree-interface/): complete n=5 degree-based [Lean equality](formal/PvsNPCartography/Mod3FiveDegree.lean), [statement audit](expeditions/006-degree-interface/statement-audit.md), [verified conclusion](expeditions/006-degree-interface/conclusion.md), and [quantifier countermodel](graveyard/005-input-dependent-polynomial.md).
 - [Expedition 007](expeditions/007-small-support-mod3/): complete n=6/n=7 [Lean equalities](formal/PvsNPCartography/SmallSupportMod3.lean), compact [18-polynomial certificates](expeditions/007-small-support-mod3/certificate.json), [exact audit](expeditions/007-small-support-mod3/audit.py), [verified conclusion](expeditions/007-small-support-mod3/conclusion.md), and [failed cyclic compression](graveyard/006-single-cyclic-orbit.md).
 - [Expedition 008](expeditions/008-full-symmetrization/): generic full [symmetrization](formal/PvsNPCartography/FiniteSymmetrization.lean), [MOD3 applications](formal/PvsNPCartography/SymmetryApplications.lean), [verified scope](expeditions/008-full-symmetrization/conclusion.md), [exact audit](expeditions/008-full-symmetrization/audit.py) and [seven invalid shortcuts](graveyard/007-symmetrization-hypotheses.md).
+- [Expedition 009](expeditions/009-hamming-layer-bridge/): verified Hamming-layer counting and the complete [n=8 Lean degree equality](formal/PvsNPCartography/Mod3EightDegree.lean), with [completion evidence](expeditions/009-hamming-layer-bridge/conclusion.md).
+- [Expedition 010](expeditions/010-n8-recovery/): [n=8 repair and compact-witness recovery](expeditions/010-n8-recovery/conclusion.md), [159-row certificate](expeditions/010-n8-recovery/certificate-159.json), exact validators and [failed probability rounding](graveyard/009-rounded-probabilities.md).
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 
 ## Status
 
-**2026-10-13 approval night: generic full permutation symmetrization is verified, including MOD3 applications and counterexample components.**
+**2026-10-16 JST: the general Hamming-layer bridge and complete n=8 degree equality are verified in Lean. Numerical Lean coverage is now n=5,6,7,8.**
 
-Expedition008 proves actual polynomial degree/evaluation transport, a normalized
-product-indexed REAL distribution, the exact success/orbit-average identity,
-full success invariance and the connection to the original pointwise degree
-predicate. It applies to arbitrary finite arity by symbolic proof, not finite
-extrapolation. Closed applications to n=6/n=7 MOD3 reuse previous proved bounds.
-Code ac61ba1b passed pinned Lean --wfail, the 205-declaration axiom audit and
-21 explicit symmetry target reports. Separate exact normal/-O Python checks
-include all 90,720 polynomial/permutation pairs for the previous n=7 witness.
+The previously blocked n=8 proof was repaired without weakening its statement,
+coefficient data, error threshold or verification policy. Code e034962d passed
+pinned Lean --wfail, the305-declaration namespace axiom audit and26 new target
+reports. It proves exact layer sizes, full orbit coverage, equal permutation
+fiber counts, the arbitrary-arity layer-mean identity, and the closed n=8
+probabilistic-degree equality with actual polynomials and real probabilities.
+See [the actual report](formal/reports/2026-10-16-n8-axioms.txt).
 
-The generic transformation stage is complete. The next formal frontier is the
-uniform Hamming-layer counting identity, including coverage and equal fiber
-multiplicities, then the existing n=8 certificate. The layer formula is NOT
-yet an arbitrary-arity Lean theorem. Independent human semantic review remains
-pending. Issue #8 stays open; do not redo the completed generic transformation.
-See [the latest session log](logs/2026-10-13-night-full-symmetrization.md).
+Separately, the prior local-only939-polynomial witness was recovered. A new
+explicit159-polynomial witness preserves pointwise success at least2/3 on all256
+inputs, at the cost of increasing the probability denominator from2016 to
+100874688. Two differently structured exact normal/-O Python validators passed
+CI at d197bc6e. These compact coefficient witnesses are NOT yet separately
+Lean-formalized, and no support or denominator optimality is claimed.
 
-The recorded finite MOD3 degree values remain 2 over GF(2), at error1/3, for
-n=5,6,7,8. Complete degree-based Lean equalities remain n=5,6,7; n=8 has its
-previous exact executable certificate only. Expedition007's compact witnesses
-and the earlier n=7 strict-margin witness are unchanged. No new numerical
-value, support minimality, all-n MOD3 degree bound, proof-barrier escape or
-P-vs-NP conclusion follows from this new general transformation theorem.
+The old22-file patch was not blindly applied over newer main; the useful
+mathematical certificate and its unchanged direct checker were integrated with
+explicit provenance. Failed proof steps and naive probability rounding are
+preserved. There is no active GitHub write blocker. Issue #8 remains open for
+independent human semantic review, not for repeating the completed n=8 chain.
+The next mathematical frontier is a fresh n=9 certificate or universal obstruction.
+See [the latest session log](logs/2026-10-16-n8-recovery.md).
+
+No new numerical degree value, novelty, minimal support, all-n MOD3 degree bound,
+asymptotic circuit lower bound, proof-barrier escape or P-vs-NP conclusion is
+asserted. No independent human review or second proof kernel has been supplied.
+Historical checkpoints remain in the chronological logs and archived ledgers.
 
 The research environment must continue telling the difference between:
 

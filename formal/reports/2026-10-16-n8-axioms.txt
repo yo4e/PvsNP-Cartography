@@ -1,0 +1,62 @@
+Actual attributed CI excerpt, retrieved2026-10-16 JST
+Repository: yo4e/PvsNP-Cartography
+Code commit: e034962d3df395a4b82bc00d2ef78aa8d6cb25a4
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38816877083
+Job: 116703673137
+Outcome: success, including --wfail build, namespace audit and target reports.
+
+The lines below are excerpts of actual completed job output. Timestamps and
+terminal escapes are omitted; wrapped axiom lists are joined without changing
+contents. They are not a report inferred only from source inspection.
+
+Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+Lake version 5.0.0-src+c29b6dd (Lean version 4.35.0-rc4)
+Mathlib revision from the actual printed manifest:
+9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+
+BUILD_ARGS: --wfail
+Built PvsNPCartography.HammingLayers (5.3s)
+Built PvsNPCartography.LayerCertificates (3.8s)
+Built PvsNPCartography.Mod3EightDegree (19s)
+Built PvsNPCartography (3.6s)
+Build completed successfully (9040 jobs).
+axiom-audit: audited 305 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+
+'PvsNPCartography.Symmetrization.ones_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.bits_ones' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.ones_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.layer_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.hammingWeight_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.exists_permutation_of_weight_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sum_orbitAverage_layer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.orbitAverage_eq_layerAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.permutation_mean_eq_layer_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.sum_layer_eq_filter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.permutation_fiber_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.feasible_of_layer_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Symmetrization.feasible_iff_layer_average' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.weights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.upper_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.seed_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.seed_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.seed_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.degree_two_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.degree_one_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Eight.raw_seed_mixture_is_not_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Re-fetched final Mod3EightDegree source blob:
+ec288bf49be783ad6ab88954222019247389ce57.
+The commit/tree, formal source, completed run status, steps and actual logs
+were separately retrieved. No independent human review or second proof kernel
+is claimed. leanchecker, lean4checker and nanoda were not run.
+
+Separate compact-certificate CI: run38817593904/job116706049239 at code
+ d197bc6e57f523dd69f8430a853ca1f32d85c9d4. It validates explicit939/159-row
+finite JSON data with two normal/-O Python algorithms, not new Lean objects.
+Do not attribute that later certificate data to this formal proof run.

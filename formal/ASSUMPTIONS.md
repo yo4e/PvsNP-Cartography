@@ -1,101 +1,86 @@
 # Formal assumption ledger
 
-Current checkpoint: **2026-10-13 approval night**. Complete degree-based MOD3
-equalities for n=5,6,7 and the generic full permutation-symmetrization interface
-are verified under the recorded Lean assumptions. Hamming-layer counting,
-complete n=8 formalization and independent human semantic review remain pending.
+Current checkpoint: **2026-10-16 JST**. Complete degree-based MOD3 equalities
+for n=5,6,7,8, generic full symmetrization, and the Hamming-layer mean/fiber-count
+interface are verified under the recorded Lean assumptions. Independent human
+semantic review remains pending. Compact939/159-row witnesses are separately
+checked finite data, not yet separate Lean-formalized coefficient witnesses.
 
-## Policy and reproducible commands
+## Policy and reproduction
 
-No project-specific extra axiom is declared or intentionally accepted. The
-compiled namespace audit permits only propext, Classical.choice and Quot.sound.
-A new axiom requires explicit disclosure and is not to be called a proof.
-Closed finite arithmetic uses decide +kernel, not native_decide.
+No project-specific extra axiom is accepted. The compiled namespace audit
+permits only propext, Classical.choice and Quot.sound. Closed finite checks
+use decide +kernel, not native_decide. The --wfail policy, heartbeat settings,
+coefficient data, success thresholds and allowNonModules compatibility setting
+were not weakened in the final repairs.
 
-Run from formal/:
+From formal/:
 
 ```bash
 lake build --wfail
 ./scripts/axiom_report.sh
 ```
 
-The script prints both PvsNPCartography/AxiomAudit.lean and
-PvsNPCartography/SymmetryAxiomAudit.lean. Reports below are retrieved actual
-#print axioms output, not conclusions drawn solely from source-text searches.
-The existing allowNonModules compatibility policy is unchanged.
+The script prints AxiomAudit.lean, SymmetryAxiomAudit.lean and LayerAxiomAudit.lean.
+Axiom reports below are actual retrieved output, not source-string searches.
 
-## Current verified code and actual output
+## Actual verified checkpoint
 
-Code commit: ac61ba1b2888de029b8fc567187ff3a4dbb263c0.
-[Formal run38414011388](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38414011388),
-job115353465722, succeeded under pinned Lean4.35.0-rc4 and
+Code: e034962d3df395a4b82bc00d2ef78aa8d6cb25a4.
+[Formal run38816877083](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38816877083),
+job116703673137, completed successfully under pinned Lean4.35.0-rc4 and
 Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. Actual output records --wfail,
-205 namespace declarations within the allowlist, and 21 explicit symmetry
-targets using only the same three foundational axioms.
+305 namespace declarations inside the allowlist, and26 new layer/n8 printed
+targets, all using only the same three foundational axioms.
 
-[Actual attributed report](reports/2026-10-13-full-symmetrization-axioms.txt),
-[statement audit](../expeditions/008-full-symmetrization/statement-audit.md),
-[conclusion](../expeditions/008-full-symmetrization/conclusion.md) and
-[claim008](../claims/008-full-symmetrization.md) retain the exact scope.
+[Actual target excerpt](reports/2026-10-16-n8-axioms.txt),
+[statement audit](../expeditions/010-n8-recovery/statement-audit.md),
+[layer conclusion](../expeditions/009-hamming-layer-bridge/conclusion.md),
+[session conclusion](../expeditions/010-n8-recovery/conclusion.md).
 
-The generic result uses genuine GF(2) MvPolynomial objects, actual totalDegree,
-nonnegative REAL probabilities summing to one, and one family before every
-input. It proves the exact success/orbit-average identity and full success
-invariance. The orbit-certificate equivalence adapts to the original degree
-predicate rather than redefining it. A closed n=6/n=7 MOD3 application derives
-feasibility from previous proofs; it does not assume the desired result.
+HammingLayers proves the full permutation mean equals the uniform Hamming-layer
+mean for arbitrary real scores, including empty variable sets and extreme weights.
+LayerCertificates derives exact fiber cardinality and adapts layer bounds to the
+unchanged pointwise degree predicate. The averaging theorem does not assume the
+fiber count it is later used to derive.
 
-Re-fetched and locally matched source blobs:
-PermutationTransport.lean 8bb3a9eddf18d81e382d956ea395b8592ca54bb2;
-FiniteSymmetrization.lean 42685e01f5c65442164615ffc39d8f76230aad2c;
-SymmetryApplications.lean 69d079fcfbe128b400976d4facce8f5cfb5ae803.
-The final commit/tree and completed job logs were separately retrieved.
+Mod3EightDegree uses unchanged four seeds and full symmetrization for degree<=2.
+The lower proof establishes arbitrary degree<=1 coverage via the structural
+normal form and proved coefficient-permutation invariance, reducing512 affine
+choices to18 canonical kernel computations. Its full-cube dual score is bounded
+by72/112=9/14<2/3. Actual degree, GF(2) evaluation, real probability normalization
+and family-before-input quantifiers are retained. Feasible_degree_iff, IsLeast
+and pdeg_eq_two have proved existence, not assumed feasibility.
 
-## Distinct executable checks and repairs
+Re-fetched source blobs:
+HammingLayers7261f29623c7c9fda84dbc7af9b89fc02c31fb49;
+LayerCertificates1ab2fe1f542091fc85013d293694a5c3932c4e8a;
+Mod3EightDegree ec288bf49be783ad6ab88954222019247389ce57.
+The actual completed CI result and code commit/tree were retrieved separately.
 
-Core proof c1ff9c8639e9aef0a83f9492f087934085fd5c83 first passed
-run38412149245/job115346960273, with 188 declarations and 16 targets.
-[Semantic run38412385402](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38412385402),
-job115347783200, passed at b2602bb5269bdbbda85cc1fc57610bd0208c2a72.
-Normal and -O Python outputs match local reproduction; the two core source
-hashes are unchanged in the final code. This earlier semantic run does not
-pretend to be a run on a later commit. Seven countermodels and four malformed
-probability/group inputs are checked. Three counterexample components are
-also formalized; the precise coverage is not overstated as seven Lean proofs.
+## Failure and verification boundary
 
-The first core candidate75ce55de failed on an overloaded sum_comp name.
-Repair c1ff9c86 specifies Equiv.sum_comp. The first application7093b107 failed
-on an unresolved characteristic-two constant; repair ac61ba1b proves it by
-kernel computation and then rewrites division. Neither statement, threshold,
-warning policy nor axiom allowlist was weakened. Failures remain in history.
+Prior candidate9bf6ad40 failed on a natural/field sum mismatch and excessive
+concrete simplification. Repair21f5b710 still failed on indicator casts.
+Final e034962d fixes proof steps only. Failed commits and actual failure IDs
+are retained in the Expedition010 log; no failed build was called verified.
 
-## Current boundary
+The159-row certificate is checked by two exact normal/-O Python validators in
+run38817593904/job116706049239 at d197bc6e57f523dd69f8430a853ca1f32d85c9d4.
+It is NOT the formal four-seed/full-permutation witness above. Its support is
+smaller than the recovered939 rows but its probability denominator is larger.
+No support minimality, denominator optimality or novelty is established.
 
-The general full permutation transformation is complete. The uniform
-Hamming-layer mean formula, including orbit coverage and equal permutation
-fiber counts, is NOT yet proved in Lean. It is the next interface before the
-existing n=8 certificate is connected. Finite n=7 layer tests do not fill it.
-
-Numerical degree equalities are unchanged: n=5,6,7 are complete in Lean; n=8
-has its previous exact executable certificate. No all-n MOD3 degree bound,
-new numerical value, support minimality, novelty, barrier escape or P-vs-NP
-result follows. Independent human semantic review remains outstanding.
-No second proof kernel was run. Same-author algorithms and different CI
-machines are not independent mathematical reviewers.
+Complete numerical Lean coverage is n=5,6,7,8. No n>=9 value, all-n MOD3 degree
+bound, asymptotic circuit lower bound, barrier escape or P-vs-NP result follows.
+Independent human semantic review and a second proof kernel were not supplied.
+The local container lacked Lean; actual formal execution was in Actions.
 
 ## Preserved historical ledger
 
-The complete pre-symmetrization ledger is preserved byte-for-byte as
-[2026-10-13-pre-symmetrization-ledger.md](reports/2026-10-13-pre-symmetrization-ledger.md),
-Git blob1e4ecd7e7df12bc1a91a2bad696d0d217c88d35b. Its historical pending
-statements describe those earlier checkpoints, not the current frontier.
-It contains all former detailed verification histories and failure repairs:
-
-- n=6/n=7 small-support proof: code8899e756, run38307092042, 145 declarations.
-- n=5 complete degree interface: code512aaf27, run38150083188, 86 declarations.
-- n=5 concrete components: code0150b864, run38055370947, 64 declarations.
-- finite real-mixture duality: code97c459e0, run37940286899, 11 declarations.
-- original pinned scaffold: code146ea42f, run37789136586, 10 declarations.
-
-Original attributed reports remain at their existing paths. No historical
-proof artifact or failed attempt was deleted by this ledger refresh.
+The previous ledger is preserved byte-identically as
+[2026-10-16-pre-n8-ledger.md](reports/2026-10-16-pre-n8-ledger.md),
+Git blobabbbc56fd87150e955f80f09e2671aa2d0aa0a08. Its pending statements describe
+the Oct13 checkpoint, not the current state. It links the older pre-symmetrization
+ledger and all original attributed reports. No historical proof artifact or
+failed research direction was deleted by this update.
