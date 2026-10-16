@@ -72,6 +72,19 @@ Primary facts used in `map/BARRIERS.md`:
 
 Research rule: “uses algebra” and “non-relativizing” are not substitutes for the formal Definition 2.3 audit.
 
+## Probabilistic-degree research for symmetric Boolean functions
+
+Srikanth Srinivasan, Utkarsh Tripathi and S. Venkitesh,
+"On the Probabilistic Degrees of Symmetric Boolean Functions,"
+SIAM Journal on Discrete Mathematics 35(3), 2070–2092 (2021),
+DOI https://doi.org/10.1137/19M1294162 ;
+preprint https://arxiv.org/abs/1910.02465 .
+
+The published abstract states an up-to-polylogarithmic-factors classification
+of symmetric Boolean functions over fixed-characteristic fields. This does not
+validate the exact n=9 GF(2) witness or establish its novelty. Expedition011
+keeps an explicit small-n certificate and leaves priority/novelty unknown.
+
 ## Polynomial-method context for Expedition 001
 
 ### Smolensky — Algebraic methods in the theory of lower bounds for Boolean circuit complexity

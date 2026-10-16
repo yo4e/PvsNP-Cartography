@@ -1,0 +1,43 @@
+Actual attributed CI evidence, retrieved 2026-10-16 JST
+Repository: yo4e/PvsNP-Cartography
+Verified source commit: 807124110f0fc1861504f9ea0bd6fd971a78992e
+Formal run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38908696378
+Job: 116998734457
+Status: success including --wfail build, namespace audit and all explicit targets.
+The following lines are exact content excerpts with timestamps/terminal escapes
+removed; every listed target was printed from the successful job, not inferred.
+
+Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+Mathlib revision: 9e6b3aac99b624d10c84653ab9c5357283b9b3b8
+BUILD_ARGS: --wfail
+Build completed successfully (9041 jobs).
+axiom-audit: audited 356 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+
+'PvsNPCartography.Mod3Nine.weights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.canonical_affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.upper_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.seed_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.seed_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.seed_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.degree_two_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.degree_one_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.Mod3Nine.raw_seed_mixture_is_not_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Actual remote n9 source blob: 32428657909833b00103c85f3656708a08c64678
+The first candidate480fa2df compiled the n9 module but an improperly placed
+audit-file import failed the explicit reporting script. Repair80712411
+only rearranged that import; it did not change the n9 proof or statements.
+
+Separate semantic code commit: a529afedcca686757618b68ba6a328d5a229b654
+Successful semantic run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/38909099839
+Job: 117000104346
+Normal/-O comparisons passed, including the 7432-pattern restricted scan,
+full permutation audit, all1260 partitions and direct/Walsh dual checks.
+
+No independent human mathematical semantic review or second proof kernel.
+leanchecker, lean4checker and nanoda were not run.

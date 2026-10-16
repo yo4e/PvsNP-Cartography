@@ -1,5 +1,16 @@
 # Formal assumption ledger
 
+## Current formal checkpoint: 2026-10-16 JST, n=9 verified
+
+n=9 closes the standard GF(2), error1/3 MOD3 probabilistic-degree equality with an actual fixed finite REAL distribution over totalDegree<=2 MvPolynomials, and universal exclusion of all degree<=1 real mixtures. The existing full variable-permutation/Hamming-layer identity (arbitrary finite arity) supplies the upper bridge. Lower normalization 504 and affine bound322 use 20 canonical kernel checks plus proved permutation coefficient transport and degree-one normal form.
+
+Exact audited code807124110f0fc1861504f9ea0bd6fd971a78992e, source blob32428657909833b00103c85f3656708a08c64678; successful [formal run38908696378](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38908696378), job116998734457. Pinned Lean4.35.0-rc4, Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8, --wfail build,356 namespace declarations audited,14 explicit n9 #print axiom targets inside the unchanged [propext, Classical.choice, Quot.sound] allowlist. Attributed actual output in [2026-10-16-n9-axioms.txt](reports/2026-10-16-n9-axioms.txt). No project-specific axiom, sorryAx, admit or native_decide dependency introduced.
+
+Numerical strict minimum85/126 and the alternative 1260-polynomial partition family were separately validated by normal/-O exact Python, test code a529afed, run38909099839. Those are not separate Lean encodings of the expanded compact coefficients. The restricted <=3-block single-orbit search of7432 candidates gives only ONE successful pattern in that class, without global support minimality. Independent human semantic review and second kernel remain outstanding.
+
+Complete formal numerical degree equalities now cover n=5..9. n>=10 and any asymptotic P-vs-NP claim are UNPROVED. New result status: formally verified as stated, novelty unknown.
+
+
 Current checkpoint: **2026-10-16 JST**. Complete degree-based MOD3 equalities
 for n=5,6,7,8, generic full symmetrization, and the Hamming-layer mean/fiber-count
 interface are verified under the recorded Lean assumptions. Independent human

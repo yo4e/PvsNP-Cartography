@@ -184,40 +184,17 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 008](expeditions/008-full-symmetrization/): generic full [symmetrization](formal/PvsNPCartography/FiniteSymmetrization.lean), [MOD3 applications](formal/PvsNPCartography/SymmetryApplications.lean), [verified scope](expeditions/008-full-symmetrization/conclusion.md), [exact audit](expeditions/008-full-symmetrization/audit.py) and [seven invalid shortcuts](graveyard/007-symmetrization-hypotheses.md).
 - [Expedition 009](expeditions/009-hamming-layer-bridge/): verified Hamming-layer counting and the complete [n=8 Lean degree equality](formal/PvsNPCartography/Mod3EightDegree.lean), with [completion evidence](expeditions/009-hamming-layer-bridge/conclusion.md).
 - [Expedition 010](expeditions/010-n8-recovery/): [n=8 repair and compact-witness recovery](expeditions/010-n8-recovery/conclusion.md), [159-row certificate](expeditions/010-n8-recovery/certificate-159.json), exact validators and [failed probability rounding](graveyard/009-rounded-probabilities.md).
+- [Expedition 011](expeditions/011-n9-one-orbit/): exact n=9 [one-orbit GF(2) MOD3 degree equality](formal/PvsNPCartography/Mod3NineDegree.lean), [strict 85/126 seed certificate](expeditions/011-n9-one-orbit/certificate.json), [reproducible validators](expeditions/011-n9-one-orbit/verify.py), [bounded 7432-pattern search](expeditions/011-n9-one-orbit/scan_blocks.py), and [formally verified conclusion](expeditions/011-n9-one-orbit/conclusion.md).
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 
 ## Status
 
-**2026-10-16 JST: the general Hamming-layer bridge and complete n=8 degree equality are verified in Lean. Numerical Lean coverage is now n=5,6,7,8.**
+**2026-10-16 JST: finite MOD3 probabilistic-degree equalities are now formally verified for n=5,6,7,8,9.** The n=9 extension uses one quadratic seed uniformly permuted, exact minimum success85/126>2/3, and a full dual maximum23/36<2/3 excluding all degree-one real mixtures. Pinned Lean --wfail and a356-declaration axiom audit succeeded on commit80712411 ([run38908696378](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38908696378)). Independent-algorithm finite checks, the1260 distinct partition polynomials and a7432-pattern restricted orbit search succeeded on test commit a529afed ([run38909099839](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38909099839)).
 
-The previously blocked n=8 proof was repaired without weakening its statement,
-coefficient data, error threshold or verification policy. Code e034962d passed
-pinned Lean --wfail, the305-declaration namespace axiom audit and26 new target
-reports. It proves exact layer sizes, full orbit coverage, equal permutation
-fiber counts, the arbitrary-arity layer-mean identity, and the closed n=8
-probabilistic-degree equality with actual polynomials and real probabilities.
-See [the actual report](formal/reports/2026-10-16-n8-axioms.txt).
+The n=9 result is NEW TO THIS REPOSITORY, not asserted novel to mathematics. The general permutation/layer lemmas do not imply MOD3 degree2 for all n. Issue #8 tracks independent human semantic review; Issue #9 tracks the n=9 checkpoint; a future n=10 search must not extrapolate from these finite values. See [Expedition011 conclusion](expeditions/011-n9-one-orbit/conclusion.md) and the [night log](logs/2026-10-16-night-mod3-nine.md).
 
-Separately, the prior local-only939-polynomial witness was recovered. A new
-explicit159-polynomial witness preserves pointwise success at least2/3 on all256
-inputs, at the cost of increasing the probability denominator from2016 to
-100874688. Two differently structured exact normal/-O Python validators passed
-CI at d197bc6e. These compact coefficient witnesses are NOT yet separately
-Lean-formalized, and no support or denominator optimality is claimed.
-
-The old22-file patch was not blindly applied over newer main; the useful
-mathematical certificate and its unchanged direct checker were integrated with
-explicit provenance. Failed proof steps and naive probability rounding are
-preserved. There is no active GitHub write blocker. Issue #8 remains open for
-independent human semantic review, not for repeating the completed n=8 chain.
-The next mathematical frontier is a fresh n=9 certificate or universal obstruction.
-See [the latest session log](logs/2026-10-16-n8-recovery.md).
-
-No new numerical degree value, novelty, minimal support, all-n MOD3 degree bound,
-asymptotic circuit lower bound, proof-barrier escape or P-vs-NP conclusion is
-asserted. No independent human review or second proof kernel has been supplied.
-Historical checkpoints remain in the chronological logs and archived ledgers.
+No minimum support/denominator, all-n MOD3 result, circuit lower bound, proof-barrier escape or P-vs-NP solution is claimed.
 
 The research environment must continue telling the difference between:
 
