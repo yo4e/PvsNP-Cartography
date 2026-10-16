@@ -1,0 +1,30 @@
+name: N10 restricted three-block scan
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/012-n10-three-blocks/**'
+      - '.github/workflows/n10-three-blocks.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/012-n10-three-blocks/**'
+      - '.github/workflows/n10-three-blocks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exhaust 8520 restricted candidates with all input validation
+        run: |
+          set -euo pipefail
+          python expeditions/012-n10-three-blocks/scan.py > /tmp/normal.json
+          python -O expeditions/012-n10-three-blocks/scan.py > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          cat /tmp/normal.json
