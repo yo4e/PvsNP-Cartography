@@ -1,0 +1,30 @@
+name: N10 exact eight-orbit MOD3 witness
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/013-n10-mixture/**'
+      - '.github/workflows/n10-mixture.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/013-n10-mixture/**'
+      - '.github/workflows/n10-mixture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Exact all-input upper and universal affine dual
+        run: |
+          set -euo pipefail
+          python expeditions/013-n10-mixture/verify.py --full > /tmp/normal.json
+          python -O expeditions/013-n10-mixture/verify.py --full > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          cat /tmp/normal.json
