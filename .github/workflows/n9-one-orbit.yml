@@ -1,0 +1,35 @@
+name: N9 single-orbit certificate audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/011-n9-one-orbit/**'
+      - '.github/workflows/n9-one-orbit.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'expeditions/011-n9-one-orbit/**'
+      - '.github/workflows/n9-one-orbit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Reconstruct independent finite certificate and bounded search
+        run: |
+          set -euo pipefail
+          cd expeditions/011-n9-one-orbit
+          python verify.py --full > /tmp/normal.json
+          python -O verify.py --full > /tmp/optimized.json
+          diff -u /tmp/normal.json /tmp/optimized.json
+          python scan_blocks.py > /tmp/scan.json
+          python -O scan_blocks.py > /tmp/scan-optimized.json
+          diff -u /tmp/scan.json /tmp/scan-optimized.json
+          cat /tmp/normal.json
+          cat /tmp/scan.json
