@@ -1,5 +1,6 @@
 import PvsNPCartography.LayerCertificates
 import PvsNPCartography.Mod3EightDegree
+import PvsNPCartography.Mod3NineDegree
 
 #print axioms PvsNPCartography.Symmetrization.ones_card
 #print axioms PvsNPCartography.Symmetrization.bits_ones
@@ -27,7 +28,6 @@ import PvsNPCartography.Mod3EightDegree
 #print axioms PvsNPCartography.Mod3Eight.least_feasible_degree
 #print axioms PvsNPCartography.Mod3Eight.pdeg_eq_two
 #print axioms PvsNPCartography.Mod3Eight.raw_seed_mixture_is_not_pointwise
-import PvsNPCartography.Mod3NineDegree
 #print axioms PvsNPCartography.Mod3Nine.weights_sum
 #print axioms PvsNPCartography.Mod3Nine.mass_sum
 #print axioms PvsNPCartography.Mod3Nine.canonical_affine_bound
