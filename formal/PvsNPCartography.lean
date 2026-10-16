@@ -14,3 +14,4 @@ import PvsNPCartography.SymmetryApplications
 import PvsNPCartography.HammingLayers
 import PvsNPCartography.LayerCertificates
 import PvsNPCartography.Mod3EightDegree
+import PvsNPCartography.Mod3NineDegree
