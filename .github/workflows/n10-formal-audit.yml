@@ -1,0 +1,41 @@
+name: n10 formal certificate semantics
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/013-n10-mixture/certificate.json"
+      - "expeditions/014-n10-formal/audit.py"
+      - "expeditions/014-n10-formal/finite-result.json"
+      - "formal/PvsNPCartography/Mod3TenDegree.lean"
+      - ".github/workflows/n10-formal-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Independent normal and optimized exact checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/014-n10-formal/audit.py | tee /tmp/n10-normal.json
+          python -O expeditions/014-n10-formal/audit.py | tee /tmp/n10-optimized.json
+          cmp /tmp/n10-normal.json /tmp/n10-optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/n10-normal.json').read_text())
+          saved = json.loads(Path('expeditions/014-n10-formal/finite-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved finite result differs from actual execution')
+          print('Saved result matches actual execution; formal proof is audited separately.')
+          PY
