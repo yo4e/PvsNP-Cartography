@@ -1,0 +1,40 @@
+name: n11 exact mixture certificate
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/015-n11-mixture/verify.py"
+      - "expeditions/015-n11-mixture/certificate.json"
+      - "expeditions/015-n11-mixture/finite-result.json"
+      - ".github/workflows/n11-mixture.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Full pointwise expansion and independent dual checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/015-n11-mixture/verify.py --full | tee /tmp/n11-normal.json
+          python -O expeditions/015-n11-mixture/verify.py --full | tee /tmp/n11-optimized.json
+          cmp /tmp/n11-normal.json /tmp/n11-optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/n11-normal.json').read_text())
+          saved = json.loads(Path('expeditions/015-n11-mixture/finite-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved n11 result differs from actual execution')
+          print('Saved n11 finite result matches actual execution; no Lean n11 claim.')
+          PY
