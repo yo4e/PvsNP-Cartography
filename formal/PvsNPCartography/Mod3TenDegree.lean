@@ -119,7 +119,8 @@ def layerTickets : Fin 11 → ℕ :=
 theorem layer_tickets_exact : ∀ w : Fin 11,
     (∑ x : BooleanCube 10,
       if hammingWeight x = w.val then tickets x else 0) = layerTickets w := by
-  decide +kernel
+  intro w
+  fin_cases w <;> decide +kernel
 
 theorem upper_layer_bound : ∀ w : Fin 11,
     200 * Nat.choose 10 w.val ≤ ∑ x : BooleanCube 10,
