@@ -1,0 +1,53 @@
+name: n10 isolated proof diagnostics
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/016-n10-verification-repair/profile.py"
+      - ".github/workflows/n10-profile.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned toolchain dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd formal
+          lake --version
+          lake update
+          cat lake-manifest.json
+      - name: Restore audited dependency cache only
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          axiom-audit: false
+      - name: Build only prerequisites and isolate closed computations
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p n10-profile-output
+          (cd formal && lake build --wfail PvsNPCartography.LayerCertificates PvsNPCartography.SymmetryApplications)
+          python -u expeditions/016-n10-verification-repair/profile.py | tee n10-profile-output/session.log
+      - name: Retain diagnostics even when a check fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: n10-proof-diagnostics
+          path: n10-profile-output/
