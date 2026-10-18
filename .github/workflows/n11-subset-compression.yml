@@ -1,0 +1,43 @@
+name: n11 exact subset quotient
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/017-n11-subset-compression/verify.py"
+      - "expeditions/017-n11-subset-compression/result.json"
+      - "expeditions/015-n11-mixture/compact-certificate.json"
+      - ".github/workflows/n11-subset-compression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact measure equivalence and pointwise attacks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/017-n11-subset-compression/verify.py --write-support /tmp/support496.json | tee /tmp/normal.json
+          python -O expeditions/017-n11-subset-compression/verify.py | tee /tmp/optimized.json
+          cmp /tmp/normal.json /tmp/optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/normal.json').read_text())
+          saved = json.loads(Path('expeditions/017-n11-subset-compression/result.json').read_text())
+          if actual != saved:
+              raise ValueError('saved exact result differs from actual execution')
+          print('Exact 496-row measure, full pointwise checks and negative controls PASS.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: n11-support496
+          path: /tmp/support496.json
