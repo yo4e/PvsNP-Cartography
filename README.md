@@ -87,14 +87,14 @@ logs/           chronological research sessions
 
 A useful claim should carry an explicit state.
 
-- **idea** — plausible direction, not checked
-- **candidate** — precisely stated and under attack
-- **finite-evidence** — supported only on bounded computation
-- **literature-consistent** — checked against known references, not novel by default
-- **formally-verified** — accepted by a proof assistant under explicit assumptions
-- **refuted** — counterexample or invalid step found
-- **novelty-unknown** — may be new, but prior-art search is incomplete
-- **novelty-supported** — targeted prior-art search found no equivalent result; still not a publication claim
+- **idea**: plausible direction, not checked
+- **candidate**: precisely stated and under attack
+- **finite-evidence**: supported only on bounded computation
+- **literature-consistent**: checked against known references, not novel by default
+- **formally-verified**: accepted by a proof assistant under explicit assumptions
+- **refuted**: counterexample or invalid step found
+- **novelty-unknown**: may be new, but prior-art search is incomplete
+- **novelty-supported**: targeted prior-art search found no equivalent result; still not a publication claim
 
 No file should casually jump from “interesting” to “proved.”
 
@@ -123,10 +123,10 @@ This project is not the first attempt to use AI around P vs NP.
 
 Early comparison targets include:
 
-- [GISMO-1/p-vs-np-hunter](https://github.com/GISMO-1/p-vs-np-hunter) — multi-agent circuit/lower-bound exploration with Lean-backed verification
-- [LLMDeveloperAiPNP/LLM-Developer-AiPNPvs-NP---Autonomous-Solver-Ai](https://github.com/LLMDeveloperAiPNP/LLM-Developer-AiPNPvs-NP---Autonomous-Solver-Ai) — autonomous multi-agent solver architecture
-- [MuchuCAT/p-vs-np-ai-quantum-research-notes](https://github.com/MuchuCAT/p-vs-np-ai-quantum-research-notes) — conservative dossier on proof barriers and AI/quantum narratives
-- [RenaudGL/Protocol_Cathedrale](https://github.com/RenaudGL/Protocol_Cathedrale) — multi-model exploration of a thermodynamic route to P ≠ NP
+- [GISMO-1/p-vs-np-hunter](https://github.com/GISMO-1/p-vs-np-hunter): multi-agent circuit/lower-bound exploration with Lean-backed verification
+- [LLMDeveloperAiPNP/LLM-Developer-AiPNPvs-NP---Autonomous-Solver-Ai](https://github.com/LLMDeveloperAiPNP/LLM-Developer-AiPNPvs-NP---Autonomous-Solver-Ai): autonomous multi-agent solver architecture
+- [MuchuCAT/p-vs-np-ai-quantum-research-notes](https://github.com/MuchuCAT/p-vs-np-ai-quantum-research-notes): conservative dossier on proof barriers and AI/quantum narratives
+- [RenaudGL/Protocol_Cathedrale](https://github.com/RenaudGL/Protocol_Cathedrale): multi-model exploration of a thermodynamic route to P ≠ NP
 
 These projects are prior expeditions, not targets to imitate blindly.
 
@@ -169,13 +169,13 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
-- [AGENTS.md](AGENTS.md) — research operating contract for AI collaborators
-- [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md) — adversarial research loop and publication threshold
-- [docs/PRIOR_ART.md](docs/PRIOR_ART.md) — direct P vs NP AI projects and broader AI-mathematics systems
-- [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md) — working primary-source bibliography
-- [map/BARRIERS.md](map/BARRIERS.md) — relativization, Natural Proofs, and algebrization map
-- [Expedition 001](expeditions/001-audit-pvsnp-hunter/) — audit of p-vs-np-hunter finite-degree findings
-- [Expedition 002](expeditions/002-exact-probabilistic-degree-mod3/) — finite MOD3 probabilistic-degree certificates, [reproducible checker](expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py), and CI
+- [AGENTS.md](AGENTS.md): research operating contract for AI collaborators
+- [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md): adversarial research loop and publication threshold
+- [docs/PRIOR_ART.md](docs/PRIOR_ART.md): direct P vs NP AI projects and broader AI-mathematics systems
+- [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md): working primary-source bibliography
+- [map/BARRIERS.md](map/BARRIERS.md): relativization, Natural Proofs, and algebrization map
+- [Expedition 001](expeditions/001-audit-pvsnp-hunter/): audit of p-vs-np-hunter finite-degree findings
+- [Expedition 002](expeditions/002-exact-probabilistic-degree-mod3/): finite MOD3 probabilistic-degree certificates, [reproducible checker](expeditions/002-exact-probabilistic-degree-mod3/verify_certificates.py), and CI
 - [Expedition 003](expeditions/003-n8-sampled-dual/): historical exact sample-restricted n=8 dual and [adversarial counterexample](graveyard/002-n8-sampled-dual-extrapolation.md). Its sampled optimum did not decide the full n=8 problem.
 - [Expedition 004](expeditions/004-exact-mod3-n8/): exact n=8 degree-two [certificate](expeditions/004-exact-mod3-n8/certificate.json), [checker](expeditions/004-exact-mod3-n8/verify.py), [finite argument](expeditions/004-exact-mod3-n8/conclusion.md), and [successful CI](https://github.com/yo4e/PvsNP-Cartography/actions/runs/37940070467).
 - [Expedition 005](expeditions/005-formal-mod3-five/): concrete n=5 Lean lower/upper certificate components, [exact scope](expeditions/005-formal-mod3-five/conclusion.md), and [independent data audit](expeditions/005-formal-mod3-five/audit.py).
@@ -185,14 +185,25 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 009](expeditions/009-hamming-layer-bridge/): verified Hamming-layer counting and the complete [n=8 Lean degree equality](formal/PvsNPCartography/Mod3EightDegree.lean), with [completion evidence](expeditions/009-hamming-layer-bridge/conclusion.md).
 - [Expedition 010](expeditions/010-n8-recovery/): [n=8 repair and compact-witness recovery](expeditions/010-n8-recovery/conclusion.md), [159-row certificate](expeditions/010-n8-recovery/certificate-159.json), exact validators and [failed probability rounding](graveyard/009-rounded-probabilities.md).
 - [Expedition 011](expeditions/011-n9-one-orbit/): exact n=9 [one-orbit GF(2) MOD3 degree equality](formal/PvsNPCartography/Mod3NineDegree.lean), [strict 85/126 seed certificate](expeditions/011-n9-one-orbit/certificate.json), [reproducible validators](expeditions/011-n9-one-orbit/verify.py), [bounded 7432-pattern search](expeditions/011-n9-one-orbit/scan_blocks.py), and [formally verified conclusion](expeditions/011-n9-one-orbit/conclusion.md).
-- [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): actual axiom reports, pinned CI evidence and the remaining formalization boundary.
+- [Expedition 012](expeditions/012-n10-three-blocks/): scoped failure of the restricted n10 single-orbit search; not a universal quadratic lower bound.
+- [Expedition 013](expeditions/013-n10-mixture/): exact n10 eight-orbit certificate and universal affine-row dual.
+- [Expedition 014](expeditions/014-n10-formal/): original n10 formal candidate, independent coefficient audit and historical interrupted execution; completed by Expedition016.
+- [Expedition 015](expeditions/015-n11-mixture/): preserved n11 nine-orbit and three-orbit finite certificates, validators and original CI evidence.
+- [Expedition 016](expeditions/016-n10-verification-repair/): completed n10 [formal repair](expeditions/016-n10-verification-repair/conclusion.md), [statement audit](expeditions/016-n10-verification-repair/statement-audit.md), isolated diagnostics and preserved failures.
+- [Expedition 017](expeditions/017-n11-subset-compression/): exact n11 [496-row same-measure compression](expeditions/017-n11-subset-compression/conclusion.md), [verifier/generator](expeditions/017-n11-subset-compression/verify.py), [actual CI evidence](expeditions/017-n11-subset-compression/ci-evidence.md) and invalid-weighting counterexamples.
+- [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): current formal scope, actual axiom reports and preserved historical ledgers.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
+- [Current status](docs/CURRENT_STATUS.md): the earliest unblocked task and exact evidence boundaries.
 
 ## Status
 
-**2026-10-16 JST: finite MOD3 probabilistic-degree equalities are now formally verified for n=5,6,7,8,9.** The n=9 extension uses one quadratic seed uniformly permuted, exact minimum success85/126>2/3, and a full dual maximum23/36<2/3 excluding all degree-one real mixtures. Pinned Lean --wfail and a356-declaration axiom audit succeeded on commit80712411 ([run38908696378](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38908696378)). Independent-algorithm finite checks, the1260 distinct partition polynomials and a7432-pattern restricted orbit search succeeded on test commit a529afed ([run38909099839](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38909099839)).
+**Approved 2026-10-18 night, verification completed 2026-10-19 JST: formal numerical MOD3 degree equalities now cover n=5..10.** New n10 production code [1739ccfa](https://github.com/yo4e/PvsNP-Cartography/commit/1739ccfa2ebe5997e568135cdfacf06e9f6d1f87) passed pinned Lean4.35.0-rc4/Mathlib verification in [run39139432083](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432083), job117710608870: --wfail root build9042 jobs,420-declaration foundational axiom audit and15 explicit n10 target reports. Separate [semantic run39139432110](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432110) checks the actual coefficient data and source hash under normal and optimized Python. Full completed logs, statements and matching commits were re-fetched.
 
-The n=9 result is NEW TO THIS REPOSITORY, not asserted novel to mathematics. The general permutation/layer lemmas do not imply MOD3 degree2 for all n. Issue #8 tracks independent human semantic review; Issue #9 tracks the n=9 checkpoint; a future n=10 search must not extrapolate from these finite values. See [Expedition011 conclusion](expeditions/011-n9-one-orbit/conclusion.md) and the [night log](logs/2026-10-16-night-mod3-nine.md).
+The repair split eleven closed weight cases without changing the theorem, data, degree definition, REAL probabilities, family-before-input quantifiers or axiom allowlist. Prior shutdowns and failed default-CBV substitutions remain recorded; their failures were never promoted. [Issue #10](https://github.com/yo4e/PvsNP-Cartography/issues/10) is completed. See the [actual n10 axiom report](formal/reports/2026-10-18-n10-axioms.txt) and [night log](logs/2026-10-18-night-verification-and-subsets.md).
+
+**n11 remains finite evidence, not a compiled Lean theorem.** Its three-orbit witness can now be represented by496 distinct polynomials with probability denominator1155 instead of1925 indexed entries/27720, preserving the exact same measure and minimum success158/231 at all2048 inputs. [Completed exact run39137936272](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39137936272) reproduces the quotient,1,013,760 independent formula evaluations and invalid-weighting controls. The generated full support is an Actions artifact reproducible from the committed verifier, not a checked-in support table. [Issue #11](https://github.com/yo4e/PvsNP-Cartography/issues/11) is the next autonomous formalization frontier.
+
+[Issue #8](https://github.com/yo4e/PvsNP-Cartography/issues/8) remains open for independent human semantic review. A second proof kernel and mathematical novelty assessment are not supplied. These finite results are new checkpoints in this repository, not asserted novel mathematics. The generic permutation/layer lemmas do not imply MOD3 degree2 for all n.
 
 No minimum support/denominator, all-n MOD3 result, circuit lower bound, proof-barrier escape or P-vs-NP solution is claimed.
 

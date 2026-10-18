@@ -1,97 +1,108 @@
 # Formal assumption ledger
 
-## Current formal checkpoint: 2026-10-16 JST, n=9 verified
+## Current checkpoint: approved 2026-10-18 night, n10 verified
 
-n=9 closes the standard GF(2), error1/3 MOD3 probabilistic-degree equality with an actual fixed finite REAL distribution over totalDegree<=2 MvPolynomials, and universal exclusion of all degree<=1 real mixtures. The existing full variable-permutation/Hamming-layer identity (arbitrary finite arity) supplies the upper bridge. Lower normalization 504 and affine bound322 use 20 canonical kernel checks plus proved permutation coefficient transport and degree-one normal form.
+The production run completed on 2026-10-19 JST, within the same approved Oct18
+session. Complete numerical GF(2), error1/3 MOD3 probabilistic-degree equalities
+now cover **n=5..10**. The n11 three-orbit and496-row witnesses remain separately
+validated finite data, not compiled n11 Lean degree theorems. No asymptotic
+P-vs-NP or all-n MOD3 conclusion follows.
 
-Exact audited code807124110f0fc1861504f9ea0bd6fd971a78992e, source blob32428657909833b00103c85f3656708a08c64678; successful [formal run38908696378](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38908696378), job116998734457. Pinned Lean4.35.0-rc4, Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8, --wfail build,356 namespace declarations audited,14 explicit n9 #print axiom targets inside the unchanged [propext, Classical.choice, Quot.sound] allowlist. Attributed actual output in [2026-10-16-n9-axioms.txt](reports/2026-10-16-n9-axioms.txt). No project-specific axiom, sorryAx, admit or native_decide dependency introduced.
+## Actual production acceptance
 
-Numerical strict minimum85/126 and the alternative 1260-polynomial partition family were separately validated by normal/-O exact Python, test code a529afed, run38909099839. Those are not separate Lean encodings of the expanded compact coefficients. The restricted <=3-block single-orbit search of7432 candidates gives only ONE successful pattern in that class, without global support minimality. Independent human semantic review and second kernel remain outstanding.
+- Code: `1739ccfa2ebe5997e568135cdfacf06e9f6d1f87`.
+- Tree: `693fff576290749ebbd023d861041e53ca0a9812`.
+- n10 source blob: `cf6c6ec257f0a5c20e9b12f3c265864db57e58ca`.
+- n10 source SHA256: `5d6aa5a2df006cee95a9d43b0707505298f431d38f0c984440fb5b0d1553b571`.
+- [Completed SUCCESS formal run39139432083](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432083), job117710608870.
+- Pinned Lean4.35.0-rc4 and Mathlib `9e6b3aac99b624d10c84653ab9c5357283b9b3b8`.
+- Production **--wfail** root build:9042 jobs. Mod3TenDegree actually built in176s.
+- Namespace audit: **420 declarations**, all within `[propext, Classical.choice, Quot.sound]`.
+- All **15 explicit n10 target reports** use only that same foundational allowlist.
 
-Complete formal numerical degree equalities now cover n=5..9. n>=10 and any asymptotic P-vs-NP claim are UNPROVED. New result status: formally verified as stated, novelty unknown.
+The full completed job log, matching source statements and Git commit/tree were
+retrieved and inspected. [Attributed actual output](reports/2026-10-18-n10-axioms.txt)
+records the toolchain, build, namespace count and all15 n10 targets. A queued
+run, green diagnostic wrapper or source file alone was not used as acceptance.
+No new project-specific axiom, sorryAx, native_decide or decide_cbv was accepted.
 
+## Statement and dependency fidelity
 
-Current checkpoint: **2026-10-16 JST**. Complete degree-based MOD3 equalities
-for n=5,6,7,8, generic full symmetrization, and the Hamming-layer mean/fiber-count
-interface are verified under the recorded Lean assumptions. Independent human
-semantic review remains pending. Compact939/159-row witnesses are separately
-checked finite data, not yet separate Lean-formalized coefficient witnesses.
+The n10 target is one iff integer Hamming weight is divisible by3. Coefficients
+are GF(2), not real-valued approximation polynomials. The degree bound is actual
+MvPolynomial.totalDegree. Nonnegative REAL probabilities sum to1 and a single
+finite family is selected before every input quantifier.
 
-## Policy and reproduction
+Upper: the unchanged eight seeds with weights[10,2,39,22,15,6,4,2]/100 are encoded
+by triple tickets/300. Genuine quadratic polynomial evaluation and all11 exact
+layer sums feed the already verified full-permutation/Hamming-layer adapter.
+The resulting family includes ALL coordinate permutations, not input-dependent
+polynomial choices. Exact finite minimum is2123/3000>2/3.
 
-No project-specific extra axiom is accepted. The compiled namespace audit
-permits only propext, Classical.choice and Quot.sound. Closed finite checks
-use decide +kernel, not native_decide. The --wfail policy, heartbeat settings,
-coefficient data, success thresholds and allowNonModules compatibility setting
-were not weakened in the final repairs.
+Lower: mass12 per weight-one input and1 per weight-three input, total240, yields
+bound152/240=19/30<2/3. Proved coefficient-permutation coverage turns22 canonical
+checks into coverage of all2048 affine rows. Structural degree-one normal form
+then applies the dual to ALL actual degree<=1 polynomial objects and arbitrary
+finite REAL mixtures. The final `feasible_degree_iff`, `least_feasible_degree`
+and `pdeg_eq_two` use proved feasibility and infeasibility, not desired-result
+hypotheses. The raw unsymmetrized mixture counterexample is also formally checked.
 
-From formal/:
+The original HasProbabilisticDegreeAtMost definition, real probabilities,
+family-before-input quantifiers, layer adapter, code coefficients, success
+thresholds and heartbeat settings were unchanged by the repair.
 
-```bash
-lake build --wfail
-./scripts/axiom_report.sh
+## Separate computational evidence
+
+[Completed SUCCESS semantic run39139432110](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432110),
+job117710608842, at the same production commit, reproduced the independently
+derived n10 coefficients on1024 canonical inputs, all2048 affine rows, all11
+layer sums and448 coefficient-mutation tests. Normal/-O output matches saved
+JSON and the exact production-source hash. This is complementary evidence,
+not a replacement for the completed Lean audits.
+
+For n11, Expedition017 proves no new Lean theorem: its exact computational
+quotient removes redundant partition labels from the same old probability
+measure,1925 indexed entries to496 distinct rows, denominator27720 to1155,
+unchanged minimum158/231 on all2048 inputs. The three-seed/full-permutation and
+496-row implementations must not be conflated if either is later formalized.
+
+## Failure history and repair boundary
+
+The Oct17 n10 candidate run39037050907 was cancelled twice with shutdown/exit143;
+its cause remains unknown. This session's isolated diagnostic found the original
+kernel lower prefix passes. Default decide_cbv substitutions failed the step
+budget, propagating sorryAx into failed dependent declarations. Those outputs
+were rejected and preserved in graveyard017, not called proof success.
+
+The successful repair changes only the layer proof to:
+
+```lean
+  intro w
+  fin_cases w <;> decide +kernel
 ```
 
-The script prints AxiomAudit.lean, SymmetryAxiomAudit.lean and LayerAxiomAudit.lean.
-Axiom reports below are actual retrieved output, not source-string searches.
+Diagnostic run39138440340 passed the layer-only and full candidate with15
+allowlisted reports. The exact candidate was then applied and accepted by the
+production run above. No increased CBV budget was adopted or tested after the
+first strategy passed. Historical diagnostic scripts intentionally pin the old
+candidate hash; reproduce them at their recorded commits instead of bypassing
+those provenance guards.
 
-## Actual verified checkpoint
+## Reproduction and remaining gates
 
-Code: e034962d3df395a4b82bc00d2ef78aa8d6cb25a4.
-[Formal run38816877083](https://github.com/yo4e/PvsNP-Cartography/actions/runs/38816877083),
-job116703673137, completed successfully under pinned Lean4.35.0-rc4 and
-Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. Actual output records --wfail,
-305 namespace declarations inside the allowlist, and26 new layer/n8 printed
-targets, all using only the same three foundational axioms.
-
-[Actual target excerpt](reports/2026-10-16-n8-axioms.txt),
-[statement audit](../expeditions/010-n8-recovery/statement-audit.md),
-[layer conclusion](../expeditions/009-hamming-layer-bridge/conclusion.md),
-[session conclusion](../expeditions/010-n8-recovery/conclusion.md).
-
-HammingLayers proves the full permutation mean equals the uniform Hamming-layer
-mean for arbitrary real scores, including empty variable sets and extreme weights.
-LayerCertificates derives exact fiber cardinality and adapts layer bounds to the
-unchanged pointwise degree predicate. The averaging theorem does not assume the
-fiber count it is later used to derive.
-
-Mod3EightDegree uses unchanged four seeds and full symmetrization for degree<=2.
-The lower proof establishes arbitrary degree<=1 coverage via the structural
-normal form and proved coefficient-permutation invariance, reducing512 affine
-choices to18 canonical kernel computations. Its full-cube dual score is bounded
-by72/112=9/14<2/3. Actual degree, GF(2) evaluation, real probability normalization
-and family-before-input quantifiers are retained. Feasible_degree_iff, IsLeast
-and pdeg_eq_two have proved existence, not assumed feasibility.
-
-Re-fetched source blobs:
-HammingLayers7261f29623c7c9fda84dbc7af9b89fc02c31fb49;
-LayerCertificates1ab2fe1f542091fc85013d293694a5c3932c4e8a;
-Mod3EightDegree ec288bf49be783ad6ab88954222019247389ce57.
-The actual completed CI result and code commit/tree were retrieved separately.
-
-## Failure and verification boundary
-
-Prior candidate9bf6ad40 failed on a natural/field sum mismatch and excessive
-concrete simplification. Repair21f5b710 still failed on indicator casts.
-Final e034962d fixes proof steps only. Failed commits and actual failure IDs
-are retained in the Expedition010 log; no failed build was called verified.
-
-The159-row certificate is checked by two exact normal/-O Python validators in
-run38817593904/job116706049239 at d197bc6e57f523dd69f8430a853ca1f32d85c9d4.
-It is NOT the formal four-seed/full-permutation witness above. Its support is
-smaller than the recovered939 rows but its probability denominator is larger.
-No support minimality, denominator optimality or novelty is established.
-
-Complete numerical Lean coverage is n=5,6,7,8. No n>=9 value, all-n MOD3 degree
-bound, asymptotic circuit lower bound, barrier escape or P-vs-NP result follows.
-Independent human semantic review and a second proof kernel were not supplied.
-The local container lacked Lean; actual formal execution was in Actions.
+From `formal/` run `lake build --wfail` and `./scripts/axiom_report.sh`.
+The production workflow additionally runs the compiled namespace axiom audit.
+The local research container lacked Lean; the reported formal execution was in
+Actions. **Independent human semantic review (#8) and a second proof kernel are
+still absent.** Formal statement checking is not a mathematical novelty claim.
+The next autonomous mathematical task is n11's faithful degree interface (#11),
+not redoing completed n10 (#10).
 
 ## Preserved historical ledger
 
-The previous ledger is preserved byte-identically as
-[2026-10-16-pre-n8-ledger.md](reports/2026-10-16-pre-n8-ledger.md),
-Git blobabbbc56fd87150e955f80f09e2671aa2d0aa0a08. Its pending statements describe
-the Oct13 checkpoint, not the current state. It links the older pre-symmetrization
-ledger and all original attributed reports. No historical proof artifact or
-failed research direction was deleted by this update.
+The full previous ledger is archived byte-identically as
+[2026-10-18-pre-n10-ledger.md](reports/2026-10-18-pre-n10-ledger.md), Git blob
+`1dd727cd960d10570dde0b307b287fb50113cec4`. It retains all n5..9 evidence,
+earlier archived ledgers, failure history and original source hashes. Its old
+pending statements are historical, not the current n10 status. No earlier
+proof artifact, statement or failed direction was deleted.

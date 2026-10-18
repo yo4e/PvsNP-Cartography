@@ -1,0 +1,54 @@
+Actual completed production verification, approved 2026-10-18 night session.
+Execution completed 2026-10-19 JST (2026-10-18 UTC). Investigator: 月野テンプレクス.
+Source commit: 1739ccfa2ebe5997e568135cdfacf06e9f6d1f87
+Source tree: 693fff576290749ebbd023d861041e53ca0a9812
+Mod3TenDegree.lean Git blob: cf6c6ec257f0a5c20e9b12f3c265864db57e58ca
+Mod3TenDegree.lean SHA256: 5d6aa5a2df006cee95a9d43b0707505298f431d38f0c984440fb5b0d1553b571
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432083
+Job: 117710608870. Completed status: SUCCESS, including root build and both audits.
+
+The full completed job log was retrieved and inspected. Below are attributed
+excerpts of actual output, not reconstructed predictions or source-string checks.
+
+2026-10-18T15:14:11.0374276Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-18T15:14:09.8315504Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-18T15:15:17.4998452Z   BUILD_ARGS: --wfail
+2026-10-18T15:18:17.4473886Z ✔ [9040/9042] Built PvsNPCartography.Mod3TenDegree (176s)
+2026-10-18T15:18:25.2567282Z ✔ [9041/9042] Built PvsNPCartography (7.6s)
+2026-10-18T15:18:25.2678561Z Build completed successfully (9042 jobs).
+2026-10-18T15:19:04.5562329Z axiom-audit: audited 420 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-18T15:19:04.5949985Z axiom-audit completed successfully
+
+All fifteen explicit n10 targets from the completed production report:
+
+2026-10-18T15:19:17.2718732Z 'PvsNPCartography.Mod3Ten.weights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2719075Z 'PvsNPCartography.Mod3Ten.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2719446Z 'PvsNPCartography.Mod3Ten.canonical_affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2719817Z 'PvsNPCartography.Mod3Ten.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2720187Z 'PvsNPCartography.Mod3Ten.layer_tickets_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2720563Z 'PvsNPCartography.Mod3Ten.upper_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2720921Z 'PvsNPCartography.Mod3Ten.seed_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2721268Z 'PvsNPCartography.Mod3Ten.seed_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2721623Z 'PvsNPCartography.Mod3Ten.seed_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2721997Z 'PvsNPCartography.Mod3Ten.degree_two_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2722382Z 'PvsNPCartography.Mod3Ten.degree_one_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2722762Z 'PvsNPCartography.Mod3Ten.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2723265Z 'PvsNPCartography.Mod3Ten.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2723819Z 'PvsNPCartography.Mod3Ten.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-18T15:19:17.2724203Z 'PvsNPCartography.Mod3Ten.raw_seed_mixture_is_not_pointwise' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Separate finite semantic replication at the SAME production commit:
+Run https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432110
+Job117710608842, completed SUCCESS; normal/-O output and saved JSON agree.
+
+2026-10-18T15:12:37.4511774Z   "lean_source_sha256": "5d6aa5a2df006cee95a9d43b0707505298f431d38f0c984440fb5b0d1553b571",
+2026-10-18T15:12:37.4576939Z   "single_coefficient_mutations_detected": 448,
+2026-10-18T15:12:37.4600153Z   "upper_minimum": "2123/3000"
+2026-10-18T15:12:39.1650598Z Saved result matches actual execution; formal proof is audited separately.
+
+Actual source theorem statements and commit/tree were re-fetched after the
+completed logs. Only the layer proof was case-split; no mathematical statement,
+coefficient, quantifier, threshold, heartbeat setting or allowlist was weakened.
+No native_decide, project-specific axiom, sorryAx or decide_cbv was accepted in
+production. Human semantic review and a second proof kernel remain unfulfilled.
+The new formally checked numerical instance is n10 only; n11 is finite evidence.
