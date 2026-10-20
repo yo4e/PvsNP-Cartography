@@ -45,7 +45,7 @@ theorem sampleScore_formula {n : ℕ} (hn : 3 ≤ n) (p : Affine n) :
       rw [singleton_correct]
       dsimp [sampleMass, C]
       field_simp
-      <;> ring
+      ring
     simp_rw [he]
     rw [← Finset.sum_div, Finset.sum_add_distrib, ← Finset.mul_sum]
     simp [T]
@@ -57,9 +57,9 @@ theorem sampleScore_formula {n : ℕ} (hn : 3 ≤ n) (p : Affine n) :
     by_cases hd : Distinct i j k
     · have hm : sampleMass n (.inr (i,j,k)) =
           1 / (2 * (n : ℝ) * (n - 1) * (n - 2)) := by
-        exact if_pos hd
+        exact ite_eq_left hd
       rw [hm, triple_correct p i j k hd]
-      simp only [if_pos hd]
+      simp only [ite_eq_left hd]
       dsimp [C]
       field_simp [hn0, hn1, hn2]
       ring
@@ -78,7 +78,7 @@ theorem sampleScore_formula {n : ℕ} (hn : 3 ≤ n) (p : Affine n) :
   dsimp [T, C]
   rw [bitSign_sum]
   field_simp [hn0, hn1, hn2]
-  <;> ring
+  ring
 
 theorem sampleScore_zero {n : ℕ} (hn : 3 ≤ n) (b : BooleanCube n) :
     sampleScore (0,b) = BalancedAffineDualAlgebra.score n (hammingWeight b) := by

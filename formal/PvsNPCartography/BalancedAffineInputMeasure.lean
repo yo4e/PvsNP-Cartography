@@ -72,7 +72,8 @@ theorem ordered_triple_success_count {n : ℕ} (b : BooleanCube n) :
       ((if Distinct i j k then (1 : ℝ) else 0) -
         (if Distinct i j k then bitSign (b i) * bitSign (b j) * bitSign (b k) else 0)) / 2 := by
     by_cases hd : Distinct i j k
-    · simpa [hd, bitSign] using triple_correct (0,b) i j k hd
+    · simp only [ite_eq_left hd]
+      simpa [bitSign] using triple_correct (0,b) i j k hd
     · simp [hd]
   simp_rw [he]
   simp only [← Finset.sum_div, Finset.sum_sub_distrib]
