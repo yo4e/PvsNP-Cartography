@@ -19,3 +19,4 @@ import PvsNPCartography.Mod3TenDegree
 import PvsNPCartography.Mod3ElevenDegree
 import PvsNPCartography.BalancedAffineDualAlgebra
 import PvsNPCartography.BalancedAffineCounting
+import PvsNPCartography.BalancedAffineObstruction

@@ -1,4 +1,4 @@
-import PvsNPCartography.BalancedAffineCounting
+import PvsNPCartography.BalancedAffineObstruction
 
 #print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_moment
 #print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_count
@@ -7,3 +7,12 @@ import PvsNPCartography.BalancedAffineCounting
 #print axioms PvsNPCartography.BalancedAffineCounting.bitSign_sum
 #print axioms PvsNPCartography.BalancedAffineCounting.singleton_correct
 #print axioms PvsNPCartography.BalancedAffineCounting.triple_correct
+#print axioms PvsNPCartography.BalancedAffineCounting.sign_triple_moment
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleScore_formula
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleScore_zero
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleScore_one
+#print axioms PvsNPCartography.BalancedAffineCounting.algebra_score_le_envelope
+#print axioms PvsNPCartography.BalancedAffineCounting.envelope_lt_two_thirds
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleScore_bound
+#print axioms PvsNPCartography.BalancedAffineCounting.no_degree_one_family
+#print axioms PvsNPCartography.BalancedAffineCounting.degree_one_impossible
