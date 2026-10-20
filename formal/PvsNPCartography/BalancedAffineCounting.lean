@@ -11,7 +11,7 @@ open Symmetrization SmallSupportMod3
 noncomputable section
 
 /-- Ordered triples without repeated coordinates. -/
-def Distinct {α : Type*} (i j k : α) : Prop := i ≠ j ∧ i ≠ k ∧ j ≠ k
+abbrev Distinct {α : Type*} (i j k : α) : Prop := i ≠ j ∧ i ≠ k ∧ j ≠ k
 
 private theorem triple_exclusion {α : Type*} [DecidableEq α]
     (f : α → ℝ) (i j k : α) :
@@ -25,13 +25,14 @@ private theorem triple_exclusion {α : Type*} [DecidableEq α]
     simp_all [Distinct] <;> ring
 
 /-- Inclusion-exclusion on ordered triples. No Boolean or bounded-n hypothesis. -/
-theorem ordered_triple_moment {α : Type*} [Fintype α] (f : α → ℝ) :
+theorem ordered_triple_moment {α : Type*} [Fintype α] [DecidableEq α] (f : α → ℝ) :
     (∑ i, ∑ j, ∑ k, if Distinct i j k then f i * f j * f k else 0) =
       (∑ i, f i) ^ 3 - 3 * (∑ i, f i ^ 2) * (∑ i, f i) +
         2 * (∑ i, f i ^ 3) := by
   classical
   have hfull : (∑ i, ∑ j, ∑ k, f i * f j * f k) = (∑ i, f i) ^ 3 := by
-    simp only [pow_succ, pow_zero, mul_one, Finset.sum_mul, Finset.mul_sum]
+    simp only [← Finset.mul_sum, ← Finset.sum_mul]
+    ring
   have h₁ : (∑ i, ∑ j, ∑ k, if i = j then f i ^ 2 * f k else 0) =
       (∑ i, f i ^ 2) * (∑ i, f i) := by
     calc
@@ -39,13 +40,13 @@ theorem ordered_triple_moment {α : Type*} [Fintype α] (f : α → ℝ) :
         apply Finset.sum_congr rfl
         intro i _
         exact Finset.sum_comm
-      _ = _ := by simp [Finset.sum_mul, Finset.mul_sum]
+      _ = _ := by simp [← Finset.mul_sum, ← Finset.sum_mul]
   have h₂ : (∑ i, ∑ j, ∑ k, if i = k then f i ^ 2 * f j else 0) =
       (∑ i, f i ^ 2) * (∑ i, f i) := by
-    simp [Finset.sum_mul, Finset.mul_sum]
+    simp [← Finset.mul_sum, ← Finset.sum_mul]
   have h₃ : (∑ i, ∑ j, ∑ k, if j = k then f i * f j ^ 2 else 0) =
       (∑ i, f i) * (∑ i, f i ^ 2) := by
-    simp [Finset.sum_mul, Finset.mul_sum]
+    simp [← Finset.mul_sum, ← Finset.sum_mul]
   have h₄ : (∑ i, ∑ j, ∑ k, if i = j ∧ j = k then f i ^ 3 else 0) =
       ∑ i, f i ^ 3 := by
     simp [ite_and]
@@ -74,9 +75,10 @@ def sampleMass (n : ℕ) : Sample n → ℝ
 
 theorem sampleMass_nonneg {n : ℕ} (hn : 3 ≤ n) (s : Sample n) :
     0 ≤ sampleMass n s := by
-  have hn0 : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
-  have hn1 : (0 : ℝ) < (n : ℝ) - 1 := by have : (3 : ℝ) ≤ n := by exact_mod_cast hn; linarith
-  have hn2 : (0 : ℝ) < (n : ℝ) - 2 := by have : (3 : ℝ) ≤ n := by exact_mod_cast hn; linarith
+  have hnr : (3 : ℝ) ≤ n := by exact_mod_cast hn
+  have hn0 : (0 : ℝ) < n := by linarith
+  have hn1 : (0 : ℝ) < (n : ℝ) - 1 := by linarith
+  have hn2 : (0 : ℝ) < (n : ℝ) - 2 := by linarith
   rcases s with i | ⟨i,j,k⟩
   · dsimp [sampleMass]; positivity
   · dsimp [sampleMass]; split_ifs <;> positivity
@@ -84,9 +86,10 @@ theorem sampleMass_nonneg {n : ℕ} (hn : 3 ≤ n) (s : Sample n) :
 theorem sampleMass_sum {n : ℕ} (hn : 3 ≤ n) :
     (∑ s : Sample n, sampleMass n s) = 1 := by
   classical
-  have hn0 : (n : ℝ) ≠ 0 := by exact_mod_cast (show n ≠ 0 by omega)
-  have hn1 : (n : ℝ) - 1 ≠ 0 := by have : (3 : ℝ) ≤ n := by exact_mod_cast hn; linarith
-  have hn2 : (n : ℝ) - 2 ≠ 0 := by have : (3 : ℝ) ≤ n := by exact_mod_cast hn; linarith
+  have hnr : (3 : ℝ) ≤ n := by exact_mod_cast hn
+  have hn0 : (n : ℝ) ≠ 0 := by linarith
+  have hn1 : (n : ℝ) - 1 ≠ 0 := by linarith
+  have hn2 : (n : ℝ) - 2 ≠ 0 := by linarith
   have ht : (∑ i : Fin n, ∑ j : Fin n, ∑ k : Fin n,
         if Distinct i j k then 1 / (2 * (n : ℝ) * (n-1) * (n-2)) else 0) =
       ((n : ℝ) * (n-1) * (n-2)) / (2 * (n : ℝ) * (n-1) * (n-2)) := by
@@ -95,8 +98,7 @@ theorem sampleMass_sum {n : ℕ} (hn : 3 ≤ n) :
   simp only [Fintype.sum_sum_type, Fintype.sum_prod_type, sampleMass]
   rw [ht]
   simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
-  field_simp
-  <;> ring
+  field_simp [hn0, hn1, hn2] <;> ring
 
 def sampleInput {n : ℕ} : Sample n → BooleanCube n
   | .inl i => bits {i}
@@ -123,7 +125,23 @@ private theorem target_bits {n : ℕ} (s : Finset (Fin n)) :
 private theorem affineValue_bits {n : ℕ} (p : Affine n) (s : Finset (Fin n)) :
     affineValue p (bits s) = (p.1.val : ZMod 2) + ∑ i ∈ s, ((p.2 i).val : ZMod 2) := by
   classical
-  simp [affineValue, bits]
+  have hb (i : Fin n) : ((bits s i).val : ZMod 2) =
+      if i ∈ s then 1 else 0 := by
+    by_cases hi : i ∈ s <;> simp [bits, hi]
+  unfold affineValue
+  simp_rw [hb]
+  simp
+
+private theorem singleton_sign (c a : Fin 2) :
+    ((if (c.val : ZMod 2) + (a.val : ZMod 2) = 0 then 1 else 0 : ℕ) : ℝ) =
+      (1 + bitSign c * bitSign a) / 2 := by
+  fin_cases c <;> fin_cases a <;> norm_num [bitSign]
+
+private theorem triple_sign (c a b d : Fin 2) :
+    ((if (c.val : ZMod 2) + ((a.val : ZMod 2) + ((b.val : ZMod 2) + (d.val : ZMod 2))) = 1
+      then 1 else 0 : ℕ) : ℝ) =
+      (1 - bitSign c * bitSign a * bitSign b * bitSign d) / 2 := by
+  fin_cases c <;> fin_cases a <;> fin_cases b <;> fin_cases d <;> norm_num [bitSign]
 
 theorem singleton_correct {n : ℕ} (p : Affine n) (i : Fin n) :
     (affineCorrect p (sampleInput (.inl i)) : ℝ) =
@@ -131,10 +149,7 @@ theorem singleton_correct {n : ℕ} (p : Affine n) (i : Fin n) :
   change (affineCorrect p (bits {i}) : ℝ) = _
   unfold affineCorrect
   rw [affineValue_bits, target_bits]
-  simp only [Finset.sum_singleton, Finset.card_singleton]
-  rcases p with ⟨c,b⟩
-  generalize b i = a
-  fin_cases c <;> fin_cases a <;> norm_num [bitSign]
+  simpa using singleton_sign p.1 (p.2 i)
 
 theorem triple_correct {n : ℕ} (p : Affine n) (i j k : Fin n)
     (hd : Distinct i j k) :
@@ -144,14 +159,7 @@ theorem triple_correct {n : ℕ} (p : Affine n) (i j k : Fin n)
   change (affineCorrect p (bits {i,j,k}) : ℝ) = _
   unfold affineCorrect
   rw [affineValue_bits, target_bits]
-  simp only [Finset.sum_insert, Finset.sum_singleton, Finset.card_insert_of_notMem,
-    Finset.card_singleton, Finset.mem_insert, Finset.mem_singleton,
-    hij, hik, hjk, or_self, not_false_eq_true]
-  rcases p with ⟨c,b⟩
-  generalize b i = a
-  generalize b j = d
-  generalize b k = e
-  fin_cases c <;> fin_cases a <;> fin_cases d <;> fin_cases e <;> norm_num [bitSign]
+  simpa [hij, hik, hjk] using triple_sign p.1 (p.2 i) (p.2 j) (p.2 k)
 
 end
 end PvsNPCartography.BalancedAffineCounting
