@@ -1,0 +1,39 @@
+name: balanced affine dual exact tests
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/019-balanced-affine-dual/verify.py"
+      - "expeditions/019-balanced-affine-dual/finite-result.json"
+      - ".github/workflows/balanced-dual.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact bounded score checks and negative boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/019-balanced-affine-dual/verify.py | tee /tmp/balanced-normal.json
+          python -O expeditions/019-balanced-affine-dual/verify.py | tee /tmp/balanced-optimized.json
+          cmp /tmp/balanced-normal.json /tmp/balanced-optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/balanced-normal.json').read_text())
+          saved = json.loads(Path('expeditions/019-balanced-affine-dual/finite-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('balanced-dual output differs from saved result')
+          print('Exact bounded tests agree; general counting bridge and Lean are separate gates.')
+          PY

@@ -1,0 +1,8 @@
+import PvsNPCartography.BalancedAffineDualAlgebra
+
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.cubic_envelope_nonnegative
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.cubic_envelope
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.score_complement
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.score_lt_two_thirds
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.score_gt_one_third
+#print axioms PvsNPCartography.BalancedAffineDualAlgebra.six_is_tight
