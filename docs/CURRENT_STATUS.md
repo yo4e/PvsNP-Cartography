@@ -1,53 +1,59 @@
-# Current research checkpoint: approved2026-10-20 JST session
+# Current research checkpoint: approved2026-10-21 JST session
 
-## Completed formal frontier
+## Completed mathematical scope
 
-**n=5..11** standard GF(2), pointwise error1/3 MOD3 probabilistic-degree equalities
-are formally verified. n11 source9733d800128ad6d92b1f1293e453a4c8d5188f34 passed
-formal39380310454/job118487684638: --wfail9043 jobs,508 namespace declarations,
-18 explicit n11 reports. Independent exact audit9238f5a1 passed39380579421,
-all2048 inputs and source-data alignment. #11 is CLOSED completed. #10 and older
-numerical stages were already completed; do not redo stale pending records.
+Numerical GF(2), pointwise error1/3 MOD3 exact-degree2 equalities remain n5..11.
+NEW: a structural proof excludes degree<=1 for EVERY integer n>=7, using the
+original actual-polynomial, REAL-probability, family-before-input predicate.
+This is a lower obstruction, not an arbitrary-n degree2 upper bound.
 
-The accepted n11 witness uses the three canonical seeds, REAL weights[1,4,2]/7,
-ALL coordinate permutations and the proved Hamming-layer bridge. The496-row
-quotient remains separately verified finite data, not a new formal transport.
+Accepted source dc58ea7dd4d3e2ed36ca5b7d8276de651d95aa08, actual SUCCESS formal
+run39510465687/job118929907745: pinned Lean4.35.0-rc4 and Mathlib9e6b3aac,
+--wfail9048 jobs,589 namespace declarations and29 new explicit target reports
+within [propext,Classical.choice,Quot.sound]. Full completed log and all four
+source files/commit/tree were re-fetched. Evidence commit4aca7bcf saves the
+conclusion, source correspondence, timestamped report and promoted claim020.
 
-The auxiliary BalancedAffineDualAlgebra at dde6151abd4a4a272a2bdcbbd277c7296487d2c5
-also passed production39381768668/job118492254315: --wfail9044 jobs,518 namespace
-declarations, six algebra targets plus18 n11 reports. Both runs use pinned
-Lean4.35.0-rc4/Mathlib9e6b3aac and only propext,Classical.choice,Quot.sound.
-Actual complete logs, source statements and matching commits were re-fetched.
+The proof includes generic ordered-triple moments, normalization, actual GF(2)
+affine evaluation, binomial counts, a common strict bound and universal
+finite REAL duality. An actual-cube pushforward adds duplicate masses and
+preserves every real expectation. No unproved uniform-fiber identity is assumed.
 
-## Next unblocked structural task: #12
+#12 is CLOSED for its completed core counting/evaluation/obstruction objective.
+#9/#10/#11 are also complete. Do not restart them because older dated files
+say pending. Historical failures remain available and are not current blockers.
 
-The pure real score S(n,k)=1/2+t*(n^2-t^2)/(4*n*(n-1)*(n-2)),t=n-2k,
-is formally proved strictly between1/3 and2/3 for n>=7,0<=k<=n. It still needs
-a GENERIC Boolean-cube counting/evaluation bridge. Prove half-mass input
-normalization on layers1/3, odd-intersection counts, the binomial/cubic identity,
-actual affine polynomial coverage and the finite REAL duality connection.
-Do not mistake the33147 bounded formula tests for that generic proof.
+## Next earliest unblocked task: #13
 
-The degree-one obstruction at larger arities can alternatively be transported
-by correctly proved zero-coordinate restriction. This target is an explicit
-reusable dual/counting proof, not a claimed new asymptotic lower bound.
-The numerical degree2 frontier beyond11, including n12, remains unresolved here.
+Prove the explicit point-mass/fiber identity for inputMass:1/(2n) on weight1,
+1/(2choose(n,3)) on weight3,0 otherwise, for n>=3. That separately named closed
+formula is NOT yet compiled, despite the accepted pushforward and actual-score
+proofs. Then connect the half-layer-mean interface and, if useful, general
+Hamming-layer intersection counts with correct range guards. This is additional
+counting infrastructure, not a defect in the completed obstruction.
 
-## Review and dead directions
+A suggested indicator-moment proof of six triple fibers is only a strategy,
+not an executed proof. See #13's explicit acceptance criteria. No n12 equality
+or unbounded quadratic upper bound has been established.
 
-#8 stays OPEN for independent human semantic review. A second proof kernel and
-novelty assessment remain absent. Self-audits and a second CI runner do not
-supply independent human review.
+## Verification, failures and review
 
-The equal-half strict dual fails at n6,k1 with exactly2/3 and at n5,k1 with7/10;
-graveyard018 records only that distribution's failed extension. Earlier n5/n6
-degree equalities are not refuted. The auxiliary first build failed on real
-computability and an unused-hypothesis warning; repaired without weakened
-statements or audits, recorded in graveyard019. Old n10 shutdown/CBV failures
-remain historical, not current blockers.
+Independent exact code31778484, SUCCESS39507686566/job118920623125: normal/-O
+and saved/actual equality;1093 moment cases,3031040 actual affine/input checks
+n3..12 and33147 formula cases n3..256. These remain bounded evidence separate
+from generic formal acceptance. Source/result/commit were re-fetched.
 
-Read Expeditions018/019 conclusions and actual reports, formal/ASSUMPTIONS.md,
-and logs/2026-10-20-mod3-eleven-and-balanced-dual.md. No GitHub write blocker or
-unapplied patch remains. All this session's claims have exact evidence scopes.
-No support/denominator optimum, all-n degree2 upper bound, barrier escape or
-P-vs-NP resolution is claimed. Any future session needs its own approval.
+Overcounting shortcuts and five failed formal candidate builds are preserved
+in graveyard021..024. The final repair retained theorem statements, GF(2),
+actual degree, REAL weights, quantifiers, --wfail and the foundational allowlist.
+
+#8 remains OPEN: independent human semantic review has NOT occurred. A second
+kernel and mathematical novelty assessment are absent. No optimality, new
+asymptotic complexity landmark, circuit lower bound, proof-barrier escape or
+P-vs-NP conclusion is claimed.
+
+Read Expedition020 conclusion/statement audit/ci-evidence/axiom-report,
+formal/ASSUMPTIONS.md and logs/2026-10-21-balanced-counting.md. All work was
+committed; no write-permission blocker or unapplied patch remains. This approved
+session ends at the verified generic-counting milestone. Future work requires
+fresh approval, not reuse of this document or earlier approval.

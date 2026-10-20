@@ -1,99 +1,109 @@
 # Formal assumption ledger
 
-## Current checkpoint: approved2026-10-20 JST session
+## Current checkpoint: generic balanced affine obstruction, 2026-10-21 JST
 
-Complete numerical GF(2), pointwise error1/3 MOD3 probabilistic-degree equalities
-are now formally verified for **n=5..11**. The new n11 theorem uses genuine
-MvPolynomial.totalDegree, normalized nonnegative REAL probabilities and one
-finite polynomial family chosen before every input. #11 is completed.
+Numerical MOD3 exact degree2 equalities cover n5..11 over GF(2), pointwise
+error1/3. A new structural theorem additionally excludes degree<=1 for every
+integer n>=7. It uses the original actual MvPolynomial.totalDegree predicate,
+normalized nonnegative REAL probabilities and one finite family before every
+input. It is not a degree2 upper bound for arbitrary n.
 
-A separate generic REAL-algebra score bound is also formally verified. Its
-identification with a generic Boolean-cube correctness probability is not yet
-formalized; #12 is the next unblocked structural task. #8 remains independent
-human semantic review. No n12 degree equality or all-n degree2 upper bound follows.
+## Actual accepted production execution
 
-## Actual n11 production acceptance
+- Code dc58ea7dd4d3e2ed36ca5b7d8276de651d95aa08.
+- Tree17bb48e8d3c1e44db10fa09cc30934ae7abd1355.
+- [SUCCESS run39510465687](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39510465687), job118929907745.
+- Pinned Lean4.35.0-rc4, Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8.
+- Root --wfail build9048 jobs;589 namespace declarations and29 explicit new
+  targets use only [propext,Classical.choice,Quot.sound]. Previous numerical
+  and algebra targets also completed. No project-specific axiom or recovery
+  placeholder was accepted. Warnings were repaired rather than suppressed.
 
-Code9733d800128ad6d92b1f1293e453a4c8d5188f34; treeec4b8aa8bbfab9b5bc6d4e134acde3c785f6475f.
-[Completed SUCCESS run39380310454](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39380310454),
-job118487684638. Pinned Lean4.35.0-rc4 and Mathlib
-9e6b3aac99b624d10c84653ab9c5357283b9b3b8; --wfail9043 jobs;
-508 namespace declarations and18 explicit n11 targets within
-[propext,Classical.choice,Quot.sound]. Full completed log inspected; coefficient
-data, final theorem statements and Git commit/tree re-fetched afterward.
+The completed status and full actual job log were inspected. All four source
+files and matching Git commit/tree were then re-fetched. Actual timestamped
+output is in [Expedition020/axiom-report.txt](../expeditions/020-balanced-counting/axiom-report.txt);
+source correspondence is in [ci-evidence.md](../expeditions/020-balanced-counting/ci-evidence.md).
 
-n11 source blob1eb242d53c74bb546a3547d9107b8074cb40caa3, SHA256
- eb8c4bc823cf0b370ae09746ef3c63ab5d4d7403e1ab0a11f0a4b7257087f00a.
-[Actual attributed axiom output](../expeditions/018-n11-formal/axiom-report.txt),
-[statement audit](../expeditions/018-n11-formal/statement-audit.md),
-[CI evidence](../expeditions/018-n11-formal/ci-evidence.md),
-[conclusion](../expeditions/018-n11-formal/conclusion.md).
+| New source | Re-fetched Git blob |
+|---|---|
+| BalancedAffineCounting.lean | 48ce5f97ed03856c17554d524bd4b23ec1a63442 |
+| BalancedAffineObstruction.lean | 8384c6e245ef779a580ea9ceb3618d3a8fbd92c0 |
+| BalancedAffineBinomial.lean | 4e30d4ea65187121efaf1857541409373e05d2d3 |
+| BalancedAffineInputMeasure.lean | ff01e87a09444e9d8fdeca61c9cec27bb471fe62 |
 
-The three seeds have weights[1,4,2]/7, represented by triple tickets[3,12,6]/21.
-All12 layer inequalities use threshold14 and kernel-checked closed sums.
-The existing full-permutation/Hamming-layer adapter supplies the pointwise
-family. The lower dual207/330=69/110<2/3 covers all4096 affine coefficient
-rows through proved permutation coverage; structural degree-one normal form
-extends to ALL actual degree<=1 polynomial objects and finite REAL mixtures.
-The final feasible_degree_iff, IsLeast and pdeg_eq_two use proved existence.
-The raw unsymmetrized three-seed counterexample atmask63 is also accepted.
+## Faithful mathematical chain
 
-The separately computed496-row same-measure quotient is not a new Lean quotient
-transport theorem. Nor is the original larger-margin nine-orbit witness newly
-formalized by accepting this three-seed/full-permutation construction.
+For n>=3, sampleMass is a normalized nonnegative REAL measure on singleton
+coordinates plus ordered triples. Distinct triples get mass1/(2n(n-1)(n-2));
+repeated-coordinate triples get zero. sampleInput maps to actual Boolean inputs.
 
-## Additional real algebra and integrated audit
+The generic finite real identity S^3-3QS+2R is proved structurally. It supplies
+the triple count and, for coefficient signs1-2b_i, the actual affine score.
+Original affineValue/target evaluation is rewritten before the sign identity
+is applied. The target remains1 iff integer Hamming weight is divisible by3.
+For coefficient weightk, the constant-zero score is
+1/2+(n-2k)*(n^2-(n-2k)^2)/(4n(n-1)(n-2)); constant-one score is complementary.
 
-Repaired code dde6151abd4a4a272a2bdcbbd277c7296487d2c5; tree
-7c07084a3f867891092e247922a6741d62750525.
-[Completed SUCCESS run39381768668](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39381768668),
-job118492254315: unchanged pinned versions, --wfail9044 jobs,518 namespace
-declarations inside the same foundational allowlist. All18 n11 target reports
-and six new algebra reports completed. Full logs, ENTIRE repaired algebra source
-and matching commit/tree re-fetched. Source blobef92fdecc80241481d9b4578dce596848733ff33;
-SHA2565a6bfaa519c10b8205cd0a019d0e87e353f7f8133163cb477c4b407b4a62b335.
+Pascal induction proves choose2 and choose3 cast identities including small
+sizes. Actual singleton success count is n-k, and ordered-triple success count
+is6*(k*choose(n-k,2)+choose(k,3)). actual_score_binomial links the binomial
+expression to actual weighted correctness, not a freely defined surrogate.
 
-For all real n>=7 and0<=k<=n, with t=n-2k, the accepted algebra proves
-1/3<1/2+t*(n^2-t^2)/(4*n*(n-1)*(n-2))<2/3, plus complement symmetry and
-exact score(6,1)=2/3. This is not a finite-to-general inference: the proof is
-real algebra. However, its generic Boolean-cube counting/application bridge is
-still unproved and tracked separately in #12. See [actual output](../expeditions/019-balanced-affine-dual/axiom-report.txt)
-and [scope](../expeditions/019-balanced-affine-dual/conclusion.md).
+For each n>=7, the common bound
+B(n)=1/2+(2n^3/5)/(4n(n-1)(n-2))<2/3 covers all coefficient rows and constants.
+Structural degree_one_eq_affine then covers every actual totalDegree<=1
+polynomial, and existing finite_dual_obstruction covers any finite REAL mixture.
+The final no_degree_one_family and degree_one_impossible assume neither the
+score identity nor the desired conclusion. The final predicate is unchanged.
 
-## Complementary finite tests and failure preservation
+inputMass is also explicitly defined on the actual cube by summing all sample
+fiber masses. Its positivity, normalization and expectation transport for ANY
+real function are proved. Injectivity is not required and duplicates are not
+silently discarded. polynomial_input_bound supplies the actual-cube bound.
 
-n11 exact source audit9238f5a1 passes39380579421/job118488536922 under normal/-O,
-with actual/saved JSON equality:2048 inputs,4096 affine rows,12 layers,
-201 coefficient changes and5 source-data mutations, exact production-source hash.
-Algebra-interpretation exact codeea1f4e04 passes39381262415/job118490656488:
-33147 formula pairs n3..256, full cubes/all affine rows n3..12. Its result is
-bounded finite evidence, not a proof of generic counting. Both full completed
-logs and saved outputs were inspected and re-fetched.
+## Precisely separated residual
 
-The initial auxiliary formal build39381262500/job118490657553 FAILED on missing
-noncomputable for a real definition and an unused-hypothesis warning. Repair
-changed only the annotation and explicit hypothesis use, not any statement,
-threshold or audit policy. graveyard019 preserves the actual failure. The false
-strict-bound extension to n5/n6 remains in graveyard018. All older n10/n8
-failures and original proof artifacts remain in their dated records.
+The separately named closed point-mass formula (half uniform on weight1 and
+half uniform on weight3) is not yet a compiled fiber-cardinality theorem.
+#13 tracks that representation interface and further Hamming-layer intersection
+counting. It is NOT a premise of the accepted sample, pushforward or obstruction
+proof. #12's core objective is completed via this valid alternative representation.
+The actual n6 balanced-dual tightness is formally checked; its equality2/3
+refutes only this measure's strict gap at n6, not previous n6 degree results.
+
+## Complementary evidence and failures
+
+Exact code317784842f82b6a1991db664ddd3734d08f72985 passed run39507686566/
+job118920623125. Full log and normal/-O byte equality plus actual/saved JSON
+equality inspected; source, output and commit/tree re-fetched. Checks cover1093
+moment vectors,3031040 affine/input evaluations n3..12 and33147 formula cases
+n3..256. These finite tests were not used as an all-n formal proof.
+
+Five candidate builds failed before final acceptance: a34c3775, e96df58e,
+cf15c55f (dependent failed prefix),290fd53c,6d91476a. Four primary full failure
+logs were inspected; the dependent run's failed metadata was inspected without
+claiming its full log was read. Graveyard022..024 preserve precise implementation
+failures and faithful repairs. Graveyard021 preserves false diagonal/fiber
+accounting with exact counterexamples. No failed source recovery placeholder,
+queued workflow or green finite checker was mistaken for formal acceptance.
 
 ## Reproduction and remaining gates
 
-From formal/: `lake build --wfail` and `./scripts/axiom_report.sh`.
-Production CI additionally runs the compiled namespace axiom allowlist.
-No project-specific extra axiom, sorryAx, admit, native_decide or decide_cbv
-was admitted. The local container lacked Lean; actual formal execution was in
-Actions. Independent human semantic review and a second proof kernel remain
-absent. No mathematical novelty, support optimality, circuit lower bound,
-barrier escape or P-vs-NP conclusion is asserted.
+From formal/: lake build --wfail; ./scripts/axiom_report.sh. The production
+workflow additionally audits the compiled namespace. Local Lean was absent;
+actual formal execution used Actions. #8 independent human semantic review
+remains open. A second proof kernel and novelty assessment are not provided.
 
-## Preserved historical ledgers
+Earlier accepted n11 source9733d800/run39380310454 and pure algebra source
+dde6151a/run39381768668 remain unchanged. The earlier496-row n11 quotient is
+still separately finite data, not automatically a formal quotient theorem.
+The current generic lower obstruction is a useful reusable proof, not a claim
+of novel asymptotic complexity, an all-n degree2 upper bound or a P-vs-NP result.
 
-The entire preceding n10 ledger is archived byte-identically as
-[2026-10-20-pre-n11-ledger.md](reports/2026-10-20-pre-n11-ledger.md),
-Git bloba43efd4ec81015a490b1bfa5f3de40b7180d32f1. It preserves the accepted
-n10 production1739ccfa/run39139432083, earlier semantic checks, repair details
-and the links to all prior n5..9 ledgers. Its n11-pending statements describe
-the historical Oct18 checkpoint, not current status. No historical proof or
-failure record was deleted. Documentation-only commits do not replace the
-specific code/run acceptance evidence above.
+## Preserved historical ledger
+
+The immediately preceding ledger is archived byte-identically as
+[2026-10-21-pre-counting-ledger.md](reports/2026-10-21-pre-counting-ledger.md),
+Git blob02ca1e5a4391ec986a4eb93a08dd5fb2cd9354a0. It retains n5..11 evidence,
+algebra acceptance, all older archived ledgers and prior failures. Old pending
+statements are historical. No proof or failed direction was deleted.
