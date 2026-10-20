@@ -6,3 +6,4 @@ lake env lean PvsNPCartography/SymmetryAxiomAudit.lean
 lake env lean PvsNPCartography/LayerAxiomAudit.lean
 lake env lean PvsNPCartography/ElevenAxiomAudit.lean
 lake env lean PvsNPCartography/BalancedDualAxiomAudit.lean
+lake env lean PvsNPCartography/CountingAxiomAudit.lean

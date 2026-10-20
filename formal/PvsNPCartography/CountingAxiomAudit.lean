@@ -1,0 +1,9 @@
+import PvsNPCartography.BalancedAffineCounting
+
+#print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_moment
+#print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_count
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleMass_nonneg
+#print axioms PvsNPCartography.BalancedAffineCounting.sampleMass_sum
+#print axioms PvsNPCartography.BalancedAffineCounting.bitSign_sum
+#print axioms PvsNPCartography.BalancedAffineCounting.singleton_correct
+#print axioms PvsNPCartography.BalancedAffineCounting.triple_correct
