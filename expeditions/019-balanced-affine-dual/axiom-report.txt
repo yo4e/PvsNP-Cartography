@@ -1,0 +1,33 @@
+Actual retrieved algebraic-lemma formal output, 2026-10-20 JST.
+Code: dde6151abd4a4a272a2bdcbbd277c7296487d2c5
+Tree: 7c07084a3f867891092e247922a6741d62750525
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/39381768668
+Job: 118492254315, completed SUCCESS.
+Full completed job log inspected, including all n11 reports and the six targets below.
+These targets concern a real algebraic score, NOT an already formalized generic Boolean-cube counting identity.
+
+2026-10-20T06:42:30.8746953Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-20T06:42:29.5107114Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-20T06:43:40.6475952Z   BUILD_ARGS: --wfail
+2026-10-20T06:43:50.7219933Z ✔ [9042/9044] Built PvsNPCartography.BalancedAffineDualAlgebra (6.6s)
+2026-10-20T06:43:54.0347469Z Build completed successfully (9044 jobs).
+2026-10-20T06:44:27.7255946Z axiom-audit: audited 518 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-20T06:44:27.7610727Z axiom-audit completed successfully
+
+2026-10-20T06:44:47.4835016Z 'PvsNPCartography.BalancedAffineDualAlgebra.cubic_envelope_nonnegative' depends on axioms: [propext,
+2026-10-20T06:44:47.4835611Z  Classical.choice,
+2026-10-20T06:44:47.4835919Z  Quot.sound]
+2026-10-20T06:44:47.4836515Z 'PvsNPCartography.BalancedAffineDualAlgebra.cubic_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:44:47.4837338Z 'PvsNPCartography.BalancedAffineDualAlgebra.score_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:44:47.4838047Z 'PvsNPCartography.BalancedAffineDualAlgebra.score_lt_two_thirds' depends on axioms: [propext,
+2026-10-20T06:44:47.4838481Z  Classical.choice,
+2026-10-20T06:44:47.4838674Z  Quot.sound]
+2026-10-20T06:44:47.4839038Z 'PvsNPCartography.BalancedAffineDualAlgebra.score_gt_one_third' depends on axioms: [propext,
+2026-10-20T06:44:47.4839468Z  Classical.choice,
+2026-10-20T06:44:47.4839651Z  Quot.sound]
+2026-10-20T06:44:47.4840084Z 'PvsNPCartography.BalancedAffineDualAlgebra.six_is_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Re-fetched repaired source blob: ef92fdecc80241481d9b4578dce596848733ff33.
+Source SHA256: 5a6bfaa519c10b8205cd0a019d0e87e353f7f8133163cb477c4b407b4a62b335.
+The source and actual Git commit/tree were re-fetched after completed output.
+No independent human semantic review or second proof kernel was supplied.

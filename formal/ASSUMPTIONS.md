@@ -1,108 +1,99 @@
 # Formal assumption ledger
 
-## Current checkpoint: approved 2026-10-18 night, n10 verified
+## Current checkpoint: approved2026-10-20 JST session
 
-The production run completed on 2026-10-19 JST, within the same approved Oct18
-session. Complete numerical GF(2), error1/3 MOD3 probabilistic-degree equalities
-now cover **n=5..10**. The n11 three-orbit and496-row witnesses remain separately
-validated finite data, not compiled n11 Lean degree theorems. No asymptotic
-P-vs-NP or all-n MOD3 conclusion follows.
+Complete numerical GF(2), pointwise error1/3 MOD3 probabilistic-degree equalities
+are now formally verified for **n=5..11**. The new n11 theorem uses genuine
+MvPolynomial.totalDegree, normalized nonnegative REAL probabilities and one
+finite polynomial family chosen before every input. #11 is completed.
 
-## Actual production acceptance
+A separate generic REAL-algebra score bound is also formally verified. Its
+identification with a generic Boolean-cube correctness probability is not yet
+formalized; #12 is the next unblocked structural task. #8 remains independent
+human semantic review. No n12 degree equality or all-n degree2 upper bound follows.
 
-- Code: `1739ccfa2ebe5997e568135cdfacf06e9f6d1f87`.
-- Tree: `693fff576290749ebbd023d861041e53ca0a9812`.
-- n10 source blob: `cf6c6ec257f0a5c20e9b12f3c265864db57e58ca`.
-- n10 source SHA256: `5d6aa5a2df006cee95a9d43b0707505298f431d38f0c984440fb5b0d1553b571`.
-- [Completed SUCCESS formal run39139432083](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432083), job117710608870.
-- Pinned Lean4.35.0-rc4 and Mathlib `9e6b3aac99b624d10c84653ab9c5357283b9b3b8`.
-- Production **--wfail** root build:9042 jobs. Mod3TenDegree actually built in176s.
-- Namespace audit: **420 declarations**, all within `[propext, Classical.choice, Quot.sound]`.
-- All **15 explicit n10 target reports** use only that same foundational allowlist.
+## Actual n11 production acceptance
 
-The full completed job log, matching source statements and Git commit/tree were
-retrieved and inspected. [Attributed actual output](reports/2026-10-18-n10-axioms.txt)
-records the toolchain, build, namespace count and all15 n10 targets. A queued
-run, green diagnostic wrapper or source file alone was not used as acceptance.
-No new project-specific axiom, sorryAx, native_decide or decide_cbv was accepted.
+Code9733d800128ad6d92b1f1293e453a4c8d5188f34; treeec4b8aa8bbfab9b5bc6d4e134acde3c785f6475f.
+[Completed SUCCESS run39380310454](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39380310454),
+job118487684638. Pinned Lean4.35.0-rc4 and Mathlib
+9e6b3aac99b624d10c84653ab9c5357283b9b3b8; --wfail9043 jobs;
+508 namespace declarations and18 explicit n11 targets within
+[propext,Classical.choice,Quot.sound]. Full completed log inspected; coefficient
+data, final theorem statements and Git commit/tree re-fetched afterward.
 
-## Statement and dependency fidelity
+n11 source blob1eb242d53c74bb546a3547d9107b8074cb40caa3, SHA256
+ eb8c4bc823cf0b370ae09746ef3c63ab5d4d7403e1ab0a11f0a4b7257087f00a.
+[Actual attributed axiom output](../expeditions/018-n11-formal/axiom-report.txt),
+[statement audit](../expeditions/018-n11-formal/statement-audit.md),
+[CI evidence](../expeditions/018-n11-formal/ci-evidence.md),
+[conclusion](../expeditions/018-n11-formal/conclusion.md).
 
-The n10 target is one iff integer Hamming weight is divisible by3. Coefficients
-are GF(2), not real-valued approximation polynomials. The degree bound is actual
-MvPolynomial.totalDegree. Nonnegative REAL probabilities sum to1 and a single
-finite family is selected before every input quantifier.
+The three seeds have weights[1,4,2]/7, represented by triple tickets[3,12,6]/21.
+All12 layer inequalities use threshold14 and kernel-checked closed sums.
+The existing full-permutation/Hamming-layer adapter supplies the pointwise
+family. The lower dual207/330=69/110<2/3 covers all4096 affine coefficient
+rows through proved permutation coverage; structural degree-one normal form
+extends to ALL actual degree<=1 polynomial objects and finite REAL mixtures.
+The final feasible_degree_iff, IsLeast and pdeg_eq_two use proved existence.
+The raw unsymmetrized three-seed counterexample atmask63 is also accepted.
 
-Upper: the unchanged eight seeds with weights[10,2,39,22,15,6,4,2]/100 are encoded
-by triple tickets/300. Genuine quadratic polynomial evaluation and all11 exact
-layer sums feed the already verified full-permutation/Hamming-layer adapter.
-The resulting family includes ALL coordinate permutations, not input-dependent
-polynomial choices. Exact finite minimum is2123/3000>2/3.
+The separately computed496-row same-measure quotient is not a new Lean quotient
+transport theorem. Nor is the original larger-margin nine-orbit witness newly
+formalized by accepting this three-seed/full-permutation construction.
 
-Lower: mass12 per weight-one input and1 per weight-three input, total240, yields
-bound152/240=19/30<2/3. Proved coefficient-permutation coverage turns22 canonical
-checks into coverage of all2048 affine rows. Structural degree-one normal form
-then applies the dual to ALL actual degree<=1 polynomial objects and arbitrary
-finite REAL mixtures. The final `feasible_degree_iff`, `least_feasible_degree`
-and `pdeg_eq_two` use proved feasibility and infeasibility, not desired-result
-hypotheses. The raw unsymmetrized mixture counterexample is also formally checked.
+## Additional real algebra and integrated audit
 
-The original HasProbabilisticDegreeAtMost definition, real probabilities,
-family-before-input quantifiers, layer adapter, code coefficients, success
-thresholds and heartbeat settings were unchanged by the repair.
+Repaired code dde6151abd4a4a272a2bdcbbd277c7296487d2c5; tree
+7c07084a3f867891092e247922a6741d62750525.
+[Completed SUCCESS run39381768668](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39381768668),
+job118492254315: unchanged pinned versions, --wfail9044 jobs,518 namespace
+declarations inside the same foundational allowlist. All18 n11 target reports
+and six new algebra reports completed. Full logs, ENTIRE repaired algebra source
+and matching commit/tree re-fetched. Source blobef92fdecc80241481d9b4578dce596848733ff33;
+SHA2565a6bfaa519c10b8205cd0a019d0e87e353f7f8133163cb477c4b407b4a62b335.
 
-## Separate computational evidence
+For all real n>=7 and0<=k<=n, with t=n-2k, the accepted algebra proves
+1/3<1/2+t*(n^2-t^2)/(4*n*(n-1)*(n-2))<2/3, plus complement symmetry and
+exact score(6,1)=2/3. This is not a finite-to-general inference: the proof is
+real algebra. However, its generic Boolean-cube counting/application bridge is
+still unproved and tracked separately in #12. See [actual output](../expeditions/019-balanced-affine-dual/axiom-report.txt)
+and [scope](../expeditions/019-balanced-affine-dual/conclusion.md).
 
-[Completed SUCCESS semantic run39139432110](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39139432110),
-job117710608842, at the same production commit, reproduced the independently
-derived n10 coefficients on1024 canonical inputs, all2048 affine rows, all11
-layer sums and448 coefficient-mutation tests. Normal/-O output matches saved
-JSON and the exact production-source hash. This is complementary evidence,
-not a replacement for the completed Lean audits.
+## Complementary finite tests and failure preservation
 
-For n11, Expedition017 proves no new Lean theorem: its exact computational
-quotient removes redundant partition labels from the same old probability
-measure,1925 indexed entries to496 distinct rows, denominator27720 to1155,
-unchanged minimum158/231 on all2048 inputs. The three-seed/full-permutation and
-496-row implementations must not be conflated if either is later formalized.
+n11 exact source audit9238f5a1 passes39380579421/job118488536922 under normal/-O,
+with actual/saved JSON equality:2048 inputs,4096 affine rows,12 layers,
+201 coefficient changes and5 source-data mutations, exact production-source hash.
+Algebra-interpretation exact codeea1f4e04 passes39381262415/job118490656488:
+33147 formula pairs n3..256, full cubes/all affine rows n3..12. Its result is
+bounded finite evidence, not a proof of generic counting. Both full completed
+logs and saved outputs were inspected and re-fetched.
 
-## Failure history and repair boundary
-
-The Oct17 n10 candidate run39037050907 was cancelled twice with shutdown/exit143;
-its cause remains unknown. This session's isolated diagnostic found the original
-kernel lower prefix passes. Default decide_cbv substitutions failed the step
-budget, propagating sorryAx into failed dependent declarations. Those outputs
-were rejected and preserved in graveyard017, not called proof success.
-
-The successful repair changes only the layer proof to:
-
-```lean
-  intro w
-  fin_cases w <;> decide +kernel
-```
-
-Diagnostic run39138440340 passed the layer-only and full candidate with15
-allowlisted reports. The exact candidate was then applied and accepted by the
-production run above. No increased CBV budget was adopted or tested after the
-first strategy passed. Historical diagnostic scripts intentionally pin the old
-candidate hash; reproduce them at their recorded commits instead of bypassing
-those provenance guards.
+The initial auxiliary formal build39381262500/job118490657553 FAILED on missing
+noncomputable for a real definition and an unused-hypothesis warning. Repair
+changed only the annotation and explicit hypothesis use, not any statement,
+threshold or audit policy. graveyard019 preserves the actual failure. The false
+strict-bound extension to n5/n6 remains in graveyard018. All older n10/n8
+failures and original proof artifacts remain in their dated records.
 
 ## Reproduction and remaining gates
 
-From `formal/` run `lake build --wfail` and `./scripts/axiom_report.sh`.
-The production workflow additionally runs the compiled namespace axiom audit.
-The local research container lacked Lean; the reported formal execution was in
-Actions. **Independent human semantic review (#8) and a second proof kernel are
-still absent.** Formal statement checking is not a mathematical novelty claim.
-The next autonomous mathematical task is n11's faithful degree interface (#11),
-not redoing completed n10 (#10).
+From formal/: `lake build --wfail` and `./scripts/axiom_report.sh`.
+Production CI additionally runs the compiled namespace axiom allowlist.
+No project-specific extra axiom, sorryAx, admit, native_decide or decide_cbv
+was admitted. The local container lacked Lean; actual formal execution was in
+Actions. Independent human semantic review and a second proof kernel remain
+absent. No mathematical novelty, support optimality, circuit lower bound,
+barrier escape or P-vs-NP conclusion is asserted.
 
-## Preserved historical ledger
+## Preserved historical ledgers
 
-The full previous ledger is archived byte-identically as
-[2026-10-18-pre-n10-ledger.md](reports/2026-10-18-pre-n10-ledger.md), Git blob
-`1dd727cd960d10570dde0b307b287fb50113cec4`. It retains all n5..9 evidence,
-earlier archived ledgers, failure history and original source hashes. Its old
-pending statements are historical, not the current n10 status. No earlier
-proof artifact, statement or failed direction was deleted.
+The entire preceding n10 ledger is archived byte-identically as
+[2026-10-20-pre-n11-ledger.md](reports/2026-10-20-pre-n11-ledger.md),
+Git bloba43efd4ec81015a490b1bfa5f3de40b7180d32f1. It preserves the accepted
+n10 production1739ccfa/run39139432083, earlier semantic checks, repair details
+and the links to all prior n5..9 ledgers. Its n11-pending statements describe
+the historical Oct18 checkpoint, not current status. No historical proof or
+failure record was deleted. Documentation-only commits do not replace the
+specific code/run acceptance evidence above.
