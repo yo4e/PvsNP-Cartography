@@ -1,0 +1,38 @@
+Actual retrieved formal output, approved 2026-10-20 JST session.
+Code: 9733d800128ad6d92b1f1293e453a4c8d5188f34
+Tree: ec4b8aa8bbfab9b5bc6d4e134acde3c785f6475f
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/39380310454
+Job: 118487684638, completed SUCCESS.
+The full completed job log was fetched. Excerpts below retain their actual timestamps.
+
+2026-10-20T06:27:41.1426656Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-20T06:27:40.0510789Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-20T06:28:49.3079479Z   BUILD_ARGS: --wfail
+2026-10-20T06:34:19.1485000Z ✔ [9041/9043] Built PvsNPCartography.Mod3ElevenDegree (326s)
+2026-10-20T06:34:26.3622836Z Build completed successfully (9043 jobs).
+2026-10-20T06:35:05.4481078Z axiom-audit: audited 508 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-20T06:35:05.4873524Z axiom-audit completed successfully
+
+2026-10-20T06:35:23.3601287Z 'PvsNPCartography.Mod3Eleven.weights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3602224Z 'PvsNPCartography.Mod3Eleven.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3603031Z 'PvsNPCartography.Mod3Eleven.canonical_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3603892Z 'PvsNPCartography.Mod3Eleven.canonical_affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3605217Z 'PvsNPCartography.Mod3Eleven.affineScore_permute' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3606027Z 'PvsNPCartography.Mod3Eleven.affine_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3606844Z 'PvsNPCartography.Mod3Eleven.layer_tickets_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3607676Z 'PvsNPCartography.Mod3Eleven.upper_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3608519Z 'PvsNPCartography.Mod3Eleven.raw_seed_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3609343Z 'PvsNPCartography.Mod3Eleven.seed_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3610241Z 'PvsNPCartography.Mod3Eleven.seed_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3611040Z 'PvsNPCartography.Mod3Eleven.seed_layer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3611852Z 'PvsNPCartography.Mod3Eleven.degree_two_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3612695Z 'PvsNPCartography.Mod3Eleven.degree_one_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3613521Z 'PvsNPCartography.Mod3Eleven.feasible_degree_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3614353Z 'PvsNPCartography.Mod3Eleven.least_feasible_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3615154Z 'PvsNPCartography.Mod3Eleven.pdeg_eq_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T06:35:23.3615910Z 'PvsNPCartography.Mod3Eleven.raw_seed_mixture_is_not_pointwise' depends on axioms: [propext,
+2026-10-20T06:35:23.3616472Z  Classical.choice,
+2026-10-20T06:35:23.3616844Z  Quot.sound]
+
+This records the real n11 formal acceptance, not the later auxiliary algebra run.
+No independent human semantic review or second proof kernel was supplied.
