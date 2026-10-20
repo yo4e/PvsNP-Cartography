@@ -1,0 +1,20 @@
+import PvsNPCartography.Mod3ElevenDegree
+
+#print axioms PvsNPCartography.Mod3Eleven.weights_sum
+#print axioms PvsNPCartography.Mod3Eleven.mass_sum
+#print axioms PvsNPCartography.Mod3Eleven.canonical_weight
+#print axioms PvsNPCartography.Mod3Eleven.canonical_affine_bound
+#print axioms PvsNPCartography.Mod3Eleven.affineScore_permute
+#print axioms PvsNPCartography.Mod3Eleven.affine_bound
+#print axioms PvsNPCartography.Mod3Eleven.layer_tickets_exact
+#print axioms PvsNPCartography.Mod3Eleven.upper_layer_bound
+#print axioms PvsNPCartography.Mod3Eleven.raw_seed_counterexample
+#print axioms PvsNPCartography.Mod3Eleven.seed_correct
+#print axioms PvsNPCartography.Mod3Eleven.seed_success
+#print axioms PvsNPCartography.Mod3Eleven.seed_layer_bound
+#print axioms PvsNPCartography.Mod3Eleven.degree_two_feasible
+#print axioms PvsNPCartography.Mod3Eleven.degree_one_impossible
+#print axioms PvsNPCartography.Mod3Eleven.feasible_degree_iff
+#print axioms PvsNPCartography.Mod3Eleven.least_feasible_degree
+#print axioms PvsNPCartography.Mod3Eleven.pdeg_eq_two
+#print axioms PvsNPCartography.Mod3Eleven.raw_seed_mixture_is_not_pointwise
