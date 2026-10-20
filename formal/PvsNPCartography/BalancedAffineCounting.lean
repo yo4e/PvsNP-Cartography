@@ -63,7 +63,7 @@ theorem ordered_triple_count (n : ℕ) :
       if Distinct i j k then (1 : ℝ) else 0) =
       (n : ℝ) * (n - 1) * (n - 2) := by
   have h := ordered_triple_moment (fun _ : Fin n => (1 : ℝ))
-  simp only [one_mul, one_pow, Finset.sum_const, Finset.card_univ,
+  simp only [one_pow, Finset.sum_const, Finset.card_univ,
     Fintype.card_fin, nsmul_eq_mul, mul_one] at h
   rw [h]
   ring

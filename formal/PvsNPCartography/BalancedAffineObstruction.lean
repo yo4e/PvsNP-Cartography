@@ -55,11 +55,14 @@ theorem sampleScore_formula {n : ℕ} (hn : 3 ≤ n) (p : Affine n) :
         C * (if Distinct i j k then bitSign (p.2 i) * bitSign (p.2 j) * bitSign (p.2 k) else 0)) /
         (4 * (n : ℝ) * (n - 1) * (n - 2)) := by
     by_cases hd : Distinct i j k
-    · rw [triple_correct p i j k hd]
-      simp only [sampleMass, hd, if_true]
+    · have hm : sampleMass n (.inr (i,j,k)) =
+          1 / (2 * (n : ℝ) * (n - 1) * (n - 2)) := by
+        exact if_pos hd
+      rw [hm, triple_correct p i j k hd]
+      simp only [if_pos hd]
       dsimp [C]
-      field_simp
-      <;> ring
+      field_simp [hn0, hn1, hn2]
+      ring
     · simp [sampleMass, hd]
   have ht : (∑ i : Fin n, ∑ j : Fin n, ∑ k : Fin n,
       sampleMass n (.inr (i,j,k)) * (affineCorrect p (sampleInput (.inr (i,j,k))) : ℝ)) =
@@ -100,7 +103,9 @@ theorem algebra_score_le_envelope {n k : ℝ} (hn : 7 ≤ n) (hk : 0 ≤ k) (hkn
   have hd : 0 ≤ 4 * n * (n - 1) * (n - 2) := by positivity
   have he := BalancedAffineDualAlgebra.cubic_envelope (le_of_lt hn0)
     (show -n ≤ n - 2 * k by linarith) (show n - 2 * k ≤ n by linarith)
-  exact add_le_add_left (div_le_div_of_nonneg_right he hd) (1 / 2)
+  have hr := div_le_div_of_nonneg_right he hd
+  unfold BalancedAffineDualAlgebra.score envelope
+  linarith
 
 theorem envelope_lt_two_thirds {n : ℝ} (hn : 7 ≤ n) : envelope n < (2 : ℝ) / 3 := by
   have hn0 : 0 < n := by linarith
@@ -124,9 +129,11 @@ theorem sampleScore_bound {n : ℕ} (hn : 7 ≤ n) (p : Affine n) :
   have hkn : (hammingWeight p.2 : ℝ) ≤ n := by exact_mod_cast hammingWeight_le p.2
   rcases p with ⟨c,b⟩
   fin_cases c
-  · rw [sampleScore_zero hn3]
+  · change sampleScore ((0 : Fin 2), b) ≤ envelope n
+    rw [sampleScore_zero hn3]
     exact algebra_score_le_envelope hnr hk hkn
-  · rw [sampleScore_one hn3]
+  · change sampleScore ((1 : Fin 2), b) ≤ envelope n
+    rw [sampleScore_one hn3]
     exact algebra_score_le_envelope hnr (by linarith) (by linarith)
 
 /-- Generic obstruction for all actual degree-at-most-one polynomials and

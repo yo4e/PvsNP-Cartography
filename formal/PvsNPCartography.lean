@@ -20,3 +20,5 @@ import PvsNPCartography.Mod3ElevenDegree
 import PvsNPCartography.BalancedAffineDualAlgebra
 import PvsNPCartography.BalancedAffineCounting
 import PvsNPCartography.BalancedAffineObstruction
+import PvsNPCartography.BalancedAffineBinomial
+import PvsNPCartography.BalancedAffineInputMeasure

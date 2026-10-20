@@ -1,4 +1,4 @@
-import PvsNPCartography.BalancedAffineObstruction
+import PvsNPCartography.BalancedAffineInputMeasure
 
 #print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_moment
 #print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_count
@@ -16,3 +16,16 @@ import PvsNPCartography.BalancedAffineObstruction
 #print axioms PvsNPCartography.BalancedAffineCounting.sampleScore_bound
 #print axioms PvsNPCartography.BalancedAffineCounting.no_degree_one_family
 #print axioms PvsNPCartography.BalancedAffineCounting.degree_one_impossible
+#print axioms PvsNPCartography.BalancedAffineCounting.choose_two_cast
+#print axioms PvsNPCartography.BalancedAffineCounting.choose_three_cast
+#print axioms PvsNPCartography.BalancedAffineCounting.six_mul_choose_three
+#print axioms PvsNPCartography.BalancedAffineCounting.countedScore_eq
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_nonneg
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_mean
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_sum
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_affine_score
+#print axioms PvsNPCartography.BalancedAffineCounting.singleton_success_count
+#print axioms PvsNPCartography.BalancedAffineCounting.ordered_triple_success_count
+#print axioms PvsNPCartography.BalancedAffineCounting.actual_score_binomial
+#print axioms PvsNPCartography.BalancedAffineCounting.polynomial_input_bound
+#print axioms PvsNPCartography.BalancedAffineCounting.six_balanced_dual_tight
