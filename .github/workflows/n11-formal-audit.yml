@@ -1,0 +1,41 @@
+name: n11 formal source semantics
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "formal/PvsNPCartography/Mod3ElevenDegree.lean"
+      - "expeditions/015-n11-mixture/compact-certificate.json"
+      - "expeditions/018-n11-formal/audit.py"
+      - "expeditions/018-n11-formal/finite-result.json"
+      - ".github/workflows/n11-formal-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Independent full-input checks and source-data alignment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/018-n11-formal/audit.py | tee /tmp/n11-source-normal.json
+          python -O expeditions/018-n11-formal/audit.py | tee /tmp/n11-source-optimized.json
+          cmp /tmp/n11-source-normal.json /tmp/n11-source-optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/n11-source-normal.json').read_text())
+          saved = json.loads(Path('expeditions/018-n11-formal/finite-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('actual finite audit differs from saved result')
+          print('Actual finite audit equals saved output; Lean acceptance is a separate gate.')
+          PY
