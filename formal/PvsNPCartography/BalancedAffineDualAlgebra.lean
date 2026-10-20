@@ -22,7 +22,7 @@ theorem cubic_envelope {n t : ℝ} (hn : 0 ≤ n) (hlo : -n ≤ t) (hhi : t ≤ 
   by_cases ht : 0 ≤ t
   · exact cubic_envelope_nonnegative hn ht
   · have ht' : t ≤ 0 := by linarith
-    have hf₀ := mul_nonneg (show 0 ≤ n - t by linarith)
+    have hf₀ := mul_nonneg (sub_nonneg.mpr hhi)
       (show 0 ≤ n + t by linarith)
     have hf : 0 ≤ n * n - t * t := by nlinarith
     have hp : t * (n * n - t * t) ≤ 0 := mul_nonpos_of_nonpos_of_nonneg ht' hf
@@ -31,7 +31,7 @@ theorem cubic_envelope {n t : ℝ} (hn : 0 ≤ n) (hlo : -n ≤ t) (hhi : t ≤ 
 
 /-- Algebraic candidate for an equal-half layer-one/layer-three affine score.
 This definition alone is not the finite Boolean-cube score identity. -/
-def score (n k : ℝ) : ℝ :=
+noncomputable def score (n k : ℝ) : ℝ :=
   1 / 2 + ((n - 2 * k) * (n * n - (n - 2 * k) * (n - 2 * k))) /
     (4 * n * (n - 1) * (n - 2))
 
