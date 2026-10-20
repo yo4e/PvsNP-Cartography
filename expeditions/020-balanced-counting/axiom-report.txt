@@ -1,0 +1,80 @@
+Actual retrieved formal output, approved 2026-10-21 JST session.
+Code: dc58ea7dd4d3e2ed36ca5b7d8276de651d95aa08
+Tree: 17bb48e8d3c1e44db10fa09cc30934ae7abd1355
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/39510465687
+Job: 118929907745, completed SUCCESS.
+The full completed job log was fetched. The following are actual attributed excerpts,
+not synthesized output from theorem names. UTC timestamps correspond to Oct21 JST.
+
+2026-10-20T22:47:37.9954331Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-20T22:47:37.4402899Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-20T22:48:39.7046339Z   BUILD_ARGS: --wfail
+2026-10-20T22:48:50.6303176Z ✔ [9043/9048] Built PvsNPCartography.BalancedAffineBinomial (6.4s)
+2026-10-20T22:48:52.0299042Z ✔ [9044/9048] Built PvsNPCartography.BalancedAffineCounting (7.8s)
+2026-10-20T22:48:57.2357253Z ✔ [9045/9048] Built PvsNPCartography.BalancedAffineObstruction (5.2s)
+2026-10-20T22:49:02.4422531Z ✔ [9046/9048] Built PvsNPCartography.BalancedAffineInputMeasure (5.2s)
+2026-10-20T22:49:06.6469548Z ✔ [9047/9048] Built PvsNPCartography (4.0s)
+2026-10-20T22:49:06.6563699Z Build completed successfully (9048 jobs).
+2026-10-20T22:49:54.4297031Z axiom-audit: audited 589 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-20T22:49:54.4693415Z axiom-audit completed successfully
+
+2026-10-20T22:50:26.8223565Z 'PvsNPCartography.BalancedAffineCounting.ordered_triple_moment' depends on axioms: [propext,
+2026-10-20T22:50:26.8224280Z  Classical.choice,
+2026-10-20T22:50:26.8224571Z  Quot.sound]
+2026-10-20T22:50:26.8225598Z 'PvsNPCartography.BalancedAffineCounting.ordered_triple_count' depends on axioms: [propext,
+2026-10-20T22:50:26.8226468Z  Classical.choice,
+2026-10-20T22:50:26.8226741Z  Quot.sound]
+2026-10-20T22:50:26.8227402Z 'PvsNPCartography.BalancedAffineCounting.sampleMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8228493Z 'PvsNPCartography.BalancedAffineCounting.sampleMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8229517Z 'PvsNPCartography.BalancedAffineCounting.bitSign_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8230355Z 'PvsNPCartography.BalancedAffineCounting.singleton_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8231204Z 'PvsNPCartography.BalancedAffineCounting.triple_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8232934Z 'PvsNPCartography.BalancedAffineCounting.sign_triple_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8234085Z 'PvsNPCartography.BalancedAffineCounting.sampleScore_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8234994Z 'PvsNPCartography.BalancedAffineCounting.sampleScore_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8235848Z 'PvsNPCartography.BalancedAffineCounting.sampleScore_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8236637Z 'PvsNPCartography.BalancedAffineCounting.algebra_score_le_envelope' depends on axioms: [propext,
+2026-10-20T22:50:26.8237136Z  Classical.choice,
+2026-10-20T22:50:26.8237354Z  Quot.sound]
+2026-10-20T22:50:26.8237775Z 'PvsNPCartography.BalancedAffineCounting.envelope_lt_two_thirds' depends on axioms: [propext,
+2026-10-20T22:50:26.8238263Z  Classical.choice,
+2026-10-20T22:50:26.8238477Z  Quot.sound]
+2026-10-20T22:50:26.8238987Z 'PvsNPCartography.BalancedAffineCounting.sampleScore_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8239790Z 'PvsNPCartography.BalancedAffineCounting.no_degree_one_family' depends on axioms: [propext,
+2026-10-20T22:50:26.8240260Z  Classical.choice,
+2026-10-20T22:50:26.8240468Z  Quot.sound]
+2026-10-20T22:50:26.8240877Z 'PvsNPCartography.BalancedAffineCounting.degree_one_impossible' depends on axioms: [propext,
+2026-10-20T22:50:26.8241355Z  Classical.choice,
+2026-10-20T22:50:26.8241826Z  Quot.sound]
+2026-10-20T22:50:26.8242322Z 'PvsNPCartography.BalancedAffineCounting.choose_two_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8243165Z 'PvsNPCartography.BalancedAffineCounting.choose_three_cast' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8243935Z 'PvsNPCartography.BalancedAffineCounting.six_mul_choose_three' depends on axioms: [propext,
+2026-10-20T22:50:26.8244405Z  Classical.choice,
+2026-10-20T22:50:26.8244611Z  Quot.sound]
+2026-10-20T22:50:26.8245133Z 'PvsNPCartography.BalancedAffineCounting.countedScore_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8245993Z 'PvsNPCartography.BalancedAffineCounting.inputMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8246844Z 'PvsNPCartography.BalancedAffineCounting.inputMass_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8247687Z 'PvsNPCartography.BalancedAffineCounting.inputMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-20T22:50:26.8248456Z 'PvsNPCartography.BalancedAffineCounting.inputMass_affine_score' depends on axioms: [propext,
+2026-10-20T22:50:26.8248938Z  Classical.choice,
+2026-10-20T22:50:26.8249145Z  Quot.sound]
+2026-10-20T22:50:26.8249565Z 'PvsNPCartography.BalancedAffineCounting.singleton_success_count' depends on axioms: [propext,
+2026-10-20T22:50:26.8250049Z  Classical.choice,
+2026-10-20T22:50:26.8250255Z  Quot.sound]
+2026-10-20T22:50:26.8250681Z 'PvsNPCartography.BalancedAffineCounting.ordered_triple_success_count' depends on axioms: [propext,
+2026-10-20T22:50:26.8251961Z  Classical.choice,
+2026-10-20T22:50:26.8252275Z  Quot.sound]
+2026-10-20T22:50:26.8252690Z 'PvsNPCartography.BalancedAffineCounting.actual_score_binomial' depends on axioms: [propext,
+2026-10-20T22:50:26.8253176Z  Classical.choice,
+2026-10-20T22:50:26.8253387Z  Quot.sound]
+2026-10-20T22:50:26.8253800Z 'PvsNPCartography.BalancedAffineCounting.polynomial_input_bound' depends on axioms: [propext,
+2026-10-20T22:50:26.8254292Z  Classical.choice,
+2026-10-20T22:50:26.8254494Z  Quot.sound]
+2026-10-20T22:50:26.8254900Z 'PvsNPCartography.BalancedAffineCounting.six_balanced_dual_tight' depends on axioms: [propext,
+2026-10-20T22:50:26.8255382Z  Classical.choice,
+2026-10-20T22:50:26.8255584Z  Quot.sound]
+
+All four accepted source files and actual Git commit/tree were re-fetched after
+this completed output. Their Git blobs are listed in ci-evidence.md. This report
+records 29 explicit new targets and the complete namespace audit, not a second
+proof kernel or independent human semantic review. Those gates remain absent.
