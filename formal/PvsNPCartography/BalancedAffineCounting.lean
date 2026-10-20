@@ -51,8 +51,10 @@ theorem ordered_triple_moment {α : Type*} [Fintype α] [DecidableEq α] (f : α
       ∑ i, f i ^ 3 := by
     simp [ite_and]
   simp_rw [triple_exclusion]
-  simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, ← Finset.mul_sum]
-  rw [hfull, h₁, h₂, h₃, h₄]
+  simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib]
+  rw [hfull, h₁, h₂, h₃]
+  simp only [← Finset.mul_sum]
+  rw [h₄]
   ring
 
 /-- Real count, including the empty and other low-arity cases. -/
@@ -61,8 +63,10 @@ theorem ordered_triple_count (n : ℕ) :
       if Distinct i j k then (1 : ℝ) else 0) =
       (n : ℝ) * (n - 1) * (n - 2) := by
   have h := ordered_triple_moment (fun _ : Fin n => (1 : ℝ))
-  norm_num at h
-  nlinarith [h]
+  simp only [one_mul, one_pow, Finset.sum_const, Finset.card_univ,
+    Fintype.card_fin, nsmul_eq_mul, mul_one] at h
+  rw [h]
+  ring
 
 abbrev Sample (n : ℕ) := Fin n ⊕ (Fin n × Fin n × Fin n)
 
@@ -98,7 +102,8 @@ theorem sampleMass_sum {n : ℕ} (hn : 3 ≤ n) :
   simp only [Fintype.sum_sum_type, Fintype.sum_prod_type, sampleMass]
   rw [ht]
   simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
-  field_simp [hn0, hn1, hn2] <;> ring
+  field_simp [hn0, hn1, hn2]
+  ring
 
 def sampleInput {n : ℕ} : Sample n → BooleanCube n
   | .inl i => bits {i}
@@ -128,20 +133,22 @@ private theorem affineValue_bits {n : ℕ} (p : Affine n) (s : Finset (Fin n)) :
   have hb (i : Fin n) : ((bits s i).val : ZMod 2) =
       if i ∈ s then 1 else 0 := by
     by_cases hi : i ∈ s <;> simp [bits, hi]
-  unfold affineValue
-  simp_rw [hb]
+  simp only [affineValue, Nat.cast_sum, Nat.cast_mul]
+  simp_rw [hb, mul_ite]
   simp
 
 private theorem singleton_sign (c a : Fin 2) :
     ((if (c.val : ZMod 2) + (a.val : ZMod 2) = 0 then 1 else 0 : ℕ) : ℝ) =
       (1 + bitSign c * bitSign a) / 2 := by
   fin_cases c <;> fin_cases a <;> norm_num [bitSign]
+  all_goals decide
 
 private theorem triple_sign (c a b d : Fin 2) :
     ((if (c.val : ZMod 2) + ((a.val : ZMod 2) + ((b.val : ZMod 2) + (d.val : ZMod 2))) = 1
       then 1 else 0 : ℕ) : ℝ) =
       (1 - bitSign c * bitSign a * bitSign b * bitSign d) / 2 := by
   fin_cases c <;> fin_cases a <;> fin_cases b <;> fin_cases d <;> norm_num [bitSign]
+  all_goals decide
 
 theorem singleton_correct {n : ℕ} (p : Affine n) (i : Fin n) :
     (affineCorrect p (sampleInput (.inl i)) : ℝ) =
