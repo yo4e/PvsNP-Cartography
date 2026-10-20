@@ -1,0 +1,36 @@
+name: ordered balanced counting exact audit
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/020-balanced-counting/verify.py"
+      - "expeditions/020-balanced-counting/result.json"
+      - ".github/workflows/balanced-counting.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact sampling, parity, moments and adversarial controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/020-balanced-counting/verify.py | tee /tmp/normal.json
+          python -O expeditions/020-balanced-counting/verify.py | tee /tmp/optimized.json
+          cmp /tmp/normal.json /tmp/optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/normal.json').read_text())
+          saved = json.loads(Path('expeditions/020-balanced-counting/result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved result differs from actual execution')
+          print('Actual exact output equals saved output; generic Lean acceptance is separate.')
+          PY
