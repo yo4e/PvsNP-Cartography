@@ -132,9 +132,14 @@ theorem inputMass_fiber_formula {n : ℕ} (x : BooleanCube n) :
         (2 * (n : ℝ) * (n-1) * (n-2)) := by
     change (if Distinct i j k then 1 / (2 * (n : ℝ) * (n-1) * (n-2)) else 0) *
       (if bits {i,j,k} = x then (1 : ℝ) else 0) = _
-    by_cases hd : Distinct i j k <;> by_cases hx : bits {i,j,k} = x <;>
-      simp only [hd,hx,and_self,true_and,false_and,ite_true,ite_false,
-        mul_one,mul_zero,zero_mul,zero_div]
+    by_cases hd : Distinct i j k
+    · rw [ite_eq_left hd]
+      by_cases hx : bits {i,j,k} = x
+      · rw [ite_eq_left hx, ite_eq_left (And.intro hd hx), mul_one]
+      · have hno : ¬ (Distinct i j k ∧ bits {i,j,k} = x) := fun h => hx h.2
+        rw [ite_eq_right hx, ite_eq_right hno, mul_zero, zero_div]
+    · have hno : ¬ (Distinct i j k ∧ bits {i,j,k} = x) := fun h => hd h.1
+      rw [ite_eq_right hd, zero_mul, ite_eq_right hno, zero_div]
   rw [hm]
   simp only [Fintype.sum_sum_type, Fintype.sum_prod_type]
   simp_rw [hs,ht]
