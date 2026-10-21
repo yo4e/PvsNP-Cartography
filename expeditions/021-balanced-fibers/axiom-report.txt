@@ -1,0 +1,50 @@
+Actual retrieved formal acceptance, approved 2026-10-21 JST session.
+Code: 598d54ed0940a331650b7e7eb733d62c9b6e40ab
+Tree: a9f26fbece775a5ad11e5cc8b84b5d31dac22341
+Run: https://github.com/yo4e/PvsNP-Cartography/actions/runs/39547776930
+Job: 119049747106, completed SUCCESS.
+The full completed job log was fetched and inspected. These are attributed excerpts,
+not output inferred from theorem-shaped source or the earlier failed runs.
+
+2026-10-21T05:09:06.9521711Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-21T05:09:05.7712806Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-21T05:10:16.0039722Z   BUILD_ARGS: --wfail
+2026-10-21T05:10:25.6733952Z ✔ [9047/9050] Built PvsNPCartography.HammingIntersections (6.4s)
+2026-10-21T05:10:25.7722083Z ✔ [9048/9050] Built PvsNPCartography.BalancedAffineFibers (6.5s)
+2026-10-21T05:10:29.0875316Z Build completed successfully (9050 jobs).
+2026-10-21T05:11:04.2381911Z axiom-audit: audited 639 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-21T05:11:04.2722231Z axiom-audit completed successfully
+
+2026-10-21T05:11:32.2383252Z 'PvsNPCartography.BalancedAffineCounting.singleton_fiber_count' depends on axioms: [propext,
+2026-10-21T05:11:32.2383725Z  Classical.choice,
+2026-10-21T05:11:32.2383898Z  Quot.sound]
+2026-10-21T05:11:32.2384286Z 'PvsNPCartography.BalancedAffineCounting.triples_inside_count' depends on axioms: [propext,
+2026-10-21T05:11:32.2384667Z  Classical.choice,
+2026-10-21T05:11:32.2384834Z  Quot.sound]
+2026-10-21T05:11:32.2385240Z 'PvsNPCartography.BalancedAffineCounting.triple_fiber_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T05:11:32.2385871Z 'PvsNPCartography.BalancedAffineCounting.inputMass_fiber_formula' depends on axioms: [propext,
+2026-10-21T05:11:32.2386260Z  Classical.choice,
+2026-10-21T05:11:32.2386423Z  Quot.sound]
+2026-10-21T05:11:32.2386818Z 'PvsNPCartography.BalancedAffineCounting.inputMass_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T05:11:32.2387438Z 'PvsNPCartography.BalancedAffineCounting.inputMass_half_layer_mean' depends on axioms: [propext,
+2026-10-21T05:11:32.2387827Z  Classical.choice,
+2026-10-21T05:11:32.2387993Z  Quot.sound]
+2026-10-21T05:11:36.1473286Z 'PvsNPCartography.HammingIntersections.splitEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T05:11:36.1474004Z 'PvsNPCartography.HammingIntersections.intersection_card_of_le' depends on axioms: [propext,
+2026-10-21T05:11:36.1474406Z  Classical.choice,
+2026-10-21T05:11:36.1474577Z  Quot.sound]
+2026-10-21T05:11:36.1474978Z 'PvsNPCartography.HammingIntersections.intersection_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T05:11:36.1475675Z 'PvsNPCartography.HammingIntersections.booleanSliceEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T05:11:36.1476301Z 'PvsNPCartography.HammingIntersections.boolean_intersection_card' depends on axioms: [propext,
+2026-10-21T05:11:36.1476687Z  Classical.choice,
+2026-10-21T05:11:36.1476854Z  Quot.sound]
+2026-10-21T05:11:36.1477223Z 'PvsNPCartography.HammingIntersections.unguarded_subtraction_counterexample' depends on axioms: [propext,
+2026-10-21T05:11:36.1477642Z  Classical.choice,
+2026-10-21T05:11:36.1477805Z  Quot.sound]
+
+All preceding numerical and generic obstruction target reports also completed.
+Re-fetched source blobs:
+BalancedAffineFibers.lean: 25445a5d2bd6f38de932cf7b2d934ae7942adb38
+HammingIntersections.lean: 21065c45b75967971b19a0c852cf85a685c57c77
+The exact Git commit/tree was independently fetched after completed verification.
+No independent human review, second proof kernel or mathematical novelty claim.

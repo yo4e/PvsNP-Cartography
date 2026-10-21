@@ -10,6 +10,10 @@ Repair: require r<=w, or explicitly return0 for r>w. The attraction is that
 ordinary mathematical binomial conventions often implicitly set negative
 lower indices to0, whereas the implementation has already erased the sign.
 
+This zero-versus-one counterexample is also formally accepted in
+HammingIntersections.unguarded_subtraction_counterexample at code598d54ed,
+completed SUCCESS run39547776930/job119049747106, with the unchanged axioms.
+
 ## Discard ordered triple multiplicity
 
 Claim: keep one of the six ordered samples for each triple support, but retain
@@ -21,11 +25,13 @@ not the same operation as removing their probability mass.
 
 ## Extend normalization to n=2
 
-There is no weight-three input at n=2. The closed singleton contribution sums
-to1/2, not1. Thus n>=3 is needed for the probability/half-layer-mean interface.
-Fiber counts themselves remain valid at n=0,1,2 and are tested separately.
+There is no weight-three input at n=2. The singleton contribution sums to1/2,
+not1. Thus n>=3 is needed for the stated normalized half-on-each-layer measure.
+Fiber counts themselves remain valid at n=0,1,2. This attack concerns
+normalization; it does not say the bare half-layer-mean algebraic equality
+must fail at n2 under the totalized empty-layer-mean convention.
 
-Expedition021/verify.py checks all three exact counterexamples. These refute
-only the stated shortcuts, not the accepted generic degree-one obstruction,
-not the correct input measure and not any general complexity-class relation.
-No novel-mathematics claim is made.
+Expedition021/verify.py checks all three exact counterexamples; actual normal/-O
+CI39546665458/job119046262844 reproduces the saved result. They refute only
+these shortcuts, not the accepted generic degree-one obstruction, the correct
+input measure or any complexity-class relation. No novelty claim is made.
