@@ -5,6 +5,8 @@ on:
     paths:
       - "expeditions/022-certified-layer-profiles/naive-lift-attack.py"
       - "expeditions/022-certified-layer-profiles/naive-lift-result.json"
+      - "expeditions/022-certified-layer-profiles/restricted-family-dual.py"
+      - "expeditions/022-certified-layer-profiles/restricted-dual-result.json"
       - ".github/workflows/clique-lift-attack.yml"
   workflow_dispatch:
 permissions:
@@ -34,4 +36,21 @@ jobs:
           if actual != saved:
               raise SystemExit('saved scoped counterexample differs from execution')
           print('Scoped n12 lift refuted exactly; no universal quadratic impossibility claim.')
+          PY
+      - name: Exhaustive restricted-family dual in normal and optimized Python
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/022-certified-layer-profiles/restricted-family-dual.py > /tmp/dual-normal.json
+          python -O expeditions/022-certified-layer-profiles/restricted-family-dual.py > /tmp/dual-optimized.json
+          cmp /tmp/dual-normal.json /tmp/dual-optimized.json
+          cat /tmp/dual-normal.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/dual-normal.json').read_text())
+          saved=json.loads(Path('expeditions/022-certified-layer-profiles/restricted-dual-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved restricted-family dual differs from execution')
+          print('All716 declared polynomials have dual score <=9/14; this is not all quadratics.')
           PY
