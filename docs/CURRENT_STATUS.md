@@ -1,52 +1,63 @@
-# Current checkpoint: approved 2026-10-21 JST fibers/intersections session
+# Current checkpoint: approved 2026-10-21 JST night, certified layer profiles
 
-The current fresh approval was used for one session. Actual execution occurred
-in the Japanese afternoon. This checkpoint does not authorize another session.
+One fresh approval used for this completed session. This document does not
+authorize future work. Earlier README/status snapshots are historical; use
+this file and live Issues for the current frontier.
 
-## Accepted and complete
+## Accepted mathematical scope
 
-Numerical GF(2), pointwise error1/3 MOD3 exact degree2 equalities remain n5..11.
-Expedition020's generic proof excludes degree<=1 for every integer n>=7 and
-arbitrary finite normalized nonnegative REAL mixtures of actual polynomials.
-That obstruction and #12 were already complete before this session.
+Numerical GF(2), pointwise error1/3 MOD3 exact degree2 remains n5..11. Generic
+degree<=1 impossibility remains every n>=7. Completed #9..#13 remain intact.
 
-**#13 is now CLOSED as completed.** The existing balanced inputMass has the
-proved closed mass1/(2n) at weight1,1/(2 choose(n,3)) at weight3 and0 elsewhere
-for n>=3, with one singleton and six ordered-distinct-triple fibers. Its
-expectation is half of each layer mean for every real function. Separately,
-actual Boolean Hamming intersections have the guarded generic count
-choose(|A|,r)*choose(n-|A|,w-r) for r<=w and0 otherwise, by explicit bijections.
+**#14 is now CLOSED.** HammingProfiles proves actual weighted overlap sums and
+means for arbitrary signed real scores, nonempty-layer normalization and empty
+layer boundaries. CliqueProfiles encodes actual elementary GF(2) polynomials,
+proves totalDegree/evaluation, and connects q_A/r_A MOD3 correctness to short
+binomial layer profiles. These generic evaluator theorems are NOT arbitrary-n
+quadratic success guarantees.
 
-Accepted source598d54ed0940a331650b7e7eb733d62c9b6e40ab passed completed
-SUCCESS39547776930/job119049747106: pinned Lean4.35.0-rc4/Mathlib9e6b3aac,
---wfail9050 jobs,639 namespace declarations,12 new explicit targets and all
-previous reports inside [propext,Classical.choice,Quot.sound]. Full actual
-output, both source files and matching commit/tree were re-fetched. Evidence
-commit3e464878 and Expedition021 preserve the accepted scope and exact reports.
+Accepted code9785a2705cc88efd372ab3de29a61007387bd91d, completed SUCCESS
+39615053307/job119273743612: pinned Lean4.35.0-rc4/Mathlib9e6b3aac,
+--wfail9052 jobs,695 namespace declarations and26 new explicit target reports
+inside [propext,Classical.choice,Quot.sound]. Full log/source/commit re-fetched.
+Evidence commit571b6637 and Expedition022 preserve the statement audit and
+actual timestamped axiom report. The n11 old coefficient match is finite
+regression, not a new Lean polynomial-equality bridge.
 
-## Next autonomous frontier
+## Scoped dead direction
 
-**#14: certified weighted Hamming-layer profiles.** Turn the accepted overlap
-cardinalities into an arbitrary-real weighted-sum/mean identity, then connect
-actual GF(2) clique-quadratic polynomial evaluation and degree to short profiles.
-The accepted n11 seeds are useful regressions, not targets to redo. No #14
-implementation or theorem is already claimed complete. Do not repeat the
-completed n5..11, generic obstruction, input fibers or intersection bijection.
+At n12 the fixed [1,4,2]/7 zero/q9/r8 lift fails at weight10 with19/33.
+An exact dual then bounds ALL716 members of that restricted family by9/14<2/3,
+so arbitrary real reweighting or nonuniform permutations cannot salvage it.
+This does NOT cover other subset sizes or all degree-two polynomials.
+The dedicated restricted-family Lean corollary is NOT yet compiled.
 
-## Evidence, failures and remaining gates
+Exact code9673b206 passed39616486615/job119278821696,708840 actual polynomial/
+positive-mass input evaluations. Independent profile formulas, normal/-O and
+saved/actual JSON match. Actual logs/scripts/results/commit were re-fetched.
+Separate base-profile run39614264276 passed174762 evaluations and134 mutations.
+See Expedition022/ci-finite-evidence.md, ci-attack-evidence.md and graveyard028..032.
 
-Exact finite code da8538d3, SUCCESS39546665458/job119046262844, reproduces8191
-fiber inputs n0..12,1,398,101 subset pairs n0..10 and251,902 histogram cells.
-Normal/-O output equals saved JSON. These bounded tests are complementary,
-not the proof of the generic results. Graveyard025 preserves the false
-unguarded count, total7/12 after dropping multiplicity, and n2 total1/2.
-The n2 failure concerns normalization rather than every empty-layer identity.
-Two rejected formal candidates and their faithful repairs remain in026/027.
+## Next earliest unblocked task: #16
 
-#8 remains OPEN for independent HUMAN semantic review. A second proof kernel
-and novelty assessment are absent. No write-permission blocker or unapplied
-research patch remains. No support/denominator optimum, n12 equality,
-arbitrary-n degree2 upper bound, barrier escape or P-vs-NP claim.
+Connect accepted actual-polynomial profiles to finite REAL-mixture certificates
+by reusing existing duality and symmetrization; faithfully formalize the scoped
+n12 restricted-family obstruction. Keep the support restriction in the theorem.
+To escape that specific obstruction, change the candidate family rather than
+only probabilities. Do not redo completed proofs or restart an unbounded n-by-n
+search. Independent review can proceed separately without blocking research.
 
-Read Expedition021/conclusion.md, statement-audit.md, ci-formal-evidence.md,
-axiom-report.txt and logs/2026-10-21-balanced-fibers-and-intersections.md.
+## Review and environment
+
+Gemini Issue15 report plus corrected addendum is useful independent AI review
+of OLD checkpoint0e30b5b7 only. It is not review of tonight's modules, a local
+Lean compilation or a second kernel. Issue8 remains external human academic
+review, separately nonblocking. Issue15 comments are preserved and not auto-closed.
+No replacement reviewer is currently needed. Novelty and second-kernel checks
+remain absent; no such coverage is inferred from production CI.
+
+All research changes were committed. No write-permission blocker or unapplied
+patch remains. Local Lean is absent; actual formal execution used GitHub Actions.
+No mathematical novelty, optimum, n12 degree, all-n quadratic upper bound,
+barrier escape or P-vs-NP conclusion is claimed. Read the current assumption
+ledger and logs/2026-10-21-night-certified-layer-profiles.md for the session record.
