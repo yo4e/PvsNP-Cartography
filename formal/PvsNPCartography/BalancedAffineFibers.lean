@@ -31,9 +31,9 @@ theorem singleton_fiber_count {n : ℕ} (x : BooleanCube n) :
   by_cases hw : hammingWeight x = 1
   · have hc : (ones x).card = 1 := (ones_card x).trans hw
     obtain ⟨i, hi⟩ := Finset.card_eq_one.mp hc
-    rw [if_pos hw]
+    rw [ite_eq_left hw]
     simp [hi]
-  · rw [if_neg hw]
+  · rw [ite_eq_right hw]
     apply Finset.sum_eq_zero
     intro i _
     have hn : ({i} : Finset (Fin n)) ≠ ones x := by
@@ -41,7 +41,7 @@ theorem singleton_fiber_count {n : ℕ} (x : BooleanCube n) :
       apply hw
       rw [← ones_card, ← h]
       simp
-    exact if_neg hn
+    exact ite_eq_right hn
 
 /-- Indicator-moment count of ordered distinct triples inside a finite set.
 The full diagonal correction comes from the previously proved moment identity. -/
@@ -91,9 +91,9 @@ theorem triple_fiber_count {n : ℕ} (x : BooleanCube n) :
           rcases ha with rfl | rfl | rfl <;> assumption
         · rw [hc, triple_support_card hd]
     simp_rw [he]
-    rw [triples_inside_count, hc, if_pos hw]
+    rw [triples_inside_count, hc, ite_eq_left hw]
     norm_num
-  · rw [if_neg hw]
+  · rw [ite_eq_right hw]
     apply Finset.sum_eq_zero
     intro i _
     apply Finset.sum_eq_zero
@@ -105,7 +105,7 @@ theorem triple_fiber_count {n : ℕ} (x : BooleanCube n) :
       apply hw
       rw [← hx, ← ones_card, ones_bits]
       exact triple_support_card hd
-    exact if_neg hn
+    exact ite_eq_right hn
 
 /-- The original pushforward, decomposed by its two actual fibers. -/
 theorem inputMass_fiber_formula {n : ℕ} (x : BooleanCube n) :
@@ -114,20 +114,30 @@ theorem inputMass_fiber_formula {n : ℕ} (x : BooleanCube n) :
       (if hammingWeight x = 3 then (6 : ℝ) else 0) /
         (2 * (n : ℝ) * (n - 1) * (n - 2)) := by
   classical
+  have hm : inputMass x = ∑ s : Sample n,
+      sampleMass n s * (if sampleInput s = x then (1 : ℝ) else 0) := by
+    simpa only [mul_ite, mul_one, mul_zero, Finset.sum_ite_eq',
+      Finset.mem_univ, ite_true] using
+      inputMass_mean (fun y : BooleanCube n => if y = x then (1 : ℝ) else 0)
+  have hs (i : Fin n) :
+      sampleMass n (.inl i) * (if sampleInput (.inl i) = x then (1 : ℝ) else 0) =
+        (if bits {i} = x then (1 : ℝ) else 0) / (2 * n) := by
+    change (1 / (2 * (n : ℝ))) * (if bits {i} = x then (1 : ℝ) else 0) = _
+    by_cases hx : bits {i} = x <;>
+      simp only [hx, ite_true, ite_false, mul_one, mul_zero, zero_div]
   have ht (i j k : Fin n) :
-      (if bits {i,j,k} = x then
-        (if Distinct i j k then 1 / (2 * (n : ℝ) * (n-1) * (n-2)) else 0) else 0) =
+      sampleMass n (.inr (i,j,k)) *
+        (if sampleInput (.inr (i,j,k)) = x then (1 : ℝ) else 0) =
       (if Distinct i j k ∧ bits {i,j,k} = x then (1 : ℝ) else 0) /
         (2 * (n : ℝ) * (n-1) * (n-2)) := by
-    by_cases hd : Distinct i j k <;> by_cases hx : bits {i,j,k} = x <;> simp [hd,hx]
-  unfold inputMass
-  simp only [Fintype.sum_sum_type, Fintype.sum_prod_type, sampleInput, sampleMass]
-  simp_rw [ht]
-  have hs (i : Fin n) :
-      (if bits {i} = x then 1 / (2 * (n : ℝ)) else 0) =
-        (if bits {i} = x then (1 : ℝ) else 0) / (2 * n) := by
-    by_cases hx : bits {i} = x <;> simp [hx]
-  simp_rw [hs]
+    change (if Distinct i j k then 1 / (2 * (n : ℝ) * (n-1) * (n-2)) else 0) *
+      (if bits {i,j,k} = x then (1 : ℝ) else 0) = _
+    by_cases hd : Distinct i j k <;> by_cases hx : bits {i,j,k} = x <;>
+      simp only [hd,hx,and_self,true_and,false_and,ite_true,ite_false,
+        mul_one,mul_zero,zero_mul,zero_div]
+  rw [hm]
+  simp only [Fintype.sum_sum_type, Fintype.sum_prod_type]
+  simp_rw [hs,ht]
   simp only [← Finset.sum_div]
   rw [singleton_fiber_count, triple_fiber_count]
 
@@ -143,11 +153,10 @@ theorem inputMass_closed {n : ℕ} (hn : 3 ≤ n) (x : BooleanCube n) :
   have hfrac : (6 : ℝ) / (2 * (n : ℝ) * (n-1) * (n-2)) =
       1 / (2 * (n.choose 3 : ℝ)) := by
     rw [choose_three_cast]
-    field_simp [hn0,hn1,hn2] <;> ring
+    field_simp [hn0,hn1,hn2]
   rw [inputMass_fiber_formula]
   by_cases h1 : hammingWeight x = 1
-  · have h3 : hammingWeight x ≠ 3 := by omega
-    simp [h1,h3]
+  · simp [h1]
   · by_cases h3 : hammingWeight x = 3
     · simpa [h1,h3] using hfrac
     · simp [h1,h3]
@@ -162,8 +171,7 @@ theorem inputMass_half_layer_mean {n : ℕ} (hn : 3 ≤ n) (g : BooleanCube n �
       (if hammingWeight x = 3 then g x else 0) / (2 * (n.choose 3 : ℝ)) := by
     rw [inputMass_closed hn]
     by_cases h1 : hammingWeight x = 1
-    · have h3 : hammingWeight x ≠ 3 := by omega
-      simp [h1,h3,div_eq_mul_inv,mul_comm]
+    · simp [h1,div_eq_mul_inv,mul_comm]
     · by_cases h3 : hammingWeight x = 3 <;> simp [h1,h3,div_eq_mul_inv,mul_comm]
   simp_rw [he]
   rw [Finset.sum_add_distrib]

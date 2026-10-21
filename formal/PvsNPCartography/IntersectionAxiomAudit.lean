@@ -1,0 +1,8 @@
+import PvsNPCartography.HammingIntersections
+
+#print axioms PvsNPCartography.HammingIntersections.splitEquiv
+#print axioms PvsNPCartography.HammingIntersections.intersection_card_of_le
+#print axioms PvsNPCartography.HammingIntersections.intersection_card
+#print axioms PvsNPCartography.HammingIntersections.booleanSliceEquiv
+#print axioms PvsNPCartography.HammingIntersections.boolean_intersection_card
+#print axioms PvsNPCartography.HammingIntersections.unguarded_subtraction_counterexample
