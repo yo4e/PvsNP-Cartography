@@ -22,3 +22,4 @@ import PvsNPCartography.BalancedAffineCounting
 import PvsNPCartography.BalancedAffineObstruction
 import PvsNPCartography.BalancedAffineBinomial
 import PvsNPCartography.BalancedAffineInputMeasure
+import PvsNPCartography.BalancedAffineFibers

@@ -1,0 +1,8 @@
+import PvsNPCartography.BalancedAffineFibers
+
+#print axioms PvsNPCartography.BalancedAffineCounting.singleton_fiber_count
+#print axioms PvsNPCartography.BalancedAffineCounting.triples_inside_count
+#print axioms PvsNPCartography.BalancedAffineCounting.triple_fiber_count
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_fiber_formula
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_closed
+#print axioms PvsNPCartography.BalancedAffineCounting.inputMass_half_layer_mean
