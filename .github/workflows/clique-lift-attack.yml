@@ -1,0 +1,37 @@
+name: scoped clique lift counterexample
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/022-certified-layer-profiles/naive-lift-attack.py"
+      - "expeditions/022-certified-layer-profiles/naive-lift-result.json"
+      - ".github/workflows/clique-lift-attack.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reproduce exactly the scoped failure, not a universal lower bound
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/022-certified-layer-profiles/naive-lift-attack.py > /tmp/lift-normal.json
+          python -O expeditions/022-certified-layer-profiles/naive-lift-attack.py > /tmp/lift-optimized.json
+          cmp /tmp/lift-normal.json /tmp/lift-optimized.json
+          cat /tmp/lift-normal.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/lift-normal.json').read_text())
+          saved=json.loads(Path('expeditions/022-certified-layer-profiles/naive-lift-result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved scoped counterexample differs from execution')
+          print('Scoped n12 lift refuted exactly; no universal quadratic impossibility claim.')
+          PY
