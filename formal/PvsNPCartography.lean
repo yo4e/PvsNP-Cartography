@@ -24,3 +24,4 @@ import PvsNPCartography.BalancedAffineBinomial
 import PvsNPCartography.BalancedAffineInputMeasure
 import PvsNPCartography.BalancedAffineFibers
 import PvsNPCartography.HammingIntersections
+import PvsNPCartography.HammingProfiles

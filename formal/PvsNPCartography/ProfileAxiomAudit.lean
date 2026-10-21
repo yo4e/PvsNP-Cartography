@@ -1,0 +1,12 @@
+import PvsNPCartography.HammingProfiles
+
+#print axioms PvsNPCartography.HammingProfiles.overlap_le_weight
+#print axioms PvsNPCartography.HammingProfiles.layerFiberEquiv
+#print axioms PvsNPCartography.HammingProfiles.layer_overlap_card
+#print axioms PvsNPCartography.HammingProfiles.weighted_layer_sum
+#print axioms PvsNPCartography.HammingProfiles.weighted_layer_mean
+#print axioms PvsNPCartography.HammingProfiles.profile_coefficients_sum
+#print axioms PvsNPCartography.HammingProfiles.layer_denominator_pos
+#print axioms PvsNPCartography.HammingProfiles.profile_probabilities_sum
+#print axioms PvsNPCartography.HammingProfiles.empty_layer_mean
+#print axioms PvsNPCartography.HammingProfiles.empty_layer_not_probability
