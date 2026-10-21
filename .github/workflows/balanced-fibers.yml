@@ -1,0 +1,39 @@
+name: balanced fibers and intersection exact tests
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/021-balanced-fibers/verify.py"
+      - "expeditions/021-balanced-fibers/result.json"
+      - ".github/workflows/balanced-fibers.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact full-input fibers, all subset pairs and negative boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/021-balanced-fibers/verify.py | tee /tmp/fibers-normal.json
+          python -O expeditions/021-balanced-fibers/verify.py | tee /tmp/fibers-optimized.json
+          cmp /tmp/fibers-normal.json /tmp/fibers-optimized.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual = json.loads(Path('/tmp/fibers-normal.json').read_text())
+          saved = json.loads(Path('expeditions/021-balanced-fibers/result.json').read_text())
+          if actual != saved:
+              raise SystemExit('actual exact output differs from saved result')
+          print('Bounded fiber/intersection audits match saved output; no generic Lean claim.')
+          PY
