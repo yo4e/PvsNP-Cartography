@@ -53,7 +53,6 @@ theorem weighted_layer_sum {n : ℕ} (A : Finset (Fin n)) (w : ℕ) (h : ℕ →
       A.card.choose r * (n-A.card).choose (w-r) := by
     simpa only [Fintype.card_subtype, ite_eq_left hrw] using layer_overlap_card A w r
   simp only [Finset.sum_const, nsmul_eq_mul, hc, Nat.cast_mul]
-  ring
 
 /-- Totalized real mean; empty layers evaluate to zero, not to a probability. -/
 theorem weighted_layer_mean {n : ℕ} (A : Finset (Fin n)) (w : ℕ) (h : ℕ → ℝ) :

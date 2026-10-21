@@ -1,0 +1,37 @@
+name: exact clique layer profiles
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/022-certified-layer-profiles/verify.py"
+      - "expeditions/022-certified-layer-profiles/result.json"
+      - ".github/workflows/clique-profiles.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact bounded checks in normal and optimized Python
+        shell: bash
+        run: |
+          set -euo pipefail
+          python expeditions/022-certified-layer-profiles/verify.py > /tmp/profiles-normal.json
+          python -O expeditions/022-certified-layer-profiles/verify.py > /tmp/profiles-opt.json
+          cmp /tmp/profiles-normal.json /tmp/profiles-opt.json
+          cat /tmp/profiles-normal.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          actual=json.loads(Path('/tmp/profiles-normal.json').read_text())
+          saved=json.loads(Path('expeditions/022-certified-layer-profiles/result.json').read_text())
+          if actual != saved:
+              raise SystemExit('saved result differs from actual execution')
+          print('Exact profile checks match saved output; generic Lean acceptance is separate.')
+          PY
