@@ -1,0 +1,49 @@
+Retrieved actual completed formal output, 2026-10-21 JST approved night session.
+Code9785a2705cc88efd372ab3de29a61007387bd91d
+Tree290f6b6e8196d2898d8612b0e1bbd0d2820462c7
+Run https://github.com/yo4e/PvsNP-Cartography/actions/runs/39615053307
+Job119273743612 completed SUCCESS. Full log inspected; attributed excerpts follow.
+
+2026-10-21T14:15:41.7603937Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-21T14:15:41.3254389Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-21T14:16:36.7750152Z   BUILD_ARGS: --wfail
+2026-10-21T14:16:48.0538887Z ✔ [9049/9052] Built PvsNPCartography.HammingProfiles (6.3s)
+2026-10-21T14:16:53.1626038Z ✔ [9050/9052] Built PvsNPCartography.CliqueProfiles (5.0s)
+2026-10-21T14:16:57.5731671Z Build completed successfully (9052 jobs).
+2026-10-21T14:17:44.1316701Z axiom-audit: audited 695 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-21T14:17:44.1727282Z axiom-audit completed successfully
+
+2026-10-21T14:18:34.1008466Z 'PvsNPCartography.HammingProfiles.overlap_le_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1009645Z 'PvsNPCartography.HammingProfiles.layerFiberEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1032895Z 'PvsNPCartography.HammingProfiles.layer_overlap_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1034074Z 'PvsNPCartography.HammingProfiles.weighted_layer_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1035195Z 'PvsNPCartography.HammingProfiles.weighted_layer_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1036350Z 'PvsNPCartography.HammingProfiles.profile_coefficients_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1038022Z 'PvsNPCartography.HammingProfiles.layer_denominator_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1039392Z 'PvsNPCartography.HammingProfiles.profile_probabilities_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1040546Z 'PvsNPCartography.HammingProfiles.empty_layer_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:34.1041554Z 'PvsNPCartography.HammingProfiles.empty_layer_not_probability' depends on axioms: [propext,
+2026-10-21T14:18:34.1042373Z  Classical.choice,
+2026-10-21T14:18:34.1042666Z  Quot.sound]
+2026-10-21T14:18:39.6117251Z 'PvsNPCartography.CliqueProfiles.subsetMonomial_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6118852Z 'PvsNPCartography.CliqueProfiles.elementary_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6120188Z 'PvsNPCartography.CliqueProfiles.subsetMonomial_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6121465Z 'PvsNPCartography.CliqueProfiles.elementary_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6122867Z 'PvsNPCartography.CliqueProfiles.overlap_univ' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6124104Z 'PvsNPCartography.CliqueProfiles.overlap_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6125309Z 'PvsNPCartography.CliqueProfiles.q_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6126454Z 'PvsNPCartography.CliqueProfiles.r_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6127576Z 'PvsNPCartography.CliqueProfiles.q_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6128691Z 'PvsNPCartography.CliqueProfiles.r_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6129833Z 'PvsNPCartography.CliqueProfiles.q_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6130971Z 'PvsNPCartography.CliqueProfiles.r_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6132267Z 'PvsNPCartography.CliqueProfiles.q_layer_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6133439Z 'PvsNPCartography.CliqueProfiles.r_layer_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6134608Z 'PvsNPCartography.CliqueProfiles.q_layer_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-21T14:18:39.6135778Z 'PvsNPCartography.CliqueProfiles.r_layer_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+All previous numerical, generic obstruction, fiber and intersection reports also completed.
+New explicit targets:10 profile +16 actual-polynomial =26. No new axiom allowed.
+Re-fetched source blobs: HammingProfiles bd1be55aa6605d53cbee78313af662dab5e10f60;
+CliqueProfiles22634fba45b6bf3089354a261fd9515ed33bc232. Matching commit/tree fetched.
+This is the existing Lean kernel/production CI, not a second independent kernel.
