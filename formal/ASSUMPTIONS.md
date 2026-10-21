@@ -1,109 +1,95 @@
 # Formal assumption ledger
 
-## Current checkpoint: generic balanced affine obstruction, 2026-10-21 JST
+## Current checkpoint: accepted fibers and Hamming intersections, 2026-10-21 JST
 
-Numerical MOD3 exact degree2 equalities cover n5..11 over GF(2), pointwise
-error1/3. A new structural theorem additionally excludes degree<=1 for every
-integer n>=7. It uses the original actual MvPolynomial.totalDegree predicate,
-normalized nonnegative REAL probabilities and one finite family before every
-input. It is not a degree2 upper bound for arbitrary n.
+This ledger supplements, not replaces, the previously accepted generic
+n>=7 degree-one obstruction and numerical n5..11 exact degree2 results.
+The full previous ledger is archived byte-identically in
+[reports/2026-10-21-pre-fibers-ledger.md](reports/2026-10-21-pre-fibers-ledger.md),
+Git blob8e3dcf59ebf3df961e2bc6eeef6b13519eff0032. Its older pending #13 status
+is historical. Earlier ledgers and all proof/failure artifacts remain retained.
 
-## Actual accepted production execution
+## Actual production acceptance
 
-- Code dc58ea7dd4d3e2ed36ca5b7d8276de651d95aa08.
-- Tree17bb48e8d3c1e44db10fa09cc30934ae7abd1355.
-- [SUCCESS run39510465687](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39510465687), job118929907745.
-- Pinned Lean4.35.0-rc4, Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8.
-- Root --wfail build9048 jobs;589 namespace declarations and29 explicit new
-  targets use only [propext,Classical.choice,Quot.sound]. Previous numerical
-  and algebra targets also completed. No project-specific axiom or recovery
-  placeholder was accepted. Warnings were repaired rather than suppressed.
+Accepted code:598d54ed0940a331650b7e7eb733d62c9b6e40ab.
+Tree:a9f26fbece775a5ad11e5cc8b84b5d31dac22341.
+Completed SUCCESS [run39547776930](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39547776930),
+job119049747106. Pinned Lean4.35.0-rc4 and Mathlib
+9e6b3aac99b624d10c84653ab9c5357283b9b3b8. --wfail root build9050 jobs;
+639 namespace declarations within [propext,Classical.choice,Quot.sound].
+All12 new explicit targets and all preceding target reports completed.
 
-The completed status and full actual job log were inspected. All four source
-files and matching Git commit/tree were then re-fetched. Actual timestamped
-output is in [Expedition020/axiom-report.txt](../expeditions/020-balanced-counting/axiom-report.txt);
-source correspondence is in [ci-evidence.md](../expeditions/020-balanced-counting/ci-evidence.md).
+The full actual job log, two entire source files, final theorem statements
+and matching Git commit/tree were retrieved and inspected. Actual timestamped
+output is [Expedition021/axiom-report.txt](../expeditions/021-balanced-fibers/axiom-report.txt).
+The saved report was also re-fetched, blob102ce578e960de6a858ae18964fac1f3cc48ff3b.
+The record-only commit3e464878 does not change the accepted Lean sources.
+Later documentation commits are not asserted to be separate proof executions.
 
-| New source | Re-fetched Git blob |
-|---|---|
-| BalancedAffineCounting.lean | 48ce5f97ed03856c17554d524bd4b23ec1a63442 |
-| BalancedAffineObstruction.lean | 8384c6e245ef779a580ea9ceb3618d3a8fbd92c0 |
-| BalancedAffineBinomial.lean | 4e30d4ea65187121efaf1857541409373e05d2d3 |
-| BalancedAffineInputMeasure.lean | ff01e87a09444e9d8fdeca61c9cec27bb471fe62 |
+Source correspondence:
 
-## Faithful mathematical chain
+| File in PvsNPCartography/ | Git blob | SHA256 |
+|---|---|---|
+| BalancedAffineFibers.lean | 25445a5d2bd6f38de932cf7b2d934ae7942adb38 | d72452628ac1ef133e4e69e61f79ce8bec30e1bd7298c1410b6e9f795e9b0374 |
+| HammingIntersections.lean | 21065c45b75967971b19a0c852cf85a685c57c77 | e82185e0639a03e502cee7bb46d867e389027f7403441fda2ed0bfc9ca5a4500 |
 
-For n>=3, sampleMass is a normalized nonnegative REAL measure on singleton
-coordinates plus ordered triples. Distinct triples get mass1/(2n(n-1)(n-2));
-repeated-coordinate triples get zero. sampleInput maps to actual Boolean inputs.
+## Statement fidelity and dependency direction
 
-The generic finite real identity S^3-3QS+2R is proved structurally. It supplies
-the triple count and, for coefficient signs1-2b_i, the actual affine score.
-Original affineValue/target evaluation is rewritten before the sign identity
-is applied. The target remains1 iff integer Hamming weight is divisible by3.
-For coefficient weightk, the constant-zero score is
-1/2+(n-2k)*(n^2-(n-2k)^2)/(4n(n-1)(n-2)); constant-one score is complementary.
+BalancedAffineFibers identifies the EXISTING inputMass, the pushforward of
+tagged singleton/ordered-triple samples. Repeated coordinates have zero mass;
+all samples with the same actual bits-support input contribute their masses.
+Singleton fibers have cardinality1 at weight1, distinct-triple fibers6 at
+weight3, zero otherwise. The generic indicator moment proves these counts,
+not a finite enumerator or assumed uniformity hypothesis.
 
-Pascal induction proves choose2 and choose3 cast identities including small
-sizes. Actual singleton success count is n-k, and ordered-triple success count
-is6*(k*choose(n-k,2)+choose(k,3)). actual_score_binomial links the binomial
-expression to actual weighted correctness, not a freely defined surrogate.
+For n>=3, inputMass x is1/(2n) at weight1,1/(2 choose(n,3)) at weight3 and0
+elsewhere. All necessary nonzero denominators are justified. For every real
+function g, expectation equals half of each layer mean. There is no hidden
+nonnegative or symmetric-function assumption. The fiber counts and decomposed
+formula themselves are valid at all n. At n2, normalization fails; that does
+not refute every bare mean identity with totalized empty-layer division.
 
-For each n>=7, the common bound
-B(n)=1/2+(2n^3/5)/(4n(n-1)(n-2))<2/3 covers all coefficient rows and constants.
-Structural degree_one_eq_affine then covers every actual totalDegree<=1
-polynomial, and existing finite_dual_obstruction covers any finite REAL mixture.
-The final no_degree_one_family and degree_one_impossible assume neither the
-score identity nor the desired conclusion. The final predicate is unchanged.
+HammingIntersections defines actual subset fibers and proves splitEquiv by
+intersection/difference with inverse disjoint union. The guard r<=w is needed
+because Nat subtraction truncates. The total cardinality is
+choose(|A|,r)*choose(n-|A|,w-r) if r<=w,0 otherwise, with empty/impossible cases
+included. The Boolean version uses the proved bits/ones bijection. The n1,w0,r1
+zero-versus-one counterexample to the unguarded formula is also accepted.
 
-inputMass is also explicitly defined on the actual cube by summing all sample
-fiber masses. Its positivity, normalization and expectation transport for ANY
-real function are proved. Injectivity is not required and duplicates are not
-silently discarded. polynomial_input_bound supplies the actual-cube bound.
+No previous GF(2) coefficient field, actual totalDegree, normalized REAL
+probability, family-before-input quantifier or foundational axiom was changed.
+The prior generic lower obstruction does not depend on the new closed formula;
+these new tools are an explicit representation and reusable counting interface.
 
-## Precisely separated residual
+## Complementary computation and rejected candidates
 
-The separately named closed point-mass formula (half uniform on weight1 and
-half uniform on weight3) is not yet a compiled fiber-cardinality theorem.
-#13 tracks that representation interface and further Hamming-layer intersection
-counting. It is NOT a premise of the accepted sample, pushforward or obstruction
-proof. #12's core objective is completed via this valid alternative representation.
-The actual n6 balanced-dual tightness is formally checked; its equality2/3
-refutes only this measure's strict gap at n6, not previous n6 degree results.
+Exact code da8538d3 passed SUCCESS39546665458/job119046262844. Normal/-O actual
+outputs agree bytewise and equal saved JSON. All8191 inputs for n0..12 and
+1,398,101 subset pairs n0..10 are checked, including signed-score tests and
+three invalid shortcuts. Bounded exact tests are not generic formal proofs.
+See Expedition021/ci-finite-evidence.md for parameters and actual excerpts.
 
-## Complementary evidence and failures
+First code9abc8c23 failed conditional elaboration and warning checks; second
+2404af3d failed one conditional rewrite plus warnings. Full failed logs were
+inspected and graveyard026/027 preserve the repairs. The second run's partial
+intersection build was not promoted before whole-root and audit completion.
+No --wfail/axiom setting was relaxed and no desired conclusion was assumed.
 
-Exact code317784842f82b6a1991db664ddd3734d08f72985 passed run39507686566/
-job118920623125. Full log and normal/-O byte equality plus actual/saved JSON
-equality inspected; source, output and commit/tree re-fetched. Checks cover1093
-moment vectors,3031040 affine/input evaluations n3..12 and33147 formula cases
-n3..256. These finite tests were not used as an all-n formal proof.
+## Prior accepted scope and remaining gates
 
-Five candidate builds failed before final acceptance: a34c3775, e96df58e,
-cf15c55f (dependent failed prefix),290fd53c,6d91476a. Four primary full failure
-logs were inspected; the dependent run's failed metadata was inspected without
-claiming its full log was read. Graveyard022..024 preserve precise implementation
-failures and faithful repairs. Graveyard021 preserves false diagonal/fiber
-accounting with exact counterexamples. No failed source recovery placeholder,
-queued workflow or green finite checker was mistaken for formal acceptance.
+Expedition020/code dc58ea7d, SUCCESS39510465687/job118929907745,589 declarations,
+29 targets supplies the generic actual-degree-one obstruction for all n>=7.
+Numerical exact degree2 coverage remains n5..11; earlier evidence is retained
+in the archived ledger. The separately computed n11 quotient is not newly
+formalized by the present generic intersection theorem.
 
-## Reproduction and remaining gates
+#13 is completed. #14 is the next unimplemented weighted-layer-profile and
+actual-polynomial connection. #8 remains independent human semantic review.
+Another runner, author self-audit or model agreement is not that review.
+A second proof kernel and mathematical novelty assessment are absent.
 
-From formal/: lake build --wfail; ./scripts/axiom_report.sh. The production
-workflow additionally audits the compiled namespace. Local Lean was absent;
-actual formal execution used Actions. #8 independent human semantic review
-remains open. A second proof kernel and novelty assessment are not provided.
-
-Earlier accepted n11 source9733d800/run39380310454 and pure algebra source
-dde6151a/run39381768668 remain unchanged. The earlier496-row n11 quotient is
-still separately finite data, not automatically a formal quotient theorem.
-The current generic lower obstruction is a useful reusable proof, not a claim
-of novel asymptotic complexity, an all-n degree2 upper bound or a P-vs-NP result.
-
-## Preserved historical ledger
-
-The immediately preceding ledger is archived byte-identically as
-[2026-10-21-pre-counting-ledger.md](reports/2026-10-21-pre-counting-ledger.md),
-Git blob02ca1e5a4391ec986a4eb93a08dd5fb2cd9354a0. It retains n5..11 evidence,
-algebra acceptance, all older archived ledgers and prior failures. Old pending
-statements are historical. No proof or failed direction was deleted.
+Reproduce from formal/: lake build --wfail; ./scripts/axiom_report.sh; the
+production workflow additionally checks the compiled namespace allowlist.
+Reported formal execution used Actions because local Lean was unavailable.
+No optimality, n12 equality, arbitrary-n degree2 upper bound, new complexity
+landmark, barrier escape or P-vs-NP result is asserted.
