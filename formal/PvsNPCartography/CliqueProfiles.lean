@@ -29,7 +29,9 @@ theorem subsetMonomial_degree {n : ℕ} (S : Finset (Fin n)) :
     calc
       _ ≤ (MvPolynomial.X i : BinaryPolynomial n).totalDegree +
         (subsetMonomial S).totalDegree := MvPolynomial.totalDegree_mul _ _
-      _ ≤ S.card + 1 := by simpa only [MvPolynomial.totalDegree_X] using Nat.add_le_add_left ih 1
+      _ ≤ S.card + 1 := by
+        rw [MvPolynomial.totalDegree_X]
+        omega
 
 theorem elementary_degree {n : ℕ} (A : Finset (Fin n)) (d : ℕ) :
     (elementary A d).totalDegree ≤ d := by
