@@ -1,0 +1,14 @@
+{
+  "chosen_amplifier": {"copies": 17, "error_bound": "1082987/14348907", "required_error": "1/12", "safe_degree_overhead": 17},
+  "derivative_coefficients_checked": 17,
+  "gf2_majority17_exact_anf_degree": 16,
+  "majority_inputs_checked": 131072,
+  "nonzero_anf_coefficients_by_degree": {"10": 19448, "11": 12376, "12": 6188, "13": 2380, "14": 680, "15": 136, "16": 17, "9": 24310},
+  "not_claimed": ["generic Lean error reduction", "Smolensky proof reconstruction", "explicit finite degree threshold", "new lower-bound result"],
+  "odd_copy_error_tails": {"1": "1/3", "11": "89/729", "13": "55025/531441", "15": "422009/4782969", "17": "1082987/14348907", "3": "7/27", "5": "17/81", "7": "379/2187", "9": "2851/19683"},
+  "padding_truth_table_checks_m0_through12": 24573,
+  "padding_weights_by_target_residue": {"0": 0, "1": 2, "2": 1},
+  "reused_single_draw_error": "1/3",
+  "source_application": "STV arXiv:1910.02465v1 Lemma9, m=n-2,b=3,epsilon=1/12",
+  "tail_derivative_identity": "B17_prime(p) = 218790*p^8*(1-p)^8"
+}

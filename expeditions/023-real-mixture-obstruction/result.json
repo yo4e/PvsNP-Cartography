@@ -1,0 +1,58 @@
+{
+  "actual_profile_equalities": 9308,
+  "candidate_count": 716,
+  "candidate_counts_by_kind": {
+    "q": 220,
+    "r": 495,
+    "zero": 1
+  },
+  "claims_not_established": [
+    "unrestricted n12 degree",
+    "all-n theorem",
+    "Lean verification",
+    "novelty"
+  ],
+  "covered_polynomial_input_pairs": 2932736,
+  "distinct_truth_tables": 716,
+  "gap_to_two_thirds": "1/42",
+  "input_dependent_selection_success": "1 on every input (not a fixed distribution)",
+  "inputs_per_candidate": 4096,
+  "integer_mass_total": 12936,
+  "integer_scores": {
+    "q": [
+      8316
+    ],
+    "r": [
+      6748
+    ],
+    "zero": [
+      8316
+    ]
+  },
+  "matching_primal": {
+    "denominator": 280,
+    "each_q9_mass": "1/280",
+    "each_r8_mass": "0",
+    "layer_numerators": [220, 280, 180, 192, 220, 200, 180, 200, 220, 192, 180, 280, 220],
+    "minimum_numerator": 180,
+    "pointwise_inputs_checked": 4096,
+    "positive_support_size": 221,
+    "zero_mass": "3/14"
+  },
+  "ordered_edge_cancellation": true,
+  "outside_family_controls": [
+    ["q", 2, "5/7"], ["q", 3, "61/77"], ["q", 8, "5/6"],
+    ["r", 1, "5/7"], ["r", 2, "5/7"], ["r", 6, "2389/3234"], ["r", 7, "377/462"]
+  ],
+  "positive_mass_inputs": 990,
+  "q8_dual_score": "5/6",
+  "q8_means_at_6_10": ["23/33", "10/11"],
+  "q9_means_at_6_10": ["9/11", "6/11"],
+  "r8_means_at_6_10": ["23/33", "14/33"],
+  "restricted_bound": "9/14",
+  "scope": "n12 zero/all q9/all r8 only; exact finite bit-packed evaluation",
+  "signed_layer_linearity_6_10": ["31/33", "2/3"],
+  "signed_normalized_mixture_score": "353/462",
+  "swapped_layer_q9_score": "111/154",
+  "wrong_per_input_normalization_total": "2607/7"
+}

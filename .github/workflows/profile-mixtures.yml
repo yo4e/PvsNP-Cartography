@@ -1,0 +1,41 @@
+name: Exact profile mixture and bridge checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/023-real-mixture-obstruction/**'
+      - '.github/workflows/profile-mixtures.yml'
+  pull_request:
+    paths:
+      - 'expeditions/023-real-mixture-obstruction/**'
+      - '.github/workflows/profile-mixtures.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact independent implementations and all negative controls
+        working-directory: expeditions/023-real-mixture-obstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          python verify.py > actual.json
+          python -O verify.py > optimized.json
+          cmp actual.json optimized.json
+          python bridge-check.py > bridge-actual.json
+          python -O bridge-check.py > bridge-optimized.json
+          cmp bridge-actual.json bridge-optimized.json
+          python - <<'PY'
+          import json
+          for expected, actual in [('result.json', 'actual.json'), ('bridge-result.json', 'bridge-actual.json')]:
+              if json.load(open(expected)) != json.load(open(actual)):
+                  raise RuntimeError(f'saved/actual mismatch: {expected}')
+          print('PASS: normal/-O byte equality and both saved/actual JSON equalities')
+          PY
+          cat actual.json
+          cat bridge-actual.json
