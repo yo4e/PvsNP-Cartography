@@ -1,0 +1,27 @@
+import PvsNPCartography.ProfileMixtures
+import PvsNPCartography.RestrictedCliqueObstruction
+
+#print axioms PvsNPCartography.ProfileMixtures.layerAverage_mixture
+#print axioms PvsNPCartography.ProfileMixtures.q_mixture_profile
+#print axioms PvsNPCartography.ProfileMixtures.r_mixture_profile
+#print axioms PvsNPCartography.ProfileMixtures.feasible_of_profiles
+#print axioms PvsNPCartography.ProfileMixtures.layerMass_nonneg
+#print axioms PvsNPCartography.ProfileMixtures.layerMass_expectation
+#print axioms PvsNPCartography.ProfileMixtures.layerMass_normalized
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.allowed_degree
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.dualMass_nonneg
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.dualMass_normalized
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.dual_expectation
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.zero_layer_mean
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.q9_layer_six
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.q9_layer_ten
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.r8_layer_six
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.r8_layer_ten
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.zero_dual_score
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.q9_dual_score
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.r8_dual_score
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.allowed_dual_bound
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.no_allowed_mixture
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.no_allowed_certificate
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.q8_dual_score
+#print axioms PvsNPCartography.RestrictedCliqueObstruction.support_restriction_essential

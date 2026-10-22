@@ -26,3 +26,5 @@ import PvsNPCartography.BalancedAffineFibers
 import PvsNPCartography.HammingIntersections
 import PvsNPCartography.HammingProfiles
 import PvsNPCartography.CliqueProfiles
+import PvsNPCartography.ProfileMixtures
+import PvsNPCartography.RestrictedCliqueObstruction
