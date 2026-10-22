@@ -1,0 +1,47 @@
+Actual target-report excerpt from completed GitHub Actions job119898840545,
+run39800322628, code9410fa952ad4b92f09237bfc09be5ad200413db3.
+Full decoded job log was read. This file preserves the actual new-target output
+below, not the full job log and not a source-generated approximation.
+
+2026-10-22T15:02:15.8085526Z 'PvsNPCartography.ProfileMixtures.layerAverage_mixture' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8094408Z 'PvsNPCartography.ProfileMixtures.q_mixture_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8095672Z 'PvsNPCartography.ProfileMixtures.r_mixture_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8096929Z 'PvsNPCartography.ProfileMixtures.feasible_of_profiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8098247Z 'PvsNPCartography.ProfileMixtures.layerMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8100002Z 'PvsNPCartography.ProfileMixtures.layerMass_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8101336Z 'PvsNPCartography.ProfileMixtures.layerMass_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8102376Z 'PvsNPCartography.RestrictedCliqueObstruction.allowed_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8103158Z 'PvsNPCartography.RestrictedCliqueObstruction.dualMass_nonneg' depends on axioms: [propext,
+2026-10-22T15:02:15.8103918Z  Classical.choice,
+2026-10-22T15:02:15.8104147Z  Quot.sound]
+2026-10-22T15:02:15.8104604Z 'PvsNPCartography.RestrictedCliqueObstruction.dualMass_normalized' depends on axioms: [propext,
+2026-10-22T15:02:15.8105132Z  Classical.choice,
+2026-10-22T15:02:15.8105347Z  Quot.sound]
+2026-10-22T15:02:15.8105981Z 'PvsNPCartography.RestrictedCliqueObstruction.dual_expectation' depends on axioms: [propext,
+2026-10-22T15:02:15.8106478Z  Classical.choice,
+2026-10-22T15:02:15.8106693Z  Quot.sound]
+2026-10-22T15:02:15.8107091Z 'PvsNPCartography.RestrictedCliqueObstruction.zero_layer_mean' depends on axioms: [propext,
+2026-10-22T15:02:15.8107572Z  Classical.choice,
+2026-10-22T15:02:15.8107791Z  Quot.sound]
+2026-10-22T15:02:15.8108285Z 'PvsNPCartography.RestrictedCliqueObstruction.q9_layer_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8109117Z 'PvsNPCartography.RestrictedCliqueObstruction.q9_layer_ten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8109920Z 'PvsNPCartography.RestrictedCliqueObstruction.r8_layer_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8110714Z 'PvsNPCartography.RestrictedCliqueObstruction.r8_layer_ten' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8111453Z 'PvsNPCartography.RestrictedCliqueObstruction.zero_dual_score' depends on axioms: [propext,
+2026-10-22T15:02:15.8111919Z  Classical.choice,
+2026-10-22T15:02:15.8112136Z  Quot.sound]
+2026-10-22T15:02:15.8112627Z 'PvsNPCartography.RestrictedCliqueObstruction.q9_dual_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8113687Z 'PvsNPCartography.RestrictedCliqueObstruction.r8_dual_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8114475Z 'PvsNPCartography.RestrictedCliqueObstruction.allowed_dual_bound' depends on axioms: [propext,
+2026-10-22T15:02:15.8114963Z  Classical.choice,
+2026-10-22T15:02:15.8115188Z  Quot.sound]
+2026-10-22T15:02:15.8115602Z 'PvsNPCartography.RestrictedCliqueObstruction.no_allowed_mixture' depends on axioms: [propext,
+2026-10-22T15:02:15.8116069Z  Classical.choice,
+2026-10-22T15:02:15.8116282Z  Quot.sound]
+2026-10-22T15:02:15.8116711Z 'PvsNPCartography.RestrictedCliqueObstruction.no_allowed_certificate' depends on axioms: [propext,
+2026-10-22T15:02:15.8117211Z  Classical.choice,
+2026-10-22T15:02:15.8117416Z  Quot.sound]
+2026-10-22T15:02:15.8117909Z 'PvsNPCartography.RestrictedCliqueObstruction.q8_dual_score' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-22T15:02:15.8118731Z 'PvsNPCartography.RestrictedCliqueObstruction.support_restriction_essential' depends on axioms: [propext,
+2026-10-22T15:02:15.8119257Z  Classical.choice,
+2026-10-22T15:02:15.8119472Z  Quot.sound]

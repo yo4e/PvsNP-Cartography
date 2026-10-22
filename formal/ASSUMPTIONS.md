@@ -1,108 +1,94 @@
 # Formal assumption ledger
 
-## Current checkpoint: certified clique layer profiles, 2026-10-21 JST night
+## Current checkpoint: real mixtures and a scoped n12 obstruction
 
-Accepted numerical exact degree2 equalities remain n5..11, GF(2), pointwise
-error1/3. The generic degree<=1 exclusion for every integer n>=7, balanced
-input fibers and guarded intersection counts remain accepted and unchanged.
-NEW: arbitrary-real weighted Hamming-layer profiles are connected to genuine
-elementary symmetric and clique-quadratic MvPolynomial evaluation and degree.
-This is an evaluator theorem, not arbitrary-n quadratic approximation success.
+Approved2026-10-22 JST night; acceptance completed2026-10-23 JST just after
+midnight. Existing numerical degree2 equalities n5..11, generic degree<=1
+exclusion n>=7, balanced fibers and certified clique profiles remain unchanged.
+Issue16 is complete. Issue17 selects the next substantive growing-degree lemma.
 
-## Actual accepted execution
+## Actual accepted execution and assumptions
 
-Code9785a2705cc88efd372ab3de29a61007387bd91d,
-tree290f6b6e8196d2898d8612b0e1bbd0d2820462c7.
-Completed SUCCESS run39615053307/job119273743612:
-https://github.com/yo4e/PvsNP-Cartography/actions/runs/39615053307
-Pinned Lean4.35.0-rc4 and Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8.
-Whole-root --wfail9052 jobs;695 namespace declarations;26 new explicit target
-reports plus all earlier targets within [propext,Classical.choice,Quot.sound].
+Code9410fa952ad4b92f09237bfc09be5ad200413db3,
+tree d71346655c0012faa1c6b70991322ddf6cd5052f.
+Completed SUCCESS run39800322628/job119898840545:
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/39800322628
+Lean4.35.0-rc4, Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8.
+Root --wfail9054 jobs. Namespace axiom audit741 declarations. All24 new target
+outputs and earlier targets stay within [propext,Classical.choice,Quot.sound].
+No sorry/new axioms/native_decide or warning-policy relaxation was used.
 
-The complete actual log, entire source files and matching Git commit/tree were
-re-fetched. Evidence commit571b66370eda2be3ff9a00c7431870305b03e4f4 saves actual
-attributed output in Expedition022/axiom-report.txt and ci-formal-evidence.md.
-No source-generated report, partial build or finite checker was used as proof
-acceptance. No warning or axiom policy was weakened.
+The full decoded job log, completed job/steps, actual source and matching Git
+commit/tree were re-fetched. The actual target transcript is preserved in
+Expedition023/axiom-report.txt; ci-evidence.md records provenance and excerpts.
+Source-generated reports and partial builds are not acceptance evidence.
+Re-fetched source blobs match locally computed Git blobs:
+- ProfileMixtures.lean:1a552897d03f8d20796bc3fdb5764baa63b05a39
+- RestrictedCliqueObstruction.lean:505eef80ba592227c7f36cf02c3ad36629a364cc
 
-Re-fetched source blobs:
-HammingProfiles.lean:bd1be55aa6605d53cbee78313af662dab5e10f60
-CliqueProfiles.lean:22634fba45b6bf3089354a261fd9515ed33bc232
+## Faithful semantic chain
 
-## Faithful statement chain
+ProfileMixtures.layerAverage_mixture is finite REAL linearity for arbitrary
+actual polynomial correctness values; it even permits signed coefficients.
+q_mixture_profile/r_mixture_profile substitute accepted actual q/r evaluation
+formulas. feasible_of_profiles requires actual-profile equality, a degree bound
+for every row, nonnegative normalized real coefficients and sufficient layer
+bounds for a symmetric target. It delegates to EXISTING full symmetrization,
+not an assumption that the desired pointwise mixture is already feasible.
 
-HammingProfiles partitions an ACTUAL Layer n w by overlap with an actual
-coordinate subset A. Previously proved Boolean intersection cardinalities
-supply choose(|A|,r)*choose(n-|A|,w-r), with r in0..w. Every real score h is
-allowed, including negative values. The sum theorem assumes neither symmetry
-of h nor the desired identity. The totalized mean divides by choose(n,w).
-Positive denominator and probability normalization require w<=n; empty layers
-have totalized value0, explicitly not a normalized probability measure.
+layerMass assigns each input in layer w mass1/choose(n,w). The expectation
+identity applies to any real score and even empty layers, whose totalized
+measure is zero. Probability normalization explicitly requires w<=n.
 
-CliqueProfiles defines subsetMonomial using a Finset product, and elementary
-A d using d-element subsets. It proves actual MvPolynomial.totalDegree<=d and
-actual GF(2) evaluation equal to a natural binomial count cast into the field.
-No ordered-edge double counting or division by2 in characteristic2 is used.
-The formulas for q_A=1+sum_all X_i+clique(A) and
-r_A=1+sum_outside_A X_i+clique(A) have proved degree<=2 and actual evaluation.
-Their correctness is compared against the ORIGINAL MOD3 target before applying
-the generic weighted sums/means. Full symmetrization is still needed to turn
-suitable layer bounds into a fixed pointwise polynomial mixture.
+RestrictedCliqueObstruction.Allowed names precisely zero, every q_A of subset
+size9 and every r_B of subset size8 at n12. Actual totalDegree<=2 is proved.
+Total dual masses5/14 and9/14 go to uniform layers6 and10. Positivity and full
+input normalization are proved. Deterministic scores9/14 for zero/q9 and241/462
+for r8 are derived from actual correctness, not supplied as premises. Existing
+real finite weak duality yields no_allowed_mixture and no_allowed_certificate.
+The latter keeps Allowed inside its existential statement. Nonuniform subsets,
+duplicate rows and irrational coefficients are permitted; negative weights are
+not probabilities. The distribution is fixed BEFORE the universal input.
 
-The original target, family-before-input predicate, totalDegree and normalized
-nonnegative REAL probabilities are unchanged. Generic parameterized evaluation
-does not imply success>=2/3 at every arity or for every parameter choice.
+The accepted q8_dual_score and support_restriction_essential exhibit a genuine
+degree2 polynomial scoring5/6 under the same dual. Therefore the support
+restriction cannot be removed. This does not itself provide a pointwise2/3
+quadratic approximation, and does not settle unrestricted n12 degree.
 
-## Exact finite corroboration and separately scoped obstruction
+## Separate finite sharpness and source argument
 
-Exact run39614264276/job119270959043 at d65bfec7 reproduces174762 q/r evaluations,
-1022 Mobius checks,4608 signed layer cases,41870 elementary integer counts,
-4096 n11 canonical-row comparisons and134 coefficient mutations. Normal/-O and
-actual/saved output agree. This independent implementation is by the same author,
-not a second reviewer or a proof for all n. Source/result/commit were re-fetched.
-The old n11 masks match the intended q8/r7 values on all inputs, but no new Lean
-polynomial-equality bridge to those literal coefficient encodings was compiled.
+At772b0eac, exact run39799669199/job119896456402 independently evaluates all716
+candidate truth tables on4096 inputs and compares9308 actual layer means to
+closed profiles. Normal/-O and saved/actual equality both pass. Its matching
+primal has zero mass3/14 and each of220 q9 rows mass1/280; its pointwise minimum
+is9/14. Thus the RESTRICTED finite game has value9/14. This primal is not a
+compiled Lean sharpness theorem, nor a minimal support/denominator assertion.
+Old n11 coefficient regression remains finite, not a new old/new polynomial
+identity theorem. No unnecessary reproof of the n11 degree equality was made.
 
-A fixed n11-to-n12 clique lift fails at weight10 with19/33. More strongly, a
-finite dual bounds ALL716 zero/q9/r8 n12 polynomials by9/14<2/3, so reweighting
-within THIS family cannot repair it. Completed run39616486615/job119278821696
-at9673b206 reproduces both attacks, with708840 restricted-family/input checks,
-independent formulas, normal/-O and saved/actual equality. Re-fetched scripts,
-results and commit match local source/canonical-output Git blobs. See
-Expedition022/ci-attack-evidence.md and graveyard031/032.
+source-bridge.md reconstructs independent-majority and two-bit restriction
+adapters to a specifically cited literature theorem. The difficult universal
+lower bound is IMPORTED, not proved by this repository. Its known Omega(sqrt(n))
+consequence is not novel and gives no numerical n12 threshold. Generic Lean
+amplification and the source's hard low-degree agreement lemma are still absent.
+Exact majority truth-table/ANF and padding tests do not fill those proof gaps.
 
-This restricted-family dual is exact finite evidence plus a weak-duality
-argument, NOT a separately compiled Lean corollary. Issue16 requests that
-formal integration and a reusable mixture interface without dropping the
-support restriction. It neither excludes all quadratics nor determines n12
-degree. The 496-row old n11 quotient also retains its separately bounded scope.
+## Failures, review, environment and history
 
-## Failures and review status
+Failed e1703205/run39797072216: an already-closed tactic goal plus unresolved
+GF(2) numerals. Failed7f687ceb/run39798702853: only three ZMod.val1 reductions
+remained. The successful repair used a definitional equality proved by rfl.
+Graveyard034/035 retain these failures; graveyard033 retains countermodels.
+No claim was weakened to get green CI.
 
-Inspected formal failures: e6fd5ff3 extra closed-goal tactic, d65bfec7 addition
-order mismatch; graveyard028/030. fd41fdf7 inherited the failed prefix, but its
-own run was not inspected. Graveyard029 preserves ordered-edge, normalization
-and constant-term shortcuts. No mathematical target was weakened to pass.
+Gemini Issue15 and its correction cover only old0e30b5b7. New-code independent
+semantic review, external human review and second-kernel verification are not
+claimed. Human review #8 remains a separate nonblocking track; novelty is
+unknown. Local Lean is absent; actual execution used Actions. No write blocker
+or unapplied patch remains. Production CI is not a second proof kernel.
 
-Gemini's independent AI semantic audit and corrected addendum in Issue15 cover
-only checkpoint0e30b5b7. The new modules were NOT covered by that review. See
-reviews/2026-10-21-gemini-review-scope.md for provenance and limits. Independent
-AI review is legitimate evidence, not merely agreement; it is also not a local
-Lean rerun or a second kernel. External human academic review #8 is separate
-and nonblocking. New-code independent review, second-kernel validation and
-novelty assessment are absent. No new reviewer is requested at this milestone.
-
-Reproduce from formal/: lake build --wfail; ./scripts/axiom_report.sh, plus
-production namespace audit. Local Lean is absent; actual accepted execution
-used Actions. No write-permission blocker or unapplied patch remains.
-
-## Preserved history
-
-The preceding assumption ledger is archived BYTE-IDENTICALLY in
-reports/2026-10-21-pre-profiles-ledger.md, blob
-2cd0d59b36d6285c3f2641e9cf1ecd3aee3cb1a4. It retains the complete older evidence,
-archives and failure links. Historical pending statements are not live blockers.
-
-Issue14 is complete; Issue16 is the earliest unblocked implementation frontier.
-No novelty, support/denominator optimality, n12 degree determination, all-n
-degree2 upper bound, circuit lower bound, proof-barrier escape or P-vs-NP result.
+The preceding COMPLETE ledger is preserved byte-identically at
+reports/2026-10-22-pre-mixtures-ledger.md, blob
+cbad8c2540cfb1a85a2f68b541f03e67ab731d16, including all older archive links.
+No new unrestricted quadratic, circuit or P-versus-NP result, arbitrary-n
+quadratic upper bound, novelty or proof-barrier escape is asserted.

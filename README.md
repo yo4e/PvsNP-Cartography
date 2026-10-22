@@ -197,57 +197,64 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 020](expeditions/020-balanced-counting/): [generic actual-degree-one obstruction for every n>=7](formal/PvsNPCartography/BalancedAffineObstruction.lean), [actual-cube measure and counts](formal/PvsNPCartography/BalancedAffineInputMeasure.lean), [verified conclusion](expeditions/020-balanced-counting/conclusion.md), [actual axiom report](expeditions/020-balanced-counting/axiom-report.txt), independent exact audit and preserved overcounting/build failures.
 - [Expedition 021](expeditions/021-balanced-fibers/): [explicit balanced input fibers](formal/PvsNPCartography/BalancedAffineFibers.lean), [generic guarded Hamming intersections](formal/PvsNPCartography/HammingIntersections.lean), [verified conclusion](expeditions/021-balanced-fibers/conclusion.md), [actual axiom report](expeditions/021-balanced-fibers/axiom-report.txt), exact replication and range/multiplicity counterexamples.
 - [Expedition 022](expeditions/022-certified-layer-profiles/): [generic weighted layer profiles](formal/PvsNPCartography/HammingProfiles.lean), [actual clique-polynomial evaluator](formal/PvsNPCartography/CliqueProfiles.lean), [formal evidence](expeditions/022-certified-layer-profiles/axiom-report.txt) and the exact restricted n12 lift obstruction.
+- [Expedition 023](expeditions/023-real-mixture-obstruction/): [accepted real-mixture obstruction](expeditions/023-real-mixture-obstruction/conclusion.md), matching restricted-game value9/14, [actual execution evidence](expeditions/023-real-mixture-obstruction/ci-evidence.md), [statement audit](expeditions/023-real-mixture-obstruction/statement-audit.md) and [primary-source bridge](expeditions/023-real-mixture-obstruction/source-bridge.md).
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): current formal scope, actual axiom reports and preserved historical ledgers.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 - [Current status](docs/CURRENT_STATUS.md): the earliest unblocked task and exact evidence boundaries.
 
 ## Status
 
-**Research checkpoint: 2026-10-21 JST night. Direction update: 2026-10-22 JST.**
-[Issue #14](https://github.com/yo4e/PvsNP-Cartography/issues/14) is complete;
-[Issue #16](https://github.com/yo4e/PvsNP-Cartography/issues/16) is the next bounded
-formal target. See [CURRENT_STATUS](docs/CURRENT_STATUS.md) for current routing
-and [RESEARCH_DIRECTION](docs/RESEARCH_DIRECTION.md) for the conceptual map and
-selection policy. Earlier dated snapshots are historical, not instructions to
-redo completed work.
+**Research checkpoint: approved 2026-10-22 JST night, completed just after midnight on2026-10-23 JST.**
+[Issue #16](https://github.com/yo4e/PvsNP-Cartography/issues/16) is complete;
+[Issue #17](https://github.com/yo4e/PvsNP-Cartography/issues/17) is the next
+substantive frontier. See [CURRENT_STATUS](docs/CURRENT_STATUS.md) and
+[RESEARCH_DIRECTION](docs/RESEARCH_DIRECTION.md). Future nightly work requires
+fresh approval; this checkpoint does not authorize another session.
 
-The accepted generic Hamming/clique profiles connect actual GF(2) polynomials,
-total degree and MOD3 correctness to short weighted layer sums. They are evaluator
-theorems, not arbitrary-n approximation guarantees. Accepted code
-[9785a270](https://github.com/yo4e/PvsNP-Cartography/commit/9785a2705cc88efd372ab3de29a61007387bd91d)
-passed [run39615053307](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39615053307);
-[Expedition022 evidence](expeditions/022-certified-layer-profiles/axiom-report.txt)
-preserves the reviewed production acceptance. This documentation update does
-not constitute a new Lean run.
+[Accepted code9410fa95](https://github.com/yo4e/PvsNP-Cartography/commit/9410fa952ad4b92f09237bfc09be5ad200413db3)
+passed completed [formal run39800322628](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39800322628):
+pinned Lean4.35.0-rc4/Mathlib9e6b3aac, whole-root --wfail, unchanged namespace
+axiom policy and all24 new target reports. Actual source, commit and full
+execution output were re-fetched. [Evidence](expeditions/023-real-mixture-obstruction/ci-evidence.md)
+and the [actual target transcript](expeditions/023-real-mixture-obstruction/axiom-report.txt)
+preserve the acceptance; this documentation commit is not a new formal execution.
 
-**Numerical exact degree-two coverage remains n5..11; generic degree-one exclusion
-remains n>=7.** At n12, the particular zero/q9/r8 family cannot be rescued by
-arbitrary real reweighting: its exact dual bounds all716 candidates by9/14<2/3.
-That dedicated restricted-family Lean corollary is still pending in #16. It is
-not a lower bound against all quadratics and does not determine n12 degree.
+The real-mixture interface now connects actual polynomial correctness profiles
+to the existing finite duality and full symmetrization. At n12, **no finite
+normalized nonnegative REAL mixture of precisely zero/all q9/all r8 reaches
+pointwise success2/3**. The dual bound is9/14. A matching finite primal attains
+9/14, so the restricted game's value is exact. This primal sharpness is
+computational, not a separately compiled Lean minimax equality. A genuine q8
+polynomial scores5/6 under the same dual; that support-boundary counterexample
+is also Lean accepted. The bound does not cover all quadratics.
 
-Keep #16 focused, then prefer a primary-source restricted-lower-bound comparison
-that identifies the first missing mathematical bridge, rather than automatically
-moving to n13 or extending the tooling. A more promising structural question may
-supersede that default. Distinguish formal reconstructions, computational
-certificates and mathematical novelty; file/declaration counts are not a measure
-of proximity to P vs NP. The aim remains exploration, not perpetual auditing.
+[Exact code772b0eac](https://github.com/yo4e/PvsNP-Cartography/commit/772b0eac985aeea4266d099482cba6759820a789)
+passed [run39799669199](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39799669199).
+The checker evaluates all716 actual candidate polynomials on all4096 inputs,
+compares independent profiles, verifies the matching primal and attacks the
+support, quantifier and normalization shortcuts. Normal/-O outputs and stored
+results match. Failures and counterexamples survive in graveyard033..035.
 
-Gemini's corrected [independent AI audit #15](https://github.com/yo4e/PvsNP-Cartography/issues/15)
-is scoped to checkpoint0e30b5b7, not to these later modules, and did not include
-local Lean recompilation. [Issue #8](https://github.com/yo4e/PvsNP-Cartography/issues/8)
-tracks external human academic review separately; neither it nor an additional
-proof kernel is a standing prerequisite to continue exploratory research.
-Copilot's overview was process advice, not an additional theorem-verification run.
-No novelty, support/denominator optimality, unrestricted n12 degree result,
-arbitrary-n quadratic upper bound, barrier escape or P-vs-NP solution is claimed.
+**Numerical exact degree-two coverage remains n5..11; generic degree-one
+exclusion remains n>=7. Unrestricted n12 degree remains unresolved here.**
+No support/denominator minimality, mathematical novelty, arbitrary-n quadratic
+upper bound, new circuit lower bound, barrier escape or P-vs-NP result is claimed.
 
-Latest [research session](logs/2026-10-21-night-certified-layer-profiles.md);
-[direction decision](logs/2026-10-22-research-direction.md). Earlier README
-checkpoints remain in Git history, including
-[caa83f30](https://github.com/yo4e/PvsNP-Cartography/blob/caa83f302199ff8945108dc979d89e2fc9a7aecb/README.md),
-and the existing [pre-fibers archive](docs/history/2026-10-21-pre-fibers-readme.md).
-All historical proof and failure records are retained.
+The [source comparison](expeditions/023-real-mixture-obstruction/source-bridge.md)
+reconstructs explicit independent-majority and residue-restriction adapters to
+a known growing-degree lower bound. Its hard source theorem is imported, not
+proved by this repository. #17 targets the first substantive low-degree
+agreement/dimension lemma behind that bound, not automatic n13 enumeration
+or an open-ended expansion of tooling.
+
+Gemini's [AI review #15](https://github.com/yo4e/PvsNP-Cartography/issues/15)
+covers only old checkpoint0e30b5b7, not these new modules. [Human review #8](https://github.com/yo4e/PvsNP-Cartography/issues/8)
+is separate and nonblocking. New-code independent semantic review and a second
+kernel are not claimed. Novelty remains unknown.
+
+Latest [research session](logs/2026-10-22-night-real-mixtures.md).
+The complete preceding README is [archived byte-identically](docs/history/2026-10-22-pre-mixtures-readme.md);
+older checkpoints and failure records remain in Git history and dated archives.
 
 The research environment must continue telling the difference between:
 
