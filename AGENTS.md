@@ -102,6 +102,23 @@ Ask the human only when:
 - an external identity/credential action is needed
 - a genuinely ambiguous choice would alter the research objective rather than implementation detail
 
+## Scientific direction and discretion
+
+Use `docs/RESEARCH_DIRECTION.md` when choosing the next milestone. Keep the
+researcher's curiosity and freedom to pursue difficult conjectures; do not
+replace the P-vs-NP objective with perpetual verification infrastructure.
+At a natural milestone, explain in the existing orientation/conclusion what
+mathematical question changed and what decision the result enables. Counts of
+files, declarations, CI jobs or checked inputs are evidence metadata, not a
+measure of distance to P vs NP.
+
+Prefer a named mathematical use for new infrastructure. Continue, pivot or
+park a route according to its scientific promise, not its sunk cost or ease
+of formalization. No new per-session paperwork, fixed output quota or standing
+reviewer requirement is introduced. Required honesty, statement fidelity and
+verification before claim promotion remain unchanged. Planning permission does
+not replace the steward's fresh approval for each nightly research session.
+
 ## Research roles
 
 Agents may switch roles, but artifacts should make the role visible.

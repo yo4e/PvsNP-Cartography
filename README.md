@@ -73,7 +73,7 @@ Planned structure:
 
 ```text
 map/            known terrain, definitions, barriers, open directions
-prior-art/      related human and AI research projects
+prior-art/      audits of external projects and systems
 expeditions/    bounded research attempts with explicit hypotheses
 claims/         claims that currently survive internal attack
 attacks/        adversarial reviews, counterexample searches, failure analysis
@@ -110,7 +110,7 @@ For each expedition:
 6. run finite experiments where useful
 7. conduct an adversarial self-review
 8. compare with prior literature/projects
-9. formalize surviving pieces where practical
+9. formalize surviving statements with audited assumptions
 10. either promote the claim or bury it with a post-mortem
 
 The default loop is:
@@ -171,6 +171,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 - [AGENTS.md](AGENTS.md): research operating contract for AI collaborators
 - [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md): adversarial research loop and publication threshold
+- [Research direction and conceptual dependency map](docs/RESEARCH_DIRECTION.md): scientific target selection, contribution types and the next structural bridge
 - [docs/PRIOR_ART.md](docs/PRIOR_ART.md): direct P vs NP AI projects and broader AI-mathematics systems
 - [docs/BIBLIOGRAPHY.md](docs/BIBLIOGRAPHY.md): working primary-source bibliography
 - [map/BARRIERS.md](map/BARRIERS.md): relativization, Natural Proofs, and algebrization map
@@ -195,25 +196,58 @@ The most valuable file in a research session may be the one explaining why the i
 - [Expedition 019](expeditions/019-balanced-affine-dual/): [verified pure real-algebra score bound](formal/PvsNPCartography/BalancedAffineDualAlgebra.lean), [original scope](expeditions/019-balanced-affine-dual/conclusion.md) and bounded computational checks; its generic counting connection is separately completed by Expedition020.
 - [Expedition 020](expeditions/020-balanced-counting/): [generic actual-degree-one obstruction for every n>=7](formal/PvsNPCartography/BalancedAffineObstruction.lean), [actual-cube measure and counts](formal/PvsNPCartography/BalancedAffineInputMeasure.lean), [verified conclusion](expeditions/020-balanced-counting/conclusion.md), [actual axiom report](expeditions/020-balanced-counting/axiom-report.txt), independent exact audit and preserved overcounting/build failures.
 - [Expedition 021](expeditions/021-balanced-fibers/): [explicit balanced input fibers](formal/PvsNPCartography/BalancedAffineFibers.lean), [generic guarded Hamming intersections](formal/PvsNPCartography/HammingIntersections.lean), [verified conclusion](expeditions/021-balanced-fibers/conclusion.md), [actual axiom report](expeditions/021-balanced-fibers/axiom-report.txt), exact replication and range/multiplicity counterexamples.
+- [Expedition 022](expeditions/022-certified-layer-profiles/): [generic weighted layer profiles](formal/PvsNPCartography/HammingProfiles.lean), [actual clique-polynomial evaluator](formal/PvsNPCartography/CliqueProfiles.lean), [formal evidence](expeditions/022-certified-layer-profiles/axiom-report.txt) and the exact restricted n12 lift obstruction.
 - [formal/ASSUMPTIONS.md](formal/ASSUMPTIONS.md): current formal scope, actual axiom reports and preserved historical ledgers.
 - [Finite dual scope](formal/FINITE_DUAL_SCOPE.md): generic real-mixture lemma and its concrete n=5 affine application.
 - [Current status](docs/CURRENT_STATUS.md): the earliest unblocked task and exact evidence boundaries.
 
 ## Status
 
-**Approved 2026-10-21 JST fibers/intersections session: the existing balanced input probability and generic Hamming intersection counts are now formally explicit.** [Accepted code598d54ed](https://github.com/yo4e/PvsNP-Cartography/commit/598d54ed0940a331650b7e7eb733d62c9b6e40ab) passed [production run39547776930](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39547776930), job119049747106: pinned Lean4.35.0-rc4/Mathlib9e6b3aac, --wfail9050 jobs,639 namespace declarations and12 new explicit targets under the unchanged foundational allowlist. The complete actual log, both source files and matching commit/tree were re-fetched. [Evidence commit3e464878](https://github.com/yo4e/PvsNP-Cartography/commit/3e4648780daa22655fcb646e792f5cefa3111013) preserves the report, conclusion and statement audit.
+**Research checkpoint: 2026-10-21 JST night. Direction update: 2026-10-22 JST.**
+[Issue #14](https://github.com/yo4e/PvsNP-Cartography/issues/14) is complete;
+[Issue #16](https://github.com/yo4e/PvsNP-Cartography/issues/16) is the next bounded
+formal target. See [CURRENT_STATUS](docs/CURRENT_STATUS.md) for current routing
+and [RESEARCH_DIRECTION](docs/RESEARCH_DIRECTION.md) for the conceptual map and
+selection policy. Earlier dated snapshots are historical, not instructions to
+redo completed work.
 
-For n>=3 the existing inputMass equals1/(2n) at weight1,1/(2 choose(n,3)) at weight3 and0 elsewhere. One singleton and six distinct ordered-triple fibers are proved rather than assumed. Every real score has expectation half of each layer mean, with no hidden nonnegativity or symmetry assumption. A separate explicit split/union bijection gives the actual subset/Boolean-input count with weight w and overlap r in A: choose(|A|,r)*choose(n-|A|,w-r) if r<=w,0 otherwise. Empty and impossible cases are included.
+The accepted generic Hamming/clique profiles connect actual GF(2) polynomials,
+total degree and MOD3 correctness to short weighted layer sums. They are evaluator
+theorems, not arbitrary-n approximation guarantees. Accepted code
+[9785a270](https://github.com/yo4e/PvsNP-Cartography/commit/9785a2705cc88efd372ab3de29a61007387bd91d)
+passed [run39615053307](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39615053307);
+[Expedition022 evidence](expeditions/022-certified-layer-profiles/axiom-report.txt)
+preserves the reviewed production acceptance. This documentation update does
+not constitute a new Lean run.
 
-Independent [exact run39546665458](https://github.com/yo4e/PvsNP-Cartography/actions/runs/39546665458), codeda8538d3, reproduces8191 input cases n0..12 and1,398,101 subset pairs n0..10 with251,902 histogram cells. Normal/-O output equals saved JSON. These bounded tests are complementary to the generic proofs. The wrong unguarded count, missing sixfold mass and false n2 normalization are preserved in graveyard025; two failed proof implementations and faithful repairs remain in026/027. No statement, probability or audit policy was weakened.
+**Numerical exact degree-two coverage remains n5..11; generic degree-one exclusion
+remains n>=7.** At n12, the particular zero/q9/r8 family cannot be rescued by
+arbitrary real reweighting: its exact dual bounds all716 candidates by9/14<2/3.
+That dedicated restricted-family Lean corollary is still pending in #16. It is
+not a lower bound against all quadratics and does not determine n12 degree.
 
-**Numerical exact degree2 equalities remain n5..11. The generic degree-one exclusion for every integer n>=7 remains accepted from Expedition020.** That earlier obstruction did not assume the formerly missing closed point-mass formula. Its code dc58ea7d passed run39510465687/job118929907745 with589 declarations and29 targets. The present session adds representation/counting tools, not an arbitrary-n degree2 upper bound. The496-row n11 quotient remains separately finite evidence rather than an automatically formalized quotient theorem.
+Keep #16 focused, then prefer a primary-source restricted-lower-bound comparison
+that identifies the first missing mathematical bridge, rather than automatically
+moving to n13 or extending the tooling. A more promising structural question may
+supersede that default. Distinguish formal reconstructions, computational
+certificates and mathematical novelty; file/declaration counts are not a measure
+of proximity to P vs NP. The aim remains exploration, not perpetual auditing.
 
-[Issue #13](https://github.com/yo4e/PvsNP-Cartography/issues/13) is complete. [Issue #14](https://github.com/yo4e/PvsNP-Cartography/issues/14) is the next structural task: weighted overlap sums and faithful polynomial layer profiles. Do not restart completed n5..11, generic #12 or #13 because an older dated record says pending. [Issue #8](https://github.com/yo4e/PvsNP-Cartography/issues/8) remains open for independent human semantic review.
+Gemini's corrected [independent AI audit #15](https://github.com/yo4e/PvsNP-Cartography/issues/15)
+is scoped to checkpoint0e30b5b7, not to these later modules, and did not include
+local Lean recompilation. [Issue #8](https://github.com/yo4e/PvsNP-Cartography/issues/8)
+tracks external human academic review separately; neither it nor an additional
+proof kernel is a standing prerequisite to continue exploratory research.
+Copilot's overview was process advice, not an additional theorem-verification run.
+No novelty, support/denominator optimality, unrestricted n12 degree result,
+arbitrary-n quadratic upper bound, barrier escape or P-vs-NP solution is claimed.
 
-A second proof kernel and mathematical novelty assessment are absent. These are standard counting reconstructions, not asserted novel mathematics. No support/denominator optimum, n12 degree equality, arbitrary-n degree2 upper bound, new complexity-class landmark, barrier escape or P-vs-NP solution is claimed.
-
-Latest [session log](logs/2026-10-21-balanced-fibers-and-intersections.md). The preceding README is archived byte-identically in [docs/history/2026-10-21-pre-fibers-readme.md](docs/history/2026-10-21-pre-fibers-readme.md); older ledgers and failures remain linked from the assumption ledger.
+Latest [research session](logs/2026-10-21-night-certified-layer-profiles.md);
+[direction decision](logs/2026-10-22-research-direction.md). Earlier README
+checkpoints remain in Git history, including
+[caa83f30](https://github.com/yo4e/PvsNP-Cartography/blob/caa83f302199ff8945108dc979d89e2fc9a7aecb/README.md),
+and the existing [pre-fibers archive](docs/history/2026-10-21-pre-fibers-readme.md).
+All historical proof and failure records are retained.
 
 The research environment must continue telling the difference between:
 
