@@ -57,27 +57,31 @@ theorem zero_layer_mean (w : ℕ) (hw : w ≤ 12) :
   unfold layerAverage
   simp_rw [he]
   simp only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, layer_card]
-  field_simp <;> ring
+  field_simp
 
 theorem q9_layer_six (A : Finset (Fin 12)) (hA : A.card = 9) :
     layerAverage (correct SmallSupportMod3.target (q A)) 6 = (9 / 11 : ℝ) := by
   rw [q_layer_mean, hA]
   norm_num [qGood, Finset.sum_range_succ, Nat.choose]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
 
 theorem q9_layer_ten (A : Finset (Fin 12)) (hA : A.card = 9) :
     layerAverage (correct SmallSupportMod3.target (q A)) 10 = (6 / 11 : ℝ) := by
   rw [q_layer_mean, hA]
   norm_num [qGood, Finset.sum_range_succ, Nat.choose]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
 
 theorem r8_layer_six (A : Finset (Fin 12)) (hA : A.card = 8) :
     layerAverage (correct SmallSupportMod3.target (r A)) 6 = (23 / 33 : ℝ) := by
   rw [r_layer_mean, hA]
   norm_num [rGood, Finset.sum_range_succ, Nat.choose]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
 
 theorem r8_layer_ten (A : Finset (Fin 12)) (hA : A.card = 8) :
     layerAverage (correct SmallSupportMod3.target (r A)) 10 = (14 / 33 : ℝ) := by
   rw [r_layer_mean, hA]
   norm_num [rGood, Finset.sum_range_succ, Nat.choose]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
 
 theorem zero_dual_score :
     (∑ x, dualMass x * correct SmallSupportMod3.target (0 : BinaryPolynomial 12) x) =
@@ -129,6 +133,7 @@ theorem q8_dual_score (A : Finset (Fin 12)) (hA : A.card = 8) :
     (∑ x, dualMass x * correct SmallSupportMod3.target (q A) x) = (5 / 6 : ℝ) := by
   rw [dual_expectation, q_layer_mean, q_layer_mean, hA]
   norm_num [qGood, Finset.sum_range_succ, Nat.choose]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
 
 def firstEight : Finset (Fin 12) := Finset.univ.filter (fun i => i.val < 8)
 
