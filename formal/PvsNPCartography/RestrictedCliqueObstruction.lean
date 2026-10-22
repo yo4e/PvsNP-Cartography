@@ -61,9 +61,10 @@ theorem zero_layer_mean (w : ℕ) (hw : w ≤ 12) :
 
 theorem q9_layer_six (A : Finset (Fin 12)) (hA : A.card = 9) :
     layerAverage (correct SmallSupportMod3.target (q A)) 6 = (9 / 11 : ℝ) := by
+  have h1 : (1 : ZMod 2).val = 1 := rfl
   rw [q_layer_mean, hA]
   norm_num [qGood, Finset.sum_range_succ, Nat.choose]
-  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat, h1]
 
 theorem q9_layer_ten (A : Finset (Fin 12)) (hA : A.card = 9) :
     layerAverage (correct SmallSupportMod3.target (q A)) 10 = (6 / 11 : ℝ) := by
@@ -73,9 +74,10 @@ theorem q9_layer_ten (A : Finset (Fin 12)) (hA : A.card = 9) :
 
 theorem r8_layer_six (A : Finset (Fin 12)) (hA : A.card = 8) :
     layerAverage (correct SmallSupportMod3.target (r A)) 6 = (23 / 33 : ℝ) := by
+  have h1 : (1 : ZMod 2).val = 1 := rfl
   rw [r_layer_mean, hA]
   norm_num [rGood, Finset.sum_range_succ, Nat.choose]
-  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat, h1]
 
 theorem r8_layer_ten (A : Finset (Fin 12)) (hA : A.card = 8) :
     layerAverage (correct SmallSupportMod3.target (r A)) 10 = (14 / 33 : ℝ) := by
@@ -131,9 +133,10 @@ theorem no_allowed_certificate :
 This does NOT assert a pointwise approximant from q8. -/
 theorem q8_dual_score (A : Finset (Fin 12)) (hA : A.card = 8) :
     (∑ x, dualMass x * correct SmallSupportMod3.target (q A) x) = (5 / 6 : ℝ) := by
+  have h1 : (1 : ZMod 2).val = 1 := rfl
   rw [dual_expectation, q_layer_mean, q_layer_mean, hA]
   norm_num [qGood, Finset.sum_range_succ, Nat.choose]
-  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat]
+  norm_num [← (ZMod.val_injective 2).eq_iff, ZMod.val_ofNat, h1]
 
 def firstEight : Finset (Fin 12) := Finset.univ.filter (fun i => i.val < 8)
 
