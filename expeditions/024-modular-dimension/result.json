@@ -1,0 +1,35 @@
+{
+  "affine_inverse_cases": 18,
+  "compression_input_checks": 53942,
+  "exhaustive_cases": [
+    {"degree": 0, "dimension_bound": 1, "max_agreement": 1, "n": 0, "polynomials": 4},
+    {"degree": 0, "dimension_bound": 1, "max_agreement": 1, "n": 1, "polynomials": 4},
+    {"degree": 1, "dimension_bound": 2, "max_agreement": 2, "n": 1, "polynomials": 16},
+    {"degree": 0, "dimension_bound": 3, "max_agreement": 2, "n": 2, "polynomials": 4},
+    {"degree": 1, "dimension_bound": 3, "max_agreement": 3, "n": 2, "polynomials": 64},
+    {"degree": 0, "dimension_bound": 4, "max_agreement": 3, "n": 3, "polynomials": 4},
+    {"degree": 1, "dimension_bound": 7, "max_agreement": 6, "n": 3, "polynomials": 256},
+    {"degree": 0, "dimension_bound": 11, "max_agreement": 6, "n": 4, "polynomials": 4},
+    {"degree": 1, "dimension_bound": 11, "max_agreement": 10, "n": 4, "polynomials": 1024},
+    {"degree": 2, "dimension_bound": 4, "max_agreement": 4, "n": 2, "polynomials": 256},
+    {"degree": 2, "dimension_bound": 7, "max_agreement": 7, "n": 3, "polynomials": 16384}
+  ],
+  "field": "GF(4)=GF(2)[alpha]/(alpha^2+alpha+1), alpha=2",
+  "majority15": {"anf_degree": 8, "derivative": "51480*p^7*(1-p)^7", "error": "422009/4782969", "nonzero_coefficients": 6435, "truth_values": 32768},
+  "negative_controls": {"dependent_repetition_error": "1/3", "invalid_zero_grid_bound": 4, "outside_agreement_rejected": true, "overaggressive_rounding_rejected": true, "single_residue_encoding_rejected": true, "wrong_inverse_rejected": true, "zero_grid_agreement": 7},
+  "not_established": ["novelty", "independent semantic review", "full Lean dimension or n299 theorem", "n12 degree", "P vs NP"],
+  "numerical_bridge": {
+    "agreement_denominator": 254629497041810760783555711051172270131433549208242031329517556169297662470417088272924672,
+    "agreement_numerator": 209660394993883821947535023324611441185492248181130328034971979979928832110669599839817888,
+    "cutoff": 156,
+    "degree_after": 16,
+    "degree_before": 2,
+    "original_n": 299,
+    "positive_gap": "5435694338625875705247144526018886592113665521919174885394102437217834186706093545968304675/38058905963642892896692583616584824428071018481968630635815976753547170980264635946239445172224",
+    "required_success": "3938951/4782969",
+    "restricted_m": 297,
+    "status": "exact arithmetic; full n299 proof is author reconstruction, not end-to-end Lean"
+  },
+  "rank_checks": 18020,
+  "root_encoding_cases": 8191
+}

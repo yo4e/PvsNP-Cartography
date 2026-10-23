@@ -1,0 +1,36 @@
+name: Exact modular dimension controls
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/024-modular-dimension/**'
+      - '.github/workflows/modular-dimension.yml'
+  pull_request:
+    paths:
+      - 'expeditions/024-modular-dimension/**'
+      - '.github/workflows/modular-dimension.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact field, compression, rank and degree-aware bridge controls
+        working-directory: expeditions/024-modular-dimension
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          python verify.py > actual.json
+          python -O verify.py > optimized.json
+          cmp actual.json optimized.json
+          python - <<'PY'
+          import json
+          if json.load(open('actual.json')) != json.load(open('result.json')):
+              raise RuntimeError('actual/saved result mismatch')
+          print('PASS: normal/-O byte equality and actual/saved JSON equality')
+          PY
+          cat actual.json

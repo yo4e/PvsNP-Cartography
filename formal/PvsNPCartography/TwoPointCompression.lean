@@ -39,6 +39,7 @@ theorem inverseFactor_degree (a b : K) (i : Fin n) :
   simp only [MvPolynomial.totalDegree_C, add_zero]
   apply (MvPolynomial.totalDegree_sub _ _).trans
   norm_num only [MvPolynomial.totalDegree_C, MvPolynomial.totalDegree_X]
+  decide
 
 theorem inverseProduct_degree (a b : K) (S : Finset (Fin n)) :
     (inverseProduct a b S).totalDegree ≤ S.card := by
