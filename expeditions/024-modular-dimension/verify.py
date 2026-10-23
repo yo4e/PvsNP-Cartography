@@ -80,7 +80,8 @@ def rank(rows):
     basis = {}
     for row in rows:
         row = list(row)
-        for j, c in enumerate(row):
+        for j in range(len(row)):
+            c = row[j]  # Read the CURRENT row after earlier elimination steps.
             if c == 0:
                 continue
             if j in basis:
@@ -104,6 +105,15 @@ def main():
         require(mul(mul(a,b),c) == mul(a,mul(b,c)), 'associativity')
     for a in (1,2,3):
         require(mul(a, inv(a)) == 1, 'inverse')
+    # Adversarial regression: rebinding a list inside enumerate(old_list) reads stale pivots.
+    require(rank([[1,1],[1,0]]) == 2, 'rank stale-iterator counterexample')
+    require(rank([[1,1],[1,1]]) == 1, 'dependent rows must not acquire fake pivots')
+    matrix_checks = 0
+    for a,b,c,d in product(range(4), repeat=4):
+        determinant = mul(a,d) ^ mul(b,c)
+        expected_rank = 2 if determinant else int(any((a,b,c,d)))
+        require(rank([[a,b],[c,d]]) == expected_rank, 'independent 2x2 determinant rank')
+        matrix_checks += 1
     inverse_cases = 0
     for a,b in product((1,2,3),repeat=2):
         for y in (a,b):
@@ -217,7 +227,7 @@ def main():
     return {
       'field':'GF(4)=GF(2)[alpha]/(alpha^2+alpha+1), alpha=2',
       'exhaustive_cases':counts,'rank_checks':rank_checks,'compression_input_checks':compression_checks,
-      'affine_inverse_cases':inverse_cases,
+      'affine_inverse_cases':inverse_cases,'independent_matrix_checks':matrix_checks,
       'negative_controls':{'zero_grid_agreement':boolean_zero_agreement,'invalid_zero_grid_bound':wrong_nonzero_free_bound,
           'wrong_inverse_rejected':True,'outside_agreement_rejected':True,'overaggressive_rounding_rejected':True,
           'single_residue_encoding_rejected':True,'dependent_repetition_error':'1/3'},

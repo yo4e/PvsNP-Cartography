@@ -15,6 +15,7 @@
     {"degree": 2, "dimension_bound": 7, "max_agreement": 7, "n": 3, "polynomials": 16384}
   ],
   "field": "GF(4)=GF(2)[alpha]/(alpha^2+alpha+1), alpha=2",
+  "independent_matrix_checks": 256,
   "majority15": {"anf_degree": 8, "derivative": "51480*p^7*(1-p)^7", "error": "422009/4782969", "nonzero_coefficients": 6435, "truth_values": 32768},
   "negative_controls": {"dependent_repetition_error": "1/3", "invalid_zero_grid_bound": 4, "outside_agreement_rejected": true, "overaggressive_rounding_rejected": true, "single_residue_encoding_rejected": true, "wrong_inverse_rejected": true, "zero_grid_agreement": 7},
   "not_established": ["novelty", "independent semantic review", "full Lean dimension or n299 theorem", "n12 degree", "P vs NP"],
