@@ -28,3 +28,4 @@ import PvsNPCartography.HammingProfiles
 import PvsNPCartography.CliqueProfiles
 import PvsNPCartography.ProfileMixtures
 import PvsNPCartography.RestrictedCliqueObstruction
+import PvsNPCartography.TwoPointCompression

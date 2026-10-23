@@ -1,0 +1,11 @@
+import PvsNPCartography.TwoPointCompression
+
+#print axioms PvsNPCartography.TwoPointCompression.squarefree_degree
+#print axioms PvsNPCartography.TwoPointCompression.inverseFactor_degree
+#print axioms PvsNPCartography.TwoPointCompression.inverseProduct_degree
+#print axioms PvsNPCartography.TwoPointCompression.inverseFactor_mul
+#print axioms PvsNPCartography.TwoPointCompression.complement_reduction_eval
+#print axioms PvsNPCartography.TwoPointCompression.complement_reduction_degree
+#print axioms PvsNPCartography.TwoPointCompression.compress_monomial
+#print axioms PvsNPCartography.TwoPointCompression.zero_grid_breaks_inverse
+#print axioms PvsNPCartography.TwoPointCompression.majority15_binomial
