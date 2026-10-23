@@ -109,7 +109,7 @@ theorem compress_monomial (a b : K) (ha : a ≠ 0) (hb : b ≠ 0)
     · have hcard : S.card ≤ n := (Finset.card_le_univ S).trans_eq (Fintype.card_fin n)
       exact (complement_reduction_degree a b R S).trans (by omega)
     · intro y hy hR
-      exact complement_reduction_eval a b ha hb R S y hyR
+      exact complement_reduction_eval a b ha hb R S y hy hR
 
 /-- A concrete attack on dropping the nonzero-grid hypothesis. -/
 theorem zero_grid_breaks_inverse :
