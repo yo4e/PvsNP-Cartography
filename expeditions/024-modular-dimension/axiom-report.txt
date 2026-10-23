@@ -1,0 +1,35 @@
+Actual retrieved output excerpts, approved 2026-10-23 JST session.
+Code de8913e7c1058844354f376ae8a72a2a2abddfa9
+Tree 5b9639c71fbcab3706fcb4780e390e3520b5bca4
+Run https://github.com/yo4e/PvsNP-Cartography/actions/runs/39964232854
+Job 120449783214, completed SUCCESS, all required steps completed successfully.
+The full decoded job log was inspected. This is an EXCERPT archive, not the
+full raw log and not a report synthesized from theorem source text.
+
+2026-10-23T13:49:47.7421749Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-23T13:49:47.3168547Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-23T13:51:01.4952931Z   BUILD_ARGS: --wfail
+2026-10-23T13:51:12.9964551Z ✔ [9053/9055] Built PvsNPCartography.TwoPointCompression (6.9s)
+2026-10-23T13:51:17.2111279Z Build completed successfully (9055 jobs).
+2026-10-23T13:52:23.0795444Z axiom-audit: audited 759 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-23T13:52:23.1195998Z axiom-audit completed successfully
+
+2026-10-23T13:53:25.7253004Z 'PvsNPCartography.TwoPointCompression.squarefree_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-23T13:53:25.7254497Z 'PvsNPCartography.TwoPointCompression.inverseFactor_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-23T13:53:25.7255881Z 'PvsNPCartography.TwoPointCompression.inverseProduct_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-23T13:53:25.7257297Z 'PvsNPCartography.TwoPointCompression.inverseFactor_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-23T13:53:25.7258993Z 'PvsNPCartography.TwoPointCompression.complement_reduction_eval' depends on axioms: [propext,
+2026-10-23T13:53:25.7259794Z  Classical.choice,
+2026-10-23T13:53:25.7260412Z  Quot.sound]
+2026-10-23T13:53:25.7261059Z 'PvsNPCartography.TwoPointCompression.complement_reduction_degree' depends on axioms: [propext,
+2026-10-23T13:53:25.7261797Z  Classical.choice,
+2026-10-23T13:53:25.7262196Z  Quot.sound]
+2026-10-23T13:53:25.7262984Z 'PvsNPCartography.TwoPointCompression.compress_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-23T13:53:25.7264191Z 'PvsNPCartography.TwoPointCompression.zero_grid_breaks_inverse' depends on axioms: [propext,
+2026-10-23T13:53:25.7264965Z  Classical.choice,
+2026-10-23T13:53:25.7265336Z  Quot.sound]
+2026-10-23T13:53:25.7266122Z 'PvsNPCartography.TwoPointCompression.majority15_binomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+All previous target reports also completed. No second proof kernel was enabled.
+The generic dimension bound, probability amplification, GF4 adapter and n299
+consequence are NOT among these accepted formal statements.
