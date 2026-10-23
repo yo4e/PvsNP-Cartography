@@ -38,7 +38,7 @@ theorem inverseFactor_degree (a b : K) (i : Fin n) :
   apply (MvPolynomial.totalDegree_mul _ _).trans
   simp only [MvPolynomial.totalDegree_C, add_zero]
   apply (MvPolynomial.totalDegree_sub _ _).trans
-  simp
+  norm_num only [MvPolynomial.totalDegree_C, MvPolynomial.totalDegree_X]
 
 theorem inverseProduct_degree (a b : K) (S : Finset (Fin n)) :
     (inverseProduct a b S).totalDegree ≤ S.card := by
@@ -86,7 +86,8 @@ theorem complement_reduction_eval (a b : K) (ha : a ≠ 0) (hb : b ≠ 0)
 theorem complement_reduction_degree (a b : K)
     (R : MvPolynomial (Fin n) K) (S : Finset (Fin n)) :
     (R * inverseProduct a b Sᶜ).totalDegree ≤ R.totalDegree + (n - S.card) := by
-  have hc : (Sᶜ).card = n - S.card := by simp
+  have hc : (Sᶜ).card = n - S.card := by
+    rw [Finset.card_compl, Fintype.card_fin]
   exact (MvPolynomial.totalDegree_mul _ _).trans
     (Nat.add_le_add_left ((inverseProduct_degree a b Sᶜ).trans_eq hc) _)
 
@@ -108,7 +109,7 @@ theorem compress_monomial (a b : K) (ha : a ≠ 0) (hb : b ≠ 0)
     · have hcard : S.card ≤ n := (Finset.card_le_univ S).trans_eq (Fintype.card_fin n)
       exact (complement_reduction_degree a b R S).trans (by omega)
     · intro y hy hR
-      exact complement_reduction_eval a b ha hb R S y hy hR
+      exact complement_reduction_eval a b ha hb R S y hyR
 
 /-- A concrete attack on dropping the nonzero-grid hypothesis. -/
 theorem zero_grid_breaks_inverse :
