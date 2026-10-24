@@ -18,11 +18,13 @@ theorem bound_pos (n d : ℕ) : 0 < bound n d := by
     exact ⟨∅, by simp [supports]⟩
   simpa [supports_card, bound] using h
 
+omit [Field K] in
 theorem grid_card (a b : K) (hab : a ≠ b) (n : ℕ) :
     (grid a b n).card = 2 ^ n := by
   classical
   simp [grid, hab]
 
+omit [Field K] in
 theorem grid_same_card (a : K) (n : ℕ) : (grid a a n).card = 1 := by
   classical
   simp [grid]
