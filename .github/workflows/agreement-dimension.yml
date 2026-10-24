@@ -1,0 +1,32 @@
+name: Exact agreement dimension controls
+on:
+  push:
+    paths:
+      - 'expeditions/025-agreement-dimension/verify.py'
+      - 'expeditions/025-agreement-dimension/result.json'
+      - '.github/workflows/agreement-dimension.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact interpolation, degree, rank and boundary controls
+        working-directory: expeditions/025-agreement-dimension
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          python verify.py > actual.json
+          python -O verify.py > optimized.json
+          cmp actual.json optimized.json
+          python - <<'PY'
+          import json
+          if json.load(open('actual.json')) != json.load(open('result.json')):
+              raise RuntimeError('actual/saved result mismatch')
+          print('PASS: normal/-O byte equality and actual/saved JSON equality')
+          PY
+          cat actual.json

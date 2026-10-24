@@ -1,0 +1,12 @@
+{
+  "agreement_configurations":140,
+  "agreement_polynomials":11910,
+  "agreement_summary_by_field":{"3":{"configurations":14,"polynomials":258,"tight_configurations":10},"4":{"configurations":42,"polynomials":2112,"tight_configurations":24},"5":{"configurations":84,"polynomials":9540,"tight_configurations":52}},
+  "collapsed_grid_cases":100,
+  "independent_rank_controls":971,
+  "lagrange_indicator_checks":3230,
+  "negative_controls":{"equal_nonzero_endpoints":"cardinality inequality survives; interpolation formula is singular","input_dependent_constant_n3":{"actual":8,"fixed_polynomial_bound":4},"zero_grid_n3_d0":{"actual":7,"false_bound":4},"signed_normalized_constants_n1":{"masses":[1,1,-1],"success_each":1,"uniform_bound":"1/2"}},
+  "power_interpolation_checks":684,
+  "reduction_evaluations":22230,
+  "scope":"finite exact corroboration; no independent semantic reviewer, new lower bound or n299 acceptance"
+}
