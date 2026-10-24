@@ -7,7 +7,7 @@ namespace PvsNPCartography.AgreementDimension
 
 noncomputable section
 variable {K : Type*} [Field K] {n : ℕ}
-local instance : DecidableEq K := Classical.decEq K
+attribute [local instance] Classical.propDecidable
 
 /-- Finite squarefree supports of size at most t. -/
 def supports (n t : ℕ) : Finset (Finset (Fin n)) :=
@@ -114,6 +114,7 @@ theorem lagrange_factor (a b : K) (hab : a ≠ b) (z x : K)
     (hz : z = a ∨ z = b) (hx : x = a ∨ x = b) :
     slope a b z * x + intercept a b z = if x = z then 1 else 0 := by
   have hden : b-a ≠ 0 := sub_ne_zero.mpr hab.symm
+  have hba : b ≠ a := hab.symm
   rcases hz with rfl | rfl <;> rcases hx with rfl | rfl
   all_goals simp_all [slope, intercept]
   all_goals field_simp
@@ -135,7 +136,7 @@ theorem delta_eq (H : Finset (Fin n → K)) (a b : K) (hab : a ≠ b)
   · rw [ite_eq_right h]
     obtain ⟨i, hi⟩ : ∃ i, y.1 i ≠ z.1 i := by
       by_contra hn
-      push_neg at hn
+      push Not at hn
       apply h
       apply Subtype.ext
       funext i
@@ -154,7 +155,7 @@ theorem all_functions_mem_full (H : Finset (Fin n → K)) (a b : K) (hab : a ≠
     funext y
     simp only [Finset.sum_apply, Pi.smul_apply, smul_eq_mul,
       delta_eq H a b hab hgrid]
-    simp [eq_comm]
+    simp
   rw [← he]
   exact Submodule.sum_mem _ (fun z _ => (lowSpace H n).smul_mem _ (hd z))
 
@@ -219,12 +220,8 @@ theorem agreement_card_le (H : Finset (Fin n → K)) (a b : K)
   have ht : n+d ≤ 2*t+1 := by omega
   have htop := lowSpace_eq_top H a b ha hb hab hgrid R hagree d t hdegree ht
   have hd : Module.finrank K (lowSpace H t) ≤ (supports n t).card := by
-    have hs := finrank_span_le_card (R := K)
-      ((supports n t).image (monoValue H) : Set (H → K))
-    have hs' : Module.finrank K (lowSpace H t) ≤
-        ((supports n t).image (monoValue H)).card := by
-      simpa only [lowSpace, Finset.toFinset_coe] using hs
-    exact hs'.trans (Finset.card_image_le)
+    exact (finrank_span_finset_le_card (R := K)
+      ((supports n t).image (monoValue H))).trans (Finset.card_image_le)
   rw [htop, finrank_top] at hd
   simpa [supports_card, t] using hd
 

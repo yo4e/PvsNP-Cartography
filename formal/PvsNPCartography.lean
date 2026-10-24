@@ -30,3 +30,4 @@ import PvsNPCartography.ProfileMixtures
 import PvsNPCartography.RestrictedCliqueObstruction
 import PvsNPCartography.TwoPointCompression
 import PvsNPCartography.AgreementDimension
+import PvsNPCartography.AgreementConsequences

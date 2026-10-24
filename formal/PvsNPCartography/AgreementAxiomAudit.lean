@@ -1,4 +1,4 @@
-import PvsNPCartography.AgreementDimension
+import PvsNPCartography.AgreementConsequences
 #print axioms PvsNPCartography.AgreementDimension.mono_mem
 #print axioms PvsNPCartography.AgreementDimension.lowSpace_mono
 #print axioms PvsNPCartography.AgreementDimension.affine_product_mem
@@ -12,3 +12,11 @@ import PvsNPCartography.AgreementDimension
 #print axioms PvsNPCartography.AgreementDimension.supports_card
 #print axioms PvsNPCartography.AgreementDimension.agreement_card_le
 #print axioms PvsNPCartography.AgreementDimension.agreement_bound
+#print axioms PvsNPCartography.AgreementConsequences.bound_pos
+#print axioms PvsNPCartography.AgreementConsequences.grid_card
+#print axioms PvsNPCartography.AgreementConsequences.grid_same_card
+#print axioms PvsNPCartography.AgreementConsequences.agreement_bound_allow_equal
+#print axioms PvsNPCartography.AgreementConsequences.sum_correct
+#print axioms PvsNPCartography.AgreementConsequences.total_success_le
+#print axioms PvsNPCartography.AgreementConsequences.pointwise_bound
+#print axioms PvsNPCartography.AgreementConsequences.no_pointwise_mixture
