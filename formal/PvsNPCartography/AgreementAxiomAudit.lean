@@ -1,0 +1,14 @@
+import PvsNPCartography.AgreementDimension
+#print axioms PvsNPCartography.AgreementDimension.mono_mem
+#print axioms PvsNPCartography.AgreementDimension.lowSpace_mono
+#print axioms PvsNPCartography.AgreementDimension.affine_product_mem
+#print axioms PvsNPCartography.AgreementDimension.power_affine
+#print axioms PvsNPCartography.AgreementDimension.support_card_le_sum
+#print axioms PvsNPCartography.AgreementDimension.eval_mem_low
+#print axioms PvsNPCartography.AgreementDimension.lagrange_factor
+#print axioms PvsNPCartography.AgreementDimension.delta_eq
+#print axioms PvsNPCartography.AgreementDimension.all_functions_mem_full
+#print axioms PvsNPCartography.AgreementDimension.lowSpace_eq_top
+#print axioms PvsNPCartography.AgreementDimension.supports_card
+#print axioms PvsNPCartography.AgreementDimension.agreement_card_le
+#print axioms PvsNPCartography.AgreementDimension.agreement_bound

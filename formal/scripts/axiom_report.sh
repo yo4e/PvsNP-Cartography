@@ -13,3 +13,4 @@ lake env lean PvsNPCartography/ProfileAxiomAudit.lean
 lake env lean PvsNPCartography/CliqueAxiomAudit.lean
 lake env lean PvsNPCartography/MixtureAxiomAudit.lean
 lake env lean PvsNPCartography/CompressionAxiomAudit.lean
+lake env lean PvsNPCartography/AgreementAxiomAudit.lean
