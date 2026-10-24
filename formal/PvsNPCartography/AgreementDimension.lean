@@ -7,6 +7,7 @@ namespace PvsNPCartography.AgreementDimension
 
 noncomputable section
 variable {K : Type*} [Field K] {n : ℕ}
+local instance : DecidableEq K := Classical.decEq K
 
 /-- Finite squarefree supports of size at most t. -/
 def supports (n t : ℕ) : Finset (Finset (Fin n)) :=
@@ -114,7 +115,7 @@ theorem lagrange_factor (a b : K) (hab : a ≠ b) (z x : K)
     slope a b z * x + intercept a b z = if x = z then 1 else 0 := by
   have hden : b-a ≠ 0 := sub_ne_zero.mpr hab.symm
   rcases hz with rfl | rfl <;> rcases hx with rfl | rfl
-  all_goals simp only [slope, intercept, if_pos rfl, if_neg hab, if_neg hab.symm]
+  all_goals simp_all [slope, intercept]
   all_goals field_simp
   all_goals ring
 
@@ -131,7 +132,7 @@ theorem delta_eq (H : Finset (Fin n → K)) (a b : K) (hab : a ≠ b)
   · subst y
     simp_rw [lagrange_factor a b hab _ _ (hgrid z _) (hgrid z _)]
     simp
-  · rw [if_neg h]
+  · rw [ite_eq_right h]
     obtain ⟨i, hi⟩ : ∃ i, y.1 i ≠ z.1 i := by
       by_contra hn
       push_neg at hn
@@ -140,7 +141,7 @@ theorem delta_eq (H : Finset (Fin n → K)) (a b : K) (hab : a ≠ b)
       funext i
       exact hn i
     apply Finset.prod_eq_zero (Finset.mem_univ i)
-    rw [lagrange_factor a b hab _ _ (hgrid z i) (hgrid y i), if_neg hi]
+    rw [lagrange_factor a b hab _ _ (hgrid z i) (hgrid y i), ite_eq_right hi]
 
 theorem all_functions_mem_full (H : Finset (Fin n → K)) (a b : K) (hab : a ≠ b)
     (hgrid : ∀ y : H, ∀ i, y.1 i = a ∨ y.1 i = b) (f : H → K) :
@@ -222,7 +223,7 @@ theorem agreement_card_le (H : Finset (Fin n → K)) (a b : K)
       ((supports n t).image (monoValue H) : Set (H → K))
     have hs' : Module.finrank K (lowSpace H t) ≤
         ((supports n t).image (monoValue H)).card := by
-      simpa only [lowSpace, Finset.coe_toFinset] using hs
+      simpa only [lowSpace, Finset.toFinset_coe] using hs
     exact hs'.trans (Finset.card_image_le)
   rw [htop, finrank_top] at hd
   simpa [supports_card, t] using hd
