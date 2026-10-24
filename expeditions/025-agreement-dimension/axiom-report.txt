@@ -1,0 +1,39 @@
+Actual output EXCERPTS from completed successful formal job120916298894,
+run40108908554, source8e5be8ce59b069c278ec32839552dad712de04e1.
+The full decoded log was retrieved and read during 2026-10-25 JST recovery.
+This is not a full raw-log archive and is not synthesized from theorem source.
+
+2026-10-24T15:53:24.3403109Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-24T15:53:23.3231888Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-24T15:55:36.5110871Z   BUILD_ARGS: --wfail
+2026-10-24T15:55:47.0942060Z ✔ [9054/9057] Built PvsNPCartography.AgreementDimension (6.0s)
+2026-10-24T15:55:51.0984079Z ✔ [9055/9057] Built PvsNPCartography.AgreementConsequences (3.0s)
+2026-10-24T15:55:55.0153898Z Build completed successfully (9057 jobs).
+2026-10-24T15:57:04.8949868Z axiom-audit: audited 812 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-24T15:58:02.8005249Z 'PvsNPCartography.AgreementDimension.mono_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8006086Z 'PvsNPCartography.AgreementDimension.lowSpace_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8006953Z 'PvsNPCartography.AgreementDimension.affine_product_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8007807Z 'PvsNPCartography.AgreementDimension.power_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8008657Z 'PvsNPCartography.AgreementDimension.support_card_le_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8009496Z 'PvsNPCartography.AgreementDimension.eval_mem_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8010344Z 'PvsNPCartography.AgreementDimension.lagrange_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8011321Z 'PvsNPCartography.AgreementDimension.delta_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8012173Z 'PvsNPCartography.AgreementDimension.all_functions_mem_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8013036Z 'PvsNPCartography.AgreementDimension.lowSpace_eq_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8013877Z 'PvsNPCartography.AgreementDimension.supports_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8014719Z 'PvsNPCartography.AgreementDimension.agreement_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8015570Z 'PvsNPCartography.AgreementDimension.agreement_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8016404Z 'PvsNPCartography.AgreementConsequences.bound_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8017235Z 'PvsNPCartography.AgreementConsequences.grid_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8018069Z 'PvsNPCartography.AgreementConsequences.grid_same_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8019671Z 'PvsNPCartography.AgreementConsequences.agreement_bound_allow_equal' depends on axioms: [propext,
+2026-10-24T15:58:02.8021035Z  Classical.choice,
+2026-10-24T15:58:02.8021179Z  Quot.sound]
+2026-10-24T15:58:02.8021451Z 'PvsNPCartography.AgreementConsequences.sum_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8021904Z 'PvsNPCartography.AgreementConsequences.total_success_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8022370Z 'PvsNPCartography.AgreementConsequences.pointwise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-24T15:58:02.8022843Z 'PvsNPCartography.AgreementConsequences.no_pointwise_mixture' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+All 21 new target reports and earlier reports completed under the same allowlist.
+The original GF2 MOD3-to-GF4 transport, generic majority amplification and n299
+consequence are not among these accepted endpoints. No second kernel was enabled.
