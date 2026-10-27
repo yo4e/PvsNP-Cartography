@@ -31,3 +31,5 @@ import PvsNPCartography.RestrictedCliqueObstruction
 import PvsNPCartography.TwoPointCompression
 import PvsNPCartography.AgreementDimension
 import PvsNPCartography.AgreementConsequences
+import PvsNPCartography.GF4Transport
+import PvsNPCartography.Mod3ProductBound

@@ -1,0 +1,22 @@
+import PvsNPCartography
+
+#print axioms PvsNPCartography.GF4Transport.card_four
+#print axioms PvsNPCartography.GF4Transport.exists_nonbinary
+#print axioms PvsNPCartography.GF4Transport.omega_cube
+#print axioms PvsNPCartography.GF4Transport.omega_quadratic
+#print axioms PvsNPCartography.GF4Transport.root_encoding
+#print axioms PvsNPCartography.GF4Transport.affine_substitution_degree
+#print axioms PvsNPCartography.GF4Transport.pad_weight
+#print axioms PvsNPCartography.GF4Transport.encoded_targets
+#print axioms PvsNPCartography.GF4Transport.decode_coordinate
+#print axioms PvsNPCartography.GF4Transport.product_decode
+#print axioms PvsNPCartography.GF4Transport.pulled_degree
+#print axioms PvsNPCartography.GF4Transport.pulled_eval
+#print axioms PvsNPCartography.GF4Transport.transported_degree
+#print axioms PvsNPCartography.GF4Transport.transported_correct
+#print axioms PvsNPCartography.Mod3ProductBound.same_index_correctness
+#print axioms PvsNPCartography.Mod3ProductBound.transport_success
+#print axioms PvsNPCartography.Mod3ProductBound.mod3_product_bound
+#print axioms PvsNPCartography.Mod3ProductBound.necessary_inequality
+#print axioms PvsNPCartography.Mod3ProductBound.no_mod3_approximation
+#check PvsNPCartography.Mod3ProductBound.necessary_inequality

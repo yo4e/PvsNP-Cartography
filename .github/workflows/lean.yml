@@ -55,3 +55,7 @@ jobs:
       - name: Print target theorem axioms
         working-directory: formal
         run: ./scripts/axiom_report.sh
+
+      - name: Print MOD3 transport endpoint axioms
+        working-directory: formal
+        run: lake env lean TransportAudit.lean
