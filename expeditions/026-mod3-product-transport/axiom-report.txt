@@ -1,0 +1,51 @@
+Actual retrieved output EXCERPTS, approved session executed2026-10-27 JST.
+Source5acf085fa43f1fa4578252c1653033d3f523e753
+Tree12c1e9ab938e823a15566c7921fdc6550217d1e6
+Run https://github.com/yo4e/PvsNP-Cartography/actions/runs/40430504329
+Job121946718143: completed SUCCESS; all required steps completed successfully.
+The full decoded job output was retrieved and inspected. This is an excerpt
+archive, not a complete raw log and not output synthesized from source code.
+
+2026-10-27T01:07:09.7068642Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-27T01:07:10.1078818Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-27T01:08:07.1259117Z   BUILD_ARGS: --wfail
+2026-10-27T01:08:18.3195524Z ✔ [9058/9060] Built PvsNPCartography.TransportExamples (6.6s)
+2026-10-27T01:08:22.5312856Z Build completed successfully (9060 jobs).
+2026-10-27T01:09:09.6242322Z axiom-audit: audited 875 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-27T01:09:09.6632787Z axiom-audit completed successfully
+
+2026-10-27T01:10:23.5723026Z 'PvsNPCartography.GF4Transport.card_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5724351Z 'PvsNPCartography.GF4Transport.exists_nonbinary' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5725688Z 'PvsNPCartography.GF4Transport.omega_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5726798Z 'PvsNPCartography.GF4Transport.omega_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5727892Z 'PvsNPCartography.GF4Transport.root_encoding' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5729066Z 'PvsNPCartography.GF4Transport.affine_substitution_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5730204Z 'PvsNPCartography.GF4Transport.pad_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5731710Z 'PvsNPCartography.GF4Transport.encoded_targets' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5732857Z 'PvsNPCartography.GF4Transport.decode_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5733788Z 'PvsNPCartography.GF4Transport.product_decode' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5734697Z 'PvsNPCartography.GF4Transport.pulled_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5735589Z 'PvsNPCartography.GF4Transport.pulled_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5736533Z 'PvsNPCartography.GF4Transport.transported_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5737516Z 'PvsNPCartography.GF4Transport.transported_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5738521Z 'PvsNPCartography.Mod3ProductBound.same_index_correctness' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5739541Z 'PvsNPCartography.Mod3ProductBound.transport_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5740750Z 'PvsNPCartography.Mod3ProductBound.mod3_product_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5741915Z 'PvsNPCartography.Mod3ProductBound.necessary_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5742806Z 'PvsNPCartography.Mod3ProductBound.no_mod3_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5743633Z 'PvsNPCartography.GF4Transport.encode_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5744412Z 'PvsNPCartography.GF4Transport.decode_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5745188Z 'PvsNPCartography.GF4Transport.encode_decode' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T01:10:23.5745942Z 'PvsNPCartography.Mod3ProductBound.seven_small_error_impossible' depends on axioms: [propext,
+2026-10-27T01:10:23.5746462Z  Classical.choice,
+2026-10-27T01:10:23.5746692Z  Quot.sound]
+2026-10-27T01:10:23.5747348Z PvsNPCartography.Mod3ProductBound.necessary_inequality (m D : ℕ) (delta : ℝ)
+2026-10-27T01:10:23.5748072Z   (h : PvsNPCartography.HasProbabilisticDegreeAtMost PvsNPCartography.SmallSupportMod3.target delta D) :
+2026-10-27T01:10:23.5748844Z   (1 - 2 * delta) * 2 ^ m ≤ ↑(PvsNPCartography.AgreementConsequences.bound m D)
+2026-10-27T01:10:23.5749382Z PvsNPCartography.Mod3ProductBound.seven_small_error_impossible :
+2026-10-27T01:10:23.5754844Z   ¬PvsNPCartography.HasProbabilisticDegreeAtMost PvsNPCartography.SmallSupportMod3.target (1 / 12) 2
+
+The pretty printer hides the target's implicit arity; the actual retrieved
+source specifies m+2 in necessary_inequality and7 in the concrete corollary.
+All23 new reports and old reports completed. Independent majority amplification
+and n299 are NOT among these accepted endpoints. No second kernel was enabled.

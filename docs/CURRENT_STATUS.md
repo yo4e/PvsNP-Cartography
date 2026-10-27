@@ -1,67 +1,66 @@
-# Current checkpoint: actual agreement dimension and real-mixture obstruction
+# Current checkpoint: actual MOD3 transport and a closed small-error application
 
-Approved2026-10-24 night; executed after midnight2026-10-25 JST and completion
-record recovered in the same conversation on Oct25 morning after a failed final
-response. Research lead 月野テンプレクス. **Issue18's mathematical milestone is
-complete; Issue19 is the next bounded frontier.** Future nightly work requires
-fresh approval. Dated README/direction snapshots do not restart completed work.
+Freshly approved session executed2026-10-27 JST. Research lead 月野テンプレクス.
+**Issue19 is CLOSED; Issue20 is the earliest useful unblocked mathematical target.**
+Further nightly work requires fresh approval. Dated README/direction snapshots
+are history, not instructions to restart completed Issues17/18/19.
 
-## Accepted mathematics
+## Accepted mathematical change
 
-For arbitrary field K, nonzero a,b and actual polynomial R of total degree<=d,
-the actual agreement set with product_i y_i on {a,b}^n has cardinality at most
+The original GF2 MOD3 probabilistic-degree predicate on m+2 inputs now implies
 
- B(n,d)=sum_{j=0}^{min(n,floor((n+d)/2))}choose(n,j).
+ (1-2delta)*2^m <= B(m,D),
+ B(m,D)=sum_{j=0}^{min(m,floor((m+D)/2))} choose(m,j).
 
-AgreementDimension derives this from explicit interpolation, degree-preserving
-squarefree evaluation reduction, existing TwoPointCompression and dimension
-counting, not an assumed surjectivity/rank bound. AgreementConsequences also
-handles a=b by the singleton-grid case. Distinctness is needed for the2^n input
-count, not for the cardinality inequality itself.
+GF4Transport constructs an actual GaloisField2,2, nonbinary root and embedding,
+two constant restrictions and degree-preserving affine input substitution.
+Mod3ProductBound derives product success by a SAME-index real union bound and
+applies the accepted agreement theorem. Its final necessary_inequality assumes
+only the original approximation predicate, not transported success or a rank bound.
+Arbitrary finite nonnegative normalized REAL weights are fixed before all inputs.
+Source polynomials need not be multilinear or symmetrized. Grid inverse laws
+are explicit, and actual totalDegree never increases.
 
-For any fixed finite nonnegative normalized REAL mixture of actual degree<=d
-K-polynomials, total grid correctness<=B(n,d). With a!=b, pointwise success>=eta
-therefore implies eta*2^n<=B(n,d). This accepted target is the coordinate PRODUCT,
-not yet the original GF2 MOD3 predicate. Coefficients and probabilities live in
-different fields; input-dependent selection and signed mass are excluded.
+TransportExamples additionally proves no degree<=2 approximation of seven-variable
+MOD3 at pointwise ERROR1/12, using26<80/3. This is NOT error1/3, optimality or a
+new exact degree classification. Old n5..11 degree2 equalities at1/3 are unchanged.
 
-## Evidence
+## Actual evidence and attacks
 
-Accepted source8e5be8ce59b069c278ec32839552dad712de04e1,
-tree474f4a9a18940dcba367416d3136ece1990af624. Completed SUCCESS
-run40108908554/job120916298894: pinned Lean4.35.0-rc4/Mathlib9e6b3aac,
-whole-root --wfail9057 jobs,812 namespace declarations in unchanged
-[propext,Classical.choice,Quot.sound],21 new target reports. Full actual output,
-completed job/steps, both modules and matching Git commit/tree were re-fetched
-and inspected during recovery. Expedition025 preserves conclusion, statement
-and barrier audits, ci-evidence.md and timestamped axiom-report.txt excerpts.
-This is the existing kernel, not a second kernel or independent semantic review.
+Accepted source5acf085fa43f1fa4578252c1653033d3f523e753,
+tree12c1e9ab938e823a15566c7921fdc6550217d1e6. Completed SUCCESS formal
+run40430504329/job121946718143, pinned Lean4.35.0-rc4/Mathlib9e6b3aac,
+whole-root --wfail9060 jobs,875 namespace declarations within unchanged
+[propext,Classical.choice,Quot.sound],23 new explicit reports and all old reports.
+Completed steps, full actual output, actual source modules and commit/tree were
+re-fetched and inspected; local source blob hashes match GitHub.
 
-Exact sourcea62add7e08387a4231f7092f108b59964a00feca passed completed
-run40107805754/job120913025271. Normal/-O and actual/saved results match;
-11,910 polynomial cases across GF3/GF4/GF5,971 independent rank controls and
-22,230 reduction evaluations corroborate but do not prove the general result.
-Graveyard039/040 preserve implementation failures, mathematical countercontrols
-and the corrected distinctness wording. All earlier failure records remain.
+Exact run40430504271/job121946717619 at the same source also completed SUCCESS.
+Normal/-O byte equality and actual/saved JSON equality, plus local reruns, pass.
+3680 polynomials and18304 input evaluations corroborate, not prove, the generic
+statement. Graveyard041 contains real polynomial counterexamples to false
+independence and signed normalized weights;042 preserves the inspected failed
+first build and faithful repair. No statement or verification policy was weakened.
 
-## Next: Issue19, actual GF2-to-GF4 transport
+Expedition026 contains full derivation, statement/barrier audits, actual output
+excerpts, ci-evidence.md and conclusion. Existing Lean kernel only; no independent
+semantic reviewer or second kernel. Old review #15 does not cover this new code.
 
-Expedition025/next-bridge.md derives a same-index coupling of two residue
-restrictions, linear GF4 encoding and affine input-grid transport, aiming to
-preserve degree D and obtain success>=1-2delta. Formalize actual polynomials,
-field/root existence, evaluation, degree and real probability bounds, then apply
-the accepted product-mixture theorem. Do not merely assume its desired inputs.
-No independence is needed BETWEEN THE TWO RESIDUES. Independent samples remain
-necessary for the separate majority15 amplification, which is still unformalized.
+## Next: Issue20, independent majority and the original n299 endpoint
 
-The n>=299 degree2 exclusion remains an author-reconstructed candidate, not an
-end-to-end Lean theorem, independent review or optimal-threshold claim. Numerical
-exact degree2 n5..11 and generic affine exclusion n>=7 remain unchanged. General
-n12 degree is unresolved. No novelty, new circuit result, barrier escape or
-P-vs-NP conclusion follows. #8/#15 retain separate, older nonblocking review scopes.
+The current inequality alone at error1/3 is too weak. Construct genuine15-fold
+independent product weights and the actual GF2 majority15=e8 polynomial; prove
+degree<=8d and error<=422009/4782969 for arbitrary real source weights. Apply the
+accepted transport at m297,D16 and kernel-check the exact numerical gap. Prove
+zero-padding restriction to extend exclusion from299 to all n>=299.
+Do not assume amplified success as a premise or repeat one sampled index15 times.
+The residue coupling and the majority independence are different operations.
 
-No write blocker or unapplied patch remains. Local Lean is unavailable; accepted
-execution used Actions. Source PDF parsed text was read; failed screenshot
-requests are not visual inspection. Prior status is preserved byte-identically
-at history/2026-10-25-pre-agreement-status.md, blob716952a1805128bfab88b630b32e632a8491e9bf.
-Session log: ../logs/2026-10-24-night-agreement-dimension.md.
+The original n>=299,error1/3 degree2 exclusion remains an AUTHOR-RECONSTRUCTED
+CANDIDATE until this chain is accepted. Unrestricted n12 remains unresolved.
+No novelty, optimal threshold, new circuit lower bound, barrier escape or P-vs-NP
+result is asserted. #8 and #15 remain separate nonblocking older review tracks.
+No permission blocker or unapplied patch remains. Local Lean is absent; Actions
+supplied actual execution. Prior status is archived byte-identically at
+history/2026-10-27-pre-transport-status.md, blobb7ee38e060b7b8ea6525d13b6160b6fd10ec0980.
+Session log: ../logs/2026-10-27-mod3-product-transport.md.
