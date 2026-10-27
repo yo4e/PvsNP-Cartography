@@ -108,6 +108,7 @@ theorem source_error_complement {n : ℕ} {I : Type*} [Fintype I]
   · simp [errorFlag, correct, h]
   · simp [errorFlag, correct, h]
 
+set_option backward.isDefEq.respectTransparency false in
 theorem actual_majority_complement {n : ℕ} {I : Type*}
     (f : BooleanCube n → ZMod 2) (P : I → BinaryPolynomial n)
     (v : Fin 15 → I) (x : BooleanCube n) :
@@ -115,8 +116,8 @@ theorem actual_majority_complement {n : ℕ} {I : Type*}
       (if 8 ≤ failures (errorFlag f P x) v then (1 : ℝ) else 0) = 1 := by
   unfold correct
   rw [majority15_eval]
-  simpa only [answers, failures, errorFlag, decide_eq_true_eq] using
-    majority_indicator (answers (fun j => P (v j)) x) (f x)
+  convert majority_indicator (answers (fun j => P (v j)) x) (f x) using 1 <;>
+    simp only [answers, failures, errorFlag, decide_eq_true_eq] <;> rfl
 
 /-- Independent sampling is constructed, not assumed. The same distribution
 is selected before every input, and arbitrary real weights remain real. -/

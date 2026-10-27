@@ -9,6 +9,7 @@ noncomputable section
 
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
+set_option exponentiation.threshold 512
 
 /-- Exact integer tail at error1/3: one failure ticket, two success tickets. -/
 def tickets : ℕ → ℕ → ℕ

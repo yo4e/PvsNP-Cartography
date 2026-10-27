@@ -58,9 +58,8 @@ theorem restrict_add (m k : ℕ) {d : ℕ} {epsilon : ℝ}
 theorem restrict_le (m n : ℕ) (hmn : m ≤ n) {d : ℕ} {epsilon : ℝ}
     (h : HasProbabilisticDegreeAtMost (@SmallSupportMod3.target n) epsilon d) :
     HasProbabilisticDegreeAtMost (@SmallSupportMod3.target m) epsilon d := by
-  apply restrict_add m (n-m)
-  have he : m + (n-m) = n := by omega
-  simpa only [he] using h
+  obtain ⟨k, rfl⟩ := Nat.exists_eq_add_of_le hmn
+  exact restrict_add m k h
 
 end
 end PvsNPCartography.Mod3Restrictions
