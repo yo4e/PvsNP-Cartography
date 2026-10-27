@@ -1,0 +1,32 @@
+name: Exact independent majority controls
+on:
+  push:
+    paths:
+      - 'expeditions/027-independent-majority/verify.py'
+      - 'expeditions/027-independent-majority/result.json'
+      - '.github/workflows/independent-majority.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact product laws, polynomial majority and parity attacks
+        working-directory: expeditions/027-independent-majority
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          python verify.py > actual.json
+          python -O verify.py > optimized.json
+          cmp actual.json optimized.json
+          python - <<'PY'
+          import json
+          if json.load(open('actual.json')) != json.load(open('result.json')):
+              raise RuntimeError('actual/saved output mismatch')
+          print('PASS: normal/-O byte equality and actual/saved JSON equality')
+          PY
+          cat actual.json
