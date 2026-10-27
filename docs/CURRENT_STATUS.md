@@ -1,66 +1,72 @@
-# Current checkpoint: actual MOD3 transport and a closed small-error application
+# Current checkpoint: original MOD3 quadratic exclusion for every n>=299
 
-Freshly approved session executed2026-10-27 JST. Research lead 月野テンプレクス.
-**Issue19 is CLOSED; Issue20 is the earliest useful unblocked mathematical target.**
-Further nightly work requires fresh approval. Dated README/direction snapshots
-are history, not instructions to restart completed Issues17/18/19.
+Freshly approved session executed2026-10-28 JST. Research lead 月野テンプレクス.
+**Issue20 is CLOSED; Issue21 is the next bounded mathematical frontier.**
+Fresh approval is required for later nightly work. Dated README/direction and
+older Issue descriptions are history, not instructions to restart completed work.
 
 ## Accepted mathematical change
 
-The original GF2 MOD3 probabilistic-degree predicate on m+2 inputs now implies
+For EVERY n>=299, the ORIGINAL GF2 MOD3 predicate has no fixed finite distribution
+of actual total-degree<=2 polynomials with nonnegative REAL weights summing to1
+and success>=2/3 at each Boolean input. This covers arbitrary real weights and
+all such polynomials, not a selected coefficient family or rational-ticket model.
 
- (1-2delta)*2^m <= B(m,D),
- B(m,D)=sum_{j=0}^{min(m,floor((m+D)/2))} choose(m,j).
+Mod3QuadraticObstruction.degree_two_impossible has only n and299<=n as premises.
+The formerly missing independent-majority chain is now discharged: actual product
+weights and their exact real failure law, actual e8 majority composition with
+degree8*d, exact error422009/4782969, the strict m297,D16 rational contradiction,
+and actual zero-variable restriction to extend from299 to all larger arities.
+The family is chosen before every input. No amplified-success or lower-bound
+hypothesis is smuggled into the final theorem.
 
-GF4Transport constructs an actual GaloisField2,2, nonbinary root and embedding,
-two constant restrictions and degree-preserving affine input substitution.
-Mod3ProductBound derives product success by a SAME-index real union bound and
-applies the accepted agreement theorem. Its final necessary_inequality assumes
-only the original approximation predicate, not transported success or a rank bound.
-Arbitrary finite nonnegative normalized REAL weights are fixed before all inputs.
-Source polynomials need not be multilinear or symmetrized. Grid inverse laws
-are explicit, and actual totalDegree never increases.
+The generic failure law uses a threshold recurrence. A separate general
+closed-binomial-form identity is not a compiled endpoint and is not needed by
+the completed proof. The recurrence and its monotonicity/endpoint are proved.
 
-TransportExamples additionally proves no degree<=2 approximation of seven-variable
-MOD3 at pointwise ERROR1/12, using26<80/3. This is NOT error1/3, optimality or a
-new exact degree classification. Old n5..11 degree2 equalities at1/3 are unchanged.
+## Actual evidence and adversarial findings
 
-## Actual evidence and attacks
+Accepted source79c52432c82406b0a692a079adab147402dbbbe0,
+treeb7e508b227252cf0bac4b4d45fbac0706cc84ad9. Completed SUCCESS
+run40536961983/job122304691322: Lean4.35.0-rc4/Mathlib9e6b3aac,
+whole-root --wfail9065 jobs,984 namespace declarations within unchanged
+[propext,Classical.choice,Quot.sound],27 new explicit reports plus earlier reports.
+Completed steps, full decoded actual output, five source modules, actual Git
+commit/tree and explicit endpoint statements were re-fetched and inspected.
+No source sorry/admit/new axiom/native_decide or warning waiver was introduced.
 
-Accepted source5acf085fa43f1fa4578252c1653033d3f523e753,
-tree12c1e9ab938e823a15566c7921fdc6550217d1e6. Completed SUCCESS formal
-run40430504329/job121946718143, pinned Lean4.35.0-rc4/Mathlib9e6b3aac,
-whole-root --wfail9060 jobs,875 namespace declarations within unchanged
-[propext,Classical.choice,Quot.sound],23 new explicit reports and all old reports.
-Completed steps, full actual output, actual source modules and commit/tree were
-re-fetched and inspected; local source blob hashes match GitHub.
+Exact source80757ad411675e02aea96c426bc383619e7c9579 passed
+run40535117682/job122298162510. Actual/saved JSON and normal/-O outputs agree,
+including local reruns.32768 majority inputs,972 failure-law comparisons and
+39 actual polynomial families corroborate rather than prove the generic result.
+Expedition027 contains the derivation, same-author statement and barrier audits,
+conclusion, actual output excerpts and resolved execution evidence.
 
-Exact run40430504271/job121946717619 at the same source also completed SUCCESS.
-Normal/-O byte equality and actual/saved JSON equality, plus local reruns, pass.
-3680 polynomials and18304 input evaluations corroborate, not prove, the generic
-statement. Graveyard041 contains real polynomial counterexamples to false
-independence and signed normalized weights;042 preserves the inspected failed
-first build and faithful repair. No statement or verification policy was weakened.
+The direct numerical gap is positive at n299 but NEGATIVE at n300 because of
+parity. The all-n proof correctly uses actual restrictions, not numerical
+monotonicity. Graveyard044 preserves this counterexample, correlated reuse,
+signed-mass and degree-seven-majority failures. Graveyard043 preserves four
+failed implementations and faithful repairs, including a warning-only failure.
 
-Expedition026 contains full derivation, statement/barrier audits, actual output
-excerpts, ci-evidence.md and conclusion. Existing Lean kernel only; no independent
-semantic reviewer or second kernel. Old review #15 does not cover this new code.
+## Next: Issue21, a growing-degree obstruction
 
-## Next: Issue20, independent majority and the original n299 endpoint
+The written candidate is exclusion of degree<=d at error1/3 whenever
+n>=(16d+2)^2+2. It would connect the accepted generic amplification to a uniform
+parity-aware binomial-prefix bound. Its new ingredients are a central-binomial
+square invariant, symmetry/unimodality and the correct even/odd prefix estimate.
+The precise derivation and local controls are in Expedition027/next-frontier.md.
+This is NOT yet an accepted Lean theorem, independent review or sharp threshold.
+The local frontier checker is NOT included in the completed main exact CI.
 
-The current inequality alone at error1/3 is too weak. Construct genuine15-fold
-independent product weights and the actual GF2 majority15=e8 polynomial; prove
-degree<=8d and error<=422009/4782969 for arbitrary real source weights. Apply the
-accepted transport at m297,D16 and kernel-check the exact numerical gap. Prove
-zero-padding restriction to extend exclusion from299 to all n>=299.
-Do not assume amplified success as a premise or repeat one sampled index15 times.
-The residue coupling and the majority independence are different operations.
+Earlier exact degree2 n5..11 and affine exclusion n>=7 remain. General n12 degree
+is unresolved. The n>=299 exclusion is not exact degree3, an optimal299 threshold,
+novel mathematics, a new unrestricted circuit lower bound, barrier escape or a
+P-versus-NP result. #8/#15 keep their separate older review scopes. No new-code
+independent semantic reviewer or second kernel was used. Normal caching was used;
+full decoded logs were read but only labeled excerpts are committed.
 
-The original n>=299,error1/3 degree2 exclusion remains an AUTHOR-RECONSTRUCTED
-CANDIDATE until this chain is accepted. Unrestricted n12 remains unresolved.
-No novelty, optimal threshold, new circuit lower bound, barrier escape or P-vs-NP
-result is asserted. #8 and #15 remain separate nonblocking older review tracks.
-No permission blocker or unapplied patch remains. Local Lean is absent; Actions
-supplied actual execution. Prior status is archived byte-identically at
-history/2026-10-27-pre-transport-status.md, blobb7ee38e060b7b8ea6525d13b6160b6fd10ec0980.
-Session log: ../logs/2026-10-27-mod3-product-transport.md.
+No write blocker or unapplied patch remains. Local Lean/lake were absent; actual
+formal execution used Actions. The previous complete status is archived by its
+identical blobc6ca6ab73a68c90471ab1f2c9b7ca4cbe001477e at
+history/2026-10-28-pre-majority-status.md.
+Session log: ../logs/2026-10-28-independent-majority.md.

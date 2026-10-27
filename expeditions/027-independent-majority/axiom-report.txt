@@ -1,0 +1,67 @@
+Actual output EXCERPTS from completed successful formal job122304691322,
+run40536961983, source79c52432c82406b0a692a079adab147402dbbbe0,
+treeb7e508b227252cf0bac4b4d45fbac0706cc84ad9.
+The full decoded job output was retrieved and read after completion.
+This is NOT a full raw-log archive and is not synthesized from theorem source.
+
+2026-10-27T16:02:33.0491568Z 79c52432c82406b0a692a079adab147402dbbbe0
+2026-10-27T16:04:19.4574502Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-27T16:04:20.7418622Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-27T16:05:42.2144848Z   BUILD_ARGS: --wfail
+2026-10-27T16:05:52.1623775Z ✔ [9059/9065] Built PvsNPCartography.Mod3Restrictions (5.9s)
+2026-10-27T16:05:52.6627874Z ✔ [9060/9065] Built PvsNPCartography.IndependentTrials (6.4s)
+2026-10-27T16:05:56.6682388Z ✔ [9061/9065] Built PvsNPCartography.MajorityNumerics (3.0s)
+2026-10-27T16:05:56.9685086Z ✔ [9062/9065] Built PvsNPCartography.MajorityAmplification (4.3s)
+2026-10-27T16:06:00.4720558Z ✔ [9063/9065] Built PvsNPCartography.Mod3QuadraticObstruction (3.4s)
+2026-10-27T16:06:04.0748442Z ✔ [9064/9065] Built PvsNPCartography (3.5s)
+2026-10-27T16:06:04.0851309Z Build completed successfully (9065 jobs).
+2026-10-27T16:06:45.2170851Z axiom-audit: audited 984 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-27T16:06:45.2499801Z axiom-audit completed successfully
+
+2026-10-27T16:07:53.0128568Z 'PvsNPCartography.IndependentTrials.tail_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0129766Z 'PvsNPCartography.IndependentTrials.tail_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0130728Z 'PvsNPCartography.IndependentTrials.tail_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0131679Z 'PvsNPCartography.IndependentTrials.sum_tuples' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0132411Z 'PvsNPCartography.IndependentTrials.mass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0133070Z 'PvsNPCartography.IndependentTrials.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0133674Z 'PvsNPCartography.IndependentTrials.failure_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0134261Z 'PvsNPCartography.IndependentTrials.failure_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0134878Z 'PvsNPCartography.MajorityAmplification.majority15_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0135536Z 'PvsNPCartography.MajorityAmplification.majority15_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0136194Z 'PvsNPCartography.MajorityAmplification.majority_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0136778Z 'PvsNPCartography.MajorityAmplification.source_error_complement' depends on axioms: [propext,
+2026-10-27T16:07:53.0137159Z  Classical.choice,
+2026-10-27T16:07:53.0137332Z  Quot.sound]
+2026-10-27T16:07:53.0137677Z 'PvsNPCartography.MajorityAmplification.actual_majority_complement' depends on axioms: [propext,
+2026-10-27T16:07:53.0138064Z  Classical.choice,
+2026-10-27T16:07:53.0138228Z  Quot.sound]
+2026-10-27T16:07:53.0138612Z 'PvsNPCartography.MajorityAmplification.amplified_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0139353Z 'PvsNPCartography.MajorityAmplification.amplify' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0139986Z 'PvsNPCartography.MajorityNumerics.tail_tickets' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0140546Z 'PvsNPCartography.MajorityNumerics.tail15_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0141045Z 'PvsNPCartography.MajorityNumerics.fastChoose_eq' depends on axioms: [propext]
+2026-10-27T16:07:53.0141563Z 'PvsNPCartography.MajorityNumerics.bound297_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0142138Z 'PvsNPCartography.MajorityNumerics.strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0142729Z 'PvsNPCartography.Mod3Restrictions.restrictZero_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0143324Z 'PvsNPCartography.Mod3Restrictions.restrictZero_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0143894Z 'PvsNPCartography.Mod3Restrictions.target_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0144486Z 'PvsNPCartography.Mod3Restrictions.restrict_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0145050Z 'PvsNPCartography.Mod3Restrictions.restrict_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0145628Z 'PvsNPCartography.Mod3QuadraticObstruction.at_299' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-27T16:07:53.0146548Z 'PvsNPCartography.Mod3QuadraticObstruction.degree_two_impossible' depends on axioms: [propext,
+2026-10-27T16:07:53.0147084Z  Classical.choice,
+2026-10-27T16:07:53.0147253Z  Quot.sound]
+
+Actual explicit endpoint output:
+2026-10-27T16:07:53.0147525Z PvsNPCartography.Mod3QuadraticObstruction.degree_two_impossible (n : Nat)
+2026-10-27T16:07:53.0147967Z   (hn : @LE.le Nat instLENat (@OfNat.ofNat Nat (nat_lit 299) (instOfNatNat (nat_lit 299))) n) :
+2026-10-27T16:07:53.0148288Z   Not
+2026-10-27T16:07:53.0148627Z     (@PvsNPCartography.HasProbabilisticDegreeAtMost n (@PvsNPCartography.SmallSupportMod3.target n)
+2026-10-27T16:07:53.0149139Z       (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+2026-10-27T16:07:53.0149795Z         (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+2026-10-27T16:07:53.0150466Z         (@OfNat.ofNat Real (nat_lit 3) (@instOfNatAtLeastTwo Real (nat_lit 3) Real.instNatCast ⋯)))
+2026-10-27T16:07:53.0150852Z       (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+
+All27 new target reports and earlier reports completed. The next growing-degree
+bound in next-frontier.md is NOT among these accepted endpoints. No second
+kernel was enabled. No independent semantic review or novelty follows.

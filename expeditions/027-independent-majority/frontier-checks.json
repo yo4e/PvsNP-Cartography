@@ -1,0 +1,8 @@
+{
+  "amplified_margin_above_three_quarters": "1406897/19131876",
+  "candidate_threshold": "n >= (16*d+2)^2 + 2",
+  "central_mass_checks": 150,
+  "central_recurrence_checks": 151,
+  "prefix_checks": 2400,
+  "scope": "same-author bounded exact checks; next-frontier proof is written but not Lean-accepted or independently reviewed; not covered by main exact CI"
+}

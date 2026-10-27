@@ -1,0 +1,28 @@
+Actual output EXCERPTS from completed successful exact job122298162510,
+run40535117682, source80757ad411675e02aea96c426bc383619e7c9579.
+The full decoded output was retrieved and inspected. This is NOT a full raw log.
+Result.json matches the complete printed JSON; it is not a formal proof input.
+
+2026-10-27T15:51:29.8242071Z 80757ad411675e02aea96c426bc383619e7c9579
+2026-10-27T15:51:29.8257078Z Python 3.12.3
+2026-10-27T15:51:31.7086329Z PASS: normal/-O byte equality and actual/saved JSON equality
+2026-10-27T15:51:31.7130700Z   "actual_polynomial_families": 39,
+2026-10-27T15:51:31.7131329Z   "binomial_coefficients_cross_checked": 45451,
+2026-10-27T15:51:31.7131990Z   "composition_input_evaluations": 147,
+2026-10-27T15:51:31.7132522Z   "delta": "422009/4782969",
+2026-10-27T15:51:31.7133012Z   "exact_failure_law_checks": 972,
+2026-10-27T15:51:31.7133667Z   "largest_composed_degree_seen": 24,
+2026-10-27T15:51:31.7134122Z   "majority_anf_degree": 8,
+2026-10-27T15:51:31.7134599Z   "majority_anf_terms": 6435,
+2026-10-27T15:51:31.7134939Z   "majority_truth_inputs": 32768,
+2026-10-27T15:51:31.7136539Z     "diagonal_reuse_error": "1/3",
+2026-10-27T15:51:31.7137114Z     "direct_binomial_gap_monotone_in_n": "refuted at n299 to n300",
+2026-10-27T15:51:31.7139752Z     "signed_product_error": 580865
+2026-10-27T15:51:31.7145849Z   "tail_comparisons": 3800,
+2026-10-27T15:51:31.7146107Z   "tickets_15_8": 1266027,
+2026-10-27T15:51:31.7146367Z   "tuple_evaluations": 27916,
+2026-10-27T15:51:31.7146651Z   "zero_restriction_evaluations": 1035
+
+The observed degree24 comes from the explicitly included degree3 source family;
+it is not a violation of degree8*d or a claim that degree2 amplifies to24.
+The separate check_frontier.py was only run locally and is NOT covered by this CI.
