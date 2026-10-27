@@ -34,3 +34,4 @@ import PvsNPCartography.AgreementConsequences
 import PvsNPCartography.GF4Transport
 import PvsNPCartography.Mod3ProductBound
 import PvsNPCartography.TransportExamples
+import PvsNPCartography.IndependentTrials
