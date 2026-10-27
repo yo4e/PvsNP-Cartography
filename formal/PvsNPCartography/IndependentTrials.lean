@@ -102,7 +102,7 @@ def failures {I : Type*} (e : I → Bool) {r : ℕ} (v : Fin r → I) : ℕ :=
 @[simp] theorem failures_cons {I : Type*} (e : I → Bool) {r : ℕ} (i : I)
     (v : Fin r → I) : failures e (Fin.cons i v) =
       (if e i then 1 else 0) + failures e v := by
-  simp [failures, Fin.sum_univ_succ]
+  simp only [failures, Fin.sum_univ_succ, Fin.cons_zero, Fin.cons_succ]
 
 def errorMass {I : Type*} [Fintype I] (mu : I → ℝ) (e : I → Bool) : ℝ :=
   ∑ i, if e i then mu i else 0

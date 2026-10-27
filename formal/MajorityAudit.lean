@@ -1,0 +1,33 @@
+import PvsNPCartography
+
+#print axioms PvsNPCartography.IndependentTrials.tail_bounds
+#print axioms PvsNPCartography.IndependentTrials.tail_antitone
+#print axioms PvsNPCartography.IndependentTrials.tail_mono
+#print axioms PvsNPCartography.IndependentTrials.sum_tuples
+#print axioms PvsNPCartography.IndependentTrials.mass_nonneg
+#print axioms PvsNPCartography.IndependentTrials.mass_sum
+#print axioms PvsNPCartography.IndependentTrials.failure_law
+#print axioms PvsNPCartography.IndependentTrials.failure_bound
+#print axioms PvsNPCartography.MajorityAmplification.majority15_degree
+#print axioms PvsNPCartography.MajorityAmplification.majority15_eval
+#print axioms PvsNPCartography.MajorityAmplification.majority_indicator
+#print axioms PvsNPCartography.MajorityAmplification.source_error_complement
+#print axioms PvsNPCartography.MajorityAmplification.actual_majority_complement
+#print axioms PvsNPCartography.MajorityAmplification.amplified_success
+#print axioms PvsNPCartography.MajorityAmplification.amplify
+#print axioms PvsNPCartography.MajorityNumerics.tail_tickets
+#print axioms PvsNPCartography.MajorityNumerics.tail15_exact
+#print axioms PvsNPCartography.MajorityNumerics.fastChoose_eq
+#print axioms PvsNPCartography.MajorityNumerics.bound297_exact
+#print axioms PvsNPCartography.MajorityNumerics.strict_gap
+#print axioms PvsNPCartography.Mod3Restrictions.restrictZero_degree
+#print axioms PvsNPCartography.Mod3Restrictions.restrictZero_eval
+#print axioms PvsNPCartography.Mod3Restrictions.target_zero
+#print axioms PvsNPCartography.Mod3Restrictions.restrict_one
+#print axioms PvsNPCartography.Mod3Restrictions.restrict_le
+#print axioms PvsNPCartography.Mod3QuadraticObstruction.at_299
+#print axioms PvsNPCartography.Mod3QuadraticObstruction.degree_two_impossible
+set_option pp.explicit true in
+#check PvsNPCartography.Mod3QuadraticObstruction.degree_two_impossible
+set_option pp.explicit true in
+#check PvsNPCartography.MajorityAmplification.amplify
