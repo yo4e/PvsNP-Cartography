@@ -59,7 +59,9 @@ theorem bound297_exact : AgreementConsequences.bound 297 16 =
 /-- The strict gap is checked over exact integers/rationals, not rounded floats. -/
 theorem strict_gap : (AgreementConsequences.bound 297 16 : ℝ) <
     (1-2*deltaStar) * (2^297 : ℝ) := by
-  rw [bound297_exact]
+  have hp : (2 : ℕ)^297 = 254629497041810760783555711051172270131433549208242031329517556169297662470417088272924672 := by decide +kernel
+  have hpr : (2 : ℝ)^297 = 254629497041810760783555711051172270131433549208242031329517556169297662470417088272924672 := by exact_mod_cast hp
+  rw [bound297_exact, hpr]
   norm_num [deltaStar]
 
 end

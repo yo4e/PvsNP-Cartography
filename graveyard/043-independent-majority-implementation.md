@@ -23,5 +23,25 @@ Actual diagnostic excerpt:
 2026-10-27T15:35:38.9100407Z error: PvsNPCartography/IndependentTrials.lean:104:47: unsolved goals
 2026-10-27T15:35:38.9102426Z ⊢ {x | e (Fin.cons i v x) = true}.card = (if e i = true then 1 else 0) + {x | e (v x) = true}.card
 
+## Second candidate d2cede2c
+
+Source d2cede2c30fe06ce721ff78683ed6dae4f819d65; completed FAILURE
+run40533297666/job122291663655. Full decoded log retrieved and inspected.
+IndependentTrials built, but this is not whole-chain acceptance. Other failures:
+- the dependent Fin.cons expression needed its Boolean codomain made explicit;
+- m+(n-m)=n was not rewritten by a lemma about a differently parenthesized sum;
+- GF2 natural-value casts were not definitionally normalized by broad simp;
+- broad simplification reversed inequality indicators before local hypotheses
+  could rewrite them, and one conversion exhausted its default heartbeat budget;
+- norm_num did not reduce the large real exponent2^297 automatically.
+
+Repairs give zero padding an explicitly typed definition, prove the elementary
+natural equality directly, use the actual ZMod cast/value lemma and explicit
+indicator rewrites, and prove the natural power by kernel reduction before
+casting it to the reals. A local heartbeat budget increase supplies computation,
+not an extra axiom. The actual target, real probabilities, degree, --wfail and
+axiom allowlist are unchanged. Finite numeric identities that already elaborated
+are not treated as a substitute for the still-unfinished full proof chain.
+
 Later repairs require their own completed evidence. A successful elaboration
 of downstream declarations using compiler recovery is not proof acceptance.

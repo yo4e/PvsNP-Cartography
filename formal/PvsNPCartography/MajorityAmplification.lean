@@ -8,6 +8,7 @@ namespace PvsNPCartography.MajorityAmplification
 open IndependentTrials Symmetrization
 noncomputable section
 attribute [local instance] Classical.propDecidable
+set_option maxHeartbeats 1600000
 
 /-- The eighth elementary symmetric polynomial of fifteen ACTUAL polynomials. -/
 def majority15 {n : ℕ} (P : Fin 15 → BinaryPolynomial n) : BinaryPolynomial n :=
@@ -33,27 +34,41 @@ theorem majority15_eval {n : ℕ} (P : Fin 15 → BinaryPolynomial n)
   have he : MvPolynomial.eval (fun i => ((x i).val : ZMod 2)) (majority15 P) =
       MvPolynomial.eval (fun j => ((answers P x j).val : ZMod 2))
         (CliqueProfiles.elementary Finset.univ 8) := by
-    simp [majority15, CliqueProfiles.elementary, CliqueProfiles.subsetMonomial, answers]
+    simp only [majority15, CliqueProfiles.elementary, CliqueProfiles.subsetMonomial,
+      map_sum, map_prod, MvPolynomial.eval_X]
+    apply Finset.sum_congr rfl
+    intro S _
+    apply Finset.prod_congr rfl
+    intro j _
+    change MvPolynomial.eval (fun i => ((x i).val : ZMod 2)) (P j) =
+      (ZMod.val (MvPolynomial.eval (fun i => ((x i).val : ZMod 2)) (P j)) : ZMod 2)
+    exact (ZMod.natCast_zmod_val _).symm
   rw [he, CliqueProfiles.elementary_eval, CliqueProfiles.overlap_univ]
   have hw := hammingWeight_le (answers P x)
   have hb := TwoPointCompression.majority15_binomial
     (hammingWeight (answers P x)) hw
   change ((hammingWeight (answers P x)).choose 8 : ZMod 2) =
     if 8 ≤ hammingWeight (answers P x) then 1 else 0
-  by_cases h : 8 ≤ hammingWeight (answers P x)
-  · simp only [ite_eq_left h] at hb ⊢
+  have hmod (a : ℕ) : ((a % 2 : ℕ) : ZMod 2) = (a : ZMod 2) := by
     apply Fin.ext
-    simpa using hb
-  · simp only [ite_eq_right h] at hb ⊢
-    apply Fin.ext
-    simpa using hb
+    change ZMod.val ((a % 2 : ℕ) : ZMod 2) = ZMod.val (a : ZMod 2)
+    simp only [ZMod.val_natCast, Nat.mod_mod]
+  calc
+    _ = (((hammingWeight (answers P x)).choose 8 % 2 : ℕ) : ZMod 2) := (hmod _).symm
+    _ = ((if 8 ≤ hammingWeight (answers P x) then 1 else 0 : ℕ) : ZMod 2) :=
+      congrArg (fun a : ℕ => (a : ZMod 2)) hb
+    _ = _ := by split_ifs <;> simp
 
-theorem bit_cases (a : ZMod 2) : a = 0 ∨ a = 1 := by
-  fin_cases a <;> simp
+theorem bit_cases (a : Fin 2) : a = 0 ∨ a = 1 := by
+  have ha := a.isLt
+  have hv : a.val = 0 ∨ a.val = 1 := by omega
+  rcases hv with h | h
+  · exact Or.inl (Fin.ext h)
+  · exact Or.inr (Fin.ext h)
 
 /-- Exact majority success/failure complement, including the strict threshold. -/
-theorem majority_indicator (z : Fin 15 → ZMod 2) (b : ZMod 2) :
-    (if (if 8 ≤ ∑ j, (z j).val then (1 : ZMod 2) else 0) = b then (1 : ℝ) else 0) +
+theorem majority_indicator (z : BooleanCube 15) (b : Fin 2) :
+    (if (if 8 ≤ ∑ j, (z j).val then (1 : Fin 2) else 0) = b then (1 : ℝ) else 0) +
       (if 8 ≤ ∑ j, if z j ≠ b then (1 : ℕ) else 0 then 1 else 0) = 1 := by
   rcases bit_cases b with rfl | rfl
   · have hc : (∑ j, if z j ≠ 0 then (1 : ℕ) else 0) = ∑ j, (z j).val := by
@@ -70,9 +85,11 @@ theorem majority_indicator (z : Fin 15 → ZMod 2) (b : ZMod 2) :
       simp
     by_cases h : 8 ≤ ∑ j, (z j).val
     · have hn : ¬ 8 ≤ ∑ j, if z j ≠ 1 then (1 : ℕ) else 0 := by omega
-      simp [h, hn]
+      rw [ite_eq_left h, ite_eq_right hn]
+      norm_num
     · have ht : 8 ≤ ∑ j, if z j ≠ 1 then (1 : ℕ) else 0 := by omega
-      simp [h, ht]
+      rw [ite_eq_right h, ite_eq_left ht]
+      norm_num
 
 def errorFlag {n : ℕ} {I : Type*} (f : BooleanCube n → ZMod 2)
     (P : I → BinaryPolynomial n) (x : BooleanCube n) (i : I) : Bool :=
@@ -98,8 +115,8 @@ theorem actual_majority_complement {n : ℕ} {I : Type*}
       (if 8 ≤ failures (errorFlag f P x) v then (1 : ℝ) else 0) = 1 := by
   unfold correct
   rw [majority15_eval]
-  simpa [answers, failures, errorFlag] using
-    majority_indicator (fun j => MvPolynomial.eval (fun i => ((x i).val : ZMod 2)) (P (v j))) (f x)
+  simpa only [answers, failures, errorFlag, decide_eq_true_eq] using
+    majority_indicator (answers (fun j => P (v j)) x) (f x)
 
 /-- Independent sampling is constructed, not assumed. The same distribution
 is selected before every input, and arbitrary real weights remain real. -/
