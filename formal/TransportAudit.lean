@@ -19,4 +19,9 @@ import PvsNPCartography
 #print axioms PvsNPCartography.Mod3ProductBound.mod3_product_bound
 #print axioms PvsNPCartography.Mod3ProductBound.necessary_inequality
 #print axioms PvsNPCartography.Mod3ProductBound.no_mod3_approximation
+#print axioms PvsNPCartography.GF4Transport.encode_grid
+#print axioms PvsNPCartography.GF4Transport.decode_encode
+#print axioms PvsNPCartography.GF4Transport.encode_decode
+#print axioms PvsNPCartography.Mod3ProductBound.seven_small_error_impossible
 #check PvsNPCartography.Mod3ProductBound.necessary_inequality
+#check PvsNPCartography.Mod3ProductBound.seven_small_error_impossible
