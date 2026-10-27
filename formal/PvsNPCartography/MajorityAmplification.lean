@@ -116,8 +116,8 @@ theorem actual_majority_complement {n : ℕ} {I : Type*}
       (if 8 ≤ failures (errorFlag f P x) v then (1 : ℝ) else 0) = 1 := by
   unfold correct
   rw [majority15_eval]
-  convert majority_indicator (answers (fun j => P (v j)) x) (f x) using 1 <;>
-    simp only [answers, failures, errorFlag, decide_eq_true_eq] <;> rfl
+  convert majority_indicator (answers (fun j => P (v j)) x) (f x) using 1
+  simp only [answers, failures, errorFlag, decide_eq_true_eq]
 
 /-- Independent sampling is constructed, not assumed. The same distribution
 is selected before every input, and arbitrary real weights remain real. -/
