@@ -31,7 +31,7 @@ theorem exists_nonbinary : ∃ w : K, w ≠ 0 ∧ w ≠ 1 := by
     simpa using hx x
   have hc := Finset.card_le_card hs
   rw [Finset.card_univ, card_four] at hc
-  have ht : ({0, 1} : Finset K).card ≤ 2 := Finset.card_pair_le _ _
+  have ht : ({0, 1} : Finset K).card ≤ 2 := by simp
   omega
 
 def omega : K := Classical.choose exists_nonbinary
@@ -164,8 +164,12 @@ theorem pulled_degree {m : ℕ} (b : Fin 2) (P : BinaryPolynomial (m + 2)) :
   apply affine_substitution_degree
   intro j
   refine Fin.cases ?_ (fun j => Fin.cases ?_ (fun k => ?_) j) j
-  · simp [paddedVariables]
-  · simp [paddedVariables]
+  · change (MvPolynomial.C (b.val : K) : MvPolynomial (Fin m) K).totalDegree ≤ 1
+    rw [MvPolynomial.totalDegree_C]
+    decide
+  · change (MvPolynomial.C (b.val : K) : MvPolynomial (Fin m) K).totalDegree ≤ 1
+    rw [MvPolynomial.totalDegree_C]
+    decide
   · simpa [paddedVariables] using inverseVariable_degree k
 
 theorem pulled_eval {m : ℕ} (b : Fin 2) (P : BinaryPolynomial (m + 2))
