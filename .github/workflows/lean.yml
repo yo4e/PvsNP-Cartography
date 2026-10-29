@@ -67,3 +67,7 @@ jobs:
       - name: Print growing-degree endpoint axioms
         working-directory: formal
         run: lake env lean GrowingDegreeAudit.lean
+
+      - name: Print randomized-gate endpoint axioms
+        working-directory: formal
+        run: lake env lean GatesAudit.lean

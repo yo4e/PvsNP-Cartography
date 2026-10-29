@@ -1,0 +1,15 @@
+import PvsNPCartography
+
+#print axioms PvsNPCartography.RandomizedGates.maskWeight_sum
+#print axioms PvsNPCartography.RandomizedGates.matrixWeight_sum
+#print axioms PvsNPCartography.RandomizedGates.linear_zero_mass
+#print axioms PvsNPCartography.RandomizedGates.all_zero_mass
+#print axioms PvsNPCartography.RandomizedGates.orPoly_degree
+#print axioms PvsNPCartography.RandomizedGates.andPoly_degree
+#print axioms PvsNPCartography.RandomizedGates.orPoly_eval
+#print axioms PvsNPCartography.RandomizedGates.gateValue_zero
+#print axioms PvsNPCartography.RandomizedGates.gate_error_exact
+#print axioms PvsNPCartography.RandomizedGates.gate_success
+#print axioms PvsNPCartography.RandomizedGates.or_feasible
+#check PvsNPCartography.RandomizedGates.or_feasible
+#check PvsNPCartography.RandomizedGates.orPoly_degree
