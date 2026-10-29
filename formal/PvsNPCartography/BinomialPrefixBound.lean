@@ -64,7 +64,7 @@ theorem prefix_extension (m a b : ℕ) :
     partialSum m (a+b) ≤ partialSum m a + (b : ℝ)*(m.choose (m/2) : ℝ) := by
   unfold partialSum
   rw [Finset.sum_range_add]
-  apply add_le_add_left
+  apply add_le_add le_rfl
   calc
     _ ≤ ∑ _j ∈ Finset.range b, (m.choose (m/2) : ℝ) := by
       apply Finset.sum_le_sum
@@ -89,7 +89,7 @@ theorem bound_le_peak (m d : ℕ) :
       exact (prefix_mono _ _ _ hk).trans (prefix_extension m (m/2+1) (4*d))
     _ ≤ (2 : ℝ)^m/2 + (m.choose (m/2) : ℝ)/2 +
         ((4*d : ℕ) : ℝ)*(m.choose (m/2) : ℝ) :=
-      add_le_add_right (half_prefix m) _
+      add_le_add (half_prefix m) le_rfl
     _ = _ := by rw [hpeak]; push_cast; ring
 
 /-- No square root or limiting approximation is required for this explicit estimate. -/

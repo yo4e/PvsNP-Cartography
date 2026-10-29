@@ -36,3 +36,20 @@ keep every mathematical condition and the strict build policy unchanged.
 
 2026-10-29T08:51:37.2052417Z ✔ [9064/9068] Built PvsNPCartography.CentralBinomialBound (6.7s)
 2026-10-29T08:51:41.4109864Z error: PvsNPCartography/BinomialPrefixBound.lean:11:3: unexpected token 'prefix'; expected identifier
+
+## Third candidate ce6e9394180b15d97c61d4d18fd4b30ed52951f6
+
+Completed FAILURE run40845559395/job123352057310. Full decoded actual output
+retrieved and inspected. CentralBinomialBound compiled again. Two errors remained
+in BinomialPrefixBound: the pinned `add_le_add_left` adds the common term on the
+right, and `add_le_add_right` on the left. The proof used the opposite convention.
+Repair uses `add_le_add le_rfl h` and `add_le_add h le_rfl` directly, making both
+positions explicit. No mathematical statement, axiom policy or warning gate changes.
+
+Actual diagnostic excerpts:
+2026-10-29T08:57:43.1397675Z error: PvsNPCartography/BinomialPrefixBound.lean:67:2: Tactic `apply` failed
+2026-10-29T08:57:43.1401583Z error: PvsNPCartography/BinomialPrefixBound.lean:92:6: Type mismatch
+
+The earlier independent exact-control job passed, but it is not a replacement
+for this failed generic proof build. Full acceptance requires the repaired build,
+unchanged namespace audit and all explicit endpoint reports to complete.
