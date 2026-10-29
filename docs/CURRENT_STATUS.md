@@ -1,72 +1,76 @@
-# Current checkpoint: original MOD3 quadratic exclusion for every n>=299
+# Current checkpoint: a growing-degree obstruction for original MOD3
 
-Freshly approved session executed2026-10-28 JST. Research lead 月野テンプレクス.
-**Issue20 is CLOSED; Issue21 is the next bounded mathematical frontier.**
+Freshly approved session executed2026-10-29 JST. Research lead 月野テンプレクス.
+**Issue21 is CLOSED; Issue22 is the next bounded mathematical frontier.**
 Fresh approval is required for later nightly work. Dated README/direction and
-older Issue descriptions are history, not instructions to restart completed work.
+old Issue bodies are history, not instructions to restart completed work.
 
 ## Accepted mathematical change
 
-For EVERY n>=299, the ORIGINAL GF2 MOD3 predicate has no fixed finite distribution
-of actual total-degree<=2 polynomials with nonnegative REAL weights summing to1
-and success>=2/3 at each Boolean input. This covers arbitrary real weights and
-all such polynomials, not a selected coefficient family or rational-ticket model.
+For all natural n,d,
 
-Mod3QuadraticObstruction.degree_two_impossible has only n and299<=n as premises.
-The formerly missing independent-majority chain is now discharged: actual product
-weights and their exact real failure law, actual e8 majority composition with
-degree8*d, exact error422009/4782969, the strict m297,D16 rational contradiction,
-and actual zero-variable restriction to extend from299 to all larger arities.
-The family is chosen before every input. No amplified-success or lower-bound
-hypothesis is smuggled into the final theorem.
+ (16*d+2)^2+2 <= n ->
+ not HasProbabilisticDegreeAtMost (@SmallSupportMod3.target n) (1/3) d.
 
-The generic failure law uses a threshold recurrence. A separate general
-closed-binomial-form identity is not a compiled endpoint and is not needed by
-the completed proof. The recurrence and its monotonicity/endpoint are proved.
+This is the ORIGINAL GF2 predicate: genuine totalDegree<=d, a fixed finite
+family with arbitrary nonnegative REAL weights summing to1 chosen before every
+Boolean input, and success>=2/3 pointwise. No chosen support, rational weights,
+assumed multilinearity, prefix inequality or amplified-success premise is added.
 
-## Actual evidence and adversarial findings
+CentralBinomialBound proves a uniform central-coefficient square invariant;
+BinomialPrefixBound handles the ACTUAL capped prefix and both parities;
+Mod3GrowingDegree connects the new3/4 estimate to accepted independent majority,
+actual GF4 transport and zero restrictions. The contrapositive states that any
+feasible d requires n<(16d+2)^2+2. Each fixed degree is excluded eventually.
+This is a deliberately loose known-method reconstruction, not an optimal bound.
+The older n>=299 quadratic exclusion is stronger at d2 and remains intact.
 
-Accepted source79c52432c82406b0a692a079adab147402dbbbe0,
-treeb7e508b227252cf0bac4b4d45fbac0706cc84ad9. Completed SUCCESS
-run40536961983/job122304691322: Lean4.35.0-rc4/Mathlib9e6b3aac,
-whole-root --wfail9065 jobs,984 namespace declarations within unchanged
-[propext,Classical.choice,Quot.sound],27 new explicit reports plus earlier reports.
-Completed steps, full decoded actual output, five source modules, actual Git
-commit/tree and explicit endpoint statements were re-fetched and inspected.
-No source sorry/admit/new axiom/native_decide or warning waiver was introduced.
+## Actual execution evidence
 
-Exact source80757ad411675e02aea96c426bc383619e7c9579 passed
-run40535117682/job122298162510. Actual/saved JSON and normal/-O outputs agree,
-including local reruns.32768 majority inputs,972 failure-law comparisons and
-39 actual polynomial families corroborate rather than prove the generic result.
-Expedition027 contains the derivation, same-author statement and barrier audits,
-conclusion, actual output excerpts and resolved execution evidence.
+Accepted source5c056776003e4d0d32b0302ed14a6b22cc51ed39,
+tree7aaa8b09de46588012216624bad08f95546e6580. Completed SUCCESS formal
+run40846564926/job123355388833: Lean4.35.0-rc4/Mathlib9e6b3aac,
+whole-root --wfail9068 jobs,1023 namespace declarations within unchanged
+[propext,Classical.choice,Quot.sound],20 new explicit reports plus earlier reports.
+Completed steps, full decoded actual output,3 actual modules and Git commit/tree
+were re-fetched and inspected. Local source blob hashes match. No source
+sorry/admit/new axiom/native_decide or warning waiver was introduced.
 
-The direct numerical gap is positive at n299 but NEGATIVE at n300 because of
-parity. The all-n proof correctly uses actual restrictions, not numerical
-monotonicity. Graveyard044 preserves this counterexample, correlated reuse,
-signed-mass and degree-seven-majority failures. Graveyard043 preserves four
-failed implementations and faithful repairs, including a warning-only failure.
+Exact source6274a1353aa4aa6e2951c6e8042fe6ad4e3617fd passed
+run40845239250/job123350996466; normal/-O bytes and actual/saved JSON agree,
+including local reruns.12705 prefixes,74305 coefficients and27 larger boundary
+checks corroborate rather than prove the universal theorem. Expedition028
+contains proof, statement/barrier audits, actual excerpts and ci-evidence.md.
 
-## Next: Issue21, a growing-degree obstruction
+Three implementation failures and repairs are in graveyard045. Graveyard046
+contains four false auxiliary estimates: omitted even central atom, unjustified
+stronger invariant, linear instead of square size, and missing size hypothesis.
+The even-center negative control also passed Lean. Earlier parity gap failure
+at n299->n300 remains in044; this theorem does not revive numeric monotonicity.
 
-The written candidate is exclusion of degree<=d at error1/3 whenever
-n>=(16d+2)^2+2. It would connect the accepted generic amplification to a uniform
-parity-aware binomial-prefix bound. Its new ingredients are a central-binomial
-square invariant, symmetry/unimodality and the correct even/odd prefix estimate.
-The precise derivation and local controls are in Expedition027/next-frontier.md.
-This is NOT yet an accepted Lean theorem, independent review or sharp threshold.
-The local frontier checker is NOT included in the completed main exact CI.
+## Next: Issue22, actual randomized gates and shared DAG circuits
 
-Earlier exact degree2 n5..11 and affine exclusion n>=7 remain. General n12 degree
-is unresolved. The n>=299 exclusion is not exact degree3, an optimal299 threshold,
-novel mathematics, a new unrestricted circuit lower bound, barrier escape or a
-P-versus-NP result. #8/#15 keep their separate older review scopes. No new-code
-independent semantic reviewer or second kernel was used. Normal caching was used;
-full decoded logs were read but only labeled excerpts are committed.
+Construct genuine GF2 OR/AND approximators from independent linear hashes,
+prove pointwise error2^-r and actual composed degree<=rD, then connect a
+specified shared DAG with S AND/OR gates and nonlinear path-depth h to
+polynomials of degree<=r^h and error<=S/2^r. Under3S<=2^r, combine with the
+accepted lower bound to obtain the explicit restricted-model MOD3 consequence.
+Do not assume circuit approximability as a premise or silently unroll sharing.
 
-No write blocker or unapplied patch remains. Local Lean/lake were absent; actual
-formal execution used Actions. The previous complete status is archived by its
-identical blobc6ca6ab73a68c90471ab1f2c9b7ca4cbe001477e at
-history/2026-10-28-pre-majority-status.md.
-Session log: ../logs/2026-10-28-independent-majority.md.
+Expedition028/next-frontier.md and check_gate.py contain the written continuation.
+The5058-family/74958-evaluation gate check passed LOCALLY with normal/-O equality;
+it is not in the completed prefix CI, a generic proof or Lean-accepted code.
+Graveyard047 preserves reused-hash, affine-constant and actual-degree shortcuts.
+
+Earlier exact degree2 n5..11 and affine exclusion n>=7 remain unchanged. General
+n12 degree and the generic circuit bridge are unresolved. No novelty, optimal
+constant, new unrestricted circuit lower bound, barrier escape or P-versus-NP
+result is claimed. No new-code independent semantic reviewer or second kernel
+was used;#8/#15 retain older review scopes. Normal caching was used; committed
+execution text contains labeled excerpts, not full raw archives.
+
+No write blocker or unapplied patch remains. Local Lean/lake were absent and
+local Git read failed DNS; connected Actions supplied formal execution. Previous
+complete status is archived at history/2026-10-29-pre-growing-status.md by its
+identical blob5db197a2abf397a663cd0ce2649a7d41ccd32605.
+Session log: ../logs/2026-10-29-growing-degree.md.

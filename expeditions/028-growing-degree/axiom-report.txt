@@ -1,0 +1,65 @@
+Actual output EXCERPTS from completed successful formal job123355388833,
+run40846564926, source5c056776003e4d0d32b0302ed14a6b22cc51ed39,
+tree7aaa8b09de46588012216624bad08f95546e6580.
+The completed steps and full decoded actual output were retrieved and inspected.
+This is not a full raw-log archive and is not synthesized from source code.
+
+2026-10-29T09:02:53.8522355Z 5c056776003e4d0d32b0302ed14a6b22cc51ed39
+2026-10-29T09:04:37.3584709Z    "rev": "9e6b3aac99b624d10c84653ab9c5357283b9b3b8",
+2026-10-29T09:04:38.3443132Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-29T09:06:00.3743196Z   BUILD_ARGS: --wfail
+2026-10-29T09:06:11.4943796Z ✔ [9064/9068] Built PvsNPCartography.CentralBinomialBound (7.1s)
+2026-10-29T09:06:15.7022184Z ✔ [9065/9068] Built PvsNPCartography.BinomialPrefixBound (4.2s)
+2026-10-29T09:06:19.3055631Z ✔ [9066/9068] Built PvsNPCartography.Mod3GrowingDegree (3.7s)
+2026-10-29T09:06:22.9089091Z ✔ [9067/9068] Built PvsNPCartography (3.4s)
+2026-10-29T09:06:22.9174701Z Build completed successfully (9068 jobs).
+2026-10-29T09:07:11.5390812Z axiom-audit: audited 1023 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-29T09:07:11.5759702Z axiom-audit completed successfully
+
+2026-10-29T09:08:22.6633338Z 'PvsNPCartography.CentralBinomialBound.central_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6634196Z 'PvsNPCartography.CentralBinomialBound.peak_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6634812Z 'PvsNPCartography.CentralBinomialBound.central_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6635441Z 'PvsNPCartography.CentralBinomialBound.central_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6636049Z 'PvsNPCartography.CentralBinomialBound.peak_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6636851Z 'PvsNPCartography.CentralBinomialBound.peak_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6637471Z 'PvsNPCartography.CentralBinomialBound.peak_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6638104Z 'PvsNPCartography.CentralBinomialBound.coefficient_le_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6638718Z 'PvsNPCartography.BinomialPrefixBound.prefix_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6639323Z 'PvsNPCartography.BinomialPrefixBound.pascal_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6640148Z 'PvsNPCartography.BinomialPrefixBound.even_half_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6640745Z 'PvsNPCartography.BinomialPrefixBound.half_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6641733Z 'PvsNPCartography.BinomialPrefixBound.prefix_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6642353Z 'PvsNPCartography.BinomialPrefixBound.bound_le_peak' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6642973Z 'PvsNPCartography.BinomialPrefixBound.bound_three_quarters' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6643556Z 'PvsNPCartography.BinomialPrefixBound.even_atom_cannot_be_dropped' depends on axioms: [propext,
+2026-10-29T09:08:22.6643966Z  Classical.choice,
+2026-10-29T09:08:22.6644153Z  Quot.sound]
+2026-10-29T09:08:22.6644528Z 'PvsNPCartography.Mod3GrowingDegree.obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6645129Z 'PvsNPCartography.Mod3GrowingDegree.degree_impossible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6645748Z 'PvsNPCartography.Mod3GrowingDegree.feasible_size_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-29T09:08:22.6646347Z 'PvsNPCartography.Mod3GrowingDegree.excludes_every_fixed_degree' depends on axioms: [propext,
+2026-10-29T09:08:22.6646732Z  Classical.choice,
+2026-10-29T09:08:22.6646917Z  Quot.sound]
+
+Actual explicit endpoint output:
+2026-10-29T09:08:22.6647175Z PvsNPCartography.Mod3GrowingDegree.degree_impossible (n d : Nat)
+2026-10-29T09:08:22.6647466Z   (hn :
+2026-10-29T09:08:22.6647640Z     @LE.le Nat instLENat
+2026-10-29T09:08:22.6647868Z       (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+2026-10-29T09:08:22.6648254Z         (@HPow.hPow Nat Nat Nat (@instHPow Nat Nat (@NPow.toPow Nat (@Monoid.toNPow Nat Nat.instMonoid)))
+2026-10-29T09:08:22.6648645Z           (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat)
+2026-10-29T09:08:22.6648927Z             (@HMul.hMul Nat Nat Nat (@instHMul Nat instMulNat)
+2026-10-29T09:08:22.6649248Z               (@OfNat.ofNat Nat (nat_lit 16) (instOfNatNat (nat_lit 16))) d)
+2026-10-29T09:08:22.6649724Z             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+2026-10-29T09:08:22.6650259Z           (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+2026-10-29T09:08:22.6650592Z         (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+2026-10-29T09:08:22.6650850Z       n) :
+2026-10-29T09:08:22.6651012Z   Not
+2026-10-29T09:08:22.6651354Z     (@PvsNPCartography.HasProbabilisticDegreeAtMost n (@PvsNPCartography.SmallSupportMod3.target n)
+2026-10-29T09:08:22.6651877Z       (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))
+2026-10-29T09:08:22.6652297Z         (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))
+2026-10-29T09:08:22.6652958Z         (@OfNat.ofNat Real (nat_lit 3) (@instOfNatAtLeastTwo Real (nat_lit 3) Real.instNatCast ⋯)))
+2026-10-29T09:08:22.6653300Z       d)
+
+All20 new reports, the explicit contrapositive output and all older reports
+completed. No second proof kernel or independent semantic review is implied.
