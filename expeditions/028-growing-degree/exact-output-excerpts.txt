@@ -1,0 +1,23 @@
+Actual output EXCERPTS from completed successful exact job123350996466,
+run40845239250, source6274a1353aa4aa6e2951c6e8042fe6ad4e3617fd.
+The full decoded log and completed steps were retrieved and inspected.
+This is NOT a complete raw-log archive. Lines below are actual execution output,
+not synthesized from the saved result or source. Read result.json for all fields.
+
+2026-10-29T08:52:03.8356519Z 6274a1353aa4aa6e2951c6e8042fe6ad4e3617fd
+2026-10-29T08:52:03.8370805Z Python 3.12.3
+2026-10-29T08:52:08.4093686Z PASS: normal/-O byte equality and actual/saved JSON equality
+2026-10-29T08:52:08.4143072Z   "central_invariant_checks": 385,
+2026-10-29T08:52:08.4143568Z   "coefficient_cross_checks": 74305,
+2026-10-29T08:52:08.4145505Z   "delta": "422009/4782969",
+2026-10-29T08:52:08.4145957Z   "exact_margin": "1406897/19131876",
+2026-10-29T08:52:08.4190240Z   "prefix_checks": 12705,
+2026-10-29T08:52:08.4190654Z   "prefix_digest_sha256": "1e88036d9c76d292055d933d2557db49b09eaa11381051b75d81365a10190570",
+2026-10-29T08:52:08.4191116Z   "quarter_checks_in_grid": 442,
+2026-10-29T08:52:08.4270575Z   "randomness": "none",
+2026-10-29T08:52:08.4270909Z   "saturated_prefixes": 4257,
+2026-10-29T08:52:08.4271417Z   "scope": "finite exact corroboration; NOT a universal proof, independent review or novelty evidence"
+
+The extra check_gate.py/gate-checks.json continuation was run locally only;
+it was NOT included in this CI job. Separate finite checks cannot prove the
+universal mathematical statement or supply an independent semantic review.

@@ -1,0 +1,21 @@
+{
+  "families": 5058,
+  "input_evaluations": 74958,
+  "k_range": [
+    0,
+    4
+  ],
+  "largest_actual_degree": 3,
+  "negative_controls": {
+    "affine_constant_one_zero_input_output": 1,
+    "false_independent_bound": "1/8",
+    "non_multilinear_example": "Q(x)=x+x^2+x^3 has actual degree3, Boolean function x",
+    "repeated_mask_error": "1/2"
+  },
+  "pointwise_laws": 124,
+  "r_range": [
+    0,
+    3
+  ],
+  "scope": "finite next-frontier controls, not a Lean theorem or circuit lower bound"
+}
