@@ -11,5 +11,18 @@ import PvsNPCartography
 #print axioms PvsNPCartography.RandomizedGates.gate_error_exact
 #print axioms PvsNPCartography.RandomizedGates.gate_success
 #print axioms PvsNPCartography.RandomizedGates.or_feasible
+#print axioms PvsNPCartography.RandomizedGates.andValue_semantics
+#print axioms PvsNPCartography.RandomizedGates.andPoly_eval
+#print axioms PvsNPCartography.RandomizedGates.and_gate_error_exact
+#print axioms PvsNPCartography.RandomizedGates.and_gate_success
+#print axioms PvsNPCartography.RandomizedGates.and_feasible
+#print axioms PvsNPCartography.RandomizedGates.xor_degree
+#print axioms PvsNPCartography.RandomizedGates.xor_eval
+#print axioms PvsNPCartography.RandomizedGates.not_eval
+#print axioms PvsNPCartography.RandomizedGates.constant_degree
+#print axioms PvsNPCartography.RandomizedGates.constant_eval
+#print axioms PvsNPCartography.RandomizedGates.shared_gate_union_bound
 #check PvsNPCartography.RandomizedGates.or_feasible
+#check PvsNPCartography.RandomizedGates.and_feasible
 #check PvsNPCartography.RandomizedGates.orPoly_degree
+#check PvsNPCartography.RandomizedGates.shared_gate_union_bound

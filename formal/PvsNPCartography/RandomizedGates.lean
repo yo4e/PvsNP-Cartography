@@ -12,12 +12,10 @@ set_option maxHeartbeats 1600000
 abbrev Mask (k : ℕ) := Fin k → ZMod 2
 abbrev Matrix (k r : ℕ) := Fin r → Mask k
 
-def bit_cases (a : ZMod 2) : a = 0 ∨ a = 1 := by
-  have ha := a.isLt
-  have hv : a.val = 0 ∨ a.val = 1 := by omega
-  rcases hv with h | h
-  · exact Or.inl (Fin.ext h)
-  · exact Or.inr (Fin.ext h)
+theorem bit_cases (a : ZMod 2) : a = 0 ∨ a = 1 :=
+  (by decide : ∀ a : ZMod 2, a = 0 ∨ a = 1) a
+
+@[simp] theorem bit_one_add_one : (1 : ZMod 2) + 1 = 0 := by decide
 
 /-- Uniform mask weights, fixed before the input. The zero-arity space is inhabited. -/
 def maskWeight (k : ℕ) (_a : Mask k) : ℝ := 1 / Fintype.card (Mask k)
@@ -27,9 +25,7 @@ theorem maskWeight_nonneg (k : ℕ) (a : Mask k) : 0 ≤ maskWeight k a := by
   positivity
 
 theorem maskWeight_sum (k : ℕ) : (∑ a : Mask k, maskWeight k a) = 1 := by
-  have hc : (Fintype.card (Mask k) : ℝ) ≠ 0 := by
-    exact_mod_cast (Fintype.card_ne_zero : Fintype.card (Mask k) ≠ 0)
-  simp [maskWeight, hc]
+  simp [maskWeight]
 
 /-- Product distribution: r distinct sample coordinates, not repetition of one mask. -/
 def matrixWeight (k : ℕ) {r : ℕ} (A : Matrix k r) : ℝ := mass (maskWeight k) A
@@ -55,7 +51,7 @@ theorem linear_zero_mass {k : ℕ} (z : Mask k) (hz : z ≠ 0) :
     (∑ a : Mask k, maskWeight k a * (if linear a z = 0 then 1 else 0)) = 1/2 := by
   have hactive : ∃ j, z j ≠ 0 := by
     by_contra h
-    push_neg at h
+    push Not at h
     exact hz (funext h)
   obtain ⟨j, hj⟩ := hactive
   have hj1 : z j = 1 := (bit_cases (z j)).resolve_left hj
@@ -75,7 +71,7 @@ theorem linear_zero_mass {k : ℕ} (z : Mask k) (hz : z ≠ 0) :
     apply Finset.sum_congr rfl
     intro a _
     rw [hshift]
-    rcases bit_cases (linear a z) with h | h <;> norm_num [h, maskWeight]
+    rcases bit_cases (linear a z) with h | h <;> simp [h, maskWeight]
   have htotal :
       (∑ a : Mask k, maskWeight k a * (if linear a z = 0 then 1 else 0)) +
       (∑ a : Mask k, maskWeight k a * (if linear a z = 0 then 0 else 1)) = 1 := by
@@ -99,7 +95,7 @@ theorem all_zero_mass {k : ℕ} (z : Mask k) (r : ℕ) :
     rw [sum_tuples]
     have hterm (a : Mask k) (A : Matrix k r) :
         mass (maskWeight k) (Fin.cons a A) *
-          (if ∀ t, linear (Fin.cons a A t) z = 0 then 1 else 0) =
+          (if ∀ t : Fin (r+1), linear (Fin.cons a A t) z = 0 then 1 else 0) =
         (maskWeight k a * (if linear a z = 0 then 1 else 0)) *
           (matrixWeight k A * (if ∀ t, linear (A t) z = 0 then 1 else 0)) := by
       rw [mass_cons]
@@ -167,7 +163,7 @@ theorem gateValue_eq {k r : ℕ} (A : Matrix k r) (z : Mask k) :
     obtain ⟨t, ht⟩ := he
     have ht1 : linear (A t) z = 1 := (bit_cases _).resolve_left ht
     have hp : (∏ t, (1 + linear (A t) z)) = 0 :=
-      Finset.prod_eq_zero (Finset.mem_univ t) (by norm_num [ht1])
+      Finset.prod_eq_zero (Finset.mem_univ t) (by simp [ht1])
     simp [gateValue, h, hp]
 
 @[simp] theorem gateValue_zero {k r : ℕ} (A : Matrix k r) : gateValue A 0 = 0 := by
@@ -187,7 +183,7 @@ theorem gate_error_exact {k r : ℕ} (z : Mask k) :
       rw [gateValue_eq]
       by_cases h : ∀ t, linear (A t) z = 0 <;> simp [orValue, hz, h]
     simp_rw [hi]
-    rw [all_zero_mass, linear_zero_mass z hz, if_neg hz]
+    rw [all_zero_mass, linear_zero_mass z hz, ite_eq_right hz]
 
 theorem gate_success {k r : ℕ} (z : Mask k) :
     1 - (1/2 : ℝ)^r ≤ ∑ A : Matrix k r, matrixWeight k A *
@@ -218,6 +214,111 @@ theorem or_feasible (k r : ℕ) :
   · intro x
     simpa only [success, correct, orPoly_eval, MvPolynomial.eval_X] using
       (gate_success (r := r) (fun j => ((x j).val : ZMod 2)))
+
+/-- AND uses the very same distribution and complements the deterministic inputs. -/
+def andGateValue {k r : ℕ} (A : Matrix k r) (z : Mask k) : ZMod 2 :=
+  1 + gateValue A (fun j => 1 + z j)
+
+theorem andValue_semantics {k : ℕ} (z : Mask k) :
+    andValue z = if ∀ j, z j = 1 then 1 else 0 := by
+  have hz : (fun j => 1 + z j) = (0 : Mask k) ↔ ∀ j, z j = 1 := by
+    constructor
+    · intro h j
+      have hj := congrFun h j
+      rcases bit_cases (z j) with h0 | h1
+      · simp [h0] at hj
+      · exact h1
+    · intro h
+      funext j
+      simp [h j]
+  simp only [andValue, orValue, hz]
+  split_ifs <;> simp
+
+theorem andPoly_eval {n k r : ℕ} (A : Matrix k r)
+    (P : Fin k → BinaryPolynomial n) (x : Fin n → ZMod 2) :
+    MvPolynomial.eval x (andPoly A P) =
+      andGateValue A (fun j => MvPolynomial.eval x (P j)) := by
+  simp [andPoly, andGateValue, orPoly_eval]
+
+theorem and_gate_error_exact {k r : ℕ} (z : Mask k) :
+    (∑ A : Matrix k r, matrixWeight k A *
+      (if andGateValue A z ≠ andValue z then 1 else 0)) =
+      if (fun j => 1 + z j) = (0 : Mask k) then 0 else (1/2 : ℝ)^r := by
+  simpa only [andGateValue, andValue, ne_eq, add_right_inj] using
+    (gate_error_exact (r := r) (fun j => 1 + z j))
+
+theorem and_gate_success {k r : ℕ} (z : Mask k) :
+    1 - (1/2 : ℝ)^r ≤ ∑ A : Matrix k r, matrixWeight k A *
+      (if andGateValue A z = andValue z then 1 else 0) := by
+  simpa only [andGateValue, andValue, add_right_inj] using
+    (gate_success (r := r) (fun j => 1 + z j))
+
+theorem and_feasible (k r : ℕ) :
+    HasProbabilisticDegreeAtMost
+      (fun x : BooleanCube k => andValue (fun j => ((x j).val : ZMod 2)))
+      ((1/2 : ℝ)^r) r := by
+  apply feasible_of_fintype
+    (fun A : Matrix k r => andPoly A (fun j => MvPolynomial.X j)) (matrixWeight k)
+  · intro A
+    simpa using andPoly_degree A (fun j => MvPolynomial.X j)
+      (d := 1) (fun _ => by simp)
+  · exact matrixWeight_nonneg k r
+  · exact matrixWeight_sum k r
+  · intro x
+    simpa only [success, correct, andPoly_eval, MvPolynomial.eval_X] using
+      (and_gate_success (r := r) (fun j => ((x j).val : ZMod 2)))
+
+/-- Exact XOR needs no multiplication or fresh randomness, even for repeated wires. -/
+theorem xor_degree {n k d : ℕ} (P : Fin k → BinaryPolynomial n)
+    (hd : ∀ j, (P j).totalDegree ≤ d) : (∑ j, P j).totalDegree ≤ d :=
+  MvPolynomial.totalDegree_finsetSum_le (fun j _ => hd j)
+
+theorem xor_eval {n k : ℕ} (P : Fin k → BinaryPolynomial n) (x : Fin n → ZMod 2) :
+    MvPolynomial.eval x (∑ j, P j) = ∑ j, MvPolynomial.eval x (P j) := by simp
+
+theorem not_eval {n : ℕ} (P : BinaryPolynomial n) (x : Fin n → ZMod 2) :
+    MvPolynomial.eval x (1 + P) = 1 + MvPolynomial.eval x P := by simp
+
+theorem constant_degree {n : ℕ} (b : ZMod 2) :
+    (MvPolynomial.C b : BinaryPolynomial n).totalDegree = 0 := by simp
+
+theorem constant_eval {n : ℕ} (b : ZMod 2) (x : Fin n → ZMod 2) :
+    MvPolynomial.eval x (MvPolynomial.C b) = b := by simp
+
+/-- All gates may share ONE matrix. This union bound does not assume independence
+between gates. Each z i is a deterministic TRUE input vector, fixed before A. -/
+theorem shared_gate_union_bound {k r S : ℕ} (z : Fin S → Mask k) :
+    (∑ A : Matrix k r, matrixWeight k A *
+      (if ∃ i, gateValue A (z i) ≠ orValue (z i) then 1 else 0)) ≤
+      (S : ℝ) * (1/2 : ℝ)^r := by
+  have hpoint (A : Matrix k r) :
+      (if ∃ i, gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0) ≤
+        ∑ i, if gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0 := by
+    by_cases he : ∃ i, gateValue A (z i) ≠ orValue (z i)
+    · obtain ⟨i, hi⟩ := he
+      have hh := Finset.single_le_sum (s := Finset.univ)
+        (f := fun j => if gateValue A (z j) ≠ orValue (z j) then (1:ℝ) else 0)
+        (fun j _ => by split_ifs <;> norm_num) (Finset.mem_univ i)
+      simpa [hi] using hh
+    · simp only [ite_eq_right he]
+      exact Finset.sum_nonneg (fun i _ => by split_ifs <;> norm_num)
+  calc
+    _ ≤ ∑ A : Matrix k r, matrixWeight k A *
+        (∑ i, if gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0) :=
+      Finset.sum_le_sum (fun A _ => mul_le_mul_of_nonneg_left (hpoint A)
+        (matrixWeight_nonneg k r A))
+    _ = ∑ i : Fin S, ∑ A : Matrix k r, matrixWeight k A *
+        (if gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0) := by
+      simp_rw [Finset.mul_sum]
+      exact Finset.sum_comm
+    _ ≤ ∑ _i : Fin S, (1/2 : ℝ)^r := by
+      apply Finset.sum_le_sum
+      intro i _
+      rw [gate_error_exact]
+      split_ifs
+      · positivity
+      · exact le_rfl
+    _ = (S : ℝ) * (1/2 : ℝ)^r := by simp
 
 end
 end PvsNPCartography.RandomizedGates
