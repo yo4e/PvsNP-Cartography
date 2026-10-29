@@ -1,0 +1,27 @@
+import PvsNPCartography
+
+#print axioms PvsNPCartography.CentralBinomialBound.central_nonneg
+#print axioms PvsNPCartography.CentralBinomialBound.peak_nonneg
+#print axioms PvsNPCartography.CentralBinomialBound.central_step
+#print axioms PvsNPCartography.CentralBinomialBound.central_square
+#print axioms PvsNPCartography.CentralBinomialBound.peak_even
+#print axioms PvsNPCartography.CentralBinomialBound.peak_odd
+#print axioms PvsNPCartography.CentralBinomialBound.peak_square
+#print axioms PvsNPCartography.CentralBinomialBound.coefficient_le_peak
+#print axioms PvsNPCartography.BinomialPrefixBound.prefix_mono
+#print axioms PvsNPCartography.BinomialPrefixBound.pascal_prefix
+#print axioms PvsNPCartography.BinomialPrefixBound.even_half_exact
+#print axioms PvsNPCartography.BinomialPrefixBound.half_prefix
+#print axioms PvsNPCartography.BinomialPrefixBound.prefix_extension
+#print axioms PvsNPCartography.BinomialPrefixBound.bound_le_peak
+#print axioms PvsNPCartography.BinomialPrefixBound.bound_three_quarters
+#print axioms PvsNPCartography.BinomialPrefixBound.even_atom_cannot_be_dropped
+#print axioms PvsNPCartography.Mod3GrowingDegree.obstruction
+#print axioms PvsNPCartography.Mod3GrowingDegree.degree_impossible
+#print axioms PvsNPCartography.Mod3GrowingDegree.feasible_size_bound
+#print axioms PvsNPCartography.Mod3GrowingDegree.excludes_every_fixed_degree
+
+set_option pp.explicit true in
+#check PvsNPCartography.Mod3GrowingDegree.degree_impossible
+set_option pp.explicit true in
+#check PvsNPCartography.Mod3GrowingDegree.feasible_size_bound

@@ -53,7 +53,10 @@ theorem central_square (s : ℕ) : (3*(s : ℝ)+1) * (central s)^2 ≤ 1 := by
           nlinarith [hmul]
         _ ≤ _ := by simpa only [one_mul] using hi
     have hp : (0 : ℝ) < (2*(s : ℝ)+2)^2 := by positivity
-    have hfinal := (mul_le_mul_right hp).mp hgoal
+    have hfinal : (3*(s : ℝ)+4)*(central (s+1))^2 ≤ 1 := by
+      by_contra hh
+      have hpos := mul_pos (sub_pos.mpr (lt_of_not_ge hh)) hp
+      nlinarith only [hgoal, hpos]
     push_cast
     nlinarith [hfinal]
 

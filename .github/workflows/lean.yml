@@ -63,3 +63,7 @@ jobs:
       - name: Print independent amplification and n299 endpoint axioms
         working-directory: formal
         run: lake env lean MajorityAudit.lean
+
+      - name: Print growing-degree endpoint axioms
+        working-directory: formal
+        run: lake env lean GrowingDegreeAudit.lean
