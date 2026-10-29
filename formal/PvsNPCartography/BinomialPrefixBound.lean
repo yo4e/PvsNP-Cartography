@@ -7,10 +7,10 @@ namespace PvsNPCartography.BinomialPrefixBound
 open CentralBinomialBound
 noncomputable section
 
-/-- Unnormalized real prefix; no probability interpretation is needed here. -/
-def prefix (m k : ℕ) : ℝ := ∑ j ∈ Finset.range k, (m.choose j : ℝ)
+/-- Unnormalized real partial sum; no probability interpretation is needed here. -/
+def partialSum (m k : ℕ) : ℝ := ∑ j ∈ Finset.range k, (m.choose j : ℝ)
 
-theorem prefix_mono (m a b : ℕ) (hab : a ≤ b) : prefix m a ≤ prefix m b := by
+theorem prefix_mono (m a b : ℕ) (hab : a ≤ b) : partialSum m a ≤ partialSum m b := by
   apply Finset.sum_le_sum_of_subset_of_nonneg (Finset.range_mono hab)
   intro j _ _
   positivity
@@ -36,7 +36,7 @@ theorem even_half_exact (s : ℕ) :
 
 /-- Uniform parity-aware half-prefix upper bound, including m=0. -/
 theorem half_prefix (m : ℕ) :
-    prefix m (m/2+1) ≤ (2 : ℝ)^m/2 + (m.choose (m/2) : ℝ)/2 := by
+    partialSum m (m/2+1) ≤ (2 : ℝ)^m/2 + (m.choose (m/2) : ℝ)/2 := by
   have hnat : 2 * (∑ j ∈ Finset.range (m/2+1), m.choose j) ≤
       2^m + m.choose (m/2) := by
     have he : m = 2*(m/2) ∨ m = 2*(m/2)+1 := by omega
@@ -54,15 +54,15 @@ theorem half_prefix (m : ℕ) :
         ring
       rw [hp]
       omega
-  have hr : 2 * prefix m (m/2+1) ≤ (2 : ℝ)^m + (m.choose (m/2) : ℝ) := by
-    unfold prefix
+  have hr : 2 * partialSum m (m/2+1) ≤ (2 : ℝ)^m + (m.choose (m/2) : ℝ) := by
+    unfold partialSum
     exact_mod_cast hnat
   linarith
 
 /-- Adding b coefficients costs at most b times the central coefficient. -/
 theorem prefix_extension (m a b : ℕ) :
-    prefix m (a+b) ≤ prefix m a + (b : ℝ)*(m.choose (m/2) : ℝ) := by
-  unfold prefix
+    partialSum m (a+b) ≤ partialSum m a + (b : ℝ)*(m.choose (m/2) : ℝ) := by
+  unfold partialSum
   rw [Finset.sum_range_add]
   apply add_le_add_left
   calc
@@ -78,13 +78,13 @@ theorem bound_le_peak (m d : ℕ) :
       (1/2 + (4*(d : ℝ)+1/2)*peak m) * (2 : ℝ)^m := by
   have hk : min m ((m+8*d)/2)+1 ≤ (m/2+1)+4*d := by omega
   have hcast : (AgreementConsequences.bound m (8*d) : ℝ) =
-      prefix m (min m ((m+8*d)/2)+1) := by
-    simp [AgreementConsequences.bound, prefix]
+      partialSum m (min m ((m+8*d)/2)+1) := by
+    simp [AgreementConsequences.bound, partialSum]
   have hpeak : (m.choose (m/2) : ℝ) = peak m * (2 : ℝ)^m := by
     unfold peak
     exact (div_mul_cancel₀ _ (by positivity)).symm
   calc
-    _ ≤ prefix m (m/2+1) + ((4*d : ℕ) : ℝ)*(m.choose (m/2) : ℝ) := by
+    _ ≤ partialSum m (m/2+1) + ((4*d : ℕ) : ℝ)*(m.choose (m/2) : ℝ) := by
       rw [hcast]
       exact (prefix_mono _ _ _ hk).trans (prefix_extension m (m/2+1) (4*d))
     _ ≤ (2 : ℝ)^m/2 + (m.choose (m/2) : ℝ)/2 +
@@ -107,8 +107,8 @@ theorem bound_three_quarters (m d : ℕ) (hm : (16*d+2)^2 ≤ m) :
 
 /-- A tiny exact refutation of dropping the even central atom. -/
 theorem even_atom_cannot_be_dropped :
-    ¬ prefix 2 (2/2+1) ≤ (2 : ℝ)^2/2 := by
-  norm_num [prefix, Finset.sum_range_succ, Nat.choose]
+    ¬ partialSum 2 (2/2+1) ≤ (2 : ℝ)^2/2 := by
+  norm_num [partialSum, Finset.sum_range_succ, Nat.choose]
 
 end
 end PvsNPCartography.BinomialPrefixBound

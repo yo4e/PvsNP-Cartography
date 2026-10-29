@@ -23,3 +23,16 @@ Actual diagnostic excerpts (not a full raw archive):
 
 The next candidate also connects the actual capped prefix and original-predicate
 all-degree endpoint. It needs its own completed strict audit before promotion.
+
+## Second candidate0dbf0e83b668a57b0ed08a7d4269a4f3fcadf62b
+
+Completed FAILURE run40844869515/job123349784652. Full decoded actual log
+retrieved and inspected. CentralBinomialBound compiled, but the full audit did
+not run. The new definition used `prefix`, a reserved Lean parser keyword.
+The cascade of parse errors came before the intended real partial-sum proofs.
+The `sorry` printed in recovery goals is a compiler recovery placeholder, not
+an accepted proof or a source admission. Rename the definition `partialSum`;
+keep every mathematical condition and the strict build policy unchanged.
+
+2026-10-29T08:51:37.2052417Z ✔ [9064/9068] Built PvsNPCartography.CentralBinomialBound (6.7s)
+2026-10-29T08:51:41.4109864Z error: PvsNPCartography/BinomialPrefixBound.lean:11:3: unexpected token 'prefix'; expected identifier
