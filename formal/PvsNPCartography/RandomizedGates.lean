@@ -95,7 +95,7 @@ theorem all_zero_mass {k : ℕ} (z : Mask k) (r : ℕ) :
     rw [sum_tuples]
     have hterm (a : Mask k) (A : Matrix k r) :
         mass (maskWeight k) (Fin.cons a A) *
-          (if ∀ t : Fin (r+1), linear (Fin.cons a A t) z = 0 then 1 else 0) =
+          (if ∀ t : Fin (r+1), linear ((Fin.cons a A : Matrix k (r+1)) t) z = 0 then 1 else 0) =
         (maskWeight k a * (if linear a z = 0 then 1 else 0)) *
           (matrixWeight k A * (if ∀ t, linear (A t) z = 0 then 1 else 0)) := by
       rw [mass_cons]
@@ -295,7 +295,8 @@ theorem shared_gate_union_bound {k r S : ℕ} (z : Fin S → Mask k) :
       (if ∃ i, gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0) ≤
         ∑ i, if gateValue A (z i) ≠ orValue (z i) then (1:ℝ) else 0 := by
     by_cases he : ∃ i, gateValue A (z i) ≠ orValue (z i)
-    · obtain ⟨i, hi⟩ := he
+    · rw [ite_eq_left he]
+      obtain ⟨i, hi⟩ := he
       have hh := Finset.single_le_sum (s := Finset.univ)
         (f := fun j => if gateValue A (z j) ≠ orValue (z j) then (1:ℝ) else 0)
         (fun j _ => by split_ifs <;> norm_num) (Finset.mem_univ i)
