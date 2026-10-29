@@ -1,0 +1,111 @@
+{
+  "arithmetic": "exact integers and Fraction; unreduced sparse GF2 polynomials",
+  "counterexamples": {
+    "adaptive_input": {
+      "choices": [
+        {
+          "input": [
+            1,
+            0
+          ],
+          "mask": [
+            0,
+            0
+          ]
+        },
+        {
+          "input": [
+            1,
+            0
+          ],
+          "mask": [
+            0,
+            1
+          ]
+        },
+        {
+          "input": [
+            0,
+            1
+          ],
+          "mask": [
+            1,
+            0
+          ]
+        },
+        {
+          "input": [
+            1,
+            1
+          ],
+          "mask": [
+            1,
+            1
+          ]
+        }
+      ],
+      "failure_probability": "1",
+      "false_fixed_input_bound": "1/2"
+    },
+    "historical_actual_degree": {
+      "actual_degree": 3,
+      "boolean_function": "x",
+      "polynomial": "x+x^2+x^3"
+    },
+    "inter_gate_independence": {
+      "actual_joint": "1/4",
+      "false_product": "1/16",
+      "marginal": "1/4"
+    },
+    "per_wire_identity_hash": {
+      "gate": "OR(x,x)",
+      "input": 1,
+      "r": 2,
+      "repaired_error": "1/4",
+      "wrong_error": "1"
+    },
+    "r_zero_circuit_degree": {
+      "actual_degree": 1,
+      "false_bound": 0,
+      "program": "OR(x,x) XOR x"
+    }
+  },
+  "curated": {
+    "actual_degree_checks": 2268,
+    "local_exact_laws": 324,
+    "node_input_checks": 9072,
+    "pointwise_node_bounds": 324,
+    "pointwise_union_bounds": 96,
+    "program_matrix_pairs": 672,
+    "program_parameter_pairs": 24,
+    "programs": 8,
+    "r": [
+      1,
+      2,
+      3
+    ]
+  },
+  "exhaustive": {
+    "actual_degree_checks": 262640,
+    "fan_in": [
+      0,
+      1,
+      2
+    ],
+    "local_exact_laws": 105056,
+    "n": 2,
+    "node_input_checks": 1050560,
+    "pointwise_node_bounds": 105056,
+    "pointwise_union_bounds": 52528,
+    "program_matrix_pairs": 131320,
+    "program_parameter_pairs": 13132,
+    "r": [
+      1,
+      2
+    ],
+    "two_gate_programs": 6566
+  },
+  "sampler": "one shared r-by-2 matrix; argument-position coefficients; independent rows",
+  "scope": "finite controls; same author, two implementations; not a general proof",
+  "status": "PASS"
+}

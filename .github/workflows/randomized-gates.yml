@@ -1,0 +1,33 @@
+name: Exact shared-DAG gate controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/029-randomized-gates/**"
+      - ".github/workflows/randomized-gates.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/029-randomized-gates/**"
+      - ".github/workflows/randomized-gates.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Exact sparse-polynomial and independent Boolean controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version
+          python expeditions/029-randomized-gates/check_dag.py > /tmp/normal.json
+          python -O expeditions/029-randomized-gates/check_dag.py > /tmp/optimized.json
+          cmp /tmp/normal.json /tmp/optimized.json
+          cmp /tmp/normal.json expeditions/029-randomized-gates/dag-checks.json
+          cat /tmp/normal.json
