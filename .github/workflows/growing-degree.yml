@@ -1,0 +1,38 @@
+name: Exact growing-degree controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/028-growing-degree/verify.py"
+      - "expeditions/028-growing-degree/result.json"
+      - ".github/workflows/growing-degree.yml"
+  pull_request:
+    paths:
+      - "expeditions/028-growing-degree/verify.py"
+      - "expeditions/028-growing-degree/result.json"
+      - ".github/workflows/growing-degree.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact central coefficients, actual prefixes and negative controls
+        working-directory: expeditions/028-growing-degree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          python verify.py > actual.json
+          python -O verify.py > optimized.json
+          cmp actual.json optimized.json
+          python - <<'PY'
+          import json
+          if json.load(open('actual.json')) != json.load(open('result.json')):
+              raise RuntimeError('actual/saved output mismatch')
+          print('PASS: normal/-O byte equality and actual/saved JSON equality')
+          PY
+          cat actual.json
