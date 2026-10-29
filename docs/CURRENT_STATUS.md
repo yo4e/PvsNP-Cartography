@@ -1,76 +1,68 @@
-# Current checkpoint: a growing-degree obstruction for original MOD3
+# Current checkpoint: actual randomized GF2 gates, with shared-error control
 
-Freshly approved session executed2026-10-29 JST. Research lead 月野テンプレクス.
-**Issue21 is CLOSED; Issue22 is the next bounded mathematical frontier.**
-Fresh approval is required for later nightly work. Dated README/direction and
-old Issue bodies are history, not instructions to restart completed work.
+Freshly approved night session, 2026-10-29 JST. Research lead: 月野テンプレクス.
+Issue22 remains OPEN: its generic gate milestone is accepted; the full shared-DAG
+bridge remains the next mathematical target. This is not future-session authority.
 
-## Accepted mathematical change
+## What changed mathematically
 
-For all natural n,d,
+RandomizedGates constructs actual OR/AND polynomials from independent uniform
+linear-hash rows, with one finite normalized nonnegative REAL distribution
+chosen BEFORE every Boolean input. For every arity k and row count r, including
+zero, original HasProbabilisticDegreeAtMost holds at error (1/2)^r and degree r.
+The exact OR error is zero on the zero vector and (1/2)^r otherwise; AND is dual.
+Substitution of arbitrary actual degree<=D polynomials gives genuine totalDegree
+<=r*D. Repeated wires and non-multilinear powers are retained. NOT/XOR/constants
+have exact evaluation and degree lemmas.
 
- (16*d+2)^2+2 <= n ->
- not HasProbabilisticDegreeAtMost (@SmallSupportMod3.target n) (1/3) d.
+shared_gate_union_bound proves error-union mass<=S*(1/2)^r for S deterministic
+true input vectors using ONE shared matrix. It assumes no independence between
+gates. This is not yet a theorem about recursively evaluated arbitrary DAGs.
+The missing universal DAG endpoint is now isolated from the accepted gate proof.
 
-This is the ORIGINAL GF2 predicate: genuine totalDegree<=d, a fixed finite
-family with arbitrary nonnegative REAL weights summing to1 chosen before every
-Boolean input, and success>=2/3 pointwise. No chosen support, rational weights,
-assumed multilinearity, prefix inequality or amplified-success premise is added.
+## Actual completed verification
 
-CentralBinomialBound proves a uniform central-coefficient square invariant;
-BinomialPrefixBound handles the ACTUAL capped prefix and both parities;
-Mod3GrowingDegree connects the new3/4 estimate to accepted independent majority,
-actual GF4 transport and zero restrictions. The contrapositive states that any
-feasible d requires n<(16d+2)^2+2. Each fixed degree is excluded eventually.
-This is a deliberately loose known-method reconstruction, not an optimal bound.
-The older n>=299 quadratic exclusion is stronger at d2 and remains intact.
+Accepted mathematical source: 5e43c061544f2d56e924a03420c39d40ad5ecbc6.
+Tree: 9afbe56bae28fc6abed2cd67aade538f7e6b7132.
+Formal run40884225246/job123483506622 completed SUCCESS. Pinned Lean4.35.0-rc4,
+Mathlib9e6b3aac; whole-root --wfail9069 jobs;1083 namespace declarations within
+unchanged [propext,Classical.choice,Quot.sound]. All previous reports and22 new
+explicit gate reports completed. Actual source, commit/tree, completed steps
+and full decoded job output were re-fetched and inspected; source blob matches
+local bytes. No sorry/admit/new axiom/native_decide or warning waiver was added.
 
-## Actual execution evidence
+Finite-control source879f4a5c4bc1ae53e66ba5ef7f2a854b136480ec passed exact
+run40883896389/job123482350566 with Python3.12.15. Normal/-O output bytes and
+committed JSON match, as do local reruns. Exhaustive6566 two-gate DAGs and8
+curated deeper DAGs corroborate, but do not prove, the universal circuit result.
+These are two implementations by the SAME author, not independent semantic review.
+Expedition029/ci-evidence.md gives source hashes, actual runs and evidence limits.
 
-Accepted source5c056776003e4d0d32b0302ed14a6b22cc51ed39,
-tree7aaa8b09de46588012216624bad08f95546e6580. Completed SUCCESS formal
-run40846564926/job123355388833: Lean4.35.0-rc4/Mathlib9e6b3aac,
-whole-root --wfail9068 jobs,1023 namespace declarations within unchanged
-[propext,Classical.choice,Quot.sound],20 new explicit reports plus earlier reports.
-Completed steps, full decoded actual output,3 actual modules and Git commit/tree
-were re-fetched and inspected. Local source blob hashes match. No source
-sorry/admit/new axiom/native_decide or warning waiver was introduced.
+## Refuted shortcuts and next frontier
 
-Exact source6274a1353aa4aa6e2951c6e8042fe6ad4e3617fd passed
-run40845239250/job123350996466; normal/-O bytes and actual/saved JSON agree,
-including local reruns.12705 prefixes,74305 coefficients and27 larger boundary
-checks corroborate rather than prove the universal theorem. Expedition028
-contains proof, statement/barrier audits, actual excerpts and ci-evidence.md.
+Graveyard048 preserves two failed formal implementations and their repairs.
+Graveyard049 refutes hashing by source-wire identity, multiplying correlated
+gate-error probabilities, using the fixed-input bound for sample-dependent
+inputs, and dropping r>=1 from the circuit degree bound. Graveyard047 remains.
 
-Three implementation failures and repairs are in graveyard045. Graveyard046
-contains four false auxiliary estimates: omitted even central atom, unjustified
-stronger invariant, linear instead of square size, and missing size hypothesis.
-The even-center negative control also passed Lean. Earlier parity gap failure
-at n299->n300 remains in044; this theorem does not revive numeric monotonicity.
+Next: formalize a concrete topological shared DAG, its actual polynomial table,
+nonlinear-depth induction and first-error inclusion using TRUE deterministic
+wire values. For r>=1, S original AND/OR nodes and nonlinear depth h, derive
+actual degree<=r^h and pointwise error<=S/2^r, without unrolling sharing.
+With3S<=2^r, return the ORIGINAL error1/3 predicate, then apply accepted
+Mod3GrowingDegree.feasible_size_bound to obtain n<(16*r^h+2)^2+2 for MOD3.
+Written derivation and precise remaining obligations are in Expedition029.
 
-## Next: Issue22, actual randomized gates and shared DAG circuits
+Prior growing-degree exclusion (16*d+2)^2+2<=n, the stronger d2/n>=299 result,
+exact degree2 at n5..11 and affine exclusion n>=7 remain unchanged and passed
+this root build. General n12 classification remains unresolved. No novelty,
+optimal constant, new unrestricted circuit bound, barrier escape or P-vs-NP
+conclusion is claimed. No new independent reviewer or second kernel was used;
+#8/#15 retain their older scopes.
 
-Construct genuine GF2 OR/AND approximators from independent linear hashes,
-prove pointwise error2^-r and actual composed degree<=rD, then connect a
-specified shared DAG with S AND/OR gates and nonlinear path-depth h to
-polynomials of degree<=r^h and error<=S/2^r. Under3S<=2^r, combine with the
-accepted lower bound to obtain the explicit restricted-model MOD3 consequence.
-Do not assume circuit approximability as a premise or silently unroll sharing.
-
-Expedition028/next-frontier.md and check_gate.py contain the written continuation.
-The5058-family/74958-evaluation gate check passed LOCALLY with normal/-O equality;
-it is not in the completed prefix CI, a generic proof or Lean-accepted code.
-Graveyard047 preserves reused-hash, affine-constant and actual-degree shortcuts.
-
-Earlier exact degree2 n5..11 and affine exclusion n>=7 remain unchanged. General
-n12 degree and the generic circuit bridge are unresolved. No novelty, optimal
-constant, new unrestricted circuit lower bound, barrier escape or P-versus-NP
-result is claimed. No new-code independent semantic reviewer or second kernel
-was used;#8/#15 retain older review scopes. Normal caching was used; committed
-execution text contains labeled excerpts, not full raw archives.
-
-No write blocker or unapplied patch remains. Local Lean/lake were absent and
-local Git read failed DNS; connected Actions supplied formal execution. Previous
-complete status is archived at history/2026-10-29-pre-growing-status.md by its
-identical blob5db197a2abf397a663cd0ce2649a7d41ccd32605.
-Session log: ../logs/2026-10-29-growing-degree.md.
+No write blocker or unapplied patch remains at this checkpoint. Local Lean/lake
+were absent and local Git failed DNS; connected Actions supplied execution.
+Record-only later commits are not new mathematical execution evidence.
+Previous complete status is archived byte-identically at
+history/2026-10-29-pre-gates-status.md (blobca659b28ab9e12ec75200375ec38d6aad47394d7).
+Session log: ../logs/2026-10-29-randomized-gates.md.

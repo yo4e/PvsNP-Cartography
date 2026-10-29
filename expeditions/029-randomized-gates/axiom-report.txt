@@ -1,0 +1,52 @@
+ACTUAL OUTPUT EXCERPTS, not a complete raw archive.
+Source: GitHub Actions run40884225246, job123483506622, completed SUCCESS.
+Commit:5e43c061544f2d56e924a03420c39d40ad5ecbc6.
+Retrieved through fetch_workflow_job_logs during the2026-10-29 JST session.
+Timestamps are UTC; separated excerpts retain their original wording.
+
+2026-10-29T13:42:59.0513555Z Lean (version 4.35.0-rc4, x86_64-unknown-linux-gnu, commit c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Release)
+2026-10-29T13:44:40.1277213Z   BUILD_ARGS: --wfail
+2026-10-29T13:44:52.6430876Z ✔ [9067/9069] Built PvsNPCartography.RandomizedGates (8.4s)
+2026-10-29T13:44:56.2560642Z Build completed successfully (9069 jobs).
+2026-10-29T13:45:51.9270007Z axiom-audit: audited 1083 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+
+GatesAudit.lean output at2026-10-29T13:47:06Z; timestamps omitted in this section:
+'PvsNPCartography.RandomizedGates.maskWeight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.matrixWeight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.linear_zero_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.all_zero_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.orPoly_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.andPoly_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.orPoly_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.gateValue_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.gate_error_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.gate_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.or_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.andValue_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.andPoly_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.and_gate_error_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.and_gate_success' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.and_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.xor_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.xor_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.not_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.constant_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.constant_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.RandomizedGates.shared_gate_union_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+PvsNPCartography.RandomizedGates.or_feasible (k r : ℕ) :
+  PvsNPCartography.HasProbabilisticDegreeAtMost (fun x => PvsNPCartography.RandomizedGates.orValue fun j => ↑↑(x j))
+    ((1 / 2) ^ r) r
+PvsNPCartography.RandomizedGates.and_feasible (k r : ℕ) :
+  PvsNPCartography.HasProbabilisticDegreeAtMost (fun x => PvsNPCartography.RandomizedGates.andValue fun j => ↑↑(x j))
+    ((1 / 2) ^ r) r
+PvsNPCartography.RandomizedGates.orPoly_degree {n k r d : ℕ} (A : PvsNPCartography.RandomizedGates.Matrix k r)
+  (P : Fin k → PvsNPCartography.BinaryPolynomial n) (hd : ∀ (j : Fin k), MvPolynomial.totalDegree (P j) ≤ d) :
+  MvPolynomial.totalDegree (PvsNPCartography.RandomizedGates.orPoly A P) ≤ r * d
+PvsNPCartography.RandomizedGates.shared_gate_union_bound {k r S : ℕ}
+  (z : Fin S → PvsNPCartography.RandomizedGates.Mask k) :
+  (∑ A,
+      PvsNPCartography.RandomizedGates.matrixWeight k A *
+        if ∃ i, PvsNPCartography.RandomizedGates.gateValue A (z i) ≠ PvsNPCartography.RandomizedGates.orValue (z i) then
+          1
+        else 0) ≤
+    ↑S * (1 / 2) ^ r
