@@ -1,0 +1,15 @@
+{
+  "authorship": "same author; sparse arithmetic reused from check_slots.py",
+  "circuits": 8,
+  "counts": {
+    "degree_checks": 18792,
+    "matrix_pairs": 18792,
+    "one_third_bounds": 36,
+    "parameter_cases": 36,
+    "pointwise_error_bounds": 120,
+    "pointwise_evaluations": 75144
+  },
+  "independence": "explicit Cartesian product of inner and root matrix spaces",
+  "scope": "local finite continuation; not CI or generic proof",
+  "status": "PASS"
+}
