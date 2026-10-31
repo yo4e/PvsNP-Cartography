@@ -1,0 +1,59 @@
+ACTUAL OUTPUT EXCERPTS AND TRANSCRIBED AXIOM SUMMARY
+Not the complete raw job archive.
+Source: completed SUCCESS formal run41159407778, job124413377260.
+Checkout95adfa0080caa7c5106caf2164858d1fc66f969e.
+The full decoded completed log and all step states were retrieved and inspected.
+The four fully explicit endpoint signatures were also inspected in the source
+log; they are not reproduced here in their entirety.
+
+VERBATIM BUILD/AUDIT EXCERPTS
+2026-10-31T02:21:24.1728828Z ✔ [9068/9072] Built PvsNPCartography.SharedDAG (9.1s)
+2026-10-31T02:21:28.2767438Z ✔ [9069/9072] Built PvsNPCartography.CircuitMod3 (4.2s)
+2026-10-31T02:21:32.2810610Z ✔ [9070/9072] Built PvsNPCartography.DAGBoundary (4.0s)
+2026-10-31T02:21:36.3855197Z ✔ [9071/9072] Built PvsNPCartography (3.9s)
+2026-10-31T02:21:36.3961734Z Build completed successfully (9072 jobs).
+2026-10-31T02:22:25.1503614Z axiom-audit: audited 1268 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+
+TRANSCRIBED SUMMARY OF THE 29 ACTUAL DAG AXIOM REPORTS
+Timestamps and repeated namespace prefixes omitted below; this block is a
+structured transcription, not a complete verbatim log. Every name is under
+PvsNPCartography.SharedDAG. These are observed output sets, not predicted ones.
+
+A = [propext, Classical.choice, Quot.sound]
+P = [propext]
+
+eval_read                         A
+eval_args                         A
+Gate.poly_eval                    A
+polynomial_eval                   A
+pow_mono                          A
+read_degree                       A
+args_degree                       A
+Gate.poly_degree                  A
+polynomial_degree                 A
+Gate.local_error                  A
+good_values                       A
+union_indicator                   A
+bad_mass                          A
+output_degree                     A
+output_error                      A
+output_success                    A
+feasible                          A
+error_budget                      A
+feasible_third                    A
+mod3_size_bound                   A
+negateOutput_cost                 P
+negateOutput_depth                A
+negateOutput_target               A
+negateOutput_polynomial           A
+mod3_complement_size_bound        A
+absent_or                         A
+absent_and                        A
+external_output                   A
+cost_step                         P
+
+Fully explicit signatures inspected in the completed source log:
+feasible; feasible_third; mod3_size_bound; mod3_complement_size_bound.
+The stored mathematical statements are in SharedDAG.lean, CircuitMod3.lean
+and DAGBoundary.lean at the exact accepted source commit above. A record-only
+commit containing this transcription is not a new execution of those statements.
