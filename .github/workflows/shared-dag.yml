@@ -1,0 +1,35 @@
+name: Exact shared-DAG slot controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/030-shared-dag/check_slots.py"
+      - "expeditions/030-shared-dag/slot-checks.json"
+      - ".github/workflows/shared-dag.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/030-shared-dag/check_slots.py"
+      - "expeditions/030-shared-dag/slot-checks.json"
+      - ".github/workflows/shared-dag.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compare chronological Boolean and reverse sparse-polynomial semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version
+          python expeditions/030-shared-dag/check_slots.py > /tmp/slots-normal.json
+          python -O expeditions/030-shared-dag/check_slots.py > /tmp/slots-optimized.json
+          cmp /tmp/slots-normal.json /tmp/slots-optimized.json
+          cmp /tmp/slots-normal.json expeditions/030-shared-dag/slot-checks.json
+          cat /tmp/slots-normal.json

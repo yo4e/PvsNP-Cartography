@@ -1,0 +1,82 @@
+{
+  "counterexamples": {
+    "and_zero_padding": {
+      "correct_target": 1,
+      "input": 1,
+      "wrong_target": 0
+    },
+    "linear_depth_degree": {
+      "actual_degree": 9,
+      "false_bound": 6,
+      "h": 2,
+      "r": 3
+    },
+    "output_only_gate_count": {
+      "actual_error": "1/2",
+      "false_bound": "0",
+      "program": "NOT(OR(x))",
+      "r": 1,
+      "x": 1
+    },
+    "unrolling_control": {
+      "formula_occurrences": 63,
+      "original_nonlinear_nodes": 6
+    }
+  },
+  "curated": {
+    "actual_degree_checks": 640,
+    "external_output_checks": 3280,
+    "matrix_program_pairs": 144,
+    "node_input_checks": 5024,
+    "one_third_checks": 4,
+    "pointwise_output_checks": 124,
+    "program_parameter_pairs": 4,
+    "union_checks": 26
+  },
+  "exhaustive": {
+    "K": [
+      0,
+      1,
+      2
+    ],
+    "actual_degree_checks": 92428,
+    "external_output_checks": 294556,
+    "matrix_program_pairs": 46214,
+    "n": [
+      0,
+      1,
+      2
+    ],
+    "node_input_checks": 318388,
+    "one_third_checks": 15996,
+    "pointwise_output_checks": 36312,
+    "program_parameter_pairs": 5388,
+    "programs": 2694,
+    "r": [
+      1,
+      2
+    ],
+    "union_checks": 18156
+  },
+  "mod3": {
+    "S": 3,
+    "errors_lex_order": [
+      "1/16",
+      "15/256",
+      "15/128",
+      "15/128",
+      "15/128",
+      "15/256",
+      "15/128",
+      "1/16"
+    ],
+    "h": 2,
+    "inputs": 8,
+    "matrices": 4096,
+    "n": 3,
+    "r": 4,
+    "scope": "Boolean execution; sparse degree checked separately at r1/2"
+  },
+  "scope": "same-author exact finite controls, not a generic proof",
+  "status": "PASS"
+}
