@@ -75,3 +75,7 @@ jobs:
       - name: Print shared-DAG and circuit MOD3 endpoint axioms
         working-directory: formal
         run: lake env lean DAGAudit.lean
+
+      - name: Print separately budgeted root endpoint axioms
+        working-directory: formal
+        run: lake env lean RootBudgetAudit.lean
