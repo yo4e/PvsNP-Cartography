@@ -71,3 +71,7 @@ jobs:
       - name: Print randomized-gate endpoint axioms
         working-directory: formal
         run: lake env lean GatesAudit.lean
+
+      - name: Print shared-DAG and circuit MOD3 endpoint axioms
+        working-directory: formal
+        run: lake env lean DAGAudit.lean
