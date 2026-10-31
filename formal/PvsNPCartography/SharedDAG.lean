@@ -195,6 +195,7 @@ theorem polynomial_degree {n m K r : ℕ} (A : Matrix K r) (hr : 1 ≤ r)
     · exact g.poly_degree A hr (polynomials A p) (depths p) ih
     · exact ih j
 
+set_option backward.isDefEq.respectTransparency false in
 theorem Gate.local_error {n m K r : ℕ} (g : Gate n m K)
     (x : Fin n → ZMod 2) (v : Fin m → ZMod 2) :
     (∑ A : Matrix K r, matrixWeight K A *
@@ -243,6 +244,7 @@ theorem union_indicator (p q : Prop) :
   by_cases hp : p <;> by_cases hq : q <;> simp [hp, hq]
 
 /-- Union bound over original nodes, not the number of occurrences in an unrolled formula. -/
+set_option backward.isDefEq.respectTransparency false in
 theorem bad_mass {n m K r : ℕ} (x : Fin n → ZMod 2) (p : Program n K m) :
     (∑ A : Matrix K r, matrixWeight K A * (if bad A x p then 1 else 0)) ≤
       (cost p : ℝ)*(1/2 : ℝ)^r := by
