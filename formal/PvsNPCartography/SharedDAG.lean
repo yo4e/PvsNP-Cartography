@@ -117,8 +117,8 @@ theorem Gate.poly_eval {n m K r : ℕ} (g : Gate n m K) (A : Matrix K r)
     (x : Fin n → ZMod 2) (v : Fin m → BinaryPolynomial n) :
     MvPolynomial.eval x (g.poly A v) =
       g.approx A x (fun i => MvPolynomial.eval x (v i)) := by
-  have h0 := eval_args 0 x v
-  have h1 := eval_args 1 x v
+  have h0 := eval_args (K := K) 0 x v
+  have h1 := eval_args (K := K) 1 x v
   simp only [map_zero, map_one] at h0 h1
   cases g <;> simp [Gate.poly, Gate.approx, orPoly_eval, andPoly_eval, eval_read, h0, h1]
 
@@ -126,7 +126,7 @@ theorem polynomial_eval {n m K r : ℕ} (A : Matrix K r) (x : Fin n → ZMod 2)
     (p : Program n K m) : ∀ i,
     MvPolynomial.eval x (polynomials A p i) = approximations A x p i := by
   induction p with
-  | nil => exact Fin.elim0
+  | nil => intro i; exact Fin.elim0 i
   | step p g ih =>
     intro i
     refine Fin.cases ?_ (fun j => ?_) i
@@ -173,8 +173,8 @@ theorem Gate.poly_degree {n m K r : ℕ} (g : Gate n m K) (A : Matrix K r)
     (hr : 1 ≤ r) (v : Fin m → BinaryPolynomial n) (d : Fin m → ℕ)
     (hv : ∀ i, (v i).totalDegree ≤ r^(d i)) :
     (g.poly A v).totalDegree ≤ r^(g.depth d) := by
-  have h0 := args_degree 0 hr v d hv
-  have h1 := args_degree 1 hr v d hv
+  have h0 := args_degree (K := K) 0 hr v d hv
+  have h1 := args_degree (K := K) 1 hr v d hv
   simp only [map_zero, map_one] at h0 h1
   cases g with
   | constant b => simp [Gate.poly, Gate.depth]
@@ -188,7 +188,7 @@ theorem Gate.poly_degree {n m K r : ℕ} (g : Gate n m K) (A : Matrix K r)
 theorem polynomial_degree {n m K r : ℕ} (A : Matrix K r) (hr : 1 ≤ r)
     (p : Program n K m) : ∀ i, (polynomials A p i).totalDegree ≤ r^(depths p i) := by
   induction p with
-  | nil => exact Fin.elim0
+  | nil => intro i; exact Fin.elim0 i
   | step p g ih =>
     intro i
     refine Fin.cases ?_ (fun j => ?_) i
@@ -204,17 +204,23 @@ theorem Gate.local_error {n m K r : ℕ} (g : Gate n m K)
   | negate w => simp [Gate.approx, Gate.eval, Gate.cost]
   | parity ws => simp [Gate.approx, Gate.eval, Gate.cost]
   | disj ws =>
-    simp only [Gate.approx, Gate.eval, Gate.cost, Nat.cast_one, one_mul]
-    rw [gate_error_exact]
-    split_ifs
-    · positivity
-    · exact le_rfl
+    have he : (∑ A : Matrix K r, matrixWeight K A *
+        (if gateValue A (args 0 x v ws) ≠ orValue (args 0 x v ws) then 1 else 0)) ≤
+        (1/2 : ℝ)^r := by
+      rw [gate_error_exact]
+      split_ifs
+      · positivity
+      · exact le_rfl
+    simpa only [Gate.approx, Gate.eval, Gate.cost, Nat.cast_one, one_mul] using he
   | conj ws =>
-    simp only [Gate.approx, Gate.eval, Gate.cost, Nat.cast_one, one_mul]
-    rw [and_gate_error_exact]
-    split_ifs
-    · positivity
-    · exact le_rfl
+    have he : (∑ A : Matrix K r, matrixWeight K A *
+        (if andGateValue A (args 1 x v ws) ≠ andValue (args 1 x v ws) then 1 else 0)) ≤
+        (1/2 : ℝ)^r := by
+      rw [and_gate_error_exact]
+      split_ifs
+      · positivity
+      · exact le_rfl
+    simpa only [Gate.approx, Gate.eval, Gate.cost, Nat.cast_one, one_mul] using he
 
 /-- Topological first-error argument. No independence of child errors is used. -/
 theorem good_values {n m K r : ℕ} (A : Matrix K r) (x : Fin n → ZMod 2)
@@ -226,9 +232,11 @@ theorem good_values {n m K r : ℕ} (A : Matrix K r) (x : Fin n → ZMod 2)
     have hh := not_or.mp h
     have hp := ih hh.1
     have hg : g.approx A x (values x p) = g.eval x (values x p) := not_ne_iff.mp hh.2
-    change Fin.cons (g.approx A x (approximations A x p)) (approximations A x p) =
-      Fin.cons (g.eval x (values x p)) (values x p)
-    rw [hp, hg]
+    funext i
+    refine Fin.cases ?_ (fun j => ?_) i
+    · change g.approx A x (approximations A x p) = g.eval x (values x p)
+      rw [hp, hg]
+    · exact congrFun hp j
 
 theorem union_indicator (p q : Prop) :
     (if p ∨ q then (1 : ℝ) else 0) ≤ (if p then 1 else 0) + (if q then 1 else 0) := by
@@ -244,9 +252,12 @@ theorem bad_mass {n m K r : ℕ} (x : Fin n → ZMod 2) (p : Program n K m) :
     calc
       _ ≤ ∑ A : Matrix K r, matrixWeight K A *
           ((if bad A x p then 1 else 0) +
-          (if g.approx A x (values x p) ≠ g.eval x (values x p) then 1 else 0)) :=
-        Finset.sum_le_sum (fun A _ => mul_le_mul_of_nonneg_left
-          (union_indicator _ _) (matrixWeight_nonneg K r A))
+          (if g.approx A x (values x p) ≠ g.eval x (values x p) then 1 else 0)) := by
+        apply Finset.sum_le_sum
+        intro A _
+        apply mul_le_mul_of_nonneg_left _ (matrixWeight_nonneg K r A)
+        simpa only [bad] using union_indicator (bad A x p)
+          (g.approx A x (values x p) ≠ g.eval x (values x p))
       _ = (∑ A : Matrix K r, matrixWeight K A * (if bad A x p then 1 else 0)) +
           (∑ A : Matrix K r, matrixWeight K A *
           (if g.approx A x (values x p) ≠ g.eval x (values x p) then 1 else 0)) := by
@@ -298,7 +309,7 @@ theorem output_success {n m K r : ℕ} (p : Program n K m) (w : Wire n m)
       (∑ A : Matrix K r, matrixWeight K A *
         (if MvPolynomial.eval (fun j => ((x j).val : ZMod 2)) (outputPoly p w A) ≠
           target p w x then 1 else 0)) +
-      success (target p w) (outputPoly p w) (matrixWeight K) x = 1 := by
+      success (target p w) (outputPoly p w) (matrixWeight K (r := r)) x = 1 := by
     unfold success correct
     rw [← Finset.sum_add_distrib]
     convert matrixWeight_sum K r using 1
@@ -306,9 +317,9 @@ theorem output_success {n m K r : ℕ} (p : Program n K m) (w : Wire n m)
     intro A _
     by_cases h : MvPolynomial.eval (fun j => ((x j).val : ZMod 2)) (outputPoly p w A) =
       target p w x <;> simp [h]
-  change _ + _ = 1 at hc
-  change _ ≤ (cost p : ℝ)*(1/2 : ℝ)^r at he
-  dsimp only [target] at hc
+  change (∑ A : Matrix K r, matrixWeight K A *
+    (if MvPolynomial.eval (fun j => ((x j).val : ZMod 2)) (outputPoly p w A) ≠
+      target p w x then 1 else 0)) ≤ (cost p : ℝ)*(1/2 : ℝ)^r at he
   linarith
 
 /-- Closed bridge: no approximability, correctness or error bound is assumed.
