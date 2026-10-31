@@ -131,7 +131,10 @@ theorem error_bound {n m K r t : ℕ} (b : Bool) (p : Program n K m)
         (∑ B : Matrix K t, matrixWeight K B *
         (if (root b ws).approx B x (values x p) ≠ value b p ws x then 1 else 0)) := by
       simp only [mul_add, Finset.sum_add_distrib]
-      rw [fst_marginal, snd_marginal]
+      exact congrArg₂ (· + ·)
+        (fst_marginal K r t (fun A => if bad A x p then 1 else 0))
+        (snd_marginal K r t (fun B =>
+          if (root b ws).approx B x (values x p) ≠ value b p ws x then 1 else 0))
     _ ≤ _ := add_le_add (bad_mass x p) (root_local_error b p ws x)
 
 theorem success_bound {n m K r t : ℕ} (b : Bool) (p : Program n K m)
@@ -178,7 +181,7 @@ theorem third_budget (S r : ℕ) (hb : 12*S ≤ 2^r) :
     (by positivity : (0 : ℝ) ≤ (1/2 : ℝ)^r)
   have he : (S : ℝ)*(1/2 : ℝ)^r ≤ 1/12 := by nlinarith
   calc
-    _ ≤ 1/12 + (1/2 : ℝ)^2 := add_le_add_right he _
+    _ ≤ 1/12 + (1/2 : ℝ)^2 := add_le_add he (le_refl ((1/2 : ℝ)^2))
     _ = 1/3 := by norm_num
 
 /-- No logarithms, so zero inner cost and empty arity are retained. -/
@@ -194,9 +197,11 @@ theorem feasible_third {n m K r : ℕ} (b : Bool) (p : Program n K m)
   · intro x
     have hp := success_bound (r := r) (t := 2) b p ws x
     have hsr : (cost p : ℝ) ≤ (S : ℝ) := by exact_mod_cast hs
+    have hpow : (0 : ℝ) ≤ (1/2 : ℝ)^r := by positivity
+    have hmul : (cost p : ℝ)*(1/2 : ℝ)^r ≤ (S : ℝ)*(1/2 : ℝ)^r :=
+      mul_le_mul_of_nonneg_right hsr hpow
     have he : (cost p : ℝ)*(1/2 : ℝ)^r + (1/2 : ℝ)^2 ≤ 1/3 :=
-      (add_le_add_right (mul_le_mul_of_nonneg_right hsr (by positivity)) _).trans
-        (third_budget S r hb)
+      (add_le_add hmul (le_refl ((1/2 : ℝ)^2))).trans (third_budget S r hb)
     linarith
 
 /-- The only target premise is correctness of the original appended-root circuit. -/
@@ -209,7 +214,8 @@ theorem mod3_size_bound {n m K r : ℕ} (b : Bool) (p : Program n K m)
   have he : target b p ws = @SmallSupportMod3.target n := funext hc
   rw [he] at hf
   have hn := Mod3GrowingDegree.feasible_size_bound n (2*r^H) hf
-  convert hn using 1 <;> ring
+  convert hn using 1
+  ring
 
 end
 end PvsNPCartography.RootBudget
