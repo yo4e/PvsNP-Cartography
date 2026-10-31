@@ -45,14 +45,51 @@ the project build cache. It reproduced the same errors in about4 seconds of
 module compilation. This is same-kernel execution diagnosis, not independent
 semantic review. Its full completed job log was retrieved.
 
-The next repair,9068a9980f5809cba2bcbfbb8810407372d81ff1, changes only elaborator
+The next repair,9068a9980f5809cba2bcbfbb8810407372d81ff1, changed elaborator
 transparency locally around Gate.local_error and bad_mass, using
 `set_option backward.isDefEq.respectTransparency false in`. The existing
 MajorityAmplification module already uses this local elaboration technique.
-No theorem statement, event definition, probability distribution, degree notion,
-kernel rule, allowed axiom or --wfail policy changes. Acceptance must still be
-established by an actual completed strict build and axiom audit; see the
-expedition's ci-evidence.md for the eventual outcome, not this repair proposal.
+The historical proposal was insufficient; its concrete outcome is below.
+No theorem statement, event definition, distribution, degree notion, kernel
+rule, allowed axiom or --wfail policy was changed.
+
+## Parser failure and the union transport that still did not work
+
+Source9068a998, run41157416536/job124407157540 completed FAILURE.
+Diagnostic source51ada5ca4ad8daa4d55ada95673ef1da2a941a6b,
+run41157531689/job124407517578 also completed FAILURE under a300second bounded
+DAGBoundary build. Both full decoded completed logs were retrieved. The local
+gate-error elaboration failures disappeared, but a documentation comment placed
+BEFORE the local set_option caused an unexpected-token parser error at line246.
+The recursive bad-event instance mismatch also remained. The diagnostic did
+not time out and did not execute its subsequent axiom report.
+
+Sourcebe5c41cf2e6040ddabdb17a21098a54cf82fd955 fixed the comment placement.
+Run41158114718/job124409324125 completed FAILURE with one remaining error:
+the union-indicator transport at line261 still distinguished instDecidableOr
+from Classical.propDecidable. The completed full output was retrieved. Merely
+loosening elaborator transparency had NOT repaired this proof step.
+
+Source9557b65800c9b4161ba9434650818a5a38a4c551 replaces that transport by
+four explicit cases for the old bad event and current gate equality. It removes
+the local option around bad_mass; only Gate.local_error retains the option.
+The actual inequality, weights and cost stay unchanged. This repaired the core:
+run41158707027/job124411171874 compiled SharedDAG and CircuitMod3 successfully,
+but the OVERALL run still completed FAILURE. No partial green line was promoted.
+
+## Empty OR function equality
+
+The9557b658 run failed in DAGBoundary.absent_or at line39. The goal was the
+FUNCTION equality `(args 0 x v (fun _ => none)) = 0`, not an equality at a
+particular argument. A simp entry for args did not eta-expand the function
+and was reported unused under --wfail. Completed steps and full actual output
+were retrieved; namespace and endpoint audits were skipped after this failure.
+
+Source95adfa0080caa7c5106caf2164858d1fc66f969e repairs only this proof:
+change to the conditional defining OR, then prove its zero-vector condition
+by funext and reflexivity. No empty-case semantics is removed or weakened.
+Its eventual completed acceptance/failure is recorded in the expedition's
+ci-evidence.md, not inferred here from the repair proposal.
 
 ## Distinguish infrastructure delay from proof failure
 

@@ -36,8 +36,10 @@ bad is the recursive union of local errors evaluated on TRUE predecessor values.
 These vectors are independent of the sampled matrix by construction, not by an
 assumption on random child outputs. good_values proves topological correctness
 outside this union. bad_mass counts original gates and needs nonnegative weights,
-not independence across gates. The accepted row-product construction supplies
-local laws; no desired local bound is an endpoint premise.
+not independence across gates. Its final implementation proves the indicator
+inequality directly by four Boolean cases, avoiding a failed Decidable-instance
+transport. The accepted row-product construction supplies local laws; no desired
+local bound is an endpoint premise.
 
 feasible selects one finite matrix family with actual normalized real weights
 BEFORE all Boolean inputs and returns the unchanged original degree predicate.
@@ -50,16 +52,19 @@ correctness for the residue-zero target, yielding n<(16*r^h+2)^2+2.
 DAGBoundary negates the chosen output by an exact NOT node, preserving nonlinear
 cost/depth. It supplies the complementary MOD3 polarity without confusing the
 two targets. Its primary-source comment refers to Goldreich's nonzero convention;
-Limaye et al.'s2025 source instead uses the residue-zero convention.
+Limaye et al.'s2025 source instead uses the residue-zero convention. The absent-OR
+proof explicitly establishes equality of the whole slot vector to zero by
+function extensionality, including the empty domain.
 
 ## Trust-boundary checks
 
 Local lexical scans of the three new modules found no sorry, admit, axiom or
-native_decide tokens. The two local backward.isDefEq.respectTransparency options
-alter elaboration only, not the kernel, allowed axioms, theorem statements or
---wfail. Actual namespace/endpoint axiom outputs are required separately.
-A successful finite test or another runner with the same Lean kernel does not
-supply an independent semantic reviewer or a second proof kernel.
+native_decide tokens. ONE local backward.isDefEq.respectTransparency option
+remains around Gate.local_error; bad_mass no longer needs one. It alters
+elaboration only, not the kernel, allowed axioms, theorem statements or --wfail.
+Actual namespace/endpoint axiom outputs are required separately. A successful
+finite test or another runner with the same Lean kernel does not supply an
+independent semantic reviewer or a second proof kernel.
 
 ## Continued experiment, explicitly not a promoted theorem
 
