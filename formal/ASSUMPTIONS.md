@@ -1,122 +1,93 @@
 # Formal assumption ledger
 
-## Checkpoint: actual shared-DAG approximation,2026-10-31 JST
+## Checkpoint: separate final-root budget, 2026-10-31 JST night
 
-Issue22 completed in one freshly approved session; Issue23 is the next target,
-not standing authorization. This ledger separates kernel acceptance, faithful
-statement inspection by the author, finite corroboration and independent review.
-No previous theorem is weakened or historical review silently extended.
+Research lead: 月野テンプレクス, one freshly approved session. Issue23 completed;
+Issue24 is pending. This ledger does not authorize later work. The previous
+complete ledger and its historical chains are preserved byte-identically at
+reports/2026-10-31-pre-root-budget-ledger.md,
+blob20e77d98c415dc7bee7fedd0b2b12932424c57d0.
 
-## Accepted execution and actual foundations
+## Accepted execution and unchanged foundations
 
-Source95adfa0080caa7c5106caf2164858d1fc66f969e,
-treefda6de65aa480f1ba30b1b0832edcf27cc32f930.
-https://github.com/yo4e/PvsNP-Cartography/actions/runs/41159407778
-Run41159407778/job124413377260 completed SUCCESS, including all old and new
-explicit reports. Full decoded completed output and completed step states were
-retrieved. The actual source files and matching Git commit/tree were re-fetched.
+Mathematical source2d790f584090d50c950b4f856f596b444bdaaa32,
+treece9e56d6754d147e796bd5948e9949f05a9b2eeb.
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/41206535050
+Run41206535050/job124552630720 completed SUCCESS. Full decoded actual output,
+completed steps, complete mathematical source and matching commit/tree were
+re-fetched. Whole-root --wfail9073 jobs; namespace audit1292 declarations inside
+[propext,Classical.choice,Quot.sound].16 new reports and3 fully explicit endpoint
+signatures plus all older reports succeeded. root_cost uses onlypropext; the
+remaining15 new reports use the full allowed foundations.
 
-Lean4.35.0-rc4, commitc29b6dda4f7c20e3eeaa717c4e565663c5cfa364;
-Lake5.0.0-src+c29b6dd; Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8.
-Whole-root --wfail9072 jobs; namespace audit1268 declarations within unchanged
-[propext,Classical.choice,Quot.sound]. DAGAudit printed29 explicit theorem-axiom
-reports and4 fully explicit endpoint signatures. negateOutput_cost and cost_step
-use only[propext]; the other27 new reports use the full foundational allowlist.
-The accepted endpoint signatures were inspected, not merely their names.
+Lean4.35.0-rc4,c29b6dda4f7c20e3eeaa717c4e565663c5cfa364;
+Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. lean-action resolved
+fe408643ea7367d8c0404a8be3975bb145f5fb64; axiom-audit v0.1.2 resolved
+46024e005996495c65ef609368e11ab39c4222e3. Normal cache restorede3b3e378.
+No clean-room run, independent semantic reviewer or second kernel is inferred.
+RootBudget.lean9897bytes has Git blobd058a7d975a2aa6112420c777dcad08c6b6dc797,
+matching local UTF-8 contents. No sorry/admit/new axiom/native_decide or warning
+waiver was introduced. The new module changes no previous definition or proof.
 
-Local bytes match actual source blobs:
-- SharedDAG.lean f301b113c398773aadbc7b97c72f4d1b2e311875,14242bytes;
-- CircuitMod3.lean d854e2f40d597a9e01a884de165a1a087c3f2d5a,2138bytes;
-- DAGBoundary.lean19ef084be2ba4973eee93ff64ae30f525e31196e,2710bytes.
-No sorry/admit/new axiom/native_decide tokens occur in these modules. ONE local
-backward.isDefEq.respectTransparency option remains at Gate.local_error; it
-changes elaboration, not theorem assumptions, kernel rules or allowed axioms.
-The recursive union proof instead uses explicit Boolean cases. No warnings were
-waived. Earlier failed statements were not promoted by partial successful lines.
+## Statement fidelity and dependency audit
 
-Normal project cache restored81619bb9ed6f216e7eeb9fba27784b07d6821218.
-Actual lean-actionfe408643ea7367d8c0404a8be3975bb145f5fb64;
-axiom-audit v0.1.2 at46024e005996495c65ef609368e11ab39c4222e3.
-Runner2.338.2, Ubuntu24.04.5 image20261025.353.1. No clean-room execution,
-independent semantic reviewer or second proof kernel is claimed. Actual output
-excerpts, not the complete raw log, are archived in Expedition030/axiom-report.txt.
+The target is the deterministic output of the old concrete Program/Slots model
+with ONE appended AND or OR; target_is_circuit proves that identity. It is not
+redefined using approximation values. Sampling is a finite Cartesian product of
+existing normalized real matrix distributions, independent of input selection.
+Marginal identities for arbitrary real test functions prove normalization and
+transport local event bounds. They are not hypotheses supplied by the caller.
 
-## Statement fidelity and dependency chain
+Each actual child polynomial has degree<=r^H by the accepted inner theorem and
+selected-slot height bound. Existing substitution lemmas give actual degree
+<=t*r^H. No Boolean multilinear reduction substitutes for MvPolynomial.totalDegree.
+Repeated wires, zero capacity, absent slots, unused nodes and exact predecessors
+remain represented. Inner r>=1 supports exponent monotonicity; final t may be0,
+which gives a constant root polynomial and a vacuous error allowance.
 
-Program n K m is a sequence with ONE stored prefix per new node. Wire permits
-only external inputs or previous-table references; repeated references do not
-copy a prefix in the model or increase cost. Slots indexes argument positions,
-not source-wire identities, and None pads0 at OR/XOR and1 at AND. All arities
-and capacities may be0. Constants, NOT and XOR are exact. Any chosen wire may
-be output; unused nodes are conservatively counted. The theorem concerns this
-concrete model, not a machine-verified importer for arbitrary graph formats.
+The inner bad event uses TRUE deterministic child values. Outside it, the old
+polynomial-evaluation and good-values lemmas identify the sampled predecessor
+table with the true table. Thus root output error is included in inner bad OR
+root error on true children. Nonnegative weights and marginalization give
+cost(p)*2^-r+2^-t. There is no conditional independence premise on approximated
+children, no assumed local success estimate and no input-adaptive sampler.
 
-values evaluates original gates. approximations is a separate randomized
-evaluation; polynomials stores ACTUAL GF2 MvPolynomial objects. polynomial_eval
-connects the latter two. The target is not redefined to equal the approximator.
-No multilinear reduction or truth-table proxy changes the actual totalDegree.
+feasible returns the UNCHANGED HasProbabilisticDegreeAtMost predicate with its
+fixed-before-every-input finite REAL mixture. feasible_third derives error1/3
+from r>=1,cost(p)<=S,selected child height<=H and12*S<=2^r, choosingt2 and
+degree2*r^H. mod3_size_bound adds only actual circuit correctness for the
+residue-zero target, then applies the accepted growing-degree obstruction to
+obtain n<(32*r^H+2)^2+2. An optional exact-output-NOT extension was not added.
+No optimality or universal separately optimized-parameter superiority is claimed.
 
-cost counts original AND/OR nodes once, including empty ones. depths uses max
-child depth (empty max0), plus1 exactly at AND/OR; inputs/constants0, NOT
-inherits, XOR takes max. outputDepth refers to the selected output, not all
-nodes. It counts nonlinear layers, not ALL layers as in the compared source.
-For r>=1, exponent monotonicity plus actual gate substitution yields r^depth.
-The r>=1 condition matters for exact skip wires and is retained.
+## Adversarial and finite evidence
 
-The SAME normalized nonnegative REAL matrix distribution is chosen before all
-Boolean inputs. Row independence comes from the accepted finite product mass.
-Different gates may share the matrix and their bad events are not assumed
-independent. Each local event evaluates the randomized gate on deterministic
-TRUE predecessor values. good_values proves correctness of the whole table
-outside their union by topological induction. bad_mass uses pointwise Boolean
-indicator inequalities, nonnegative weights and additive original-node cost.
-No desired error bound, correctness-of-approximation or degree lemma is assumed.
+Initial source74a427db failed completedrun41205835465/job124550622120. Its full
+actual output was fetched; graveyard054 records four proof-description repairs
+without weakened statements or lint settings. Graveyard053 gives exact budget
+and actual-degree counterexamples, distinguishing an r0 diagnostic from a false
+refutation. Root type, neutral padding, sharing and quantifiers were attacked.
 
-feasible returns the unchanged HasProbabilisticDegreeAtMost at errorcost*2^-r
-and degree r^outputDepth. The finite-type adapter retains a single family before
-all inputs and sums repeated polynomial outcomes legitimately. Particular real
-weights in this upper witness do not restrict the arbitrary REAL mixtures in
-the previously accepted lower obstruction.
+Exact source7db154a9 passed completedrun41206658022/job124552998091 with
+Python3.12.3. Actual files/workflow/commit/output were re-fetched. Normal/-O/
+stored JSON hashes agree.1562 small structures and6 deeper structures compare
+same-author independent implementations, NOT independent semantic authorship.
+Finite prefix coupling is not part of the accepted generic product theorem.
 
-feasible_third accepts conservative S,h bounds, r>=1 and3S<=2^r; it DERIVES
-error<=1/3 and degree<=r^h. mod3_size_bound additionally assumes that the actual
-original circuit computes residue-zero MOD3 for every input and derives
-n<(16*r^h+2)^2+2 from the accepted growing-degree obstruction. There is no
-polynomial-approximability endpoint premise. DAGBoundary adds an exact NOT,
-proves cost/depth preservation and derives the complementary-polarity version.
-Its empty-gate, external-output and cost-step endpoints retain zero cases.
+Continuationb3cba95d and graveyard055 concern Hamming covering and the failure
+of an average-to-pointwise converse. Its11 local tests are neither pointwise
+feasibility classification nor root-CI evidence. The generic counting bound,
+multilinear-reduction/counting bridge and a quantified largeness consequence
+remain unformalized. Recognition cost and usefulness remain distinct obligations;
+no lower bound on all recognizers or Natural Proofs escape has been established.
 
-## Corroboration, attacks and limits
+## Preserved scope and operational state
 
-Exact controls77e8bf049dfdc51a60c34fcfcf7723b7e233f722 passed
-run41155876986/job124402435004. Python3.12.15 normal/-O/stored JSON bytes agree;
-actual source/result/workflow/commit and completed output were retrieved and
-local source hashes/reruns match.2694 small two-gate programs plus curated cases
-compare newest-first unreduced sparse polynomials with chronological Boolean
-execution. This is same-author finite evidence, not universal proof or independent
-semantic review. Exact scope and all counts are in Expedition030/ci-evidence.md.
-
-Graveyard050 retains wrong AND padding, final-local-only error and additive-degree
-shortcuts; its6-versus63 unrolling example is a weaker-bound control, not a false
-inequality. Graveyard051 preserves six failed whole-root candidates, two bounded
-diagnostic failures, their repairs and actual cache-egress diagnosis. No semantic
-condition or axiom policy was weakened. Graveyard052's XOR-of-minterms argument
-rejects a size-independent h-1 improvement for arbitrary XOR outputs; the minterm
-argument is written and NOT Lean-formalized by this session.
-
-Next root-budget candidate is NOT accepted generically. Its local checker at
-770197a1 passed on8curated circuits/36parameter cases with18792matrix pairs,
-75144pointwise evaluations and36qualified1/3 bounds. It is NOT part of the completed
-slot CI. See #23 and Expedition030/next-frontier.md. Earlier #8/#15 reviews keep
-their old scopes. Novelty, optimal bounds, general n12 classification, unrestricted
-circuit lower bounds, proof-barrier escape and P-versus-NP conclusions are unclaimed.
-
-## History and environment
-
-Previous complete ledger and all earlier history links are archived byte-identically
-at reports/2026-10-31-pre-dag-ledger.md using original blob
-95d49368d2056d0dce4b1e4efcf623f83a1eb87b. Previous status is similarly archived.
-Local Git DNS failed and Lean/lake were absent. Connected writes and Actions
-worked; a transient cache egress failure was diagnosed without paid resources
-or weaker checks. Final execution succeeded. No unapplied patch/write blocker
-remains. Later record-only commits are not new mathematical-source executions.
+Older accepted chains and foundations remain unchanged and their reports passed.
+General n12 classification, novelty, optimal constants, external semantic review,
+second-kernel confirmation and unrestricted lower bounds are not supplied here.
+Issues8/15 retain prior review scopes. Local Lean/lake were absent and Git DNS
+failed; connected Actions supplied execution. No write blocker or unapplied patch
+remains. Expedition031/ci-evidence.md and labeled output excerpts provide the
+exact evidence; they do not claim a saved complete raw job archive. Later
+record-only commits are not substitutes for mathematical-source execution.

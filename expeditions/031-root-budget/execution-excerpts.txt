@@ -1,0 +1,34 @@
+ACTUAL EXCERPTS, not a complete raw log archive.
+The complete decoded outputs were fetched after each job completed.
+
+FORMAL run41206535050 / job124552630720
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/41206535050
+2026-10-31T13:39:19.3045811Z 2d790f584090d50c950b4f856f596b444bdaaa32
+2026-10-31T13:42:19.6390789Z ✔ [9071/9073] Built PvsNPCartography.RootBudget (7.4s)
+2026-10-31T13:42:23.5505791Z Build completed successfully (9073 jobs).
+2026-10-31T13:43:16.2310922Z axiom-audit: audited 1292 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+2026-10-31T13:43:16.2735958Z axiom-audit completed successfully
+2026-10-31T13:44:48.2252944Z 'PvsNPCartography.RootBudget.root_cost' depends on axioms: [propext]
+2026-10-31T13:44:48.2254269Z 'PvsNPCartography.RootBudget.weight_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2255639Z 'PvsNPCartography.RootBudget.fst_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2256974Z 'PvsNPCartography.RootBudget.snd_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2258539Z 'PvsNPCartography.RootBudget.weight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2259848Z 'PvsNPCartography.RootBudget.target_is_circuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2261251Z 'PvsNPCartography.RootBudget.poly_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2262553Z 'PvsNPCartography.RootBudget.poly_eval_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2263905Z 'PvsNPCartography.RootBudget.root_local_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2265708Z 'PvsNPCartography.RootBudget.error_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2267270Z 'PvsNPCartography.RootBudget.error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2268560Z 'PvsNPCartography.RootBudget.success_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2269828Z 'PvsNPCartography.RootBudget.feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2271125Z 'PvsNPCartography.RootBudget.third_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2272434Z 'PvsNPCartography.RootBudget.feasible_third' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-31T13:44:48.2273744Z 'PvsNPCartography.RootBudget.mod3_size_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXACT CONTROLS run41206658022 / job124552998091
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/41206658022
+2026-10-31T13:40:57.5313174Z 7db154a90653e37e612362c919139462eb0789c8
+2026-10-31T13:40:57.5642890Z Python 3.12.3
+2026-10-31T13:41:27.4358420Z d1064b4c24ed283769d3e5b0d1a67f75747719fe564e7e4f99e38b7468cbb91b  verify.py
+2026-10-31T13:41:27.4359222Z d02b3cbfe4f5e91ff715ee57db227a1882072a0c0082c84c36e8a76fc3520d41  checks.json
+2026-10-31T13:41:27.4383442Z PASS: normal, optimized and committed bytes agree; finite evidence only
