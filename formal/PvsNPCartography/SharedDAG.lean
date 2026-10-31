@@ -243,8 +243,8 @@ theorem union_indicator (p q : Prop) :
     (if p ∨ q then (1 : ℝ) else 0) ≤ (if p then 1 else 0) + (if q then 1 else 0) := by
   by_cases hp : p <;> by_cases hq : q <;> simp [hp, hq]
 
-/-- Union bound over original nodes, not the number of occurrences in an unrolled formula. -/
 set_option backward.isDefEq.respectTransparency false in
+/-- Union bound over original nodes, not the number of occurrences in an unrolled formula. -/
 theorem bad_mass {n m K r : ℕ} (x : Fin n → ZMod 2) (p : Program n K m) :
     (∑ A : Matrix K r, matrixWeight K A * (if bad A x p then 1 else 0)) ≤
       (cost p : ℝ)*(1/2 : ℝ)^r := by
