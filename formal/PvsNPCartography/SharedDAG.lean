@@ -243,7 +243,6 @@ theorem union_indicator (p q : Prop) :
     (if p ∨ q then (1 : ℝ) else 0) ≤ (if p then 1 else 0) + (if q then 1 else 0) := by
   by_cases hp : p <;> by_cases hq : q <;> simp [hp, hq]
 
-set_option backward.isDefEq.respectTransparency false in
 /-- Union bound over original nodes, not the number of occurrences in an unrolled formula. -/
 theorem bad_mass {n m K r : ℕ} (x : Fin n → ZMod 2) (p : Program n K m) :
     (∑ A : Matrix K r, matrixWeight K A * (if bad A x p then 1 else 0)) ≤
@@ -258,8 +257,9 @@ theorem bad_mass {n m K r : ℕ} (x : Fin n → ZMod 2) (p : Program n K m) :
         apply Finset.sum_le_sum
         intro A _
         apply mul_le_mul_of_nonneg_left _ (matrixWeight_nonneg K r A)
-        simpa only [bad] using union_indicator (bad A x p)
-          (g.approx A x (values x p) ≠ g.eval x (values x p))
+        by_cases hp : bad A x p <;>
+          by_cases hg : g.approx A x (values x p) = g.eval x (values x p) <;>
+          simp [bad, hp, hg]
       _ = (∑ A : Matrix K r, matrixWeight K A * (if bad A x p then 1 else 0)) +
           (∑ A : Matrix K r, matrixWeight K A *
           (if g.approx A x (values x p) ≠ g.eval x (values x p) then 1 else 0)) := by
