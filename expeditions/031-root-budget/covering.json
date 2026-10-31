@@ -1,0 +1,193 @@
+{
+  "cases": [
+    {
+      "actual_covered": 2,
+      "d": 0,
+      "dimension": 1,
+      "distance_histogram": {
+        "0": 2
+      },
+      "n": 0,
+      "radius": 0,
+      "rows": 2,
+      "total_targets": 2,
+      "truth_table_length": 1,
+      "union_bound": 2
+    },
+    {
+      "actual_covered": 2,
+      "d": 0,
+      "dimension": 1,
+      "distance_histogram": {
+        "0": 2,
+        "1": 2
+      },
+      "n": 1,
+      "radius": 0,
+      "rows": 2,
+      "total_targets": 4,
+      "truth_table_length": 2,
+      "union_bound": 2
+    },
+    {
+      "actual_covered": 4,
+      "d": 1,
+      "dimension": 2,
+      "distance_histogram": {
+        "0": 4
+      },
+      "n": 1,
+      "radius": 0,
+      "rows": 4,
+      "total_targets": 4,
+      "truth_table_length": 2,
+      "union_bound": 4
+    },
+    {
+      "actual_covered": 10,
+      "d": 0,
+      "dimension": 1,
+      "distance_histogram": {
+        "0": 2,
+        "1": 8,
+        "2": 6
+      },
+      "n": 2,
+      "radius": 1,
+      "rows": 2,
+      "total_targets": 16,
+      "truth_table_length": 4,
+      "union_bound": 10
+    },
+    {
+      "actual_covered": 16,
+      "d": 1,
+      "dimension": 3,
+      "distance_histogram": {
+        "0": 8,
+        "1": 8
+      },
+      "n": 2,
+      "radius": 1,
+      "rows": 8,
+      "total_targets": 16,
+      "truth_table_length": 4,
+      "union_bound": 40
+    },
+    {
+      "actual_covered": 16,
+      "d": 2,
+      "dimension": 4,
+      "distance_histogram": {
+        "0": 16
+      },
+      "n": 2,
+      "radius": 1,
+      "rows": 16,
+      "total_targets": 16,
+      "truth_table_length": 4,
+      "union_bound": 80
+    },
+    {
+      "actual_covered": 74,
+      "d": 0,
+      "dimension": 1,
+      "distance_histogram": {
+        "0": 2,
+        "1": 16,
+        "2": 56,
+        "3": 112,
+        "4": 70
+      },
+      "n": 3,
+      "radius": 2,
+      "rows": 2,
+      "total_targets": 256,
+      "truth_table_length": 8,
+      "union_bound": 74
+    },
+    {
+      "actual_covered": 256,
+      "d": 1,
+      "dimension": 4,
+      "distance_histogram": {
+        "0": 16,
+        "1": 128,
+        "2": 112
+      },
+      "n": 3,
+      "radius": 2,
+      "rows": 16,
+      "total_targets": 256,
+      "truth_table_length": 8,
+      "union_bound": 592
+    },
+    {
+      "actual_covered": 256,
+      "d": 2,
+      "dimension": 7,
+      "distance_histogram": {
+        "0": 128,
+        "1": 128
+      },
+      "n": 3,
+      "radius": 2,
+      "rows": 128,
+      "total_targets": 256,
+      "truth_table_length": 8,
+      "union_bound": 4736
+    },
+    {
+      "actual_covered": 13770,
+      "d": 0,
+      "dimension": 1,
+      "distance_histogram": {
+        "0": 2,
+        "1": 32,
+        "2": 240,
+        "3": 1120,
+        "4": 3640,
+        "5": 8736,
+        "6": 16016,
+        "7": 22880,
+        "8": 12870
+      },
+      "n": 4,
+      "radius": 5,
+      "rows": 2,
+      "total_targets": 65536,
+      "truth_table_length": 16,
+      "union_bound": 13770
+    },
+    {
+      "actual_covered": 64640,
+      "d": 1,
+      "dimension": 5,
+      "distance_histogram": {
+        "0": 32,
+        "1": 512,
+        "2": 3840,
+        "3": 17920,
+        "4": 28000,
+        "5": 14336,
+        "6": 896
+      },
+      "n": 4,
+      "radius": 5,
+      "rows": 32,
+      "total_targets": 65536,
+      "truth_table_length": 16,
+      "union_bound": 220320
+    }
+  ],
+  "false_converse": {
+    "d": 0,
+    "n": 2,
+    "pointwise_feasible": false,
+    "reason": "constant-one mass would need >=2/3 and <=1/3",
+    "target": "AND",
+    "zero_constant_agreement": "3/4"
+  },
+  "scope": "finite covering counts, not a Lean proof or pdeg classification",
+  "status": "PASS"
+}
