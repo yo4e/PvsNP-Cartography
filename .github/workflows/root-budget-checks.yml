@@ -1,0 +1,31 @@
+name: Exact root-budget controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/031-root-budget/verify.py"
+      - "expeditions/031-root-budget/checks.json"
+      - ".github/workflows/root-budget-checks.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check actual polynomials, Boolean semantics and counterexamples
+        working-directory: expeditions/031-root-budget
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          python3 -m py_compile verify.py
+          python3 verify.py > /tmp/root-normal.json
+          python3 -O verify.py > /tmp/root-optimized.json
+          cmp /tmp/root-normal.json /tmp/root-optimized.json
+          cmp /tmp/root-normal.json checks.json
+          sha256sum verify.py checks.json
+          cat /tmp/root-normal.json
+          echo 'PASS: normal, optimized and committed bytes agree; finite evidence only'

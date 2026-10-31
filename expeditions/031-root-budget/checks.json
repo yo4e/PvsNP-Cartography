@@ -1,0 +1,35 @@
+{
+  "deeper": {
+    "one_third_bounds": 17,
+    "parameter_cases": 24,
+    "pointwise_bounds": 84,
+    "pointwise_evaluations": 338004,
+    "polynomial_samples": 84504
+  },
+  "deeper_structures": 6,
+  "exhaustive": {
+    "one_third_bounds": 4872,
+    "parameter_cases": 9372,
+    "pointwise_bounds": 31920,
+    "pointwise_evaluations": 1972860,
+    "polynomial_samples": 566832
+  },
+  "negative_controls": {
+    "arbitrary_XOR_extension": "excluded; see graveyard/052",
+    "claimed_without_factor": 2,
+    "correct_12S_budget_error": "19/64",
+    "inner_r0_cascade_error": "1",
+    "old_3S_budget_error": "7/16",
+    "omitted_root_factor_actual_degree": 4
+  },
+  "prefix_coupling_only_finite": {
+    "one_third_bounds": 17,
+    "parameter_cases": 12,
+    "pointwise_bounds": 42,
+    "pointwise_evaluations": 20802,
+    "polynomial_samples": 5202
+  },
+  "scope": "finite exact controls; no generic or independent proof",
+  "small_circuit_structures": 1562,
+  "status": "PASS"
+}
