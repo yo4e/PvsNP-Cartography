@@ -37,7 +37,8 @@ theorem mod3_complement_size_bound {n m K r : ℕ} (p : Program n K m) (w : Wire
 /-- All absent OR slots have the neutral zero value for any capacity. -/
 theorem absent_or {n m K : ℕ} (x : Fin n → ZMod 2) (v : Fin m → ZMod 2) :
     (Gate.disj (fun _ : Fin K => none)).eval x v = 0 := by
-  simp [Gate.eval, args, orValue]
+  change (if args 0 x v (fun _ : Fin K => none) = 0 then (0 : ZMod 2) else 1) = 0
+  exact ite_eq_left (by funext j; rfl)
 
 /-- All absent AND slots have the neutral one value, including K=0. -/
 theorem absent_and {n m K : ℕ} (x : Fin n → ZMod 2) (v : Fin m → ZMod 2) :
