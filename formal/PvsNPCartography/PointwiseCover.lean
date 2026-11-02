@@ -52,7 +52,9 @@ def distance {X : Type*} [Fintype X] (f g : X → ZMod 2) : ℕ :=
 
 theorem distance_sum {X : Type*} [Fintype X] (f g : X → ZMod 2) :
     (distance f g : ℝ) = ∑ x, if f x ≠ g x then (1 : ℝ) else 0 := by
-  simp [distance, errors]
+  unfold distance errors
+  rw [← Finset.sum_filter]
+  simp
 
 /-- The pointwise hypothesis uses the original input-independent real weights. -/
 theorem mean_error {n : ℕ} {I : Type*} [Fintype I]
@@ -120,7 +122,7 @@ theorem row_mem_codebook {n d : ℕ} (P : BinaryPolynomial n) (hd : P.totalDegre
 theorem codebook_card (n d : ℕ) : (codebook n d).card ≤ 2^(dimensionBound n d) := by
   have hd : Module.finrank (ZMod 2) (AgreementDimension.lowSpace (fieldCube n) d) ≤
       (AgreementDimension.supports n d).card := by
-    exact (Submodule.finrank_span_finset_le_card (R := ZMod 2)
+    exact (finrank_span_finset_le_card (R := ZMod 2)
       ((AgreementDimension.supports n d).image (AgreementDimension.monoValue (fieldCube n)))).trans
       Finset.card_image_le
   calc
@@ -174,7 +176,7 @@ theorem ball_card_le {X : Type*} [Fintype X] (f : X → ZMod 2) (r : ℕ) :
     (ball f r).card ≤ volume (Fintype.card X) r := by
   let e : ball f r → smallSets X r := fun g =>
     ⟨errors f g.1, by simpa only [smallSets, Finset.mem_filter, Finset.mem_univ,
-      true_and] using (Finset.mem_filter.mp g.2).2⟩
+      true_and, distance] using (Finset.mem_filter.mp g.2).2⟩
   have hinj : Function.Injective e := by
     intro g h he
     apply Subtype.ext
@@ -216,7 +218,8 @@ def farTargets (n d : ℕ) : Finset (Truth n) := Finset.univ \ covered n d (2^n/
 theorem far_not_feasible {n d : ℕ} {f : Truth n} (hf : f ∈ farTargets n d) :
     ¬ HasProbabilisticDegreeAtMost f (1/3 : ℝ) d := by
   intro h
-  have hm : f ∈ feasibleTargets n d := by simp [feasibleTargets, h]
+  have hm : f ∈ feasibleTargets n d :=
+    Finset.mem_filter.mpr ⟨Finset.mem_univ _, h⟩
   exact (Finset.mem_sdiff.mp hf).2 (feasible_subset_covered n d hm)
 
 /-- Nonvacuity has an explicit arithmetic obligation; it is not silently assumed. -/
@@ -232,8 +235,9 @@ theorem large_of_bound (n d : ℕ)
     calc
       _ = 2^((2^n-1)+1) := by rw [← hh]
       _ = _ := by rw [pow_succ]; omega
-  have hs := Finset.card_sdiff (Finset.subset_univ (covered n d (2^n/3)))
-  change (farTargets n d).card = _ at hs
+  have hs : (farTargets n d).card =
+      (Finset.univ : Finset (Truth n)).card - (covered n d (2^n/3)).card := by
+    simp only [farTargets, Finset.card_sdiff, Finset.inter_univ]
   rw [ht, he] at hs
   omega
 
