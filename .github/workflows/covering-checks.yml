@@ -1,0 +1,31 @@
+name: Exact covering and recognition controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/032-covering-recognition/verify.py"
+      - "expeditions/032-covering-recognition/checks.json"
+      - ".github/workflows/covering-checks.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check actual powers, real-mixture controls and recognition counterexamples
+        working-directory: expeditions/032-covering-recognition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          python3 -m py_compile verify.py
+          python3 verify.py > /tmp/cover-normal.json
+          python3 -O verify.py > /tmp/cover-optimized.json
+          cmp /tmp/cover-normal.json /tmp/cover-optimized.json
+          cmp /tmp/cover-normal.json checks.json
+          sha256sum verify.py checks.json
+          cat /tmp/cover-normal.json
+          echo 'PASS: normal, optimized and committed bytes agree; finite checks are not generic proofs'
