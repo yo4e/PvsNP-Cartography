@@ -47,3 +47,4 @@ import PvsNPCartography.SharedDAG
 import PvsNPCartography.CircuitMod3
 import PvsNPCartography.DAGBoundary
 import PvsNPCartography.RootBudget
+import PvsNPCartography.PointwiseCover
