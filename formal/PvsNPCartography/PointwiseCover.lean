@@ -119,12 +119,19 @@ theorem row_mem_codebook {n d : ℕ} (P : BinaryPolynomial n) (hd : P.totalDegre
   exact Finset.mem_image.mpr ⟨⟨(fun y => MvPolynomial.eval y.1 P), hm⟩,
     Finset.mem_univ _, rfl⟩
 
-theorem codebook_card (n d : ℕ) : (codebook n d).card ≤ 2^(dimensionBound n d) := by
-  have hd : Module.finrank (ZMod 2) (AgreementDimension.lowSpace (fieldCube n) d) ≤
+/-- Keep the field abstract while checking the span bound, avoiding expensive
+concrete finite-field typeclass reduction. No dimension premise is assumed. -/
+theorem lowSpace_finrank {K : Type*} [Field K] {n : ℕ}
+    (H : Finset (Fin n → K)) (d : ℕ) :
+    Module.finrank K (AgreementDimension.lowSpace H d) ≤
       (AgreementDimension.supports n d).card := by
-    exact (finrank_span_finset_le_card (R := ZMod 2)
-      ((AgreementDimension.supports n d).image (AgreementDimension.monoValue (fieldCube n)))).trans
-      Finset.card_image_le
+  classical
+  exact (finrank_span_finset_le_card (R := K)
+    ((AgreementDimension.supports n d).image (AgreementDimension.monoValue H))).trans
+    Finset.card_image_le
+
+theorem codebook_card (n d : ℕ) : (codebook n d).card ≤ 2^(dimensionBound n d) := by
+  have hd := lowSpace_finrank (fieldCube n) d
   calc
     _ ≤ Fintype.card (AgreementDimension.lowSpace (fieldCube n) d) := Finset.card_image_le
     _ = 2^(Module.finrank (ZMod 2) (AgreementDimension.lowSpace (fieldCube n) d)) := by

@@ -6,6 +6,7 @@ import PvsNPCartography.PointwiseCover
 #print axioms PvsNPCartography.PointwiseCover.positive_support_third
 #print axioms PvsNPCartography.PointwiseCover.feasible_has_close_row
 #print axioms PvsNPCartography.PointwiseCover.row_mem_codebook
+#print axioms PvsNPCartography.PointwiseCover.lowSpace_finrank
 #print axioms PvsNPCartography.PointwiseCover.codebook_card
 #print axioms PvsNPCartography.PointwiseCover.errors_injective
 #print axioms PvsNPCartography.PointwiseCover.smallSets_card
