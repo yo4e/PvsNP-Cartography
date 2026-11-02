@@ -1,0 +1,48 @@
+{
+  "counts": {
+    "exact_block_counts": 3673,
+    "point_evaluations": 9106,
+    "polynomial_block_cases": 765
+  },
+  "integer_lift_tests": 390,
+  "polynomial_structures": 187,
+  "scope": "finite local continuation, not a Lean proof or speedup theorem",
+  "status": "PASS",
+  "wrap_counterexamples": [
+    {
+      "count": 1,
+      "ell": 0,
+      "wrong_residue": 0
+    },
+    {
+      "count": 2,
+      "ell": 1,
+      "wrong_residue": 0
+    },
+    {
+      "count": 4,
+      "ell": 2,
+      "wrong_residue": 0
+    },
+    {
+      "count": 8,
+      "ell": 3,
+      "wrong_residue": 0
+    },
+    {
+      "count": 16,
+      "ell": 4,
+      "wrong_residue": 0
+    },
+    {
+      "count": 32,
+      "ell": 5,
+      "wrong_residue": 0
+    },
+    {
+      "count": 64,
+      "ell": 6,
+      "wrong_residue": 0
+    }
+  ]
+}
