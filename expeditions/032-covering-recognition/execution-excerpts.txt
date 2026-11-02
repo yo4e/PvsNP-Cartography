@@ -1,0 +1,23 @@
+ACTUAL MESSAGE EXCERPTS, not complete raw log archives.
+Timestamp prefixes omitted. Complete decoded completed logs were retrieved and inspected; only these selected messages are archived here. See ci-evidence.md for commands, revisions, scope and missing evidence classes.
+
+FORMAL run41396234158 / job125118052432
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/41396234158
+16de2eb187960c770e63114b3dadbb1690f08b3f
+✔ [9072/9074] Built PvsNPCartography.PointwiseCover (11s)
+Build completed successfully (9074 jobs).
+axiom-audit: audited 1347 declaration(s) under 'PvsNPCartography'; all within the allowlist [propext, Classical.choice, Quot.sound].
+axiom-audit completed successfully
+'PvsNPCartography.PointwiseCover.positive_support_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.PointwiseCover.feasible_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvsNPCartography.PointwiseCover.large_of_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+The full retrieved output additionally contains the other13 new axiom reports and3 fully explicit endpoint signatures, plus all previous reports. This sentence summarizes their presence rather than transcribing their omitted text.
+
+EXACT CONTROLS run41396010959 / job125117369329
+https://github.com/yo4e/PvsNP-Cartography/actions/runs/41396010959
+9eb549897f5e227708ac9e7b73a3f72b0e2db237
+Python 3.12.3
+66789eb99cab843b0128b82d813dcdf14ad363290ef72fa0536dba19b5d4119f  verify.py
+f91d0b92065b50c07cb22f6d2f24baafd485ad10e7bdf0e641280cf23e4e2356  checks.json
+PASS: normal, optimized and committed bytes agree; finite checks are not generic proofs
