@@ -77,8 +77,8 @@ theorem blockPolynomial_count {a b : ℕ} (P : BinaryPolynomial (a+b)) (x : Bool
   have hbits (y : BooleanCube b) (i : Fin (a+b)) :
       IntegerPolynomialLift.joined x y i = 0 ∨ IntegerPolynomialLift.joined x y i = 1 := by
     unfold IntegerPolynomialLift.joined
-    have h := (Fin.addCases x y i).isLt
-    have hh : (Fin.addCases x y i).val = 0 ∨ (Fin.addCases x y i).val = 1 := by omega
+    have h := (Fin.addCases (motive := fun _ => Fin 2) x y i).isLt
+    have hh : (Fin.addCases (motive := fun _ => Fin 2) x y i).val = 0 ∨ (Fin.addCases (motive := fun _ => Fin 2) x y i).val = 1 := by omega
     rcases hh with h | h <;> simp [h]
   have he (y : BooleanCube b) :
       MvPolynomial.eval (IntegerPolynomialLift.joined x y) (blockPolynomial b P) =

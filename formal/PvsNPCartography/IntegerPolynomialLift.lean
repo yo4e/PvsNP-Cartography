@@ -58,7 +58,7 @@ theorem amplified_eval {σ : Type*} (ell : ℕ) (P : MvPolynomial σ (ZMod 2))
     parity_congruence (ell+1) (by omega) (MvPolynomial.eval x (lift P))
 
 def joined {a b : ℕ} (x : BooleanCube a) (y : BooleanCube b) : Fin (a+b) → ℤ :=
-  fun i => ((Fin.addCases x y i).val : ℤ)
+  fun i => ((Fin.addCases (motive := fun _ => Fin 2) x y i).val : ℤ)
 
 def acceptingCount {a b : ℕ} (P : BinaryPolynomial (a+b)) (x : BooleanCube a) : ℕ :=
   (Finset.univ.filter (fun y : BooleanCube b =>
