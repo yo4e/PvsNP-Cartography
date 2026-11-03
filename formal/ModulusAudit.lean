@@ -1,0 +1,21 @@
+import PvsNPCartography.ModulusAmplification
+
+#print axioms PvsNPCartography.ModulusAmplification.split_one
+#print axioms PvsNPCartography.ModulusAmplification.two_pow_dvd
+#print axioms PvsNPCartography.ModulusAmplification.even_divisible
+#print axioms PvsNPCartography.ModulusAmplification.odd_complement_divisible
+#print axioms PvsNPCartography.ModulusAmplification.parity_congruence
+#print axioms PvsNPCartography.ModulusAmplification.map_amplify
+#print axioms PvsNPCartography.ModulusAmplification.polynomial_degree
+#print axioms PvsNPCartography.ModulusAmplification.amplifier_degree
+#print axioms PvsNPCartography.ModulusAmplification.amplifier_eval
+#print axioms PvsNPCartography.ModulusAmplification.parity_sum
+#print axioms PvsNPCartography.ModulusAmplification.sum_no_wrap
+#print axioms PvsNPCartography.ModulusAmplification.boolean_block_no_wrap
+
+set_option pp.explicit true in
+#check PvsNPCartography.ModulusAmplification.parity_congruence
+set_option pp.explicit true in
+#check PvsNPCartography.ModulusAmplification.polynomial_degree
+set_option pp.explicit true in
+#check PvsNPCartography.ModulusAmplification.boolean_block_no_wrap

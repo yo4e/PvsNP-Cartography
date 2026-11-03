@@ -48,3 +48,4 @@ import PvsNPCartography.CircuitMod3
 import PvsNPCartography.DAGBoundary
 import PvsNPCartography.RootBudget
 import PvsNPCartography.PointwiseCover
+import PvsNPCartography.ModulusAmplification

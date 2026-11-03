@@ -83,3 +83,7 @@ jobs:
       - name: Print pointwise covering endpoint axioms
         working-directory: formal
         run: lake env lean PointwiseCoverAudit.lean
+
+      - name: Print integer modulus and no-wrap endpoint axioms
+        working-directory: formal
+        run: lake env lean ModulusAudit.lean
