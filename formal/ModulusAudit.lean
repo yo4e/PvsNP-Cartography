@@ -1,4 +1,4 @@
-import PvsNPCartography.ModulusAmplification
+import PvsNPCartography.BooleanIntegerReduction
 
 #print axioms PvsNPCartography.ModulusAmplification.split_one
 #print axioms PvsNPCartography.ModulusAmplification.two_pow_dvd
@@ -12,10 +12,26 @@ import PvsNPCartography.ModulusAmplification
 #print axioms PvsNPCartography.ModulusAmplification.parity_sum
 #print axioms PvsNPCartography.ModulusAmplification.sum_no_wrap
 #print axioms PvsNPCartography.ModulusAmplification.boolean_block_no_wrap
+#print axioms PvsNPCartography.IntegerPolynomialLift.lift_degree
+#print axioms PvsNPCartography.IntegerPolynomialLift.map_lift
+#print axioms PvsNPCartography.IntegerPolynomialLift.eval_lift_cast
+#print axioms PvsNPCartography.IntegerPolynomialLift.eval_lift_parity
+#print axioms PvsNPCartography.IntegerPolynomialLift.amplified_degree
+#print axioms PvsNPCartography.IntegerPolynomialLift.amplified_eval
+#print axioms PvsNPCartography.IntegerPolynomialLift.parity_one_iff
+#print axioms PvsNPCartography.IntegerPolynomialLift.exact_block_count
+#print axioms PvsNPCartography.BooleanIntegerReduction.support_card_le_sum
+#print axioms PvsNPCartography.BooleanIntegerReduction.squarefree_degree
+#print axioms PvsNPCartography.BooleanIntegerReduction.reduce_degree
+#print axioms PvsNPCartography.BooleanIntegerReduction.reduce_eval
+#print axioms PvsNPCartography.BooleanIntegerReduction.blockPolynomial_degree
+#print axioms PvsNPCartography.BooleanIntegerReduction.blockPolynomial_count
 
 set_option pp.explicit true in
 #check PvsNPCartography.ModulusAmplification.parity_congruence
 set_option pp.explicit true in
 #check PvsNPCartography.ModulusAmplification.polynomial_degree
 set_option pp.explicit true in
-#check PvsNPCartography.ModulusAmplification.boolean_block_no_wrap
+#check PvsNPCartography.IntegerPolynomialLift.exact_block_count
+set_option pp.explicit true in
+#check PvsNPCartography.BooleanIntegerReduction.blockPolynomial_count

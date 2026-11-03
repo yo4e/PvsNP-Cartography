@@ -39,15 +39,15 @@ theorem two_pow_dvd {s j : ℕ} (y : ℤ) (hy : 2 ∣ y) (hj : s ≤ j) :
   obtain ⟨z, rfl⟩ := hy
   refine ⟨2^(j-s)*z^j, ?_⟩
   rw [mul_pow, ← mul_assoc, ← pow_add]
-  congr 1
-  omega
+  have he : s + (j-s) = j := by omega
+  rw [he]
 
 theorem even_divisible (s : ℕ) (y : ℤ) (hy : 2 ∣ y) :
     (2 : ℤ)^s ∣ amplify s y := by
   apply Finset.dvd_sum
   intro j _
   by_cases hj : s ≤ j
-  · simp only [if_pos hj, term]
+  · simp only [ite_eq_left hj, term]
     exact dvd_mul_of_dvd_left (dvd_mul_of_dvd_left (two_pow_dvd y hy hj) _) _
   · simp [hj]
 
@@ -58,7 +58,7 @@ theorem odd_complement_divisible (s : ℕ) (hs : 1 ≤ s) (y : ℤ)
     intro j hj
     have hjr : j < 2*s := Finset.mem_range.mp hj
     by_cases hjs : j < s
-    · simp only [if_pos hjs, term]
+    · simp only [ite_eq_left hjs, term]
       exact dvd_mul_of_dvd_left (dvd_mul_of_dvd_right
         (two_pow_dvd (1-y) hy (by omega : s ≤ 2*s-1-j)) _) _
     · simp [hjs]
@@ -86,7 +86,11 @@ theorem parity_congruence (s : ℕ) (hs : 1 ≤ s) (y : ℤ) :
 /-- Ring homomorphisms commute with the actual algebraic construction. -/
 theorem map_amplify {R S : Type*} [CommRing R] [CommRing S]
     (f : R →+* S) (s : ℕ) (y : R) : f (amplify s y) = amplify s (f y) := by
-  simp [amplify, term, map_sum]
+  unfold amplify
+  rw [map_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  by_cases hj : s ≤ j <;> simp [hj, term]
 
 theorem polynomial_degree {σ : Type*} (P : MvPolynomial σ ℤ) (s d : ℕ)
     (hs : 1 ≤ s) (hd : P.totalDegree ≤ d) :
@@ -102,7 +106,7 @@ theorem polynomial_degree {σ : Type*} (P : MvPolynomial σ ℤ) (s d : ℕ)
   intro j hj
   have hjr : j < 2*s := Finset.mem_range.mp hj
   by_cases hjs : s ≤ j
-  · simp only [if_pos hjs, term]
+  · simp only [ite_eq_left hjs, term]
     have hn : (((2*s-1).choose j : ℕ) : MvPolynomial σ ℤ).totalDegree = 0 := by
       have he : (((2*s-1).choose j : ℕ) : MvPolynomial σ ℤ) =
           MvPolynomial.C ((2*s-1).choose j : ℤ) := by simp
@@ -146,7 +150,7 @@ theorem parity_sum {X : Type*} [Fintype X] (v : X → ℤ) :
   calc
     _ = ∑ x, if v x % 2 = 1 then (1 : ℤ) else 0 :=
       Finset.sum_congr rfl (fun x _ => he x)
-    _ = (oddCount v : ℤ) := by simp [oddCount, ← Finset.sum_filter]
+    _ = (oddCount v : ℤ) := by simp [oddCount]
 
 /-- No hidden no-wrap premise: only a bound on the actual finite domain size. -/
 theorem sum_no_wrap {X : Type*} [Fintype X] (v : X → ℤ) (s : ℕ) (hs : 1 ≤ s)

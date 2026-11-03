@@ -49,3 +49,5 @@ import PvsNPCartography.DAGBoundary
 import PvsNPCartography.RootBudget
 import PvsNPCartography.PointwiseCover
 import PvsNPCartography.ModulusAmplification
+import PvsNPCartography.IntegerPolynomialLift
+import PvsNPCartography.BooleanIntegerReduction
