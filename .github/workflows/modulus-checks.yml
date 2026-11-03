@@ -1,0 +1,31 @@
+name: Exact integer modulus and block controls
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/033-modulus-block-count/verify.py"
+      - "expeditions/033-modulus-block-count/checks.json"
+      - ".github/workflows/modulus-checks.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare integer lifts, squarefree composition, folding and each zeta stage
+        working-directory: expeditions/033-modulus-block-count
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 --version
+          python3 -m py_compile verify.py
+          python3 verify.py > /tmp/modulus-normal.json
+          python3 -O verify.py > /tmp/modulus-optimized.json
+          cmp /tmp/modulus-normal.json /tmp/modulus-optimized.json
+          cmp /tmp/modulus-normal.json checks.json
+          sha256sum verify.py checks.json
+          cat /tmp/modulus-normal.json
+          echo 'PASS: finite exact controls; normal, optimized and committed bytes agree'

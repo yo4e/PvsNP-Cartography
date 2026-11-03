@@ -1,0 +1,90 @@
+{
+  "actual_power_structures": 1088,
+  "exhaustive": {
+    "exact_block_counts": 65534,
+    "pointwise_checks": 168146,
+    "polynomial_block_cases": 10810,
+    "unreduced_compositions": 442,
+    "zeta_stage_entries": 270758
+  },
+  "integers": {
+    "cases": 1548,
+    "integer_range": [
+      -64,
+      64
+    ],
+    "s_range": [
+      1,
+      12
+    ]
+  },
+  "negative_controls": {
+    "correct_parity": 0,
+    "lift_additivity": [
+      0,
+      2
+    ],
+    "off_cube_reduction": [
+      4,
+      2
+    ],
+    "overlap_product": "x*x reduces to x, not zero",
+    "previously_known_wrap": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        16
+      ],
+      [
+        5,
+        32
+      ],
+      [
+        6,
+        64
+      ],
+      [
+        7,
+        128
+      ],
+      [
+        8,
+        256
+      ]
+    ],
+    "raw_amplifier_value": -4
+  },
+  "powers": {
+    "exact_block_counts": 7360,
+    "pointwise_checks": 12544,
+    "polynomial_block_cases": 3200,
+    "unreduced_compositions": 3200,
+    "zeta_stage_entries": 17728
+  },
+  "scope": "finite exact controls; same author; no general proof or speedup benchmark",
+  "signed": {
+    "exact_block_counts": 2401,
+    "pointwise_checks": 4116,
+    "polynomial_block_cases": 1029,
+    "unreduced_compositions": 1029,
+    "zeta_stage_entries": 5831
+  },
+  "signed_lift_structures": 343,
+  "squarefree_structures": 2198,
+  "status": "PASS"
+}
