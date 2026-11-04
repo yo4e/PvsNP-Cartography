@@ -51,3 +51,5 @@ import PvsNPCartography.PointwiseCover
 import PvsNPCartography.ModulusAmplification
 import PvsNPCartography.IntegerPolynomialLift
 import PvsNPCartography.BooleanIntegerReduction
+import PvsNPCartography.FoldedBlockCount
+import PvsNPCartography.SubsetZeta

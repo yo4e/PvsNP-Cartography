@@ -1,4 +1,4 @@
-import PvsNPCartography.BooleanIntegerReduction
+import PvsNPCartography.SubsetZeta
 
 #print axioms PvsNPCartography.ModulusAmplification.split_one
 #print axioms PvsNPCartography.ModulusAmplification.two_pow_dvd
@@ -26,6 +26,23 @@ import PvsNPCartography.BooleanIntegerReduction
 #print axioms PvsNPCartography.BooleanIntegerReduction.reduce_eval
 #print axioms PvsNPCartography.BooleanIntegerReduction.blockPolynomial_degree
 #print axioms PvsNPCartography.BooleanIntegerReduction.blockPolynomial_count
+#print axioms PvsNPCartography.FoldedBlockCount.tail_sum
+#print axioms PvsNPCartography.FoldedBlockCount.zeroCoords_card
+#print axioms PvsNPCartography.FoldedBlockCount.eval_full
+#print axioms PvsNPCartography.FoldedBlockCount.headProduct_eval
+#print axioms PvsNPCartography.FoldedBlockCount.joined_product
+#print axioms PvsNPCartography.FoldedBlockCount.fold_eval
+#print axioms PvsNPCartography.FoldedBlockCount.exact_folded_count
+#print axioms PvsNPCartography.FoldedBlockCount.headProduct_bits
+#print axioms PvsNPCartography.FoldedBlockCount.subset_sum_eval
+#print axioms PvsNPCartography.FoldedBlockCount.exact_subset_count
+#print axioms PvsNPCartography.SubsetZeta.partial_insert
+#print axioms PvsNPCartography.SubsetZeta.scan_eq_partial
+#print axioms PvsNPCartography.SubsetZeta.diff_involution
+#print axioms PvsNPCartography.SubsetZeta.sum_diff
+#print axioms PvsNPCartography.SubsetZeta.partial_univ
+#print axioms PvsNPCartography.SubsetZeta.transform_eq
+#print axioms PvsNPCartography.SubsetZeta.exact_count
 
 set_option pp.explicit true in
 #check PvsNPCartography.ModulusAmplification.parity_congruence
@@ -35,3 +52,9 @@ set_option pp.explicit true in
 #check PvsNPCartography.IntegerPolynomialLift.exact_block_count
 set_option pp.explicit true in
 #check PvsNPCartography.BooleanIntegerReduction.blockPolynomial_count
+set_option pp.explicit true in
+#check PvsNPCartography.FoldedBlockCount.fold_eval
+set_option pp.explicit true in
+#check PvsNPCartography.SubsetZeta.scan_eq_partial
+set_option pp.explicit true in
+#check PvsNPCartography.SubsetZeta.exact_count
