@@ -16,16 +16,16 @@ def scan : List α → (Finset α → ℤ) → (Finset α → ℤ)
   | i :: is, c => step i (scan is c)
 
 /-- Sum over all subsets removed from the already-processed coordinates. -/
-def partial (c : Finset α → ℤ) (T S : Finset α) : ℤ :=
+def partialSum (c : Finset α → ℤ) (T S : Finset α) : ℤ :=
   ∑ U ∈ T.powerset, if U ⊆ S then c (S \ U) else 0
 
 theorem partial_insert (c : Finset α → ℤ) (T S : Finset α) (i : α) (hi : i ∉ T) :
-    partial c (insert i T) S = step i (partial c T) S := by
-  unfold partial step
+    partialSum c (insert i T) S = step i (partialSum c T) S := by
+  unfold partialSum step
   rw [Finset.sum_powerset_insert hi]
   congr 1
   by_cases his : i ∈ S
-  · rw [if_pos his]
+  · rw [ite_eq_left his]
     apply Finset.sum_congr rfl
     intro U hU
     have hiU : i ∉ U := fun h => hi (Finset.mem_powerset.mp hU h)
@@ -41,7 +41,7 @@ theorem partial_insert (c : Finset α → ℤ) (T S : Finset α) (i : α) (hi : 
       simp only [Finset.mem_sdiff, Finset.mem_insert, Finset.mem_erase]
       tauto
     rw [he, hd]
-  · rw [if_neg his]
+  · rw [ite_eq_right his]
     apply Finset.sum_eq_zero
     intro U _
     have hn : ¬ insert i U ⊆ S := fun h => his (h (Finset.mem_insert_self _ _))
@@ -49,9 +49,9 @@ theorem partial_insert (c : Finset α → ℤ) (T S : Finset α) (i : α) (hi : 
 
 /-- Duplicated coordinates are excluded by Nodup, not assumed harmless. -/
 theorem scan_eq_partial (is : List α) (hn : is.Nodup) (c : Finset α → ℤ) :
-    scan is c = partial c is.toFinset := by
+    scan is c = partialSum c is.toFinset := by
   induction is with
-  | nil => funext S; simp [scan, partial]
+  | nil => funext S; simp [scan, partialSum]
   | cons i is ih =>
     have hni : i ∉ is.toFinset := by simpa using (List.nodup_cons.mp hn).1
     have htail : is.Nodup := (List.nodup_cons.mp hn).2
@@ -83,12 +83,12 @@ theorem sum_diff (c : Finset α → ℤ) (S : Finset α) :
     rfl
 
 theorem partial_univ [Fintype α] (c : Finset α → ℤ) (S : Finset α) :
-    partial c Finset.univ S = ∑ U ∈ S.powerset, c U := by
+    partialSum c Finset.univ S = ∑ U ∈ S.powerset, c U := by
   have he : (Finset.univ.powerset : Finset (Finset α)).filter (fun U => U ⊆ S) =
       S.powerset := by
     ext U
     simp
-  unfold partial
+  unfold partialSum
   rw [← Finset.sum_filter, he]
   exact sum_diff c S
 

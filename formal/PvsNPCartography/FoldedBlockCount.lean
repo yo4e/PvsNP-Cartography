@@ -27,9 +27,10 @@ theorem zeroCoords_card {b : ℕ} (k : Fin b → ℕ) :
     (zeroCoords k).card = b - (Finset.univ.filter (fun j => k j ≠ 0)).card := by
   have h := Finset.card_filter_add_card_filter_not (s := (Finset.univ : Finset (Fin b)))
     (p := fun j => k j = 0)
-  simp only [Finset.card_univ, Fintype.card_fin] at h
-  unfold zeroCoords
-  omega
+  have hcard : (zeroCoords k).card +
+      (Finset.univ.filter (fun j => k j ≠ 0)).card = b := by
+    simpa only [zeroCoords, Finset.card_univ, Fintype.card_fin] using h
+  exact Nat.eq_sub_of_add_eq hcard
 
 /-- Use finite total-coordinate products, retaining all actual exponents. -/
 theorem eval_full {m : ℕ} (P : MvPolynomial (Fin m) ℤ) (x : Fin m → ℤ) :
@@ -39,7 +40,6 @@ theorem eval_full {m : ℕ} (P : MvPolynomial (Fin m) ℤ) (x : Fin m → ℤ) :
   rw [he]
   apply Finset.sum_congr rfl
   intro e _
-  simp only [RingHom.id_apply]
   congr 1
   apply Finset.prod_subset (Finset.subset_univ _)
   intro i _ hi
@@ -116,14 +116,14 @@ theorem headProduct_bits {a b : ℕ} (e : Fin (a+b) →₀ ℕ) (T : Finset (Fin
     (∏ i : Fin a, (((bits T) i).val : ℤ) ^ e (Fin.castAdd b i)) =
       if headSet e ⊆ T then 1 else 0 := by
   by_cases h : headSet e ⊆ T
-  · rw [if_pos h]
+  · rw [ite_eq_left h]
     apply Finset.prod_eq_one
     intro i _
     by_cases hi : e (Fin.castAdd b i) = 0
     · simp [hi]
     · have ht : i ∈ T := h (by simp [headSet, hi])
       simp [bits, ht]
-  · rw [if_neg h]
+  · rw [ite_eq_right h]
     obtain ⟨i, hi, ht⟩ := Finset.not_subset.mp h
     have hn : e (Fin.castAdd b i) ≠ 0 := (Finset.mem_filter.mp hi).2
     apply Finset.prod_eq_zero (Finset.mem_univ i)
