@@ -1,46 +1,43 @@
 # Formal assumption ledger
 
-## Checkpoint: pointwise approximation to finite covering,2026-11-02 JST
+## Checkpoint: actual polynomial to exact folded block count, 2026-11-05 JST
 
-Issue24 completed in one freshly approved session; Issue25 is a next target, not standing authorization. This ledger separates kernel acceptance, author statement inspection, written mathematics, finite controls and independent review. No prior theorem or review scope is silently enlarged.
+Research lead: 月野テンプレクス. Issue25 completed under one fresh approval. Issue26 records a next frontier, not permission for later work. This ledger separates kernel acceptance, author statement inspection, written mathematics, finite controls and independent review. Previous complete ledger is preserved byte-identically at ../reports/2026-11-05-pre-block-count-ledger.md, original blob5ea8a6ccb236c31e7bb9fc551f99ef36cde6cb7d. Its earlier history and review boundaries are retained.
 
-## Accepted source, execution and foundations
+## Accepted source and execution
 
-Source16de2eb187960c770e63114b3dadbb1690f08b3f;
-treecf6af1365290ec0de32ad25ef619ef2279affbc6.
-https://github.com/yo4e/PvsNP-Cartography/actions/runs/41396234158
-Run41396234158/job125118052432 completed SUCCESS, including all prior reports and the new PointwiseCoverAudit. All completed states and full decoded output were retrieved after completion, along with actual source/audit and matching Git commit/tree.
+Source51a86b10cb0f493b0c093aa81dba734400cb0118; treec04b4412f9426b633c6e8c1d57f29af737dc0e01. Run42038613103/job127283180450 completed SUCCESS. The actual commit/diff/source, audit source, completed job summaries and full decoded output were retrieved. Strict --wfail9079 jobs;1466 namespace declarations inside unchanged[propext,Classical.choice,Quot.sound];43 explicit ModulusAudit axiom reports and7 expanded endpoint signatures. All earlier reports also succeeded.
 
-Actual Lean4.35.0-rc4 commitc29b6dda4f7c20e3eeaa717c4e565663c5cfa364; Lake5.0.0-src+c29b6dd; Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. Whole-root --wfail9074 jobs; namespace audit1347 declarations within unchanged[propext,Classical.choice,Quot.sound]. All16 new explicit reports use those foundations;3 explicit endpoint signatures were inspected.
+Lean4.35.0-rc4 c29b6dda4f7c20e3eeaa717c4e565663c5cfa364; Lake5.0.0-src+c29b6dd; Mathlib9e6b3aac99b624d10c84653ab9c5357283b9b3b8. Axiom-auditv0.1.2 at46024e005996495c65ef609368e11ab39c4222e3; lean-actionfe408643ea7367d8c0404a8be3975bb145f5fb64. Normal cache was used; no clean-room or second-kernel check is claimed. No additional axiom, sorry/admit, native_decide, warning waiver or statement weakening was introduced by this session's two-line repair.
 
-PointwiseCover.lean11134UTF-8 bytes, Git blobd23bee2aa0dc53395841a202360f4a24c18e2542, SHA256ed8a6c53e58ba854bcdd37007664aad922db5741d5fa7b71f17396fae7445e30, matches local source. Audit blob5e2062ca29ce551b25c8da8776fc4309e61eae69 was re-fetched. No sorry/admit/new axiom/native_decide or warning waiver occurs in the new module. Tiny binary facts use kernel-reduced decide. The existing heartbeat cap was not increased.
-
-Resolved lean-actionfe408643ea7367d8c0404a8be3975bb145f5fb64; axiom-auditv0.1.2 at46024e005996495c65ef609368e11ab39c4222e3. Runner2.338.2, Ubuntu24.04.5 image20261025.353.1. Normal cache restored0925a89f. No clean-room build, independent semantic reviewer or second kernel is claimed. Expedition032/execution-excerpts.txt stores labeled message excerpts, NOT full raw job logs.
+Detailed source blobs, executable hashes, run/job links and selected message excerpts are in ../expeditions/033-modulus-block-count/execution-evidence.md. That file is not a full raw-job-log archive. Subsequent record-only commits are not additional Lean execution evidence.
 
 ## Statement fidelity
 
-HasProbabilisticDegreeAtMost remains the original existential finite family of actual MvPolynomial(Fin n)(ZMod2), actual totalDegree bound, arbitrary nonnegative normalized REAL weights, followed by every Boolean input. The new target-count set is defined using that unchanged predicate. No rational-weight, sampled-row or symmetry restriction is inserted.
+ModulusAmplification constructs the actual integer polynomial of degree at most2s-1, with parity congruence for every integer Y and s>=1, including negative values. The no-wrap theorem needs a modulus strictly greater than the maximum block count.
 
-positive_support_le uses normalization to exhibit positive mass and a strict weighted-sum contradiction to select a row below the mean. Zero-mass rows are retained but cannot be selected as the positive witness. mean_error derives failure bounds from original success guarantees and finite sum interchange. positive_support_third applies integer rounding; feasible_has_close_row retains actual degree<=d. There is no converse from uniform average agreement to pointwise feasibility.
+IntegerPolynomialLift uses canonical integer representatives of GF2 coefficients. It is NOT a ring homomorphism to integers. Mapping back to GF2 recovers the original polynomial, and the actual integer evaluation has the required parity. Its composed polynomial degree is bounded by(2b+1) times the original degree.
 
-codebook is the image of the FULL squarefree evaluation span on the full GF2 cube. The accepted AgreementDimension.eval_mem_low proves coverage of every actual degree-d polynomial by reducing powers on the two-point grid without increasing support degree. lowSpace_finrank proves the span bound over an abstract Field, then specializes toGF2; no rank hypothesis is left to the caller. Module.card_eq_pow_finrank and supports_card give codebook.card<=2^M. A separate normalizer/bijection implementation is not claimed.
+BooleanIntegerReduction is ring-generic and preserves evaluations on Boolean inputs while not increasing degree. It does not assert equality of unreduced polynomials or agreement at non-Boolean inputs. No field-only division is used over the residue ring.
 
-errors_injective relies on the BINARY alphabet. smallSets_card counts all subsets of size<=r via exact fibers. ball_card_le injects each error ball into these subsets; covered_card is a finite union bound. feasible_count has arbitrary natural n,d and no premise assuming the covering/counting conclusion. It covers n0,d0,d>n and arbitrary REAL mixtures. Its upper bound need not be sharp or nonvacuous at small parameters.
+FoldedBlockCount.tail_sum allows arbitrary nonnegative exponents and uses the number of used tail variables, not the exponent sum. The actual finite monomial fold includes the2^(b-usedTail) factor and adds all contributions with the same head support. No caller-supplied coefficient table or result equality is assumed.
 
-far_not_feasible supplies a sufficient negative test, not a characterization. large_of_bound has the EXPLICIT arithmetic premise2^M*V(2^n,floor(2^n/3))<2^(2^n-1). It does not formally establish that premise for an infinite parameter family. The n>=7,d<=1 discharge is separate written mathematics in recognition-and-scope.md.
+SubsetZeta.scan_eq_partial requires a coordinate list with no duplicates. The full transform takes Finset.univ.toList. Its exact_count endpoint quantifies over every actual GF2 P in a+b variables and every head subset T, with no positive-head/tail premise, and concludes equality with the actual acceptingCount. Its canonical residue is an integer count because0<=count<=2^b<2^(b+1). The degree bound is a separate actual-polynomial theorem, not needed as a hypothesis for the count identity.
 
-## Evidence outside the kernel scope
+These are noncomputable/extensional definitions. The kernel-checked chain is NOT an efficient array implementation, a runtime theorem, a proof of Python correctness, or an algorithm-to-lower-bound transfer.
 
-The binomial-induction largeness estimate, Walsh recognition runtime, six-periodic MOD3 blindness, paired quadratic easy-circuit counterfamily and balanced-measure salvage are WRITTEN derivations with finite corroboration, not additional Lean statements. In particular, the degree-one far property's P/poly usefulness is refuted by a written explicit family; this is not a new unrestricted lower bound or a theorem that every growing-degree detector fails.
+## Outside the formal boundary
 
-Exact controls at9eb549897f5e227708ac9e7b73a3f72b0e2db237 passed completed run41396010959/job125117369329. Python3.12.3 normal/-O/stored bytes and hashes agree. Actual code/results/workflow/commit and full completed output were retrieved. All65814 target tables at n0..4 compare direct affine enumeration with Walsh detection, among other bounded checks. Restricted rational mixtures do not classify arbitrary REAL feasibility. Same-author alternate implementations are not independent semantic review.
+The deterministic sorted-Horner/table code, the stage-invariant and bit-cost derivations, the explicit conservative exponent2^(n-n/(200d))*poly(n), and the3^a versus a*2^(a-1) cost comparison are WRITTEN arguments with finite corroboration. Input is canonical squarefree ANF; longer redundant encodings carry their own read/normalization cost. For large d use b0 and the actual one-step construction, not the loose t*M upper bound. Degree0 is separate. The count method is a known-method reconstruction, not a novelty claim.
 
-Graveyard056 preserves false converses, signed/unnormalized measures, nonbinary error-set failures and MOD3 target blindness. Graveyard057 preserves both failed candidates and repairs without relaxed statements/checks. Graveyard058 gives the easy-circuit counterfamily. Graveyard059 records loss of an all-accepting block count when using modulus2^ell instead of a strictly larger modulus.
+Unchanged controls reproduce75295 exact head counts and1548 signed integer instances. New controls check22719 exact counts,26616 signed modular tables and604 finite parameter budgets. Normal/-O outputs are byte-identical; source/result blobs match re-fetched remote files. Canonical ANFs are exhaustive only at n<=3 in the new checker; higher inputs are deterministic samples and named controls. Same-author alternate implementations and brute force are NOT independent semantic review or universal proof.
 
-Continuation0ea0ec1f's actual modulus construction has only a written derivation and local finite normal/-O/compile checks:390 integer tests and3673 exact block counts. It is NOT covered by completed covering CI, NOT a generic Lean theorem and NOT a speedup proof. Issue25 names the remaining amplifier/lift/ring-reduction/tail-sum/zeta/no-wrap obligations. The hierarchy and general complexity-class bridges remain separate.
+The failed prior build and rejected shortcuts are preserved in ../graveyard/2026-11-05-zeta-cost-shortcuts.md. Wrong modulus, overwritten aggregation, duplicate coordinates and uncharged coefficient construction remain disallowed. These failures do not refute the repaired exact-count theorem.
 
-## History, review and environment
+## Retained scope and open gaps
 
-Prior root-budget/shared-DAG/growing-degree/finite MOD3 results are unchanged and passed again. Issues8/15 retain their older review scopes. Novelty, optimality, general n12 classification, independent semantic approval, second-kernel checking, unrestricted separation and proof-barrier escape remain unclaimed.
+Older covering, finite-field dimension, root-budget/shared-DAG and finite MOD3 statements are unchanged; their details remain in the archived complete ledger and earlier evidence. The affine-cover property's P/poly usefulness remains refuted by its easy quadratic counterfamily. No current counting result reverses that failure.
 
-Previous COMPLETE ledger, including all earlier history links, is archived byte-identically at reports/2026-11-02-pre-covering-ledger.md using original blobf3ffd65accfcc206cb064efb74f0dc705b39facc. Previous complete status is similarly preserved. Local Lean/lake were absent and Git read failed DNS; connected GitHub/Actions worked. No write/security blocker or unapplied patch remains. Later record-only commits do not constitute new mathematical-source execution evidence. Further research requires fresh approval.
+Independent older review gates8/15 remain open and are not discharged by this audit. No independent semantic approval, second kernel, clean-room build, optimality, unrestricted lower bound, P-versus-NP separation or proof-barrier escape is claimed. New frontier26 concerns the actual hierarchy/oracle bridge with E^NP and infinitely-often scope; costed implementation refinement remains unproved in Lean.
+
+Local Lean/Lake were absent and git clone failed DNS; connected GitHub and Actions worked. No security-layer write denial or unapplied patch occurred. Later sessions require fresh approval.
