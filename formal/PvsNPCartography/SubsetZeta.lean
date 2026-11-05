@@ -40,7 +40,7 @@ theorem partial_insert (c : Finset α → ℤ) (T S : Finset α) (i : α) (hi : 
       ext j
       simp only [Finset.mem_sdiff, Finset.mem_insert, Finset.mem_erase]
       tauto
-    rw [he, hd]
+    simp only [he, hd]
   · rw [ite_eq_right his]
     apply Finset.sum_eq_zero
     intro U _
@@ -99,7 +99,7 @@ theorem transform_eq [Fintype α] (c : Finset α → ℤ) (S : Finset α) :
     transform c S = ∑ U ∈ S.powerset, c U := by
   unfold transform
   rw [scan_eq_partial _ (Finset.nodup_toList _)]
-  simp only [Finset.toFinset_toList]
+  simp only [Finset.toList_toFinset]
   exact partial_univ c S
 
 /-- End-to-end original-polynomial endpoint. The conclusion is an exact integer count. -/
