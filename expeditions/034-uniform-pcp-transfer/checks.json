@@ -1,0 +1,93 @@
+{
+  "arithmetic": {
+    "bad_lambda": "1/6000",
+    "bad_power_of_n": "2",
+    "deterministic_candidate_count_n8_d2": 137438953472,
+    "good_lambda": "1/12000",
+    "good_power_of_n": "-8",
+    "guessed_bits_n8_d2": 37,
+    "majority_cases": 378,
+    "toy_overhead": 12
+  },
+  "hash_validation": {
+    "cases": [
+      {
+        "adjacent_equalities": 31,
+        "arity": 66,
+        "old_hash_equalities": 832,
+        "sorted_comparisons": 153,
+        "terms": 32
+      },
+      {
+        "adjacent_equalities": 63,
+        "arity": 67,
+        "old_hash_equalities": 3138,
+        "sorted_comparisons": 372,
+        "terms": 64
+      },
+      {
+        "adjacent_equalities": 127,
+        "arity": 68,
+        "old_hash_equalities": 10359,
+        "sorted_comparisons": 861,
+        "terms": 128
+      },
+      {
+        "adjacent_equalities": 255,
+        "arity": 69,
+        "old_hash_equalities": 39747,
+        "sorted_comparisons": 1985,
+        "terms": 256
+      },
+      {
+        "adjacent_equalities": 511,
+        "arity": 70,
+        "old_hash_equalities": 155006,
+        "sorted_comparisons": 4473,
+        "terms": 512
+      },
+      {
+        "adjacent_equalities": 1023,
+        "arity": 71,
+        "old_hash_equalities": 646343,
+        "sorted_comparisons": 9974,
+        "terms": 1024
+      }
+    ],
+    "invalid_inputs_rejected": 5,
+    "modulus": 2305843009213693951,
+    "scope": "validation only; equality counts instrument an int subclass with ordinary int hash; no enormous dense table allocated"
+  },
+  "prefix": {
+    "explicit_formula_cases": 1366,
+    "max_oracle_calls": 3,
+    "scope": "brute finite model of explicit SAT-prefix queries, not an efficient SAT solver"
+  },
+  "projections": {
+    "clause_block_cases": 2400,
+    "exact_head_counts": 9120,
+    "pointwise_comparisons": 223522,
+    "signed_clause_cases": 800,
+    "substitutions": 55890
+  },
+  "scope": "finite exact same-author controls; no universal proof or novelty claim",
+  "sha256": {
+    "runtime_audit.py": "c9a537fd2ab3f1b714a00c65800f81046f03fc39b3ae99844496be8cd4fe0a89",
+    "verify.py": "63658eb2227820cfec364a879c6c295986ab484d973a097f732c8860b34441a3",
+    "verify_transfer.py": "7fdbd7bf3fcbfc683b6bfdca43911b62964558db28179c1ca26639286f46f904"
+  },
+  "status": "PASS",
+  "transfer": {
+    "adapt_per_test_acceptance": "1",
+    "average_only_agreement": "3/4",
+    "concentrated_query_acceptance": "0",
+    "global_proof_acceptance": [
+      "1/2",
+      "1/2"
+    ],
+    "resample_per_occurrence_acceptance": "7/8",
+    "sharp_or_checks": 1120,
+    "valid_three_row_mixtures": 20,
+    "weighted_averaging_checks": 20
+  }
+}

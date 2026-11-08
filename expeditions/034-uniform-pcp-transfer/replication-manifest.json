@@ -1,0 +1,12 @@
+{
+  "python": "3.13.5",
+  "evidence_scope": "Finite same-author tests; runtime validation repair; no new Lean execution or independent semantic review.",
+  "expected_stdout_sha256": {
+    "inherited.json": "aab3cce3bcad18ba0ff7ec734ea4b5dd11e66618ff7478bea1ca4fc215134931",
+    "runtime.json": "4bbc707da4e17d5ecccaa90f69ae4988ce012500c84bcb6c26bfda78f8021527",
+    "transfer.json": "2ed85502d15381dc187906831e3da68c85c85c99d053b8e9bf3604f665a7a987"
+  },
+  "historical_runtime_stdout_sha256": "bed7456bce29bc5670eb5c3179716132185228edd1b1d272d5a14550991670fb",
+  "historical_runtime_source_commit": "7eb2f25aa57b676f55f36a9648cd5212e9678ed4",
+  "historical_result_policy": "033/runtime-audit.json remains the original November5 output. Every numerical field must still match; only self_sha256 changes with the validation repair. Full new runtime stdout is hashed here and emitted by the dedicated CI."
+}

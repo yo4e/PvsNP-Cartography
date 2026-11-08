@@ -58,15 +58,25 @@ def table_zeta(c: list[int], modulus: int) -> tuple[list[int], int]:
     return v, additions
 
 
+def canonical_source(n: int, masks: list[int]) -> list[tuple[int,int]]:
+    """Worst-case deterministic validation, including the large-degree tail=0 case.
+    Hash collisions must not turn duplicate detection into quadratic work.
+    """
+    require(n >= 0, 'nonnegative arity')
+    require(all(0 <= m < 1 << n for m in masks), 'source support range')
+    ordered = sorted(masks)
+    require(all(u != v for u, v in zip(ordered, ordered[1:])),
+            'source ANF must be canonical')
+    return [(m,1) for m in ordered]
+
+
 def block_counts(n: int, tail: int, masks: list[int]) -> tuple[list[int], dict]:
     """Input is canonical squarefree GF2 ANF: distinct n-bit masks, coefficient1.
     A general exponent-list input must first be normalized; its read cost is not
     hidden in the complexity statement. Zero and one are valid at n=0.
     """
     require(0 <= tail <= n, 'tail interval')
-    require(all(0 <= m < 1 << n for m in masks), 'source support range')
-    require(len(set(masks)) == len(masks), 'source ANF must be canonical')
-    source = [(m,1) for m in sorted(masks)]
+    source = canonical_source(n,masks)
     s, head = tail+1, n-tail
     modulus = 1 << s
     degree = max((m.bit_count() for m in masks), default=0)

@@ -1,0 +1,74 @@
+name: PCP transfer exact controls
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "expeditions/033-modulus-block-count/*.py"
+      - "expeditions/034-uniform-pcp-transfer/*.py"
+      - "expeditions/034-uniform-pcp-transfer/*.json"
+      - ".github/workflows/pcp-transfer.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "expeditions/033-modulus-block-count/*.py"
+      - "expeditions/034-uniform-pcp-transfer/*.py"
+      - "expeditions/034-uniform-pcp-transfer/*.json"
+      - ".github/workflows/pcp-transfer.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Reproduce inherited and new controls without disabled assertions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version
+          git rev-parse HEAD
+          mkdir -p /tmp/pcp-transfer
+          OLD=expeditions/033-modulus-block-count
+          NEW=expeditions/034-uniform-pcp-transfer
+          python "$OLD/verify.py" > /tmp/pcp-transfer/inherited.json
+          python -O "$OLD/verify.py" > /tmp/pcp-transfer/inherited-O.json
+          cmp /tmp/pcp-transfer/inherited.json /tmp/pcp-transfer/inherited-O.json
+          cmp /tmp/pcp-transfer/inherited.json "$OLD/checks.json"
+          python "$OLD/runtime_audit.py" > /tmp/pcp-transfer/runtime.json
+          python -O "$OLD/runtime_audit.py" > /tmp/pcp-transfer/runtime-O.json
+          cmp /tmp/pcp-transfer/runtime.json /tmp/pcp-transfer/runtime-O.json
+          python "$NEW/verify_transfer.py" > /tmp/pcp-transfer/transfer.json
+          python -O "$NEW/verify_transfer.py" > /tmp/pcp-transfer/transfer-O.json
+          cmp /tmp/pcp-transfer/transfer.json /tmp/pcp-transfer/transfer-O.json
+          cmp /tmp/pcp-transfer/transfer.json "$NEW/checks.json"
+          python -m py_compile "$OLD/verify.py" "$OLD/runtime_audit.py" "$NEW/verify_transfer.py"
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('expeditions')
+          manifest=json.loads((root/'034-uniform-pcp-transfer/replication-manifest.json').read_text())
+          for name,expected in manifest['expected_stdout_sha256'].items():
+              data=(Path('/tmp/pcp-transfer')/name).read_bytes()
+              actual=hashlib.sha256(data).hexdigest()
+              if actual != expected:
+                  raise RuntimeError((name,actual,expected))
+              print(name,actual)
+          before=json.loads((root/'033-modulus-block-count/runtime-audit.json').read_text())
+          after=json.loads(Path('/tmp/pcp-transfer/runtime.json').read_text())
+          before.pop('self_sha256')
+          after.pop('self_sha256')
+          if before != after:
+              raise RuntimeError('Historical numeric outcomes changed')
+          print('PASS: historical numeric outcomes unchanged; normal/-O/stored hashes agree')
+          PY
+          cat /tmp/pcp-transfer/inherited.json
+          cat /tmp/pcp-transfer/runtime.json
+          cat /tmp/pcp-transfer/transfer.json
