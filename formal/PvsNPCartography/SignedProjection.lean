@@ -26,7 +26,10 @@ def Coordinate.polynomial {r : ℕ} : Coordinate r → BinaryPolynomial r
 theorem Coordinate.degree {r : ℕ} (q : Coordinate r) :
     q.polynomial.totalDegree ≤ 1 := by
   cases q with
-  | constant b => simp [Coordinate.polynomial]
+  | constant b =>
+    change (MvPolynomial.C (b.val : ZMod 2) : BinaryPolynomial r).totalDegree ≤ 1
+    rw [MvPolynomial.totalDegree_C]
+    decide
   | positive j => simp [Coordinate.polynomial]
   | negative j =>
     simpa [Coordinate.polynomial] using
@@ -96,8 +99,12 @@ def clauseAt {n r : ℕ} (q : Fin 3 → Fin n → Coordinate r)
 
 theorem or_eq_one (v : Fin 3 → ZMod 2) :
     (1 - ∏ j, (1-v j)) = 1 ↔ ∃ j, v j = 1 := by
-  rw [sub_eq_self]
-  simp [Finset.prod_eq_zero_iff, eq_comm]
+  rw [sub_eq_self, Finset.prod_eq_zero_iff]
+  constructor
+  · rintro ⟨j, _hj, h⟩
+    exact ⟨j, (sub_eq_zero.mp h).symm⟩
+  · rintro ⟨j, h⟩
+    exact ⟨j, Finset.mem_univ j, by rw [h, sub_self]⟩
 
 theorem clause_eval {n r : ℕ} (P : BinaryPolynomial n)
     (q : Fin 3 → Fin n → Coordinate r) (s : Fin 3 → ZMod 2) (x : BooleanCube r) :
@@ -134,7 +141,10 @@ theorem clause_degree {n r d : ℕ} (P : BinaryPolynomial n)
       calc
         _ ≤ ∑ j : Fin 3, (MvPolynomial.C 1 - literal P (q j) (s j)).totalDegree :=
           MvPolynomial.totalDegree_finsetProd _ _
-        _ ≤ ∑ _j : Fin 3, d := Finset.sum_le_sum (fun j _ => hl j)
+        _ ≤ ∑ _j : Fin 3, d := by
+          apply Finset.sum_le_sum
+          intro j _
+          exact hl j
         _ = 3*d := by simp
 
 end
