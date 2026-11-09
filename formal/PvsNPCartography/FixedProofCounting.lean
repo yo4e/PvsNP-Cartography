@@ -62,9 +62,10 @@ theorem total_count {I : Type*} [Fintype I] {n a b : ℕ}
       intro i _
       apply Finset.sum_congr rfl
       intro T _
-      simp only [tests]
-      rw [← Finset.sum_filter]
-      simp
+      have h (pred : BooleanCube b → Prop) :
+          ((Finset.univ.filter pred).card : ℤ) =
+            ∑ y : BooleanCube b, if pred y then (1 : ℤ) else 0 := by simp
+      exact h (fun y => Accepts (tests q s (i,T,y)) (PointwiseCover.row P))
     _ = ∑ t : Test I a b, if Accepts (tests q s t) (PointwiseCover.row P) then (1 : ℤ) else 0 := by
       simp only [Fintype.sum_prod_type]
     _ = _ := by simp
