@@ -62,14 +62,16 @@ theorem total_count {I : Type*} [Fintype I] {n a b : ℕ}
       intro i _
       apply Finset.sum_congr rfl
       intro T _
-      simp [tests]
+      simp only [tests]
+      rw [← Finset.sum_filter]
+      simp
     _ = ∑ t : Test I a b, if Accepts (tests q s t) (PointwiseCover.row P) then (1 : ℤ) else 0 := by
       simp only [Fintype.sum_prod_type]
     _ = _ := by simp
 
 theorem test_card {I : Type*} [Fintype I] (a b : ℕ) :
     Fintype.card (Test I a b) = Fintype.card I * 2^(a+b) := by
-  simp [Test, BooleanCube, pow_add, mul_assoc]
+  simp [Test, BooleanCube, pow_add]
 
 def uniformWeight {T : Type*} [Fintype T] (_t : T) : ℝ := (Fintype.card T : ℝ)⁻¹
 

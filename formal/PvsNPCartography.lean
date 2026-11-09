@@ -53,4 +53,4 @@ import PvsNPCartography.IntegerPolynomialLift
 import PvsNPCartography.BooleanIntegerReduction
 import PvsNPCartography.FoldedBlockCount
 import PvsNPCartography.SubsetZeta
-import PvsNPCartography.FixedProofCounting
+import PvsNPCartography.FixedProofDomain

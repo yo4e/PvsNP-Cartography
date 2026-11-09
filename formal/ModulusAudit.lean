@@ -1,4 +1,4 @@
-import PvsNPCartography.FixedProofCounting
+import PvsNPCartography.FixedProofDomain
 
 #print axioms PvsNPCartography.ModulusAmplification.split_one
 #print axioms PvsNPCartography.ModulusAmplification.two_pow_dvd
@@ -106,3 +106,19 @@ set_option pp.explicit true in
 #check PvsNPCartography.FixedProofCounting.exists_count_witness
 set_option pp.explicit true in
 #check PvsNPCartography.FixedProofCounting.rejects_all_polynomials
+
+-- Reindex the full randomness cube by actual inverse maps.
+#print axioms PvsNPCartography.FixedProofDomain.assignmentEquiv
+#print axioms PvsNPCartography.FixedProofDomain.uniform_reindex
+#print axioms PvsNPCartography.FixedProofDomain.cube_acceptance
+#print axioms PvsNPCartography.FixedProofDomain.cube_threshold
+#print axioms PvsNPCartography.FixedProofDomain.cube_count_witness
+#print axioms PvsNPCartography.FixedProofDomain.cube_rejects_all
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofDomain.assignmentEquiv
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofDomain.cube_threshold
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofDomain.cube_count_witness
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofDomain.cube_rejects_all
