@@ -1,4 +1,4 @@
-import PvsNPCartography.SubsetZeta
+import PvsNPCartography.FixedProofCounting
 
 #print axioms PvsNPCartography.ModulusAmplification.split_one
 #print axioms PvsNPCartography.ModulusAmplification.two_pow_dvd
@@ -58,3 +58,51 @@ set_option pp.explicit true in
 #check PvsNPCartography.SubsetZeta.scan_eq_partial
 set_option pp.explicit true in
 #check PvsNPCartography.SubsetZeta.exact_count
+
+-- Fixed global proof, actual signed queries, and exact integer acceptance.
+#print axioms PvsNPCartography.FixedProofTransfer.acceptance_add_error
+#print axioms PvsNPCartography.FixedProofTransfer.one_true_literal
+#print axioms PvsNPCartography.FixedProofTransfer.pointwise_error
+#print axioms PvsNPCartography.FixedProofTransfer.clause_error
+#print axioms PvsNPCartography.FixedProofTransfer.average_error
+#print axioms PvsNPCartography.FixedProofTransfer.fixed_positive_sample
+#print axioms PvsNPCartography.FixedProofTransfer.exists_good_polynomial
+#print axioms PvsNPCartography.FixedProofTransfer.polynomial_soundness
+#print axioms PvsNPCartography.SignedProjection.Coordinate.degree
+#print axioms PvsNPCartography.SignedProjection.Coordinate.eval
+#print axioms PvsNPCartography.SignedProjection.substitute_degree
+#print axioms PvsNPCartography.SignedProjection.substitute_eval
+#print axioms PvsNPCartography.SignedProjection.literal_degree
+#print axioms PvsNPCartography.SignedProjection.literal_eval
+#print axioms PvsNPCartography.SignedProjection.or_eq_one
+#print axioms PvsNPCartography.SignedProjection.clause_eval
+#print axioms PvsNPCartography.SignedProjection.clause_semantics
+#print axioms PvsNPCartography.SignedProjection.clause_degree
+#print axioms PvsNPCartography.FixedProofCounting.block_count
+#print axioms PvsNPCartography.FixedProofCounting.total_count
+#print axioms PvsNPCartography.FixedProofCounting.test_card
+#print axioms PvsNPCartography.FixedProofCounting.uniform_nonneg
+#print axioms PvsNPCartography.FixedProofCounting.uniform_sum
+#print axioms PvsNPCartography.FixedProofCounting.uniform_acceptance
+#print axioms PvsNPCartography.FixedProofCounting.threshold_iff
+#print axioms PvsNPCartography.FixedProofCounting.exists_count_witness
+#print axioms PvsNPCartography.FixedProofCounting.rejects_all_polynomials
+
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofTransfer.fixed_positive_sample
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofTransfer.exists_good_polynomial
+set_option pp.explicit true in
+#check PvsNPCartography.SignedProjection.substitute_degree
+set_option pp.explicit true in
+#check PvsNPCartography.SignedProjection.clause_semantics
+set_option pp.explicit true in
+#check PvsNPCartography.SignedProjection.clause_degree
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofCounting.block_count
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofCounting.threshold_iff
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofCounting.exists_count_witness
+set_option pp.explicit true in
+#check PvsNPCartography.FixedProofCounting.rejects_all_polynomials
