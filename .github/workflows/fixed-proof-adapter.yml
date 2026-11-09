@@ -3,14 +3,14 @@ on:
   push:
     branches: [main]
     paths:
-      - 'expeditions/035-fixed-proof-adapter/verify_adapter.py'
-      - 'expeditions/035-fixed-proof-adapter/checks.json'
+      - 'expeditions/035-fixed-proof-adapter/*.py'
+      - 'expeditions/035-fixed-proof-adapter/*.json'
       - '.github/workflows/fixed-proof-adapter.yml'
   pull_request:
     branches: [main]
     paths:
-      - 'expeditions/035-fixed-proof-adapter/verify_adapter.py'
-      - 'expeditions/035-fixed-proof-adapter/checks.json'
+      - 'expeditions/035-fixed-proof-adapter/*.py'
+      - 'expeditions/035-fixed-proof-adapter/*.json'
       - '.github/workflows/fixed-proof-adapter.yml'
   workflow_dispatch:
 permissions:
@@ -37,3 +37,15 @@ jobs:
           python -m py_compile "$P/verify_adapter.py"
           sha256sum "$P/verify_adapter.py" "$P/checks.json" /tmp/fixed-proof.json
           cat /tmp/fixed-proof.json
+      - name: Reproduce the query-concentration counterfamily and weighted bound
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=expeditions/035-fixed-proof-adapter
+          python "$P/query_pressure.py" > /tmp/query-pressure.json
+          python -O "$P/query_pressure.py" > /tmp/query-pressure-O.json
+          cmp /tmp/query-pressure.json /tmp/query-pressure-O.json
+          cmp /tmp/query-pressure.json "$P/query-pressure.json"
+          python -m py_compile "$P/query_pressure.py"
+          sha256sum "$P/query_pressure.py" "$P/query-pressure.json" /tmp/query-pressure.json
+          cat /tmp/query-pressure.json

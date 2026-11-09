@@ -1,0 +1,34 @@
+{
+  "examples": [
+    {
+      "density": 2,
+      "k": 1,
+      "n": 1,
+      "query_error": "1",
+      "rank": 0,
+      "uniform_error": "1/2"
+    },
+    {
+      "density": 32,
+      "k": 5,
+      "n": 9,
+      "query_error": "1",
+      "rank": 4,
+      "uniform_error": "1/32"
+    },
+    {
+      "density": 512,
+      "k": 9,
+      "n": 9,
+      "query_error": "1",
+      "rank": 0,
+      "uniform_error": "1/512"
+    }
+  ],
+  "family_cases": 45,
+  "parameters": "1<=n<=9, 1<=k<=n",
+  "scope": "finite same-author corroboration; not a Lean theorem or independent review",
+  "self_sha256": "7462090f6f5943ad7d54186e0b619c624d8150a62c0caee0cd68529ebc9f2de5",
+  "status": "PASS",
+  "weighted_error_checks": 16
+}
