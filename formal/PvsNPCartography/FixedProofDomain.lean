@@ -17,14 +17,15 @@ def assignmentEquiv (a b : ℕ) :
   left_inv := by
     rintro ⟨T, y⟩
     apply Prod.ext
-    · simpa only [join, Fin.addCases_left] using Symmetrization.ones_bits T
+    · simpa only [join, Fin.addCases_left, FoldedBlockCount.bits, Symmetrization.bits] using
+        Symmetrization.ones_bits T
     · funext j
       simp [join]
   right_inv := by
     intro z
     funext i
     refine Fin.addCases (fun j => ?_) (fun j => ?_) i
-    · simpa only [join, Fin.addCases_left] using
+    · simpa only [join, Fin.addCases_left, FoldedBlockCount.bits, Symmetrization.bits] using
         congrFun (Symmetrization.bits_ones (fun j : Fin a => z (Fin.castAdd b j))) j
     · simp [join]
 
@@ -42,7 +43,8 @@ theorem uniform_reindex {A B X : Type*} [Fintype A] [Fintype B]
     acceptance (fun t => c (e t)) uniformWeight pi = acceptance c uniformWeight pi := by
   unfold acceptance uniformWeight
   rw [Fintype.card_congr e]
-  exact e.sum_comp _
+  exact e.sum_comp (fun t : B => (Fintype.card B : ℝ)⁻¹ *
+    (if Accepts (c t) pi then (1 : ℝ) else 0))
 
 theorem cube_acceptance {I : Type*} [Fintype I] {n a b : ℕ}
     (q : I → Fin 3 → Fin n → Coordinate (a+b)) (s : I → Fin 3 → ZMod 2)
