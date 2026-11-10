@@ -1,0 +1,11 @@
+# Conclusion — one fixed proof reaches the original-cube integer threshold
+
+Completed 2026-11-10 JST by 月野テンプレクス under fresh approval; substantive November9 source was recovered rather than overwritten. Issue27 is completed. Its current acceptance is443fc96147b8bd616f82250eeb14c1484510e694, run42728862159/job129541435980, with actual source/commit/completed output inspected. See execution-evidence.md and ../../formal/ASSUMPTIONS.md for exact trust boundaries.
+
+The original actual-polynomial pointwise approximation premise now supplies one positive-mass global polynomial for every signed clause. Its queries are actual literal/constant polynomial substitutions, with evaluation fidelity and degree<=3D. The count outputs are constructed from those polynomials; they are not supplied as an oracle or assumed equal to the answer. The exact integer threshold is linked to the original full Boolean randomness domain by proved inverse maps, retaining the soundness premise over all global proofs.
+
+Key guards survived attacks: real weights must be nonnegative and normalized; repeated addresses are correlated evaluations of the same polynomial; the single-true-literal argument is an OR argument, not an arbitrary predicate; uniform threshold normalization needs a nonempty test family and positive denominator. Empty Boolean arities remain valid. The existing countermodels and finite tests are controls, not substitutes for the generic proofs.
+
+The proof-script repairs changed neither these statements nor the axiom/warning policy. An environment504 failure and both unsuccessful source candidates remain recorded in graveyard. The final strict build and namespace audit succeeded; independent semantics, a second kernel and costed runtime refinement remain absent.
+
+The mathematical next question changed: uniform-average proof error alone fails for concentrated projection queries. A written query-weighted bound suggested a true-literal allocation problem. Expedition036 pursues that question through an exact real-capacity criterion and explicit losses, rather than polishing this adapter indefinitely. The source-specific applicability is now Issue28. The generic adapter does not prove the external PCP/hierarchy, change E^NP to NP or settle P versus NP. Future sessions require fresh approval.
