@@ -1,0 +1,11 @@
+{
+  "affine_slice_memberships": 133328,
+  "family_degree_cases": 56,
+  "joint_lift_memberships": 440,
+  "polynomial_score_evaluations": 33792,
+  "prerequisite_sha256": "c994160443a1dbe828daa830772f61e3043a84587c07584f3ebc3b9522065e3a",
+  "scope": "all truth-table targets on 1/2 address bits; one seeded satisfied family each; all ANFs up to degrees1/2 respectively",
+  "seed": 20261110,
+  "self_sha256": "728dcfa865381ef8a11ca35d02894480b0c66bb613d7139b315c99df4dd1d416",
+  "status": "PASS"
+}

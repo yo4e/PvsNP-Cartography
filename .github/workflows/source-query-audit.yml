@@ -39,3 +39,31 @@ jobs:
           echo '4d620b98f89d0cbf058ba012b2256dc33e1dff1cf6bf7a70c864c4bce59b0a65  /tmp/smoothing.json' | sha256sum -c -
           sha256sum "$P/verify_smoothing.py" "$P/checks.json" /tmp/smoothing.json
           cat /tmp/smoothing.json
+      - name: Check the rank-based sufficient repair against actual signed failures
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=expeditions/037-source-query-audit
+          python "$P/verify_rank_transfer.py" > /tmp/rank-transfer.json
+          python -O "$P/verify_rank_transfer.py" > /tmp/rank-transfer-O.json
+          cmp /tmp/rank-transfer.json /tmp/rank-transfer-O.json
+          cmp /tmp/rank-transfer.json "$P/rank-checks.json"
+          python -m py_compile "$P/verify_rank_transfer.py"
+          echo '595a9d67b0ce0618333e37cc75792fbc8704de050f287401ca73d8c12f07f396  expeditions/037-source-query-audit/verify_rank_transfer.py' | sha256sum -c -
+          echo 'b95a7fa38e81319426366f5e33cb506eea02f6ecef7b8f0022ab3df5a43066c1  /tmp/rank-transfer.json' | sha256sum -c -
+          sha256sum "$P/verify_rank_transfer.py" "$P/rank-checks.json" /tmp/rank-transfer.json
+          cat /tmp/rank-transfer.json
+      - name: Attack the degree-restricted invariance using all eligible small ANFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=expeditions/037-source-query-audit
+          python "$P/verify_low_degree.py" > /tmp/low-degree.json
+          python -O "$P/verify_low_degree.py" > /tmp/low-degree-O.json
+          cmp /tmp/low-degree.json /tmp/low-degree-O.json
+          cmp /tmp/low-degree.json "$P/low-degree-checks.json"
+          python -m py_compile "$P/verify_low_degree.py"
+          echo '728dcfa865381ef8a11ca35d02894480b0c66bb613d7139b315c99df4dd1d416  expeditions/037-source-query-audit/verify_low_degree.py' | sha256sum -c -
+          echo '4fe54ed48ff4cf444ff134c3e79b23243c8bbc15e48abcc75dfb156f7b0b32a2  /tmp/low-degree.json' | sha256sum -c -
+          sha256sum "$P/verify_low_degree.py" "$P/low-degree-checks.json" /tmp/low-degree.json
+          cat /tmp/low-degree.json

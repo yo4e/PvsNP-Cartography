@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "families": 128,
+    "scope": "synthetic affine three-query families, 0..3 bits, all error sets; not actual PCP",
+    "seed": 20261110
+  },
+  "prerequisite_sha256": "c994160443a1dbe828daa830772f61e3043a84587c07584f3ebc3b9522065e3a",
+  "self_sha256": "595a9d67b0ce0618333e37cc75792fbc8704de050f287401ca73d8c12f07f396",
+  "status": "PASS"
+}
