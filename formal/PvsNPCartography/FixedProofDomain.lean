@@ -17,8 +17,8 @@ def assignmentEquiv (a b : ℕ) :
   left_inv := by
     rintro ⟨T, y⟩
     apply Prod.ext
-    · simpa only [join, Fin.addCases_left, FoldedBlockCount.bits, Symmetrization.bits] using
-        Symmetrization.ones_bits T
+    · ext i
+      simp [Symmetrization.ones, join, FoldedBlockCount.bits]
     · funext j
       simp [join]
   right_inv := by
