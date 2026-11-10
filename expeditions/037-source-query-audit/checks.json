@@ -1,0 +1,49 @@
+{
+  "concentration": {
+    "examples": [
+      {
+        "bits": 1,
+        "codimension": 1,
+        "degree": 1,
+        "error": "1/2",
+        "joint_density": 2,
+        "marginal_density": 1,
+        "queried_failure": "1"
+      },
+      {
+        "bits": 5,
+        "codimension": 5,
+        "degree": 5,
+        "error": "1/32",
+        "joint_density": 32,
+        "marginal_density": 1,
+        "queried_failure": "1"
+      }
+    ],
+    "families": 15
+  },
+  "copies": {
+    "capacity_and_actual_invariance": 1712,
+    "seed": 20261110,
+    "universal_soundness_cases": 210,
+    "untagged_counterexample": {
+      "after_shifting": "1/2",
+      "original": "1"
+    }
+  },
+  "hardwiring": {
+    "amplification_scope": "point-mass distribution; same wrong address survives every repetition",
+    "constant_candidate_degree": 0,
+    "fixed_input_error": "1",
+    "hardwired_input_cases": 9,
+    "seed_translations": 129
+  },
+  "projections": {
+    "affine_maps": 5054,
+    "error_sets": 1203648,
+    "scope": "all affine maps with 0<=input/output bits<=3, all output error sets"
+  },
+  "scope": "finite exact same-author controls; not whole-PCP execution or Lean verification",
+  "self_sha256": "c994160443a1dbe828daa830772f61e3043a84587c07584f3ebc3b9522065e3a",
+  "status": "PASS"
+}
