@@ -1,0 +1,39 @@
+{
+  "excluded_tautology": {
+    "actual_constant": "0",
+    "certificate_constant": "1"
+  },
+  "exhaustive_families": 3146,
+  "scope": "finite same-author controls; general bound is a separate written proof",
+  "seed": 20261110,
+  "seeded_families": 200,
+  "self_sha256": "4aa75bc471e55283a557c667be3177a90a38286571faee2a0d05d1404bf3b64a",
+  "sharp_example": {
+    "actual_constant": "1/3",
+    "addresses": 4,
+    "certificate_constant": "4/3",
+    "failure": "1/6",
+    "polynomial": "p(y0,y1)=y1",
+    "ratio": "4",
+    "raw_weights": [
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      3
+    ],
+    "true_subsets": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "uniform_error": "1/2"
+  },
+  "status": "PASS"
+}

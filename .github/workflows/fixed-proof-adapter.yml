@@ -67,3 +67,17 @@ jobs:
           echo '8a5564e6040877437dee1ce1ece8f1e70ae120281fd13ae2d358080227de79bd  /tmp/query-capacity.json' | sha256sum -c -
           sha256sum "$P/verify_capacity.py" "$P/checks.json" /tmp/query-capacity.json
           cat /tmp/query-capacity.json
+      - name: Reproduce the sharp non-tautological signed-OR factor-four bound
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=expeditions/036-query-capacity
+          python "$P/verify_signed_gap.py" > /tmp/signed-gap.json
+          python -O "$P/verify_signed_gap.py" > /tmp/signed-gap-O.json
+          cmp /tmp/signed-gap.json /tmp/signed-gap-O.json
+          cmp /tmp/signed-gap.json "$P/signed-gap.json"
+          python -m py_compile "$P/verify_signed_gap.py"
+          echo '4aa75bc471e55283a557c667be3177a90a38286571faee2a0d05d1404bf3b64a  expeditions/036-query-capacity/verify_signed_gap.py' | sha256sum -c -
+          echo '7d260a7e3f4cccba28647a9f28dc982f28876dcdca66af5533b3f22a8db2a081  /tmp/signed-gap.json' | sha256sum -c -
+          sha256sum "$P/verify_signed_gap.py" "$P/signed-gap.json" /tmp/signed-gap.json
+          cat /tmp/signed-gap.json
