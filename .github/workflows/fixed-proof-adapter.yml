@@ -5,12 +5,16 @@ on:
     paths:
       - 'expeditions/035-fixed-proof-adapter/*.py'
       - 'expeditions/035-fixed-proof-adapter/*.json'
+      - 'expeditions/036-query-capacity/*.py'
+      - 'expeditions/036-query-capacity/*.json'
       - '.github/workflows/fixed-proof-adapter.yml'
   pull_request:
     branches: [main]
     paths:
       - 'expeditions/035-fixed-proof-adapter/*.py'
       - 'expeditions/035-fixed-proof-adapter/*.json'
+      - 'expeditions/036-query-capacity/*.py'
+      - 'expeditions/036-query-capacity/*.json'
       - '.github/workflows/fixed-proof-adapter.yml'
   workflow_dispatch:
 permissions:
@@ -49,3 +53,17 @@ jobs:
           python -m py_compile "$P/query_pressure.py"
           sha256sum "$P/query_pressure.py" "$P/query-pressure.json" /tmp/query-pressure.json
           cat /tmp/query-pressure.json
+      - name: Reproduce allocation cuts, primal flows and signed countermodels
+        shell: bash
+        run: |
+          set -euo pipefail
+          P=expeditions/036-query-capacity
+          python "$P/verify_capacity.py" > /tmp/query-capacity.json
+          python -O "$P/verify_capacity.py" > /tmp/query-capacity-O.json
+          cmp /tmp/query-capacity.json /tmp/query-capacity-O.json
+          cmp /tmp/query-capacity.json "$P/checks.json"
+          python -m py_compile "$P/verify_capacity.py"
+          echo '885fc7a094629688166a022383e819c4ce0ea3835285cfa35a1b06c3a3341041  expeditions/036-query-capacity/verify_capacity.py' | sha256sum -c -
+          echo '8a5564e6040877437dee1ce1ece8f1e70ae120281fd13ae2d358080227de79bd  /tmp/query-capacity.json' | sha256sum -c -
+          sha256sum "$P/verify_capacity.py" "$P/checks.json" /tmp/query-capacity.json
+          cat /tmp/query-capacity.json

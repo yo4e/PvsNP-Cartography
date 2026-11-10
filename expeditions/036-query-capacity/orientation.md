@@ -1,0 +1,11 @@
+# Query capacity after the fixed-proof adapter
+
+2026-11-10 JST. Research lead: 月野テンプレクス. Fresh approval in the current conversation covers this session only. Required repository documents, current open Issues and the actual intervening November9 commits were inspected. See ../035-fixed-proof-adapter/recovery-2026-11-10.md for inherited formal failures and recovery, rather than restarting work from the stale November8 status.
+
+The named question comes from ../035-fixed-proof-adapter/query-weighted-frontier.md: how much concentration can be avoided by selecting true literals of satisfied OR tests? Model an actual fixed proof and signed three-occurrence clauses. First characterize fractional allocation by capacity cuts, then distinguish one deterministic choice per test from fractional allocation and distinguish the certificate's optimum from actual signed-clause failure.
+
+Cartographer/explorer: derive the exact finite real-weight condition and its single-global-polynomial consequence. Skeptic: attack repeated addresses, zero masses, opposite signs, deterministic rounding and any claim of optimality for actual failures. Experimentalist: use exact integer flow, two separate cut enumerations, deterministic selection and full tiny truth-table checks. Archivist: retain invalid inferences and actual execution metadata. These are same-author roles, not independent reviewers.
+
+Primary source context is the fixed-proof OR argument of Viola, ECCC TR20-015 revision5, Section2.3; its printed proof page14 (zero-indexed PDF page14) was inspected as an image. Standard flow context is Ford-Fulkerson, Maximal Flow Through a Network (1956), Theorem1; the theorem page was also visually inspected. Our weighted finite directed construction and proofs are written explicitly in capacity-and-transfer.md. No claim that the original papers state our exact formulation, no novelty promotion, and no new complexity-class consequence.
+
+Natural milestone: a necessary-and-sufficient fractional cut condition, explicit separation from deterministic selection, and an attacked error-transfer statement. A selector depending on the unknown satisfying proof is not automatically computable from a succinct PCP. The generic average-case route remains conditional on actual query structure and the soundness gap.

@@ -1,0 +1,97 @@
+{
+  "examples": {
+    "fractional_vs_deterministic": {
+      "addresses": 4,
+      "deterministic": "4",
+      "fractional": "4/3",
+      "ratio": "3",
+      "true_addresses": [
+        0,
+        1,
+        2
+      ]
+    },
+    "signed_optimality": {
+      "actual_constant": "2/3",
+      "addresses": 4,
+      "certificate_constant": "4/3",
+      "clause_failure": "1/3",
+      "clauses": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "linear_witness": "p(y0,y1)=y1",
+      "maximizing_error_set": [
+        0,
+        1
+      ],
+      "target_bits": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "uniform_error": "1/2"
+    }
+  },
+  "exhaustive_graph_cases": 11736,
+  "graph": {
+    "feasible_augmentations": 31898,
+    "flow_runs": 24074,
+    "graphs": 12037,
+    "positive_error_sets": 114536,
+    "strict_fractional_advantages": 5533
+  },
+  "invalid_inputs_rejected": 6,
+  "scope": "exact finite same-author controls, not Lean or independent review",
+  "seed": 20261110,
+  "seeded_graph_cases": 300,
+  "self_sha256": "885fc7a094629688166a022383e819c4ce0ea3835285cfa35a1b06c3a3341041",
+  "signed": {
+    "mixture_checks": 2151,
+    "signed_error_sets": 16036,
+    "signed_families": 2151,
+    "strict_signed_improvements": 1148
+  },
+  "status": "PASS"
+}
