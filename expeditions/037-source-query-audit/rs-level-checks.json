@@ -1,0 +1,60 @@
+{
+  "marker_encodings": 2,
+  "one_level": [
+    {
+      "a": 3,
+      "column_states_per_encoding": 512,
+      "fixed_column_leaf_occurrences_per_encoding": 16,
+      "fixed_column_original_bits_lost": 4,
+      "fixed_row_leaf_occurrences_per_encoding": 64,
+      "fixed_row_original_bits_lost": 3,
+      "k": 7,
+      "row_states_per_encoding": 1024,
+      "wrong_guard_disagreements_per_encoding": 256
+    },
+    {
+      "a": 3,
+      "column_states_per_encoding": 1024,
+      "fixed_column_leaf_occurrences_per_encoding": 16,
+      "fixed_column_original_bits_lost": 4,
+      "fixed_row_leaf_occurrences_per_encoding": 0,
+      "fixed_row_original_bits_lost": null,
+      "k": 8,
+      "row_states_per_encoding": 2048,
+      "wrong_guard_disagreements_per_encoding": 512
+    },
+    {
+      "a": 3,
+      "column_states_per_encoding": 2048,
+      "fixed_column_leaf_occurrences_per_encoding": 32,
+      "fixed_column_original_bits_lost": 5,
+      "fixed_row_leaf_occurrences_per_encoding": 0,
+      "fixed_row_original_bits_lost": null,
+      "k": 9,
+      "row_states_per_encoding": 4096,
+      "wrong_guard_disagreements_per_encoding": 1024
+    },
+    {
+      "a": 4,
+      "column_states_per_encoding": 4096,
+      "fixed_column_leaf_occurrences_per_encoding": 32,
+      "fixed_column_original_bits_lost": 5,
+      "fixed_row_leaf_occurrences_per_encoding": 256,
+      "fixed_row_original_bits_lost": 4,
+      "k": 9,
+      "row_states_per_encoding": 8192,
+      "wrong_guard_disagreements_per_encoding": 1024
+    },
+    {
+      "a": 4,
+      "column_states_per_encoding": 8192,
+      "fixed_column_leaf_occurrences_per_encoding": 32,
+      "fixed_column_original_bits_lost": 5,
+      "fixed_row_leaf_occurrences_per_encoding": 0,
+      "fixed_row_original_bits_lost": null,
+      "k": 10,
+      "row_states_per_encoding": 16384,
+      "wrong_guard_disagreements_per_encoding": 2048
+    }
+  ]
+}

@@ -67,3 +67,13 @@ jobs:
           echo '4fe54ed48ff4cf444ff134c3e79b23243c8bbc15e48abcc75dfb156f7b0b32a2  /tmp/low-degree.json' | sha256sum -c -
           sha256sum "$P/verify_low_degree.py" "$P/low-degree-checks.json" /tmp/low-degree.json
           cat /tmp/low-degree.json
+      - name: Check BV14 one-level redirects in both coordinate conventions
+        shell: bash
+        working-directory: expeditions/037-source-query-audit
+        run: |
+          set -euo pipefail
+          python verify_rs_level.py > "$RUNNER_TEMP/rs-level.json"
+          python -O verify_rs_level.py > "$RUNNER_TEMP/rs-level-optimized.json"
+          cmp "$RUNNER_TEMP/rs-level.json" "$RUNNER_TEMP/rs-level-optimized.json"
+          cmp "$RUNNER_TEMP/rs-level.json" rs-level-checks.json
+          python -m py_compile verify_rs_level.py

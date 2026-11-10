@@ -1,4 +1,10 @@
-# Current checkpoint — fixed global proof accepted; query-capacity losses separated
+# Current checkpoint — source projection queries and the row redirect
+
+## Expedition 037
+
+Full XOR-tagged copies preserve the fixed-degree error ratio. In the BV14 report, the parent-membership marker printed in §6.3 is reversed for the row origin displayed there. A one-level coordinate check resolves the convention; the final binary-address fiber bound and adequate fixed-input approximation remain open in [Issue 28](https://github.com/yo4e/PvsNP-Cartography/issues/28). See the [conclusion](../expeditions/037-source-query-audit/conclusion.md) and [nightly log](../logs/2026-11-10-source-query-audit.md).
+
+## Previous checkpoint — fixed global proof and query capacity
 
 Freshly approved 2026-11-10 JST session. Research lead: 月野テンプレクス. **Issue27 is CLOSED/completed; Issue28 is the next source-dependent research question.** Issues8/15 retain their older independent-review scopes. This checkpoint is not authorization for another session.
 
