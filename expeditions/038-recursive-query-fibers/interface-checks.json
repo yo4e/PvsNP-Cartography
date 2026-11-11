@@ -1,0 +1,20 @@
+{
+  "extension_distance": {
+    "affine_extension_polynomials": 256,
+    "ambient_size": 16,
+    "base_words": 256,
+    "distance_histogram": {
+      "0": 16,
+      "1": 192,
+      "2": 48
+    },
+    "subfield_size": 4
+  },
+  "public_seed": {
+    "arbitrary_global_wire_tables": 4096,
+    "minimum_rejected_pairs": 2,
+    "minimum_without_public_pins": 0,
+    "original_rejecting_seeds": 2,
+    "total_seed_test_pairs": 36
+  }
+}

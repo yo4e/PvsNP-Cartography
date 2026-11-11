@@ -1,0 +1,509 @@
+{
+  "cases": [
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 352,
+      "depth": 1,
+      "exhaustive_fiber_routes": 2,
+      "k": 7,
+      "leaf_route_pairs": 80,
+      "max_original_rank": 4,
+      "min_original_rank": 3,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          1
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 2,
+      "symbolic_candidates": 144
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 352,
+      "depth": 1,
+      "exhaustive_fiber_routes": 2,
+      "k": 7,
+      "leaf_route_pairs": 80,
+      "max_original_rank": 7,
+      "min_original_rank": 7,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          1
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 2,
+      "symbolic_candidates": 144
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 672,
+      "depth": 2,
+      "exhaustive_fiber_routes": 3,
+      "k": 8,
+      "leaf_route_pairs": 96,
+      "max_original_rank": 7,
+      "min_original_rank": 4,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          2
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 3,
+      "symbolic_candidates": 224
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 672,
+      "depth": 2,
+      "exhaustive_fiber_routes": 3,
+      "k": 8,
+      "leaf_route_pairs": 96,
+      "max_original_rank": 8,
+      "min_original_rank": 8,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          2
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 3,
+      "symbolic_candidates": 224
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 966,
+      "depth": 3,
+      "exhaustive_fiber_routes": 4,
+      "k": 10,
+      "leaf_route_pairs": 128,
+      "max_original_rank": 9,
+      "min_original_rank": 5,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          3
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 4,
+      "symbolic_candidates": 320
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 966,
+      "depth": 3,
+      "exhaustive_fiber_routes": 4,
+      "k": 10,
+      "leaf_route_pairs": 128,
+      "max_original_rank": 10,
+      "min_original_rank": 10,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          3
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ]
+      ],
+      "routes": 4,
+      "symbolic_candidates": 320
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 2660,
+      "depth": 4,
+      "k": 15,
+      "leaf_route_pairs": 224,
+      "max_original_rank": 14,
+      "min_original_rank": 11,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          2
+        ]
+      ],
+      "routes": 7,
+      "symbolic_candidates": 608
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 2660,
+      "depth": 4,
+      "k": 15,
+      "leaf_route_pairs": 224,
+      "max_original_rank": 15,
+      "min_original_rank": 15,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          2
+        ]
+      ],
+      "routes": 7,
+      "symbolic_candidates": 608
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 4050,
+      "depth": 4,
+      "k": 21,
+      "leaf_route_pairs": 352,
+      "max_original_rank": 20,
+      "min_original_rank": 15,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          1
+        ],
+        [
+          "sibling",
+          3
+        ]
+      ],
+      "routes": 9,
+      "symbolic_candidates": 864
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 4050,
+      "depth": 4,
+      "k": 21,
+      "leaf_route_pairs": 352,
+      "max_original_rank": 21,
+      "min_original_rank": 21,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          1
+        ],
+        [
+          "sibling",
+          3
+        ]
+      ],
+      "routes": 9,
+      "symbolic_candidates": 864
+    },
+    {
+      "a": 4,
+      "concrete_symbolic_matches": 2520,
+      "depth": 4,
+      "k": 17,
+      "leaf_route_pairs": 672,
+      "max_original_rank": 16,
+      "min_original_rank": 12,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          1
+        ]
+      ],
+      "routes": 6,
+      "symbolic_candidates": 1952
+    },
+    {
+      "a": 4,
+      "concrete_symbolic_matches": 2520,
+      "depth": 4,
+      "k": 17,
+      "leaf_route_pairs": 672,
+      "max_original_rank": 17,
+      "min_original_rank": 17,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          4
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          1
+        ]
+      ],
+      "routes": 6,
+      "symbolic_candidates": 1952
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 10915,
+      "depth": 5,
+      "k": 33,
+      "leaf_route_pairs": 576,
+      "max_original_rank": 32,
+      "min_original_rank": 28,
+      "mode": "absolute",
+      "observed_destination_pops": [
+        [
+          "root",
+          5
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "row",
+          2
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          2
+        ],
+        [
+          "sibling",
+          3
+        ],
+        [
+          "sibling",
+          4
+        ]
+      ],
+      "routes": 15,
+      "symbolic_candidates": 1472
+    },
+    {
+      "a": 3,
+      "concrete_symbolic_matches": 10915,
+      "depth": 5,
+      "k": 33,
+      "leaf_route_pairs": 576,
+      "max_original_rank": 33,
+      "min_original_rank": 33,
+      "mode": "relative",
+      "observed_destination_pops": [
+        [
+          "root",
+          5
+        ],
+        [
+          "row",
+          0
+        ],
+        [
+          "row",
+          1
+        ],
+        [
+          "row",
+          2
+        ],
+        [
+          "sibling",
+          0
+        ],
+        [
+          "sibling",
+          2
+        ],
+        [
+          "sibling",
+          3
+        ],
+        [
+          "sibling",
+          4
+        ]
+      ],
+      "routes": 15,
+      "symbolic_candidates": 1472
+    }
+  ],
+  "dropped_path_control": {
+    "a": 3,
+    "full_address_image": 16,
+    "k": 7,
+    "leaf_point": 32,
+    "local_coordinate_only_image": 1,
+    "route": "R"
+  },
+  "leaf_permutation": {
+    "compared_slots": 6384,
+    "different_same_index_addresses": 4240,
+    "order_control": {
+      "a": 3,
+      "absolute_address": 0,
+      "fresh": 0,
+      "k": 7,
+      "path": "R",
+      "relative_address": 4,
+      "seed": 1,
+      "slot": 0
+    },
+    "seed_path_lists": 138
+  }
+}

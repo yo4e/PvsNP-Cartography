@@ -5,12 +5,16 @@ on:
     paths:
       - 'expeditions/037-source-query-audit/*.py'
       - 'expeditions/037-source-query-audit/*.json'
+      - 'expeditions/038-recursive-query-fibers/*.py'
+      - 'expeditions/038-recursive-query-fibers/*.json'
       - '.github/workflows/source-query-audit.yml'
   pull_request:
     branches: [main]
     paths:
       - 'expeditions/037-source-query-audit/*.py'
       - 'expeditions/037-source-query-audit/*.json'
+      - 'expeditions/038-recursive-query-fibers/*.py'
+      - 'expeditions/038-recursive-query-fibers/*.json'
       - '.github/workflows/source-query-audit.yml'
   workflow_dispatch:
 permissions:
@@ -77,3 +81,16 @@ jobs:
           cmp "$RUNNER_TEMP/rs-level.json" "$RUNNER_TEMP/rs-level-optimized.json"
           cmp "$RUNNER_TEMP/rs-level.json" rs-level-checks.json
           python -m py_compile verify_rs_level.py
+      - name: Reproduce recursive address fibers and public-input controls
+        shell: bash
+        working-directory: expeditions/038-recursive-query-fibers
+        run: |
+          set -euo pipefail
+          for suite in recursive interfaces; do
+            if [[ "$suite" == "recursive" ]]; then expected=recursive-checks.json; else expected=interface-checks.json; fi
+            python "verify_$suite.py" > "$RUNNER_TEMP/$suite.json"
+            python -O "verify_$suite.py" > "$RUNNER_TEMP/$suite-optimized.json"
+            cmp "$expected" "$RUNNER_TEMP/$suite.json"
+            cmp "$expected" "$RUNNER_TEMP/$suite-optimized.json"
+            python -m py_compile "verify_$suite.py"
+          done
