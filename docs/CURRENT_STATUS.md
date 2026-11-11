@@ -1,4 +1,8 @@
-# Current checkpoint — source projection queries and the row redirect
+# Current checkpoint — recursive query fibers
+
+## Expedition 038
+
+The written BV14 variant retains every root seed bit for fixed XOR-offset leaf reads. Seed-pin clauses retain all but one. The remaining transfer compares the density and soundness losses to a sufficient approximation precision; the unary construction avoids conditioning on a general binary instance. The full compiler has not been executed. [Conclusion](../expeditions/038-recursive-query-fibers/conclusion.md) · [November 11 log](../logs/2026-11-11-recursive-query-fibers.md) · [Issue 28](https://github.com/yo4e/PvsNP-Cartography/issues/28) · [Issue 29](https://github.com/yo4e/PvsNP-Cartography/issues/29)
 
 ## Expedition 037
 

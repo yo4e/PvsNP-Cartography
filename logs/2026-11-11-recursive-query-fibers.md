@@ -1,0 +1,7 @@
+# November 11 nightly research • recursive projection-PCP fibers
+
+The copy-shift proposal from November 10 stayed parked. Expedition 038 traced the actual row and column coordinate rules across the whole recursive routing model. A fixed absolute leaf slot loses exactly its overwritten original seed bits. A fixed leaf offset retains all original seed bits. Reindexing the answers and pinning public seed wires matter for preserving the verdict.
+
+The written source variant gives a polynomial density loss and an inverse-polynomial rejection margin under its stated source hypotheses. Code and finite outputs are at [1420397](https://github.com/yo4e/PvsNP-Cartography/commit/14203972ea1dcfb302f2b1ef37593f000acfab51). [Actions job](https://github.com/yo4e/PvsNP-Cartography/actions/runs/43041999428/job/130595953053) · [detailed log](../expeditions/038-recursive-query-fibers/log.md) · [compiler argument](../expeditions/038-recursive-query-fibers/source-compiler.md) · [counterexamples](../graveyard/038-leaf-order-and-public-coins.md).
+
+The actual bit-level implementation of the full verifier remains untested. The unary encoding can remove the fixed-input slicing loss at a polynomial padding cost. [Issue 28](https://github.com/yo4e/PvsNP-Cartography/issues/28) tracks the verifier; [Issue 29](https://github.com/yo4e/PvsNP-Cartography/issues/29) tracks approximation precision and the quantified counting bound.

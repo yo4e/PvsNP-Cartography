@@ -1,0 +1,6 @@
+# Barrier audit
+
+- **Relativization.** The reconstruction counts fibers of a fixed verifier. A proposed downstream separation would additionally use a specific unconditional time-hierarchy language and an algorithm for explicit Boolean polynomials. No step here establishes a P/NP separation relative to any oracle.
+- **Natural proofs.** Neither the leaf-coordinate test nor the gate checks exhibit a large, efficiently recognizable truth-table property useful against general small circuits. The candidate conclusion concerns a verifier-transfer coefficient. A future explicit uniform-polynomial lower bound would require its own barrier analysis.
+- **Algebrization.** Low-degree RS words, polynomial identities and coefficient projection over an extension field enter the written construction. No simulation with algebraic oracles has been analyzed.
+- **Evidence boundary.** The source ACSP reduction and BS08 Lemma 6.13 are inputs. Scoped induction, adversarial coordinate checks and finite tests do not replace independent semantic review of the full verifier. The inequality compares proof-bit error and clause rejection using a fixed global proof. No independence of errors at different addresses is needed.

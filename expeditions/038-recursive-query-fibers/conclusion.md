@@ -1,0 +1,13 @@
+# Conclusion • what survives all recursive redirects?
+
+**Status: candidate-survives, novelty-unknown.** For a fixed public route, fixed independent auxiliary bits and one leaf slot in the specified BV14 coefficient layout, a final *word* address retains exactly k−u of the k original seed coordinates with absolute leaf indexing. Here u is the number of original coordinates in the overwritten leaf tuple and 0≤u≤2a. For each address in the image there are exactly 2^u preimages. Reindexing the leaf by a fixed XOR offset keeps all k original coordinates and gives one preimage. A row-to-parent return restores the original coordinate ordering; a column-to-row return keeps both label and within-node coordinate. The surviving path labels matter. [Written induction](attacks.md)
+
+The two enumerations request the same values from any one global oracle, in a known permutation for each seed. Ignoring the permutation can change an ordered decision. For (k,a)=(7,3), the same slot can read address 0 or 4. With public reindexing the original ordering is restored. A strict answer-only clause system must also constrain its copies of public bits. The saved [counterexamples](../../graveyard/038-leaf-order-and-public-coins.md) cover both failures.
+
+The [compiler construction](source-compiler.md) puts the two algebraic words, their RS trees, symbol bits and Boolean gate cells into one address cube. In the offset version every real bit-read occurrence has rank at least k−1. An index-relative shift alone would not give this conclusion without proof-cell aliasing and the constraints for public seed bits. Conditional on the cited ACSP and bivariate agreement results, the written soundness accounting gives an inverse-polynomial rejection gap γ/M after clause selection. For fixed-input uniform proof-bit error η, one sufficient YES/NO separation is
+
+    3 · 2^(m−k+1) · η < γ/M,    m = k + O(log k).
+
+It applies to one global polynomial shared across all reads. This is an asymptotic estimate for the specified modification. The finite programs check selected components. They do not instantiate the whole ACSP-to-three-query verifier, and no formal or novelty promotion has been made.
+
+**Next decision.** [Issue #28](https://github.com/yo4e/PvsNP-Cartography/issues/28) now has a written answer for a specified layout; it remains open for an end-to-end comparison of generated queries and verdicts, particularly the root aliases and seed gates. For the next mathematical frontier, [Issue #29](https://github.com/yo4e/PvsNP-Cartography/issues/29) isolates the unary length encoding, required approximation precision and counting cost. A constant uniform-average error bound alone is insufficient for the displayed estimate. [Unary construction](unary-length.md)
