@@ -1,4 +1,10 @@
-# Current checkpoint — recursive query fibers
+# Current checkpoint — unary counting and a generated base verifier
+
+The November 12 night session produced two generated GF(32) base instances with exact minimum rejection counts 0 and 25 out of 469,056 clause–seed pairs. The occurrence and line-interpolation arguments give costed inverse-polynomial uniform-error implications on infinitely many occupied YES lengths for separately encoded E^NP proof functions. Their status is a written derivation using published theorems. The five finite suites passed on the pinned code; there is no new Lean result.
+
+[Issue 29 is completed](https://github.com/yo4e/PvsNP-Cartography/issues/29#issuecomment-6828212368). [Issue 28 remains open](https://github.com/yo4e/PvsNP-Cartography/issues/28#issuecomment-6828211809) for the first end-to-end recursive child with shared parent and sibling cells. [Expedition 039](../expeditions/039-unary-overlap-counting/conclusion.md) · [Verification and session log](../logs/2026-11-12-unary-and-verifier.md)
+
+## Previous checkpoint — recursive query fibers
 
 ## Expedition 038
 

@@ -204,6 +204,10 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 039, from the November 12 JST night. It includes a sharp finite GF(32) verifier case and a costed unary approximation argument. [Session log and executed checks](logs/2026-11-12-unary-and-verifier.md)
+
+### Historical October checkpoint
+
 **Research checkpoint: approved 2026-10-22 JST night, completed just after midnight on2026-10-23 JST.**
 [Issue #16](https://github.com/yo4e/PvsNP-Cartography/issues/16) is complete;
 [Issue #17](https://github.com/yo4e/PvsNP-Cartography/issues/17) is the next

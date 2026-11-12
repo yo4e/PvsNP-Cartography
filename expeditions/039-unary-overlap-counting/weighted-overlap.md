@@ -30,3 +30,11 @@ An image is given by equalities a_p=b or a_p=a_q XOR b. Combine two lists of equ
 For each clause count its rejection polynomial of degree ≤3d on the original k-cube. A clause uses one shared seed, including when it queries the same cell more than once. In units of 2^{-k}, a pair term contributes an integer count shifted left by k−max(r_j,r_l); a clause contributes its integer number of rejecting seeds. Scores need O(k+log J) bits. These instructions also specify an exact rational threshold comparison.
 
 [Viola, revision 5, Lemmas 10–11 and Theorem 12](https://eccc.weizmann.ac.il/report/2020/015/revision/5/download/) · [Ben-Sasson and Viola, Theorem 1.1 and §3](https://eccc.weizmann.ac.il/report/2014/017/download/) · [Time and length ledger](budget.md) · [Counterexamples](../../graveyard/039-padding-and-collisions.md)
+
+## What is exact about the penalty?
+
+With unrestricted Boolean tables the minimum of F+D equals the minimum of F over global proofs. Rounding gives one inequality. Restrict a minimizing global proof separately to each A_j for the reverse inequality: D=0 and F is unchanged. A degree cap on the guessed native tables restricts this optimization and is not part of this equality.
+
+The minimum endpoint weight is sharp in a local sense. Use two opposite unit clauses on the two images. Outside their intersection, satisfy whichever unit is present. At each shared address an optimal global proof pays min(w₁,w₂). Now split just one shared address a and let the two local answers there each satisfy its own unit. F drops by exactly min(w₁,w₂); the only discrepancy term is at a. Any smaller price there lets F+D drop below the global optimum. The equal- and unequal-rank opposite-unit fixtures in the checker instantiate the two-image case.
+
+The factor J in F+D ≤ J Σ e_j can also be attained as a bound on particular guesses. Use J positive units with the same uniform address, one honest all-ones proof, one local table identically zero and J−1 identically one. Then Σ e_j=1, F=1 and D=J−1. This says nothing about the optimal approximation of that easy target; it locates the loss in this complete-pair score.
