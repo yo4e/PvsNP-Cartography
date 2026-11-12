@@ -1,0 +1,47 @@
+{
+  "all_nonzero_taps": {
+    "exact_grid_decodes": 4096,
+    "single_flip_uniform_error": "1/64",
+    "single_flip_fixed_anchor_error": "7/64",
+    "boundary_degree": 7,
+    "boundary_sum": 1,
+    "value_at_zero": 0
+  },
+  "field_modulus": "X^3+X+1",
+  "grid": "{0,1}^2",
+  "taps": [
+    1,
+    2,
+    4
+  ],
+  "weights": [
+    2,
+    4,
+    7
+  ],
+  "honest_target_point_direction_cases": 4096,
+  "directions_including_zero": 64,
+  "fault_sets": 257,
+  "fault_set_point_tests": 1028,
+  "maximum_single_bit_wrong_directions_over_64": 2,
+  "multiple_bit_wrong_directions_over_64_max_over_points": 5,
+  "monomial_direction_pairs": 16384,
+  "different_direction_attack": {
+    "field_directions": [
+      [
+        1,
+        4
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "true_bit": 0,
+    "decoded_bit": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "padding": [
+    {
+      "base_width": 2,
+      "padding_bits": 1,
+      "target_polynomial_pairs": 4096,
+      "optimum_equalities": 64,
+      "fixed_slice_error": "1",
+      "whole_cube_error_of_witness": "1/2",
+      "indicator_degree": 1
+    },
+    {
+      "base_width": 1,
+      "padding_bits": 2,
+      "target_polynomial_pairs": 1024,
+      "optimum_equalities": 16,
+      "fixed_slice_error": "1",
+      "whole_cube_error_of_witness": "1/4",
+      "indicator_degree": 2
+    }
+  ],
+  "length_map": {
+    "constants": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "exponents": [
+      2,
+      14
+    ],
+    "checked_gap_transitions": 52
+  }
+}

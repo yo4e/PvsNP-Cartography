@@ -1,0 +1,26 @@
+[
+  {
+    "seed_bits": 2,
+    "address_bits": 3,
+    "signed_projection_maps": 216,
+    "unordered_pairs_with_self": 23436,
+    "by_intersection_dimension": {
+      "0": 9448,
+      "1": 6424,
+      "2": 432,
+      "empty": 7132
+    }
+  },
+  {
+    "seed_bits": 3,
+    "address_bits": 2,
+    "signed_projection_maps": 64,
+    "unordered_pairs_with_self": 2080,
+    "by_intersection_dimension": {
+      "0": 604,
+      "1": 990,
+      "2": 300,
+      "empty": 186
+    }
+  }
+]

@@ -1,0 +1,42 @@
+name: Unary budget and finite verifier controls
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/039-unary-overlap-counting/*.py'
+      - 'expeditions/039-unary-overlap-counting/*.json'
+      - '.github/workflows/unary-verifier-checks.yml'
+  pull_request:
+    paths:
+      - 'expeditions/039-unary-overlap-counting/*.py'
+      - 'expeditions/039-unary-overlap-counting/*.json'
+      - '.github/workflows/unary-verifier-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Reproduce the five exact outputs in both interpreter modes
+        working-directory: expeditions/039-unary-overlap-counting
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          for pair in base_acsp:base-acsp intersections:intersection overlap:overlap padding:padding lde:lde; do
+            suite="verify_${pair%:*}.py"
+            expected="${pair#*:}-checks.json"
+            python "$suite" > "$RUNNER_TEMP/$expected"
+            cmp "$expected" "$RUNNER_TEMP/$expected"
+            python -O "$suite" > "$RUNNER_TEMP/optimized-$expected"
+            cmp "$expected" "$RUNNER_TEMP/optimized-$expected"
+            sha256sum "$suite" "$expected"
+            cat "$expected"
+          done

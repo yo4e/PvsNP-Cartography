@@ -1,0 +1,13 @@
+# Two attractive shortcuts that lose the signal
+
+**A fixed section can contain every mistake.** Suppose a target is zero on all (s,y). The GF(2) polynomial ∏ᵢ(1+sᵢ) is wrong only at s=0. With h padding bits its uniform error is 2^{-h}, yet the hardwired zero section is wrong at every y. Replicating the target does not make every section of the approximant good. Choose one section by averaging or guess the resulting native polynomial. The same error applies to unused seed variables inside a query occurrence.
+
+**Independent address collisions can underprice a contradiction exponentially.** Two unit clauses demand opposite bits at q₁(z)=q₂(z)=z. Separate local constants 1 and 0 satisfy both locally. Every global proof fails exactly one clause per seed. Sampling two independent k-bit seeds before checking equality of their addresses charges only 2^{-k}. The score in Expedition 039 sums over their common physical addresses, charging 2^{-k} at each of 2^k disagreements, for exactly one. Literal-wise guessing without reconciliation loses soundness even at degree zero.
+
+**Unused lengths can supply every favorable example.** For the injective unary width W(n), there are C missing lengths at every jump n=2^j−2. Defining the target to be zero there makes infinitely-often exact constant approximation trivial along these lengths. A hierarchy contradiction requires a simulator correct on every sufficiently large YES instance and every NO instance.
+
+[Exact padding tests](../expeditions/039-unary-overlap-counting/padding-checks.json) · [Overlap controls](../expeditions/039-unary-overlap-counting/overlap-checks.json)
+
+**The source field selector is not a Boolean indicator on all field points.** Its product at its selected point can be 6 rather than 1 in GF(32). Nonvanishing there suffices for the source divisibility argument. Replacing the selector polynomial by a Boolean indicator while retaining the source quotient breaks the honest proof: at x=4 the new residual is 13. Preserve the polynomial throughout the field, including outside H. [Generated instance and exact witness](../expeditions/039-unary-overlap-counting/base-case.md)
+
+**Independent interpolation directions destroy the polynomial identity.** In the GF(8) three-tap decoder for the grid target x₁x₂ at (0,0), taps (1,2,4) with directions (1,4), (0,0), (0,0) give 1; the correct value is 0. Each query having the correct marginal distribution cannot supply the common line needed for interpolation. In the all-nonzero-tap version also keep the degree strictly below q−1: over GF(4), t³ is zero at 0 and sums to one on the nonzero points. [Exact tagged decoder controls](../expeditions/039-unary-overlap-counting/lde-checks.json)

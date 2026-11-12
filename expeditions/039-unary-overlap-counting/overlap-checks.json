@@ -1,0 +1,95 @@
+{
+  "families": {
+    "opposite_units_permuted_seeds": {
+      "clauses": 2,
+      "occurrences": 2,
+      "image_sizes": [
+        4,
+        4
+      ],
+      "min_global_F": "1",
+      "local_families_tested": 256,
+      "honest_proofs": 0,
+      "yes_comparisons": 0,
+      "families_below_global_before_repair": 93,
+      "of_those_tight_after_adding_D": 65
+    },
+    "opposite_units_unequal_ranks": {
+      "clauses": 2,
+      "occurrences": 2,
+      "image_sizes": [
+        4,
+        2
+      ],
+      "min_global_F": "1/2",
+      "local_families_tested": 64,
+      "honest_proofs": 0,
+      "yes_comparisons": 0,
+      "families_below_global_before_repair": 5,
+      "of_those_tight_after_adding_D": 3
+    },
+    "crossing_nested_and_diagonal_images": {
+      "clauses": 2,
+      "occurrences": 4,
+      "image_sizes": [
+        2,
+        2,
+        2,
+        4
+      ],
+      "min_global_F": "0",
+      "local_families_tested": 1024,
+      "honest_proofs": 3,
+      "yes_comparisons": 3072,
+      "families_below_global_before_repair": 0,
+      "of_those_tight_after_adding_D": 0
+    },
+    "constant_repeated_and_opposite_literals": {
+      "clauses": 3,
+      "occurrences": 5,
+      "image_sizes": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "min_global_F": "0",
+      "local_families_tested": 512,
+      "honest_proofs": 2,
+      "yes_comparisons": 1024,
+      "families_below_global_before_repair": 0,
+      "of_those_tight_after_adding_D": 0
+    }
+  },
+  "collision_controls": [
+    {
+      "seed_bits": 1,
+      "local_F": 0,
+      "minimum_global_F": 1,
+      "shared_address_D": "1",
+      "independent_seed_penalty": "1/2"
+    },
+    {
+      "seed_bits": 2,
+      "local_F": 0,
+      "minimum_global_F": 1,
+      "shared_address_D": "1",
+      "independent_seed_penalty": "1/4"
+    },
+    {
+      "seed_bits": 4,
+      "local_F": 0,
+      "minimum_global_F": 1,
+      "shared_address_D": "1",
+      "independent_seed_penalty": "1/16"
+    },
+    {
+      "seed_bits": 8,
+      "local_F": 0,
+      "minimum_global_F": 1,
+      "shared_address_D": "1",
+      "independent_seed_penalty": "1/256"
+    }
+  ]
+}

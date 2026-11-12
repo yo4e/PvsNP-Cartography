@@ -1,0 +1,45 @@
+{
+  "honest_B_samples_at_4_through_7": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "indicator_substitution_residual_at_4": 13,
+  "no": {
+    "actual_clauses": 469056,
+    "binary_gates": 3841,
+    "clause_templates_including_pins": 14658,
+    "global_AB_pairs_tested": 338,
+    "min_reject_seeds_sampled": 25,
+    "physical_variables": 123456,
+    "seeds_per_pair": 32,
+    "witness_bit_count_AB": 320
+  },
+  "no_sharp_B_samples_at_4_through_7": [
+    9,
+    23,
+    14,
+    12
+  ],
+  "no_sharp_accepting_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "selector_at_zero": 6,
+  "yes": {
+    "actual_clauses": 469056,
+    "binary_gates": 3841,
+    "clause_templates_including_pins": 14658,
+    "global_AB_pairs_tested": 338,
+    "min_reject_seeds_sampled": 0,
+    "physical_variables": 123456,
+    "seeds_per_pair": 32,
+    "witness_bit_count_AB": 320
+  }
+}
