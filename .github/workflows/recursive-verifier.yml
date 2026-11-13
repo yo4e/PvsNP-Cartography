@@ -40,13 +40,14 @@ jobs:
           set -euo pipefail
           git rev-parse HEAD
           python --version
-          for suite in geometry verifier; do
+          for suite in geometry verifier two_levels; do
+            expected="${suite//_/-}-checks.json"
             python "verify_$suite.py" > "$RUNNER_TEMP/$suite.json"
             python -O "verify_$suite.py" > "$RUNNER_TEMP/$suite-O.json"
-            cmp "$RUNNER_TEMP/$suite.json" "$suite-checks.json"
-            cmp "$RUNNER_TEMP/$suite-O.json" "$suite-checks.json"
-            sha256sum "$suite-checks.json"
-            cat "$suite-checks.json"
+            cmp "$RUNNER_TEMP/$suite.json" "$expected"
+            cmp "$RUNNER_TEMP/$suite-O.json" "$expected"
+            sha256sum "$expected"
+            cat "$expected"
           done
       - name: Replay both complete DIMACS streams against physical witnesses
         run: |

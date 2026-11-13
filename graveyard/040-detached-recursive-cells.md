@@ -11,3 +11,5 @@
 The repair is a single physical address for every shared bit, with the root high extension coordinates hardwired to zero, and arithmetic in each row's actual coordinate system. These examples refute detached layouts and the wrong interpolation implementation. The published geometric verifier already specifies shared reads.
 
 [Computed counterexamples](../expeditions/040-recursive-verifier/verifier-checks.json) · [Geometry](../expeditions/040-recursive-verifier/geometry.md) · [Scalar derivation](../expeditions/040-recursive-verifier/soundness.md)
+
+**A selected row need not have one verdict at the next depth.** At k=8, a=3, changing a single auxiliary symbol off the parent and common rectangle of one inner row makes its outer row pass on eight low seeds and fail on the other eight. Its root remains the zero codeword. It falsifies the all-or-nothing row premise and leaves the two-level rejection-versus-distance inequality undecided. [Explicit witness](../expeditions/040-recursive-verifier/two-level-boundary.md)

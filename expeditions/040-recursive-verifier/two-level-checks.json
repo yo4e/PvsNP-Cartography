@@ -1,0 +1,25 @@
+{
+  "root_dimension": 8,
+  "row_child_dimension": 7,
+  "fault": {
+    "outer_row": 4,
+    "inner_row": 3,
+    "slot": 8
+  },
+  "checks_per_selected_outer_row": {
+    "inner_rows": 8,
+    "inner_columns": 4
+  },
+  "rejecting_public_seeds": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79
+  ],
+  "root_relative_distance": "0",
+  "rs_rejection_probability": "1/32"
+}
