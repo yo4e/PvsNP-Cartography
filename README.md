@@ -204,7 +204,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 039, from the November 12 JST night. It includes a sharp finite GF(32) verifier case and a costed unary approximation argument. [Session log and executed checks](logs/2026-11-12-unary-and-verifier.md)
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 040, from the November 13 JST night. One full recursive verifier now has explicit shared-cell attacks and a sharp finite NO result. [Session log and executed checks](logs/2026-11-13-recursive-verifier.md)
 
 ### Historical October checkpoint
 

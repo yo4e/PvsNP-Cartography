@@ -1,4 +1,10 @@
-# Current checkpoint — unary counting and a generated base verifier
+# Current checkpoint — a shared recursive verifier
+
+The November 13 JST session generated and checked one recursive level over a translated GF(128) root. On a designed NO instance the sharp minimum is 109 failed physical clause–seed pairs out of 10,717,568. An honest YES witness has zero failures. The physical sharing of parent and sibling cells matters: either detached-copy mutant can accept 127 of 128 seeds on a proof that the joined verifier rejects everywhere. The exact finite witness replay is separate from the written lower-bound argument for arbitrary assignments.
+
+[Issue 28](https://github.com/yo4e/PvsNP-Cartography/issues/28#issuecomment-6856525926) is complete in its scoped source-variant and conformance sense. [Issue 30](https://github.com/yo4e/PvsNP-Cartography/issues/30) asks for the two-level rejection–distance tradeoff. A single changed auxiliary cell already shows why the first-level row-wide verdict cannot be reused at the next depth. [Expedition 040](../expeditions/040-recursive-verifier/conclusion.md) · [Session evidence](../logs/2026-11-13-recursive-verifier.md)
+
+## Previous checkpoint — unary counting and a generated base verifier
 
 The November 12 night session produced two generated GF(32) base instances with exact minimum rejection counts 0 and 25 out of 469,056 clause–seed pairs. The occurrence and line-interpolation arguments give costed inverse-polynomial uniform-error implications on infinitely many occupied YES lengths for separately encoded E^NP proof functions. Their status is a written derivation using published theorems. The five finite suites passed on the pinned code; there is no new Lean result.
 
