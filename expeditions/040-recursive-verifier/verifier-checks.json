@@ -1,0 +1,48 @@
+{
+  "false_layouts": {
+    "column": {
+      "detached_accept": 127,
+      "joined_accept": 0
+    },
+    "parent": {
+      "detached_accept": 127,
+      "joined_accept": 0
+    }
+  },
+  "no": {
+    "binary_gates": 21828,
+    "canonical_failed_pairs": {
+      "broken_affine_A": 128,
+      "inverse_interpolated_rows": 128,
+      "inverse_zero_extension": 128,
+      "perfect_yes": 125,
+      "sharp_no": 109,
+      "sharp_no_noncode": 109
+    },
+    "clause_seed_pairs": 10717568,
+    "global_pairs_compared": 142,
+    "physical_variables": 2809344,
+    "seeds_each": 128,
+    "templates_including_pins": 83731
+  },
+  "row_1_slot_32": {
+    "honest": 384,
+    "using_row_0_weights": 392
+  },
+  "yes": {
+    "binary_gates": 21803,
+    "canonical_failed_pairs": {
+      "broken_affine_A": 128,
+      "inverse_interpolated_rows": 128,
+      "inverse_zero_extension": 128,
+      "perfect_yes": 0,
+      "sharp_no": 109,
+      "sharp_no_noncode": 109
+    },
+    "clause_seed_pairs": 10706688,
+    "global_pairs_compared": 142,
+    "physical_variables": 2806144,
+    "seeds_each": 128,
+    "templates_including_pins": 83646
+  }
+}

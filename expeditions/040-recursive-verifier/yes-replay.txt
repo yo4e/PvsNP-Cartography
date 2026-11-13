@@ -1,0 +1,1 @@
+2806144 variables; 10706688 clauses; 0 failed

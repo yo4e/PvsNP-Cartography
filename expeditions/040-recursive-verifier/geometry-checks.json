@@ -1,0 +1,70 @@
+{
+  "fixture": "k=7, a=3, F_128 in F_16384",
+  "honest_controls": {
+    "field_cells_per_polynomial": 1024,
+    "nonconstant_columns_degree15_monomial_then_mixed": [
+      32,
+      32
+    ],
+    "polynomials": 18
+  },
+  "routing": {
+    "fixed_tape_and_offset_maps": 576,
+    "seeds_per_map": 128,
+    "word_addresses": {
+      "column_to_sibling": 8192,
+      "row_extension": 57344,
+      "row_to_parent": 8192
+    }
+  },
+  "split_copy_attacks": {
+    "detached_parent_and_zero_leaf_tables": {
+      "rejecting_columns": 0,
+      "rejecting_rows": 0
+    },
+    "one_coset_indicator_all_extension_zero": {
+      "bad_columns": [],
+      "bad_rows": [
+        0
+      ],
+      "nonzero_polynomial_disagreement_lower_bound": 105,
+      "rejected_public_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "root_distance_in_symbols": 8
+    },
+    "one_hot_root_all_extension_zero": {
+      "bad_columns": [],
+      "bad_rows": [
+        0
+      ],
+      "rejected_public_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "one_hot_root_index": 0,
+    "one_hot_root_zero_count": 127,
+    "parent_shared_columns_aliased_to_interpolated_rows": {
+      "rejecting_columns": 32,
+      "rejecting_rows": 0
+    },
+    "parent_shared_columns_detached_zero": {
+      "rejecting_columns": 0,
+      "rejecting_rows": 0
+    }
+  }
+}

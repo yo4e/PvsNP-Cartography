@@ -1,0 +1,62 @@
+name: Recursive verifier conformance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/039-unary-overlap-counting/verify_base_acsp.py'
+      - 'expeditions/040-recursive-verifier/*.py'
+      - 'expeditions/040-recursive-verifier/*.json'
+      - 'expeditions/040-recursive-verifier/*.cpp'
+      - 'expeditions/040-recursive-verifier/*.sha256'
+      - 'expeditions/040-recursive-verifier/*-replay.txt'
+      - '.github/workflows/recursive-verifier.yml'
+  pull_request:
+    paths:
+      - 'expeditions/039-unary-overlap-counting/verify_base_acsp.py'
+      - 'expeditions/040-recursive-verifier/*.py'
+      - 'expeditions/040-recursive-verifier/*.json'
+      - 'expeditions/040-recursive-verifier/*.cpp'
+      - 'expeditions/040-recursive-verifier/*.sha256'
+      - 'expeditions/040-recursive-verifier/*-replay.txt'
+      - '.github/workflows/recursive-verifier.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: expeditions/040-recursive-verifier
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Compare field and clause results in both interpreter modes
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          for suite in geometry verifier; do
+            python "verify_$suite.py" > "$RUNNER_TEMP/$suite.json"
+            python -O "verify_$suite.py" > "$RUNNER_TEMP/$suite-O.json"
+            cmp "$RUNNER_TEMP/$suite.json" "$suite-checks.json"
+            cmp "$RUNNER_TEMP/$suite-O.json" "$suite-checks.json"
+            sha256sum "$suite-checks.json"
+            cat "$suite-checks.json"
+          done
+      - name: Replay both complete DIMACS streams against physical witnesses
+        run: |
+          set -euo pipefail
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror replay_dimacs.cpp -o "$RUNNER_TEMP/replay"
+          for side in yes no; do
+            python verify_verifier.py --assignment "$side" > "$RUNNER_TEMP/$side.bits"
+            python verify_verifier.py --dimacs "$side" > "$RUNNER_TEMP/$side.cnf"
+            "$RUNNER_TEMP/replay" "$RUNNER_TEMP/$side.bits" < "$RUNNER_TEMP/$side.cnf" > "$RUNNER_TEMP/$side.result"
+            cat "$RUNNER_TEMP/$side.result"
+            diff -u "$side-replay.txt" "$RUNNER_TEMP/$side.result"
+          done
+          ( cd "$RUNNER_TEMP" && sha256sum --check "$GITHUB_WORKSPACE/expeditions/040-recursive-verifier/exports.sha256" )
