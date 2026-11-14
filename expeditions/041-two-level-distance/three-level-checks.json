@@ -1,0 +1,61 @@
+{
+  "bottom_columns_per_selected_middle_row_min_max": [
+    8,
+    8
+  ],
+  "bottom_rows_per_selected_middle_row": 16,
+  "distinct_leaf_labels_per_seed_union": 416,
+  "four_marked_bottom_rows_rejected_seeds": [
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255
+  ],
+  "middle_columns_per_selected_outer_row": 16,
+  "middle_rows_per_selected_outer_row": 16,
+  "no_bad_leaf_rejections": 0,
+  "outer_columns_per_seed": 16,
+  "outer_orbit_union_counts": {
+    "at_least_32_columns": 247,
+    "sparse": 9
+  },
+  "outer_rows_per_seed": 1,
+  "root_dimension": 10,
+  "scope": "leaf labels and supplied failure-pattern incidence; no field predicates executed",
+  "seed_count": 1024,
+  "single_marked_outer_coset": 7,
+  "translations": [
+    0,
+    9,
+    18,
+    27
+  ]
+}

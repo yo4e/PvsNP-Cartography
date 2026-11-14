@@ -44,4 +44,5 @@ jobs:
           distance_certificate.py distance-checks.json
           check_outer_application.py outer-application.json
           family_checks.py family-checks.json
+          three_level_schedule.py three-level-checks.json
           CASES

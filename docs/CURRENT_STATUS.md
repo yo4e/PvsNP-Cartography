@@ -2,6 +2,8 @@
 
 The November 14 JST session gives a positive-distance counterexample to the unmodified bundled verifier for two recursive levels. Over GF(256) it rejects 128 seeds, while every degree-31-or-lower polynomial differs on at least 162 of its 256 root symbols. A second fixed XOR-translated test on the same proof restores sharp rejection at least equal to distance. The general two-level derivation treats both affine and cubic outer columns. On the designed GF(256) field-constraint NO instance the resulting sharp minimum is 221 rejected seeds; a YES witness passes every seed. These counts concern symbol-level public seeds.
 
+Four translated reads also give a written three-level result for rate exponent three and dimensions ten and eleven. The dimension-ten route enumeration covers every seed. For unbounded dimension, the cost of certifying a whole outer row from a single acceptance is exponential; the frontier is a polynomial-cost accepted-site argument. [Scope of this obstruction](../expeditions/041-two-level-distance/whole-row-limit.md)
+
 [Expedition 041](../expeditions/041-two-level-distance/conclusion.md) · [Issue 30](https://github.com/yo4e/PvsNP-Cartography/issues/30) · [Chronological evidence](../logs/2026-11-14-two-level-distance.md)
 
 ## Previous checkpoint — a shared recursive verifier

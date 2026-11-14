@@ -6,4 +6,6 @@
 4. The paired repair forces both a complete set of inner rows and enough columns to glue them. An outer sparse/dense split yields a root polynomial on every accepted site. Damage one complete root coset to attain equality. A separate scalar residual evaluator joins the repaired test to YES, extremal NO, and noncode NO data on all public seeds.
 5. Derive the two values of root dimension giving exactly two levels at arbitrary rate exponent. On the odd branch the outer columns have strict degree cutoff four. An independent finite check using degree-three columns at 512 points guards against assuming every column is affine. The full recursive physical run is at 256 root points.
 
+6. Continue into the first three-level layouts at rate exponent three. Four translations couple the two intermediate seed splits. Enumerate the 1,024-seed routing model, then attack the proposed generalization: one successful transcript that certifies a whole physical row must have read it. Record the resulting exponential obstruction at fixed rate.
+
 The restricted written derivations, physical witness runs and bounds on asymptotic costs have different scopes. [Claim ledger](../../claims/041-two-level-distance.md) · [Attack review](../../attacks/041-two-level-distance.md) · [Dated execution record](../../logs/2026-11-14-two-level-distance.md)
