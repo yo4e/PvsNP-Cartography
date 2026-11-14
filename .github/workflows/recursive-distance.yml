@@ -1,0 +1,47 @@
+name: Recursive distance checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/041-two-level-distance/*.py'
+      - 'expeditions/041-two-level-distance/*.json'
+      - '.github/workflows/recursive-distance.yml'
+  pull_request:
+    paths:
+      - 'expeditions/041-two-level-distance/*.py'
+      - 'expeditions/041-two-level-distance/*.json'
+      - '.github/workflows/recursive-distance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+        working-directory: expeditions/041-two-level-distance
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Replay field and distance controls in both interpreter modes
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          while read -r script expected; do
+            python "$script" > "$RUNNER_TEMP/actual.json"
+            python -O "$script" > "$RUNNER_TEMP/optimized.json"
+            cmp "$expected" "$RUNNER_TEMP/actual.json"
+            cmp "$expected" "$RUNNER_TEMP/optimized.json"
+            sha256sum "$expected"
+            cat "$expected"
+          done <<'CASES'
+          two_level_oracle.py two-level-oracle.json
+          distance_certificate.py distance-checks.json
+          check_outer_application.py outer-application.json
+          family_checks.py family-checks.json
+          CASES

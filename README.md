@@ -204,7 +204,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 040, from the November 13 JST night. One full recursive verifier now has explicit shared-cell attacks and a sharp finite NO result. [Session log and executed checks](logs/2026-11-13-recursive-verifier.md)
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 041, from the November 14 JST night. A shared two-level Reed–Solomon verifier can overlook more errors than its rejection rate suggests. Reading the same proof at a second fixed seed repairs this loss. [Derivations and counterexamples](expeditions/041-two-level-distance/conclusion.md)
 
 ### Historical October checkpoint
 

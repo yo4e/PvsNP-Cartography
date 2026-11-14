@@ -1,4 +1,10 @@
-# Current checkpoint — a shared recursive verifier
+# Current checkpoint — recursive rejection versus distance
+
+The November 14 JST session gives a positive-distance counterexample to the unmodified bundled verifier for two recursive levels. Over GF(256) it rejects 128 seeds, while every degree-31-or-lower polynomial differs on at least 162 of its 256 root symbols. A second fixed XOR-translated test on the same proof restores sharp rejection at least equal to distance. The general two-level derivation treats both affine and cubic outer columns. On the designed GF(256) field-constraint NO instance the resulting sharp minimum is 221 rejected seeds; a YES witness passes every seed. These counts concern symbol-level public seeds.
+
+[Expedition 041](../expeditions/041-two-level-distance/conclusion.md) · [Issue 30](https://github.com/yo4e/PvsNP-Cartography/issues/30) · [Chronological evidence](../logs/2026-11-14-two-level-distance.md)
+
+## Previous checkpoint — a shared recursive verifier
 
 The November 13 JST session generated and checked one recursive level over a translated GF(128) root. On a designed NO instance the sharp minimum is 109 failed physical clause–seed pairs out of 10,717,568. An honest YES witness has zero failures. The physical sharing of parent and sibling cells matters: either detached-copy mutant can accept 127 of 128 seeds on a proof that the joined verifier rejects everywhere. The exact finite witness replay is separate from the written lower-bound argument for arbitrary assignments.
 

@@ -1,0 +1,70 @@
+{
+  "distinct_leaves": 832,
+  "fixtures": {
+    "honest_degree31": {
+      "accepts": 256,
+      "nonconstant_leaves": {
+        "inner_col": 512,
+        "inner_row": 256,
+        "outer_col": 64
+      },
+      "paired_accepts": 256,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 256,
+        "outer_col": 64
+      }
+    },
+    "single_root_coset": {
+      "accepts": 240,
+      "paired_accepts": 240,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 254,
+        "outer_col": 64
+      }
+    },
+    "two_templates": {
+      "accepts": 128,
+      "pair_accepts_by_low_xor_0_to_15": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "paired_accepts": 0,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 128,
+        "outer_col": 64
+      },
+      "root_matches_constants_0_1": [
+        64,
+        64
+      ]
+    },
+    "zero": {
+      "accepts": 256,
+      "paired_accepts": 256,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 256,
+        "outer_col": 64
+      }
+    }
+  },
+  "offset_reads_compared": 1196032,
+  "physical_words": 16384
+}

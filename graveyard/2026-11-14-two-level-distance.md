@@ -1,0 +1,7 @@
+# Post-mortem • carrying unit rejection through a recursive row
+
+**Claim.** Bundling all fresh tapes at one root seed preserves rejection at least equal to root distance at the next recursion level. The one-level verifier has sharp coefficient one, so iterating its row/column gluing argument was attractive.
+
+**Failure.** The inherited low part selects only one parity of inner rows. Outer rows can deliberately assign different parities to pass. On a legal, fully shared GF(256) table the original test rejects 128 of 256 seeds while every root codeword differs at 162 or more sites. The parity split persists when both queried seeds differ only in their inner column residue. A different legal basis gives a separate counterexample to a parity-only shift: it rejects 14 times at distance 16, even after pairing. This latter construction has no demonstrated standard-basis transplant. [Assignments, ranks and exact scopes](../expeditions/041-two-level-distance/counterexample.md)
+
+**Salvage.** Coupling one parity flip with one residue flip forces all inner rows and enough columns to interpolate the selected outer row. The paired test has sharp unit distance soundness at exactly two levels. It gives a lower coefficient one half for the original test by the union bound. No independence of the two seeds is required. [Derivation](../expeditions/041-two-level-distance/paired-soundness.md)

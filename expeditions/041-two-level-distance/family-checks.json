@@ -1,0 +1,142 @@
+{
+  "enumerated_schedules": [
+    {
+      "a": 3,
+      "all_seeds": 256,
+      "k": 8,
+      "original_accepts_templates": 128,
+      "paired_accepts_templates": 0
+    },
+    {
+      "a": 3,
+      "all_seeds": 512,
+      "k": 9,
+      "original_accepts_templates": 256,
+      "paired_accepts_templates": 0
+    },
+    {
+      "a": 4,
+      "all_seeds": 1024,
+      "k": 10,
+      "original_accepts_templates": 512,
+      "paired_accepts_templates": 0
+    },
+    {
+      "a": 4,
+      "all_seeds": 2048,
+      "k": 11,
+      "original_accepts_templates": 1024,
+      "paired_accepts_templates": 0
+    },
+    {
+      "a": 5,
+      "all_seeds": 4096,
+      "k": 12,
+      "original_accepts_templates": 2048,
+      "paired_accepts_templates": 0
+    },
+    {
+      "a": 5,
+      "all_seeds": 8192,
+      "k": 13,
+      "original_accepts_templates": 4096,
+      "paired_accepts_templates": 0
+    }
+  ],
+  "integer_bounds_only": {
+    "16": {
+      "34": {
+        "column_cutoff": 2,
+        "root_cutoff": 262144,
+        "sparse_max": 262144,
+        "template_ratio_upper": "2/3"
+      },
+      "35": {
+        "column_cutoff": 4,
+        "root_cutoff": 524288,
+        "sparse_max": 524288,
+        "template_ratio_upper": "2/3"
+      }
+    },
+    "3": {
+      "8": {
+        "column_cutoff": 2,
+        "root_cutoff": 32,
+        "sparse_max": 32,
+        "template_ratio_upper": "64/81"
+      },
+      "9": {
+        "column_cutoff": 4,
+        "root_cutoff": 64,
+        "sparse_max": 64,
+        "template_ratio_upper": "128/161"
+      }
+    },
+    "32": {
+      "66": {
+        "column_cutoff": 2,
+        "root_cutoff": 17179869184,
+        "sparse_max": 17179869184,
+        "template_ratio_upper": "2/3"
+      },
+      "67": {
+        "column_cutoff": 4,
+        "root_cutoff": 34359738368,
+        "sparse_max": 34359738368,
+        "template_ratio_upper": "2/3"
+      }
+    },
+    "4": {
+      "10": {
+        "column_cutoff": 2,
+        "root_cutoff": 64,
+        "sparse_max": 64,
+        "template_ratio_upper": "2/3"
+      },
+      "11": {
+        "column_cutoff": 4,
+        "root_cutoff": 128,
+        "sparse_max": 128,
+        "template_ratio_upper": "2/3"
+      }
+    },
+    "5": {
+      "12": {
+        "column_cutoff": 2,
+        "root_cutoff": 128,
+        "sparse_max": 128,
+        "template_ratio_upper": "2/3"
+      },
+      "13": {
+        "column_cutoff": 4,
+        "root_cutoff": 256,
+        "sparse_max": 256,
+        "template_ratio_upper": "2/3"
+      }
+    },
+    "8": {
+      "18": {
+        "column_cutoff": 2,
+        "root_cutoff": 1024,
+        "sparse_max": 1024,
+        "template_ratio_upper": "2/3"
+      },
+      "19": {
+        "column_cutoff": 4,
+        "root_cutoff": 2048,
+        "sparse_max": 2048,
+        "template_ratio_upper": "2/3"
+      }
+    }
+  },
+  "odd_external_field_control": {
+    "a": 3,
+    "column_sites": 2048,
+    "cubic_members": 64,
+    "distinct_ordinates": 32,
+    "external_degree": 48,
+    "k": 9,
+    "outer_root_overlaps": 512,
+    "quadratic_nonmembers": 64
+  }
+}

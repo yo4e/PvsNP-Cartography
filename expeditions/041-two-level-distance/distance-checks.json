@@ -1,0 +1,100 @@
+{
+  "alternate_basis_xor8_control": {
+    "failing_inner_columns_in_row_zero": 28,
+    "inner_aux_field_encodings": [
+      4096,
+      17,
+      32
+    ],
+    "nonzero_root_values": [
+      146,
+      104,
+      52,
+      206,
+      137,
+      115,
+      47,
+      213,
+      254,
+      4,
+      88,
+      162,
+      229,
+      31,
+      67,
+      185
+    ],
+    "ordinary_rejected_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "root_distance_in_symbols": 16,
+    "scope": "alternate legal inner auxiliary basis in row zero",
+    "xor8_rejected_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "constant_max_agreement": 64,
+  "degree_cutoff_exclusive": 32,
+  "distance_in_symbols_lower_bound": 162,
+  "distance_in_symbols_upper_bound_from_constants": 192,
+  "maximizing_constants": [
+    0,
+    1
+  ],
+  "modulus": "0x11b",
+  "nonconstant_agreement_upper_bound": 94,
+  "number_of_xor_shifts_by_rejected_seeds": {
+    "128": 128,
+    "256": 128
+  },
+  "quartic_factor_ansatz_F_ranks_at_two_external_rows": {
+    "alternate": [
+      4,
+      4
+    ],
+    "standard": [
+      8,
+      8
+    ]
+  },
+  "ratio_rejection_over_distance_upper_bound": "64/81",
+  "rejection_original": "1/2",
+  "root_block_sizes": {
+    "external_x_to_32": 128,
+    "forced_0": 64,
+    "forced_1": 64
+  },
+  "two_seed_rejections": {
+    "0x0": 128,
+    "0x1": 128,
+    "0x10": 256,
+    "0x18": 128,
+    "0x8": 256
+  }
+}
