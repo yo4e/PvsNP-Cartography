@@ -4,7 +4,7 @@ The November 14 JST session gives a positive-distance counterexample to the unmo
 
 Four translated reads also give a written three-level result for rate exponent three and dimensions ten and eleven. The dimension-ten route enumeration covers every seed. For unbounded dimension, the cost of certifying a whole outer row from a single acceptance is exponential; the frontier is a polynomial-cost accepted-site argument. [Scope of this obstruction](../expeditions/041-two-level-distance/whole-row-limit.md)
 
-[Expedition 041](../expeditions/041-two-level-distance/conclusion.md) · [Issue 30](https://github.com/yo4e/PvsNP-Cartography/issues/30) · [Chronological evidence](../logs/2026-11-14-two-level-distance.md)
+[Expedition 041](../expeditions/041-two-level-distance/conclusion.md) · [Completed Issue 30](https://github.com/yo4e/PvsNP-Cartography/issues/30#issuecomment-6878101552) · [Next research question, Issue 31](https://github.com/yo4e/PvsNP-Cartography/issues/31) · [Chronological evidence](../logs/2026-11-14-two-level-distance.md)
 
 ## Previous checkpoint — a shared recursive verifier
 
