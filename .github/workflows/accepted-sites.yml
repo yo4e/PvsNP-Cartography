@@ -48,4 +48,7 @@ jobs:
           check_mixing.py mixing-checks.json
           check_two_level.py two-level-checks.json
           check_parity_recovery.py parity-recovery-checks.json
+          check_view_overlap.py view-overlap.json
+          check_overlap.py overlap-results.json
+          check_majority.py majority-checks.json
           CASES

@@ -1,0 +1,33 @@
+{
+  "partition": {
+    "interior": 256,
+    "neighbor_checks": 6656,
+    "radius": 1,
+    "regions": 4,
+    "scope": "abstract partition only",
+    "seed_count": 4096
+  },
+  "symbolic_integer_counts": [
+    {
+      "a": 3,
+      "group_length": 1819,
+      "interior_parts_per_million_rounded_down": 188759,
+      "k": 16384,
+      "rank": 2
+    },
+    {
+      "a": 3,
+      "group_length": 7281,
+      "interior_parts_per_million_rounded_down": 471836,
+      "k": 65536,
+      "rank": 2
+    },
+    {
+      "a": 3,
+      "group_length": 29127,
+      "interior_parts_per_million_rounded_down": 700620,
+      "k": 262144,
+      "rank": 2
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "GF256_fixture": {
+    "centers_per_mask_set": 256,
+    "mask_sets": 4,
+    "physical_cells": 16384
+  },
+  "formula_counts": [
+    {
+      "four": 256,
+      "k": 8,
+      "single": 136
+    },
+    {
+      "four": 1024,
+      "k": 10,
+      "single": 272
+    },
+    {
+      "four": 2048,
+      "k": 11,
+      "single": 528
+    },
+    {
+      "four": 2080,
+      "k": 12,
+      "single": 544
+    },
+    {
+      "four": 768,
+      "k": 13,
+      "single": 216
+    },
+    {
+      "four": 832,
+      "k": 14,
+      "single": 224
+    },
+    {
+      "four": 1920,
+      "k": 32,
+      "single": 504
+    },
+    {
+      "four": 3840,
+      "k": 64,
+      "single": 984
+    },
+    {
+      "four": 7744,
+      "k": 128,
+      "single": 1960
+    }
+  ],
+  "m_at_k64": 4203359652212462,
+  "physical_coordinates": [
+    {
+      "a": 3,
+      "base_overlap": 128,
+      "checks": 256,
+      "differences_per_center": 128,
+      "k": 7
+    },
+    {
+      "a": 3,
+      "base_overlap": 136,
+      "checks": 512,
+      "differences_per_center": 256,
+      "k": 8
+    },
+    {
+      "a": 3,
+      "base_overlap": 264,
+      "checks": 1024,
+      "differences_per_center": 512,
+      "k": 9
+    },
+    {
+      "a": 3,
+      "base_overlap": 216,
+      "checks": 146,
+      "differences_per_center": 73,
+      "k": 13
+    }
+  ]
+}

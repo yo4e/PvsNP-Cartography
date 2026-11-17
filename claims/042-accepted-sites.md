@@ -8,3 +8,5 @@ last_attacked: 2026-11-17
 ---
 
 These are separate claims with different verifier schedules. [Exact statement, scopes and replays](../expeditions/042-accepted-sites/conclusion.md) · [Adversarial audit](../attacks/042-accepted-sites.md). The original exact-all-sites conjecture is refuted by the explicitly shared construction. The generic quantitative repair and sharp two-level bound are written arguments. Neither has been checked in a proof assistant.
+
+Continuation on #32: [the exact physical displacement formula](../expeditions/042-accepted-sites/exact-overlap.md) has linear growth at fixed rate. [Low-rank masks](../expeditions/042-accepted-sites/low-rank.md) allow almost all seeds to accept for every prescribed root when rank=o(k). In particular the designed NO example defeats constant rejection for every polynomial-size subgroup. These are general written arguments with finite checks of their ingredients.

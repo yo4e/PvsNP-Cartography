@@ -1,0 +1,55 @@
+{
+  "base_overlap_neighbors": 136,
+  "base_unique_cells": 604,
+  "other_mask_sets": {
+    "0,1,16": {
+      "overlap_neighbors": 144,
+      "sumset_size": 4
+    },
+    "0,1,16,17": {
+      "overlap_neighbors": 144,
+      "sumset_size": 4
+    },
+    "0,1,2,3": {
+      "overlap_neighbors": 136,
+      "sumset_size": 4
+    },
+    "0,9,18,27": {
+      "overlap_neighbors": 256,
+      "sumset_size": 4
+    }
+  },
+  "root_seeds": 256,
+  "two_shift_schedules": [
+    {
+      "mask_count": 1,
+      "overlap_neighbors": 136,
+      "unique_cells": 604
+    },
+    {
+      "mask_count": 7,
+      "overlap_neighbors": 136,
+      "unique_cells": 696
+    },
+    {
+      "mask_count": 15,
+      "overlap_neighbors": 144,
+      "unique_cells": 1144
+    },
+    {
+      "mask_count": 8,
+      "overlap_neighbors": 256,
+      "unique_cells": 1144
+    },
+    {
+      "mask_count": 105,
+      "overlap_neighbors": 144,
+      "unique_cells": 1200
+    },
+    {
+      "mask_count": 120,
+      "overlap_neighbors": 256,
+      "unique_cells": 1208
+    }
+  ]
+}
