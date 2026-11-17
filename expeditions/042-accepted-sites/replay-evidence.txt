@@ -1,0 +1,403 @@
+GitHub Actions job 133744970682, run 43995065443 — completed success
+Ubuntu 24.04.5; Python 3.13.5
+Source and workflow ref: d17842e9d5c71e982eafdecee11e9bce6211a025
+Complete stdout of the replay step after setup, with the runner's per-line timestamps removed.
+Commands: git rev-parse HEAD, python --version, then normal and -O runs, cmp of both outputs against each expected file, sha256sum and cat. Successful cmp writes no stdout.
+
+d17842e9d5c71e982eafdecee11e9bce6211a025
+Python 3.13.5
+3d53a229894190a8433b7b64bb00e6479bea4225fdc4a9aa3a66d42d8d4fa705  physical-patch.json
+{
+  "finite_replay": {
+    "constant_patch": {
+      "accepted_ones": 1,
+      "accepted_zeros": 120,
+      "exact_root_distance_in_symbols": 8,
+      "physical_cells_marked": 604
+    },
+    "outer_patch": {
+      "RS_only_accepts": 128,
+      "center_sites": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "degree_cutoff_exclusive": 32,
+      "external_sites": 256,
+      "honest_NO_root_cap": 35,
+      "joint_accepts_by_XOR_masks": {
+        "0": 67,
+        "0,1": 67,
+        "0,16": 36,
+        "0,9": 0
+      },
+      "physical_cells_marked": 3456,
+      "residual_only_accepts": 67,
+      "total_cells": 16384,
+      "untouched_interpolation_sites": [
+        4,
+        5,
+        6,
+        7,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        128,
+        129,
+        130,
+        131
+      ]
+    }
+  },
+  "symbolic_budget": {
+    "a": 3,
+    "augmented_four_call_slots": 240926721,
+    "certified_extra_joint_acceptances": 278,
+    "k": 64,
+    "scope": "recurrence and integer bound only",
+    "single_call_slots": 60231680
+  }
+}
+995e24bc91551f891386e435cdb5fe90d8ed3c16f03f68bc82dd1849b71dcb11  mixing-checks.json
+{
+  "powering_and_mixing": [
+    {
+      "dimension": 3,
+      "distinct_masks": 6,
+      "failure_sets": 256,
+      "unweighted_support_bias": "1/3",
+      "weighted_bias": "1/2",
+      "weighted_masks": 16
+    },
+    {
+      "dimension": 4,
+      "distinct_masks": 6,
+      "failure_sets": 65536,
+      "unweighted_support_bias": "2/3",
+      "weighted_bias": "3/4",
+      "weighted_masks": 16
+    }
+  ],
+  "toy_outer": {
+    "admissible_word_failure_pairs": 30981,
+    "largest_joint_count": 2,
+    "out_of_acceptance_read": {
+      "amplified_accept": [
+        2,
+        4
+      ],
+      "base_reject": [
+        0
+      ],
+      "distance_symbols": 2,
+      "joint_accept": [
+        2,
+        4
+      ],
+      "nearest_constant": 0,
+      "offset": 2,
+      "word": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    "residual_root_cap": 1
+  }
+}
+b102856dc0e51896ce9062820310d76e88086be798ed9b81444edb09491b5a35  two-level-checks.json
+{
+  "accounting": {
+    "8": {
+      "row_patterns": 13332,
+      "tight_full_acceptance_single_parity_patterns": 10
+    },
+    "16": {
+      "row_patterns": 251940,
+      "tight_full_acceptance_single_parity_patterns": 26
+    }
+  },
+  "witnesses": {
+    "a3_k8": {
+      "best_constant_agreements": 64,
+      "distance_lower": 162,
+      "distance_upper": 192,
+      "nonconstant_agreement_upper_bound": 94,
+      "seeds": {
+        "accepted_by_constant_leaves": 128,
+        "rejected_by_mixed_leaf": 128
+      }
+    },
+    "a3_k9": {
+      "best_constant_agreements": 128,
+      "distance_lower": 322,
+      "distance_upper": 384,
+      "nonconstant_agreement_upper_bound": 190,
+      "seeds": {
+        "accepted_by_constant_leaves": 256,
+        "rejected_by_mixed_leaf": 256
+      }
+    },
+    "a4_k10": {
+      "best_constant_agreements": 256,
+      "distance_lower": 768,
+      "distance_upper": 768,
+      "nonconstant_agreement_upper_bound": 190,
+      "seeds": {
+        "accepted_by_constant_leaves": 512,
+        "rejected_by_mixed_leaf": 512
+      }
+    },
+    "a4_k11": {
+      "best_constant_agreements": 512,
+      "distance_lower": 1536,
+      "distance_upper": 1536,
+      "nonconstant_agreement_upper_bound": 382,
+      "seeds": {
+        "accepted_by_constant_leaves": 1024,
+        "rejected_by_mixed_leaf": 1024
+      }
+    }
+  }
+}
+c628af1bab1c687e1259fc78fad52587cd66c71a804e046db30a84e3a696318b  parity-recovery-checks.json
+{
+  "agreement_on_accepted_sites": [
+    64,
+    64
+  ],
+  "base_field_polynomial_table_entries_checked": 512,
+  "degree_of_each_reconstructed_polynomial": 31,
+  "size_of_union_on_accepted_sites": 128
+}
+7086fa670541524d3fd917c007a21db35311b1a9cf95a1999bcfc9b7db792f9e  view-overlap.json
+{
+  "base_overlap_neighbors": 136,
+  "base_unique_cells": 604,
+  "other_mask_sets": {
+    "0,1,16": {
+      "overlap_neighbors": 144,
+      "sumset_size": 4
+    },
+    "0,1,16,17": {
+      "overlap_neighbors": 144,
+      "sumset_size": 4
+    },
+    "0,1,2,3": {
+      "overlap_neighbors": 136,
+      "sumset_size": 4
+    },
+    "0,9,18,27": {
+      "overlap_neighbors": 256,
+      "sumset_size": 4
+    }
+  },
+  "root_seeds": 256,
+  "two_shift_schedules": [
+    {
+      "mask_count": 1,
+      "overlap_neighbors": 136,
+      "unique_cells": 604
+    },
+    {
+      "mask_count": 7,
+      "overlap_neighbors": 136,
+      "unique_cells": 696
+    },
+    {
+      "mask_count": 15,
+      "overlap_neighbors": 144,
+      "unique_cells": 1144
+    },
+    {
+      "mask_count": 8,
+      "overlap_neighbors": 256,
+      "unique_cells": 1144
+    },
+    {
+      "mask_count": 105,
+      "overlap_neighbors": 144,
+      "unique_cells": 1200
+    },
+    {
+      "mask_count": 120,
+      "overlap_neighbors": 256,
+      "unique_cells": 1208
+    }
+  ]
+}
+a8fa65e012b320a9ad00a6896abe41788e2facf933a4d8ad13b11690200f1a39  overlap-results.json
+{
+  "GF256_fixture": {
+    "centers_per_mask_set": 256,
+    "mask_sets": 4,
+    "physical_cells": 16384
+  },
+  "formula_counts": [
+    {
+      "four": 256,
+      "k": 8,
+      "single": 136
+    },
+    {
+      "four": 1024,
+      "k": 10,
+      "single": 272
+    },
+    {
+      "four": 2048,
+      "k": 11,
+      "single": 528
+    },
+    {
+      "four": 2080,
+      "k": 12,
+      "single": 544
+    },
+    {
+      "four": 768,
+      "k": 13,
+      "single": 216
+    },
+    {
+      "four": 832,
+      "k": 14,
+      "single": 224
+    },
+    {
+      "four": 1920,
+      "k": 32,
+      "single": 504
+    },
+    {
+      "four": 3840,
+      "k": 64,
+      "single": 984
+    },
+    {
+      "four": 7744,
+      "k": 128,
+      "single": 1960
+    }
+  ],
+  "m_at_k64": 4203359652212462,
+  "physical_coordinates": [
+    {
+      "a": 3,
+      "base_overlap": 128,
+      "checks": 256,
+      "differences_per_center": 128,
+      "k": 7
+    },
+    {
+      "a": 3,
+      "base_overlap": 136,
+      "checks": 512,
+      "differences_per_center": 256,
+      "k": 8
+    },
+    {
+      "a": 3,
+      "base_overlap": 264,
+      "checks": 1024,
+      "differences_per_center": 512,
+      "k": 9
+    },
+    {
+      "a": 3,
+      "base_overlap": 216,
+      "checks": 146,
+      "differences_per_center": 73,
+      "k": 13
+    }
+  ]
+}
+d329a88dc845ffa9fba3890b33bedebbab7b6be32c32bd2f6fdd857a158a317c  majority-checks.json
+{
+  "partition": {
+    "interior": 256,
+    "neighbor_checks": 6656,
+    "radius": 1,
+    "regions": 4,
+    "scope": "abstract partition only",
+    "seed_count": 4096
+  },
+  "symbolic_integer_counts": [
+    {
+      "a": 3,
+      "group_length": 1819,
+      "interior_parts_per_million_rounded_down": 188759,
+      "k": 16384,
+      "rank": 2
+    },
+    {
+      "a": 3,
+      "group_length": 7281,
+      "interior_parts_per_million_rounded_down": 471836,
+      "k": 65536,
+      "rank": 2
+    },
+    {
+      "a": 3,
+      "group_length": 29127,
+      "interior_parts_per_million_rounded_down": 700620,
+      "k": 262144,
+      "rank": 2
+    }
+  ]
+}

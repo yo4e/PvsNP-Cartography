@@ -7,3 +7,5 @@ Start with an honest zero proof, replace the entire physical view of a chosen ce
 **Salvage.** Permit a quantified exceptional fraction and charge it against the outer constraint. Small depths, average symbol distance and single-clause rejection have separate quantifiers and denominators.
 
 **A second failed direction.** Increasing the number of shifts inside a polynomial-size subgroup does not even give constant rejection on far words at arbitrary depth. The overlap geometry leaves many independent parities unchanged by translations. Each majority region supports its own honest interpolant and almost every seed is internal to one region. The root can be prescribed exactly, including the far word x^D and the reciprocal NO witness. More masks in the same low-rank subspace retain the defect. [Multi-region post-mortem and quantitative bound](../expeditions/042-accepted-sites/low-rank.md)
+
+Full span alone is insufficient: taking zero and all unit masks increases the support radius for overlapping views by only two, so the same majority-region counterexample still applies with the original seed coordinates.
