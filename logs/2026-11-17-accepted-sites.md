@@ -12,3 +12,5 @@ The [physical-splice commit](https://github.com/yo4e/PvsNP-Cartography/commit/af
 | python check_parity_recovery.py | parity-recovery-checks.json | Reconstruct two nonconstant polynomials from the shared GF(256) physical checker. |
 
 These checks are deterministic. Python's normal and optimized interpreters must produce the exact committed JSON. The general arguments use polynomial interpolation and a published bivariate agreement lemma. They have no Lean execution, independent human review or novelty assessment.
+
+The [approximate-agreement and sharp-coefficient commit](https://github.com/yo4e/PvsNP-Cartography/commit/e9fbc3d3546ea7462e29f3a322b946d02d4b662d) has tree d0b1b8e56b4104cd79e88b4a71afca3fd9b488db. All 16 changed files and the commit/diff were re-fetched and matched. With Python 3.12.14, each normal and optimized local replay produced the exact stored JSON. The workflow uses the matching expedition 041 oracle and pins checkout, Python setup and the Python version. No new formal build is required for these Python artifacts.
