@@ -1,0 +1,7 @@
+# A polynomial cannot explain every accepting site at arbitrary depth
+
+**Failed claim.** Polynomially many predetermined translations of the shared RS tester suffice for exact agreement on the accepting root sites of every proof. The successful paired and four-way low-depth reconstructions made this plausible. Their whole-row hypothesis becomes too costly at depth; weaker exact agreement also fails.
+
+Start with an honest zero proof, replace the entire physical view of a chosen center and its external symbol by their values in the honest one proof. Each other seed with a disjoint view accepts as before. Each fixed read occurrence is injective in the seed. Many accepted zeros force any common low-degree polynomial to vanish identically, while the center accepts one. One shared assignment respects every redirect. The reciprocal-interpolant version also breaks the naive honest-root cap for a single outer residual. [General witness](../expeditions/042-accepted-sites/planting.md) · [NO constraint](../expeditions/042-accepted-sites/outer-planting.md) · [Finite replay](../expeditions/042-accepted-sites/physical-patch.json)
+
+**Salvage.** Permit a quantified exceptional fraction and charge it against the outer constraint. Small depths, average symbol distance and single-clause rejection have separate quantifiers and denominators.

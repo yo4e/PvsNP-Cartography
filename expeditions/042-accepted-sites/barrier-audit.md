@@ -1,0 +1,5 @@
+# Scope of the argument
+
+Relativization: the results concern finite-field table testers and one algebraic constraint. They supply no new comparison of oracle complexity classes. Natural Proofs: a property of proximity-proof transcripts supplies neither a large useful property of Boolean functions nor a general circuit size lower bound. Algebrization: interpolation and additive field translations take place entirely within the given verifier. No step distinguishes classes in an algebraic oracle world.
+
+The BV14 verifier already employs fixed small-bias shifts. This investigation concerns the repository's enumerated-tape schedule, shared symbol addresses and a residual evaluated only once. Signed projections preserve the addressing property under translation, but the Boolean clause count and fixed-input approximation error still need to be charged. Status is a written analysis plus finite replays, with novelty unknown. [BV14 §§4.3–4.4 and 6](https://eccc.weizmann.ac.il/report/2014/017/download/) · [Barrier map](../../map/BARRIERS.md)

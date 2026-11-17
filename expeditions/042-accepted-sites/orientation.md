@@ -1,0 +1,5 @@
+# Can a single root polynomial explain the sites that pass?
+
+At main `6bbe8f03db2e2468929a999197d4cc20b9849d07`, Issues 8 and 15 retain their human and independent-AI review scopes. [Issue 31](https://github.com/yo4e/PvsNP-Cartography/issues/31) asks what the recursive field verifier can say about the *actual accepted external symbols*. Expedition 041 recovered entire rows at a few depths. Its unread-cell attack ruled out that intermediate step at arbitrary depth but left accepted-site agreement open.
+
+Fix the shared offset-address verifier of Expedition 038, a constant rate exponent and a single proof for all public seeds. First test whether exact agreement can survive polynomially many translated calls. Then ask how much disagreement the outer algebraic constraint can tolerate while retaining one evaluation of its residual. The earlier low-depth paired construction supplies a control. The separate unpaired two-level coefficient concerns a different parameter regime. [Source compiler](../038-recursive-query-fibers/source-compiler.md) · [Two-level family](../041-two-level-distance/family.md)

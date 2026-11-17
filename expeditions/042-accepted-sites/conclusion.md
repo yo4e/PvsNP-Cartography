@@ -1,0 +1,7 @@
+# Exact accepted-site agreement fails
+
+Two honest recursive Reed–Solomon proofs can be spliced on the physical cells read at chosen seeds. With fixed rate and polynomially many fixed XOR translates, every sufficiently large instance admits a shared proof for which each low-degree polynomial misses some accepting external site. In a designed unsatisfiable field constraint, a splice can also exceed the maximum number of residual roots available to an honest polynomial. The [address-overlap argument](planting.md) and [outer construction](outer-planting.md) are written derivations.
+
+At 256 seeds the [physical replay](physical_patch.py) first accepts one planted one and 120 zeros. The nearest root polynomial has eight differences on the full word and just one on the accepting sites. A second proof splices two degree-31 reciprocal interpolants. Exactly 67 seeds satisfy both the unpaired proximity check and the designed NO constraint, against a maximum of 35 for genuine polynomials. Mask pair 0,1 still accepts 67, while the previously repaired pair 0,9 accepts zero on this particular proof. These are actual counts for a specific global assignment. [Exact output](physical-patch.json)
+
+The reach of the obstruction depends on how many distinct seeds can read one canonical address. The root-count discrepancy merits quantifying the best achievable *approximate* agreement and its predicate cost. The finite example alone cannot decide the arbitrary-depth question.
