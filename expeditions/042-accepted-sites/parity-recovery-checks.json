@@ -1,0 +1,9 @@
+{
+  "agreement_on_accepted_sites": [
+    64,
+    64
+  ],
+  "base_field_polynomial_table_entries_checked": 512,
+  "degree_of_each_reconstructed_polynomial": 31,
+  "size_of_union_on_accepted_sites": 128
+}

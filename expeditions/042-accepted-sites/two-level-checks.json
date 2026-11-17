@@ -1,0 +1,54 @@
+{
+  "accounting": {
+    "8": {
+      "row_patterns": 13332,
+      "tight_full_acceptance_single_parity_patterns": 10
+    },
+    "16": {
+      "row_patterns": 251940,
+      "tight_full_acceptance_single_parity_patterns": 26
+    }
+  },
+  "witnesses": {
+    "a3_k8": {
+      "best_constant_agreements": 64,
+      "distance_lower": 162,
+      "distance_upper": 192,
+      "nonconstant_agreement_upper_bound": 94,
+      "seeds": {
+        "accepted_by_constant_leaves": 128,
+        "rejected_by_mixed_leaf": 128
+      }
+    },
+    "a3_k9": {
+      "best_constant_agreements": 128,
+      "distance_lower": 322,
+      "distance_upper": 384,
+      "nonconstant_agreement_upper_bound": 190,
+      "seeds": {
+        "accepted_by_constant_leaves": 256,
+        "rejected_by_mixed_leaf": 256
+      }
+    },
+    "a4_k10": {
+      "best_constant_agreements": 256,
+      "distance_lower": 768,
+      "distance_upper": 768,
+      "nonconstant_agreement_upper_bound": 190,
+      "seeds": {
+        "accepted_by_constant_leaves": 512,
+        "rejected_by_mixed_leaf": 512
+      }
+    },
+    "a4_k11": {
+      "best_constant_agreements": 512,
+      "distance_lower": 1536,
+      "distance_upper": 1536,
+      "nonconstant_agreement_upper_bound": 382,
+      "seeds": {
+        "accepted_by_constant_leaves": 1024,
+        "rejected_by_mixed_leaf": 1024
+      }
+    }
+  }
+}

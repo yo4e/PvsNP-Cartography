@@ -1,0 +1,51 @@
+{
+  "powering_and_mixing": [
+    {
+      "dimension": 3,
+      "distinct_masks": 6,
+      "failure_sets": 256,
+      "unweighted_support_bias": "1/3",
+      "weighted_bias": "1/2",
+      "weighted_masks": 16
+    },
+    {
+      "dimension": 4,
+      "distinct_masks": 6,
+      "failure_sets": 65536,
+      "unweighted_support_bias": "2/3",
+      "weighted_bias": "3/4",
+      "weighted_masks": 16
+    }
+  ],
+  "toy_outer": {
+    "admissible_word_failure_pairs": 30981,
+    "largest_joint_count": 2,
+    "out_of_acceptance_read": {
+      "amplified_accept": [
+        2,
+        4
+      ],
+      "base_reject": [
+        0
+      ],
+      "distance_symbols": 2,
+      "joint_accept": [
+        2,
+        4
+      ],
+      "nearest_constant": 0,
+      "offset": 2,
+      "word": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    "residual_root_cap": 1
+  }
+}

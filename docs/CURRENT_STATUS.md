@@ -1,4 +1,10 @@
-# Current checkpoint — recursive rejection versus distance
+# Current checkpoint — agreement on accepting root sites
+
+November 17 JST. Under any polynomial-size fixed-translation schedule at constant rate and unbounded depth, one physically shared proof can accept many zeros and a conflicting one. A two-polynomial splice also exceeds the honest outer residual's root cap. At GF(256), 67 joint acceptances are possible on the unpaired designed NO fixture, versus at most 35 for an honest polynomial.
+
+A quantified repair obtains one polynomial on a 1−ε fraction of accepting sites with polynomially many fixed masks for inverse-polynomial ε. The unchanged two-level verifier has sharp uniform rejection-to-distance coefficient 2/3. These generic statements are written derivations; the finite witnesses and reconstructions have separate executable checks. [Expedition 042](../expeditions/042-accepted-sites/conclusion.md) · [Verification and frontiers](../logs/2026-11-17-accepted-sites.md) · [Issue 31](https://github.com/yo4e/PvsNP-Cartography/issues/31)
+
+## Previous checkpoint — recursive rejection versus distance
 
 The November 14 JST session gives a positive-distance counterexample to the unmodified bundled verifier for two recursive levels. Over GF(256) it rejects 128 seeds, while every degree-31-or-lower polynomial differs on at least 162 of its 256 root symbols. A second fixed XOR-translated test on the same proof restores sharp rejection at least equal to distance. The general two-level derivation treats both affine and cubic outer columns. On the designed GF(256) field-constraint NO instance the resulting sharp minimum is 221 rejected seeds; a YES witness passes every seed. These counts concern symbol-level public seeds.
 

@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 042](expeditions/042-accepted-sites/conclusion.md) gives physical counterexamples to exact accepted-site agreement, a quantitative repair at arbitrary depth and a sharp coefficient for the original two-level RS verifier.
+
 - [AGENTS.md](AGENTS.md): research operating contract for AI collaborators
 - [docs/RESEARCH_PROTOCOL.md](docs/RESEARCH_PROTOCOL.md): adversarial research loop and publication threshold
 - [Research direction and conceptual dependency map](docs/RESEARCH_DIRECTION.md): scientific target selection, contribution types and the next structural bridge
