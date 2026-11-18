@@ -1,0 +1,105 @@
+{
+  "all_gate_errors": {
+    "exact_maxima": [
+      {
+        "shifts": [
+          0
+        ],
+        "sigma": "2",
+        "variables": 4
+      },
+      {
+        "shifts": [
+          0,
+          1
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          2
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          1,
+          2
+        ],
+        "sigma": "4",
+        "variables": 12
+      },
+      {
+        "shifts": [
+          0,
+          3
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          1,
+          3
+        ],
+        "sigma": "4",
+        "variables": 12
+      },
+      {
+        "shifts": [
+          0,
+          2,
+          3
+        ],
+        "sigma": "4",
+        "variables": 12
+      }
+    ],
+    "mask_sets": 7,
+    "nonempty_full_error_sets": 13065
+  },
+  "costing": {
+    "exact_product_comparisons": 3125,
+    "padded_examples": [
+      {
+        "best_possible_precision_ratio": "101/26",
+        "case": "shared_overhead_gain",
+        "copies": 4,
+        "cube_rows_after": 1024,
+        "cube_rows_before": 1024,
+        "per_copy_clauses": 10,
+        "per_copy_rows": 1,
+        "shared_clauses": 1000,
+        "shared_rows": 1000
+      },
+      {
+        "best_possible_precision_ratio": "101/401",
+        "case": "replica_dominated_loss",
+        "copies": 4,
+        "cube_rows_after": 4096,
+        "cube_rows_before": 1024,
+        "per_copy_clauses": 1000,
+        "per_copy_rows": 1000,
+        "shared_clauses": 10,
+        "shared_rows": 1
+      }
+    ]
+  },
+  "sharing": {
+    "base_outer_table_mask_triples": 2048,
+    "base_table_mask_pairs": 128,
+    "cube_points": 4,
+    "extremal_all_masks": {
+      "base_rejects": 1,
+      "field_bundle_rejects": 4,
+      "minimum_failed_clauses": 1
+    },
+    "nonempty_buffer_error_sets": 120,
+    "private_and_truth_tables": 30
+  }
+}

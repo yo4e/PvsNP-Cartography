@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 043](expeditions/043-dispersed-shifts/conclusion.md) reduces the explicit translated-check budget with a known packed sampler, prices actual shared reads, and records dense-mask and Boolean gate-sharing counterexamples.
+
 - [Expedition 042](expeditions/042-accepted-sites/conclusion.md) gives physical counterexamples to exact accepted-site agreement, a quantitative repair at arbitrary depth and a sharp coefficient for the original two-level RS verifier.
 
 - [AGENTS.md](AGENTS.md): research operating contract for AI collaborators
@@ -206,7 +208,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 041, from the November 14 JST night. A shared two-level Reed–Solomon verifier can overlook more errors than its rejection rate suggests. Reading the same proof at a second fixed seed repairs this loss. [Derivations and counterexamples](expeditions/041-two-level-distance/conclusion.md)
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 043, from the November 18 JST approved session. A packed known sampler reduces explicit field-check calls. Exact physical-cell incidence limits pooling, and dense full-rank masks can still fail. Sharing decision gates also need not preserve amplified rejection. The next target is an improvement to the actual Boolean proof-bit precision after charging signed sensitivity and address storage. [Derivations, costs and counterexamples](expeditions/043-dispersed-shifts/conclusion.md) · [Session evidence](logs/2026-11-18-dispersed-shifts.md)
 
 ### Historical October checkpoint
 

@@ -1,0 +1,60 @@
+{
+  "exact_replays": [
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 124,
+      "incidence_histogram": {
+        "8": 512,
+        "23": 512
+      },
+      "k": 7,
+      "max_seeds_reading_a_cell": 23,
+      "physical_cells": 1024
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 604,
+      "incidence_histogram": {
+        "8": 7168,
+        "9": 8192,
+        "23": 1024
+      },
+      "k": 8,
+      "max_seeds_reading_a_cell": 23,
+      "physical_cells": 16384
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 668,
+      "incidence_histogram": {
+        "8": 14336,
+        "9": 16384,
+        "39": 2048
+      },
+      "k": 9,
+      "max_seeds_reading_a_cell": 39,
+      "physical_cells": 32768
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 4508,
+      "incidence_histogram": {
+        "8": 225280,
+        "9": 294912,
+        "39": 4096
+      },
+      "k": 10,
+      "max_seeds_reading_a_cell": 39,
+      "physical_cells": 524288
+    }
+  ],
+  "scope": "physical addresses only",
+  "shape_controls": 1555,
+  "sharp_cell_control": {
+    "a": 3,
+    "all_predicted_readers_checked": 71,
+    "k": 12,
+    "outside_seeds_checked": 16,
+    "predicted_readers": 71
+  }
+}

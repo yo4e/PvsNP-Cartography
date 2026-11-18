@@ -1,0 +1,118 @@
+{
+  "analytical_large_cases": [
+    {
+      "NO_joint_accept_at_least_ppm": 27642,
+      "RS_accept_at_least_ppm": 27642,
+      "RS_reject_at_most_ppm": 972358,
+      "checks": 1365,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 4095,
+      "odd_group_size": 455,
+      "r": 12,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 505391,
+      "RS_accept_at_least_ppm": 505391,
+      "RS_reject_at_most_ppm": 494609,
+      "checks": 21845,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 65535,
+      "odd_group_size": 7281,
+      "r": 16,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 722777,
+      "RS_accept_at_least_ppm": 722777,
+      "RS_reject_at_most_ppm": 277223,
+      "checks": 87381,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 262143,
+      "odd_group_size": 29127,
+      "r": 18,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 853614,
+      "RS_accept_at_least_ppm": 853614,
+      "RS_reject_at_most_ppm": 146386,
+      "checks": 349525,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 1048575,
+      "odd_group_size": 116507,
+      "r": 20,
+      "w": 11
+    }
+  ],
+  "exhaustive_binomial_controls": 30,
+  "finite_frames": [
+    {
+      "base_overlap_size": 232,
+      "base_syndrome_maximum": 4,
+      "bundle_syndrome_maximum": 5,
+      "independent_checks": 5,
+      "k": 15,
+      "mask_count": 16,
+      "mask_weights": [
+        7,
+        9
+      ],
+      "one_triple_bias_denominator": 16,
+      "one_triple_bias_numerator": 10,
+      "pair_distances": [
+        6,
+        8,
+        10
+      ],
+      "r": 4,
+      "rank": 15
+    },
+    {
+      "base_overlap_size": 968,
+      "base_syndrome_maximum": 7,
+      "bundle_syndrome_maximum": 9,
+      "independent_checks": 21,
+      "k": 63,
+      "mask_count": 64,
+      "mask_weights": [
+        31,
+        33
+      ],
+      "one_triple_bias_denominator": 64,
+      "one_triple_bias_numerator": 58,
+      "pair_distances": [
+        30,
+        32,
+        34
+      ],
+      "r": 6,
+      "rank": 63
+    },
+    {
+      "base_overlap_size": 3880,
+      "base_syndrome_maximum": 7,
+      "bundle_syndrome_maximum": 9,
+      "independent_checks": 85,
+      "k": 255,
+      "mask_count": 256,
+      "mask_weights": [
+        127,
+        129
+      ],
+      "one_triple_bias_denominator": 256,
+      "one_triple_bias_numerator": 250,
+      "pair_distances": [
+        126,
+        128,
+        130
+      ],
+      "r": 8,
+      "rank": 255
+    }
+  ]
+}

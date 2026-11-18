@@ -1,4 +1,12 @@
-# Current checkpoint — agreement on accepting root sites
+# Current checkpoint — dispersed shifts and their Boolean cost
+
+November 18 JST. Expedition 043 reconstructs the packed AGHP sampler, reducing the previous explicit fixed-translation budget by a squared logarithm in the fixed-rate, inverse-polynomial error regime. The exact physical-cell reader multiplicity is at most 2^(2a)+2^a−1, so distinct-call pooling saves only a rate-dependent factor. Packed masks eventually have almost entirely disjoint physical views.
+
+A dense, full-rank, pairwise-separated mask family still permits near-total acceptance of any prescribed root. A separate shared decision-buffer compiler can erase amplified field rejection at one copy violation per original failed decision. These failures explain why the next useful quantity is gamma N/(Q sigma): actual NO rejection over address storage and signed failure sensitivity. Private replication can amortize shared overhead, so no universal compiler impossibility is asserted.
+
+[Expedition 043: exact scopes and four replays](../expeditions/043-dispersed-shifts/conclusion.md) · [November 18 evidence](../logs/2026-11-18-dispersed-shifts.md) · [Cost question, Issue 32](https://github.com/yo4e/PvsNP-Cartography/issues/32). The packed sampler is prior art. General model-specific deductions are written arguments with bounded controls; novelty, new Lean checking and external review are not claimed. The full recursive Boolean gate census and the secondary unpaired GF(256) optimum remain unresolved. Issues8/15 retain their distinct review scopes. This checkpoint does not authorize another session.
+
+## Previous checkpoint — agreement on accepting root sites
 
 November 17 JST. Under any polynomial-size fixed-translation schedule at constant rate and unbounded depth, one physically shared proof can accept many zeros and a conflicting one. A two-polynomial splice also exceeds the honest outer residual's root cap. At GF(256), 67 joint acceptances are possible on the unpaired designed NO fixture, versus at most 35 for an honest polynomial.
 

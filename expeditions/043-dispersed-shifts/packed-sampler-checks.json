@@ -1,0 +1,141 @@
+{
+  "asymptotic_disjointness_control": {
+    "Q": 64,
+    "a": 3,
+    "actual_minimum_distance_regular": 17,
+    "base_overlap_maximum_weight": 8,
+    "base_overlap_size": 2528,
+    "exceptional_masks": 64,
+    "full_coefficient_blocks": 26,
+    "k": 160,
+    "m": 6,
+    "pairwise_masks_checked": 7874496,
+    "pooled_read_lower_multiplier": 3969,
+    "pooled_read_upper_multiplier": 4033,
+    "proved_overlap_weight_bound": 9,
+    "regular_views_pairwise_disjoint": 3969,
+    "required_complete_blocks": 20,
+    "uniform_cell_reader_bound": 71
+  },
+  "cost_comparison": [
+    {
+      "call_saving_factor": 16,
+      "k": 64,
+      "new_Q": 64,
+      "new_guaranteed_bias": "5/32",
+      "new_m": 6,
+      "new_weighted_calls": 4096,
+      "old_Q": 256,
+      "old_weighted_calls": 65536,
+      "target_bias": "1/4"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 256,
+      "new_Q": 256,
+      "new_guaranteed_bias": "31/256",
+      "new_m": 8,
+      "new_weighted_calls": 65536,
+      "old_Q": 2048,
+      "old_weighted_calls": 4194304,
+      "target_bias": "1/8"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 1024,
+      "new_Q": 4096,
+      "new_guaranteed_bias": "85/4096",
+      "new_m": 12,
+      "new_weighted_calls": 16777216,
+      "old_Q": 32768,
+      "old_weighted_calls": 1073741824,
+      "target_bias": "1/32"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 4096,
+      "new_Q": 32768,
+      "new_guaranteed_bias": "273/32768",
+      "new_m": 15,
+      "new_weighted_calls": 1073741824,
+      "old_Q": 262144,
+      "old_weighted_calls": 68719476736,
+      "target_bias": "1/64"
+    }
+  ],
+  "exact_spectral_checks": [
+    {
+      "Q": 4,
+      "actual_bias": "1/4",
+      "characters_verified": 15,
+      "coefficient_count": 2,
+      "distinct_masks": 13,
+      "guaranteed_bias": "1/4",
+      "k": 4,
+      "m": 2,
+      "weighted_calls": 16
+    },
+    {
+      "Q": 8,
+      "actual_bias": "1/4",
+      "characters_verified": 255,
+      "coefficient_count": 3,
+      "distinct_masks": 57,
+      "guaranteed_bias": "1/4",
+      "k": 8,
+      "m": 3,
+      "weighted_calls": 64
+    },
+    {
+      "Q": 16,
+      "actual_bias": "1/8",
+      "characters_verified": 4095,
+      "coefficient_count": 3,
+      "distinct_masks": 241,
+      "guaranteed_bias": "1/8",
+      "k": 12,
+      "m": 4,
+      "weighted_calls": 256
+    },
+    {
+      "Q": 32,
+      "actual_bias": "3/32",
+      "characters_verified": 65535,
+      "coefficient_count": 4,
+      "distinct_masks": 993,
+      "guaranteed_bias": "3/32",
+      "k": 16,
+      "m": 5,
+      "weighted_calls": 1024
+    }
+  ],
+  "physical_pooling": [
+    {
+      "k": 7,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 124,
+      "pooled_physical_reads": 992,
+      "unpooled_physical_reads": 7068,
+      "view_pairs": 1596
+    },
+    {
+      "k": 8,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 604,
+      "pooled_physical_reads": 15136,
+      "unpooled_physical_reads": 34428,
+      "view_pairs": 1596
+    },
+    {
+      "k": 9,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 668,
+      "pooled_physical_reads": 26512,
+      "unpooled_physical_reads": 38076,
+      "view_pairs": 1596
+    }
+  ]
+}
