@@ -213,6 +213,15 @@ uniform-error problem, the one-global-polynomial requirement and the finite
 Boolean occurrence semantics. It also exposes exactly where a better code
 or weighted consistency scheme would have to change the analysis.
 
+For a changed compiler, use its actual minimum V_NO of failed clause–seed
+pairs over all global tables at a specified NO instance. At a satisfying YES
+reference pi, use sigma_YES from its actual signed clauses. The corresponding
+sufficient precision is V_NO/(Q sigma_YES), with the appropriate min/max
+quantifiers retained for a family of instances. Only the established private
+single-output encoding justifies substituting V_NO=gamma_field N. A shared
+encoding cannot assume this equality after the cheating assignment above.
+This is the exact next target in [Issue 33](https://github.com/yo4e/PvsNP-Cartography/issues/33).
+
 ## Finite verification
 
 The checker enumerates all 128 choices of base failure table and zero-containing

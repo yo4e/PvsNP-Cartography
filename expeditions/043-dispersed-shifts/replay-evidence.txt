@@ -1,0 +1,445 @@
+Retrieved execution evidence, 2026-11-18 JST
+Source: https://github.com/yo4e/PvsNP-Cartography/actions/runs/44247492467/job/134609864353
+Run 44247492467 and job 134609864353: completed / success
+Checked source: 60290f6aea4d57df4708863b456e55386ca1d8c5
+Tree: 13438c9c983596aea2a05e2fd59c6080e8df59a3
+Retrieved at: 2026-11-18 05:57:33 UTC
+
+The following is the actual stdout excerpt of 'Reproduce four exact controls'.
+GitHub timestamp prefixes were removed; it is not a reconstruction of program output.
+The retrieved workflow uses set -euo pipefail and compares normal and -O runs
+byte-for-byte against each expected JSON before printing its SHA256 and contents.
+Each printed hash and full JSON was compared to the re-fetched committed file.
+The full completed job and run status were retrieved separately. No Lean job ran.
+
+60290f6aea4d57df4708863b456e55386ca1d8c5
+Python 3.13.5
+f47091666ff73a3e23698f711b730777dd8683f285485061386673797a273062  incidence-checks.json
+{
+  "exact_replays": [
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 124,
+      "incidence_histogram": {
+        "8": 512,
+        "23": 512
+      },
+      "k": 7,
+      "max_seeds_reading_a_cell": 23,
+      "physical_cells": 1024
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 604,
+      "incidence_histogram": {
+        "8": 7168,
+        "9": 8192,
+        "23": 1024
+      },
+      "k": 8,
+      "max_seeds_reading_a_cell": 23,
+      "physical_cells": 16384
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 668,
+      "incidence_histogram": {
+        "8": 14336,
+        "9": 16384,
+        "39": 2048
+      },
+      "k": 9,
+      "max_seeds_reading_a_cell": 39,
+      "physical_cells": 32768
+    },
+    {
+      "a": 3,
+      "distinct_cells_in_one_view": 4508,
+      "incidence_histogram": {
+        "8": 225280,
+        "9": 294912,
+        "39": 4096
+      },
+      "k": 10,
+      "max_seeds_reading_a_cell": 39,
+      "physical_cells": 524288
+    }
+  ],
+  "scope": "physical addresses only",
+  "shape_controls": 1555,
+  "sharp_cell_control": {
+    "a": 3,
+    "all_predicted_readers_checked": 71,
+    "k": 12,
+    "outside_seeds_checked": 16,
+    "predicted_readers": 71
+  }
+}
+09e5c1b1add9f0d80c5eba98e0063994596ee6da1c6b92ba92c6a19523c75e8a  dense-mask-checks.json
+{
+  "analytical_large_cases": [
+    {
+      "NO_joint_accept_at_least_ppm": 27642,
+      "RS_accept_at_least_ppm": 27642,
+      "RS_reject_at_most_ppm": 972358,
+      "checks": 1365,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 4095,
+      "odd_group_size": 455,
+      "r": 12,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 505391,
+      "RS_accept_at_least_ppm": 505391,
+      "RS_reject_at_most_ppm": 494609,
+      "checks": 21845,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 65535,
+      "odd_group_size": 7281,
+      "r": 16,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 722777,
+      "RS_accept_at_least_ppm": 722777,
+      "RS_reject_at_most_ppm": 277223,
+      "checks": 87381,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 262143,
+      "odd_group_size": 29127,
+      "r": 18,
+      "w": 11
+    },
+    {
+      "NO_joint_accept_at_least_ppm": 853614,
+      "RS_accept_at_least_ppm": 853614,
+      "RS_reject_at_most_ppm": 146386,
+      "checks": 349525,
+      "far_root_distance_denominator": 8,
+      "far_root_distance_numerator": 7,
+      "k": 1048575,
+      "odd_group_size": 116507,
+      "r": 20,
+      "w": 11
+    }
+  ],
+  "exhaustive_binomial_controls": 30,
+  "finite_frames": [
+    {
+      "base_overlap_size": 232,
+      "base_syndrome_maximum": 4,
+      "bundle_syndrome_maximum": 5,
+      "independent_checks": 5,
+      "k": 15,
+      "mask_count": 16,
+      "mask_weights": [
+        7,
+        9
+      ],
+      "one_triple_bias_denominator": 16,
+      "one_triple_bias_numerator": 10,
+      "pair_distances": [
+        6,
+        8,
+        10
+      ],
+      "r": 4,
+      "rank": 15
+    },
+    {
+      "base_overlap_size": 968,
+      "base_syndrome_maximum": 7,
+      "bundle_syndrome_maximum": 9,
+      "independent_checks": 21,
+      "k": 63,
+      "mask_count": 64,
+      "mask_weights": [
+        31,
+        33
+      ],
+      "one_triple_bias_denominator": 64,
+      "one_triple_bias_numerator": 58,
+      "pair_distances": [
+        30,
+        32,
+        34
+      ],
+      "r": 6,
+      "rank": 63
+    },
+    {
+      "base_overlap_size": 3880,
+      "base_syndrome_maximum": 7,
+      "bundle_syndrome_maximum": 9,
+      "independent_checks": 85,
+      "k": 255,
+      "mask_count": 256,
+      "mask_weights": [
+        127,
+        129
+      ],
+      "one_triple_bias_denominator": 256,
+      "one_triple_bias_numerator": 250,
+      "pair_distances": [
+        126,
+        128,
+        130
+      ],
+      "r": 8,
+      "rank": 255
+    }
+  ]
+}
+b6e43c1ec3a51ed4745cfd081cb0982527ee82202b04014da0f798957b06318b  packed-sampler-checks.json
+{
+  "asymptotic_disjointness_control": {
+    "Q": 64,
+    "a": 3,
+    "actual_minimum_distance_regular": 17,
+    "base_overlap_maximum_weight": 8,
+    "base_overlap_size": 2528,
+    "exceptional_masks": 64,
+    "full_coefficient_blocks": 26,
+    "k": 160,
+    "m": 6,
+    "pairwise_masks_checked": 7874496,
+    "pooled_read_lower_multiplier": 3969,
+    "pooled_read_upper_multiplier": 4033,
+    "proved_overlap_weight_bound": 9,
+    "regular_views_pairwise_disjoint": 3969,
+    "required_complete_blocks": 20,
+    "uniform_cell_reader_bound": 71
+  },
+  "cost_comparison": [
+    {
+      "call_saving_factor": 16,
+      "k": 64,
+      "new_Q": 64,
+      "new_guaranteed_bias": "5/32",
+      "new_m": 6,
+      "new_weighted_calls": 4096,
+      "old_Q": 256,
+      "old_weighted_calls": 65536,
+      "target_bias": "1/4"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 256,
+      "new_Q": 256,
+      "new_guaranteed_bias": "31/256",
+      "new_m": 8,
+      "new_weighted_calls": 65536,
+      "old_Q": 2048,
+      "old_weighted_calls": 4194304,
+      "target_bias": "1/8"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 1024,
+      "new_Q": 4096,
+      "new_guaranteed_bias": "85/4096",
+      "new_m": 12,
+      "new_weighted_calls": 16777216,
+      "old_Q": 32768,
+      "old_weighted_calls": 1073741824,
+      "target_bias": "1/32"
+    },
+    {
+      "call_saving_factor": 64,
+      "k": 4096,
+      "new_Q": 32768,
+      "new_guaranteed_bias": "273/32768",
+      "new_m": 15,
+      "new_weighted_calls": 1073741824,
+      "old_Q": 262144,
+      "old_weighted_calls": 68719476736,
+      "target_bias": "1/64"
+    }
+  ],
+  "exact_spectral_checks": [
+    {
+      "Q": 4,
+      "actual_bias": "1/4",
+      "characters_verified": 15,
+      "coefficient_count": 2,
+      "distinct_masks": 13,
+      "guaranteed_bias": "1/4",
+      "k": 4,
+      "m": 2,
+      "weighted_calls": 16
+    },
+    {
+      "Q": 8,
+      "actual_bias": "1/4",
+      "characters_verified": 255,
+      "coefficient_count": 3,
+      "distinct_masks": 57,
+      "guaranteed_bias": "1/4",
+      "k": 8,
+      "m": 3,
+      "weighted_calls": 64
+    },
+    {
+      "Q": 16,
+      "actual_bias": "1/8",
+      "characters_verified": 4095,
+      "coefficient_count": 3,
+      "distinct_masks": 241,
+      "guaranteed_bias": "1/8",
+      "k": 12,
+      "m": 4,
+      "weighted_calls": 256
+    },
+    {
+      "Q": 32,
+      "actual_bias": "3/32",
+      "characters_verified": 65535,
+      "coefficient_count": 4,
+      "distinct_masks": 993,
+      "guaranteed_bias": "3/32",
+      "k": 16,
+      "m": 5,
+      "weighted_calls": 1024
+    }
+  ],
+  "physical_pooling": [
+    {
+      "k": 7,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 124,
+      "pooled_physical_reads": 992,
+      "unpooled_physical_reads": 7068,
+      "view_pairs": 1596
+    },
+    {
+      "k": 8,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 604,
+      "pooled_physical_reads": 15136,
+      "unpooled_physical_reads": 34428,
+      "view_pairs": 1596
+    },
+    {
+      "k": 9,
+      "m": 3,
+      "mask_count": 57,
+      "one_call_physical_reads": 668,
+      "pooled_physical_reads": 26512,
+      "unpooled_physical_reads": 38076,
+      "view_pairs": 1596
+    }
+  ]
+}
+bfaa35b99478a0b64a1d7ed6ac0938aa5223f460273d94fd6d09ec434fabe956  compiled-cost-checks.json
+{
+  "all_gate_errors": {
+    "exact_maxima": [
+      {
+        "shifts": [
+          0
+        ],
+        "sigma": "2",
+        "variables": 4
+      },
+      {
+        "shifts": [
+          0,
+          1
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          2
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          1,
+          2
+        ],
+        "sigma": "4",
+        "variables": 12
+      },
+      {
+        "shifts": [
+          0,
+          3
+        ],
+        "sigma": "3",
+        "variables": 8
+      },
+      {
+        "shifts": [
+          0,
+          1,
+          3
+        ],
+        "sigma": "4",
+        "variables": 12
+      },
+      {
+        "shifts": [
+          0,
+          2,
+          3
+        ],
+        "sigma": "4",
+        "variables": 12
+      }
+    ],
+    "mask_sets": 7,
+    "nonempty_full_error_sets": 13065
+  },
+  "costing": {
+    "exact_product_comparisons": 3125,
+    "padded_examples": [
+      {
+        "best_possible_precision_ratio": "101/26",
+        "case": "shared_overhead_gain",
+        "copies": 4,
+        "cube_rows_after": 1024,
+        "cube_rows_before": 1024,
+        "per_copy_clauses": 10,
+        "per_copy_rows": 1,
+        "shared_clauses": 1000,
+        "shared_rows": 1000
+      },
+      {
+        "best_possible_precision_ratio": "101/401",
+        "case": "replica_dominated_loss",
+        "copies": 4,
+        "cube_rows_after": 4096,
+        "cube_rows_before": 1024,
+        "per_copy_clauses": 1000,
+        "per_copy_rows": 1000,
+        "shared_clauses": 10,
+        "shared_rows": 1
+      }
+    ]
+  },
+  "sharing": {
+    "base_outer_table_mask_triples": 2048,
+    "base_table_mask_pairs": 128,
+    "cube_points": 4,
+    "extremal_all_masks": {
+      "base_rejects": 1,
+      "field_bundle_rejects": 4,
+      "minimum_failed_clauses": 1
+    },
+    "nonempty_buffer_error_sets": 120,
+    "private_and_truth_tables": 30
+  }
+}
+

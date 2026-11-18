@@ -1,0 +1,160 @@
+{
+  "source_commit": "60290f6aea4d57df4708863b456e55386ca1d8c5",
+  "source_tree": "13438c9c983596aea2a05e2fd59c6080e8df59a3",
+  "parent": "7348d52447f5007e20a94534734047ee140d9b38",
+  "run_id": 44247492467,
+  "job_id": 134609864353,
+  "conclusion": "success",
+  "python": "3.13.5",
+  "retrieved_at_utc": "2026-11-18 05:57:33 UTC",
+  "checks": [
+    {
+      "file": "incidence-checks.json",
+      "sha256": "f47091666ff73a3e23698f711b730777dd8683f285485061386673797a273062",
+      "exact_json_in_actual_log": true
+    },
+    {
+      "file": "dense-mask-checks.json",
+      "sha256": "09e5c1b1add9f0d80c5eba98e0063994596ee6da1c6b92ba92c6a19523c75e8a",
+      "exact_json_in_actual_log": true
+    },
+    {
+      "file": "packed-sampler-checks.json",
+      "sha256": "b6e43c1ec3a51ed4745cfd081cb0982527ee82202b04014da0f798957b06318b",
+      "exact_json_in_actual_log": true
+    },
+    {
+      "file": "compiled-cost-checks.json",
+      "sha256": "bfaa35b99478a0b64a1d7ed6ac0938aa5223f460273d94fd6d09ec434fabe956",
+      "exact_json_in_actual_log": true
+    }
+  ],
+  "exact_changed_paths_verified": 25,
+  "files": [
+    {
+      "path": ".github/workflows/dispersed-shifts.yml",
+      "sha256": "d456691e18ed652609fc020422910646acbf66d0bb77e8f2759577d690145a0b",
+      "bytes": 1687
+    },
+    {
+      "path": "README.md",
+      "sha256": "060cd2354c25d61e0a6e0863a59b49463d76c8e0f391f6972434ee3f3e760bab",
+      "bytes": 19760
+    },
+    {
+      "path": "attacks/043-dispersed-shifts.md",
+      "sha256": "52106d7ca87a1422ef02baab5e10279fbbcbf8068d52b749fa98692b598f6317",
+      "bytes": 3218
+    },
+    {
+      "path": "claims/043-dispersed-shifts.md",
+      "sha256": "96155483bf43f2c5b76695e2ca04d587da79faa9836979a1c9e0b6569e8ed8fc",
+      "bytes": 1059
+    },
+    {
+      "path": "docs/CURRENT_STATUS.md",
+      "sha256": "cb6ee3958b5ce59300d7879670e129afb472006b902e38e9b52e2b9c1bdf68b2",
+      "bytes": 13342
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/barrier-audit.md",
+      "sha256": "fb158f0dd2f7c8706b890feb1d3e0ebe08acf4a53b103cb793334491f596f130",
+      "bytes": 2424
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/check_compiler_cost.py",
+      "sha256": "e3d5888ee4484618e003377850fe6708a0fccb01ba9cf41708d763353596a2a1",
+      "bytes": 7331
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/check_dense_masks.py",
+      "sha256": "f55faf4da776adb9b5da0c2c7b12a64307e4268f00138fcfab026fe63fa0ccad",
+      "bytes": 7018
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/check_incidence.py",
+      "sha256": "27c8cda92a154864e01cb9de11708289fb4a3f0207df08c08771c7822009fad6",
+      "bytes": 4956
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/check_packed_sampler.py",
+      "sha256": "43c95dc81a86297d5a59a500a66fe4e0b11de189cd7e61ce969d934c9ded1d27",
+      "bytes": 8283
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/compiled-cost-checks.json",
+      "sha256": "bfaa35b99478a0b64a1d7ed6ac0938aa5223f460273d94fd6d09ec434fabe956",
+      "bytes": 2016
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/compiled-cost.md",
+      "sha256": "c69f570432fc677668d06eba54e213592c6d2ae3b473215159af36e00f7cbf71",
+      "bytes": 14114
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/conclusion.md",
+      "sha256": "4114f13cb71a7d410c4e5540cc437a840721fc7792caadc26bdec0aadb5e5c62",
+      "bytes": 5598
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/dense-mask-checks.json",
+      "sha256": "09e5c1b1add9f0d80c5eba98e0063994596ee6da1c6b92ba92c6a19523c75e8a",
+      "bytes": 2657
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/dense-masks.md",
+      "sha256": "1a1a7136a487f8f3535c96048a286dca8c0f58f1f75d41531f3a91e0bd88ac03",
+      "bytes": 5777
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/incidence-checks.json",
+      "sha256": "f47091666ff73a3e23698f711b730777dd8683f285485061386673797a273062",
+      "bytes": 1225
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/log.md",
+      "sha256": "845822e69d5b2847477abd429f46ea24d705373fe2e84e9bb49e166c1d3d1742",
+      "bytes": 3060
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/orientation.md",
+      "sha256": "8bf561243cbd865ef43b7169f3a7c4143fa1e14c6c76cb2837eb8b918d59056a",
+      "bytes": 2048
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/packed-sampler-checks.json",
+      "sha256": "b6e43c1ec3a51ed4745cfd081cb0982527ee82202b04014da0f798957b06318b",
+      "bytes": 3259
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/packed-sampler.md",
+      "sha256": "58071558aa3aa6a121407b7d7c387cb7449498fc1782739abddf28afd7cc7378",
+      "bytes": 10391
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/physical-cost.md",
+      "sha256": "14029f95bdf11891a5e97f8200d02b374aea20e476b2baea4a39afeaa33183e9",
+      "bytes": 4556
+    },
+    {
+      "path": "expeditions/043-dispersed-shifts/syndrome-obstruction.md",
+      "sha256": "8119d392ae8268f38e8e89f7e0b0a1ce75b76367b690d1ad9eb19c2540b0592a",
+      "bytes": 5801
+    },
+    {
+      "path": "graveyard/2026-11-18-dense-masks.md",
+      "sha256": "9fe9f08c53dadcded6e5044a2e4a69431ca451644f69bca88e425de60d2d2c25",
+      "bytes": 1662
+    },
+    {
+      "path": "graveyard/2026-11-18-shared-decision-amplification.md",
+      "sha256": "74843ead573450acf3d1e24534a1682b8b9e65b57400d4df41af16227e143e07",
+      "bytes": 1797
+    },
+    {
+      "path": "logs/2026-11-18-dispersed-shifts.md",
+      "sha256": "6ded2fda6f0233b153e26b03c374795ef133e5c738bba118dbab116317bdc2ae",
+      "bytes": 2600
+    }
+  ]
+}
