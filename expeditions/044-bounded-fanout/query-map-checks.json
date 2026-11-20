@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "a": 3,
+      "k": 7,
+      "literal_route_comparisons": 2560,
+      "max_input_copy_load": 23,
+      "physical_cells": 1024,
+      "raw_slots_including_unused_tape_bits": 640,
+      "unique_query_maps": 124,
+      "whole_seed_views_compared": 128
+    },
+    {
+      "a": 3,
+      "k": 8,
+      "literal_route_comparisons": 20992,
+      "max_input_copy_load": 23,
+      "physical_cells": 16384,
+      "raw_slots_including_unused_tape_bits": 5248,
+      "unique_query_maps": 604,
+      "whole_seed_views_compared": 256
+    }
+  ],
+  "scope": "bounded query-map and alias controls; no gate circuit or asymptotic proof"
+}

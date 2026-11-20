@@ -1,0 +1,216 @@
+{
+  "copies": [
+    {
+      "cases": {
+        "no": {
+          "Q": 8388608,
+          "canonical_failed_pairs": 109,
+          "clause_seed_pairs": 15338624,
+          "clause_templates": 119833,
+          "copy_rows": 18051,
+          "field_assignments_compared": 142,
+          "gates": {
+            "and": 3597,
+            "copy": 18051,
+            "xor": 18231
+          },
+          "padded_physical_rows": 65536,
+          "used_physical_rows": 39999
+        },
+        "yes": {
+          "Q": 8388608,
+          "canonical_failed_pairs": 0,
+          "clause_seed_pairs": 15325440,
+          "clause_templates": 119730,
+          "copy_rows": 18042,
+          "field_assignments_compared": 142,
+          "gates": {
+            "and": 3582,
+            "copy": 18042,
+            "xor": 18221
+          },
+          "guaranteed_precision_gain": "9/8",
+          "mixed_error_set_sizes": [
+            1,
+            2,
+            7,
+            31,
+            128
+          ],
+          "padded_physical_rows": 65536,
+          "precision_threshold": "109/1073741824",
+          "signed_bound": {
+            "physical_input_bound": 128,
+            "private_and_pin_bound": 4,
+            "sigma_upper": 128
+          },
+          "singletons": {
+            "direct_failed_pairs": 128,
+            "maxima_by_role": {
+              "A": 128,
+              "B": 23,
+              "constant": 1,
+              "gate": 4,
+              "seed": 4
+            },
+            "maximum": 128,
+            "witness_seed": 0,
+            "witness_tag": 0
+          },
+          "used_physical_rows": 39965
+        }
+      },
+      "fanout_cap": 2
+    },
+    {
+      "cases": {
+        "no": {
+          "Q": 4194304,
+          "canonical_failed_pairs": 109,
+          "clause_seed_pairs": 11383936,
+          "clause_templates": 88937,
+          "copy_rows": 2603,
+          "field_assignments_compared": 142,
+          "gates": {
+            "and": 3597,
+            "copy": 2603,
+            "xor": 18231
+          },
+          "padded_physical_rows": 32768,
+          "used_physical_rows": 24551
+        },
+        "yes": {
+          "Q": 4194304,
+          "canonical_failed_pairs": 0,
+          "clause_seed_pairs": 11373056,
+          "clause_templates": 88852,
+          "copy_rows": 2603,
+          "field_assignments_compared": 142,
+          "gates": {
+            "and": 3582,
+            "copy": 2603,
+            "xor": 18221
+          },
+          "guaranteed_precision_gain": "9/4",
+          "mixed_error_set_sizes": [
+            1,
+            2,
+            7,
+            31,
+            128
+          ],
+          "omitted_copy_mutants": {
+            "physical_boundary": {
+              "failed_pairs": 250,
+              "flipped_wire": 9,
+              "seed": 126
+            },
+            "private_fanout_split": {
+              "failed_pairs": 199,
+              "flipped_wire": 5264,
+              "seed": 104
+            }
+          },
+          "padded_physical_rows": 32768,
+          "precision_threshold": "109/536870912",
+          "scalar_mutations": [
+            {
+              "address": 0,
+              "failed_pairs": 128,
+              "touched_clause_seed_pairs": 256
+            },
+            {
+              "address": 14481,
+              "failed_pairs": 21,
+              "touched_clause_seed_pairs": 90
+            },
+            {
+              "address": 15369,
+              "failed_pairs": 2,
+              "touched_clause_seed_pairs": 7
+            }
+          ],
+          "signed_bound": {
+            "physical_input_bound": 128,
+            "private_and_pin_bound": 128,
+            "sigma_upper": 128
+          },
+          "singletons": {
+            "direct_failed_pairs": 128,
+            "maxima_by_role": {
+              "A": 128,
+              "B": 23,
+              "constant": 1,
+              "gate": 127,
+              "seed": 34
+            },
+            "maximum": 128,
+            "witness_seed": 0,
+            "witness_tag": 0
+          },
+          "used_physical_rows": 24526
+        }
+      },
+      "fanout_cap": 126
+    }
+  ],
+  "local_gate_cases": {
+    "AND_000_to_001_failed_clauses": 2,
+    "signed_and_alias_cases": 1152
+  },
+  "original_yes": {
+    "Q": 4194304,
+    "clause_seed_pairs": 10706688,
+    "clause_templates": 83646,
+    "gates": {
+      "and": 3582,
+      "xor": 18221
+    },
+    "padded_physical_rows": 32768,
+    "scalar_mutations": [
+      {
+        "address": 126,
+        "failed_pairs": 288,
+        "touched_clause_seed_pairs": 1100
+      },
+      {
+        "address": 14481,
+        "failed_pairs": 21,
+        "touched_clause_seed_pairs": 90
+      },
+      {
+        "address": 15369,
+        "failed_pairs": 2,
+        "touched_clause_seed_pairs": 7
+      }
+    ],
+    "sigma_exact_for_reference": 288,
+    "singletons": {
+      "direct_failed_pairs": 288,
+      "maxima_by_role": {
+        "A": 288,
+        "B": 150,
+        "constant": 1,
+        "gate": 199,
+        "seed": 33
+      },
+      "maximum": 288,
+      "witness_seed": 126,
+      "witness_tag": 0
+    },
+    "true_literal_certificate": {
+      "completion_address_stream_sha256": "becc1e2eeaf805be83f5e92cab6fbdbc92b7ec0315a22ea4bafed255bf39e81c",
+      "greedy_completion_choices": 2458096,
+      "maximum_true_literal_load": 288,
+      "total_assigned_clause_seed_pairs": 10706688
+    },
+    "used_physical_rows": 21923
+  },
+  "small_private_semantics": {
+    "minima_input_0_1": [
+      1,
+      0
+    ],
+    "private_assignments_each": 16
+  }
+}

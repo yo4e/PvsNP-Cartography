@@ -1,0 +1,9 @@
+# Restoring the amplified numerator by duplicating copy clauses
+
+The proposed repair gives the shared decision-buffer consistency clauses more weight, hoping to recover the field rejection of all translated calls while retaining the shared proof layout. A copy weight equal to the number $t$ of distinct shifts succeeds in restoring that numerator. For every fixed failed set $E$, the auxiliary optimum becomes exactly $|E+H|$ when private clauses have unit weight.
+
+The same buffer is consumed by $t$ private aggregates. At the all-one YES reference, flipping it incurs consistency cost $t$ and one input-implication failure in each aggregate. The exact signed sensitivity is $2t$. Thus the restored precision is $|E+H|/(2tQ_t)\le |E|/(2Q_t)$. The optimized unshifted symmetric-copy encoding attains $|E|/(2Q_1)$. Under nondecreasing storage the repair provides no net improvement. Arbitrary nonuniform weights on private clauses obey the same obstruction when the two directions of each copy retain equal weights. [Derivation and scope](../expeditions/044-bounded-fanout/weighted-copy-repair.md)
+
+The stronger proposed statement that *every* weighting has the symmetric $|E|/2$ bound is false. With four shifts, singleton $E$, and weights 5 and 1 on the two copy directions, plus unit private weights, the ratio is $4/5$. The corresponding unshifted asymmetric family has supremum $|E|$, so the comparison changes with the allowed compiler family. The failure teaches that a weighted numerator must be priced against the actual YES signed sensitivity and the same permitted baseline.
+
+A private per-center fanout transformation changes this analysis. Its copies never serve aggregates at different seeds, so the cheap shared-buffer assignment is unavailable in this form. Its soundness, actual address cube and mixed-error sensitivity require their own derivation and census. The weighted shared-buffer failure does not preclude that continuation.

@@ -1,0 +1,53 @@
+{
+  "asymmetric_counterexample": {
+    "E": [
+      0
+    ],
+    "H": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "N": 4,
+    "V": 4,
+    "ratio": "4/5",
+    "sigma": 5,
+    "weights_u_v_beta": [
+      5,
+      1,
+      1
+    ]
+  },
+  "counts": {
+    "all_error_assignments": 15069,
+    "arbitrary_private_N2": 512,
+    "nonuniform_N2": 648,
+    "rational_nonuniform_N4": 64,
+    "repair_equalities": 128,
+    "uniform_N4": 1024
+  },
+  "intermediate_subset": {
+    "E": [
+      0,
+      1,
+      2
+    ],
+    "H": [
+      0,
+      1
+    ],
+    "N": 4,
+    "endpoint_envelope": "6/5",
+    "true_optimum_V_over_sigma": "1",
+    "unshifted_symmetric_optimum": "3/2"
+  },
+  "rational_replication": {
+    "Q_changed": false,
+    "V": "7/6",
+    "replicated_V": 7,
+    "scale": 6
+  },
+  "scope": "Exact finite Boolean checks plus written derivation; no Lean or novelty claim.",
+  "status": "passed"
+}
