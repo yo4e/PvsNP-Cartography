@@ -8,6 +8,16 @@ sufficient uniform-error threshold rises from `109/1207959552` to
 `109/536870912`, exactly **9/4** times as large. This is an improvement of the
 actual raw-failure precision, not just of the earlier loose `6M` estimate.
 
+**The finite threshold remains below 1/Q.** Both sufficient bounds therefore
+require zero wrong bits for a deterministic approximant. Even for a mixture,
+mean wrong-bit count below one forces an exact polynomial to occur with positive
+probability. The existential approximation hypothesis is still exact
+representability of the respective encoded function. This calibration does
+not establish a broader approximable-function class. Moreover, the retained
+full-A predicate forces sigma>=N while truthful NO gates give V_NO<=N, so
+private fanout optimization alone cannot escape this regime.
+[Proof and exact scope](zero-error-regime.md)
+
 The old 288 upper bound is certified by assigning all 10,706,688 satisfied
 clause–seed pairs to originally true addresses with maximum load 288. An actual
 one-bit error attains that number. The saved code regenerates the allocation;
@@ -44,7 +54,9 @@ The private-copy loss has reached its physical-reader floor. Reading every A
 symbol from every center forces `mu=N=128` here. Further lowering private
 fanout cannot improve that term. The next target is a changed A membership
 test or field verifier that reduces that reader load while retaining enough
-NO rejection to improve the fully priced ratio. A proposed sparse affine test
+NO rejection to improve the fully priced ratio and reach `V_NO>sigma`. The
+frontier is [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34).
+A proposed sparse affine test
 must face arbitrary noncode A tables and shared B auxiliaries. Merely proving
 its exact zero-error code space or counting fewer queries is insufficient.
 

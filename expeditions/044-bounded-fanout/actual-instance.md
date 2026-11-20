@@ -77,3 +77,12 @@ Both transformed YES and NO circuits were compared against the original output o
 Two mutants retain the honest function but defeat the proposed sensitivity bound. Bypassing the mandatory copy root for A's zero-offset least-significant-bit map permits a single A-bit flip to create 250 failures. Bypassing a private split of original wire 5264 permits one gate-bit flip to create 199 failures. These controls identify the roles of the protected physical boundary and the private fanout cap. The separate AND 000→001 control kills an output-charge-one shortcut.
 
 This finite result changes the sufficient threshold for approximating the new global Boolean proof function. An approximation of the old address encoding does not automatically approximate the new copy rows with the same error or polynomial degree. The new exact sigma ranges over unrestricted error sets, and its singleton witness can be a high-degree error pattern. Novelty, proof-kernel verification, a general-instance census, and an approximation construction for the new function remain open.
+
+There is a stronger limitation: both displayed thresholds are below 1/Q. For
+a deterministic approximant they require zero erroneous bits. For a global
+polynomial mixture, mean error below 1/Q implies positive probability of an
+exact polynomial, so the existential degree-d hypothesis is still exact
+representability of the respective encoded function. The 9/4 factor does not
+enlarge the approximable-function class in this fixture. Retaining the full-A
+predicate also forces sigma>=N while V_NO<=N in the stated private encoding.
+[Quantization proof and resulting obstruction](zero-error-regime.md)

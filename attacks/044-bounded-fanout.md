@@ -37,6 +37,14 @@ checked different parts, then inspected one another's code and proofs.
    are written separately. The old exact 288 is for the named honest proof;
    a changed encoded truth function needs its own approximation hypothesis.
    Unrestricted singleton extremizers need not obey a fixed low degree.
+9. **A larger numerical budget might leave the same existential hypothesis.**
+   Both thresholds are below 1/Q. The deterministic certified radius stays
+   zero; any qualifying mixture must contain an exact polynomial with positive
+   probability. Thus the ratio change does not establish a larger class of
+   approximable truth functions. A one-symbol A error makes the retained field
+   predicate reject everywhere, forcing sigma>=N; truthful NO auxiliaries give
+   V_NO<=N. This stronger obstruction changes Issue 34's target to crossing
+   V_NO/sigma=1 with a changed test/representation or a justified error model.
 
 No attack found a defect in the repaired claims within their stated models.
 The work supplies neither external peer review nor new Lean acceptance.

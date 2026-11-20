@@ -24,6 +24,13 @@ copies survived arbitrary private-clause weights. An attempted extension of
 the half-bound to asymmetric copy directions failed; a positive-weight
 counterexample and the corrected comparison are retained in graveyard.
 
+The final quantifier attack found that both finite thresholds lie below one
+bit of uniform error. A qualifying mixture must contain an exact polynomial,
+so the numerical improvement does not broaden the existential approximation
+class. The full-A predicate itself forces sigma>=N and V_NO<=N in the retained
+private encoding. This obstruction is recorded separately and makes escaping
+the zero-error regime the next useful target.
+
 The lead checked canonical query-map deduplication against two independent
 router representations, inspected both agents' code, and reproduced the
 finite outputs. The source comparison checked BV14 Lemma 1.6 and a primary

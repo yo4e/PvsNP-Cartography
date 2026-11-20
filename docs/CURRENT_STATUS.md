@@ -1,4 +1,44 @@
-# Current checkpoint — dispersed shifts and their Boolean cost
+# Current checkpoint — exact compiler gain and the zero-error obstruction
+
+November 21 JST. Expedition 044 changes the actual GF(128) compiler's exact
+unrestricted signed sensitivity from 288 for the named original honest YES
+reference to 128. Cap 126 adds 2,603 private copy rows while retaining the same
+Q=4,194,304 cube on both YES and NO. The NO raw violation minimum remains 109.
+The sharp linear sufficient error budget improves by exactly 9/4 to
+109/536,870,912. The old upper bound is a regeneratable true-literal allocation;
+the new one is an all-error gate charge with an attaining singleton.
+
+**This finite budget is still below 1/Q.** A deterministic approximant must be
+exact. A qualifying polynomial mixture must contain an exact polynomial with
+positive probability, so the existential approximation class is not enlarged
+for the respective encoded truth function. The retained full-A predicate
+forces sigma>=N in the stated private encoding, while V_NO<=N. Private fanout
+optimization alone cannot escape this regime. [Proof](../expeditions/044-bounded-fanout/zero-error-regime.md)
+
+The general compiler derivation gives sigma<=max(mu,f+2), preserves the field
+NO minimum, and costs at most four times the old cube under explicit canonical
+query/private-row hypotheses. Symmetric weighting of shared decision buffers
+cannot improve its optimized unshifted baseline; a preserved asymmetric
+counterexample limits that statement. These are written arguments with finite
+controls, not new Lean or externally reviewed results. [Scopes and attacks](../expeditions/044-bounded-fanout/conclusion.md)
+
+[Code cb7d76f9](https://github.com/yo4e/PvsNP-Cartography/commit/cb7d76f9df7f8fa94cc3194c46afbf9af5de7873)
+passed completed [run 44766593485](https://github.com/yo4e/PvsNP-Cartography/actions/runs/44766593485),
+job 136392727923, Python 3.13.5. All three normal/-O outputs matched. Actual
+commit metadata, all 21 committed files and completed job output were retrieved
+and compared. [Session evidence](../logs/2026-11-21-bounded-fanout.md)
+
+[Issue 33](https://github.com/yo4e/PvsNP-Cartography/issues/33#issuecomment-7043941266)
+is completed in this scope. [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34)
+is the earliest unblocked research frontier: change the full-A reader burden
+while retaining enough NO rejection to reach V_NO>sigma, preferably growing
+in a costed family, or justify a smaller degree-restricted error sensitivity.
+Exact code-space characterization alone is insufficient. Issues 8/15 retain
+their separate review scopes; the full recursive gate census and unpaired
+GF(256) optimum remain unresolved. No write blocker or unapplied patch remains.
+This checkpoint does not authorize another session.
+
+## Previous checkpoint — dispersed shifts and their Boolean cost
 
 November 18 JST. Expedition 043 reconstructs the packed AGHP sampler, reducing the previous explicit fixed-translation budget by a squared logarithm in the fixed-rate, inverse-polynomial error regime. The exact physical-cell reader multiplicity is at most 2^(2a)+2^a−1, so distinct-call pooling saves only a rate-dependent factor. Packed masks eventually have almost entirely disjoint physical views.
 

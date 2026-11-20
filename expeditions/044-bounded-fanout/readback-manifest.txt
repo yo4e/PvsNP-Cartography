@@ -1,0 +1,133 @@
+{
+  "commit": "cb7d76f9df7f8fa94cc3194c46afbf9af5de7873",
+  "parent": "062f8bb57ce1860026538dc92ca08919bf69d30a",
+  "tree": "7dad957ce0b6bd87b6802c0dfaee9fc064e5be84",
+  "files": 21,
+  "run": 44766593485,
+  "job": 136392727923,
+  "conclusion": "success",
+  "python": "3.13.5",
+  "mode_comparisons": "normal and -O versus all three expected JSON files",
+  "matched_complete_outputs": [
+    {
+      "path": "expeditions/044-bounded-fanout/fanout-checks.json",
+      "exact_output_present": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/query-map-checks.json",
+      "exact_output_present": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/weighted-copy-checks.json",
+      "exact_output_present": true
+    }
+  ],
+  "read_back": [
+    {
+      "path": "expeditions/044-bounded-fanout/actual-instance.md",
+      "sha": "3fc189a7096823e3f46d2c74a1f9670d8aaf8f64",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/barrier-audit.md",
+      "sha": "b89fde7ffe1734b769d7db22026e6c6531ef8e70",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/check_fanout.py",
+      "sha": "f4e5cfc655f049b7f26f8f110a3252b8d49901ce",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/check_query_maps.py",
+      "sha": "b67304ba77240f5d0873772b3c6bff0974728559",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/check_weighted_copy.py",
+      "sha": "30061ad1c98b64195fcb845604fbf1af54008aab",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/compiler.md",
+      "sha": "0ee8dc1d0c436f0fbb368bd0843aaf56a27fe8e5",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/conclusion.md",
+      "sha": "d1ea4e4f7a2025b9280fea2f18cdba50b0b4c80a",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/fanout-checks.json",
+      "sha": "0918360fb1c57c7868435274ad6a092ebb42c860",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/log.md",
+      "sha": "6d3b2fcdfe8e4e7bc42f5d32cf87e5c679d5346e",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/orientation.md",
+      "sha": "5887e0f8380230fb02130bfe0f58fa7aaf71f4cc",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/query-map-checks.json",
+      "sha": "5494cb8841f1622350f0abb4136eeb82106a8f6b",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/query-maps.md",
+      "sha": "2d59e0a05b77bd295fe26d58f2dbe851c4d82407",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/weighted-copy-checks.json",
+      "sha": "d3ba897322aa50908759e80263027c2494812687",
+      "matched": true
+    },
+    {
+      "path": "expeditions/044-bounded-fanout/weighted-copy-repair.md",
+      "sha": "f47bbaeca673d4594b9cd96e3243c3a7966f61ac",
+      "matched": true
+    },
+    {
+      "path": ".github/workflows/bounded-fanout.yml",
+      "sha": "99910e9e9ca2f752802adde5de6d4e26ddfffbc9",
+      "matched": true
+    },
+    {
+      "path": "claims/044-bounded-fanout.md",
+      "sha": "16fc53eda500ff5686aa608201b3dc005ff1d0cb",
+      "matched": true
+    },
+    {
+      "path": "attacks/044-bounded-fanout.md",
+      "sha": "2baa1735f3f4d50b3e9d4aac18befc2ab063dfdb",
+      "matched": true
+    },
+    {
+      "path": "graveyard/2026-11-21-weighted-shared-copy.md",
+      "sha": "d3f93e944bcb03fc22ceb8389495193b2bd53667",
+      "matched": true
+    },
+    {
+      "path": "graveyard/2026-11-21-fanout-shortcuts.md",
+      "sha": "8e5562297abe781d5015b64d99f7feb9c240a3a0",
+      "matched": true
+    },
+    {
+      "path": "logs/2026-11-21-bounded-fanout.md",
+      "sha": "446b764bf2fb3ecc317aba9d2560a7df0bc17177",
+      "matched": true
+    },
+    {
+      "path": "reviews/2026-11-21-fanout-agent-audit.md",
+      "sha": "e626aff218593af8bc7a3b265122c07518acd260",
+      "matched": true
+    }
+  ]
+}
+

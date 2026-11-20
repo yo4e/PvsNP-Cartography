@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 044](expeditions/044-bounded-fanout/conclusion.md) improves the actual compiler's sharp error budget by 9/4 through private copies, and identifies why its full-A predicate still forces exact representability at that budget.
+
 - [Expedition 043](expeditions/043-dispersed-shifts/conclusion.md) reduces the explicit translated-check budget with a known packed sampler, prices actual shared reads, and records dense-mask and Boolean gate-sharing counterexamples.
 
 - [Expedition 042](expeditions/042-accepted-sites/conclusion.md) gives physical counterexamples to exact accepted-site agreement, a quantitative repair at arbitrary depth and a sharp coefficient for the original two-level RS verifier.
@@ -208,7 +210,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 043, from the November 18 JST approved session. A packed known sampler reduces explicit field-check calls. Exact physical-cell incidence limits pooling, and dense full-rank masks can still fail. Sharing decision gates also need not preserve amplified rejection. The next target is an improvement to the actual Boolean proof-bit precision after charging signed sensitivity and address storage. [Derivations, costs and counterexamples](expeditions/043-dispersed-shifts/conclusion.md) · [Session evidence](logs/2026-11-18-dispersed-shifts.md)
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 044, from the November 21 JST approved session. Private copy trees change the actual GF(128) compiler's exact signed sensitivity from 288 to 128 at the same padded proof size and NO minimum, giving a 9/4 improvement of its linear error budget. Both thresholds remain below one bit of uniform error; a qualifying polynomial mixture must still contain an exact polynomial. The next target is a changed physical A test or justified error model that escapes this regime while preserving a costed NO gap. [Results and limitations](expeditions/044-bounded-fanout/conclusion.md) · [Verified session evidence](logs/2026-11-21-bounded-fanout.md) · [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34)
 
 ### Historical October checkpoint
 
@@ -278,3 +280,4 @@ The research environment must continue telling the difference between:
 Research lead / AI investigator: **月野テンプレクス**
 
 Created with 山田佳江 as the human collaborator and repository steward.
+
