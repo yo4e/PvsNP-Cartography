@@ -15,7 +15,7 @@ this uniform linear guarantee; no five-error failure is implied.
 
 This is a written mathematical derivation, a generated finite compiler and
 executable verification. It is not a new Lean result, external peer review,
-a low-degree approximation construction, a general circuit lower bound,
+a general low-degree approximation family, a general circuit lower bound,
 or a P-versus-NP resolution.
 
 ## The mathematical change
@@ -119,7 +119,7 @@ meets the threshold. This equivalence is for uniform-average error. It
 does not turn a four-error deterministic polynomial into a pointwise-error
 guarantee at each address.
 
-## The next scientific frontier
+## Padding freedom and the next scientific frontier
 
 The direct approximation audit exposes a remaining obstruction. For the
 named honest YES assignment A(X)=1+X, B(X)=X and **zero at every unused
@@ -132,12 +132,28 @@ Since 16 >109/23, the new error budget still requires degree 18 for this
 particular padded function. An exact degree 18 representation attains it.
 [Computation](degree-notes.md) · [Written distance proof](degree-bound-notes.md).
 
-Thus the immediate next question is whether a different assignment to
-the **unused** addresses permits a lower-degree completion while keeping
-every queried physical bit fixed. The present calculation does not
-optimize padding, choose among all satisfying proofs, or compare the
-old and new encodings' exact degrees. It closes the shortcut that a
-positive error radius by itself establishes an approximation-degree gain.
+The padding question can be settled in this same checkpoint. Used addresses
+form the prefix I=[0,2,796,160), which is downward closed under bitwise
+submask inclusion. Every ANF coefficient indexed by I is uniquely determined
+by truth values in I. Deleting all coefficients outside I therefore preserves
+every queried bit. The resulting completion has exact degree 17 and 833,770
+nonzero coefficients, including 202 degree 17 terms. It remains a satisfying
+proof; unused padding changes are not erroneous queried bits.
+
+Moreover, the fully fixed subcube x21=0 has dimension 21 and exact degree
+17. Every degree 16-or-lower polynomial differs from the fixed proof on
+at least 2^(21-17)=16 used addresses, independently of padding. Fixed mixtures
+obey the same lower bound. Consequently the exact completion degree and the
+least degree meeting the 109/23 mean wrong-bit budget, each minimized over
+free padding, are both **17** for this named physical proof. The improvement
+from 18 to 17 comes from an explicit change in unused padding; the four-error
+allowance still does not buy a lower degree.
+[Executable completion](padding-notes.md) · [Written argument](padding-bound-notes.md).
+
+These statements do not optimize over other satisfying physical proofs or
+compare the old and new encodings' exact degrees. The remaining frontier is
+the degree/approximation behavior of a fully costed growing family, rather
+than leaving this already-decided finite padding question open.
 
 For the designed one-level family k=2a+1, s=2^a, the same subspace union
 has 3s-1 read offsets. The accepted-site argument gives the written exact

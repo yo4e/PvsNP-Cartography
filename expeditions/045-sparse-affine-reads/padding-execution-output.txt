@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "lead_replays": [
+    {
+      "command": "python check_padding.py",
+      "exit_code": 0,
+      "seconds": 2.077,
+      "stdout_bytes": 7559,
+      "sha256": "d58e287c466914f3913ba2e3b531ce9ca49abe41eb9fc8d49dd27a68ff73c5ef",
+      "matches_stored": true,
+      "stderr": ""
+    },
+    {
+      "command": "python -O check_padding.py",
+      "exit_code": 0,
+      "seconds": 1.939,
+      "stdout_bytes": 7559,
+      "sha256": "d58e287c466914f3913ba2e3b531ce9ca49abe41eb9fc8d49dd27a68ff73c5ef",
+      "matches_stored": true,
+      "stderr": ""
+    }
+  ]
+}

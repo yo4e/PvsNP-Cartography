@@ -35,11 +35,15 @@ mean below that. Since16>109/23, the improved budget still requires degree18
 for this specified function. Four-bit tolerance alone is not a useful
 low-degree approximation construction.
 
-The next entry is whether the unused padding admits a lower-degree
-completion with all queried physical values fixed. This audit does not
-optimize padding or other satisfying proofs. The designed growing
-one-level family has a written field extension, but actual Q and
-degree/approximation costs remain separate work.
+The same session then settled free padding. The used prefix is a downset,
+so ANF coefficients outside it can be deleted without changing any queried
+bit. The executed completion has degree 17. Its fixed 21-cube also has
+degree 17, forcing at least 16 used-bit errors against every degree 16-or-
+lower competitor, regardless of padding or fixed mixture. Both exact and
+budgeted minimum degree over padding are therefore 17 for this physical
+proof. Other satisfying proof choices are not optimized. The next task is
+to cost the designed growing one-level family, including actual Q and
+degree/approximation behavior.
 
 ## Verification and persistence
 

@@ -22,7 +22,12 @@ For the named honest YES proof with zero-filled padding, exact GF(2)
 degree 18 on 22 variables and the elementary minimum-weight bound imply
 at least 16 errors for every degree 17-or-lower competitor. The existential
 uniform-average approximation degree at this threshold is therefore18
-for that function. This does not optimize padding or satisfying proofs.
+for that function. A subsequent downset completion reduces the exact degree
+to 17 while preserving all used physical bits. This is optimal over free
+padding even under the new error budget: the fixed 21-dimensional subcube
+x21=0 has degree 17, forcing at least 16 used-bit errors for every degree
+16-or-lower polynomial or fixed mixture. Other satisfying physical proofs
+are not optimized. [Completion and bound](../expeditions/045-sparse-affine-reads/padding-bound-notes.md).
 
 [Conclusion](../expeditions/045-sparse-affine-reads/conclusion.md) ·
 [Derivation](../expeditions/045-sparse-affine-reads/theory-notes.md) ·

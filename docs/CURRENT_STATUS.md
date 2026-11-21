@@ -22,15 +22,19 @@ would have been false. The selected cross rejects those splices128 and124
 times. Their counterexamples and the graph certificates for surviving weaker
 bounds remain in the expedition and graveyard.
 
-A direct algebraic audit adds an important limit: the named honest YES
-proof with zero-filled padding has exact GF(2) degree18 on22 address bits.
-Every degree17-or-lower polynomial has at least16 wrong bits, also after
-averaging over a fixed mixture. That exceeds109/23, so the improved budget
-still requires degree18 for this specified function. No optimization over
-padding or satisfying proof choices is implied. The immediate next question
-is whether unused padding admits a lower-degree completion with all queried
-bits fixed. [Computation](../expeditions/045-sparse-affine-reads/degree-notes.md)
-· [Distance proof](../expeditions/045-sparse-affine-reads/degree-bound-notes.md).
+A direct algebraic audit distinguishes padding from approximation error.
+The named honest YES proof with zero-filled padding has exact GF(2) degree
+18 on 22 address bits. Its used addresses form a downward-closed prefix.
+Deleting ANF coefficients outside that prefix preserves all queried bits
+and supplies a degree 17 completion. This is optimal over every padding
+choice: the fully fixed 21-dimensional subcube x21=0 has degree 17, so
+every degree 16-or-lower polynomial makes at least 16 errors on used bits.
+That also excludes every fixed mixture at the strict 109/23 mean-error
+budget. Thus both exact and budgeted minimum degree over padding are 17
+for this named physical proof. Other satisfying proofs and growing-family
+degree costs remain unresolved. [Zero-padding audit](../expeditions/045-sparse-affine-reads/degree-notes.md)
+· [Completion](../expeditions/045-sparse-affine-reads/padding-notes.md)
+· [Padding-independent bound](../expeditions/045-sparse-affine-reads/padding-bound-notes.md).
 
 The designed one-level family has a written extension with s=2^a,
 V_NO=2s^2-2s-3 and canonical reader load3s-1. Its actual parameterized

@@ -169,7 +169,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
-- [Expedition 045](expeditions/045-sparse-affine-reads/conclusion.md) replaces whole-A membership by 23 fixed offsets, retains the exact NO gap, and raises the costed uniform guarantee from zero to four arbitrary erroneous proof bits.
+- [Expedition 045](expeditions/045-sparse-affine-reads/conclusion.md) replaces whole-A membership by 23 fixed offsets, retains the exact NO gap, and raises the costed uniform guarantee from zero to four arbitrary erroneous proof bits. The named honest proof has minimum degree 17 over free padding; the four-error allowance does not lower that degree.
 
 - [Expedition 044](expeditions/044-bounded-fanout/conclusion.md) improves the actual compiler's sharp error budget by 9/4 through private copies, and identifies why its full-A predicate still forces exact representability at that budget.
 

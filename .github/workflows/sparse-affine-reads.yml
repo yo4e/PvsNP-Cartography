@@ -51,4 +51,5 @@ jobs:
           check_difference_cover.py difference-cover-checks.json
           check_connectivity.py connectivity-checks.json
           check_degree.py degree-checks.json
+          check_padding.py padding-checks.json
           CASES

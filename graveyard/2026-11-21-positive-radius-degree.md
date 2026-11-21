@@ -32,8 +32,14 @@ The target includes its padding convention. This is not a lower bound
 over all padding choices, all satisfying proofs, other layouts or a
 growing verifier family. Free addresses can be changed without changing
 the verifier's queried values, and such a completion can alter algebraic
-degree. Determining whether that freedom changes this obstruction is a
-specific next research question.
+degree. The same session settled this finite padding freedom: deleting ANF
+coefficients outside the used address downset gives a degree 17 completion.
+The fully fixed 21-dimensional subcube has degree 17, so every degree 16-or-
+lower competitor makes at least 16 used-bit errors regardless of padding.
+Thus both exact and budgeted minima over padding are 17 for the named
+physical proof. The degree reduction is caused by the completion, while the
+four-error budget still yields no further degree reduction. See the
+[completion proof](../expeditions/045-sparse-affine-reads/padding-bound-notes.md).
 
 The full [minimum-weight argument](../expeditions/045-sparse-affine-reads/degree-bound-notes.md)
 is elementary and written out. No Lean, novelty or new general complexity

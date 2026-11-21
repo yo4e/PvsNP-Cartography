@@ -31,8 +31,14 @@ read before substantive work. No other project's approval was inferred.
 9. Audited the actual approximation target: the named honest zero-padded
    YES function has degree 18 on 22 address bits. An elementary minimum-weight
    argument excludes every degree 17-or-lower mixture at the new budget,
-   since it needs at least 16 errors. The next frontier is a certified
-   lower-degree completion through free padding, or a precise obstruction.
+   since it needs at least 16 errors.
+10. Before publishing free padding as the next task, checked its exact scope.
+    The used addresses are a downset, so truncating ANF coefficients gives
+    an immediate completion. Executed it: degree 17, with all used values
+    preserved. The fixed 21-cube has degree 17 and forces at least 16 used
+    errors against degree 16 or below. Thus exact and budgeted minimum degree
+    over padding are both 17 for this physical proof. The remaining frontier
+    is a fully costed family and its actual degree/approximation behavior.
 
 The named contribution is a costed changed verifier with an accepted-site
 soundness argument. No new formal kernel, novelty, general-instance census
