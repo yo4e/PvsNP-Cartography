@@ -1,0 +1,54 @@
+name: Sparse affine read precision
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'expeditions/045-sparse-affine-reads/*.py'
+      - 'expeditions/045-sparse-affine-reads/*.json'
+      - 'expeditions/044-bounded-fanout/check_fanout.py'
+      - 'expeditions/040-recursive-verifier/*.py'
+      - 'expeditions/039-unary-overlap-counting/verify_base_acsp.py'
+      - '.github/workflows/sparse-affine-reads.yml'
+  pull_request:
+    paths:
+      - 'expeditions/045-sparse-affine-reads/*.py'
+      - 'expeditions/045-sparse-affine-reads/*.json'
+      - 'expeditions/044-bounded-fanout/check_fanout.py'
+      - 'expeditions/040-recursive-verifier/*.py'
+      - 'expeditions/039-unary-overlap-counting/verify_base_acsp.py'
+      - '.github/workflows/sparse-affine-reads.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+        working-directory: expeditions/045-sparse-affine-reads
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Replay compiler, overlap certificates and physical counterexamples
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python --version
+          while read -r script expected; do
+            python "$script" > "$RUNNER_TEMP/actual.json"
+            python -O "$script" > "$RUNNER_TEMP/optimized.json"
+            cmp "$expected" "$RUNNER_TEMP/actual.json"
+            cmp "$expected" "$RUNNER_TEMP/optimized.json"
+            sha256sum "$expected"
+            cat "$expected"
+          done <<'CASES'
+          check_compiler.py compiler-checks.json
+          attack_sparse.py attack-results.json
+          check_difference_cover.py difference-cover-checks.json
+          check_connectivity.py connectivity-checks.json
+          check_degree.py degree-checks.json
+          CASES

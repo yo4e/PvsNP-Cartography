@@ -1,0 +1,109 @@
+{
+  "dimension": 7,
+  "evidence_kind": "explicit finite path certificate; no proof-assistant run",
+  "invalid_certificates_rejected": {
+    "nonedge": "nonedge",
+    "only_27_paths": "wrong number of paths",
+    "shared_interior": "path interiors intersect",
+    "wrong_endpoint": "wrong endpoints"
+  },
+  "radii": {
+    "1": {
+      "all_pairs_checked": 8128,
+      "canonical_pairs": {
+        "3": {
+          "internal_vertices": 56,
+          "max_edges": 4,
+          "min_edges": 2,
+          "paths": 28
+        },
+        "4": {
+          "internal_vertices": 56,
+          "max_edges": 4,
+          "min_edges": 2,
+          "paths": 28
+        },
+        "5": {
+          "internal_vertices": 70,
+          "max_edges": 5,
+          "min_edges": 3,
+          "paths": 28
+        },
+        "6": {
+          "internal_vertices": 70,
+          "max_edges": 5,
+          "min_edges": 3,
+          "paths": 28
+        },
+        "7": {
+          "internal_vertices": 84,
+          "max_edges": 4,
+          "min_edges": 4,
+          "paths": 28
+        }
+      },
+      "certified_vertex_connectivity": 28,
+      "deletions_tolerated": 27,
+      "direct_edge_pairs": 1792,
+      "exact_cut_rule": "neighbors of zero",
+      "exact_cut_size": 28,
+      "lifted_nonadjacent_pairs": 6336,
+      "nonzero_overlap_shifts_checked": 127,
+      "radius": 1,
+      "star_size": 8
+    },
+    "2": {
+      "all_pairs_checked": 8128,
+      "canonical_pairs": {
+        "5": {
+          "internal_vertices": 126,
+          "max_edges": 3,
+          "min_edges": 2,
+          "paths": 98
+        },
+        "6": {
+          "internal_vertices": 126,
+          "max_edges": 3,
+          "min_edges": 2,
+          "paths": 98
+        },
+        "7": {
+          "internal_vertices": 126,
+          "max_edges": 3,
+          "min_edges": 2,
+          "paths": 98
+        }
+      },
+      "certified_vertex_connectivity": 98,
+      "deletions_tolerated": 97,
+      "direct_edge_pairs": 6272,
+      "exact_cut_rule": "neighbors of zero",
+      "exact_cut_size": 98,
+      "lifted_nonadjacent_pairs": 1856,
+      "nonzero_overlap_shifts_checked": 127,
+      "radius": 2,
+      "star_size": 29
+    },
+    "3": {
+      "all_pairs_checked": 8128,
+      "canonical_pairs": {
+        "7": {
+          "internal_vertices": 126,
+          "max_edges": 2,
+          "min_edges": 2,
+          "paths": 126
+        }
+      },
+      "certified_vertex_connectivity": 126,
+      "deletions_tolerated": 125,
+      "direct_edge_pairs": 8064,
+      "exact_cut_rule": "neighbors of zero",
+      "exact_cut_size": 126,
+      "lifted_nonadjacent_pairs": 64,
+      "nonzero_overlap_shifts_checked": 127,
+      "radius": 3,
+      "star_size": 64
+    }
+  },
+  "vertices": 128
+}

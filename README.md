@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 045](expeditions/045-sparse-affine-reads/conclusion.md) replaces whole-A membership by 23 fixed offsets, retains the exact NO gap, and raises the costed uniform guarantee from zero to four arbitrary erroneous proof bits.
+
 - [Expedition 044](expeditions/044-bounded-fanout/conclusion.md) improves the actual compiler's sharp error budget by 9/4 through private copies, and identifies why its full-A predicate still forces exact representability at that budget.
 
 - [Expedition 043](expeditions/043-dispersed-shifts/conclusion.md) reduces the explicit translated-check budget with a known packed sampler, prices actual shared reads, and records dense-mask and Boolean gate-sharing counterexamples.
@@ -210,7 +212,11 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 044, from the November 21 JST approved session. Private copy trees change the actual GF(128) compiler's exact signed sensitivity from 288 to 128 at the same padded proof size and NO minimum, giving a 9/4 improvement of its linear error budget. Both thresholds remain below one bit of uniform error; a qualifying polynomial mixture must still contain an exact polynomial. The next target is a changed physical A test or justified error model that escapes this regime while preserving a costed NO gap. [Results and limitations](expeditions/044-bounded-fanout/conclusion.md) · [Verified session evidence](logs/2026-11-21-bounded-fanout.md) · [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34)
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 045, from the approved November 21 JST evening session. A union of complementary coordinate subspaces reduces the actual GF(128) compiler's uniform signed sensitivity from 128 to 23, retains the exact NO minimum 109 and the same Q=4,194,304 address cube. The strict threshold 109/96,468,992 is 128/23 times the preceding budget and guarantees any four erroneous physical YES bits. Earlier eight- and 29-read candidates admit explicit noncode counterexamples, which are preserved. [Results and limitations](expeditions/045-sparse-affine-reads/conclusion.md) · [Execution evidence](expeditions/045-sparse-affine-reads/execution-evidence.md). A growing family has a written field-level extension, but its full compiler costs and useful low-degree approximants remain unresolved. The named honest zero-padded new proof has degree18 and needs at least16 changes to reach degree17 or below, so the four-error budget does not lower its approximation degree. The next target is to determine whether free padding admits a lower-degree completion.
+
+### Previous compiler checkpoint
+
+The preceding compiler checkpoint was Expedition 044, from the earlier November 21 JST session. Private copy trees change the actual GF(128) compiler's exact signed sensitivity from 288 to 128 at the same padded proof size and NO minimum, giving a 9/4 improvement of its linear error budget. Both thresholds remain below one bit of uniform error; a qualifying polynomial mixture must still contain an exact polynomial. The next target is a changed physical A test or justified error model that escapes this regime while preserving a costed NO gap. [Results and limitations](expeditions/044-bounded-fanout/conclusion.md) · [Verified session evidence](logs/2026-11-21-bounded-fanout.md) · [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34)
 
 ### Historical October checkpoint
 

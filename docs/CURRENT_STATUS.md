@@ -1,4 +1,52 @@
-# Current checkpoint — exact compiler gain and the zero-error obstruction
+# Current checkpoint — sparse A reads and four-error precision
+
+November21,2026 JST evening. Expedition045 replaces the whole-A membership
+check with23 fixed offsets forming the union of complementary binary
+subspaces. Every two passing stars overlap twice, so one affine polynomial
+explains all A values used at accepting seeds. Together with the unchanged
+shared B recovery this retains the exact NO raw minimum109 over arbitrary
+field/gate/copy/public assignments.
+
+The actual cap21 compiler has exact uniform unrestricted signed sensitivity23
+and the same padded Q=4,194,304 for YES and NO. Its strict uniform-error
+threshold109/96,468,992 improves the previous cap126 budget by128/23, and
+any four physical YES-bit errors yield at most92 failed pairs, below the
+NO minimum109. This removes the old automatic zero-error quantization
+obstruction. It does not construct a useful low-degree approximant or
+transport the old encoded proof function's approximation guarantee.
+
+Eight- and29-offset Hamming-ball alternatives were attacked with globally
+consistent noncode A and honest shared B tables. They admit106 and108
+NO-rejection witnesses; carrying over109 from their exact affine kernel
+would have been false. The selected cross rejects those splices128 and124
+times. Their counterexamples and the graph certificates for surviving weaker
+bounds remain in the expedition and graveyard.
+
+A direct algebraic audit adds an important limit: the named honest YES
+proof with zero-filled padding has exact GF(2) degree18 on22 address bits.
+Every degree17-or-lower polynomial has at least16 wrong bits, also after
+averaging over a fixed mixture. That exceeds109/23, so the improved budget
+still requires degree18 for this specified function. No optimization over
+padding or satisfying proof choices is implied. The immediate next question
+is whether unused padding admits a lower-degree completion with all queried
+bits fixed. [Computation](../expeditions/045-sparse-affine-reads/degree-notes.md)
+· [Distance proof](../expeditions/045-sparse-affine-reads/degree-bound-notes.md).
+
+The designed one-level family has a written extension with s=2^a,
+V_NO=2s^2-2s-3 and canonical reader load3s-1. Its actual parameterized
+compiler census, padded Q_a and low-degree approximation behavior remain
+unresolved; only GF(128) is fully compiled here. The full recursive source
+family requires its own B recovery and costs. Issues8/15 remain separate.
+
+[Conclusion](../expeditions/045-sparse-affine-reads/conclusion.md) ·
+[Derivation](../expeditions/045-sparse-affine-reads/theory-notes.md) ·
+[Execution evidence](../expeditions/045-sparse-affine-reads/execution-evidence.md)
+
+This checkpoint records written arguments and finite executable checks,
+not new Lean acceptance, novelty, external review, a general circuit lower
+bound or P-versus-NP separation. Fresh approval is needed for another night.
+
+## Previous checkpoint — exact compiler gain and the zero-error obstruction
 
 November 21 JST. Expedition 044 changes the actual GF(128) compiler's exact
 unrestricted signed sensitivity from 288 for the named original honest YES

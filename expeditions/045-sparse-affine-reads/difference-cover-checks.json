@@ -1,0 +1,118 @@
+{
+  "actual_GF128_offsets": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120
+  ],
+  "deleted_high_offset_8_counterexample": {
+    "missing_differences": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "named_missing_difference": 9
+  },
+  "finite_family_checks": [
+    {
+      "N": 128,
+      "a": 3,
+      "absolute_pairs_checked": 8128,
+      "dimension": 7,
+      "distinct_A_maps": 23,
+      "minimum_two_star_intersection": 2,
+      "nonzero_shifts_checked": 127,
+      "outer_offsets_present": [
+        0,
+        1,
+        2
+      ],
+      "overlap_histogram": {
+        "16": 15,
+        "2": 105,
+        "8": 7
+      }
+    },
+    {
+      "N": 512,
+      "a": 4,
+      "absolute_pairs_checked": 0,
+      "dimension": 9,
+      "distinct_A_maps": 47,
+      "minimum_two_star_intersection": 2,
+      "nonzero_shifts_checked": 511,
+      "outer_offsets_present": [
+        0,
+        1,
+        2
+      ],
+      "overlap_histogram": {
+        "16": 15,
+        "2": 465,
+        "32": 31
+      }
+    },
+    {
+      "N": 2048,
+      "a": 5,
+      "absolute_pairs_checked": 0,
+      "dimension": 11,
+      "distinct_A_maps": 95,
+      "minimum_two_star_intersection": 2,
+      "nonzero_shifts_checked": 2047,
+      "outer_offsets_present": [
+        0,
+        1,
+        2
+      ],
+      "overlap_histogram": {
+        "2": 1953,
+        "32": 31,
+        "64": 63
+      }
+    },
+    {
+      "N": 8192,
+      "a": 6,
+      "absolute_pairs_checked": 0,
+      "dimension": 13,
+      "distinct_A_maps": 191,
+      "minimum_two_star_intersection": 2,
+      "nonzero_shifts_checked": 8191,
+      "outer_offsets_present": [
+        0,
+        1,
+        2
+      ],
+      "overlap_histogram": {
+        "128": 127,
+        "2": 8001,
+        "64": 63
+      }
+    }
+  ],
+  "scope": "finite additive geometry; written NO proof is separate"
+}

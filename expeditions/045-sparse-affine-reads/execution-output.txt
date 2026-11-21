@@ -1,0 +1,9 @@
+Root replay
+3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
+Linux-6.18.57-x86_64-with-glibc2.41
+{"script": "check_compiler.py", "exit_code": 0, "stored_output_equal": true, "bytes": 22370, "sha256": "ebf02aa785ea0b1755350ae55997297286536b436aa6654d4fb2ae35e8856e3a", "seconds": 68.557}
+{"script": "attack_sparse.py", "exit_code": 0, "stored_output_equal": true, "bytes": 8967, "sha256": "b26e7b12b9b33ee8d688afe450e593f86a10ceae4ab7fcd32cccbc441d700408", "seconds": 0.476}
+{"script": "check_difference_cover.py", "exit_code": 0, "stored_output_equal": true, "bytes": 2001, "sha256": "c7ca245157a2b2995d7e22bedc2602fd6f7ded18237f869b27442520b15365f3", "seconds": 0.262}
+{"script": "check_connectivity.py", "exit_code": 0, "stored_output_equal": true, "bytes": 2743, "sha256": "d65cac0dcfdc18ee74a8a02452d3405747e8a8ad92fc76066c8349e8802883ef", "seconds": 1.822}
+{"script": "check_degree.py", "mode": [], "exit_code": 0, "stored_output_equal": true, "bytes": 5476, "sha256": "852ae8afaf6764d4da250017adec8552d530686efb40f0f8f9e4cbea07e4ac91", "seconds": 1.404}
+{"script": "check_degree.py", "mode": ["-O"], "exit_code": 0, "stored_output_equal": true, "bytes": 5476, "sha256": "852ae8afaf6764d4da250017adec8552d530686efb40f0f8f9e4cbea07e4ac91", "seconds": 1.393}

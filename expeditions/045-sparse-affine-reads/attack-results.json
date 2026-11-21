@@ -1,0 +1,689 @@
+{
+  "cross_pair_overlap": {
+    "differences_checked": 127,
+    "distinct_offsets": 23,
+    "intersection_size_histogram": {
+      "2": 105,
+      "8": 7,
+      "16": 15
+    }
+  },
+  "dropped_high_direction": {
+    "A_definition": "indicator of bit 6",
+    "full_cross_A_accepted": 0,
+    "offsets": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56
+    ],
+    "restricted_A_accepted": 128,
+    "scope": "membership counterexample only, not a joined NO soundness witness"
+  },
+  "old_sharp": {
+    "A_nonzero": [],
+    "cross": {
+      "A_good_count": 128,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 109
+    },
+    "radius1": {
+      "A_good_count": 128,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 109
+    },
+    "radius2": {
+      "A_good_count": 128,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 109
+    },
+    "radius3": {
+      "A_good_count": 128,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 109
+    }
+  },
+  "radius1_one_star": {
+    "A_nonzero": [
+      [
+        32,
+        43
+      ],
+      [
+        64,
+        86
+      ],
+      [
+        96,
+        125
+      ],
+      [
+        97,
+        25
+      ],
+      [
+        98,
+        54
+      ],
+      [
+        100,
+        104
+      ],
+      [
+        104,
+        87
+      ],
+      [
+        112,
+        41
+      ]
+    ],
+    "cross": {
+      "A_good_count": 44,
+      "accepted": [
+        3,
+        5,
+        6,
+        7,
+        11,
+        13,
+        14,
+        15,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 119
+    },
+    "radius1": {
+      "A_good_count": 100,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        96
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 108
+    },
+    "radius2": {
+      "A_good_count": 64,
+      "accepted": [
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 114
+    },
+    "radius3": {
+      "A_good_count": 29,
+      "accepted": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 122
+    }
+  },
+  "radius1_three_stars": {
+    "A_nonzero": [
+      [
+        32,
+        43
+      ],
+      [
+        53,
+        78
+      ],
+      [
+        58,
+        1
+      ],
+      [
+        64,
+        86
+      ],
+      [
+        85,
+        5
+      ],
+      [
+        90,
+        58
+      ],
+      [
+        96,
+        125
+      ],
+      [
+        97,
+        25
+      ],
+      [
+        98,
+        54
+      ],
+      [
+        100,
+        104
+      ],
+      [
+        101,
+        97
+      ],
+      [
+        104,
+        87
+      ],
+      [
+        106,
+        102
+      ],
+      [
+        112,
+        41
+      ],
+      [
+        113,
+        74
+      ],
+      [
+        114,
+        72
+      ],
+      [
+        116,
+        96
+      ],
+      [
+        117,
+        60
+      ],
+      [
+        119,
+        7
+      ],
+      [
+        120,
+        21
+      ],
+      [
+        122,
+        82
+      ],
+      [
+        123,
+        48
+      ],
+      [
+        125,
+        83
+      ],
+      [
+        126,
+        95
+      ]
+    ],
+    "cross": {
+      "A_good_count": 0,
+      "accepted": [],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 128
+    },
+    "radius1": {
+      "A_good_count": 61,
+      "accepted": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        96,
+        117,
+        122
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 106
+    },
+    "radius2": {
+      "A_good_count": 16,
+      "accepted": [
+        3,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        19
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 118
+    },
+    "radius3": {
+      "A_good_count": 1,
+      "accepted": [
+        15
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 127
+    }
+  },
+  "radius2_B_coefficients": [
+    55,
+    43,
+    75,
+    65,
+    76,
+    75,
+    115,
+    57,
+    19,
+    48,
+    29,
+    73,
+    27,
+    2,
+    26,
+    95
+  ],
+  "radius2_one_star": {
+    "A_nonzero": [
+      [
+        28,
+        32
+      ],
+      [
+        44,
+        35
+      ],
+      [
+        52,
+        99
+      ],
+      [
+        56,
+        67
+      ],
+      [
+        60,
+        34
+      ],
+      [
+        61,
+        91
+      ],
+      [
+        62,
+        83
+      ],
+      [
+        76,
+        37
+      ],
+      [
+        84,
+        101
+      ],
+      [
+        88,
+        69
+      ],
+      [
+        92,
+        36
+      ],
+      [
+        93,
+        93
+      ],
+      [
+        94,
+        85
+      ],
+      [
+        100,
+        102
+      ],
+      [
+        104,
+        70
+      ],
+      [
+        108,
+        39
+      ],
+      [
+        109,
+        94
+      ],
+      [
+        110,
+        86
+      ],
+      [
+        112,
+        6
+      ],
+      [
+        116,
+        103
+      ],
+      [
+        117,
+        30
+      ],
+      [
+        118,
+        22
+      ],
+      [
+        120,
+        71
+      ],
+      [
+        121,
+        62
+      ],
+      [
+        122,
+        54
+      ],
+      [
+        124,
+        38
+      ],
+      [
+        125,
+        95
+      ],
+      [
+        126,
+        87
+      ],
+      [
+        127,
+        46
+      ]
+    ],
+    "cross": {
+      "A_good_count": 5,
+      "accepted": [
+        3,
+        11,
+        19,
+        35
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 124
+    },
+    "radius1": {
+      "A_good_count": 72,
+      "accepted": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        15,
+        17,
+        18,
+        19,
+        23,
+        27,
+        33,
+        34,
+        35,
+        39,
+        124
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 108
+    },
+    "radius2": {
+      "A_good_count": 30,
+      "accepted": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        15,
+        17,
+        18,
+        19,
+        23,
+        27,
+        33,
+        34,
+        35,
+        39,
+        124
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 108
+    },
+    "radius3": {
+      "A_good_count": 8,
+      "accepted": [
+        1,
+        2,
+        3,
+        7,
+        11,
+        19,
+        35
+      ],
+      "passing_B_columns": 32,
+      "passing_B_rows": 16,
+      "rejected": 121
+    }
+  },
+  "search_scope": {
+    "radius1_eligible_centers": [
+      96,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127
+    ],
+    "radius2_interpolation_points": [
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      15,
+      17,
+      18,
+      19,
+      23,
+      27,
+      33,
+      34,
+      35,
+      39
+    ],
+    "radius2_selected_center": 124,
+    "scope": "explicit witnesses; no optimization of the true radius1/radius2 NO minimum",
+    "selected_packing": [
+      96,
+      117,
+      122
+    ]
+  }
+}
