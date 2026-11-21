@@ -69,10 +69,37 @@ Its actual retrieved log identifies the source commit and contains all five
 normal/-O comparisons, SHA256 digests and complete stored JSON outputs.
 [Complete replay-step output](initial-remote-execution-output.txt).
 
-The padding completion and sixth normal/-O check are added in the next code
-checkpoint. The completed remote run and immutable readback for that addition
-will be recorded after execution; the initial five-check run does not by
-itself verify a later code change.
+## Completed integrated remote execution
+
+The padding completion and sixth normal/-O check were committed as
+`47910b0aa120794143477268fc02056a72c73b08`, tree
+`bd68ff1c665359f153adfd6b103a821605b481cd`, parent 9483c577.
+Every one of the 39 files added or changed from the starting snapshot was
+re-fetched at this immutable commit and matched its exact local text and
+Git blob hash. The 834 untouched original files still match. The full
+remote tree contains 873 blobs and was not truncated.
+[Source readback manifest](source-readback-manifest.txt).
+
+[Run 44912211021](https://github.com/yo4e/PvsNP-Cartography/actions/runs/44912211021),
+job 136870212842, completed successfully at 2026-11-21 14:09:56 UTC
+(23:09:56 JST). It used Python 3.13.5 on ubuntu-24.04. All six scripts ran
+in both normal and -O modes; every complete output matched the committed
+JSON byte for byte. The retrieved log explicitly identifies this source
+commit and Python version. Its six printed SHA256 digests match the table
+above. [Run metadata](remote-run-metadata.txt).
+
+[The complete replay-step output](remote-execution-output.txt) is 121,991
+bytes, SHA256
+`65cb64e00c2caf98f624e84affb87b41cb933947a76dbb5620c3f1f588a3bf59`.
+It retains the command, comparisons, all six complete JSON outputs and
+timestamps. The earlier replay output is 103,075 bytes, SHA256
+`2056b23ff212accebb06c9127535b5eac88ead2ddbc6fb35cf5604ce6cbaab84`.
+
+The completion was recorded on [Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34#issuecomment-7063886237),
+which is closed as completed. [Issue 35](https://github.com/yo4e/PvsNP-Cartography/issues/35)
+records the remaining fully costed family and encoded-degree question.
+Issues 8 and 15 retain their separate scopes. This final evidence update
+changes documentation and archived execution output, not the tested code.
 
 ## Trust boundary
 

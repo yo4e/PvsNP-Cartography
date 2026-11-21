@@ -39,6 +39,15 @@ read before substantive work. No other project's approval was inferred.
     errors against degree 16 or below. Thus exact and budgeted minimum degree
     over padding are both 17 for this physical proof. The remaining frontier
     is a fully costed family and its actual degree/approximation behavior.
+11. Published initial code 9483c577 and the padding completion 47910b0a.
+    Re-fetched all 39 changed files at the latter immutable commit, matching
+    their text and Git blob hashes; all 834 untouched original files match.
+    The integrated six-check normal/-O CI run 44912211021 completed
+    successfully, job 136870212842, under Python 3.13.5. Retrieved the actual
+    job output, checked all six logged digests and archived the full replay
+    step. Closed Issue 34 with the scoped result and opened Issue 35 for the
+    fully costed growing family. The final follow-up commit records this
+    execution evidence without modifying the tested code.
 
 The named contribution is a costed changed verifier with an accepted-site
 soundness argument. No new formal kernel, novelty, general-instance census

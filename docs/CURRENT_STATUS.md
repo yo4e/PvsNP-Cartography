@@ -46,6 +46,15 @@ family requires its own B recovery and costs. Issues8/15 remain separate.
 [Derivation](../expeditions/045-sparse-affine-reads/theory-notes.md) ·
 [Execution evidence](../expeditions/045-sparse-affine-reads/execution-evidence.md)
 
+[Code 47910b0a](https://github.com/yo4e/PvsNP-Cartography/commit/47910b0aa120794143477268fc02056a72c73b08)
+passed completed [run 44912211021](https://github.com/yo4e/PvsNP-Cartography/actions/runs/44912211021),
+job 136870212842, Python 3.13.5. All six normal/-O outputs matched; all 39
+added/changed files were re-fetched and matched their text and Git blob
+hashes. Actual replay output and manifests are archived in the evidence.
+Issue 34 is complete. The next research target is
+[Issue 35](https://github.com/yo4e/PvsNP-Cartography/issues/35): price the
+growing one-level family and the degree of its actual proof functions.
+
 This checkpoint records written arguments and finite executable checks,
 not new Lean acceptance, novelty, external review, a general circuit lower
 bound or P-versus-NP separation. Fresh approval is needed for another night.

@@ -48,10 +48,22 @@ degree/approximation behavior.
 ## Verification and persistence
 
 [Execution evidence](../expeditions/045-sparse-affine-reads/execution-evidence.md)
-records completed local checks and is updated after actual remote
-commit/run readback. All five normal/-O outputs agree in the worker
-replays; the lead re-read the arguments/code and reproduced the outputs.
-This initial log does not claim a completed remote run before it is read.
+records the completed local checks and actual remote commit/run readback.
+Initial code 9483c577 and integrated code 47910b0a are published. Completed
+[run 44912211021](https://github.com/yo4e/PvsNP-Cartography/actions/runs/44912211021),
+job 136870212842, ran all six scripts in normal and -O modes under Python
+3.13.5, with exact equality to every stored output. The full replay-step
+log, actual digests and immutable source readback manifest are archived.
+All 39 added/changed files were re-fetched and matched their text and Git
+blob hashes; all 834 untouched base files match. The lead also reproduced
+the outputs locally, and separate NumPy calculations checked the completed
+truth/ANF hashes and fixed-coordinate parities.
+
+[Issue 34](https://github.com/yo4e/PvsNP-Cartography/issues/34) is closed as
+completed. [Issue 35](https://github.com/yo4e/PvsNP-Cartography/issues/35)
+records the next family/cost/degree target. Issues 8 and 15 are unchanged.
+The final record commit changes evidence and logs only; source 47910b0a is
+the executed mathematical/code checkpoint.
 
 [Conclusion](../expeditions/045-sparse-affine-reads/conclusion.md) ·
 [Primary argument](../expeditions/045-sparse-affine-reads/theory-notes.md) ·

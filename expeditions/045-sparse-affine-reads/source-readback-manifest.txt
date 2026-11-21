@@ -1,0 +1,207 @@
+{
+  "source_commit": "47910b0aa120794143477268fc02056a72c73b08",
+  "source_tree": "bd68ff1c665359f153adfd6b103a821605b481cd",
+  "parent_commit": "9483c577c8b85d1fb12bd155e660e2af953d837a",
+  "immutable_file_text_matches": 39,
+  "git_blob_hash_matches": 39,
+  "untouched_original_files": 834,
+  "unintended_original_changes": 0,
+  "files": [
+    {
+      "path": ".github/workflows/sparse-affine-reads.yml",
+      "sha": "4d703fc6cd6b6aeca8395bc78521c5b63a7aeac1",
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "sha": "1909d74e603270f4d16666e1406cf9dc96f1c52e",
+      "match": true
+    },
+    {
+      "path": "claims/045-sparse-affine-reads.md",
+      "sha": "875cdd077e7590d8de6ad25d610fc2430825426e",
+      "match": true
+    },
+    {
+      "path": "docs/CURRENT_STATUS.md",
+      "sha": "29a719fa5ed1ae6a95071e693e807671017caffb",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/attack-notes.md",
+      "sha": "17ac40311f85393a42e84a91b2d3effc70077813",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/attack-results.json",
+      "sha": "17dddbf96999b327827ad3ba1094cc7bd7f0acab",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/attack_sparse.py",
+      "sha": "068de9187ec782ca17d735e1843d6f1b1c59926d",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/ball-connectivity.md",
+      "sha": "7e46fb74556efc1d47701e32e96f294b23430f46",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/barrier-audit.md",
+      "sha": "cf3b078390b94e9fe9ad7fbf60a4a7a68b9bcafa",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/check_compiler.py",
+      "sha": "16d51e8fa53080602c870facdb9e03a4a589ca8f",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/check_connectivity.py",
+      "sha": "461681ff911368168073e108eb416886c316a5d4",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/check_degree.py",
+      "sha": "0da987afc51c7a55fad4d44709ff4ed960261f1a",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/check_difference_cover.py",
+      "sha": "78bb3ca3585439c7e572298a49d099bcebbfaa44",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/compiler-checks.json",
+      "sha": "1edf7055fdbcb32d25223c07c79e7e19edecd213",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/compiler-notes.md",
+      "sha": "b91983e0620a8562f1b5a3c60b22c266f0d4df89",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/conclusion.md",
+      "sha": "7c18223a7d3382a41eb97db217d0dda2ea309273",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/connectivity-checks.json",
+      "sha": "8b9b343a1fb2cdd0ecbd092dc3a04ef92f0ed36c",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/connectivity-paths.json",
+      "sha": "586857e09dfc06c72546919b5077f9bb61e2c4a5",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/degree-bound-notes.md",
+      "sha": "e36e62965d3f073ad401ca6e1d4073f2912deb84",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/degree-checks.json",
+      "sha": "3841e9337e5c50b752978e1ce4b29d8a9c85411b",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/degree-notes.md",
+      "sha": "f6a26ee4d7bad2f1a460d0b41a1cbba533c9da7a",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/difference-cover-checks.json",
+      "sha": "149814fd727db0f61926f4268e0361c305601fce",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/execution-evidence.md",
+      "sha": "d7e03e7f487f7f9212a36e0c1e60a74cac9128df",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/execution-output.txt",
+      "sha": "6079be1c8515b13de09c6fed3beb536c85f60777",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/log.md",
+      "sha": "c339dc7a74496822f05139922c299fd0ac0de170",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/orientation.md",
+      "sha": "153189e43914f2a7aaf8dedd53bdd02b0bfad2e0",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/source-comparison.md",
+      "sha": "3f6df4b2bc9340734483f2344cd6ad378525ac0b",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/sparse_compiler.py",
+      "sha": "941857e97f6b57527d04d17f105f60b581231557",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/theory-notes.md",
+      "sha": "fc23b7c8e9f774de2f7eb925b60f82194ed202d4",
+      "match": true
+    },
+    {
+      "path": "graveyard/2026-11-21-positive-radius-degree.md",
+      "sha": "5e34344e1d711720057d09af67c08b5c628204ad",
+      "match": true
+    },
+    {
+      "path": "graveyard/2026-11-21-sparse-affine-splices.md",
+      "sha": "92c4d1485a5734bde3bc59a2e2946e1eba116f99",
+      "match": true
+    },
+    {
+      "path": "logs/2026-11-21-sparse-affine-reads.md",
+      "sha": "b591b903833b31d6e445dd568362227614a5b47f",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/check_padding.py",
+      "sha": "b402adca57a9d3b66bb7d1fad674605b70159d79",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/initial-readback-manifest.json",
+      "sha": "f3a42003dd6e7a651dd1a8238495b6ee7a54f13f",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/initial-remote-execution-output.txt",
+      "sha": "e9178aefedbe42a3439deb6b1f473da3bf4569dd",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/padding-bound-notes.md",
+      "sha": "53bf4022d0295f4dcb27c0213fdaada0803ce907",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/padding-checks.json",
+      "sha": "eeef145c3186330ed34eae52ca3d6176878f1a76",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/padding-execution-output.txt",
+      "sha": "eb28460786323e2d41a646c1be226d1fe2ef766f",
+      "match": true
+    },
+    {
+      "path": "expeditions/045-sparse-affine-reads/padding-notes.md",
+      "sha": "bf87fb76bd500f7ecb5e96e68dc833f9bbd7bbf7",
+      "match": true
+    }
+  ],
+  "method": "Every added/changed file was fetched at the immutable source commit and compared exactly with local UTF-8 text. Git tree blob hashes were compared with independently computed local Git blob SHA1. The full tree was not truncated."
+}

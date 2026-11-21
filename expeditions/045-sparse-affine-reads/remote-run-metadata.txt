@@ -1,0 +1,43 @@
+{
+  "code_commit": "47910b0aa120794143477268fc02056a72c73b08",
+  "workflow_name": "Sparse affine read precision",
+  "run_id": 44912211021,
+  "run_url": "https://github.com/yo4e/PvsNP-Cartography/actions/runs/44912211021",
+  "status": "completed",
+  "conclusion": "success",
+  "job_id": 136870212842,
+  "job_started_utc": "2026-11-21T14:06:35Z",
+  "job_completed_utc": "2026-11-21T14:09:56Z",
+  "python": "3.13.5",
+  "runner": "ubuntu-24.04",
+  "normal_and_optimized_checks": 6,
+  "actual_logged_digests": [
+    {
+      "file": "compiler-checks.json",
+      "sha256": "ebf02aa785ea0b1755350ae55997297286536b436aa6654d4fb2ae35e8856e3a"
+    },
+    {
+      "file": "attack-results.json",
+      "sha256": "b26e7b12b9b33ee8d688afe450e593f86a10ceae4ab7fcd32cccbc441d700408"
+    },
+    {
+      "file": "difference-cover-checks.json",
+      "sha256": "c7ca245157a2b2995d7e22bedc2602fd6f7ded18237f869b27442520b15365f3"
+    },
+    {
+      "file": "connectivity-checks.json",
+      "sha256": "d65cac0dcfdc18ee74a8a02452d3405747e8a8ad92fc76066c8349e8802883ef"
+    },
+    {
+      "file": "degree-checks.json",
+      "sha256": "852ae8afaf6764d4da250017adec8552d530686efb40f0f8f9e4cbea07e4ac91"
+    },
+    {
+      "file": "padding-checks.json",
+      "sha256": "d58e287c466914f3913ba2e3b531ce9ca49abe41eb9fc8d49dd27a68ff73c5ef"
+    }
+  ],
+  "closed_issue": 34,
+  "next_issue": 35,
+  "issue_completion_comment": 7063886237
+}
