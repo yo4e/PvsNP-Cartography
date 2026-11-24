@@ -1,0 +1,84 @@
+# Family derivation and degree/layout tradeoff
+
+Status: written argument, candidate-survives with finite implementation controls. No new Lean acceptance, independent external review or novelty claim. The executable check uses a=3,4 only; its machine-word field arithmetic is not an arbitrary-size implementation.
+
+## 1. Field geometry and exact NO minimum
+
+Let a>=3, s=2^a, k=2a+1, N=2s^2. Use a polynomial basis for F=GF(2^k). In the quadratic extension E=F[theta]/(theta^2+theta+1), theta^2+theta+1 has no root in F because 3 does not divide 2^k-1 (k is odd). The executable uses moduli 0x83 and 0x211 for k=7,9, checking base inverses at all nonzero elements. A general mathematical construction can choose an irreducible polynomial of degree k and use arbitrary-precision field arithmetic.
+
+Use external shifted abscissae (equivalent to subtracting theta in Expedition 040). U is the low a-coordinate binary subspace, V the remaining a+1 coordinates. Define q(X)=product over u in U of (X+u). It is additive: starting with X, adding a basis vector t replaces q by q(X)^2+q(t)q(X). Its kernel in E is exactly U, by its displayed factorization. Consequently y_v=q(sv), for v=0,...,2s-1, are distinct.
+
+The B physical word has pages p=0,...,s-1, each indexed by z=sv+u. Page zero is the root B(z) in F; other pages store E elements. Put D0=3 theta, and e(p)=sum of 2^(j+2) theta over set bits j=0,...,a-2 of p. At row v, page p and low index u the abscissa is
+
+    X(v,p,u) = (sv if p<s/2 else D0) + e(p) + u.
+
+Here sums are characteristic two and binary-coordinate masks denote field elements. Extension directions are independent, including the theta and 2theta components in D0. Thus every row has s^2 distinct points; the upper s/2 pages give s^2/2 common abscissae independent of v. For each low index u the s/2 common columns form one group. The exact field test requires a degree <s polynomial on the complete row and an affine polynomial in y on each column in the selected group. The physical root, sibling and column cells are shared, not detached.
+
+A is tested on D=U union V, of size 3s-1, by the equations A(x+d)+A(x)=d(A(x+1)+A(x)) for d in D excluding 0,1. Any pair of distinct passing stars overlaps at two distinct points (write their difference as u+v). Therefore all passing stars agree with one F-affine polynomial P at their entire queried sites, including residual offsets 0,1,2. This covers arbitrary noncode A; one or zero passing centers is trivial.
+
+Let R_B be the passing rows and C_B the passing complete column groups. Joint acceptance is at most |R_B||C_B|, so if either cardinality is <=1 then at most 2s centers accept. Otherwise interpolate the degree-<s polynomials of two passing rows as Q(X,Y) affine in Y, degree <s in X. Each passing column has the same values as Q at the two distinct ordinates and hence at every ordinate. At least two passing groups supply s distinct common abscissae. Every passing row agrees with Q at those s points, so its whole polynomial agrees. In particular B_*(X)=Q(X,q(X)) agrees at every accepted root site and has degree <=2s-1. No global membership assumption on the input B word or its extension is needed.
+
+For a NO input the joint residual at any accepted x is the value of
+
+    H(X)= Z_{1,2,3}(X)(P(X)+1)^3
+          + Z_{0,2,3}(X)P(X+1)^3
+          + X(X+1) P(X+2)(P(X+2)+1)
+          + Z_{0,1,2,3}(X) B_*(X),
+
+where Z_S(X)=product of X+t for t in S. It has degree <=2s+3. Vanishing at zero forces P(0)=1; vanishing at one forces P(0)=0. The singleton selectors are nonzero at these points. Thus H is not identically zero, and at most 2s+3 centers accept, also in the <=1-row/group case.
+
+Attainment: A=0, W(X)=product of X+t for t=4,...,2s+3, B(X)=(W(X)+W(0))/(X W(0)). These distinct points exist for s>=8 and B is a genuine polynomial of degree 2s-1. Its residual is Z_{1,2,3}(X)W(X)/W(0), with exactly 2s+3 roots. Divide B=R+qS with deg R,S<s; fill the shared cells by R(X)+y_v S(X). Both leaf checks pass; at root q(sv+u)=y_v. Consequently V_NO=N-2s-3 exactly.
+
+Named YES reference: A(x)=1+x, B(x)=x, with the same honest extension. For this input the residual factors as Z_{0,1,2,3}(X) times X(X+1)+(X+1)^2+1+X=0. All code checks pass.
+
+## 2. Actual compiler, census and cost for the family
+
+The generator uses signed Boolean AND/XOR gates, constant folding and memoization (without changing physical query aliases). A fixed read map is (block,page,bit,delta), giving address (tag, z XOR delta). Physical tags ignore delta. The row parent values B(z+j), j in U, determine coefficients of the local polynomial in t through the fixed points j, using constant Lagrange maps. To check noncommon pages evaluate at t=e(p)+j. For common pages first translate the coefficients by D0 and by the high public bits, using the characteristic-two binomial translation stages indexed by powers of two, then evaluate at the same fixed t. This matches X(v,p,u) because z=sv+u. Columns use constant linear interpolation weights at the fixed distinct y_v; translation of the high index changes all ordinates by the same additive constant and hence does not change the two-point weights. The direct scalar audit instead reconstructs absolute row polynomials and evaluates the absolute columns. It compares the generated signed circuit's honest and attacked failure counts, not just the code space.
+
+Use one distinct raw bit tag per (block,page,bit): A has k and B has k+2k(s-1), so there are exactly 2sk raw rows. Distinct A maps k(3s-1). For B, root has sk maps, noncommon nonroot pages (s/2-1)s(2k) maps, common pages (s/2)(3s-1)(2k) maps. Row and column share the zero offset in each common page. Outer residual reads duplicate existing maps. Thus the total raw map count is D_raw=k(4s^2+s-1). Every raw map has a private buffer; each is a copy with no cross-center sharing. The remaining driver trees obey fanout f=3s-3, counting every input port and the output assertion. Let G be the number of generated AND/XOR gates, C the actual number of copy rows (mandatory buffers included), and G_and,G_xor the two counts. The exact generated census is
+
+    R=2sk+k+1+G+C,
+    M=3 G_and+4 G_xor+2 C+2+2k,
+    Q=N 2^ceil(log2(max(R_Y,R_NO))).
+
+M counts signed templates with multiplicity, including constant/output units and both clamped public pins per bit. Use common padded Q and the respective actual M, not a common normalized rejection fraction. A driver of demand d needs max(0,ceil((d-f)/(f-1))) additional copy nodes; this proves C<=D_raw+2G+1 even if a declared raw map has zero consumers.
+
+Cost bound: put L=2k. A fixed linear combination of m L-bit words uses at most m L^2 gates by bit expansion, and a field product of k-bit words at most k^3+k^2. Parent interpolation costs at most s^2 L^2. The constant/public translations use at most (k-a+1) a s/2 updates, each costing O(L^2). Row checks use s(s-1) linear combinations of s words and one comparison each. Column checks use (s/2)(2s-2) linear combinations of two words. The residual uses at most 17 field products and 3k final XORs (constant additions are signed literals); A checks and final conjunction are O(sk^2+s^2 k). Hence G=O(s^3 k^2) and R=O(s^3 k^2), since k=2a+1, a>=3. Mandatory buffers imply R>=D_raw=Omega(s^2 k). Therefore the common compact cube Q is between Omega(s^4 k) and O(s^5 k^2). These are written cost bounds for the specified algorithm; exact finite gate counts are generated, not asymptotic fits.
+
+Maximum physical reader count mu=3s-1, attained at every A bit and common B bit. Every raw physical bit has one buffer per reading center. Charge failed AND clauses by e_left+e_right+2e_out, XOR by e_left+e_right+e_out, copies by e_in+e_out. Public pins have exactly two failed clamped pairs per erroneous public cell. Constant/output assertions cost one; include output use in fanout. The cap gives at most mu charge per erroneous bit for *all mixed errors* about every satisfying assignment. A singleton raw A-bit flip, keeping all private cells fixed, fails exactly one copy clause per reader, proving exact signed sigma=mu. The local signed clauses were additionally truth-table audited.
+
+At a field-rejecting seed, correct pins and definitions force the rejecting verdict and therefore an ordinary failure. A wrong public bit incurs two pin failures instead. Local gates/copies are private to centers, so the lower bound transports to all Boolean assignments. Honest auxiliary evaluations attain V_NO. The strict uniform-average sufficient threshold is eta<V_NO/(sigma Q), with raw integer radius floor((V_NO-1)/sigma)=Theta(s). The compact eta is Omega(1/(s^4 k^2)) and O(1/(s^3 k)). A growing radius is not an improving error *rate*.
+
+## 3. Compact used-prefix degree: finite optimum, not a family extrapolation
+
+For contiguous tags [0,R) with k low seed bits, the used addresses form a downset in the Boolean coordinate order. The GF(2) ANF coefficient at a used mask depends only on its subsets, all used. Setting all coefficients outside the downset to zero yields a completion of minimum possible exact degree. The generator transforms the rows in tag variables and then transforms packed seed rows; it computes 17 at a=3 and 20 at a=4. The full fixed initial power-of-two tag block (2^14 and 2^17 rows respectively) has the same degrees.
+
+A nonzero Boolean polynomial of degree D has at least 2^(m-D) nonzero values on an m-cube: choose a leading monomial of maximal degree, and sum over its variables for every assignment of the other variables. Each such disjoint subcube has odd parity since no strict superset monomial exists. This is the usual elementary Reed-Muller distance argument. Subtracting any degree <D polynomial leaves that leading term intact. Thus on the wholly used initial block, a degree <=16 or <=19 polynomial must disagree on at least 16 or 64 bits respectively. The checker selects an actual leading mask and independently sums the original packed values over each disjoint subcube (no transformed values in the parity calculation). The exact counts are 16 and 64, against strict budgets 109/23 and 477/47. A fixed mixture cannot evade the lower bound on every component. Both exact and budgeted minimum degree over padding equal 17 and 20, only for these two named compact physical references. No claim that either distance bound is attained by a lower-degree polynomial.
+
+## 4. A family low-degree completion, at a price
+
+The explicit named honest YES reference has very special row structure. Every raw A/B row, public pin and constant is affine in the k seed bits. The parent interpolant of B=x has local coefficients (x,1,0,...,0); every fixed linear map used in its construction is affine on this reference. In each public-bit-controlled translation only coefficients with positive index are multiplied by the guard; those coefficients are constants on the reference (the translation of a linear polynomial remains linear with fixed slope). These AND gates are therefore affine on the reference. Row/column checks and A membership use fixed linear maps. Each check bit vanishes, so the final AND reduction is constant on the reference. Copies preserve their unsigned source truth tables.
+
+The only possible nonaffine physical row functions originate in the outer residual's O(k^3) Boolean gates. All these seed-row functions have degree <=6: their intermediate products are formed from at most six affine field factors, and bit-expanding products and XORs does not exceed that total degree. The two finite runs measure maximum seed degree 4. Let H be the number of distinct nonaffine row functions, so H=O(k^3), with copies creating no new functions.
+
+Allocate an injective physical row tag consisting of a bank bit b, a signature field of h=max(k+1,ceil(log2(max(1,H)))) bits, and a rank field of r=ceil(log2(max multiplicity)) bits. Affine rows use their k+1 coefficient bits; nonaffine rows use the dense index of their distinct truth function. Give each physically distinct row in a signature class a different rank. Define A_sig(z)=c0+sum c_i z_i and E_sig(z) by Boolean lookup on the low ceil(log2(max(1,H))) signature bits with zero for unused indices. If H=0 let E=0. The entire padded cube is completed by
+
+    F(b,sig,rank,z)=(1+b) A_sig(z)+ b E_sig(z).
+
+All used values match, unused values are unconstrained and rank bits are ignored. The degree is at most 1+max(2,ceil(log2(max(1,H)))+6)=O(log k). The cube has Q'=2 N 2^h 2^r=O(N^2 R)=O(s^7 k^2) (include the compact NO cube in the common padding if needed). This gives a genuine explicit low-degree exact completion for the named family, with polynomial-in-N address cost and eta'=Omega(1/(s^6 k^2)). It is not an improvement in error rate.
+
+The layout is computed from the named known honest reference, then held fixed for every possible assignment. It is injective on row identities, not a merge of equal-valued rows. Every clause still queries constant tag bits plus signed seed projections; public pins still clamp. Thus raw failures and signed sensitivity are invariant under row relabelling and added unused padding for arbitrary alternative assignments, not merely the reference. For the designed NO compiler its existing tags fit in the common cube. YES and NO template counts remain separate. This is not a uniform verifier construction for arbitrary unknown satisfying witnesses.
+
+For this specified *full completion* the distance bound also implies that for sufficiently large a a polynomial of smaller degree cannot meet the strict raw error budget: Q'/2^deg(F) is Omega(s^4 k/poly(k)), which exceeds Theta(s). This statement fixes the padded truth function; it does not minimize over all structured-layout padding choices. We have only an upper bound on that optimization.
+
+Finite repair: the one-bank-rank scheme wastes space when zero rows dominate. Separate constants, affine nonconstant rows, and exceptional rows into equal banks. Fill the fourth bank with the same E, so the high-degree branch uses only one selector. Degree is exactly de+1 for these runs, where de is the computed E lookup degree (>3); affine/constant branches have degree <=4 and cannot cancel the leading E term times the selector. This gives degree 15 and 16 with Q=67,108,864 and 8,589,934,592. A further variant uses unequal prefix banks 0=zero,100=light affine coefficient labels,101=heavy affine dense lookup,11=exceptions. Select a frequency cutoff by the actual capacity calculation; use distinct ranks again. Its degree is at most max(5,deg(heavy lookup)+3,de+2). At a=4 this lowers Q to 2,147,483,648 with degree <=17; at a=3 it is dominated by the equal-bank layout. The executed checker verifies all occupied tags and their truth rows, mapped honest and singleton failures, and common padding for NO. The gigantic padded truth cube is represented by its explicit formula, not materialized in RAM.
+
+## 5. Hostile uniformity audit
+
+A tempting false step is to infer that any verifier with affine honest seed rows admits a witness-independent layout with logarithmic-in-k degree. Fix t tag bits and R distinct occupied tags; allow the R row constants to vary independently. Restrict the seed to z=0. Every degree <=d polynomial restricts to a polynomial of degree <=d on t tag bits, so at most 2^D patterns are representable, D=sum_{j=0}^d binom(t,j). At Hamming error <=e on that slice, their union of balls has size at most 2^D sum_{j=0}^e binom(R,j). Thus when the latter is less than 2^R, some constant-row assignment cannot be approximated to e errors on the full cube either.
+
+For R exponential in k as above, t=O(k), d=O(log k), e=O(s), D=2^O(log^2 k) and log2(ball size)=O(e log R)=O(s k)=o(R). The union is strictly smaller than 2^R for large k. A fixed polynomial mixture cannot help because a mean <V_NO/sigma implies some member has fewer than that many errors. The finite control at t=3,R=8,d=1,e=1 enumerates all 16 affine tables and covers only 144 of 256 constant-row assignments, leaving 112 uncovered.
+
+The counterargument ranges over arbitrary independent constant row patterns, NOT over all satisfying proofs of the designed verifier. It refutes a universal unrestricted-row encoding premise, not the existence of a better compiler for a structured witness family. The proposed tag assignment already knows the honest row signatures; allowing that knowledge for arbitrary NP/PCP witnesses would reverse the quantifier or assume the relevant information. The next decision is to find a useful syntax-determined invariant for constrained witnesses or demonstrate its failure. No complexity-class separation follows from these trivially specified YES/NO examples.
+
+Sources: inherited Expedition 040, 044 and 045 arguments; Ben-Sasson–Viola ECCC TR14-017 for the projection-query PCP context; standard Reed-Muller polynomial distance, proved in section 3. No targeted novelty clearance or external proof review has occurred.

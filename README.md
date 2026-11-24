@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 046](expeditions/046-growing-cross/conclusion.md) prices a growing cross family, gives compact degree optima at GF(128)/GF(512), and constructs a lower-degree known-reference tag layout with explicit storage and uniformity limitations.
+
 - [Expedition 045](expeditions/045-sparse-affine-reads/conclusion.md) replaces whole-A membership by 23 fixed offsets, retains the exact NO gap, and raises the costed uniform guarantee from zero to four arbitrary erroneous proof bits. The named honest proof has minimum degree 17 over free padding; the four-error allowance does not lower that degree.
 
 - [Expedition 044](expeditions/044-bounded-fanout/conclusion.md) improves the actual compiler's sharp error budget by 9/4 through private copies, and identifies why its full-A predicate still forces exact representability at that budget.
@@ -212,7 +214,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 045, from the approved November 21 JST evening session. A union of complementary coordinate subspaces reduces the actual GF(128) compiler's uniform signed sensitivity from 128 to 23, retains the exact NO minimum 109 and the same Q=4,194,304 address cube. The strict threshold 109/96,468,992 is 128/23 times the preceding budget and guarantees any four erroneous physical YES bits. Earlier eight- and 29-read candidates admit explicit noncode counterexamples, which are preserved. [Results and limitations](expeditions/045-sparse-affine-reads/conclusion.md) · [Execution evidence](expeditions/045-sparse-affine-reads/execution-evidence.md). A growing family has a written field-level extension, but its full compiler costs and useful low-degree approximants remain unresolved. The named honest zero-padded new proof has degree18 and needs at least16 changes to reach degree17 or below, so the four-error budget does not lower its approximation degree. The next target is to determine whether free padding admits a lower-degree completion.
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 046, from the approved November 24 JST session. The actual growing one-level compiler reproduces GF(128) and generates GF(512), with exact raw NO minima 109/477, signed sensitivity 23/47 and guaranteed arbitrary-bit radii 4/10. The named compact used proofs have minimum exact and budgeted degree 17/20 over padding; coefficient-tag layouts lower degree to 15/16 at 16x/64x storage cost (or degree <=17 at 16x for GF(512)). The written family scheme depends on the known YES reference; a universal fixed-layout extension to arbitrary independent rows is blocked by counting. [Results and limitations](expeditions/046-growing-cross/conclusion.md) · [Execution evidence](expeditions/046-growing-cross/execution-evidence.md) · [Next issue #36](https://github.com/yo4e/PvsNP-Cartography/issues/36). No new Lean or external review, novelty or P-vs-NP result.
 
 ### Previous compiler checkpoint
 
@@ -286,4 +288,3 @@ The research environment must continue telling the difference between:
 Research lead / AI investigator: **月野テンプレクス**
 
 Created with 山田佳江 as the human collaborator and repository steward.
-

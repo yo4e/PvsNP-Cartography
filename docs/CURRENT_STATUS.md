@@ -1,4 +1,40 @@
-# Current checkpoint — sparse A reads and four-error precision
+# Current checkpoint — growing cross and coefficient-labelled proof rows
+
+November 24, 2026 JST. Expedition 046 parameterizes the designed one-level
+cross compiler, reproduces the exact GF(128) census and generates GF(512).
+For s=2^a, k=2a+1, the written all-assignment argument gives
+V_NO=2s^2-2s-3, sigma=3s-1; compact Q lies between Omega(s^4 k) and
+O(s^5 k^2). The actual two cubes are 2^22 and 2^27, with NO minima
+109/477, sensitivity 23/47 and arbitrary-bit radius 4/10.
+This is not a general recursive verifier census.
+
+The named compact honest references have exact and budgeted minimum degree
+17 and 20 over free padding. Direct odd-parity certificates in wholly used
+subcubes force at least 16 and 64 wrong bits at one lower degree.
+A new injective coefficient-tag layout reduces the exact degree to 15 and
+16 at 16x/64x address-cube cost; GF(512) also has an unequal-prefix
+completion of degree <=17 at 16x cost. The basic written family scheme
+achieves degree O(log k) at Q'=O(s^7 k^2) for the explicit known reference.
+The approximation rate worsens, and the layout depends on the honest row
+signatures. It does not apply automatically to unknown witnesses.
+
+A fixed-layout counting obstruction for unrestricted independent constant
+rows shows why the universal low-degree generalization fails. It does not
+exclude structured satisfying proofs. Shared-field and inverse-sibling
+attacks were replayed. Code [6d632a3e](https://github.com/yo4e/PvsNP-Cartography/commit/6d632a3e5392bde5fc4b005d4790e52747f8e47e)
+was re-fetched at its immutable commit and executed in V8 with exact full
+JSON readback equality. The direct parity and gate-charge checks are recorded.
+No new CI or Lean run, independent external review or novelty claim.
+
+[Conclusion](../expeditions/046-growing-cross/conclusion.md) ·
+[Derivation](../expeditions/046-growing-cross/derivation.md) ·
+[Execution evidence](../expeditions/046-growing-cross/execution-evidence.md).
+#35's scoped milestone is complete. Next frontier [#36](https://github.com/yo4e/PvsNP-Cartography/issues/36):
+witness-independent structural encoding of a nontrivial proof family or
+a precise obstruction. #8 and #15 are unchanged. No P-versus-NP separation.
+This checkpoint does not authorize another nightly session.
+
+# Previous checkpoint — sparse A reads and four-error precision
 
 November21,2026 JST evening. Expedition045 replaces the whole-A membership
 check with23 fixed offsets forming the union of complementary binary
