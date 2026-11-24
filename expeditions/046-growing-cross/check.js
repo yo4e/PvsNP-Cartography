@@ -214,6 +214,35 @@ function expedition046() {
     result.layout={nonlinearRows:nonlinear,distinctNonlinear:exceptional.length,distinctAffine:Acounts.size,maxAffine,maxExc,maxSeedDegree,h,r,codeQ,exactCompletionDegree:de+1,compactMinimumExactDegree:compactDegree,
       rawErrorBudget:V+"/"+mu,structuredErrorDenominator:codeQ*mu,compactErrorDenominator:Q*mu,
       fixedCompletionLowerDegreeDistance:codeQ/2**(de+1)};
+    // Separate the highly repeated constants from affine and exceptional rows.
+    const maxConstant=Math.max(Acounts.get(0)||0,Acounts.get(1)||0);
+    const maxOther=Math.max(1,...[...Acounts].filter(([sig])=>sig>1).map(([,n])=>n));
+    const cBits=1+lg(maxConstant),aBits=k+1+lg(maxOther),eBits=lg(exceptional.length)+lg(maxExc);
+    const tBits=Math.max(cBits,aBits,eBits),bankSize=2**tBits,bankQ=4*N*bankSize;
+    const occupied=new Set();
+    for(let t=0;t<R;t++){
+      const [b,sig,rank]=allocation[t];
+      let bank=b?2:sig<=1?0:1;
+      let bits=bank===0?1:bank===1?k+1:lg(exceptional.length);
+      let addr=bank*bankSize+rank*2**bits+sig;
+      check(addr<(bank+1)*bankSize&&!occupied.has(addr),"separated banks");
+      occupied.add(addr);
+      let value=bank===2?exceptional[sig]:sig&1?FULL:0n;
+      if(bank===1)for(let i=0;i<k;i++)if(sig>>(i+1)&1)value^=PUB[i];
+      check(value===rows[t],"bank completion");
+    }
+    // Full occupied half-cube (largest complete initial tag block).
+    const T=2**Math.floor(Math.log2(R));
+    let fixedDegree=0;
+    for(let i=0;i<T;i++)if(tr[i])fixedDegree=Math.max(fixedDegree,pc(i)+degree(anf(tr[i])));
+    const fixedDistance=T*N/2**fixedDegree;
+    // Bank 3 is filled with E, so the nonlinear branch uses only one selector.
+    const bankDegree=de+1;
+    check(bankDegree>4,"dominant exceptional degree");
+    Object.assign(result.layout,{maxConstant,maxOther,cBits,aBits,eBits,tBits,bankQ,bankDegree,
+      bankErrorDenominator:bankQ*mu,bankFixedCompletionLowerDegreeDistance:bankQ/2**bankDegree,
+      compactFixedPrefixRows:T,compactFixedPrefixDegree:fixedDegree,compactLowerDegreeDistance:fixedDistance,
+      compactBudgetMinimumCertified:fixedDegree===compactDegree&&fixedDistance*mu>=V});
     return {result,rows:null}
   }
   // x^7+x+1 and x^9+x^4+1; verify field inverses in the build.

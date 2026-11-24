@@ -52,7 +52,21 @@
         "rawErrorBudget": "109/23",
         "structuredErrorDenominator": 197568495616,
         "compactErrorDenominator": 96468992,
-        "fixedCompletionLowerDegreeDistance": 262144
+        "fixedCompletionLowerDegreeDistance": 262144,
+        "maxConstant": 12893,
+        "maxOther": 454,
+        "cBits": 15,
+        "aBits": 17,
+        "eBits": 15,
+        "tBits": 17,
+        "bankQ": 67108864,
+        "bankDegree": 15,
+        "bankErrorDenominator": 1543503872,
+        "bankFixedCompletionLowerDegreeDistance": 2048,
+        "compactFixedPrefixRows": 16384,
+        "compactFixedPrefixDegree": 17,
+        "compactLowerDegreeDistance": 16,
+        "compactBudgetMinimumCertified": true
       }
     },
     {
@@ -143,7 +157,21 @@
         "rawErrorBudget": "477/47",
         "structuredErrorDenominator": 51677046505472,
         "compactErrorDenominator": 6308233216,
-        "fixedCompletionLowerDegreeDistance": 16777216
+        "fixedCompletionLowerDegreeDistance": 16777216,
+        "maxConstant": 152924,
+        "maxOther": 2693,
+        "cBits": 19,
+        "aBits": 22,
+        "eBits": 16,
+        "tBits": 22,
+        "bankQ": 8589934592,
+        "bankDegree": 16,
+        "bankErrorDenominator": 403726925824,
+        "bankFixedCompletionLowerDegreeDistance": 131072,
+        "compactFixedPrefixRows": 131072,
+        "compactFixedPrefixDegree": 20,
+        "compactLowerDegreeDistance": 64,
+        "compactBudgetMinimumCertified": true
       }
     },
     {
