@@ -243,6 +243,61 @@ function expedition046() {
       bankErrorDenominator:bankQ*mu,bankFixedCompletionLowerDegreeDistance:bankQ/2**bankDegree,
       compactFixedPrefixRows:T,compactFixedPrefixDegree:fixedDegree,compactLowerDegreeDistance:fixedDistance,
       compactBudgetMinimumCertified:fixedDegree===compactDegree&&fixedDistance*mu>=V});
+    // Unequal prefix banks: 0 = zero, 100 = light affine,
+    // 101 = heavy affine (dense lookup), 11 = exceptional.
+    const zeroCount=Acounts.get(0)||0;
+    const nonzero=[...Acounts].filter(([sig])=>sig!==0).sort((u,v)=>u[0]-v[0]);
+    let best=null;
+    for(const limit of [0,...new Set(nonzero.map(([,n])=>n))]){
+      let heavy=nonzero.filter(([,n])=>n>limit),light=nonzero.filter(([,n])=>n<=limit);
+      let lbits=k+1+lg(Math.max(1,...light.map(([,n])=>n)));
+      let hbits=lg(heavy.length)+lg(Math.max(1,...heavy.map(([,n])=>n)));
+      let total=Math.max(lg(zeroCount)+1,lbits+3,hbits+3,eBits+2,3);
+      let ub=Math.max(5,lg(heavy.length)+4,de+2);
+      if(!best||total<best.total||(total===best.total&&ub<best.ub))
+        best={limit,heavy,light,total,ub,lbits,hbits}
+    }
+    const heavyIndex=new Map(best.heavy.map(([sig],i)=>[sig,i]));
+    let heavyTruth=arr(pow2(best.heavy.length)).map(i=>{
+      let sig=best.heavy[i]?.[0]||0,w=sig&1?FULL:0n;
+      for(let j=0;j<k;j++)if(sig>>(j+1)&1)w^=PUB[j];return w});
+    let ht=heavyTruth.slice();
+    for(let bit=1;bit<ht.length;bit*=2)for(let i=0;i<ht.length;i++)if(i&bit)ht[i]^=ht[i^bit];
+    let hd=0;for(let i=0;i<ht.length;i++)if(ht[i])hd=Math.max(hd,pc(i)+degree(anf(ht[i])));
+    let prefixQ=N*2**best.total,prefixDegree=Math.max(5,hd+3,de+2);
+    let base0=2**(best.total-1),base1=base0+2**(best.total-3),base2=base0+2**(best.total-2);
+    let tagMap=[],seen2=new Set();
+    for(let t=0;t<R;t++){
+      const [b,sig,rank]=allocation[t];let addr,value,upper;
+      if(b){addr=base2+rank*2**lg(exceptional.length)+sig;value=exceptional[sig];upper=2**best.total}
+      else if(!sig){addr=rank;value=0n;upper=base0}
+      else if(heavyIndex.has(sig)){let i=heavyIndex.get(sig);addr=base1+rank*2**lg(best.heavy.length)+i;value=heavyTruth[i];upper=base2}
+      else{addr=base0+rank*2**(k+1)+sig;value=sig&1?FULL:0n;
+        for(let j=0;j<k;j++)if(sig>>(j+1)&1)value^=PUB[j];upper=base1}
+      check(addr<upper&&!seen2.has(addr)&&value===rows[t],"unequal prefix layout");
+      tagMap.push(addr);seen2.add(addr)
+    }
+    // Check the same literal/seed projection constraints on an actual reindexed proof.
+    function mappedFailures(rows){
+      const tab=new Map(tagMap.map((tag,i)=>[tag,rows[i]]));
+      const get=t=>tab.get(tagMap[t]);
+      const val=([t,d,neg])=>shift(get(t),d)^(neg?FULL:0n);
+      let n=pop(FULL^get(loc[1]))+pop(FULL^val(out));
+      for(let i=0;i<k;i++)n+=2*pop(get(loc[x[i]])^PUB[i]);
+      for(const [u,t] of copies)n+=pop(val(u)^get(t));
+      for(const [op,u,v,t] of defs){let A=val(u),B=val(v),C=get(t);
+        n+=op==="xor"?pop(A^B^C):pop(C&(FULL^A))+pop(C&(FULL^B))+pop((FULL^C)&A&B)}
+      return n
+    }
+    check(mappedFailures(rows)===0,"mapped honest proof");
+    let mut=keys.get("A:0:0"),old=rows[mut];rows[mut]^=1n;
+    check(mappedFailures(rows)===mu,"mapped singleton");rows[mut]=old;
+    // Independent physical accounting identity and upper bound.
+    check(rawTags.size===2*s*k&&raw.size===k*(4*s*s+s-1),"raw census formula");
+    check(R===2*s*k+k+1+G+C,"row census formula");
+    Object.assign(result.layout,{zeroCount,heavyThreshold:best.limit,heavyTypes:best.heavy.length,lightTypes:best.light.length,
+      heavyDegree:hd,prefixTagBits:best.total,prefixQ,prefixDegreeUpper:prefixDegree,
+      prefixErrorDenominator:prefixQ*mu,prefixSizeFactor:prefixQ/Q});
     return {result,rows:null}
   }
   // x^7+x+1 and x^9+x^4+1; verify field inverses in the build.

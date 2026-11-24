@@ -66,7 +66,17 @@
         "compactFixedPrefixRows": 16384,
         "compactFixedPrefixDegree": 17,
         "compactLowerDegreeDistance": 16,
-        "compactBudgetMinimumCertified": true
+        "compactBudgetMinimumCertified": true,
+        "zeroCount": 12893,
+        "heavyThreshold": 244,
+        "heavyTypes": 4,
+        "lightTypes": 218,
+        "heavyDegree": 3,
+        "prefixTagBits": 19,
+        "prefixQ": 67108864,
+        "prefixDegreeUpper": 16,
+        "prefixErrorDenominator": 1543503872,
+        "prefixSizeFactor": 16
       }
     },
     {
@@ -171,7 +181,17 @@
         "compactFixedPrefixRows": 131072,
         "compactFixedPrefixDegree": 20,
         "compactLowerDegreeDistance": 64,
-        "compactBudgetMinimumCertified": true
+        "compactBudgetMinimumCertified": true,
+        "zeroCount": 152924,
+        "heavyThreshold": 330,
+        "heavyTypes": 16,
+        "lightTypes": 945,
+        "heavyDegree": 5,
+        "prefixTagBits": 22,
+        "prefixQ": 2147483648,
+        "prefixDegreeUpper": 17,
+        "prefixErrorDenominator": 100931731456,
+        "prefixSizeFactor": 16
       }
     },
     {
