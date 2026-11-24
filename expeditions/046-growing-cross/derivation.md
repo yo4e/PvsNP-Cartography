@@ -82,3 +82,13 @@ For R exponential in k as above, t=O(k), d=O(log k), e=O(s), D=2^O(log^2 k) and 
 The counterargument ranges over arbitrary independent constant row patterns, NOT over all satisfying proofs of the designed verifier. It refutes a universal unrestricted-row encoding premise, not the existence of a better compiler for a structured witness family. The proposed tag assignment already knows the honest row signatures; allowing that knowledge for arbitrary NP/PCP witnesses would reverse the quantifier or assume the relevant information. The next decision is to find a useful syntax-determined invariant for constrained witnesses or demonstrate its failure. No complexity-class separation follows from these trivially specified YES/NO examples.
 
 Sources: inherited Expedition 040, 044 and 045 arguments; Ben-Sasson–Viola ECCC TR14-017 for the projection-query PCP context; standard Reed-Muller polynomial distance, proved in section 3. No targeted novelty clearance or external proof review has occurred.
+
+Follow-up clarification, Expedition 047: the fixed-public-layout obstruction
+above is unchanged. Witness dependence is not by itself an impossibility
+for a different nondeterministic tester: one guessed row map reused at every
+alias still decodes a single old proof. The present explicit row-table guess
+is blocked by its description cost, not a failure of that decoder. The
+original YES fixture is also unique on used bits; the all-witness extension
+requires a different constrained family. See
+[the quantifier/cost audit](../047-witness-layouts/sources-and-quantifiers.md)
+and [the scoped RS attack](../047-witness-layouts/scoped-rs-obstruction.md).

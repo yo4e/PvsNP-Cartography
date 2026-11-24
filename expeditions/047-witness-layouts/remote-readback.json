@@ -1,0 +1,187 @@
+{
+  "immutable_commit": "7031fd2597f520933ddcfc0e86dd69dfad00fdfb",
+  "tree": "fadd7c562d7d946630d0456fb7e4b43e0bf71462",
+  "github_api_all_18_files_text_equal": true,
+  "git_object_readback": [
+    {
+      "path": "claims/047-witness-layouts.md",
+      "bytes": 2152,
+      "git_blob_sha": "3b45decb88dad317507757bca87558f041fc2ef5",
+      "sha256": "36225e8431d65ace65c3ffabcd60a7bfdab947680e294bc890186bf3a209e8e9",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/barrier-audit.md",
+      "bytes": 2578,
+      "git_blob_sha": "112d4446479bd5f91970d6ebe778b3e9a8e6f58b",
+      "sha256": "336db0cb9262d83bb13d09022919d46957bf852aecde22a81b081f2d74b3eac9",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/check_guessed_layout.py",
+      "bytes": 8957,
+      "git_blob_sha": "aae48f763988d803c68689499827231ab081449a",
+      "sha256": "7c4a90560b06b673add9f370242c94380c7e06ab0d5ea85f584513cc136b0bc4",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/check_public_dictionary.py",
+      "bytes": 10707,
+      "git_blob_sha": "47dc7484b9de86531b78b761b58cef3e96bd5bfb",
+      "sha256": "ec58322a933e1362b4f0473b4b83119e0d676d32923a7556d2ca205a969925cf",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/check_scoped_rs.py",
+      "bytes": 9802,
+      "git_blob_sha": "1b760cbcb63b41d288f12c71b54a3f75dd7c9526",
+      "sha256": "ad35e162fdb282d807d53756523e59d5c8414ce0f79682680d09ec5044fa6b80",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/conclusion.md",
+      "bytes": 6192,
+      "git_blob_sha": "3d9f4afefc4a957c785fe2de7e14d732fa08f3b6",
+      "sha256": "45103429113372c429c68853c6ef2d7f043366a2c2c7120e9fa7e64e97567d28",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/execution-evidence.md",
+      "bytes": 2089,
+      "git_blob_sha": "7ffc1433260d50bc3ed3d2877731b7070e895528",
+      "sha256": "409e26cc4fb493f292df85f2f0c067eaf60dd18fb74a0cf38bc940369f371836",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/guessed-layout-results.json",
+      "bytes": 2038,
+      "git_blob_sha": "c3c33457fd66f7c56e828a28ec7c5424f7f2ef33",
+      "sha256": "2aeecae66d28f97ad11d3bcd34d149c3af38a1c6e57f14ae6d1d8166b9adbdac",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/local-execution.json",
+      "bytes": 3416,
+      "git_blob_sha": "adf09f11869ba012a414ec63c937bf4ba8b6bda4",
+      "sha256": "09def5da4468d935c1cb5c7d23489e94a0c739150673da24108a1b532675cc4c",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/log.md",
+      "bytes": 2079,
+      "git_blob_sha": "784855928aa5ca9ff6787059e6a8687e8fe7910b",
+      "sha256": "498dd77302d26753962160e04f5d9a244e1474a3991f66426fad36c15e7ebbaf",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/orientation.md",
+      "bytes": 2755,
+      "git_blob_sha": "1720f2985d78efb504ea34f672c16e17ccc45e74",
+      "sha256": "f739ea18d336922f804a6ec8c1c02661f665b456f88b958ecc62aa2b4b88ad76",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/public-dictionary-notes.md",
+      "bytes": 8131,
+      "git_blob_sha": "f83c382d8485fb3a1ce8a63791bb07cb58ae18e9",
+      "sha256": "3da065ff8e5aeb64e56dda810f59ca0b91bfdf6ac794d53b11c35a2a30e5f04e",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/public-dictionary-results.json",
+      "bytes": 1996,
+      "git_blob_sha": "8b08ac023ed043656434d4be967e5bd82ae9043b",
+      "sha256": "b752eae1161d32c92b5af233b07031c806221e68f65cad8b74fbaa27a3664deb",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/scoped-rs-obstruction.md",
+      "bytes": 11398,
+      "git_blob_sha": "f40e19ea6c8bacd4f2be631d717505a45b1b48dc",
+      "sha256": "5fd87b36f60a570aa8ef42c2e76095ab9edf9563548da81a091e0739c8b5368f",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/scoped-rs-results.json",
+      "bytes": 3085,
+      "git_blob_sha": "8e78e86a3c733f2c2f0f275cf8a5a03db9e1de53",
+      "sha256": "f93a8858a73513641e83194fb88c71b55598ddfbc3bcb6438bf9c7d9d75b7c12",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "expeditions/047-witness-layouts/sources-and-quantifiers.md",
+      "bytes": 11615,
+      "git_blob_sha": "49b607fcd346264314767275c63bbf529967297b",
+      "sha256": "7cd312770efbae3af44f5d4622c0e14ae5de4ba367053ca7d0696ed420259003",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "graveyard/2026-11-24-layout-quantifier-shortcuts.md",
+      "bytes": 3198,
+      "git_blob_sha": "7ef7a642bc945add23ee0af774e77b0712fdf18d",
+      "sha256": "71ef3de714eae788b8ba033906cc7f3447d7777ee6785add64e1fbd445d38f25",
+      "identical_to_precommit_source": true
+    },
+    {
+      "path": "graveyard/2026-11-24-rs-uniform-layout.md",
+      "bytes": 1716,
+      "git_blob_sha": "602189c7975ed3012c3e0464f10d9f54cf1773a7",
+      "sha256": "38a5ae2ffc635bae00ff1427afd24361525543b0706b7606b6337ee8c816b75c",
+      "identical_to_precommit_source": true
+    }
+  ],
+  "immutable_source_replays": [
+    {
+      "script": "check_public_dictionary.py",
+      "flags": [],
+      "exit_code": 0,
+      "stdout_sha256": "b752eae1161d32c92b5af233b07031c806221e68f65cad8b74fbaa27a3664deb",
+      "stored_output_identical": true
+    },
+    {
+      "script": "check_public_dictionary.py",
+      "flags": [
+        "-O"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b752eae1161d32c92b5af233b07031c806221e68f65cad8b74fbaa27a3664deb",
+      "stored_output_identical": true
+    },
+    {
+      "script": "check_scoped_rs.py",
+      "flags": [],
+      "exit_code": 0,
+      "stdout_sha256": "f93a8858a73513641e83194fb88c71b55598ddfbc3bcb6438bf9c7d9d75b7c12",
+      "stored_output_identical": true
+    },
+    {
+      "script": "check_scoped_rs.py",
+      "flags": [
+        "-O"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f93a8858a73513641e83194fb88c71b55598ddfbc3bcb6438bf9c7d9d75b7c12",
+      "stored_output_identical": true
+    },
+    {
+      "script": "check_guessed_layout.py",
+      "flags": [],
+      "exit_code": 0,
+      "stdout_sha256": "2aeecae66d28f97ad11d3bcd34d149c3af38a1c6e57f14ae6d1d8166b9adbdac",
+      "stored_output_identical": true
+    },
+    {
+      "script": "check_guessed_layout.py",
+      "flags": [
+        "-O"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2aeecae66d28f97ad11d3bcd34d149c3af38a1c6e57f14ae6d1d8166b9adbdac",
+      "stored_output_identical": true
+    }
+  ],
+  "limitations": [
+    "Local runtime replay of immutable GitHub source; not a GitHub Actions job",
+    "No Lean execution, independent external review, or novelty assessment"
+  ]
+}

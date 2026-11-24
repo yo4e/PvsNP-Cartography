@@ -35,7 +35,32 @@ AI gate of Issues 8 and 15, not a second proof kernel, and not novelty review.
 
 ## Remote persistence
 
-At the implementation commit this section contains only the completed local
-facts above. The following record commit will name the actual accepted
-implementation commit and archive the immutable GitHub file/hash comparison.
-No remote persistence or replay is claimed before that comparison succeeds.
+Implementation commit:
+[7031fd2597f520933ddcfc0e86dd69dfad00fdfb](https://github.com/yo4e/PvsNP-Cartography/commit/7031fd2597f520933ddcfc0e86dd69dfad00fdfb),
+tree `fadd7c562d7d946630d0456fb7e4b43e0bf71462`, parent
+`ce66bdc08702922138dc77b93c6c2b4054873944`.
+
+The connected GitHub API accepted the tree, commit and non-forced main
+advance with the expected parent. The actual immutable commit was then
+retrieved: its parent and tree matched. All **18** committed files were
+separately re-fetched through GitHub's file API at this commit; every returned
+text matched the prepared source exactly.
+
+A fresh Git fetch independently obtained the commit objects. Every changed
+file's actual Git object was compared byte for byte with the prepared file,
+and its Git blob hash was recomputed. All matched. The files were extracted
+into a fresh immutable snapshot, and all three suites were executed normally
+and with `-O` from that snapshot. All six runs completed successfully, with
+empty stderr and output identical to the re-fetched stored JSON.
+
+[remote-readback.json](remote-readback.json) contains the full path/hash
+manifest and actual replay outcomes. These are local executions of retrieved
+GitHub source, not GitHub Actions or a different proof kernel. The later
+record commit adds this evidence and the project checkpoint; it does not
+change the tested programs or mathematical results.
+
+Issue [36](https://github.com/yo4e/PvsNP-Cartography/issues/36) was closed as
+completed after the successful readback; the actual completion comment is
+[7135567206](https://github.com/yo4e/PvsNP-Cartography/issues/36#issuecomment-7135567206).
+Issue [37](https://github.com/yo4e/PvsNP-Cartography/issues/37) was created for
+the next source-level cost question. Issues 8 and 15 were not changed.

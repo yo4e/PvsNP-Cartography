@@ -1,4 +1,44 @@
-# Current checkpoint — growing cross and coefficient-labelled proof rows
+# Current checkpoint — proof layouts, public structure and quantifiers
+
+November24,2026 approved night; completed after midnight November25 JST.
+[Expedition047](../expeditions/047-witness-layouts/conclusion.md) completes
+[Issue36](https://github.com/yo4e/PvsNP-Cartography/issues/36). A public symbolic
+dictionary of dimension L and seed degree delta gives a fixed injective
+coefficient/rank layout with exact degree at most delta+1 and explicitly
+exponential-in-L address cost. The standalone twelve-row constrained relation
+has three satisfying proofs with identical tags, exact and budgeted degree3,
+Q'=1024 versus64, raw NO minimum4 and exact signed sigma9/2 or5.
+
+The old growing YES fixture is unique on used bits. A separately defined
+shared-RS code-only relaxation has 2sk independent systematic bits; at
+polynomial storage, degree O(log k) cannot approximate every satisfying
+witness to O(s) absolute errors eventually. At GF128, X^3 has exact nearest
+affine distance42 on112 used raw cells in the original tag layout. This
+relaxation inherits no outer-residual NO gap and does not refute existential
+completeness.
+
+A guessed map Lambda and polynomial P can still decode one global proof,
+pi(i,z)=P(Lambda(i),z). Witness dependence is not intrinsically unsound;
+occurrence-dependent detachment is. Collisions retain NO soundness but can
+change sensitivity. The explicit map in the growing compiler costs
+Omega(N*k*t) bits/time and cannot fit the intended o(N) clock.
+
+[Implementation7031fd25](https://github.com/yo4e/PvsNP-Cartography/commit/7031fd2597f520933ddcfc0e86dd69dfad00fdfb)
+was accepted and all18 files/commit/tree re-fetched. All three exact suites
+passed normal/-O/stored comparisons, including another six executions from
+the immutable remote snapshot. [Evidence](../expeditions/047-witness-layouts/execution-evidence.md)
+contains the actual hashes and outcomes. No new Lean or CI result, novelty,
+external review or P-versus-NP result is claimed.
+
+Next: [Issue37](https://github.com/yo4e/PvsNP-Cartography/issues/37), cost a
+succinct public or guessed layout in the residual-constrained fixed-rate
+recursive source verifier. Identify constant row tags versus seed-dependent
+path labels, preserve one global decoding map, and pay descriptor, composed
+degree, template count, soundness and precision together. Do not substitute
+another larger one-level toy. Issues8/15 are unchanged. No write blocker or
+unapplied patch remains. This checkpoint does not authorize another night.
+
+# Previous checkpoint — growing cross and coefficient-labelled proof rows
 
 November 24, 2026 JST. Expedition 046 parameterizes the designed one-level
 cross compiler, reproduces the exact GF(128) census and generates GF(512).

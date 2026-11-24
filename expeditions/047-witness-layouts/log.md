@@ -30,3 +30,11 @@
 The natural milestone is the model decision, not the number of passing
 checks. No new Lean or CI run was needed for these standalone finite
 experiments. Formal statements, external review and novelty remain separate.
+
+Remote completion: implementation commit 7031fd2597f520933ddcfc0e86dd69dfad00fdfb
+was accepted. All 18 actual files and the commit/tree were re-fetched and
+matched. A fresh immutable Git snapshot passed the same six executions with
+identical outputs. Issue 36 was closed with comment7135567206; Issue37 was
+created. The next entry is the residual-constrained fixed-rate recursive
+source, not another larger one-level toy. No write blocker or unapplied
+implementation remains. Fresh approval is required for a new nightly session.

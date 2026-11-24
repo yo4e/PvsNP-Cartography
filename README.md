@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 047](expeditions/047-witness-layouts/conclusion.md) gives a public symbolic-layout condition, a scoped obstruction over satisfying shared-RS witnesses, and a costed correction to the witness-dependent-layout objection.
+
 - [Expedition 046](expeditions/046-growing-cross/conclusion.md) prices a growing cross family, gives compact degree optima at GF(128)/GF(512), and constructs a lower-degree known-reference tag layout with explicit storage and uniformity limitations.
 
 - [Expedition 045](expeditions/045-sparse-affine-reads/conclusion.md) replaces whole-A membership by 23 fixed offsets, retains the exact NO gap, and raises the costed uniform guarantee from zero to four arbitrary erroneous proof bits. The named honest proof has minimum degree 17 over free padding; the four-error allowance does not lower that degree.
@@ -214,7 +216,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 046, from the approved November 24 JST session. The actual growing one-level compiler reproduces GF(128) and generates GF(512), with exact raw NO minima 109/477, signed sensitivity 23/47 and guaranteed arbitrary-bit radii 4/10. The named compact used proofs have minimum exact and budgeted degree 17/20 over padding; coefficient-tag layouts lower degree to 15/16 at 16x/64x storage cost (or degree <=17 at 16x for GF(512)). The written family scheme depends on the known YES reference; a universal fixed-layout extension to arbitrary independent rows is blocked by counting. [Results and limitations](expeditions/046-growing-cross/conclusion.md) · [Execution evidence](expeditions/046-growing-cross/execution-evidence.md) · [Next issue #36](https://github.com/yo4e/PvsNP-Cartography/issues/36). No new Lean or external review, novelty or P-vs-NP result.
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 047, from the approved November 24 night completed after midnight November 25 JST. Public symbolic dictionaries give a witness-independent layout under explicit structural hypotheses; a twelve-row control has three satisfying proofs and exact/budgeted degree 3. A shared-RS code-only family obstructs an all-witness low-degree guarantee, while existential completeness remains open. One shared guessed row map preserves NO soundness, but its explicit table is too expensive in the growing compiler. [Results and limitations](expeditions/047-witness-layouts/conclusion.md) · [Verified immutable replay](expeditions/047-witness-layouts/execution-evidence.md) · [Next issue #37](https://github.com/yo4e/PvsNP-Cartography/issues/37). No new Lean, independent external review, novelty or P-vs-NP result.
 
 ### Previous compiler checkpoint
 

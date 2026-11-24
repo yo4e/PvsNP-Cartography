@@ -11,3 +11,12 @@ Scope: independent arbitrary constants, not a lower bound over constrained satis
 Separate cost failure: the initial common-rank coefficient bank needed 2048x and 8192x the compact storage for a=3,4 because repeated constant rows forced a large rank field across all signatures. Separate banks recover much of that loss, with remaining overhead 16x/64x or 16x for the larger unequal-prefix variant. Equal-valued rows were not merged; such a merge would alter the proof space and requires fresh sensitivity/soundness accounting.
 
 Do not use either the favorable finite examples or their explicit known YES reference as evidence for a uniform unknown-witness approximation theorem.
+
+Follow-up in [Expedition047](../expeditions/047-witness-layouts/conclusion.md):
+this remains a **fixed-layout** obstruction. A witness-dependent value/rank
+map can encode arbitrary constant rows at degree one, but its explicit table
+carries the witness information and costs too much in the growing compiler.
+One shared guessed map preserves NO soundness. A separate scoped obstruction
+now covers genuinely satisfying shared-RS code-only witnesses, without
+claiming to refute existential completeness. These distinctions correct the
+overbroad inference that witness dependence itself invalidates every route.
