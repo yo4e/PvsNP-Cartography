@@ -1,232 +1,263 @@
-[
-  [
-    {
-      "a": 3,
-      "k": 7,
-      "N": 128,
-      "no": false,
-      "And": 2847,
-      "Xor": 16699,
-      "C": 2179,
-      "R": 21845,
-      "Q": 4194304,
-      "M": 79711,
-      "mu": 23,
-      "V": 109,
-      "guaranteedErrors": 4,
-      "attacks": [
-        [
-          "A-splice",
-          128
+{
+  "fixtures": [
+    [
+      {
+        "a": 3,
+        "k": 7,
+        "N": 128,
+        "no": false,
+        "And": 2847,
+        "Xor": 16699,
+        "C": 2179,
+        "R": 21845,
+        "Q": 4194304,
+        "M": 79711,
+        "mu": 23,
+        "V": 109,
+        "guaranteedErrors": 4,
+        "attacks": [
+          [
+            "inverse-interpolated-rows",
+            128
+          ],
+          [
+            "A-splice",
+            128
+          ],
+          [
+            "B-root",
+            8
+          ],
+          [
+            "B-common",
+            23
+          ],
+          [
+            "inverse-detached",
+            128
+          ],
+          [
+            "raw-plus-pin",
+            29
+          ]
         ],
-        [
-          "B-root",
-          8
+        "residualGateCount": 1572,
+        "layout": {
+          "nonlinearRows": 1422,
+          "distinctNonlinear": 1098,
+          "distinctAffine": 223,
+          "maxAffine": 12893,
+          "maxExc": 11,
+          "maxSeedDegree": 4,
+          "h": 11,
+          "r": 14,
+          "codeQ": 8589934592,
+          "exactCompletionDegree": 15,
+          "compactMinimumExactDegree": 17,
+          "rawErrorBudget": "109/23",
+          "structuredErrorDenominator": 197568495616,
+          "compactErrorDenominator": 96468992,
+          "fixedCompletionLowerDegreeDistance": 262144,
+          "maxConstant": 12893,
+          "maxOther": 454,
+          "cBits": 15,
+          "aBits": 17,
+          "eBits": 15,
+          "tBits": 17,
+          "bankQ": 67108864,
+          "bankDegree": 15,
+          "bankErrorDenominator": 1543503872,
+          "bankFixedCompletionLowerDegreeDistance": 2048,
+          "compactFixedPrefixRows": 16384,
+          "compactFixedPrefixDegree": 17,
+          "compactLowerDegreeDistance": 16,
+          "compactBudgetMinimumCertified": true,
+          "parityLeadTag": 15359,
+          "parityLeadSeed": 15,
+          "directOddParityCubes": 16,
+          "zeroCount": 12893,
+          "heavyThreshold": 244,
+          "heavyTypes": 4,
+          "lightTypes": 218,
+          "heavyDegree": 3,
+          "prefixTagBits": 19,
+          "prefixQ": 67108864,
+          "prefixDegreeUpper": 16,
+          "prefixErrorDenominator": 1543503872,
+          "prefixSizeFactor": 16
+        }
+      },
+      {
+        "a": 3,
+        "k": 7,
+        "N": 128,
+        "no": true,
+        "And": 2862,
+        "Xor": 16709,
+        "C": 2178,
+        "R": 21869,
+        "Q": 4194304,
+        "M": 79794,
+        "mu": 23,
+        "V": 109,
+        "guaranteedErrors": 4,
+        "attacks": [
+          [
+            "inverse-interpolated-rows",
+            128
+          ],
+          [
+            "A-splice",
+            128
+          ],
+          [
+            "B-root",
+            109
+          ],
+          [
+            "B-common",
+            118
+          ],
+          [
+            "inverse-detached",
+            128
+          ]
         ],
-        [
-          "B-common",
-          23
-        ],
-        [
-          "inverse-detached",
-          128
-        ],
-        [
-          "raw-plus-pin",
-          29
-        ]
-      ],
-      "residualGateCount": 1572,
-      "layout": {
-        "nonlinearRows": 1422,
-        "distinctNonlinear": 1098,
-        "distinctAffine": 223,
-        "maxAffine": 12893,
-        "maxExc": 11,
-        "maxSeedDegree": 4,
-        "h": 11,
-        "r": 14,
-        "codeQ": 8589934592,
-        "exactCompletionDegree": 15,
-        "compactMinimumExactDegree": 17,
-        "rawErrorBudget": "109/23",
-        "structuredErrorDenominator": 197568495616,
-        "compactErrorDenominator": 96468992,
-        "fixedCompletionLowerDegreeDistance": 262144,
-        "maxConstant": 12893,
-        "maxOther": 454,
-        "cBits": 15,
-        "aBits": 17,
-        "eBits": 15,
-        "tBits": 17,
-        "bankQ": 67108864,
-        "bankDegree": 15,
-        "bankErrorDenominator": 1543503872,
-        "bankFixedCompletionLowerDegreeDistance": 2048,
-        "compactFixedPrefixRows": 16384,
-        "compactFixedPrefixDegree": 17,
-        "compactLowerDegreeDistance": 16,
-        "compactBudgetMinimumCertified": true,
-        "zeroCount": 12893,
-        "heavyThreshold": 244,
-        "heavyTypes": 4,
-        "lightTypes": 218,
-        "heavyDegree": 3,
-        "prefixTagBits": 19,
-        "prefixQ": 67108864,
-        "prefixDegreeUpper": 16,
-        "prefixErrorDenominator": 1543503872,
-        "prefixSizeFactor": 16
+        "residualGateCount": 1597
       }
-    },
-    {
-      "a": 3,
-      "k": 7,
-      "N": 128,
-      "no": true,
-      "And": 2862,
-      "Xor": 16709,
-      "C": 2178,
-      "R": 21869,
-      "Q": 4194304,
-      "M": 79794,
-      "mu": 23,
-      "V": 109,
-      "guaranteedErrors": 4,
-      "attacks": [
-        [
-          "A-splice",
-          128
+    ],
+    [
+      {
+        "a": 4,
+        "k": 9,
+        "N": 512,
+        "no": false,
+        "And": 12567,
+        "Xor": 189066,
+        "C": 11669,
+        "R": 213600,
+        "Q": 134217728,
+        "M": 817323,
+        "mu": 47,
+        "V": 477,
+        "guaranteedErrors": 10,
+        "attacks": [
+          [
+            "inverse-interpolated-rows",
+            512
+          ],
+          [
+            "A-splice",
+            512
+          ],
+          [
+            "B-root",
+            16
+          ],
+          [
+            "B-common",
+            47
+          ],
+          [
+            "inverse-detached",
+            512
+          ],
+          [
+            "raw-plus-pin",
+            54
+          ]
         ],
-        [
-          "B-root",
-          109
+        "residualGateCount": 2744,
+        "layout": {
+          "nonlinearRows": 2603,
+          "distinctNonlinear": 2065,
+          "distinctAffine": 962,
+          "maxAffine": 152924,
+          "maxExc": 10,
+          "maxSeedDegree": 4,
+          "h": 12,
+          "r": 18,
+          "codeQ": 1099511627776,
+          "exactCompletionDegree": 16,
+          "compactMinimumExactDegree": 20,
+          "rawErrorBudget": "477/47",
+          "structuredErrorDenominator": 51677046505472,
+          "compactErrorDenominator": 6308233216,
+          "fixedCompletionLowerDegreeDistance": 16777216,
+          "maxConstant": 152924,
+          "maxOther": 2693,
+          "cBits": 19,
+          "aBits": 22,
+          "eBits": 16,
+          "tBits": 22,
+          "bankQ": 8589934592,
+          "bankDegree": 16,
+          "bankErrorDenominator": 403726925824,
+          "bankFixedCompletionLowerDegreeDistance": 131072,
+          "compactFixedPrefixRows": 131072,
+          "compactFixedPrefixDegree": 20,
+          "compactLowerDegreeDistance": 64,
+          "compactBudgetMinimumCertified": true,
+          "parityLeadTag": 130047,
+          "parityLeadSeed": 15,
+          "directOddParityCubes": 64,
+          "zeroCount": 152924,
+          "heavyThreshold": 330,
+          "heavyTypes": 16,
+          "lightTypes": 945,
+          "heavyDegree": 5,
+          "prefixTagBits": 22,
+          "prefixQ": 2147483648,
+          "prefixDegreeUpper": 17,
+          "prefixErrorDenominator": 100931731456,
+          "prefixSizeFactor": 16
+        }
+      },
+      {
+        "a": 4,
+        "k": 9,
+        "N": 512,
+        "no": true,
+        "And": 12595,
+        "Xor": 189074,
+        "C": 11669,
+        "R": 213636,
+        "Q": 134217728,
+        "M": 817439,
+        "mu": 47,
+        "V": 477,
+        "guaranteedErrors": 10,
+        "attacks": [
+          [
+            "inverse-interpolated-rows",
+            512
+          ],
+          [
+            "A-splice",
+            512
+          ],
+          [
+            "B-root",
+            477
+          ],
+          [
+            "B-common",
+            494
+          ],
+          [
+            "inverse-detached",
+            512
+          ]
         ],
-        [
-          "B-common",
-          118
-        ],
-        [
-          "inverse-detached",
-          128
-        ]
-      ],
-      "residualGateCount": 1597
-    }
+        "residualGateCount": 2780
+      }
+    ]
   ],
-  [
-    {
-      "a": 4,
-      "k": 9,
-      "N": 512,
-      "no": false,
-      "And": 12567,
-      "Xor": 189066,
-      "C": 11669,
-      "R": 213600,
-      "Q": 134217728,
-      "M": 817323,
-      "mu": 47,
-      "V": 477,
-      "guaranteedErrors": 10,
-      "attacks": [
-        [
-          "A-splice",
-          512
-        ],
-        [
-          "B-root",
-          16
-        ],
-        [
-          "B-common",
-          47
-        ],
-        [
-          "inverse-detached",
-          512
-        ],
-        [
-          "raw-plus-pin",
-          54
-        ]
-      ],
-      "residualGateCount": 2744,
-      "layout": {
-        "nonlinearRows": 2603,
-        "distinctNonlinear": 2065,
-        "distinctAffine": 962,
-        "maxAffine": 152924,
-        "maxExc": 10,
-        "maxSeedDegree": 4,
-        "h": 12,
-        "r": 18,
-        "codeQ": 1099511627776,
-        "exactCompletionDegree": 16,
-        "compactMinimumExactDegree": 20,
-        "rawErrorBudget": "477/47",
-        "structuredErrorDenominator": 51677046505472,
-        "compactErrorDenominator": 6308233216,
-        "fixedCompletionLowerDegreeDistance": 16777216,
-        "maxConstant": 152924,
-        "maxOther": 2693,
-        "cBits": 19,
-        "aBits": 22,
-        "eBits": 16,
-        "tBits": 22,
-        "bankQ": 8589934592,
-        "bankDegree": 16,
-        "bankErrorDenominator": 403726925824,
-        "bankFixedCompletionLowerDegreeDistance": 131072,
-        "compactFixedPrefixRows": 131072,
-        "compactFixedPrefixDegree": 20,
-        "compactLowerDegreeDistance": 64,
-        "compactBudgetMinimumCertified": true,
-        "zeroCount": 152924,
-        "heavyThreshold": 330,
-        "heavyTypes": 16,
-        "lightTypes": 945,
-        "heavyDegree": 5,
-        "prefixTagBits": 22,
-        "prefixQ": 2147483648,
-        "prefixDegreeUpper": 17,
-        "prefixErrorDenominator": 100931731456,
-        "prefixSizeFactor": 16
-      }
-    },
-    {
-      "a": 4,
-      "k": 9,
-      "N": 512,
-      "no": true,
-      "And": 12595,
-      "Xor": 189074,
-      "C": 11669,
-      "R": 213636,
-      "Q": 134217728,
-      "M": 817439,
-      "mu": 47,
-      "V": 477,
-      "guaranteedErrors": 10,
-      "attacks": [
-        [
-          "A-splice",
-          512
-        ],
-        [
-          "B-root",
-          477
-        ],
-        [
-          "B-common",
-          494
-        ],
-        [
-          "inverse-detached",
-          512
-        ]
-      ],
-      "residualGateCount": 2780
-    }
-  ]
-]
+  "gateChecks": 72,
+  "fixedLayoutCountingControl": {
+    "rows": 8,
+    "degreeOneTables": 16,
+    "radiusOneCovered": 144,
+    "uncovered": 112
+  }
+}

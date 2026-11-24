@@ -159,8 +159,16 @@ function expedition046() {
     let W=van(arr(2*s).map(i=>i+4)),B0=honest(no?W.slice(1).map(c=>mul(c,inv(W[0]))):[0,1]);
     let rows=pack(A0,B0),V=N-2*s-3,expected=no?V:0;
     check(failures(rows)===expected&&fieldCheck(A0,B0)===expected,"honest failure");
+    // Honest interpolation of each parent inverse row, but no global B polynomial.
+    const inverseRoot=arr(N).map(z=>z?inv(z):0);
+    const row0=arr(s).map(i=>arr(s).reduce((r,j)=>r^mul(basis[j][i],inverseRoot[j]),0));
+    const invPolys=arr(2*s).map(v=>v?q.slice(1).map(c=>mul(c,inv(ys[v]))):row0);
+    const inverseRows=arr(s).map(p=>arr(N).map(z=>ev(invPolys[z>>a],point(z>>a,p,z&(s-1)))));
+    check(inverseRows[0].every((v,z)=>v===inverseRoot[z]),"inverse row roots");
+    check(fieldCheck(Array(N).fill(0),inverseRows)===N,"shared sibling attack");
     let attacks=[];
     for(const [name,A,B] of [
+      ["inverse-interpolated-rows",Array(N).fill(0),inverseRows],
       ["A-splice",A0.map((z,i)=>i>=N/2?z^1:z),B0],
       ["B-root",A0,B0.map((p,i)=>i?p:p.map((v,j)=>j===N-1?v^1:v))],
       ["B-common",A0,B0.map((p,i)=>i===s/2?p.map((v,j)=>j===0?v^1:v):p)],
@@ -236,13 +244,32 @@ function expedition046() {
     let fixedDegree=0;
     for(let i=0;i<T;i++)if(tr[i])fixedDegree=Math.max(fixedDegree,pc(i)+degree(anf(tr[i])));
     const fixedDistance=T*N/2**fixedDegree;
+    // Direct parity certificate, without evaluating any transformed truth values.
+    let leadTag=-1,leadSeed=-1;
+    for(let i=0;i<T&&leadTag<0;i++)if(tr[i]){
+      let d=fixedDegree-pc(i);
+      if(d>=0&&d<=k){let c=anf(tr[i])&masks[d];if(c){
+        leadTag=i;for(let j=0;j<N;j++)if(c&(1n<<BigInt(j))){leadSeed=j;break}
+      }}
+    }
+    check(leadTag>=0&&leadSeed>=0,"leading coefficient");
+    const submasks=m=>{let out=[];for(let x=m;;x=(x-1)&m){out.push(x);if(!x)return out}};
+    let parities=0;
+    for(const base of submasks((T-1)^leadTag)){
+      let w=0n;for(const h of submasks(leadTag))w^=rows[base|h];
+      for(const z of submasks((N-1)^leadSeed)){
+        let p=0;for(const h of submasks(leadSeed))p^=Number((w>>BigInt(z|h))&1n);
+        check(p===1,"direct disjoint odd parity");parities++;
+      }
+    }
+    check(parities===fixedDistance,"parity partition count");
     // Bank 3 is filled with E, so the nonlinear branch uses only one selector.
     const bankDegree=de+1;
     check(bankDegree>4,"dominant exceptional degree");
     Object.assign(result.layout,{maxConstant,maxOther,cBits,aBits,eBits,tBits,bankQ,bankDegree,
       bankErrorDenominator:bankQ*mu,bankFixedCompletionLowerDegreeDistance:bankQ/2**bankDegree,
       compactFixedPrefixRows:T,compactFixedPrefixDegree:fixedDegree,compactLowerDegreeDistance:fixedDistance,
-      compactBudgetMinimumCertified:fixedDegree===compactDegree&&fixedDistance*mu>=V});
+      compactBudgetMinimumCertified:fixedDegree===compactDegree&&fixedDistance*mu>=V,parityLeadTag:leadTag,parityLeadSeed:leadSeed,directOddParityCubes:parities});
     // Unequal prefix banks: 0 = zero, 100 = light affine,
     // 101 = heavy affine (dense lookup), 11 = exceptional.
     const zeroCount=Acounts.get(0)||0;
@@ -301,6 +328,38 @@ function expedition046() {
     return {result,rows:null}
   }
   // x^7+x+1 and x^9+x^4+1; verify field inverses in the build.
-  return [[3,0x83],[4,0x211]].map(([a,p])=>[build(a,p,false).result,build(a,p,true).result]);
+  // Separate literal-level truth-table audit of failure and charging formulas.
+  let gateChecks=0;
+  for(const op of ["and","xor","copy"]){
+    const arity=op==="copy"?2:3;
+    const clauses=op==="and"?[[-1,-2,3],[1,-3],[2,-3]]:
+      op==="xor"?[[1,2,-3],[1,-2,3],[-1,2,3],[-1,-2,-3]]:[[-1,2],[1,-2]];
+    for(let v=0;v<2**arity;v++){
+      let x=v&1,y=v>>1&1,z=v>>2&1;
+      let exact=clauses.filter(c=>!c.some(l=>Boolean(v>>(Math.abs(l)-1)&1)===(l>0))).length;
+      let formula=op==="and"?z*(2-x-y)+(1-z)*x*y:op==="xor"?x^y^z:x^y;
+      check(exact===formula,"literal failure formula");
+      for(let w=0;w<2**arity;w++){
+        let u=w&1,t=w>>1&1,h=w>>2&1;
+        if((op==="and"?u&t:op==="xor"?u^t:u)!==(op==="copy"?t:h))continue;
+        let e=x^u,f=y^t,g=z^h;
+        check(exact<=e+f+(op==="and"?2*g:g),"all-error gate charge");
+        gateChecks++;
+      }
+    }
+  }
+  // Fixed-layout counting attack on eight independently variable constant rows.
+  let covered=new Set(),coveredExact=new Set();
+  for(let c=0;c<16;c++){
+    let w=0;for(let z=0;z<8;z++)if((c&1)^((pc((c>>1)&z))&1))w|=1<<z;
+    coveredExact.add(w);covered.add(w);for(let i=0;i<8;i++)covered.add(w^(1<<i))
+  }
+  check(coveredExact.size===16&&covered.size===144,"fixed layout obstruction");
+  const fixtures=[[3,0x83],[4,0x211]].map(([a,p])=>[build(a,p,false).result,build(a,p,true).result]);
+  for(const [y,n] of fixtures){
+    check(n.Q<=y.layout.bankQ&&n.Q<=y.layout.prefixQ,"common padded cube");
+    check(y.layout.compactBudgetMinimumCertified,"compact budget optimum");
+  }
+  return {fixtures,gateChecks,fixedLayoutCountingControl:{rows:8,degreeOneTables:coveredExact.size,radiusOneCovered:covered.size,uncovered:256-covered.size}};
 }
 console.log(JSON.stringify(expedition046(),null,2));
