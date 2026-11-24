@@ -1,0 +1,90 @@
+{
+  "and_depth": 1,
+  "and_gates": 2,
+  "compact_Q": 64,
+  "copy_gates": 2,
+  "dictionary_dimension": 7,
+  "global_assignment_controls": 4552,
+  "global_mixed_error_sigma_max": "5",
+  "limits": [
+    "written argument plus exact finite checks; no Lean acceptance",
+    "no novelty, hard language, or general PCP claim",
+    "exact degree applies to this example and all its padding completions",
+    "all-assignment reindex invariance follows from injection; finite controls are not its proof"
+  ],
+  "local_charge_controls": 72,
+  "no_expanded_clauses": 124,
+  "public_dictionary_Q": 1024,
+  "public_tags": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    10,
+    20,
+    32,
+    64,
+    30,
+    138,
+    160
+  ],
+  "rank_bits": 1,
+  "raw_NO_minimum": 4,
+  "rows": 12,
+  "satisfying_witnesses": 3,
+  "scope": "new standalone relation w0*w1=0; not Expedition046",
+  "seed_bits": 2,
+  "seed_count": 4,
+  "storage_factor": 16,
+  "strict_uniform_error_threshold": "1/1280",
+  "witness_bits": 2,
+  "witness_results": [
+    {
+      "minimum_budgeted_degree_over_padding": 3,
+      "minimum_exact_degree_over_padding": 3,
+      "no_failures": 8,
+      "signed_sigma": "9/2",
+      "witness": [
+        0,
+        0
+      ],
+      "yes_failures": 0
+    },
+    {
+      "minimum_budgeted_degree_over_padding": 3,
+      "minimum_exact_degree_over_padding": 3,
+      "no_failures": 4,
+      "signed_sigma": "5",
+      "witness": [
+        0,
+        1
+      ],
+      "yes_failures": 0
+    },
+    {
+      "minimum_budgeted_degree_over_padding": 3,
+      "minimum_exact_degree_over_padding": 3,
+      "no_failures": 4,
+      "signed_sigma": "5",
+      "witness": [
+        1,
+        0
+      ],
+      "yes_failures": 0
+    },
+    {
+      "minimum_budgeted_degree_over_padding": null,
+      "minimum_exact_degree_over_padding": 3,
+      "no_failures": 4,
+      "signed_sigma": null,
+      "witness": [
+        1,
+        1
+      ],
+      "yes_failures": 4
+    }
+  ],
+  "xor_gates": 3,
+  "yes_expanded_clauses": 116
+}

@@ -1,0 +1,167 @@
+{
+  "cross_a3": {
+    "N": 128,
+    "X3_affine_distance_histogram": {
+      "42": 4,
+      "46": 28,
+      "50": 84,
+      "54": 140,
+      "58": 140,
+      "62": 84,
+      "66": 28,
+      "70": 4
+    },
+    "X3_nearest_affine_distance_on_used_slice": 42,
+    "X3_raw_tags": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "X3_used_slice_cells": 112,
+    "a": 3,
+    "active_slice_bits": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      9,
+      10
+    ],
+    "affine_restrictions": 512,
+    "all_systematic_patterns": 5192296858534827628530496329220096,
+    "ambient_address_bits": 22,
+    "arbitrary_layout_cover_upper": 54065157373952,
+    "code_checks": [
+      {
+        "coefficients": [
+          0
+        ],
+        "column_cells_checked": 512,
+        "name": "zero",
+        "row_cells_checked": 1024
+      },
+      {
+        "coefficients": [
+          0,
+          1
+        ],
+        "column_cells_checked": 512,
+        "name": "X",
+        "row_cells_checked": 1024
+      },
+      {
+        "coefficients": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "column_cells_checked": 512,
+        "name": "X3",
+        "row_cells_checked": 1024
+      },
+      {
+        "coefficients": [
+          93,
+          40,
+          77,
+          74,
+          33,
+          72,
+          40,
+          123,
+          123,
+          125,
+          11,
+          54,
+          36,
+          47,
+          35,
+          18
+        ],
+        "column_cells_checked": 512,
+        "name": "arbitrary_systematic",
+        "row_cells_checked": 1024
+      }
+    ],
+    "counting_degree": 1,
+    "counting_radius": 4,
+    "field_modulus": "0x83",
+    "k": 7,
+    "original_YES_residual_not_claimed_for_alternative_roots": true,
+    "padding_assumption": "none; all distances use queried raw cells",
+    "s": 8,
+    "scope": "shared a=3 code-only relation; outer residual assertion removed",
+    "soundness_caveat": "code-only relaxation has no inherited NO gap",
+    "systematic_dimension_bits": 112,
+    "systematic_nodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "systematic_values": [
+      93,
+      73,
+      31,
+      99,
+      113,
+      37,
+      91,
+      79,
+      37,
+      97,
+      119,
+      107,
+      57,
+      13,
+      51,
+      7
+    ]
+  },
+  "gf8_toy": {
+    "X3_nearest_affine_distance": 6,
+    "active_bits": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "affine_restrictions": 64,
+    "all_systematic_patterns": 4096,
+    "ambient_address_bits": 5,
+    "arbitrary_layout_degree1_radius1_cover_upper": 832,
+    "codewords_enumerated": 4096,
+    "degree_less_than": 4,
+    "field_modulus": "0xb",
+    "nearest_affine_distance_histogram": {
+      "0": 8,
+      "4": 168,
+      "6": 3584,
+      "8": 336
+    },
+    "raw_used_cells": 24,
+    "scope": "GF(8) Reed-Solomon toy, not the a>=3 cross NO theorem",
+    "systematic_bits": 12,
+    "systematic_symbols": 4
+  }
+}

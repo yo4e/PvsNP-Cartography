@@ -1,0 +1,109 @@
+{
+  "adaptive_constant_rows": {
+    "all_witness_vectors": 256,
+    "exact_degree": 1,
+    "examples": [
+      {
+        "labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "witness": 0
+      },
+      {
+        "labels": [
+          8,
+          9,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "witness": 3
+      },
+      {
+        "labels": [
+          8,
+          0,
+          9,
+          1,
+          10,
+          2,
+          11,
+          3
+        ],
+        "witness": 85
+      },
+      {
+        "labels": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "witness": 255
+      }
+    ],
+    "fixed_exact_pattern_count_histogram": {
+      "16": 30,
+      "32": 12840
+    },
+    "fixed_tag_sets": 12870,
+    "max_signature_multiplicity": 8,
+    "max_tag": 15,
+    "padded_tag_slots": 16,
+    "rows": 8,
+    "table_description_bits": 32,
+    "tag_bits": 4
+  },
+  "collision_sensitivity_attack": {
+    "merged_singleton_failure": 8,
+    "old_NO_soundness_survives": true,
+    "old_singleton_failure": 1
+  },
+  "detached_occurrence_attack": {
+    "invalid_change": "same old row assigned a different tag at each unit occurrence",
+    "invalid_detached_failures": 0,
+    "old_NO_minimum": 4
+  },
+  "scope": "finite row-map and signed-alias controls; no hierarchy or general verifier claim",
+  "triangle": {
+    "NO_minimum": 4,
+    "affine_guessed_maps": {
+      "colliding": 1280,
+      "injective": 768
+    },
+    "all_physical_proofs": 4096,
+    "failure_histogram": {
+      "4": 1296,
+      "6": 1728,
+      "8": 864,
+      "10": 192,
+      "12": 16
+    },
+    "guessed_map_minima": {
+      "colliding": 4,
+      "injective": 4
+    },
+    "injective_reindexing_checks": 24576,
+    "rows": 3,
+    "seed_bits": 2,
+    "signed_clause_degree_histogram": {
+      "0": 7552,
+      "1": 4736
+    },
+    "templates": 6
+  }
+}
