@@ -1,0 +1,219 @@
+{
+  "A_degree_cutoff_strict": 2,
+  "B_degree_cutoff_strict": 32,
+  "Boolean_pairs_after_range_constraints": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "accepting_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "actual_leaf_tests_per_proof": 832,
+  "affine_endpoint_pairs_enumerated": 65536,
+  "base_commit": "2a546c3781d71cd159b388997bd5312a7ceb78e6",
+  "field_size": 256,
+  "fully_accepting_field_proof_count": 3,
+  "limits": [
+    "all-proof classification uses the separate written degree/RS uniqueness argument",
+    "raw row degrees do not include a Boolean compiler's internal gates",
+    "affine A and low-degree residual force quadratic B, an intentionally easy witness family",
+    "no new NO gap; predecessor221 is not transported to this new residual",
+    "no Lean acceptance, novelty, external review or complexity-class separation"
+  ],
+  "masked_root_error_control": {
+    "changed_root": 0,
+    "joint_rejects": 16,
+    "new_residual_accepts": 256,
+    "paired_RS_accepts": 240,
+    "passing_leaves": {
+      "inner_col": 512,
+      "inner_row": 255,
+      "outer_col": 64
+    },
+    "reference": "A=X",
+    "unpaired_RS_accepts": 248
+  },
+  "physical_A_raw_bit_rows": 8,
+  "physical_A_symbols": 256,
+  "physical_B_raw_bit_rows": 1016,
+  "physical_B_symbols": 16384,
+  "physical_names_checked": 18432,
+  "pointwise_quotient_control": {
+    "A": "0",
+    "B": "0 at0, reciprocal elsewhere",
+    "joint_accepts": 0,
+    "new_residual_accepts": 255,
+    "paired_RS_accepts": 0,
+    "passing_leaves": {
+      "inner_col": 512,
+      "inner_row": 256,
+      "outer_col": 0
+    },
+    "unpaired_RS_accepts": 0
+  },
+  "rate_exponent_B": 3,
+  "recursive_B_depth": 2,
+  "scope": "new residual-constrained YES relation with exactly three fully accepting used field proofs",
+  "witnesses": {
+    "A=1": {
+      "A0": 1,
+      "A1": 1,
+      "A_coefficients": [
+        1,
+        0
+      ],
+      "A_raw_rows": {
+        "GF2_row_span_dimension": 1,
+        "distinct_ANF_vectors": 2,
+        "maximum_seed_degree": 0,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 7,
+          "0": 1
+        }
+      },
+      "B_coefficients": [
+        0
+      ],
+      "B_raw_rows": {
+        "GF2_row_span_dimension": 0,
+        "distinct_ANF_vectors": 1,
+        "maximum_seed_degree": -1,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 1016
+        }
+      },
+      "joint_accepts": 256,
+      "joint_rejects": 0,
+      "new_residual_accepts": 256,
+      "numerator_coefficients": [
+        0
+      ],
+      "paired_RS_accepts": 256
+    },
+    "A=1+X": {
+      "A0": 1,
+      "A1": 0,
+      "A_coefficients": [
+        1,
+        1
+      ],
+      "A_raw_rows": {
+        "GF2_row_span_dimension": 8,
+        "distinct_ANF_vectors": 8,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "1": 8
+        }
+      },
+      "B_coefficients": [
+        1,
+        1,
+        1
+      ],
+      "B_raw_rows": {
+        "GF2_row_span_dimension": 8,
+        "distinct_ANF_vectors": 24,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 352,
+          "0": 360,
+          "1": 304
+        }
+      },
+      "joint_accepts": 256,
+      "joint_rejects": 0,
+      "new_residual_accepts": 256,
+      "numerator_coefficients": [
+        0,
+        6,
+        1,
+        1,
+        6,
+        1,
+        1
+      ],
+      "paired_RS_accepts": 256
+    },
+    "A=X": {
+      "A0": 0,
+      "A1": 1,
+      "A_coefficients": [
+        0,
+        1
+      ],
+      "A_raw_rows": {
+        "GF2_row_span_dimension": 8,
+        "distinct_ANF_vectors": 8,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "1": 8
+        }
+      },
+      "B_coefficients": [
+        0,
+        0,
+        1
+      ],
+      "B_raw_rows": {
+        "GF2_row_span_dimension": 9,
+        "distinct_ANF_vectors": 26,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 328,
+          "0": 400,
+          "1": 288
+        }
+      },
+      "joint_accepts": 256,
+      "joint_rejects": 0,
+      "new_residual_accepts": 256,
+      "numerator_coefficients": [
+        0,
+        0,
+        0,
+        6,
+        7,
+        0,
+        1
+      ],
+      "paired_RS_accepts": 256
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "Euclidean_division": {
+    "affine_divisors": 307,
+    "columns_by_dimension": {
+      "0": 48,
+      "1": 720,
+      "2": 1680,
+      "3": 480,
+      "4": 16
+    },
+    "method": "all columns of each F-linear Euclidean-division map, not all polynomial inputs",
+    "monomial_columns": 2944
+  },
+  "Hamming_instability_control": {
+    "assignment_domain_size": 16,
+    "changed_assignment_symbols": 1,
+    "changed_root_symbols": 241,
+    "field_size": 256
+  },
+  "affine_selectors": {
+    "by_codimension": {
+      "0": 307,
+      "1": 1530,
+      "2": 1540,
+      "3": 360,
+      "4": 16
+    },
+    "nested_affine_pairs": 3753
+  },
+  "canonical_interpolation": {
+    "Boolean_assignments": 10432,
+    "assignment_degree_histogram": {
+      "-1": 306,
+      "0": 306,
+      "1": 1500,
+      "2": 4480,
+      "3": 3840
+    },
+    "scope": "all Boolean data on every affine subspace of dimension at most3 in GF16"
+  },
+  "fields": [
+    {
+      "k": 4,
+      "modulus": 19
+    },
+    {
+      "k": 8,
+      "modulus": 283
+    }
+  ],
+  "full_field_monomial_weight_checks": 272,
+  "large_ratio_counterexample": {
+    "divisor": "X^2+X",
+    "numerator": "X^128+X",
+    "numerator_seed_degree": 1,
+    "quotient_seed_degree": 6,
+    "quotient_univariate_degree": 126
+  },
+  "limits": [
+    "all finite fields use independently implemented carryless arithmetic",
+    "general lemmas require the separate written proofs",
+    "no recursive source Boolean compiler or soundness gap is generated here",
+    "no Lean, external review, novelty or complexity separation is claimed"
+  ],
+  "public_selector_circuits_GF16": [
+    {
+      "Frobenius": {
+        "gate_count": 61,
+        "gate_degree_histogram": {
+          "-1": 49,
+          "0": 4,
+          "1": 8
+        },
+        "maximum_gate_degree": 1,
+        "output_degree": 1
+      },
+      "codimension": 1,
+      "factor_product": {
+        "gate_count": 336,
+        "gate_degree_histogram": {
+          "-1": 30,
+          "1": 78,
+          "2": 106,
+          "3": 107,
+          "4": 15
+        },
+        "maximum_gate_degree": 4,
+        "output_degree": 1
+      }
+    },
+    {
+      "Frobenius": {
+        "gate_count": 134,
+        "gate_degree_histogram": {
+          "-1": 36,
+          "0": 15,
+          "1": 60,
+          "2": 23
+        },
+        "maximum_gate_degree": 2,
+        "output_degree": 2
+      },
+      "codimension": 2,
+      "factor_product": {
+        "gate_count": 504,
+        "gate_degree_histogram": {
+          "-1": 56,
+          "1": 94,
+          "2": 161,
+          "3": 166,
+          "4": 27
+        },
+        "maximum_gate_degree": 4,
+        "output_degree": 2
+      }
+    },
+    {
+      "Frobenius": {
+        "gate_count": 170,
+        "gate_degree_histogram": {
+          "-1": 48,
+          "0": 4,
+          "1": 49,
+          "2": 55,
+          "3": 14
+        },
+        "maximum_gate_degree": 3,
+        "output_degree": 3
+      },
+      "codimension": 3,
+      "factor_product": {
+        "gate_count": 588,
+        "gate_degree_histogram": {
+          "-1": 125,
+          "1": 103,
+          "2": 112,
+          "3": 186,
+          "4": 62
+        },
+        "maximum_gate_degree": 4,
+        "output_degree": 3
+      }
+    },
+    {
+      "Frobenius": {
+        "gate_count": 208,
+        "gate_degree_histogram": {
+          "-1": 40,
+          "0": 7,
+          "1": 39,
+          "2": 42,
+          "3": 67,
+          "4": 13
+        },
+        "maximum_gate_degree": 4,
+        "output_degree": 4
+      },
+      "codimension": 4,
+      "factor_product": {
+        "gate_count": 630,
+        "gate_degree_histogram": {
+          "-1": 115,
+          "1": 97,
+          "2": 88,
+          "3": 202,
+          "4": 128
+        },
+        "maximum_gate_degree": 4,
+        "output_degree": 4
+      }
+    }
+  ],
+  "scope": "finite exact controls, not general proof or weighted approximation theorem"
+}

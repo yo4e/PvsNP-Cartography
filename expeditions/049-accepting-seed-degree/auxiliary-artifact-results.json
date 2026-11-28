@@ -1,0 +1,218 @@
+{
+  "gate_and_cone": {
+    "all_error_gate_charge_cases": 64,
+    "detached_mutant_accepts_v0": true,
+    "shared_cones": [
+      {
+        "c": 0,
+        "minimum_replacement_failures": 1,
+        "v": 0
+      },
+      {
+        "c": 1,
+        "minimum_replacement_failures": 1,
+        "v": 0
+      },
+      {
+        "c": 0,
+        "minimum_replacement_failures": 0,
+        "v": 1
+      },
+      {
+        "c": 1,
+        "minimum_replacement_failures": 0,
+        "v": 1
+      }
+    ]
+  },
+  "live_AND_chain": {
+    "NO_templates": 49,
+    "YES_templates": 47,
+    "all_error_charge_upper": 64,
+    "approximate_maximum_row_degree": 4,
+    "exact_approximation_tradeoffs": [
+      {
+        "constructed_actual_failures": 64,
+        "degree_cap": 1,
+        "disjoint_parity_lower_count": 128,
+        "minimum_literal_weighted_error": 649,
+        "minimum_signed_charge_error": 384,
+        "minimum_used_error": 128
+      },
+      {
+        "constructed_actual_failures": 32,
+        "degree_cap": 2,
+        "disjoint_parity_lower_count": 64,
+        "minimum_literal_weighted_error": 329,
+        "minimum_signed_charge_error": 192,
+        "minimum_used_error": 64
+      },
+      {
+        "constructed_actual_failures": 16,
+        "degree_cap": 3,
+        "disjoint_parity_lower_count": 32,
+        "minimum_literal_weighted_error": 169,
+        "minimum_signed_charge_error": 96,
+        "minimum_used_error": 32
+      },
+      {
+        "constructed_actual_failures": 8,
+        "degree_cap": 4,
+        "disjoint_parity_lower_count": 16,
+        "minimum_literal_weighted_error": 89,
+        "minimum_signed_charge_error": 48,
+        "minimum_used_error": 16
+      },
+      {
+        "constructed_actual_failures": 4,
+        "degree_cap": 5,
+        "disjoint_parity_lower_count": 8,
+        "minimum_literal_weighted_error": 49,
+        "minimum_signed_charge_error": 24,
+        "minimum_used_error": 8
+      },
+      {
+        "constructed_actual_failures": 2,
+        "degree_cap": 6,
+        "disjoint_parity_lower_count": 4,
+        "minimum_literal_weighted_error": 29,
+        "minimum_signed_charge_error": 12,
+        "minimum_used_error": 4
+      },
+      {
+        "constructed_actual_failures": 1,
+        "degree_cap": 7,
+        "disjoint_parity_lower_count": 2,
+        "minimum_literal_weighted_error": 19,
+        "minimum_signed_charge_error": 6,
+        "minimum_used_error": 2
+      }
+    ],
+    "exact_signed_sensitivity": 4,
+    "final_AND_row_ones": 1,
+    "general_formula": "for 1<=d<k: used errors=2^(k-d), actual failures=2^(k-d-1)",
+    "half_NO_threshold": 256,
+    "honest_maximum_row_degree": 8,
+    "raw_NO_minimum": 512,
+    "rows": 18,
+    "seed_bits": 8,
+    "truncated_tuple_actual_failures": 8,
+    "truncated_tuple_used_errors": 16,
+    "whole_chain_counted_not_only_final_row": true
+  },
+  "live_bent_compiler": {
+    "NO_templates": 30,
+    "YES_templates": 28,
+    "acceptance_threshold": 16,
+    "actual_minimum_affine_failure_count": 8,
+    "all_error_direct_clamp_identity_controls": 64,
+    "bent_Walsh_values": [
+      4,
+      4,
+      4,
+      -4,
+      4,
+      4,
+      4,
+      -4,
+      4,
+      4,
+      4,
+      -4,
+      -4,
+      -4,
+      -4,
+      4
+    ],
+    "exact_signed_sensitivity": "3",
+    "honest_row_degrees": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "p0": 1,
+      "p1": 1,
+      "p2": 1,
+      "p3": 1,
+      "t": 0,
+      "u": 2,
+      "w": 0
+    },
+    "literal_fiber_weights": {
+      "a": 7,
+      "b": 7,
+      "c": 12,
+      "p0": 6,
+      "p1": 6,
+      "p2": 6,
+      "p3": 6,
+      "t": 5,
+      "u": 8,
+      "w": 5
+    },
+    "local_assignments_checked": 16384,
+    "minimum_affine_literal_weighted_error": 176,
+    "minimum_affine_signed_charge_error": 54,
+    "minimum_affine_used_error": 20,
+    "nearest_affine_row_distances": {
+      "a": 4,
+      "b": 4,
+      "c": 6,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "t": 0,
+      "u": 6,
+      "w": 0
+    },
+    "normalized_NO_gap": "1/15",
+    "old_NO_templates": 12,
+    "old_YES_templates": 10,
+    "padded_cube_size": 256,
+    "raw_NO_minimum": 32,
+    "raw_error_sufficient_strict_budget": "32/3",
+    "rows": 10,
+    "satisfying_local_assignments_per_seed": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "scope": "explicit equivalent Boolean compiler control, not the recursive source's gate census",
+    "seed_bits": 4,
+    "seeds": 16,
+    "sensitivity_attainment": {
+      "assignment": 801,
+      "errors": 1,
+      "failures": 3,
+      "reference": 769,
+      "seed": 0
+    },
+    "signed_gate_charge_weights": {
+      "a": 3,
+      "b": 3,
+      "c": 3,
+      "p0": 3,
+      "p1": 3,
+      "p2": 3,
+      "p3": 3,
+      "t": 2,
+      "u": 2,
+      "w": 2
+    },
+    "unique_used_YES_proof": true,
+    "used_cells": 160
+  }
+}
