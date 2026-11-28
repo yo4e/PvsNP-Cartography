@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 049](expeditions/049-accepting-seed-degree/conclusion.md) links canonical A and the forced B quotient to genuine assignment degree, controls one public outer circuit, and separates compiler-created proof distance from actual low-degree clause failure.
+
 - [Expedition 048](expeditions/048-recursive-row-normalization/conclusion.md) normalizes the fixed-rate recursive proof into polynomially many shared seed rows, transports the actual two-level residual, and shows why direct row polynomials subsume further tag guessing.
 
 - [Expedition 047](expeditions/047-witness-layouts/conclusion.md) gives a public symbolic-layout condition, a scoped obstruction over satisfying shared-RS witnesses, and a costed correction to the witness-dependent-layout objection.

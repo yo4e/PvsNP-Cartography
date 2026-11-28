@@ -84,6 +84,13 @@ The actual two-level fixture has the needed fixed low spaces and affine
 substitutions, but an arbitrary-depth basis-selection algorithm being
 polynomial time does not establish those properties.
 
+**Countercontrol to the unqualified inference:** for alpha outside GF(2),
+take `q_z(X)=X^2+(alpha+z1)X` and `P=X^2`. At each fixed node,
+`Q_z(X,Y)=Y+(alpha+z1)X` has degree one. The jointly varying substitution
+`X=z2,Y=0` gives `alpha*z2+z1*z2`, of degree two. Even affine vanisher
+coefficients can matter. This is an abstract varying-node example, not a
+claimed counterexample inside the BV recursion.
+
 **Next task:** prove them for a public uniform recursive choice or give an
 actual source-family counterexample, then analyze its Boolean predicate.
 

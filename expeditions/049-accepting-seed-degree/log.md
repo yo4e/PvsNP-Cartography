@@ -37,3 +37,16 @@
 Scientific decision: continue with uniform recursive RS rows and the actual
 Boolean failure predicate; park affine-toy enlargement and compiler-invariant
 degree claims. No new Lean, CI, novelty or external acceptance was inferred.
+
+## Saved checkpoint
+
+Implementation `6835b3af0765a72fa0d90e8db0a4288e88221c3a`, tree
+`48d4d58658a1914855b1ac98c980776e49adca3c`, was accepted by GitHub. All 21
+files passed immutable API/content and Git blob/byte readback. Four suites
+passed eight local and eight immutable executions with stored-output equality.
+Issue #38 was closed completed; comment `7240201619` records the milestone.
+Issue #39 is open for the general recursive RS/gate question. The subsequent
+record commit updates evidence, README, current status, the targeted
+bibliography and the top-level session log. No write blocker or pending
+implementation patch remains. This checkpoint does not authorize another
+nightly research session.

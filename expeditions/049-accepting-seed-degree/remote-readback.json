@@ -1,0 +1,518 @@
+{
+  "all_files_equal": true,
+  "all_immutable_runs_passed": true,
+  "api_files": [
+    {
+      "blob_sha": "379c11cc1126917eeef271e1c75971497c13ec99",
+      "equal": true,
+      "isError": false,
+      "path": "claims/049-accepting-seed-degree.md"
+    },
+    {
+      "blob_sha": "260b7bee0b7f4814dd340cf3b118fdced8772bfa",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/accepting-family-results.json"
+    },
+    {
+      "blob_sha": "c00566a9c1f5d615e19d464ad312620f3bda9cd6",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/accepting-family.md"
+    },
+    {
+      "blob_sha": "0541d03b56cb9deb40171963cd45e97a336ad841",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/auxiliary-artifact-results.json"
+    },
+    {
+      "blob_sha": "b4e48f8c34773da2284b36541b73ee9ad4bea628",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/auxiliary-artifacts.md"
+    },
+    {
+      "blob_sha": "6cb7ab5eb9650d58eb9b2364bcbb53c33b81a2c8",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/barrier-audit.md"
+    },
+    {
+      "blob_sha": "2e7f500a266f5045aec0a38ccbbbe44d33781489",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/check_accepting_family.py"
+    },
+    {
+      "blob_sha": "62f5b7c6eaa389ffaeb6654f69d3623f4c0b225f",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py"
+    },
+    {
+      "blob_sha": "21da117e8ba2298a57444cb13616a04383f8cf90",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py"
+    },
+    {
+      "blob_sha": "45feb138bc9af8413919bdd19ae0450b0bedef0f",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/check_linearized_degree.py"
+    },
+    {
+      "blob_sha": "a962ad2949a55b068be1ed418cc1d63abaf2f509",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/conclusion.md"
+    },
+    {
+      "blob_sha": "835dd7cc1312bb195932798555dd0a9da2c8b40e",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/execution-evidence.md"
+    },
+    {
+      "blob_sha": "39427a79029e6727a160851c5f23b4179699eafb",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/honest-extension-degree.md"
+    },
+    {
+      "blob_sha": "a2a4a76ad0366866762a87332f2bec736ef16c01",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/honest-extension-results.json"
+    },
+    {
+      "blob_sha": "d5116240c8962459b04d5cfcbe086fa88b98b65d",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/linearized-degree-results.json"
+    },
+    {
+      "blob_sha": "ffefa5d9b37475f9abf6e64e8cce1ad9f7c626a0",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/linearized-degree.md"
+    },
+    {
+      "blob_sha": "5db084f64ffcb28d1d530e92ce5f25726b9f583b",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/local-execution.json"
+    },
+    {
+      "blob_sha": "5ad21ffb399b0b427015c2f813cb4ab67f21c22d",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/log.md"
+    },
+    {
+      "blob_sha": "aefcb04016c5e4a0ae983d6cfb2a3deb9bf4cf8d",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/orientation.md"
+    },
+    {
+      "blob_sha": "658e23065dabf3af01d8033dc0be19fec681cad4",
+      "equal": true,
+      "isError": false,
+      "path": "expeditions/049-accepting-seed-degree/source-audit.md"
+    },
+    {
+      "blob_sha": "be44271c01cbcb14fc72501802ed41ef1eba40e9",
+      "equal": true,
+      "isError": false,
+      "path": "graveyard/2026-11-28-night-witness-degree-shortcuts.md"
+    }
+  ],
+  "checked_at_utc": "2026-11-28T13:46:56.817057+00:00",
+  "commit": "6835b3af0765a72fa0d90e8db0a4288e88221c3a",
+  "git_files": [
+    {
+      "api_blob_equal": true,
+      "blob_sha": "379c11cc1126917eeef271e1c75971497c13ec99",
+      "bytes": 3312,
+      "local_byte_equal": true,
+      "path": "claims/049-accepting-seed-degree.md",
+      "sha256": "198b6e2e6e845070cd1e585f314b1ceb67c050730b487fde472861bd3b31d827"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "260b7bee0b7f4814dd340cf3b118fdced8772bfa",
+      "bytes": 5196,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/accepting-family-results.json",
+      "sha256": "a887c0c2a5d22129f79bd80e2503d4e775b5dd7572f06a99dd1aeb43d568d742"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "c00566a9c1f5d615e19d464ad312620f3bda9cd6",
+      "bytes": 10233,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/accepting-family.md",
+      "sha256": "35f6b0bfed34f369cf74f2b3a88d1ab8db68671aaf278f97204127ab17c1e221"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "0541d03b56cb9deb40171963cd45e97a336ad841",
+      "bytes": 4935,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/auxiliary-artifact-results.json",
+      "sha256": "50827e3dab56f52ecf2c03d31d009214b69171e6a51599c30efd5e9b4e22e4dc"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "b4e48f8c34773da2284b36541b73ee9ad4bea628",
+      "bytes": 17670,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/auxiliary-artifacts.md",
+      "sha256": "d6f5ccc1c59995e41431dd2e00fc5379e773da1dd211d6769ab3d1670fd0029b"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "6cb7ab5eb9650d58eb9b2364bcbb53c33b81a2c8",
+      "bytes": 3435,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/barrier-audit.md",
+      "sha256": "f59cc034d7e198379607122e251f55bf85285b131f5f5fce6f783539ca858c02"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "2e7f500a266f5045aec0a38ccbbbe44d33781489",
+      "bytes": 11320,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/check_accepting_family.py",
+      "sha256": "483638953405ba9edcc883f0e67f281907480d80f30ab2b2cbbb7c2d171913b6"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "62f5b7c6eaa389ffaeb6654f69d3623f4c0b225f",
+      "bytes": 16409,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py",
+      "sha256": "82c5ca50e75e573604f19ec12f7491ec4f06e927acaf7e19ff913afe21c174e5"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "21da117e8ba2298a57444cb13616a04383f8cf90",
+      "bytes": 11520,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py",
+      "sha256": "3f2a878b9e0a43d16c5c929e6c440b796df521b09d7ae362580fd1864a5ed6da"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "45feb138bc9af8413919bdd19ae0450b0bedef0f",
+      "bytes": 16234,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/check_linearized_degree.py",
+      "sha256": "6ace1796d91dfc0d651e9d62aae3758eb05f07beecc6ffce95f8ffa8561b2ee5"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "a962ad2949a55b068be1ed418cc1d63abaf2f509",
+      "bytes": 8731,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/conclusion.md",
+      "sha256": "170cecd9d02dd12d19ac2937c4c3e8babe9e66f9f8d27ad0946ceb3eb929cb3f"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "835dd7cc1312bb195932798555dd0a9da2c8b40e",
+      "bytes": 2228,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/execution-evidence.md",
+      "sha256": "bf7592cab8cc47da44a748aa26594c87a4ee82671f86d349c83129a71321d98a"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "39427a79029e6727a160851c5f23b4179699eafb",
+      "bytes": 10060,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/honest-extension-degree.md",
+      "sha256": "13001d386c98cec0a5cb063989e2f64705b2dac5f15c7c9720cf09b44e4e849c"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "a2a4a76ad0366866762a87332f2bec736ef16c01",
+      "bytes": 23433,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/honest-extension-results.json",
+      "sha256": "9c00734dd161c97b11fc5732039d72e49ea8be878c2e3f04bb50392eaa657b84"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "d5116240c8962459b04d5cfcbe086fa88b98b65d",
+      "bytes": 3915,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/linearized-degree-results.json",
+      "sha256": "8a5fc028580afddb72aa11b964a3f1a7208a4f5bfe4b5fab8d011c1be3bc7f4b"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "ffefa5d9b37475f9abf6e64e8cce1ad9f7c626a0",
+      "bytes": 18406,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/linearized-degree.md",
+      "sha256": "e917bac82ea1a118493028599d17079dd24bce4b09edb1547d9b789cf0debc20"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "5db084f64ffcb28d1d530e92ce5f25726b9f583b",
+      "bytes": 12359,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/local-execution.json",
+      "sha256": "82c42d1006a33db61de444f0be59fb859785301dc3ef5f32304312e35b165cc2"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "5ad21ffb399b0b427015c2f813cb4ab67f21c22d",
+      "bytes": 2579,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/log.md",
+      "sha256": "b17aa6e2db4c21ec01bf9052e4327183a7512816af0cc81349fd38ccd3b6b1d6"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "aefcb04016c5e4a0ae983d6cfb2a3deb9bf4cf8d",
+      "bytes": 3105,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/orientation.md",
+      "sha256": "de13d4ad529c9e029e7a85fe7020464499ac557a761b78cfc3f3277fafdafc96"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "658e23065dabf3af01d8033dc0be19fec681cad4",
+      "bytes": 6269,
+      "local_byte_equal": true,
+      "path": "expeditions/049-accepting-seed-degree/source-audit.md",
+      "sha256": "4284efb75ae3226b7cf549f62ff714071a8b68874226ff819e9ab1b69240ca5a"
+    },
+    {
+      "api_blob_equal": true,
+      "blob_sha": "be44271c01cbcb14fc72501802ed41ef1eba40e9",
+      "bytes": 4429,
+      "local_byte_equal": true,
+      "path": "graveyard/2026-11-28-night-witness-degree-shortcuts.md",
+      "sha256": "6cd7dfa155d19f5b48a700c7a5c85acea1fe0425bfc473bd87292b35b4f33725"
+    }
+  ],
+  "immutable_execution_count": 8,
+  "immutable_suites": [
+    {
+      "completed_utc": "2026-11-28T13:47:11.664889+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "check_linearized_degree.py"
+          ],
+          "elapsed_seconds": 0.541388,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3915,
+          "stdout_sha256": "8a5fc028580afddb72aa11b964a3f1a7208a4f5bfe4b5fab8d011c1be3bc7f4b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-O",
+            "check_linearized_degree.py"
+          ],
+          "elapsed_seconds": 0.623939,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3915,
+          "stdout_sha256": "8a5fc028580afddb72aa11b964a3f1a7208a4f5bfe4b5fab8d011c1be3bc7f4b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "linearized-degree-results.json",
+      "script": "check_linearized_degree.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70",
+        "expeditions/049-accepting-seed-degree/check_accepting_family.py": "483638953405ba9edcc883f0e67f281907480d80f30ab2b2cbbb7c2d171913b6",
+        "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py": "82c5ca50e75e573604f19ec12f7491ec4f06e927acaf7e19ff913afe21c174e5",
+        "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py": "3f2a878b9e0a43d16c5c929e6c440b796df521b09d7ae362580fd1864a5ed6da",
+        "expeditions/049-accepting-seed-degree/check_linearized_degree.py": "6ace1796d91dfc0d651e9d62aae3758eb05f07beecc6ffce95f8ffa8561b2ee5"
+      },
+      "started_utc": "2026-11-28T13:47:10.499172+00:00",
+      "stored_result_sha256": "8a5fc028580afddb72aa11b964a3f1a7208a4f5bfe4b5fab8d011c1be3bc7f4b",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-6835b3af/expeditions/049-accepting-seed-degree"
+    },
+    {
+      "completed_utc": "2026-11-28T13:47:14.152841+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "check_accepting_family.py"
+          ],
+          "elapsed_seconds": 1.768475,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 5196,
+          "stdout_sha256": "a887c0c2a5d22129f79bd80e2503d4e775b5dd7572f06a99dd1aeb43d568d742",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-O",
+            "check_accepting_family.py"
+          ],
+          "elapsed_seconds": 1.889319,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 5196,
+          "stdout_sha256": "a887c0c2a5d22129f79bd80e2503d4e775b5dd7572f06a99dd1aeb43d568d742",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "accepting-family-results.json",
+      "script": "check_accepting_family.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70",
+        "expeditions/049-accepting-seed-degree/check_accepting_family.py": "483638953405ba9edcc883f0e67f281907480d80f30ab2b2cbbb7c2d171913b6",
+        "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py": "82c5ca50e75e573604f19ec12f7491ec4f06e927acaf7e19ff913afe21c174e5",
+        "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py": "3f2a878b9e0a43d16c5c929e6c440b796df521b09d7ae362580fd1864a5ed6da",
+        "expeditions/049-accepting-seed-degree/check_linearized_degree.py": "6ace1796d91dfc0d651e9d62aae3758eb05f07beecc6ffce95f8ffa8561b2ee5"
+      },
+      "started_utc": "2026-11-28T13:47:10.494472+00:00",
+      "stored_result_sha256": "a887c0c2a5d22129f79bd80e2503d4e775b5dd7572f06a99dd1aeb43d568d742",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-6835b3af/expeditions/049-accepting-seed-degree"
+    },
+    {
+      "completed_utc": "2026-11-28T13:47:11.112141+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "check_auxiliary_artifacts.py"
+          ],
+          "elapsed_seconds": 0.201353,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4935,
+          "stdout_sha256": "50827e3dab56f52ecf2c03d31d009214b69171e6a51599c30efd5e9b4e22e4dc",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-O",
+            "check_auxiliary_artifacts.py"
+          ],
+          "elapsed_seconds": 0.420833,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4935,
+          "stdout_sha256": "50827e3dab56f52ecf2c03d31d009214b69171e6a51599c30efd5e9b4e22e4dc",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "auxiliary-artifact-results.json",
+      "script": "check_auxiliary_artifacts.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70",
+        "expeditions/049-accepting-seed-degree/check_accepting_family.py": "483638953405ba9edcc883f0e67f281907480d80f30ab2b2cbbb7c2d171913b6",
+        "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py": "82c5ca50e75e573604f19ec12f7491ec4f06e927acaf7e19ff913afe21c174e5",
+        "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py": "3f2a878b9e0a43d16c5c929e6c440b796df521b09d7ae362580fd1864a5ed6da",
+        "expeditions/049-accepting-seed-degree/check_linearized_degree.py": "6ace1796d91dfc0d651e9d62aae3758eb05f07beecc6ffce95f8ffa8561b2ee5"
+      },
+      "started_utc": "2026-11-28T13:47:10.489418+00:00",
+      "stored_result_sha256": "50827e3dab56f52ecf2c03d31d009214b69171e6a51599c30efd5e9b4e22e4dc",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-6835b3af/expeditions/049-accepting-seed-degree"
+    },
+    {
+      "completed_utc": "2026-11-28T13:47:22.670621+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "check_honest_extension_degree.py"
+          ],
+          "elapsed_seconds": 6.002974,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 23433,
+          "stdout_sha256": "9c00734dd161c97b11fc5732039d72e49ea8be878c2e3f04bb50392eaa657b84",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-O",
+            "check_honest_extension_degree.py"
+          ],
+          "elapsed_seconds": 6.022229,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 23433,
+          "stdout_sha256": "9c00734dd161c97b11fc5732039d72e49ea8be878c2e3f04bb50392eaa657b84",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "honest-extension-results.json",
+      "script": "check_honest_extension_degree.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70",
+        "expeditions/049-accepting-seed-degree/check_accepting_family.py": "483638953405ba9edcc883f0e67f281907480d80f30ab2b2cbbb7c2d171913b6",
+        "expeditions/049-accepting-seed-degree/check_auxiliary_artifacts.py": "82c5ca50e75e573604f19ec12f7491ec4f06e927acaf7e19ff913afe21c174e5",
+        "expeditions/049-accepting-seed-degree/check_honest_extension_degree.py": "3f2a878b9e0a43d16c5c929e6c440b796df521b09d7ae362580fd1864a5ed6da",
+        "expeditions/049-accepting-seed-degree/check_linearized_degree.py": "6ace1796d91dfc0d651e9d62aae3758eb05f07beecc6ffce95f8ffa8561b2ee5"
+      },
+      "started_utc": "2026-11-28T13:47:10.644898+00:00",
+      "stored_result_sha256": "9c00734dd161c97b11fc5732039d72e49ea8be878c2e3f04bb50392eaa657b84",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-6835b3af/expeditions/049-accepting-seed-degree"
+    }
+  ],
+  "parent": "2a546c3781d71cd159b388997bd5312a7ceb78e6",
+  "snapshot": "/workspace/scratch/6f9932f9433c/remote-6835b3af",
+  "tree": "48d4d58658a1914855b1ac98c980776e49adca3c"
+}

@@ -158,7 +158,16 @@ map and interpolation coefficient explicit.
 Any approximation application must then price either a sufficient shared
 proof approximation or the actual low-degree clause-failure objective. The
 two objectives must not be treated as equivalent. The remaining question is
-mathematical, not another generic compiler or tag-enumeration exercise.
+mathematical, not another generic compiler or tag-enumeration exercise. It is
+recorded as [Issue #39](https://github.com/yo4e/PvsNP-Cartography/issues/39).
+
+Implementation [6835b3af](https://github.com/yo4e/PvsNP-Cartography/commit/6835b3af0765a72fa0d90e8db0a4288e88221c3a)
+was saved and all 21 files were re-fetched and matched to Git blob bytes.
+All four suites passed ordinary and optimized Python locally and from the
+immutable commit, for 16 stored-output-equal executions. The following
+documentation commit records those outcomes without altering programs or
+result data. [Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38)
+is closed as this scoped milestone.
 
 All general deductions remain written and internally attacked, with novelty
 unknown. No new Lean or CI run, independent external acceptance, universal

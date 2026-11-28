@@ -176,6 +176,26 @@ https://openai.com/index/advisory-group-on-mathematics-and-ai/
 
 Relevant to publication ethics, disclosure, verification burden, and responsible release of machine-generated mathematics.
 
+## Exact field degree and the projection PCP source
+
+### Claude Carlet — Boolean Functions for Cryptography and Coding Theory
+
+[Author-hosted monograph](https://www.math.univ-paris13.fr/~carlet/book-fcts-Bool-vect-crypt-codes.pdf).
+Section 2.2, Proposition 6, printed p. 63, identifies vectorial Boolean degree
+with the maximum binary exponent weight in the canonical univariate
+representation of degree below the field size. The adjoining discussion
+characterizes affine/linearized maps. Reopened and read for Expedition 049.
+
+### Eli Ben-Sasson and Emanuele Viola — Short PCPs with projection queries
+
+[ECCC TR14-017, February 9, 2014](https://eccc.weizmann.ac.il/report/2014/017/download/).
+For Expedition 049, the relevant passages are Lemma 1.6, pp. 4–5;
+Definition 5.1/Lemma 5.2, pp. 13–14; equations (2)–(5), pp. 14–15; and
+Claims 5.4–5.5, pp. 15–16. These specify the gate encoding and source outer
+residual, not the repository's newly written degree-transfer deductions.
+The unnormalized selector has a nonzero selected value, not necessarily one;
+see the [targeted audit](../expeditions/049-accepting-seed-degree/source-audit.md).
+
 ## Meta-rule
 
 No citation should be included merely because an AI remembered it.

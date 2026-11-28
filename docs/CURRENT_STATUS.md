@@ -1,4 +1,51 @@
-# Current checkpoint — recursive row normalization and its limit
+# Current checkpoint — accepting degree and compiler boundaries
+
+November 28, 2026 JST, freshly approved night beginning at 22:22.
+[Expedition 049](../expeditions/049-accepting-seed-degree/conclusion.md)
+completes the scoped milestone of
+[Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38).
+
+Canonical interpolation preserves the exact Boolean degree r of a genuine
+satisfying assignment. For the source outer residual, put S=|H| and let c be
+the clause-selector codimension. Under the honest A cutoff <=S/2 and
+3S<|F|, the forced quotient B has degree at most D0=max(c+3r,1+r), and one
+public Frobenius-based outer Boolean circuit has honest gate degree <=D0+1.
+The division filtration and all hypotheses are written explicitly. These
+are exact degree statements, not approximation-stability guarantees.
+
+The new source-shaped two-level residual is fully classified: exactly three
+accepting used field proofs, all with affine raw rows. The affine A cutoff
+explains the ease. Separately, every honest degree-less-than-32 root
+polynomial in the actual GF(256) two-level geometry keeps its maximum
+Boolean degree through normalized raw RS extension. Fixed low vanishers
+and jointly affine coordinates are the essential hypotheses.
+
+Boolean compiler choices can create auxiliary degree and distance. The live
+bent control preserves raw NO minimum 32; its minimum affine signed-charge
+distance is 54, yet its actual affine failure minimum is 8 below half-gap 16.
+A failed sufficient approximation criterion is not a failed counting
+certificate. Exact interpolation can also spread one assignment error to
+241 of 256 root-symbol errors. These distinctions are retained as controls.
+
+[Implementation 6835b3af](https://github.com/yo4e/PvsNP-Cartography/commit/6835b3af0765a72fa0d90e8db0a4288e88221c3a)
+and all 21 files passed immutable API and Git blob/byte readback. Four suites
+passed ordinary and optimized execution locally and from the immutable
+commit, for 16 stored-output-equal runs. The subsequent record commit updates
+evidence and checkpoint documentation without changing programs or results.
+[Execution evidence](../expeditions/049-accepting-seed-degree/execution-evidence.md)
+records exact hashes, times and scopes. No new Lean/CI, external acceptance,
+novelty, universal low-degree completeness or P-versus-NP result is claimed.
+
+Next: [Issue #39](https://github.com/yo4e/PvsNP-Cartography/issues/39), prove
+or falsify a uniform honest-degree bound through the growing recursive RS
+geometry and its actual Boolean predicate. Track seed-dependent low bases
+and coefficients; preserve physical sharing; distinguish weighted proof
+distance from actual clause failure. Park further affine-toy enlargement
+and compiler-invariant auxiliary-degree claims. Issues #8/#15 remain
+separate. No write blocker or unapplied implementation patch remains. This
+checkpoint does not authorize another research session.
+
+# Previous checkpoint — recursive row normalization and its limit
 
 November 28, 2026 JST, one freshly approved research session.
 [Expedition 048](../expeditions/048-recursive-row-normalization/conclusion.md)
