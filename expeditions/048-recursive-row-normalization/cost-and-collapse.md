@@ -173,7 +173,8 @@ The inherited polynomial counter uses degree `D<=3d` and runs in
 
     2^{k-Omega(k/(3d))+O(log k)}.
 
-With `k=n+O(log n)` and polynomially many calls, a sufficiently small fixed
+Constant polynomials (`d=0`) are evaluated directly. For positive degree,
+with `k=n+O(log n)` and polynomially many calls, a sufficiently small fixed
 coefficient in `d=alpha n/log n` pays the polynomial overhead and the chosen
 hierarchy clock just as in the existing ledger. This is a conditional reuse
 of that ledger, not a new unconditional counting algorithm or separation.

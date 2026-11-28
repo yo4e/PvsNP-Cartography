@@ -1,0 +1,493 @@
+{
+  "session": "2026-11-28 JST",
+  "implementation_commit": "bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183",
+  "tree": "1170137659bb8819613d1fa1308e785b77cadc66",
+  "parent": "ba1da266a3e51f4025b7ba4f00d305b94796cbff",
+  "api_readback": {
+    "commit": "bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183",
+    "files": [
+      {
+        "path": "claims/048-recursive-row-normalization.md",
+        "sha": "454850205e2d2db0e8bcff9b1375bc494a455897",
+        "content_equal": true,
+        "characters": 3556,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/claims/048-recursive-row-normalization.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/barrier-audit.md",
+        "sha": "3a1d54ee81e2707f50ad809908fbc07e1df626b4",
+        "content_equal": true,
+        "characters": 3586,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/barrier-audit.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/check_layout_degree.py",
+        "sha": "2f628b985d40dfd5441c1444940b24cb7e6f4853",
+        "content_equal": true,
+        "characters": 9163,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/check_layout_degree.py"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py",
+        "sha": "d2f119f7615a3eeeb012ff8f717136056e6ec0e9",
+        "content_equal": true,
+        "characters": 8857,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/check_recursive_normalization.py",
+        "sha": "3d3bddbe6d80f6da54c22e85584b586a5cdd087f",
+        "content_equal": true,
+        "characters": 13623,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/check_recursive_normalization.py"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/check_row_sandwich.py",
+        "sha": "b0312db34b242cbaadc01bb409997d20e7d00154",
+        "content_equal": true,
+        "characters": 8986,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/check_row_sandwich.py"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/conclusion.md",
+        "sha": "cbbdf7937ae86b9ffe52eb0c3c72090eacc06f27",
+        "content_equal": true,
+        "characters": 7115,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/conclusion.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/cost-and-collapse.md",
+        "sha": "f3c0d148b01f8595a53460780818ec8555964607",
+        "content_equal": true,
+        "characters": 25192,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/cost-and-collapse.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/degree-controls.md",
+        "sha": "7f96612f70fb8a6b5d5f13a77ded7fa80dade24f",
+        "content_equal": true,
+        "characters": 6273,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/degree-controls.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/execution-evidence.md",
+        "sha": "3ea97e09cbe51e375ea4406c93e841b91ad2d2db",
+        "content_equal": true,
+        "characters": 2904,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/execution-evidence.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/layout-degree-results.json",
+        "sha": "33b6726b7f0f1667001d0232a6d00221eccbe9c5",
+        "content_equal": true,
+        "characters": 1623,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/layout-degree-results.json"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/local-execution.json",
+        "sha": "7c9571d4e1bfe7b08869b63b6f856ee5a2c81b68",
+        "content_equal": true,
+        "characters": 9009,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/local-execution.json"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/log.md",
+        "sha": "fc857b469193fddecf10fc6c02a92d75c2ecf38a",
+        "content_equal": true,
+        "characters": 3484,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/log.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/normalization.md",
+        "sha": "dc240a37125feff2e19d32a289642aecd2ab3dd7",
+        "content_equal": true,
+        "characters": 11741,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/normalization.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/orientation.md",
+        "sha": "b5062f1bb807837d424b7a826fc3381726370eb6",
+        "content_equal": true,
+        "characters": 2881,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/orientation.md"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/recursive-field-bridge-results.json",
+        "sha": "728c677b8d50a97d3827326b0e8745da73783f5b",
+        "content_equal": true,
+        "characters": 3955,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/recursive-field-bridge-results.json"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/recursive-normalization-results.json",
+        "sha": "8317aaca04b4f4547bd45c0b3310b5dabdfde847",
+        "content_equal": true,
+        "characters": 4023,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/recursive-normalization-results.json"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/row-sandwich-results.json",
+        "sha": "3ee7e341516d4857b095a9d99551f3f388961e7c",
+        "content_equal": true,
+        "characters": 2488,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/row-sandwich-results.json"
+      },
+      {
+        "path": "expeditions/048-recursive-row-normalization/sources.md",
+        "sha": "422f9e4b559eeba078a6fbb77d121c8aab27acec",
+        "content_equal": true,
+        "characters": 14292,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/expeditions/048-recursive-row-normalization/sources.md"
+      },
+      {
+        "path": "graveyard/2026-11-28-recursive-layout-shortcuts.md",
+        "sha": "147dfb964e96617a51da10db8cf4ae4e453f7f7f",
+        "content_equal": true,
+        "characters": 4238,
+        "url": "https://github.com/yo4e/PvsNP-Cartography/blob/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183/graveyard/2026-11-28-recursive-layout-shortcuts.md"
+      }
+    ],
+    "errors": []
+  },
+  "git_blob_readback": {
+    "commit": "bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183",
+    "files": [
+      {
+        "byte_equal": true,
+        "bytes": 3588,
+        "git_blob_sha": "3a1d54ee81e2707f50ad809908fbc07e1df626b4",
+        "path": "expeditions/048-recursive-row-normalization/barrier-audit.md",
+        "sha256": "bb4f9ed8b4e7acdbfadec155e347a4521049d41f9a9daebf560e56a9f8e7bc4d"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 9163,
+        "git_blob_sha": "2f628b985d40dfd5441c1444940b24cb7e6f4853",
+        "path": "expeditions/048-recursive-row-normalization/check_layout_degree.py",
+        "sha256": "4322e950a91a92b8f9858ea460e2d6584289e30790ba6eedd97d1a6f78a0e3fc"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 8858,
+        "git_blob_sha": "d2f119f7615a3eeeb012ff8f717136056e6ec0e9",
+        "path": "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py",
+        "sha256": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 13623,
+        "git_blob_sha": "3d3bddbe6d80f6da54c22e85584b586a5cdd087f",
+        "path": "expeditions/048-recursive-row-normalization/check_recursive_normalization.py",
+        "sha256": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 8986,
+        "git_blob_sha": "b0312db34b242cbaadc01bb409997d20e7d00154",
+        "path": "expeditions/048-recursive-row-normalization/check_row_sandwich.py",
+        "sha256": "66540be5ddebc393b6a70f809591d653f71db5fa6680572468fdcf446c6a4cea"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 7116,
+        "git_blob_sha": "cbbdf7937ae86b9ffe52eb0c3c72090eacc06f27",
+        "path": "expeditions/048-recursive-row-normalization/conclusion.md",
+        "sha256": "e6ddc69cb4e76341a1ad539e79f80a3b817fd86e55884c45cb5d4f19df782bcb"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 25194,
+        "git_blob_sha": "f3c0d148b01f8595a53460780818ec8555964607",
+        "path": "expeditions/048-recursive-row-normalization/cost-and-collapse.md",
+        "sha256": "c1425f233f91521e3fe30b4d3c9637271b42ce5c40671fd8a941c8abf22dd350"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 6273,
+        "git_blob_sha": "7f96612f70fb8a6b5d5f13a77ded7fa80dade24f",
+        "path": "expeditions/048-recursive-row-normalization/degree-controls.md",
+        "sha256": "6424999bb8a493ef0db958f6c04be5eac051a68913d0771c508d7dcf1bca7565"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 2906,
+        "git_blob_sha": "3ea97e09cbe51e375ea4406c93e841b91ad2d2db",
+        "path": "expeditions/048-recursive-row-normalization/execution-evidence.md",
+        "sha256": "5bd1e47e46804c973a0007e1d68ec7cb5376a1cc2f8fd0e4e78b08ef3ea7b414"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 1623,
+        "git_blob_sha": "33b6726b7f0f1667001d0232a6d00221eccbe9c5",
+        "path": "expeditions/048-recursive-row-normalization/layout-degree-results.json",
+        "sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 9009,
+        "git_blob_sha": "7c9571d4e1bfe7b08869b63b6f856ee5a2c81b68",
+        "path": "expeditions/048-recursive-row-normalization/local-execution.json",
+        "sha256": "65ffdbb7527bfa69ca38ec8ee0cbbeab630d2571464348f9713ff12eb0721cb0"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 3484,
+        "git_blob_sha": "fc857b469193fddecf10fc6c02a92d75c2ecf38a",
+        "path": "expeditions/048-recursive-row-normalization/log.md",
+        "sha256": "88a7a9ef0b74a63dbb136a99605934820997f3919fd0a2736ba3a01af15aed2c"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 11741,
+        "git_blob_sha": "dc240a37125feff2e19d32a289642aecd2ab3dd7",
+        "path": "expeditions/048-recursive-row-normalization/normalization.md",
+        "sha256": "838ede455cba7a7d8ea5caa574c440321ff8423aa6045e74272a6ef22819079e"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 2899,
+        "git_blob_sha": "b5062f1bb807837d424b7a826fc3381726370eb6",
+        "path": "expeditions/048-recursive-row-normalization/orientation.md",
+        "sha256": "f8f4845efd9f296734ccd2b666259af0dddeace3cc63b71b6899ee2286745fc1"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 3955,
+        "git_blob_sha": "728c677b8d50a97d3827326b0e8745da73783f5b",
+        "path": "expeditions/048-recursive-row-normalization/recursive-field-bridge-results.json",
+        "sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 4023,
+        "git_blob_sha": "8317aaca04b4f4547bd45c0b3310b5dabdfde847",
+        "path": "expeditions/048-recursive-row-normalization/recursive-normalization-results.json",
+        "sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 2488,
+        "git_blob_sha": "3ee7e341516d4857b095a9d99551f3f388961e7c",
+        "path": "expeditions/048-recursive-row-normalization/row-sandwich-results.json",
+        "sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 14345,
+        "git_blob_sha": "422f9e4b559eeba078a6fbb77d121c8aab27acec",
+        "path": "expeditions/048-recursive-row-normalization/sources.md",
+        "sha256": "7fbb67e16758e5868f3c973446c0f31510f49450b9b6ee586e4e8ebea9bdba66"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 3559,
+        "git_blob_sha": "454850205e2d2db0e8bcff9b1375bc494a455897",
+        "path": "claims/048-recursive-row-normalization.md",
+        "sha256": "03302229d60169c4ef9b8f9e30081123b3a8ee1d1cb8dd2cc8095b929d96ca02"
+      },
+      {
+        "byte_equal": true,
+        "bytes": 4238,
+        "git_blob_sha": "147dfb964e96617a51da10db8cf4ae4e453f7f7f",
+        "path": "graveyard/2026-11-28-recursive-layout-shortcuts.md",
+        "sha256": "dd2ea4a219bd4883c781687d2d5d511e256e6f6062663595570f628ed172a0e5"
+      }
+    ],
+    "snapshot": "/workspace/scratch/6f9932f9433c/remote-bbbc7cf9",
+    "tree": "1170137659bb8819613d1fa1308e785b77cadc66"
+  },
+  "immutable_snapshot_replays": [
+    {
+      "completed_utc": "2026-11-28T06:05:02.339747+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_recursive_normalization.py"
+          ],
+          "elapsed_seconds": 8.864605,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4023,
+          "stdout_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_recursive_normalization.py"
+          ],
+          "elapsed_seconds": 8.870134,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4023,
+          "stdout_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "recursive-normalization-results.json",
+      "script": "check_recursive_normalization.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T06:04:44.604503+00:00",
+      "stored_result_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-bbbc7cf9/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T06:04:47.746548+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_recursive_field_bridge.py"
+          ],
+          "elapsed_seconds": 1.492705,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3955,
+          "stdout_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_recursive_field_bridge.py"
+          ],
+          "elapsed_seconds": 1.649772,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3955,
+          "stdout_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "recursive-field-bridge-results.json",
+      "script": "check_recursive_field_bridge.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T06:04:44.603646+00:00",
+      "stored_result_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-bbbc7cf9/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T06:04:44.876120+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_row_sandwich.py"
+          ],
+          "elapsed_seconds": 0.04347,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 2488,
+          "stdout_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_row_sandwich.py"
+          ],
+          "elapsed_seconds": 0.091849,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 2488,
+          "stdout_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "row-sandwich-results.json",
+      "script": "check_row_sandwich.py",
+      "source_sha256": {
+        "expeditions/048-recursive-row-normalization/check_row_sandwich.py": "66540be5ddebc393b6a70f809591d653f71db5fa6680572468fdcf446c6a4cea"
+      },
+      "started_utc": "2026-11-28T06:04:44.740494+00:00",
+      "stored_result_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-bbbc7cf9/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T06:04:46.500199+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_layout_degree.py"
+          ],
+          "elapsed_seconds": 0.869176,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 1623,
+          "stdout_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_layout_degree.py"
+          ],
+          "elapsed_seconds": 1.026081,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 1623,
+          "stdout_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "layout-degree-results.json",
+      "script": "check_layout_degree.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/048-recursive-row-normalization/check_layout_degree.py": "4322e950a91a92b8f9858ea460e2d6584289e30790ba6eedd97d1a6f78a0e3fc",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T06:04:44.604486+00:00",
+      "stored_result_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/remote-bbbc7cf9/expeditions/048-recursive-row-normalization"
+    }
+  ],
+  "completed_replay_executions": 8,
+  "all_success": true,
+  "scope": [
+    "Readbacks use immutable commit, not unpinned main.",
+    "All 20 implementation files matched GitHub API content and locally fetched Git blob bytes.",
+    "Eight replay executions ran the fetched immutable snapshot in the same runtime, not a new independent machine/kernel.",
+    "No new CI, Lean, external-review or novelty acceptance."
+  ]
+}
+

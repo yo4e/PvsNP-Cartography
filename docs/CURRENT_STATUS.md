@@ -1,4 +1,46 @@
-# Current checkpoint — proof layouts, public structure and quantifiers
+# Current checkpoint — recursive row normalization and its limit
+
+November 28, 2026 JST, one freshly approved research session.
+[Expedition 048](../expeditions/048-recursive-row-normalization/conclusion.md)
+completes [Issue #37](https://github.com/yo4e/PvsNP-Cartography/issues/37).
+
+A public inverse shuffle of each canonical physical address restores the root
+seed order and extracts only fresh coordinates into a row tag. Every fixed
+offset query becomes a constant row plus z XOR delta, with all aliases intact.
+For fixed rate exponent a, the normalized row count is polynomial in k. An
+explicit globally shared row-label table therefore fits the hierarchy ledger;
+the growing-a one-level table obstruction does not apply to these rows.
+
+Direct shared row polynomials subsume all such guessed-layout certificates at
+the same query degree. At a fixed used-cell error budget, arbitrary adaptive
+tags improve global degree over public dense tags by at most ceil(log2 R).
+Full-row query coverage also subsumes globally consistent recodings whose
+actual query values are low degree. The conditional hierarchy argument locates
+an existential-completeness obstruction on infinitely many hard-family YES
+lengths, without selecting only one difficult witness.
+
+At k=8,a=3 the first genuine two-level geometry has 64 rows and 16,384 symbols.
+All 1,196,032 direct query comparisons and 16,384 alias controls agree. The actual
+GF(256) residual fixture preserves its 0/221/221 rejected-seed counts after
+transport; this remains a field-symbol result. Its named YES raw A/B rows are
+affine, while no full Boolean-gate or unknown-witness degree claim is made.
+Explicit shear, parity and padding controls preserve the failed shortcuts.
+
+[Implementation bbbc7cf9](https://github.com/yo4e/PvsNP-Cartography/commit/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183)
+and all 20 files were re-fetched and compared with Git blob bytes. Four suites
+passed normal/-O locally and again in eight executions from the immutable
+remote source. [Execution evidence](../expeditions/048-recursive-row-normalization/execution-evidence.md)
+records actual hashes and outcomes. No new Lean/CI, independent external
+review, mathematical novelty or P-versus-NP separation is claimed.
+
+Next: [Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38), identify
+residual-constrained accepting seed dependence and the appropriate Boolean
+weighted-error obstruction, or a stronger counter for structured high-degree
+rows. Park further tag enumeration as an asymptotic route. Issues #8/#15 remain
+separate. No write blocker or unapplied patch remains. This checkpoint does
+not authorize another research session.
+
+# Previous checkpoint — proof layouts, public structure and quantifiers
 
 November24,2026 approved night; completed after midnight November25 JST.
 [Expedition047](../expeditions/047-witness-layouts/conclusion.md) completes

@@ -48,9 +48,35 @@ does not constitute independent external review or close Issues #8/#15.
 No Lean executable is present in this runtime; no new Lean, GitHub Actions,
 second-kernel or mathematical novelty acceptance is reported.
 
-## Remote persistence
+## Immutable GitHub persistence and replay
 
-At the implementation commit, immutable GitHub readback and execution are
-still pending. This section will be replaced with the actual commit, tree,
-comparison and replay record after those operations complete. Local success
-is not being treated as proof that a remote write succeeded.
+Implementation commit:
+[`bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183`](https://github.com/yo4e/PvsNP-Cartography/commit/bbbc7cf9f7d1b3ce389a9af276b72f1e27be4183).
+Tree: `1170137659bb8819613d1fa1308e785b77cadc66`.
+Parent: `ba1da266a3e51f4025b7ba4f00d305b94796cbff`.
+
+The main ref update succeeded without force. The commit, tree and parent were
+then fetched from GitHub. All **20 implementation files** were fetched again
+at the immutable commit and matched their local contents. A separate
+`git fetch origin main` retrieved the Git objects; every changed blob's bytes
+and Git object hash matched the API comparison.
+
+An archive of that fetched commit was extracted to a separate directory.
+All four programs ran there, in normal Python and `-O`: **eight additional
+completed executions**, all exit zero, no stderr, valid JSON, and exact
+byte equality with the committed result files. Their actual imported source
+hashes matched the local acceptance inputs. The full readback and execution
+records are in [remote-readback.json](remote-readback.json).
+
+These are executions from remotely retrieved immutable source in the same
+runtime, not a second machine or proof kernel. No new program changes were
+made after that replay; the following documentation checkpoint records it.
+
+## Issue disposition
+
+[Issue #37](https://github.com/yo4e/PvsNP-Cartography/issues/37) was closed as
+completed after the immutable replay, with
+[comment 7235089254](https://github.com/yo4e/PvsNP-Cartography/issues/37#issuecomment-7235089254).
+[Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38) records the
+accepting seed-function frontier. Issues #8 and #15 are unchanged. No write
+blocker or unapplied patch remains. Future research still needs fresh approval.

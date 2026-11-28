@@ -169,6 +169,8 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Research documents
 
+- [Expedition 048](expeditions/048-recursive-row-normalization/conclusion.md) normalizes the fixed-rate recursive proof into polynomially many shared seed rows, transports the actual two-level residual, and shows why direct row polynomials subsume further tag guessing.
+
 - [Expedition 047](expeditions/047-witness-layouts/conclusion.md) gives a public symbolic-layout condition, a scoped obstruction over satisfying shared-RS witnesses, and a costed correction to the witness-dependent-layout objection.
 
 - [Expedition 046](expeditions/046-growing-cross/conclusion.md) prices a growing cross family, gives compact degree optima at GF(128)/GF(512), and constructs a lower-degree known-reference tag layout with explicit storage and uniformity limitations.
@@ -216,7 +218,7 @@ The most valuable file in a research session may be the one explaining why the i
 
 ## Status
 
-The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 047, from the approved November 24 night completed after midnight November 25 JST. Public symbolic dictionaries give a witness-independent layout under explicit structural hypotheses; a twelve-row control has three satisfying proofs and exact/budgeted degree 3. A shared-RS code-only family obstructs an all-witness low-degree guarantee, while existential completeness remains open. One shared guessed row map preserves NO soundness, but its explicit table is too expensive in the growing compiler. [Results and limitations](expeditions/047-witness-layouts/conclusion.md) · [Verified immutable replay](expeditions/047-witness-layouts/execution-evidence.md) · [Next issue #37](https://github.com/yo4e/PvsNP-Cartography/issues/37). No new Lean, independent external review, novelty or P-vs-NP result.
+The latest [research checkpoint](docs/CURRENT_STATUS.md) is Expedition 048, from the approved November 28 JST session. A public inverse shuffle gives polynomially many complete seed rows in the fixed-rate recursive source, so an explicit shared layout table fits the clock. Direct row polynomials already subsume those layouts at the same query degree. The first two-level geometry has 64 rows and 16,384 symbols; exhaustive queries and the actual field residual preserve all aliases and verdicts. [Results and limits](expeditions/048-recursive-row-normalization/conclusion.md) · [Verified immutable replay](expeditions/048-recursive-row-normalization/execution-evidence.md) · [Next Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38). No new Lean, external review, novelty or P-versus-NP result.
 
 ### Previous compiler checkpoint
 

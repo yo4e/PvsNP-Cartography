@@ -2,7 +2,8 @@
 
 **Status: candidate-survives for the written normalization/cost derivations;
 exact finite evidence for the stated fixtures; novelty-unknown.** This session
-answers Issue #37's bounded question and changes the next research target.
+completes [Issue #37](https://github.com/yo4e/PvsNP-Cartography/issues/37) and
+changes the next research target to [Issue #38](https://github.com/yo4e/PvsNP-Cartography/issues/38).
 
 ## 1. The fixed-rate source permits a cheap shared layout
 
@@ -125,6 +126,7 @@ functions, rather than generate another address layout.
 
 All four suites passed normal Python and `-O` with identical stored output.
 See [execution evidence](execution-evidence.md) for exact source/result hashes
-and the separate immutable GitHub replay status. No new Lean or CI acceptance,
+and the 20 matching immutable GitHub files plus eight further successful
+executions from the fetched implementation commit. No new Lean or CI acceptance,
 independent external review, novelty, broad circuit lower bound or P-versus-NP
 separation is claimed. Issues #8 and #15 remain separate.

@@ -48,9 +48,10 @@ incorporated. Failed shortcuts were preserved in the graveyard.
 
 Four final Python suites passed both normal and optimized execution with
 byte-identical stored outputs. Imported source files, commands, actual exit
-codes, durations and hashes are in `local-execution.json`. These are local
-executions; GitHub readback and immutable replay are recorded separately in
-`execution-evidence.md` when completed. Lean is unavailable in this runtime,
+codes, durations and hashes are in `local-execution.json`. These local
+executions were followed by all 20 immutable GitHub file comparisons and
+eight successful executions from fetched commit `bbbc7cf9`; full records
+are in `execution-evidence.md` and `remote-readback.json`. Lean is unavailable in this runtime,
 and no new CI or Lean result is claimed.
 
 ## Decision
@@ -62,4 +63,6 @@ change. The next bounded question concerns accepting seed-row functions under
 residual constraints and the full Boolean gate/weighted-error ledger, or a
 stronger algorithm for their structured high-degree compositions.
 
-This record does not authorize another research session.
+Issue #37 was closed as completed with comment 7235089254. Issue #38 was
+created for the accepting seed-function obstruction. All writes succeeded;
+no unapplied patch remains. This record does not authorize another session.
