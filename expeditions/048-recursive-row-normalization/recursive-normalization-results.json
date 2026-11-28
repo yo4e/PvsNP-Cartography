@@ -1,0 +1,190 @@
+{
+  "first_genuine_depth_two": {
+    "a": 3,
+    "all_physical_cells_reached": true,
+    "canonical_rows": 64,
+    "canonical_rows_by_shape": {
+      "R": 7,
+      "RR": 56,
+      "root": 1
+    },
+    "canonical_symbols": 16384,
+    "column_sibling_alias_controls": 16384,
+    "depth": 2,
+    "direct_seed_query_checks": 1196032,
+    "fixed_tape_offset_occurrences": 4672,
+    "k": 8,
+    "maximum_occurrences_per_row": 80,
+    "minimum_occurrences_per_row": 64,
+    "original_padded_symbol_cube": 262144,
+    "packed_raw_bit_cube": 262144,
+    "packed_symbol_cube": 16384,
+    "query_coordinate_degree": 1,
+    "raw_bit_rows_if_root_k_internal_2k": 1016,
+    "routes": [
+      {
+        "leaf_dimension": 6,
+        "shape": "RR",
+        "unique_tapes": 64
+      },
+      {
+        "leaf_dimension": 4,
+        "shape": "RC",
+        "unique_tapes": 32
+      },
+      {
+        "leaf_dimension": 4,
+        "shape": "C",
+        "unique_tapes": 4
+      }
+    ],
+    "sample_normalized_queries": [
+      {
+        "aux": 8,
+        "delta": 0,
+        "offset": 8,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 1,
+        "offset": 9,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 2,
+        "offset": 10,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 3,
+        "offset": 11,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 4,
+        "offset": 12,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 5,
+        "offset": 13,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 6,
+        "offset": 14,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      },
+      {
+        "aux": 8,
+        "delta": 7,
+        "offset": 15,
+        "route": "RR",
+        "row": 8,
+        "shape": "RR",
+        "tape": 0
+      }
+    ],
+    "signed_three_query_composition_bound": "3d",
+    "tag_drop_countercontrol": {
+      "old_addresses": [
+        4097,
+        8193
+      ],
+      "shared_root_coordinate": 0
+    }
+  },
+  "limits": [
+    "symbolic controls supplement a separate induction, not an arbitrary-size experiment",
+    "no recursive Boolean template census, exact soundness or approximation theorem",
+    "normalization is public and witness-independent; any later row map is separate",
+    "no Lean acceptance or novelty claim"
+  ],
+  "scope": "canonical coordinate semantics of Expedition038 fixed-rate variant; no field/CNF execution",
+  "source": "expeditions/038-recursive-query-fibers/verify_recursive.py",
+  "symbolic_controls": [
+    {
+      "a": 3,
+      "canonical_row_count": 8,
+      "depth": 1,
+      "k": 7,
+      "routes": 2,
+      "symbolic_candidates": 144
+    },
+    {
+      "a": 3,
+      "canonical_row_count": 64,
+      "depth": 2,
+      "k": 8,
+      "routes": 3,
+      "symbolic_candidates": 224
+    },
+    {
+      "a": 3,
+      "canonical_row_count": 512,
+      "depth": 3,
+      "k": 10,
+      "routes": 4,
+      "symbolic_candidates": 320
+    },
+    {
+      "a": 3,
+      "canonical_row_count": 4348,
+      "depth": 4,
+      "k": 15,
+      "routes": 7,
+      "symbolic_candidates": 608
+    },
+    {
+      "a": 3,
+      "canonical_row_count": 6364,
+      "depth": 4,
+      "k": 21,
+      "routes": 9,
+      "symbolic_candidates": 864
+    },
+    {
+      "a": 4,
+      "canonical_row_count": 65656,
+      "depth": 4,
+      "k": 17,
+      "routes": 6,
+      "symbolic_candidates": 1952
+    },
+    {
+      "a": 3,
+      "canonical_row_count": 66508,
+      "depth": 5,
+      "k": 33,
+      "routes": 15,
+      "symbolic_candidates": 1472
+    }
+  ]
+}

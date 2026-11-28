@@ -1,0 +1,196 @@
+{
+  "base_commit": "ba1da266a3e51f4025b7ba4f00d305b94796cbff",
+  "completed_executions": 8,
+  "description": "Lead acceptance executions; exact imported source files retained, unrelated workspace hashes omitted. All standard-library Python.",
+  "limits": [
+    "Local acceptance; immutable GitHub replay recorded separately.",
+    "No Lean or CI run, external review, or novelty assessment."
+  ],
+  "session": "2026-11-28 JST approval",
+  "success": true,
+  "suites": [
+    {
+      "completed_utc": "2026-11-28T05:59:07.473412+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_recursive_normalization.py"
+          ],
+          "elapsed_seconds": 8.594308,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4023,
+          "stdout_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_recursive_normalization.py"
+          ],
+          "elapsed_seconds": 8.958178,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 4023,
+          "stdout_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "recursive-normalization-results.json",
+      "script": "check_recursive_normalization.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T05:58:49.920423+00:00",
+      "stored_result_sha256": "ff9c20e044be97f12a90d43f1e4e45cc54ea98d0f00cfed7709eeb1de0f21fc8",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/PvsNP-Cartography/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T05:58:52.890278+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_recursive_field_bridge.py"
+          ],
+          "elapsed_seconds": 1.529002,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3955,
+          "stdout_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_recursive_field_bridge.py"
+          ],
+          "elapsed_seconds": 1.592189,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 3955,
+          "stdout_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "recursive-field-bridge-results.json",
+      "script": "check_recursive_field_bridge.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/041-two-level-distance/check_outer_application.py": "3ea8e0da35ecfdd12a901a320aa0e79401e22c71530eb633004f567021f73eca",
+        "expeditions/041-two-level-distance/two_level_oracle.py": "1e647bfd80265b92de20da9b730af35478059c106f15a580a11934b7f20ab3bf",
+        "expeditions/048-recursive-row-normalization/check_recursive_field_bridge.py": "51f35db2936b2ebf7ac980de71f5c2600fb6161316609db9c6d1b35b197bdc12",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T05:58:49.768808+00:00",
+      "stored_result_sha256": "d5d0d53548934fc53040b1be2a22c7babfaecf5bdd2dfb3bb1742f68f35e175b",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/PvsNP-Cartography/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T06:00:03.939488+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_row_sandwich.py"
+          ],
+          "elapsed_seconds": 0.033304,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 2488,
+          "stdout_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_row_sandwich.py"
+          ],
+          "elapsed_seconds": 0.08465,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 2488,
+          "stdout_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "row-sandwich-results.json",
+      "script": "check_row_sandwich.py",
+      "source_sha256": {
+        "expeditions/048-recursive-row-normalization/check_row_sandwich.py": "66540be5ddebc393b6a70f809591d653f71db5fa6680572468fdcf446c6a4cea"
+      },
+      "started_utc": "2026-11-28T06:00:03.821265+00:00",
+      "stored_result_sha256": "ccd5d36fea8ffadc0b360e298aece949ac56362d0d243b3fe2a4e1fa72618cd9",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/PvsNP-Cartography/expeditions/048-recursive-row-normalization"
+    },
+    {
+      "completed_utc": "2026-11-28T05:58:51.790186+00:00",
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "executions": [
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "check_layout_degree.py"
+          ],
+          "elapsed_seconds": 0.839555,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 1623,
+          "stdout_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        },
+        {
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-O",
+            "check_layout_degree.py"
+          ],
+          "elapsed_seconds": 1.000215,
+          "exit_code": 0,
+          "stderr": "",
+          "stdout_bytes": 1623,
+          "stdout_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+          "stored_output_byte_equal": true,
+          "valid_json": true
+        }
+      ],
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "result_file": "layout-degree-results.json",
+      "script": "check_layout_degree.py",
+      "source_sha256": {
+        "expeditions/038-recursive-query-fibers/verify_recursive.py": "12efc6bceccf433c50072550bf92b490991accccf87e95e868e09905a8d691ae",
+        "expeditions/048-recursive-row-normalization/check_layout_degree.py": "4322e950a91a92b8f9858ea460e2d6584289e30790ba6eedd97d1a6f78a0e3fc",
+        "expeditions/048-recursive-row-normalization/check_recursive_normalization.py": "d17010deb64c9674f0cbb39b929d7d14e39dbde05beaa2282fe55cb310d4bd70"
+      },
+      "started_utc": "2026-11-28T05:58:49.950148+00:00",
+      "stored_result_sha256": "195cad5f54970cf6a75ac527fdf599a507b2474f74dd7784fb7e7021d5a50f76",
+      "success": true,
+      "working_directory": "/workspace/scratch/6f9932f9433c/PvsNP-Cartography/expeditions/048-recursive-row-normalization"
+    }
+  ]
+}

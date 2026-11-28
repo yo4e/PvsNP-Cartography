@@ -1,0 +1,62 @@
+{
+  "general_succinct_map_counterexample": {
+    "XOR_gates": 1,
+    "actual_query": {
+      "fresh_tape": 0,
+      "nonzero_seeds": 1,
+      "offset": 0,
+      "pullback_degree": 8,
+      "route": "RR"
+    },
+    "binary_AND_gates_in_displayed_circuit": 7,
+    "encoded_polynomial_degree": 1,
+    "global_pullback_degree": 8,
+    "inverse_checks": 16384,
+    "map": "first tag bit XOR AND of all eight root-coordinate bits",
+    "permutation_checks": 16384
+  },
+  "geometry": {
+    "a": 3,
+    "depth": 2,
+    "k": 8,
+    "physical_cells": 16384,
+    "physical_rows": 64
+  },
+  "layout_degree_control": {
+    "adaptive_free_padding_exact_degree": 5,
+    "adaptive_tag_bits": 7,
+    "dense_disjoint_odd_cubes": 16,
+    "dense_exact_degree": 10,
+    "dense_odd_cube_dimension": 10,
+    "dense_tag_bits": 6,
+    "distinct_tag_pairs_checked": 8128,
+    "error_budget_16": {
+      "minimum_degree": 0,
+      "zero_polynomial_errors": 16
+    },
+    "error_budget_up_to_15": {
+      "minimum_dense_degree": 10,
+      "minimum_maximum_row_degree": 4,
+      "minimum_over_all_injective_tag_layouts_with_free_padding": 5
+    },
+    "padding_warning": {
+      "degree_five_errors_against_zero_filled_target": 1008,
+      "free_completion_cube": 32768,
+      "zero_filled_exact_degree": 11
+    },
+    "pair_section_odd_certificates": 130048,
+    "row_degree_histogram": {
+      "0": 63,
+      "4": 1
+    },
+    "transported_error_sites": [
+      0,
+      15,
+      255,
+      256,
+      16383
+    ],
+    "used_cell_matches": 16384
+  },
+  "scope": "one bit per actual canonical symbol cell; artificial assignment, not an RS witness"
+}

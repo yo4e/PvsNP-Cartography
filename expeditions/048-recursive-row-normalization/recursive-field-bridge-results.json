@@ -1,0 +1,124 @@
+{
+  "ACSP_and_RS_share_same_root": true,
+  "actual_leaf_tests_per_fixture": 832,
+  "extension_symbol_bits": 16,
+  "field_size": 256,
+  "fixture_leaf_verdict_controls": 2496,
+  "fixtures": {
+    "NO_extremizer": {
+      "A_raw_bit_rows": {
+        "GF2_row_span_dimension": 0,
+        "distinct_ANF_vectors": 1,
+        "maximum_seed_degree": -1,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 8
+        }
+      },
+      "B_raw_bit_rows": {
+        "GF2_row_span_dimension": 177,
+        "distinct_ANF_vectors": 1016,
+        "maximum_seed_degree": 5,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "4": 504,
+          "5": 512
+        }
+      },
+      "joint_accepts": 35,
+      "joint_rejects": 221,
+      "paired_RS_accepts": 256,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 256,
+        "outer_col": 64
+      },
+      "root_residual_accepts": 35,
+      "unpaired_RS_accepts": 256
+    },
+    "NO_noncode_at_48": {
+      "A_raw_bit_rows": {
+        "GF2_row_span_dimension": 0,
+        "distinct_ANF_vectors": 1,
+        "maximum_seed_degree": -1,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 8
+        }
+      },
+      "B_raw_bit_rows": {
+        "GF2_row_span_dimension": 178,
+        "distinct_ANF_vectors": 1016,
+        "maximum_seed_degree": 8,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "4": 504,
+          "5": 511,
+          "8": 1
+        }
+      },
+      "joint_accepts": 35,
+      "joint_rejects": 221,
+      "paired_RS_accepts": 240,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 255,
+        "outer_col": 64
+      },
+      "root_residual_accepts": 35,
+      "unpaired_RS_accepts": 248
+    },
+    "YES": {
+      "A_raw_bit_rows": {
+        "GF2_row_span_dimension": 8,
+        "distinct_ANF_vectors": 8,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 8,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "1": 8
+        }
+      },
+      "B_raw_bit_rows": {
+        "GF2_row_span_dimension": 9,
+        "distinct_ANF_vectors": 10,
+        "maximum_seed_degree": 1,
+        "physical_bit_rows": 1016,
+        "scope": "these fixed physical proofs only; a public symbolic dictionary is not inferred",
+        "seed_degree_histogram": {
+          "-1": 536,
+          "0": 192,
+          "1": 288
+        }
+      },
+      "joint_accepts": 256,
+      "joint_rejects": 0,
+      "paired_RS_accepts": 256,
+      "passing_leaves": {
+        "inner_col": 512,
+        "inner_row": 256,
+        "outer_col": 64
+      },
+      "root_residual_accepts": 256,
+      "unpaired_RS_accepts": 256
+    }
+  },
+  "limits": [
+    "uses the existing field arithmetic, interpolation and acceptance implementation",
+    "exact all-assignment transport follows from the address bijection, not these fixtures",
+    "221 is inherited from the separate Expedition041 field-symbol argument",
+    "no Boolean gate/template census or signed-error precision newly established",
+    "no Lean acceptance, source theorem reconstruction or novelty claim"
+  ],
+  "normalized_rows": 64,
+  "ordered_field_values_compared": 76800,
+  "physical_transport_bijection": true,
+  "root_symbol_bits": 8,
+  "scope": "actual two-level GF(256) residual-constrained Expedition041 fixtures, reindexed",
+  "source_names_checked_including_aliases": 18432,
+  "source_physical_symbols": 16384
+}
